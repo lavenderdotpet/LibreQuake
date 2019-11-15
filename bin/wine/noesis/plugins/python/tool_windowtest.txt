@@ -1,0 +1,159 @@
+from inc_noesis import *
+import os
+from ctypes import *
+import noewin
+
+def registerNoesisTypes():
+	handle = noesis.registerTool("&Test tool window", testToolMethod)
+	return 1
+
+def testWindowProc(hWnd, message, wParam, lParam):
+	if message == noewin.WM_PAINT:
+		noeWnd = noewin.getNoeWndForHWnd(hWnd)
+		ps = noewin.PAINTSTRUCT()
+		rect = noewin.RECT()
+		hDC = noewin.user32.BeginPaint(hWnd, byref(ps))
+		oldFont = None
+		if noeWnd.hFont:
+			oldFont = noewin.gdi32.SelectObject(hDC, noeWnd.hFont)	
+		
+		noewin.user32.GetClientRect(hWnd, byref(rect))
+		noewin.user32.DrawTextW(hDC, "Sample custom paint routine.", -1, byref(rect), noewin.DT_SINGLELINE | noewin.DT_CENTER | noewin.DT_VCENTER)
+		noewin.user32.EndPaint(hWnd, byref(ps))
+		
+		if oldFont:
+			noewin.gdi32.SelectObject(hDC, oldFont)
+		return 0
+	return noewin.defaultWindowProc(hWnd, message, wParam, lParam)
+
+def buttonTestMethod(noeWnd, controlId, wParam, lParam):
+	print("Button pushed:", controlId)
+	return True
+	
+def buttonGetMethod(noeWnd, controlId, wParam, lParam):
+	button = noeWnd.getControlById(controlId)
+	print("Text:", button.userEditBox.getText())
+	return True
+
+def buttonSetMethod(noeWnd, controlId, wParam, lParam):
+	button = noeWnd.getControlById(controlId)
+	button.userEditBox.setText("Text set via button.")
+	return True
+
+def buttonComboMethod(noeWnd, controlId, wParam, lParam):
+	button = noeWnd.getControlById(controlId)
+	comboIndex = button.userComboBox.getSelectionIndex()
+	print("Combo selection:", button.userComboBox.getStringForIndex(comboIndex))
+	return True
+
+def buttonCloseMethod(noeWnd, controlId, wParam, lParam):
+	noeWnd.closeWindow()
+	return True
+	
+def comboMethod(noeWnd, controlId, wParam, lParam):
+	notificationId = (wParam >> 16)
+	if notificationId == noewin.CBN_SELCHANGE:
+		comboBox = noeWnd.getControlById(controlId)
+		comboIndex = comboBox.getSelectionIndex()
+		print("Combo set:", comboBox.getStringForIndex(comboIndex))
+	return False
+
+"""	
+def editMethod(noeWnd, controlId, wParam, lParam):
+	notificationId = (wParam >> 16)
+	if notificationId == noewin.EN_CHANGE:
+		editBox = noeWnd.getControlById(controlId)
+		print("Edit update:", editBox.getText())
+	return False	
+"""
+
+def listBoxMethod(noeWnd, controlId, wParam, lParam):
+	notificationId = (wParam >> 16)
+	if notificationId == noewin.LBN_SELCHANGE:
+		listBox = noeWnd.getControlById(controlId)
+		listIndex = listBox.getSelectionIndex()
+		print("Listbox set:", listBox.getStringForIndex(listIndex))
+	return False
+
+def multiListBoxMethod(noeWnd, controlId, wParam, lParam):
+	notificationId = (wParam >> 16)
+	if notificationId == noewin.LBN_SELCHANGE:
+		listBox = noeWnd.getControlById(controlId)
+		print("Selections:")
+		selectionIndices = listBox.getMultiSelectionIndices()
+		for listIndex in selectionIndices:
+			print(listBox.getStringForIndex(listIndex))
+	return False
+	
+def scrollUpdateMethod(noeWnd, controlId, wParam, lParam, scrollType):
+	#if wParam != lParam:
+	#	print("Scroll update, from", wParam, "to", lParam)
+	if scrollType == noewin.SB_ENDSCROLL:
+		print("Scroll finished:", lParam)
+	
+def testToolMethod(toolIndex):
+	noesis.logPopup()
+	
+	noeWnd = noewin.NoeUserWindow("Test Window", "TestWindowClass", 640, 512, testWindowProc)
+	#offset a bit into the noesis window
+	noeWindowRect = noewin.getNoesisWindowRect()
+	if noeWindowRect:
+		windowMargin = 64
+		noeWnd.x = noeWindowRect[0] + windowMargin
+		noeWnd.y = noeWindowRect[1] + windowMargin
+	if not noeWnd.createWindow():
+		print("Failed to create window.")
+		return 0
+
+	noeWnd.setFont("Arial", 14)
+		
+	noeWnd.createButton("Test button", 16, 16, 96, 32, buttonTestMethod, True)
+	
+	buttonGetIndex = noeWnd.createButton("Print text", 16, 52, 96, 32, buttonGetMethod)
+	buttonGet = noeWnd.getControlByIndex(buttonGetIndex)
+	buttonSetIndex = noeWnd.createButton("Set text", 16, 88, 96, 32, buttonSetMethod)
+	buttonSet = noeWnd.getControlByIndex(buttonSetIndex)
+	buttonComboIndex = noeWnd.createButton("Print combo", 16, 124, 96, 32, buttonComboMethod)
+	buttonCombo = noeWnd.getControlByIndex(buttonComboIndex)
+	noeWnd.createButton("Close", 16, 160, 96, 32, buttonCloseMethod)
+	disabledButtonIndex = noeWnd.createButton("Disabled", 16, 196, 96, 32, None)
+	noeWnd.enableControlByIndex(disabledButtonIndex, False)
+	
+	editIndex = noeWnd.createEditBox(128, 16, 256, 188, "Here's a text edit box.")
+	editBox = noeWnd.getControlByIndex(editIndex)
+	buttonGet.userEditBox = editBox
+	buttonSet.userEditBox = editBox
+
+	comboIndex = noeWnd.createComboBox(400, 16, 224, 64, comboMethod)
+	comboBox = noeWnd.getControlByIndex(comboIndex)
+	comboBox.addString("First entry")
+	comboBox.addString("Second entry")
+	comboBox.selectString("First entry")
+	buttonCombo.userComboBox = comboBox
+
+	noeWnd.createStatic("Test label", 16, 256, 80, 20)
+	
+	listIndex = noeWnd.createListBox(128, 256, 196, 188, listBoxMethod)
+	listBox = noeWnd.getControlByIndex(listIndex)
+	listBox.addString("First list entry")
+	listBox.addString("Second list entry")
+	listBox.addString("Third list entry")
+	listBox.selectString("First list entry")
+
+	multiListIndex = noeWnd.createListBox(340, 256, 256, 188, multiListBoxMethod, noewin.LBS_SORT | noewin.LBS_MULTIPLESEL)
+	multiListBox = noeWnd.getControlByIndex(multiListIndex)
+	multiListBox.addString("First multi-selection list entry")
+	multiListBox.addString("Second multi-selection list entry")
+	multiListBox.addString("Third multi-selection list entry")
+	multiListBox.addString("Fourth multi-selection list entry")
+
+	scrollIndex = noeWnd.createScrollBar(18, 440, 600, 32, scrollUpdateMethod)
+	scroll = noeWnd.getControlByIndex(scrollIndex)
+	scroll.setScrollMinMax(1, 100)
+	scroll.setScrollValue(1)
+	
+	#this will lock us into a local python loop and disable the main window until this window is closed
+	#noeWnd.doModal()
+	
+	return 0
+

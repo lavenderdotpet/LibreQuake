@@ -1,0 +1,9 @@
+This script implements a basic Flash2Advance interface, making use of the Noesis Python USB implementation.
+
+This script has only been tested on my particular F2A linker cable and 256Mbit cart. No guarantees that it will work with other permutations, and it could result in damage if used carelessly. I noticed some peculiar differences in communicating with my linker cable, reflected by some USB packet sniffing, which are not reflected by code/implementations in the wild.
+
+A device driver for the linker cable which supports many different versions of Windows (including Win10) is available here: http://richwhitehouse.com/index.php?content=inc_projects.php&filemirror=f2a_winusb_v10.zip
+The implementation requires that this driver is installed. See the text file included in the driver archive for instructions on installation.
+
+Be sure to copy the accompanying .bin files along with the .py file when installing this script, they're the required firmware and multiboot images. Note that I sniffed these images out of the packet stream while using the F2A writer under a WinXP VM. There are certainly other versions in existence.
+

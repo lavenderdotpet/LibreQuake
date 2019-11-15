@@ -1,0 +1,21 @@
+NOESIS_SCENE_FILE
+version 1
+physicslib		""
+defaultAxis		"0"
+
+object
+{
+	name			"body"
+	model			"ROM/63/1.dat"
+	loadOptions		"-ff11sqleanim ../64/40.dat"
+}
+object
+{
+	name			"head"
+	model			"ROM/63/5.dat"
+	loadOptions		"-ff11sqleanim ../64/46.dat"
+	;this uses the relative positions of the neck joints on each skeleton to place the head
+	offsetWithBones	"bone0001" "body" "bone0004"
+	;combine both objects into a single model
+	mergeTo			"body"
+}

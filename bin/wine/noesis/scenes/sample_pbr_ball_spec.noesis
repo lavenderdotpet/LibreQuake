@@ -1,0 +1,16 @@
+NOESIS_SCENE_FILE
+version 1
+physicslib		""
+defaultAxis		"0"
+
+object
+{
+	model				"sample_pbr_sphere.fbx"
+	offset				"(0 0 0)"
+	rotate				"(0 0 0)"
+	materialoverride	"sphere_lowe" "diffuse" "sample_pbr_a.png"
+	materialoverride	"sphere_lowe" "normal" "sample_pbr_n.png"
+	materialoverride	"sphere_lowe" "specular" "sample_pbr_s.png"
+	materialoverride	"sphere_lowe" "env" "sample_pbr_e.dds"
+	materialoverride	"sphere_lowe" "flags" "425984"
+}

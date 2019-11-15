@@ -1,0 +1,35 @@
+NOESIS_SCENE_FILE
+version 1
+physicslib		""
+defaultAxis		"1"
+
+object
+{
+	model		"sample_boxroom.dae"
+	offset		"(0 0 0)"
+	rotate		"(0 0 0)"
+}
+object
+{
+	model		"sample_ball.dae"
+	offset		"(0 90 250)"
+	rotate		"(0 0 0)"
+}
+object
+{
+	model		"sample_block.dae"
+	offset		"(0 -100 45)"
+	rotate		"(0 0 0)"
+}
+object
+{
+	model		"sample_spike.dae"
+	offset		"(0 100 0)"
+	rotate		"(0 0 0)"
+}
+object
+{
+	model		"sample_guy.dae"
+	offset		"(100 200 0)"
+	rotate		"(0 0 0)"
+}

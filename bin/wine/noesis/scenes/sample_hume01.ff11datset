@@ -1,0 +1,21 @@
+NOESIS_FF11_DAT_SET
+;^ must be the first line of the file
+
+;search for dats using a path retrieved from a registry key
+setPathKey	"HKEY_LOCAL_MACHINE" "SOFTWARE\PlayOnlineUS\InstallFolder" "0001"
+
+;search for dats on a path relative to this file 
+;setPathRel	"./"
+
+;search for dats on an absolute path
+;setPathAbs	"c:/whatever/ff11/"
+
+dat			"__skeleton"	"ROM/27/82.dat"
+dat			"__animation"	"ROM/27/82.dat"
+dat			"face"			"ROM/27/87.dat"
+dat			"head"			"ROM/27/103.dat"
+dat			"body"			"ROM/28/7.dat"
+dat			"hands"			"ROM/28/52.dat"
+dat			"waist"			"ROM/28/84.dat"
+dat			"legs"			"ROM/28/116.dat"
+dat			"weapon"		"ROM/29/20.dat"

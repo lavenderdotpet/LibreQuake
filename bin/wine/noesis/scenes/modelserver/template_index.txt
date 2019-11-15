@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title>Noesis Model Server</title>
+</head>
+<body>
+	<center>
+		<strong><font size="6">Welcome to Uncle Frank's Good Time Noesis Model Server!</font></strong><br />
+		<br />
+		<img src="pub/unclefrank.jpg" /><br />
+	</center>
+	<br />
+	$GLTF_FILE_LIST$
+</body>
+</html>

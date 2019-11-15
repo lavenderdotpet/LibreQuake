@@ -1,0 +1,14 @@
+NOE_VMARCH_FILE_VERSION		"1"		#version must be the first key-value in the file
+
+MarchingType				"0"		#0=cubes, 1=tetrahedra
+IsoLevelValue				"50.0"
+DefaultFilledValue			"80.0"
+SampleColors				"0"		#if 0, no color sampling will be performed
+PerVoxelColors				"0"		#if 1, samples colors at the voxel while marching instead of the per-vertex sample location
+BleedPasses					"0"		#number of passes to bleed color samples, -1 to bleed to bounds
+GaussianPasses				"1"		#number of 3D Gaussian blur passes on sample values
+GaussianTaps				"7"		#number of taps for 3D gaussian blur on sample values
+StepSize					"1.0"
+StepOffset					"0.0"
+NormalSampleDistance		"0.5"
+CropVolume					"-8" "-8" "-8"   "0" "0" "0"   "136" "136" "106"

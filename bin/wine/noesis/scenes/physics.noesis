@@ -1,0 +1,94 @@
+NOESIS_SCENE_FILE
+version 1
+physicsLib		"noesis_ode.dll"
+defaultAxis		"1"
+
+;physics properties
+gravity			"(0 0 -800)"
+friction		"0.0" ;default
+bounce			"0.8"
+bounceVel		"0.1"
+softCFM			"0.01"
+
+;pgeom syntax is type static mass density <per-type parameters, like sphere radius>
+
+object
+{
+	model		"sample_boxroom.dae"
+	offset		"(0 0 0)"
+	rotate		"(0 0 0)"
+	pgeom		"trimesh 1 1 1.0"
+}
+object
+{
+	model		"sample_ball.dae"
+	offset		"(90 0 450)"
+	rotate		"(0 0 0)"
+	scale		"1.5"
+	pgeom		"trimesh 0 0.5 1"
+}
+object
+{
+	model		"sample_ball.dae"
+	offset		"(190 -50 450)"
+	rotate		"(0 0 0)"
+	pgeom		"sphere 0 0.5 1 40"
+}
+object
+{
+	model		"sample_block.dae"
+	offset		"(-100 0 50)"
+	rotate		"(0 0 0)"
+	pgeom		"trimesh 0 0.2 1"
+}
+object
+{
+	model		"sample_spike.dae"
+	offset		"(150 0 1)"
+	rotate		"(0 0 0)"
+	pgeom		"trimesh 0 0.2 1"
+}
+object
+{
+	model		"sample_guy.dae"
+	offset		"(100 200 61)"
+	rotate		"(0 0 -10)"
+	pgeom		"autorag 0 0.2 1 5"
+}
+
+light
+{
+	position	"(-200 -200 400)"
+	color		"(1.0 1.0 1.0)"
+	radius		"400"
+	visualSize	"20"
+	attenModel	"1"
+	visible		"1"
+}
+light
+{
+	position	"(-200 200 200)"
+	color		"(0.5 0.5 0.5)"
+	radius		"400"
+	visualSize	"20"
+	attenModel	"1"
+	visible		"0"
+}
+light
+{
+	position	"(200 200 200)"
+	color		"(0.5 0.5 0.5)"
+	radius		"400"
+	visualSize	"20"
+	attenModel	"1"
+	visible		"0"
+}
+light
+{
+	position	"(200 -200 400)"
+	color		"(1.0 1.0 1.0)"
+	radius		"400"
+	visualSize	"20"
+	attenModel	"1"
+	visible		"1"
+}

@@ -1,0 +1,9 @@
+<html>
+<head>
+	<title>Noesis Model Server - Babylon.js Viewer</title>
+	<script src="https://preview.babylonjs.com/viewer/babylon.viewer.js"></script> 
+</head>
+<body>
+	<babylon model="$GLTF_PATH$" templates.main.params.fill-screen="true"></babylon>
+</body>
+</html>
