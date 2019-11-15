@@ -1,0 +1,466 @@
+<HTML>
+<HEAD>
+<TITLE>FrikBot Readme</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--
+	function Display(section)
+	{
+		if (section == "intro")
+			intro.style.visibility = "visible";
+		else
+			intro.style.visibility = "hidden";
+		if (section == "install")
+			install.style.visibility = "visible";
+		else
+			install.style.visibility = "hidden";
+		if (section == "play")
+			play.style.visibility = "visible";
+		else
+			play.style.visibility = "hidden";
+		if (section == "waypoints")
+			waypoints.style.visibility = "visible";
+		else
+			waypoints.style.visibility = "hidden";
+		if (section == "mods")
+			mods.style.visibility = "visible";
+		else
+			mods.style.visibility = "hidden";
+		if (section == "author")
+			me.style.visibility = "visible";
+		else
+			me.style.visibility = "hidden";
+		if (section == "web")
+			web.style.visibility = "visible";
+		else
+			web.style.visibility = "hidden";
+		if (section == "wayed")
+			wayed.style.visibility = "visible";
+		else
+			wayed.style.visibility = "hidden";
+		if (section == "probs")
+			probs.style.visibility = "visible";
+		else
+			probs.style.visibility = "hidden";
+	}
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR=#000000 TEXT=#FFFFFF>
+
+
+<div id="ex4" style="position: absolute; top: 0px; left: 90px; font-size: 75pt; font-style: bold; font-family: Impact; color: #606000">X</div>
+<div id="ex3" style="position: absolute; top: 30px; left: 35px; font-size: 35pt; font-style: bold; font-family: Impact; color: #A0A0A0">FRIKBOT</div>
+ 
+<TABLE WIDTH=100% HEIGHT=100%>
+<TR><TD ALIGN=CENTER VALIGN=TOP WIDTH=200>
+
+<BR><BR><BR><BR><BR><BR>
+<FORM>
+<input type="button" value="INTRODUCTION" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('intro');">
+<p>
+<input type="button" value="INSTALLATION" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('install');">
+<p>
+<input type="button" value="PLAYING" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('play');">
+<p>
+<input type="button" value="ADD-ON WAYPOINTS" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('waypoints');">
+<p>
+<input type="button" value="MODS" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('mods');">
+<p>
+<input type="button" value="WAYPOINTING" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('wayed');">
+<p>
+<input type="button" value="COMMON PORBLEMS" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('probs');">
+<P>
+<input type="button" value="AUTHOR" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('author');">
+<p>
+<input type="button" value="WEB" style="border-width: 1; border-color: #FFFFFF; font-family: Arial; font-size: 8pt; width: 150px; color: #FFFFFF; background-color: #000000" onClick="Display('web');">
+</FORM>
+
+</TD><TD>
+
+<div ID="intro" style="visibility: visible; position: absolute; top: 30px;">
+<TABLE style="font-family: Arial; font-size: 8pt;">
+<TR><TD>Title:</TD><TD>FrikBot X</TD></TR>
+<TR><TD>Filename:</TD><TD>fbxa.zip</TD></TR>
+<TR><TD>Version:</TD><TD>0.10.1</TD></TR>
+<TR><TD>Date:</TD><TD>7-27-2001</TD></TR>
+<TR><TD>Author:</TD><TD>Ryan "Frika C" Smith</TD></TR>
+<TR><TD>Email:</TD><TD><A HREF="mailto:frika-c@earthling.net">frika-c@earthling.net</TD></TR>
+
+<TR><TH COLSPAN=2>Credits</TH></TR>
+<TR><TD>Horn, scar3crow, Electro, Akuma, ze0</TD><TD>Play testing and suggestions.</TD></TR>
+<TR><TD>Quest, Plumb, SSJ4-Death</TD><TD>Editor testing.</TD></TR>
+<TR><TD>Koolio</TD><TD>Mod testing</TD></TR>
+<TR><TD>Raymond Martineau, Quest, Akuma</TD><TD>For supporting the "FrikBot community"</TD></TR>
+<TR><TD>Alan Kivlin, Requiem</TD><TD>Code snippets</TD></TR>
+</TABLE>
+<P><H1>Introduction</H1>
+<P>
+This is the final version of FrikBot. I mean it this time. Really. Stop looking at me like that. This is it. For those that know what this bot is all about, skip the next paragraph and save yourself some time. If not, read on:
+<P>
+FrikBot is a unique bot for Quake. Maybe you're familiar with Reaper Bots, or the fabulous Frogbot and Omicron bots. These are wonderful opponents to deathmatch against, but for mod authors (the people that make those nice mods you and I play, such as Capture the Flag, etc) they're not so great. Why? I hear you ask - well the bot code heavily intrudes into the rest of the QuakeC (the language you use to make mods for Quake). Because of this, you either need to build the mod onto the bot's source base, or spend a few good months finding each part that links into the mod and carefully replicate it on the new mod. In addition Reaper is not legal to modify and Omicron's source is heavily obfuscated. FrikBot has introduced about 2 years ago as an alternative. It's the first Quake bot (aside from TutorBot) to be heavily geared to mod authors and customization. With the advent of this version, it's also a hoot to play too.
+<P>This release (nicknamed FrikBotX or simply FBX) represents several months of slow off and on work and is the 10th (or 12th - I'm not sure) and final release of the bot. FrikBot X, much like the infamous Frogbot relies heavily on hand-built waypoints for excellence in combat. It can however run without them, and it will attempt to create it's own waypoints as it plays. This is not recommended however.
+<P>To get started playing FrikBot, read the installation instructions which can be found by clicking the "Installation" button at left (on DHTML capable browsers), or scrolling down (on "normal" browsers).
+
+<P><P><P><!-- I never close P tags. pbbt -->
+</div>
+<div ID="install" style="visibility: hidden; position: absolute; top: 30px;">
+<H1>Installation</H1>
+<P><FONT COLOR="red">Please note FrikBot requires the registered version of Quake.</FONT>
+<P>These installation instructions assume you're using some version of Windows. If you're lucky enough to be using a better operating system (read: *nux, BeOS, whatever) you likely don't need me to tell you how to install a Quake mod. You probably also enjoy doing binary-long division during  long car rides. If you're using a Macintosh, simply unpack this archive, move it to your Quake folder and click-drag it onto your MacQuake executable. (A Mac user once told me these instructions. If this isn't accurate let me know.)
+<P>
+
+Unzip this file with your favorite zip utility. This is usually Winzip on most systems. After it's unzipped, create a new folder in Quake with the name "FrikBot". Move all files and folders from the archive to this new folder. In the folder you'll see two .bat batch files. These have been set up to run FBX with the standard command line. Run.bat will execute Quake.exe and GLRun.bat will run GLQuake.exe.  The latter is a special 3D-Accelerated version of Quake. If you have 3D hardware, I recommend you <A HREF="ftp://ftp.cdrom.com/pub/idgames/idstuff/unsup/glq1114.exe">download this</A> and read the provided instructions.
+<P>
+<FONT COLOR="red">FrikBot requires Quake version 1.08 or higher.</FONT> This is available as a free update from id software. If you use GLQuake or WinQuake or any recent custom engine to run FrikBot, don't worry, you're safe. If however you're still using the Quake.exe that came off your old Quake CD, you can download the update by clicking <A HREF="ftp://ftp.idsoftware.com/idstuff/quake/quake108.zip">here</A>.
+
+<P>
+To begin playing a match against the bot, double click the batch file of your choice. Choose the Multiplayer option from the main menu. Choose "New Game" from the Multiplayer menu. Select either IPX or TCP/IP from the next menu. Select a map, fraglimit (if desired), timelimit (if desired) and choose "Begin Game". To start fighting some FrikBots, continue reading in the "Playing" section of this readme.
+<P><P><P>
+</div>
+<div ID="play" style="visibility: hidden; position: absolute; top: 30px;">
+<h1>Playing FrikBot X</h1>
+<P>Okay, you know how to install and begin a multiplayer game of FBX (and if you don't, please read <A HREF="javascript: Display('install');">the last section</A>). <FONT COLOR="red">It is recommended you play one of the 6 id deathmatch maps.</FONT>. These are dm1, dm2, dm3, dm4, dm5 and dm6. If you did not start the game with one of these maps, bring down the console with the ~ key, and type "map dm6" and press enter (minus the quotes).
+<P>To add a bot, bring down the console (again with the ~ key) and type "impulse 100" (without the quotes) and press enter. A new bot combatant will enter the game. The bot you have added will probably be a skill 1 (Normal skill) bot. If the bot is too difficult for you, type "impulse 102" in the console and press enter. This will disconnect the bot from the game. Then type "skill 0" to set the game on Easy skill in the console, then "impulse 100" to add an easy level bot. When you're ready for a greater challenge try skill 2 (Hard) and skill 3 (Nightmare) bots.
+<P>
+<h2>Teamplay</h2>
+<P>FrikBot can also be used in a team match game. The bots can be teammates or your opposition. To get started here, change the map then type "teamplay 1" in the console. Set your desired skill level then use "impulse 100" to add a bot that will be one of your team members. Use "impulse 101" in the console to add enemy team members.
+<P><h2>Cooperative</h2>
+<P>You can also have FBX as a 'friend' as you battle through Quake's single player game. To do this, bring down the console, type "deathmatch 0" and press enter. Type "coop 1" then press enter. Next, use the map command to go to the episode selection - in the console type "map start". Add your bot companions as above (with "impulse 100"), then head off starting the game as you normally would. <FONT COLOR="red">It is recommended you download waypoints for the id single player maps before playing coop</FONT>.
+
+<P><h2>Online</h2>
+<P>FrikBotX can also be played with the popular internet version of Quake called "QuakeWorld". To do this you need to run the QuakeWorld sever executable "QWSV.exe". If you don't have this, it can be downloaded from <A HREF="http://www.quakeworld.net/">QuakeWorld's official website</A>. After starting it, type in "gamedir frikbot" then press enter. Then change the map by using the map command, eg. "map dm6". To adjust the skill level of bots, you must use the QW console and type "localinfo skill x" where x is the desired skill level. Connect with QWCL to your server and add bots with "impulse 100" and remove them with "impulse 102".
+
+<P>Due to lazy coding the QW version of frikbot does not support teamplay at this time. In addition, the bots will appear to move very choppily, this is due to QW's restricting all non client entities to a very low frames per second. This cannot be avoided without engine modifications.
+
+<P>When playing QWSV and QWCL on the same machine under Windows 9x it's important to point out that QWSV will not receive enough priority, which will cause unneeded lag. There's an excellent tool to solve this called priority.exe. You can find it at the ever helpful <A HREF="http://www.inside3d.com/qip/">Quake Info Pool</A>.
+
+<P><H2>Advanced Options</h2>
+<P>FrikBotX has two options to make you're lives a bit easier. In normal quake you can set them by using the saved1 cvar. The first option is to make the bots return between map changes in DM as they do in Coop. To activate the option type "saved1 1" in the console. After the next map load, bots will return between matches. The next option allows you to disable the bot chatter (it gets on some people's nerves). To do this type "saved 2" in the console. If you wish to both options enabled, add them together and type "saved 3". In QuakeWorld, use localinfo b_options on the server instead of saved1. Good luck.
+
+<P><H2>Map cycling</H2>
+<P>Included in the FrikBotX progs.dat is an Omicron-style map cycler. To use it, you must create a maps.cfg file, an example one has been included with this archive. Unlike Omicron, FrikBot's map cycler can deal with an unlimited number of maps. The cfg file must should contain lines in the following format:
+
+<blockquote>alias map1 "changelevel mapname"</blockquote>
+
+<P>Samelevel controls how the map cycler behaves. If it is 0, quake will behave as normal. Samelevel 1 will force FBX to stay on the samelevel, just as normal Quake. However, any setting above this will cause FBX to randomly select a map from the specified number of maps. The number you set it to should be the number of aliases you provided in your maps.cfg. If you'd rather not let it select maps randomly (which can result in repeated maps), setting samelevel to a the negative of the number of maps you have will make an infinite looping rotation. If you have six map aliases, setting samelevel -6 will cycle through them successively.
+
+<P><H2>Botcam</H2>
+<P>Using "impulse 103" in the console will allow you to cycle to the view of every bot and player on the server. This view is very interesting, and if you have the time and patience you can record demos from the bot's perspective. Unlike 0.09, FrikBot X will seem much choppier from the bot's perspective. Sorry.
+
+<P><P><P>
+
+</div>
+<div ID="waypoints" style="visibility: hidden; position: absolute; top: 30px;">
+<h1>Using Add-on waypoints</h1>
+<P>The benefits of using add on .way files cannot be stressed enough. Waypoint give the ability to navigate levels perfectly, they make the bot a fierce deathmatch and coop opponent and they actually decrease the load FBX has on the game by a significant amount.
+
+<P>FrikBot Waypoints can be made using the in game editor or may be supplied to you by friends or in future add-on packs. The best source for additional waypoints is the <A HREF="http://www.botepidemic.com/fwd/">FrikBot Waypoint Depot</A>, an excellent website created by Akuma and maintained by Quest.
+<P>Waypoints usually come as a single .way file, however some maps are very large or intricate and require multiple files. The additional files share the same name, but have the extensions wa1, wa2, wa3, etc.
+<P>To use these waypoints you place the .way (and all additional files, if they exist) in your quake\frikbot\maps folder. If installed correctly, when you go to play that map in Quake you will see in the console "Execing maps/mapnam.way". <FONT COLOR="red">Please note: FBX already contains waypoints for DM1, DM2, DM3, DM4, DM5 and DM6.</FONT> These internal waypoints are improved versions of those found on FrikBot Waypoint Depot. Do not install the waypoints for the id deathmatch maps unless they have been updated over the internal points.
+<P>Occasionally you may run across FrikBot waypoints in two other formats. One is map_mapname.qc. <FONT COLOR="red">Please note that although Frogbot uses a similar convention, Frogbot waypoints are not compatible.</FONT><!-- Idiot red again -->
+
+<P>To install these you will need the source code to the mod and a QuakeC compiler (May I recommend my own compiler, <A HREF="http://www.inside3d.com/frikbot/">FrikQCC</A>). To do this, open up the progs.src file from the mod with a text editor. Just after the defs.qc line, add the name of the .qc file you've received. Next, open bot.qc or bot_qw.qc (depending if this is intended for QuakeWorld or Normal Quake) and scroll down past the large installation comment until you find the function bot_map_load. Add a line that reads something like this:
+<P>
+if (mapname == "mymap")
+<BLOCKQUOTE>map_mymap();</BLOCKQUOTE>
+<P>
+Where the keyword mymap is a placeholder for the name of the map the waypoints are intended for. Under extremely rare circumstances, you'll encounter a third type of waypoints. These come as an .ent file patch. <FONT COLOR="red">Please note that although Omicron uses a similar convention, Omicron bot waypoints are NOT compatible.</FONT><!-- Idiot red again --> To install these you will need the map's BSP file and the compile tool QBSP. QBSP can be found on <A HREF="ftp://ftp://ftp.idsoftware.com/idstuff/source/">id software's FTP</A> in the file q1tools_gpl.zip. You will need to run QBSP with the command line
+<P>
+qbsp -onlyents mymap
+<P>Where mymap is the name of the BSP file you wish to apply waypoints to. <FONT COLOR="red">Please note: The raw dump of the BSP ents option in the in-game editor is not a complete .ent file. It must be appended to the existing ents first. Read the waypoint editing portion of this readme for complete instructions.</FONT>
+
+<P>If you were confused by the above, don't worry. Stick with .way files and you'll be alright. BSP and QC waypoints are intended to get around QuakeWorld's many, many limitations, if you don't use the QuakeWorld FrikBot then you should never need to use those features.
+</div>
+<div ID="mods" style="visibility: hidden; position: absolute; top: 30px;">
+<H1>Information for Mod Authors</H1>
+<P>FrikBot is designed for you. With great certainty I can tell you that after plugging FrikBot into your mod the bot will use all the rules you have changed, will fire your custom weapons and will behave like a client in every way discernable. However, he will probably behave like an incredibly stupid client, but that isn't the point.
+<P>If you already have FrikBot installed in your mod skip down to the next section, otherwise, keep reading. All the code to install FrikBot has been included with this archive. The files you need are bot.qc, bot_way.qc, bot_ai.qc, bot_fight.qc, bot_ed.qc, bot_misc.qc, bot_phys.qc and bot_move.qc. If you intend to use the QuakeWorld version of FrikBot, substitute everything I say about bot.qc with "bot_qw.qc", okay? To begin installing FrikBot into your mod, copy these files into your mod's source folder. To be neat I recommend creating a subdirectory called "frikbot" within your source folder and placing the files in there. This is not required though.
+
+<P>Next thing you should do is open up bot.qc, scroll down past the license and read the instructions carefully. There's a few functions to comment out in defs.qc, you accomplish these by placing two forward slashes in front of the line - "//". Once you've followed the installation instructions, you can compile and play the mod now with FrikBots. Most likely you'll need to modify code in bot_ai.qc to make the bot behave intelligently. The main function in this file is BotAI located at the bottom. From there you can follow up all the calls it makes and understand how the bot thinks. Priority_for_thing is the place to add code if you want the bots to hunt a new item, or add conditions to hunting existing items. I leave the rest to you. Note that you will probably never need to edit bot(_qw).qc (except for when installing qc waypoints), bot_move.qc, bot_way.qc or bot_phys.qc. The last one being highly unlikely as it is more or less a direct port of the engine's physics code, and only needs to be changed when the corresponding code in the engine is changed.
+<P>Please also note that the waypoint editor mode can be used to cheat in your mod (Even in multiplayer). If you don't want to allow this, safeguard the entrance by adding a cvar("developer") check to its impulse in BotImpulses in bot.qc.
+
+<P>When making mods I strongly suggest you do a few things. Open up bot_misc.qc and give the bots new names and colors. Please. I'm tired of seeing a ton of mods with my default names and chat messages. Use a little creativity, and use some extended chars to give the bots "fun names".
+<P>Next, I'd ask you avoid using the name "Frik" in your mod's title. Even if all you did was combine FrikBot with another mod, don't call it FrikSomemod. A more appropriate title may be Somemod + FrikBot, or something along those lines. This is not a commandment from Heaven, it's just that I like to use Frik for my own work, and it tends to confuse people seeing my name part of some mod that I had very little to do with. Thanks.
+<P>In the past it has been common to include my entire FrikBot readme with the mod. Please do not include this massive .html file, that's the last thing we need. Instead, excerpt here and there and patch together some instructions for the bot. You have permission to use everything in the archive any way you want, this includes this readme. Put a little effort into it, for your user's sake.
+<P>If you make your mod for QuakeWorld I really recommend you make the mod open source. Not only will it be much more convenient for server operators, but QC is one of the best ways to bet waypoints into the QW version of FrikBot. Again, open source is the way to go.
+<P>If you're really feeling nice, you can place a small thank-you to me in your mods credits. Thanks for listening, now get out there and get coding!
+
+</div>
+<div ID="probs" style="visibility: hidden; position: absolute; top: 30px;">
+<H1>Common Problems</H1>
+This portion of the readme will help you if you encounter an error when using FrikBot. This is by far not a comprehensive guide, but it will help you with a number of problems. If you need further help, please see the "Author" section of this readme. Thanks.
+
+
+<p>
+<h2>"Unable to connect a bot, server is full"</h2>
+</h2>
+<p>
+FrikBot requires client slots like real players. If you're playing a single player game (by choosing Single Player from the main menu, or using the 'map' command), you cannot connect bots because the game can't accept connections. It is recommended you use -listen 16 in the command line.
+
+<P>If you're getting this message after installing FrikBot X on a mod even though you have multiplayer set up properly, this probably the result of improper installation. Make sure you read the installation instructions correctly (especially the part about BotInit in worldspawn(), world.qc).
+
+<p>
+<h2>"CL_ParseServerMessage: svc_updatecolors > MAX_SCOREBOARD"</h2>
+</h2>
+<p>
+This (and other errors like it) are typically the result of placing BotInit(); below InitBodyQue(); or some other call in worldspawn. When I say at the top of the function, I mean it!
+<P>
+<H2>"D_SurfCacheGuard: failed"</H2>
+<P>
+This problem can occur when you look directly at a waypoint in editor mode when it is
+linked to another waypoint at point blank. To fix this, you will need
+run the command line parameter "-surfcachesize 1500" when you run
+quake. If you still get the message, increase the value until the error
+disappears.
+
+<p>
+<h2>"Ed_Alloc: No Free Edicts"</h2>
+<p>
+This problem can occur with large maps that require a lot of waypoints. Also note that this can also be caused by an entity leak in your mod. id's code has an entity leak with the bubble spawner code in player.qc. The only way to fix this is to recompile the Quake source code after setting
+MAX_EDICTS in quakedef.h to 1024 (or higher).
+
+
+<p>
+<h2>"Cbuf_AddText: Overflow"
+</h2>
+<p>
+If you receive this message it means you probably didn't split up the .way file properly. Look for the comments made by the editor instructing you to separate the file into multiple parts.
+
+<p>
+<h2>"SZ_GetSpace: Overflow without allowoverflow set"
+</h2>
+<p>
+This is the result of the client network buffer filling up with too much data. If you receive this message it usually means a bot was receiving messages he shouldn't have, and all this data is building up in his outgoing buffer (since the client isn't real, he never collects the data and the game crashes). To fix this find places where you stuffcmd'd or otherwise sent messages to the bot that wouldn't be picked up my function redeclarations.
+
+
+<p>
+<h2>Waypoints are missing and links are screwed up in DarkPlaces
+</h2>
+<p>
+Darkplaces caps server activity in listen servers with the sys_ticrate cvar. This can foul the .way file loading, to get around this set "sys_ticrate 0" in the console before changing map.
+
+</div>
+<div ID="me" style="visibility: hidden; position: absolute; top: 30px;">
+<H1>Author</H1>
+<P>I, Ryan Smith, am deranged psychopath that lives in Massachusetts, USA. I started coding for the TRS-80 Model 3 about 18 years ago, graduated to Commodore 64s, and eventually found my way to Doom and Quake. Quake eventually caught a hold of me. Deathmatch became a sort of digital crack and making mods was absolutely the best thing I had done with my computer. At one point in my early naivety I had stumbled across the Reaper Bot. Little did I know this choppy, poorly playing (and mostly cheating) bot was considered the best bot of the time. I had long assumed that a proper bot couldn't be too difficult.
+<P>Anyway, you can reach me at the following address should you have any questions or comments about the bot (feedback much appreciated!) <A HREF="mailto:frika-c@earthling.net">frika-c@earthling.net</A>. I'd also like to hear about any improvements you've found, bugs you've encountered or mods you've made of using the bot. Keep in mind this is often a slow address and it may take a few days for me to receive your mail. <FONT COLOR="red">Also notice I will not reply to any mail asking questions which are answered in this readme or in any material found on my site or at FWD.</FONT> If your message doesn't contain a technical question, you may not expect a reply. My time is very limited, and though I will read your mail and often times act upon it, I may not reply.<P>
+All these rules may sound self centered or something, but I have encountered people that think of e-mail as an instant message service and my mailbox has been filled with mail such as "Why haven't you replied? It's been 5 hours!" etc.
+
+</div>
+
+<div ID="web" style="visibility: hidden; position: absolute; top: 30px;">
+<H1>FrikBot on the web</H1>
+
+<P>There are a number of websites you may want to visit for latest news. If you have an active internet connection, just click.
+<UL>
+<LI><A HREF="http://www.inside3d.com/frikbot">FrikaC's projects</A>
+<LI><A HREF="http://www.botepidemic.com/frikbot/">FrikBotX home page</A>
+<LI><A HREF="http://www.botepidemic.com/fwd/">FrikBot Waypoint Depot</A>
+<LI><A HREF="http://www.planetquake.com/5thD/">5thD Team</A>
+</UL>
+
+</div>
+
+<div ID="wayed" style="visibility: hidden; position: absolute; top: 30px;">
+<H1>Waypoint Editing</H1>
+<P>Waypoints are incredibly useful and powerful tools for FrikBot X. To edit the bot's waypoints, you should use FrikBot X's built-in waypoint editor. If you're already familiar with FrikBot Waypoint Studio this should be a fairly easy guide to follow, as the editor in FBX lends much of it's features and design from FBWS. 
+<P>To begin using the editor, you must first ensure that the file beam.mdl included with this archive is in the mod's progs/ directory. This model file is used to display the links of a waypoint; we'll get to that in a bit. To demonstrate more clearly how waypointing works, load up FBX as you would to fight the bots. Go to the map dm6 (waypoints are included for this map in the progs.dat). Use impulse 104 in the console to start the editor. If everything goes well, you'll now see many tiny white dots ("bubbles") floating mid air. These sprites represent each waypoint on the map. As you near a waypoint, it will change to a very large gold "light ball". This is referred to as the selected waypoint. As each waypoint is selected, it will cast off little red beams that connect to nearby waypoints. These are called 'links'. <FONT COLOR="red">Each link represents that a bot can travel one way from the selected waypoint to the linked waypoint.</FONT> Also, when near a teleporter you may see a link that looks like quake lightning and passes straight through walls. This is called a "telelink" and is really a special flagged link telling the bot to travel through a teleporter in between the two waypoints.
+<P>Each waypoint can have a maximum of 4 out bound links. Although this may seem like a severe limitation at first, consider you can place as many waypoints as you need in one spot, and link them all together to get more outbound links. There is no limit to the number of inbound links to a single waypoint.
+<P>What follows is a basic break down of the editor's commands. This is not meant as a comprehensive getting started in waypointing tutorial. The subject is actually quite simple, and with a little experimenting you should be waypointing like a pro in no time. <FONT COLOR="red">Be sure to bind the 0 (zero) key to "impulse 10" in order to properly use the editor menus.</FONT>
+
+<H2>Main Menu</H2>
+<P>The main menu contains a few basic commands and the ability to switch to any of the other menus in the editor. This is your starting point in the editor.
+
+<UL>
+<LI><B>Waypoint Management</B> This command takes you to the waypoint management menu which
+contains functions for moving, modifying and handling waypoints.
+<LI><B>Link Management</B> This command takes you to the link management menu which contains
+options and commands for changing the links between waypoints.
+<LI><B>AI Flag Management</B> This command takes you to the first page of the AI flag management menu which contains toggles for all the commonly used AI flags.
+<LI><B>Bot Management</B> This command takes you to the bot management menu which allows you to control bots and use them for testing your waypoints.
+<LI><B>Waylist Management</B> This command takes you to the waypoint list management menu which provides commands and functions that work on all waypoint data.
+
+<LI><B>Noclip</B> This is a toggle command that gives you exactly the same effect as the single player cheat NOCLIP. It's provided here because it's incredibly useful for getting to hard to reach and/or mid air locations you couldn't effectively modify waypoints in otherwise.
+<LI><B>God mode</B> This is a toggle command that gives you exactly the same effect as the single player cheat GOD. It's provided here to allow you to withstand traps and lava that would otherwise kill you, so you can effectively waypoint around them.
+<LI><B>Hold Select</B> This toggle will prevent the editor from selecting new waypoints as you pass them, effectively holding onto the selection you had when you turn this toggle on. This is incredibly useful for moving waypoints long distance (where you'd lose the waypoint selection if you pass other waypoints).
+<LI><B>Teleport to Way #</B> This command brings up a prompt that allows you to teleport directly to a waypoint by specifying a waypoint number. The waypoint numbers can be read by using Waypoint Management's "show waypoint info" command.
+<LI><B>Close Menu</B> This closes the editor menu and returns the game back to normal game play. All waypoints will again vanish and bots will resume normal functioning. Cheats activated in the editor will remain in effect however. Any changes you made to the waypoints will <B>not</B> be lost. Waypoints are only lost when the map changes or when you quit the game. Use the Dump command in Waylist Management to create a permanent record of your waypoints.
+</UL>
+
+<H2>Waypoint Management</H2>
+<P>Waypoint management is probably the most useful menu in the editor. It contains basic waypoint creation and deletion but also more advanced functions such as make way and link functions. 
+<UL>
+<LI><B>Move Waypoint</B> Incredibly simple, it moves the selected waypoint to your location. This is useful for fine tuning your waypoint sets. Remember, location is really what defines waypoints. Put them in the right location and you can make excellent waypoint sets, put them in the wrong location and the bots will suffer for your mistakes.
+<LI><B>Delete Waypoint</B> Deletes the selected waypoint and any links that may exist to it on other waypoints. You'll be prompted to confirm the deletion. Follow the on screen instructions to remove the waypoint.
+<LI><B>Make Waypoint</B> This is the original and generic make waypoint function. It creates a new waypoint at your location. The waypoint is essentially blank, no flags and no links. You must set up any links to and from with the Link Management menu.
+<LI><B>Make Waypoint + Link</B> The operates as above, the big difference is it also creates a link from the selected waypoint to the new one you've just created. This will save time and allows you to jump off a cliff and not have to noclip back up in order to create the link.
+<LI><B>Make Waypoint + Link X2</B> This operates as Make Waypoint + Link but also creates a link from the new waypoint *back* to the selected waypoint. In other words, a link in either direction - both to and from the new and selected waypoints.
+<LI><B>Make Waypoint + Telelink</B> This works similar to Make Way + Link, but instead creates a Telelink to the new waypoint - indicating a pass through a teleporter.
+<LI><B>Show waypoint info</B> This command spits a few facts about the currently selected waypoint in the console. It's waypoint number, the value of it's AI flags (mostly useless), and which waypoints it links to. It's useful for debugging your waypoint list, or just satisfying your curiosity.
+<LI><B>Link Management</B> Jumps you over to the Link Management menu. Because waypointing generally involves a lot of jumping between these two menus a lot, this is provided here for convenience.
+<LI><B>AI Flag Management</B> Jumps you over to the AI Flag Management menu, should you ever need to go there.
+<LI><B>Main Menu</B> Brings you back to everyone's favorite menu, the Main Menu.
+</UL>
+
+<H2>Link Management</H2>
+<P>Link Management is the place to deal with individual links. It's commands somewhat echo Waypoint Management's, but on a link scale.
+<UL>
+<LI><B>Unlink Current Way</B> Removes all links from the selected waypoint. Please Note: There is no "are you sure" on this, it just does it, so be careful.
+
+<LI><B>Create Link</B> Allows you to create a link from the selected waypoint to
+another. The editor will prompt you to move to another waypoint and press 1 to
+create the link. Note the link you create is one way, from the waypoint you
+started at to the waypoint you ended up at.
+
+<LI><B>Create Telelink</B> Just like Create Link but indicates a teleporter in the
+middle. Telelinks are indicated by a thin lightning, as opposed to the red beam of regular links.
+
+<LI><B>Delete Link</B> Deletes a link (either Telelink or normal) between two waypoints. You
+will be prompted to move from the waypoint that has the link to the waypoint
+that receives the link and press 1.
+
+<LI><B>Create Link X2</B> Similar to Create Link, but instead creates two links, both ways between the two waypoints.
+
+<LI><B>Delete Link X2</B> Similar to Delete Link, but deletes links both ways between the two chosen 
+waypoints.
+
+<LI><B>Make Waypoint</B> Same command as the make waypoint on the Waypoint
+Management Menu. Here for convenience.
+
+<LI><B>Waypoint Management</B> This command brings you to the Waypoint Management
+menu, I found that when creating a waypoint set, I often flipped between both
+menus far too often, and this has been added here for convenience.
+<LI><B>AI Flag Management</B> Jumps you over to the AI Flag Management menu, should you ever need to go there.
+<LI><B>Main Menu</B> Brings you back to the main menu.
+</UL>
+
+
+<H2>AI Flag Management</H2>
+<P>Every command on the AI Flag management menus is a toggle that will effect the currently selected waypoint. FrikBot 0.09 supported the door flag AI flag and no more (loading FBX waypoints in 0.09 is perfectly acceptable by the way, new flags will merely be ignored). The new flags have many varied and useful effects on the bots way of thinking and action he takes as he uses the waypoint. The best way to understand how to use a few of these is to study how the bot reacts to them, I will however attempt to explain here as much as I can.
+<UL>
+<LI><B>Door flag</B> This flag means the waypoint was spawned on top of a door. (Any type of door). If the door is not under the waypoint when the bot attempts to reach this waypoint, the bot will find the trigger for the door and activate it. Clever waypointers have also used this flag to force bots to trigger doors that do not seemingly block their path.
+
+<LI><B>Precision</B>This tells the bot it should attempt to be more precise around this waypoint since there is a potential for falling  or screwing up in some way. It will not attempt to dodge or charge an enemy under the influence of precision. The bot will walk slower and will only use movement keys if already pointing in the correct direction.
+
+<LI><B>Surface for Air</B> This flag forces the bot up for air just above this waypoint. He will swim up, catch a breath of fresh air and continue. <FONT COLOR="red">Do not place this on all your water waypoints.</FONT> The bot will go up for air when it senses it's about to drown on it's own. This flag is intended to tell the bot to go up for air before heading down long underwater hallways that it may drown in otherwise.
+
+<LI><B>Blind Mode</B> Blind mode is an incredibly useful AI flag. In short it means the bot must follow the waypoints blindly and avoid making it's own decisions about it's surroundings. The net result of this is the bot will completely ignore lava, will not jump over gaps, will not try to avoid walls it bumps into and will not deviate from following the waypoints for any reason.
+
+<LI><B>Jump</B> This waypoint merely tells the bot to squeeze the jump button upon reaching the waypoint. Another effect of this flag is to make the waypoint 'invisible' to the AI, it will never consider this waypoint as a location of an item or itself, so be careful when using this flag and make sure it's near other, normal waypoints.
+
+<LI><B>Directional</B> This flag will make a waypoint directional rather than 'positional'. The bot will travel in the direction of the waypoint until the direction to the waypoint has changed radically. This is useful where the bot has little control over his direction, such as in a wind tunnel.
+
+<LI><B>Super Jump</B>This flag tells the bot it needs to rocket jump upon reaching this waypoint. This flag also makes the waypoint 'invisible to the AI'. Remember the bot will rocket jump to every outbound link of the waypoint.
+
+<LI><B>Make Waypoint</B> Same command as the make waypoint on the Waypoint
+Management Menu. Here for convenience.
+
+<LI><B>AI Flags Pg. 2</B> This command brings you to the second page of the AI Flags menu, where even more flags are kept.
+
+<LI><B>Main Menu</B> Brings you back to the main menu.
+</UL>
+
+<H2>AI Flag Management Page 2</H2>
+<P>These are the less used AI Flags, though they are useful in some ways.
+<UL>
+<LI><B>Difficult</B> This flag marks the waypoint as being a long a more difficult route. As a result, the bot will place less priority toward this route when choosing it's shortest path. This will also devalue items on the other end lowering their relative priority. As such, this flag is useful for making the bot both no longer favor a certain route and no longer favor certain items.
+
+<LI><B>Wait for Plat</B> This flag instructs the bot to stand at this waypoint and wait for the nearby func_plat to reach it's bottom state before it continues. This is useful if the plat in question can have people 'wedged' underneath it, and the bot's enthusiastic charge to the next waypoint would get him stuck beneath it.
+
+<LI><B>Ride Train</B> This is a complicated flag that affects multiple behaviors and attempts to allow the bots to ride trains. The first behavior is the bot will wait before going to the flagged waypoint until a plat, door or train is underneath the waypoint. Upon reaching the waypoint the bot will not move as long as he's on top of the train, door or plat.
+
+<LI><B>Door flag no open</B> This is intended as a modifier to the classic door flag . When the bot encounters the a waypoint flagged with both door flag and door flag no open, the bot will not attempt to trigger the missing door beneath the waypoint, but instead will wait for the door to return itself. Additionally, when used alone this flag will prevent bots from opening doors as they usually do if one blocks their path.
+
+<LI><B>Ambush</B> This is not an officially supported waypoint. This flag will make the waypoint have a priority value, the bot will hunt the waypoint after getting the better items on the level. Upon reaching it, he will merely wait until he sees someone.
+
+<LI><B>Snipe</B> Operates just like Ambush, however the bots will not charge out and attack upon seeing an enemy. They will sit quietly, firing their weapon.
+
+<LI><B>Trace Test</B> This flag is meant for single player maps that 'mutate' into deathmatch maps with the use of the Not in Deathmatch spawnflag and func_dmonly entity. The waypoints themselves will traceline to all outgoing links during route calculation, and will only follow the link if the trace was clear. This can be used for some other things, such as triggerable func_walls, and (very) slow moving obstacles.
+
+<LI><B>AI Flags Pg. 1</B> This command brings you back to the first page of the AI Flags menu, where even more flags are kept.
+
+<LI><B>Main Menu</B> Brings you back to the main menu.
+</UL>
+
+<H2>Bot Management Menu</H2>
+<P>This menu allows you to control the FrikBots in unique ways to allow you to accurately test how the bot will behave as they pass waypoints.
+<UL>
+<LI><B>Add a test bot</B> This is the same as the impulse 100 command. It connects a new bot.
+
+<LI><B>Order Test Bot Here</B> Causes the test bot to come to your location. The bot will immediate head toward you, following the waypoints as he goes. This is the important command here.
+
+<LI><B>Remove Test Bot</B> This disconnects the bot (removes him from the server).
+This is the same as the impulse command 102. It is recommended that you remove
+all bots before dumping waypoints, as they may cause messages to appear that
+will ruin the dump info.
+
+<LI><B>Stop Test Bot</B> This causes the bot to stop whatever he is doing and
+stand still.
+
+<LI><B>Teleport Bot here</B> Instantly moves the bot to your currently selected waypoint.
+This can be useful in testing certain areas of the map, be careful not to be too
+close to the selected waypoint, or you may become stuck inside the bot. If you
+do, you can use the teleport and/or the noclip command to free yourself.
+
+<LI><B>Teleport to Way #</B> This is the same as the Main Menu's Teleport to Way # command. It is useful when dealing with bots, so it is here for convenience.
+
+<LI><B>Main Menu</B> Brings you back to the main menu.
+</UL>
+
+
+
+
+<H2>Waylist Management</H2>
+<P>This menu allows you to control the FrikBots in unique ways to allow you to accurately test how the bot will behave as they pass waypoints.
+<UL>
+<LI><B>Delete All Waypoints</B> Deletes all the waypoints on the level so you can start over.
+
+<LI><B>Dump Waypoints</B> This prints to the console all the waypoint data in the below selected format. Please read the bottom of this section for details about what to do with waypoint dump data.
+
+<LI><B>Check for Errors</B> Checks every waypoint for "duds". These are waypoints 
+with no outbound links. A waypoint should always have at least on outbound link
+incase a bot reaches the waypoint, even if it is at a dead end. If a situation
+is inescapable, remove the dud waypoint for improved performance with the bot.
+
+<LI><B>Save Waypoints</B> This command is *still* not available in this version.
+
+<LI><B>Dynamic Mode</B> This toggle turns on the dynamic waypointing mod present in non waypointed maps. Dynamic mode is terrible and can ruin waypoint sets. I suggest you do not use it for any reason.
+
+<LI><B>Dynamic Link</B> This command turns on only the part of Dynamic mode associated with linking together waypoints. This can be time saving as the way in which the dynamic link functionality works is quite predictable.
+
+<LI><B>WAY output</B> This command selects .way file output for the Dump command. Way files are recommended for distribution.
+
+<LI><B>QuakeC output</B> This command selects .qc file output for the Dump command. QuakeC files are useful for running FrikBot in QW, and are an ideal way to package waypoints within mods.
+
+<LI><B>BSP ents output</B> This command selects .ent-like output for the Dump command, as FrikBot chooses not to assume the starting condition of every other map entity it ONLY prints the waypoint entities. You must add the ent data it provides onto the map's entity list. Details for doing so can be found in the next section.
+<LI><B>Main Menu</B> Brings you back to the main menu.
+</UL>
+
+<H2>Using Waypoint Dumps</H2>
+
+<P>In order to use the waypoint editor effectively, you must save your waypoints. The way you do this is to make sure you ran quake with the command line option -condebug. Once done tweaking or creating the waypoints, use the Waylist's Dump command to print out all the data on the console. Quit the game. In your frikbot directory you'll find the file qconsole.log. Scroll through it until you find the comments flagging the top and bottom of the dump, take all the data and do the appropriate action: 
+
+<UL>
+<LI>If it's .way file data, place it all in a .way file in your maps folder. Observer the comments to split the file if it is extremely long
+<LI>If this is .qc file data, place the entire dump into a .qc file then include this in the progs.src about your bot.qc line. Open bot.qc and add the line map_mapname(); into bot_map_load. See the Add-on waypoints section for further details.
+<LI>If this is BSP data, you'll need to obtain the original .ent data for the level. An excellent tool for this job is Maddes' bspentex, you can find it on <A HREF="http://www.inside3d.com/qip/">his site</A>. Another great tool is QuArK, you can open the BSP in quark, find the entity list (in plane text, scroll to the bottom and paste the entity patch data FrikBot dumped.
+</UL>
+
+<P>If you have any further questions on this topic, email me. See the Author section for details.
+
+<H2>Shortcuts</H2>
+<P>Shortcuts are a rapid but advanced way to use the editor. To use them, you need to know the formula: It's menu # times 16 plus the menu option. The menus were covered in this file in numerical order. The main menu is the first menu, 1 * 16, toggle noclip mode is menu option 6, so 16 + 6 is 22. Now that you have the code number for the command, you use it as such:
+
+<blockquote>bind n "saved2 22; impulse 104"</blockquote>
+
+<P>This will allow you to toggle noclip mode in the editor from any menu by merely pressing the N key. This is merely a time saving tool, if you don't understand how to use it, don't worry.
+
+<P><P><P>
+</div>
+
+</TR></TD>
+
+</BODY>
+</HTML>

@@ -1,0 +1,70 @@
+Start map
+
+Copyright (C) 2000  Seth Galbraith
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+Seth Galbraith
+"The Serpent Lord"
+http://www.planetquake.com/simitar
+sgalbrai@krl.org
+
+
+This map was created using:
+
+Quake Army Knife - http://www.planetquake.com/quark
+IKLITE - http://www.planetquake.com/ikq
+Textures by Seth Galbraith and Ulrich Galbraith
+
+
+6-14-00
+
+First release of this map.
+
+8-17-00
+
+Greg Mapes:
+
+Fixed the start map so it wouldn't crash by not existing for QuakeWorld.
+Just modified the the map by placing another trigger_hurt on the bottom.
+Trust me, I made the void maps. I know what I'm talking about.
+Plus I added a specail toy in it if you do want to give it a try for deathmatch! :-)
+
+10-4-00
+
+Seth Galbraith:
+
+Added a new outdoor area and difficulty selection triggers
+
+4-20-01
+
+Ulrich Galbraith:
+
+Added single player entities: more weapons, zombies, changelevel triggers, secrets
+
+5-4-01
+
+Seth Galbraith
+
+Changed Nightmare secret message and removed not-in-deathmatch flag from zombies
+(this allows them to appear in QW if you have a QW monster progs.dat)
+Fixed texture alignment on non-tiling grass/rock blend textures in outside area
+
+7-8-04
+
+Greg Mapes
+
+Added some different deathmatch monsters for deathmatch 7.

@@ -1,0 +1,35 @@
+house - House of Chaos
+
+Copyright (C) 2003  Armin Rigo
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-Armin Rigo
+
+Textures by Seth Galbraith 
+And by Ulrich Galbraith (ulrich@squawkrpg.net)
+Additional textures by Greg Mapes (mapes@squawkrpg.net)
+
+
+9-15-03
+First Release
+
+I Retextured the map and made some MINOR changes to the item placement so they wouldn't stick in walls/etc...
+
+Greg Mapes
+
+7-8-03
+
+Added some demon dolls for monster deathmatch 7.

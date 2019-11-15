@@ -1,0 +1,30 @@
+FBI/Terrorist
+Copyright (C) 2000  Phil Heil aka "Cyrus"
+
+You can do whatever you want with any of these models, as long as you give me credit for making them. I'd also like to see what changes you've made to the models, but I won't require you to do this.
+
+E-Mail: dot_mr@hotmail.com
+ICQ:    29164064
+
+The FBI/Terrorist is my best model to date, and was made for the FBI TC at http://www.mdqnet.net/ , which, as far as I know, is still being worked on. The model has an FBI skin an a Terrorist skin, and includes all of the regular player animations and then some. This is probably going to be my last Quake 1 model since I'm hoping to move on to creating models for more recent games like Quake 3 or Half-Life.
+
+CHANGES:
+
+10-25-00
+Seth Galbraith (sgalbrai@krl.org):
+created simplified version that replaces Quake "grunt" (grunt.mdl)
+(original model: http://www.planetquake.com/gg/fmp/cyrus/soldier.html)
+  * removed the following animation:
+   - frames 2,3,5,6,8,9,11,12,14,15,17,18,20,21,23 and 24 from stand
+   - frames 3,6,9 and 12 from run
+   - frames 4,6, and 10 from reload
+   - frames 8,10 and 12 from arm_death
+   - frames 10 and 12 from leg_death
+   - other deaths, all crouching, base, climb, holster, and use
+ * added some stand frames to the following animations:
+   - 8 frames at the end of leg_pain
+   - 7 frames at the end of chest_pain
+   - 3 frames at the beginning of fire
+ * duplicated every walk frame
+ * reversed the order of the skins
+ * created head model (h_grunt.mdl)
