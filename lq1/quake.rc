@@ -1,0 +1,14 @@
+// default config
+exec default.cfg
+
+// modifed config 
+exec config.cfg
+
+// usermade autoexec
+exec autoexec.cfg
+
+//commands
+stuffcmds
+
+// demos
+startdemos demo1 demo2 demo3

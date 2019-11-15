@@ -1,0 +1,65 @@
+Title    : version 1.06 quake-c (clean)
+Filename : v106qc.zip
+Version  : 1.06
+Date     : 8.20.11
+Compiler : Cataboligne
+Email    : quakec@cataboligne.org
+Web site : http://www.moddb.com/members/invadercat
+Download : http://www.moddb.com/groups/qc/downloads
+
+Engine
+------
+Quake - (should run under any engine that runs quake one)
+
+Construction
+------------
+Base          : v1.06 quake-c
+Tools         : frikqcc 2.6, scite 1.71
+
+Credit
+------
+iD software, John Carmack '96
+
+What is this?
+-------------
+Original quake one 1.06 .qc files with all compiler errors fixed.
+Note: there are a few operating fixes that have not been applied - this is vanilla .qc!
+
+
+compile output below:
+
+--------------- frikqcc v2.6 ----------------
+defs.qc
+subs.qc
+fight.qc
+ai.qc
+combat.qc
+items.qc
+weapons.qc
+world.qc
+client.qc
+player.qc
+monsters.qc
+doors.qc
+buttons.qc
+triggers.qc
+plats.qc
+misc.qc
+ogre.qc
+demon.qc
+shambler.qc
+knight.qc
+soldier.qc
+wizard.qc
+dog.qc
+zombie.qc
+boss.qc
+tarbaby.qc
+hknight.qc
+fish.qc
+shalrath.qc
+enforcer.qc
+oldone.qc
+ 
+../progs.dat - 0 error(s), 0 warning(s)
+
