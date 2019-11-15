@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+# SPDX-License-Identifier: BSD-3-Clause
+
+import os
+import sys
+
+# Documentation files included with distributions.
+
+GAME_NAME = sys.argv[1]
+FILES = sys.argv[2:]
+
+# Run a command, displaying it before executing it.
+
+
+def run_command(command):
+    print("> " + command)
+    os.system(command)
+
+
+# Find the version to build:
+
+version = os.getenv("VERSION")
+
+if version is None:
+    sys.stderr.write("Version not specified for release\n")
+    sys.exit(1)
+if version[0] is "v":
+    # Strip the leading "v" from versioning
+    version = version[1:]
+
+path = os.path.dirname(FILES[0])
+basename = os.path.basename(FILES[0])
+
+base_dir = GAME_NAME + "-" + version
+full_path = path + "/" + base_dir
+
+# Create directory and add files
+
+run_command("mkdir {}".format(full_path))
+for file in FILES:
+    run_command("cp {} {}".format(file, full_path))
+
+orig_dir = os.getcwd()
+
+os.chdir(path)
+run_command("rm -f {}.zip".format(base_dir))
+run_command("zip -X {0}.zip {0} {0}/*".format(base_dir))
+run_command("rm -rf {}".format(base_dir))
+os.chdir(orig_dir)
