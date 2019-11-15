@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Model Property Editor</title>
+<base target="main">
+<meta name="FORMATTER" content="Microsoft FrontPage 2.0">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF"
+vlink="#C0C0C0">
+
+<h1><font color="#FF0000" face="Arial">Model Property Editor</font></h1>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The model property
+editor is used for editing global properties of the model.</font></p>
+
+<p><font size="2" face="Arial"><!--webbot bot="ImageMap"
+rectangle=" (5,284) (297, 455)  #Flags"
+rectangle=" (7,243) (296, 285)  #Sync+Type"
+rectangle=" (152,147) (296, 243)  #Eye+Position"
+rectangle=" (7,146) (152, 243)  #Skin+Size"
+rectangle=" (5,80) (297, 141)  #Bounds"
+rectangle=" (7,25) (297, 87)  #Model+Contents"
+src="modelpropeditor.gif" border="0" width="388" height="467"
+startspan --><MAP NAME="FrontPageMap"><AREA SHAPE="RECT" COORDS="5, 284, 297, 455" HREF="#Flags"><AREA SHAPE="RECT" COORDS="7, 243, 296, 285" HREF="#Sync Type"><AREA SHAPE="RECT" COORDS="152, 147, 296, 243" HREF="#Eye Position"><AREA SHAPE="RECT" COORDS="7, 146, 152, 243" HREF="#Skin Size"><AREA SHAPE="RECT" COORDS="5, 80, 297, 141" HREF="#Bounds"><AREA SHAPE="RECT" COORDS="7, 25, 297, 87" HREF="#Model Contents"></MAP><a href="_vti_bin/shtml.exe/modelpropeditor.htm/map"><img
+src="modelpropeditor.gif" width="388" ismap
+usemap="#FrontPageMap" height="467" border="0"></a><!--webbot
+bot="ImageMap" endspan i-checksum="14669" --></font></p>
+
+<h3><a name="Model Contents"><font face="Arial">Model Contents</font></a></h3>
+
+<p><font size="2" face="Arial">Contains totals for the elements
+of your model.</font></p>
+
+<h3><a name="Bounds"><font face="Arial">Bounds</font></a></h3>
+
+<p><font size="2" face="Arial">The bounds shows you the extents
+of the models bounding box and the upper and lower bounds of the
+bounding box. </font></p>
+
+<p><font size="2" face="Arial">If you want to know how big your
+bounding box is for a single (the current) frame, then you can
+take a look at the values under First Frame. Under&nbsp;All
+Frames you find how much your bounding box moves through space
+and varies in size in all the frames.</font></p>
+
+<h3><a name="Skin Size"><font face="Arial">Skin Size</font></a></h3>
+
+<p><font size="2" face="Arial">The skin size is something that
+you select for all skins. That's why you find it in this editor.
+When you change the skin size here and close the editor with OK,
+all skins will be resized to match this. Also the skin vertices
+will be scaled to match the new skin size. This keeps the skin
+properly mapped on the model.</font></p>
+
+<p><font size="2" face="Arial">The Quake engine limits the height
+of the model to 200 pixels, but doesn't limit the width however.</font></p>
+
+<p><font size="2" face="Arial">qME limits the skin height and
+widht to 512 and 3072 respectively. Note that this will allow you
+to create skins that are bigger than the Quake engine can handle.
+Try as much as possible to keep the skin size down.</font></p>
+
+<h3><a name="Eye Position"><font face="Arial">Eye Position</font></a></h3>
+
+<p><font size="2" face="Arial">I am actually not quite sure what
+the eye position does. What I have observed is that in all of
+id's original monsters, the Z position is choosen in such a way
+that the monster's feet are at that height.</font></p>
+
+<p><font size="2" face="Arial">I use the Z component of the eye
+position to show the ground plane. This way all of id's monsters
+automatically &quot;stand&quot; exactly on the ground plane when
+you load them. </font></p>
+
+<p><font size="2" face="Arial">When I change the eye-position I
+see nothing happening in Quake, so I am not sure what the eye
+position does.</font></p>
+
+<h3><a name="Sync Type"><font face="Arial">Sync Type</font></a></h3>
+
+<p><font size="2" face="Arial">Another fuzzy model attribute.
+This value can be either sync (0) or rand (1). This means
+something like synchronized and random ?</font></p>
+
+<h3><a name="Flags"><font face="Arial">Flags</font></a></h3>
+
+<p><font size="2" face="Arial">The flags control what effects are
+automatically shown for your model.</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">Rotate : client side
+        rotation.</font></li>
+    <li><font size="2" face="Arial">Rocket Smoke Trail : leaves a
+        long grey and yellow smoke trail that rises.</font></li>
+    <li><font size="2" face="Arial">Grenade Smoke Trail : leaves
+        a long grey smoke trail that rises.</font></li>
+    <li><font size="2" face="Arial">Gib Long Blood Trail : leaves
+        a long falling blood trail.</font></li>
+    <li><font size="2" face="Arial">Gib Short Blood Trail :
+        leaves a short falling blood trail.</font></li>
+    <li><font size="2" face="Arial">Wizard Green Tracer : leaves
+        a medium length green trail.</font></li>
+    <li><font size="2" face="Arial">Hellknight Yellow Tracer :
+        leaves a medium length yellow and brown trail.</font></li>
+    <li><font size="2" face="Arial">Vore Purple Tracer : leaves a
+        short purple smoke trail that doesn't rise.</font></li>
+</ul>
+</body>
+</html>

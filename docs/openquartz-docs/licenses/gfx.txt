@@ -1,0 +1,35 @@
+Menu and Status Bar Graphics
+
+Copyright (C) 2000  Seth Galbraith
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+Seth Galbraith
+"The Serpent Lord"
+http://www.planetquake.com/simitar
+sgalbrai@krl.org
+
+7-5-00
+
+First Release
+
+8-15-00
+
+I made the logo narrower so it isn't overlapped by the menu titles
+
+8-16-00
+
+Added pop.lmp, end.bin, and end2.bin

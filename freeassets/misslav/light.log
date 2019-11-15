@@ -1,0 +1,36 @@
+---- light / ericw-tools  ----
+Raytracing backend: Embree
+running with 8 threads
+LoadBSPFile: 'b_bh100.bsp'
+BSP is version 29
+SetQdirFromPath: no "maps" in '/home/lavender/b_bh100.bsp'--- ConvertTextures ---
+--- LoadEntities ---
+55 entities read, 54 are lights.
+--- OptionsSummary ---
+Embree_TraceInit: Embree version: 2.17.7
+Embree_TraceInit:
+	0 sky faces
+	532 solid faces
+	0 filtered faces
+	0 shadow-casting skip faces
+SetupLights: 54 initial lights
+SetupLights: 54 after surface lights
+SetupLights: 54 after jittering
+--- EstimateLightVisibility ---
+0....1....2....3....4....5....6....7....8....9....
+Final count: 54 lights, 0 suns in use.
+--- LightWorld ---
+--- LightThread ---
+0....1....2....3....4....5....6....7....8....9....
+Lighting Completed.
+
+lightdatasize: 1584
+0 switchable light styles (32 max)
+Writing b_bh100.bsp as BSP version 29
+0.026 seconds elapsed
+
+stats:
+12.974815 lights tested, 3.724444 hits per sample point
+0.000000 surface lights tested, 0.000000 hits per sample point
+0.000000 bounce lights tested, 0.000000 hits per sample point
+0 empty lightmaps

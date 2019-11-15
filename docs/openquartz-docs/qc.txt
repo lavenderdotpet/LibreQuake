@@ -1,0 +1,61 @@
+June 30, 2000
+
+Upgraded GPL progs version 1.01 to version 1.06
+
+-Mapes
+
+
+July 12, 2000
+
+Basically I just modified the messages in the game to sound cool and not
+lame for GPL's supiorier weapons.  Like the glocks!  Anyways, I changed
+the messages that are printed to the screen in the item.qc and the death
+messages/all the rest of it in the client.qc
+
+I DID make one other change!  I modified the code slightly so when either
+the Mac-10 or the rocket launcher use a attacker, target string rather
+then the normal way. 
+
+Take the progs.dat and place it in your root folder of your GPL folder.
+In other words. place it next to your pak0.pak.
+
+-Mapes
+
+
+October 1, 2000
+
+Started applying Mapes's changes to QuakeWorld:
+
+qc_qw/client.qc
+Changed the powerup run out messages in CheckPowerUps
+Changed the ClientObituary messages in ClientObituary
+qc_qw/items.qc
+Replaced weapon/ammo/artifact names throughout this file
+
+Changed weapon names in DropBackpack in items.qc.
+(QuakeWorld and normal Quake)
+
+-Seth Galbraith (sgalbrai@krl.org)
+
+
+May 3, 2001
+
+Added merged QC folder (qc_merge) by Alexander Malmberg - requires new qcc
+This does not have the new Open Quartz messages which match the Open Quartz graphics
+Added progs.c files to compile old QC (qc folder and qc_qw folder) with new qcc
+
+-Seth Galbraith (sgalbrai@krl.org)
+
+July 7, 2004
+
+Added FrikaC's bots and also added my own monster deathmatch code inspired by LordHavoc's monster deathmatch in his DPmod.
+
+-Mapes
+
+july 15, 2004
+
+Added monster deathmatch, (deathmatch 7) where monsters attack players and will respawn when killed.
+
+Tweaked bot code for Monster deathmatch.
+
+-Mapes

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="AUTHOR" content="Rene Post">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Frequently Asked Question</title>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF"
+vlink="#C0C0C0">
+
+<h1><font color="#FF0000" face="Arial">Frequently Asked Questions</font></h1>
+
+<ol>
+    <li><a href="#reconstruct all objects"><font size="2"
+        face="Arial">Meaning of reconstruct all objects.</font></a></li>
+    <li><a href="#flood align triangles"><font size="2"
+        face="Arial">Function of the &quot;flood align
+        triangles&quot; operation.</font></a></li>
+    <li><a href="#size of models explode"><font size="2"
+        face="Arial">Size of models explode after editing them in
+        qME</font></a></li>
+    <li><a href="#mapping skins like id"><font size="2"
+        face="Arial">Mapping the skin onto the model like id
+        does.</font></a></li>
+    <li><a href="#imported frame imports wrong"><font size="2"
+        face="Arial">An imported frame will sometimes have
+        completely messed-up triangles</font></a></li>
+    <li><a href="#using different palettes"><font size="2"
+        face="Arial">Using different palettes</font></a></li>
+    <li><a href="#problems GL-Quake"><font size="2" face="Arial">Problems
+        using qME with GL-Quake</font></a></li>
+    <li><a href="#slow in highcolor"><font size="2" face="Arial">qME
+        is slow in high color modes</font></a></li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p><a name="reconstruct all objects"><font size="4" face="Arial">Q</font><font
+size="2" face="Arial"> What does reconstruct all objects mean ? </font></a></p>
+
+<p><font size="4" face="Arial">A</font><font size="2"
+face="Arial"> What it does is throw away all the objects in your
+model. It then scans all triangles in the model and puts
+triangles that are attached to each other into the same object.
+So every connected set of triangles becomes one single object.</font></p>
+
+<p>&nbsp;</p>
+
+<p><a name="flood align triangles"><font size="4" face="Arial">Q</font><font
+size="4"> </font><font size="2" face="Arial">What is the function
+of the &quot;flood align triangles&quot; operation ?</font></a></p>
+
+<p><font size="4" face="Arial">A </font><font size="2"
+face="Arial">Flood align is used when you import a mesh from a
+modeling program. Sometimes the triangles in such a mesh are not
+all facing in the right direction. By using flood align you can
+align (make it face the same way) all triangles in an object to
+the triangle you selected.</font></p>
+
+<p>&nbsp;</p>
+
+<p><a name="size of models explode"><font size="4" face="Arial">Q</font><font
+size="4"> </font><font size="2" face="Arial">I am editing some of
+the MDLfiles, changing some artwork, then, in QMe, the </font></a><font
+size="2" face="Arial">lightversion i add 2 objects and BWAM, from
+around 300Kb it jumps to 1.7MB!! what the hell happened here? did
+i do something wrong, i only added 2 spheres and resized them a
+bit. </font></p>
+
+<p><font size="4" face="Arial">A </font><font size="2"
+face="Arial">qME will add a lot of information to the end of an
+MDL file. To get rid of it use the &quot;Save as Quake
+model&quot; opetation from the file menu. This will put your
+model on a big diet. You will loose the qME specific data, like
+the object hierarchy, joints and skin names though.</font></p>
+
+<p>&nbsp;</p>
+
+<p><a name="mapping skins like id"><font size="4" face="Arial">Q </font><font
+size="2" face="Arial">I have been having trouble making a skin
+for my model. When I first put the model </font></a><font
+size="2" face="Arial">together, the skin is just pieces of the
+model lined up next to each other. I was wondering how it would
+be possible to make the skin just like the id ones - just a front
+and back picture - and to make the skin taller, so more can fit
+in.</font></p>
+
+<p><font size="4" face="Arial">A </font><font size="2"
+face="Arial">With a lot of patience and the &quot;recalculate
+skin vertices&quot; button you can get the result you want. Also
+using the model properties editor you can set the skin size.</font></p>
+
+<p>&nbsp;</p>
+
+<p><a name="imported frame imports wrong"><font size="4"
+face="Arial">Q </font><font size="2" face="Arial">Sometimes when
+I import a frame from a file, the frame imports wrong. Triangles </font></a><font
+size="2" face="Arial">are completely messed up.</font></p>
+
+<p><font size="4" face="Arial">A </font><font size="2"
+face="Arial">[The following answer is from Brad
+&quot;Technomage&quot; Herman </font><a
+href="http://www.voicenet.com/~techno/"><font size="2"
+face="Arial">(</font><font color="#FFFFFF" size="2" face="Arial"><u>http://www.voicenet.com/~techno/</u></font><font
+size="2" face="Arial">)</font></a><font size="2" face="Arial">
+who does some amazing modeling with Lightwave and uses qME for
+importing.]</font></p>
+
+<p><font size="2" face="Arial">I know this problem well, I get it
+all the time, here is what you must do with lightwave. You must
+have all seperate objects loaded in the same order. In other
+words, If you are loading the objects up as sperate parts in
+Lightwave's Modeler, and saveing them, you must always load them
+in the same order that you did for the base frame, or you get
+mangeled. </font></p>
+
+<p><font size="2" face="Arial">I recently tried to repostion the
+old player model in Lightwave, when i reloaded him into Qme, he
+was totaly mangeld. It is very anyoing, I have gotten around it
+with a great plugin for Lightwave Called Load From Scene at </font><a
+href="http://www.cadvision.com/ewertb/LoadFromScene.htm"><font
+color="#0000FF" size="2" face="Arial"><u>http://www.cadvision.com/ewertb/LoadFromScene.htm</u></font></a><font
+size="2" face="Arial"> Its only $12 U.S. It lets me animate in
+Lightwave and then load each frame into modeler, then save them,
+it loads up the objects in the same order each time so they can
+be morhphed in Lightwave or in my case loaded corectly in Qme.
+The only problem is it does not read the data from bones, so you
+have to animate in seperate objects. </font></p>
+
+<p><font size="2" face="Arial">Your program [qME] rely's on
+moving the points in each frame, so when a model is loaded it may
+look the same but the points are in a different order, and your
+program [qME] attaches them to the polys set in the base frame.
+so while all the points look ok; the polys are attached to the
+wrong points. So your main problem is that people are changing
+the point order on your program, and its handeling it the best it
+can. Hope there is a fix for this (maybe take the poly data from
+each frame?) but I dont know. </font></p>
+
+<p>&nbsp;</p>
+
+<p><a name="using different palettes"><font size="4" face="Arial">Q</font><font
+size="2" face="Arial"> I loaded up my TC models with the new skin
+and they are all messed up well any </font></a><font size="2"
+face="Arial">way I figured it out it is that we are not using the
+quake pallette so could you add a pallette import for the TC </font></p>
+
+<p><font size="4" face="Arial">A</font><font size="2"
+face="Arial"> Put the palette.lmp and colormap.lmp you want to
+use in the <strong>same</strong> directory as <strong>qme.exe</strong>
+and these will be used instead of the original Quake palette. To
+quickly switch between palettes, create a few copies of the
+qme.exe in different base directories and put palette and
+colormap files into these directories. Now starting a specific
+qme.exe will load it with the correct palette.</font></p>
+
+<p>&nbsp;</p>
+
+<p><a name="problems GL-Quake"><font size="4" face="Arial">Q<strong>
+</strong></font><font size="2" face="Arial">We made some
+weapon-models with qME v3.0 and have problems using them in
+GL-Quake</font></a><font size="2" face="Arial"> because Quake
+doesn't display them properly. So we want to know which
+model-editor is the best to use for this ? (We've also tried
+MeDLe and Advenced ModelED but they're c**p.)</font></p>
+
+<p><font size="4" face="Arial">A </font><font size="2"
+face="Arial">I asked Bubbah, because I played Malice in GL-Quake
+and the models looked fine, (fantastic is a better word for it).
+It seems GL-Quake creates meshes for models when they are loaded
+for the first time. If you later change the models, these meshes
+no longer match the new models. </font></p>
+
+<p><font size="2" face="Arial">To solve this problem, delete the
+meshes generated by GL-Quake. You can find these meshes for quake
+models in the directory &quot;c:\quake\id1\glquake&quot; or when
+you play a different game, let's say Malice in
+&quot;c:\quake\malice\glquake\&quot;.</font></p>
+
+<p><font size="2" face="Arial">Another problems with earlier 0.95
+version of GL-Quake seems to be that client side skin animations
+doesn't work. Now there were no client side skin animations in
+Quake itself, but some TCs use them. Anyway, the upcoming 3.1
+release of qME will have full support for creating client side
+skin animations. I implemented a few weeks ago.</font></p>
+
+<p>&nbsp;</p>
+
+<p><font size="4" face="Arial">Q </font><a
+name="slow in highcolor"><font size="2" face="Arial">qME is very
+slow on my 166mhz Pentium in high color mode</font></a><font
+size="2" face="Arial">. What can I do about it ?</font></p>
+
+<p><font size="4" face="Arial">A</font><font size="2"
+face="Arial"> The biggest time consumer is the copying of the
+rendered image to the display. You can get a dramatic speed
+increase by setting the colordepth to 256 colors. qME has been
+optimized to run in 256 color mode.</font></p>
+</body>
+</html>

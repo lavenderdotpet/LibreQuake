@@ -1,0 +1,65 @@
+---- qbsp / ericw-tools  ----
+Input file: b_bh25.map
+Output file: b_bh25.bsp
+
+---- LoadMapFile ----
+*** WARNING 05: No info_player_start entity in level
+*** WARNING 06: No info_player_deathmatch entities in level
+          238 faces
+           35 brushes
+            8 entities
+            5 unique texnames
+           69 texinfo
+
+Opened WAD: /home/lavender/librequartz/FreeAssets/misslav/bspmodels/25hp.wad
+Processing hull 0...
+---- Brush_LoadEntity ----
+           35 brushes
+           68 planes
+---- CSGFaces ----
+          238 brushfaces
+          215 csgfaces
+          197 mergedfaces
+---- SolidBSP ----
+          415 split nodes
+          158 solid leafs
+          258 empty leafs
+            0 water leafs
+            0 detail leafs
+            0 detail illusionary leafs
+            0 detail fence leafs
+            0 illusionary visblocker leafs
+          540 leaffaces
+          507 nodefaces
+---- Portalize ----
+          258 vis leafs
+          258 vis clusters
+          645 vis portals
+---- FillOutside ----
+*** WARNING 10: Reached occupant at (-24 16 8), no filling performed.
+Leak file written to b_bh25.pts
+---- MakeFaceEdges ----
+---- GrowRegions ----
+Processing hull 1...
+*** WARNING 10: Reached occupant at (-24 16 8), no filling performed.
+Processing hull 2...
+*** WARNING 10: Reached occupant at (16 16 40), no filling performed.
+---- WriteBSPFile ----
+Wrote b_bh25.bsp
+          120 planes             2400
+          579 vertexes           6948
+          415 nodes              9960
+           47 texinfo            1880
+          507 faces             10140
+           54 clipnodes           432
+          259 leafs              7252
+          540 marksurfaces       1080
+         2016 surfedges          8064
+         1222 edges              4888
+            5 textures          31164
+              lightdata             0
+              visdata               0
+              entdata             552
+
+0.021 seconds elapsed
+Peak memory usage: 1805016 (1.7M)

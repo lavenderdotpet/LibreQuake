@@ -1,0 +1,56 @@
+render 16 16 plasmamark_%04d.tga
+frames 0 10 0 10
+particles 1000
+passes 16
+camera 0 0 -64
+
+area 0 0 0 0 12
+velocity 0 0 0 0 35
+size 0 10
+life 0 1
+color1 256 256 256 1024
+color2 256 256 256 512
+
+seed 1234
+
+time 0
+clear
+spawn 50
+
+time 1
+clear
+spawn 50
+
+time 2
+clear
+spawn 50
+
+time 3
+clear
+spawn 50
+
+time 4
+clear
+spawn 50
+
+time 5
+clear
+spawn 50
+
+time 6
+clear
+spawn 50
+
+time 7
+clear
+spawn 50
+
+time 8
+clear
+spawn 50
+
+time 9
+clear
+spawn 50
+
+time 100

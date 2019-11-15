@@ -1,0 +1,253 @@
+<html>
+
+<head><title>Open Quartz - To-Do List</title></head>
+
+<body>
+
+[
+<a href="#1">QuakeC</a> |
+<a href="#2">Sounds</a> |
+<a href="#3">Sprites</a> |
+<a href="#4">Maps</a> |
+<a href="#5">Models</a> |
+<a href="#6">Utilities</a> |
+]
+
+<a name="1"></a><h1>[1] QuakeC</h1>
+
+<p>[1.1] The simplest "TO DO" for QuakeC is changing the item and death
+messages to reflect the differences between the Open Quartz models and
+regular Quake models.  Is there any reason to keep the old messages
+around? Perhaps as a #define?  Removing them should do no harm;  They
+could be put back in later if necessary.
+
+See items.qc and client.qc in the pak0/qc and pak0/qc_qw folders
+for the item and death messages that Mapes and I came up with.
+
+<p>[1.2] The Quake-C also needs more "merge" work - lots of clean-up
+involving all the #ifdef QUAKEWORLD and so on.  It currently works,
+but could be a lot cleaner and less redundant.
+
+I assume that it's also okay to generally "clean up" files - removing
+unused local variables, superfluous returns at the end of functions,
+consistently indenting (especially local variable declarations and
+comments within functions which are often unindented in the QC.)
+
+<p>[1.3] Merging monsters into QuakeWorld does not seem like a difficult
+project  (See <a href="http://www.geocrawler.com/archives/3/856/2001/5/100/5681798/">this
+post</a>)
+
+We should probably make this a #define QW_MONSTERS or something like that,
+because it does make the progs.dat noticeably larger. Alternatively we
+could make a #define MONSTERS option that applies to normal Quake as well
+as QuakeWorld.
+
+<p>[1.4] We should consider some enhancements to the Quake-C like new
+entities and new flexibility for existing entities.  For example, a
+typical entity spawn function looks like this:
+
+<pre>
+void() foo =
+{
+	precache_model ("progs/foo.mdl");
+	setmodel (self, "progs/foo.mdl");
+	...
+};
+</pre>
+
+could be re-written for flexibility like this:
+
+<pre>
+void() foo =
+{
+	if (!self.model) self.model = "progs/foo.mdl");
+	precache_model (self.model);
+	setmodel (self, self.model);
+	...
+};
+</pre>
+
+
+<a name="2"></a><h1>[2] Sounds</h1>
+
+<p>[2.1] The two ambient sounds we have (ambience/water1.wav and
+ambience/wind2.wav) do not have a "cue list" entry that is required
+to make them loop.  Apparently this requires special software, so
+somebody with decent sound editing software will have to to do this.
+
+(Alex Malmberg &lt;mailto:malmberg@malmberg.org&gt; may have source for a quick
+and dirty utility he wrote to do this.)
+
+<p>[2.2] We need 13 sounds remaining in the "always needed" category:
+
+<pre>
+demon/dland2.wav     (thud sound when monsters land)
+wizard/hit.wav       (acid splat on wall)
+weapons/guncock.wav  (shotgun - tricky name!)
+weapons/rocket1i.wav (nailgun - tricky name!)
+weapons/spike2.wav   (super nailgun)
+weapons/ric1.wav     (ricochet)
+weapons/ric2.wav     (ricochet)
+weapons/ric3.wav     (ricochet)
+weapons/tink1.wav    (they try to trick us, just another ricochet :-)
+weapons/grenade.wav  (grenade launcher)
+weapons/sgun1.wav    (rocket launcher - tricky name!)
+weapons/lhit.wav     (lightning hit)
+weapons/lstart.wav   (lightning gun)
+</pre>
+
+<p>[2.3] We may need up to 55 sounds from the "needed by some maps" categories
+(ambience, buttons, doors, enforcer/enfire.wav, enforcer/enfstop.wav,
+items, misc and plats) A complete list can be found <a href="oqsounds.html">in Open Quartz CVS</a>
+or at <a href="http://www.planetquake.com/gg/oqsounds.html">http://www.planetquake.com/gg/oqsounds.html</a>
+
+<p>[2.4] We have no monster sounds.  We do have models for replacing the
+dog ("beetagator"), enforcer ("rackne") knight ("goat demon"), soldier
+("FBI/terrorist"), wizard ("pterascragg") and zombie ("zombie tree").
+
+All together these monsters use 41 sounds we don't have yet.  If we get
+replacements for the other monsters, they could use up to 51 more sounds.
+
+
+<a name="3"></a><h1>[3] Sprites</h1>
+
+<p>There are three sprites in Open Quartz - bubbles, explosions, and light
+globes.  They would all look better with higher resolution 32 bit color
+versions.  The bubbles also need to be smaller.  They should be named like
+the sprites but with an underscore, frame number and in .tga format:
+
+<pre>
+light globe:
+
+    s_light_0.tga
+
+air bubble:
+
+    s_bubble_0.tga (bigger bubble)
+    s_bubble_1.tga (smaller bubble)
+
+explosion:
+
+    s_explod_0.tga
+    s_explod_1.tga
+    s_explod_2.tga
+    s_explod_3.tga
+    s_explod_4.tga
+    s_explod_5.tga
+</pre>
+
+
+<a name="4"></a><h1>[4] Maps</h1>
+
+<p>[4.1] Aardappel contributed six maps which need some textures replaced
+(dm2ish, dm3ish, dm4ish, e1m2ish, q3dm6ish, and ukpak4.)
+
+To do this quickly, we should replace the textures in the .bsp file with
+a program like QuArK or Adquedit.  Of course the first step is to look
+into the files and list which textures need replacing.  The second step
+is to determine what free textures would make good replacements.
+
+In the long run we'll want to be able to recompile these maps without any
+weird bugs.  That might take a little work since these maps are not saved
+with full floating point precision.
+
+<p>[4.2] Aardappel's maps will give us a much better selection of non-void DM
+levels, but we will still have very little single player content.  Single
+player may not be the most important part of the game, but it is important
+for first impressions.
+
+A quick way to add single player (SP) levels might be to add SP content to
+some DM levels, but most DM levels won't make very good SP levels.
+
+If you have any incomplete SP levels, you might want to touch them up (or
+leave them as-is if you don't have time for that) and donate them so we
+can work them into Open Quartz.
+
+<p>[4.3] Maps are probably the easiest way to expand and improve the game, so
+we need to do whatever we can to make mapping for Open Quartz easy.  What
+can we do in this area?  We might want to put out a "developer kit" with
+free textures and perhaps special "add-ons" for some editors.
+
+Open Quartz mapping is very much like Quake mapping - the entities are
+currently exactly the same, but the textures and executables are different.
+Some editors might have trouble figuring out where to put OQ maps, or like
+QuArK they might look for id's textures.
+
+<p>[4.4] Some engines (like Darkplaces) can use 32 bit .tga format versions
+of textures, so we might be able to make some maps look better by using
+textures that have more colors (they can also be higher resolution just by
+using a larger .tga texture than the original texture size, but of course
+it's important to be careful about mixing textures of different resolution
+in a level.)
+
+
+<a name="5"></a><h1>[5] Models</h1>
+
+<p>[5.1] We lack several monster replacements: blob, boss1/cthon, boss2/shub,
+demon/feind, fish, hellknight, ogre, shalrath/vore and shambler.  These are
+not extremely high priority, but single player mappers might find them
+useful.  Multiple replacements for a single monster are also welcome.
+
+<p>[5.2] With some engines (like Darkplaces) we can use 32 bit .tga format
+skins on models, so this would be one way to enhance the current models.
+These skins can also be larger than the skins currently used, so they
+can have more detail as well as more colors.
+ 
+
+<a name="6"></a><h1>[6] Utilities</h1>
+
+<p>[6.1] QBSP - I haven't been able to compile the Open Quartz start map with
+our custom QBSP so we may need to do more testing and debugging of this
+utility before we can rely on it for building all our maps.
+
+(This might be related to newly added QBSP features like floating point
+coords or QuArK's //TX texture alignment system - which are in our QBSP,
+but not thoroughly tested.)
+
+<p>[6.2] Light - lots of possible T0 DOs for this utility:
+
+<ul>
+<li>Negative lights must come after positive lights in the map file.
+	An easy fix is to make two passes over the lights, doing normal
+	lights on the first pass and negative lights on the second.
+<li>Correct lighting with oddly stretched ("sheared") texture alignment?
+<li>Colored lighting (.lit files supported by many engines)
+<li>Gouraud and/or phong lighting for smooth curved shapes
+<li>Light-emitting surfaces (maybe even radiosity)
+<li>Sunlight - can be implemented first as an all-purpose directional
+	light ignoring walls, and eventually proper shadows implemented.
+	Actually, that's fairly easy. For each light sample, cast a ray in
+	the sun direction, and if it hits a sky polygon, add some light.
+<li>Ambient light - can be implmented first as a global effect (like the
+	r_ambient cvar) then ambient light only from sky polygons and
+	eventually proper shadows and all that could be added.
+</ul>
+
+<p>[6.3] There is a bug involving dependency checking in the utils makefile
+(see <a href="../utils/qutils/history.txt">utils/qutils/history.txt</a>)
+
+<p>[6.4] Is PNG image support needed for texmake or will we use that utility?
+
+<p>[6.5] The raw2map terrain convertor could use better image format support
+
+<p>It has been suggested that image format support should be added to the
+common library, preferably in a clean way.  Seth Galbraith used libpng
+to get modelgen, qlumpy and sprgen to work with .png images.  libpng is
+easy to use and .png format is widely supported, so that may be a simpler
+alternative than supporting multiple image formats.
+
+<p>[6.6] The mesh2map convertor basically works, but seems to still have some
+bugs.  When I try to convert the OQ player model into brushes it takes a
+lot of trial and error to find all the brushes that cause compiling
+problems. Texture alignment is not really tested.
+
+Support for more 3D file formats could make this a very useful utility.
+
+<p>[6.7] Most of the utilities are poorly documented or not at all. Complete
+documentation would be a great thing.  It would also help people use all
+the neat little tricks we've added.
+
+
+</body>
+
+</html>

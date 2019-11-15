@@ -1,0 +1,31 @@
+render 256 256 spaceexplosion256_%04d.tga
+frames 0 10 0 20
+particles 8192
+passes 16
+camera 0 0 -256
+imagebrightness -0.1 0.9
+
+seed 1735
+
+clear
+
+rendertype 2
+decay 1 0
+velocity 0 0 0 0 0
+size 192 192
+life 8 8
+color 4096 1024 512 4096
+area 0 0 0 0 0
+spawn 1
+
+rendertype 1
+decay 1 0
+velocity 0 0 0 5 15
+size 3 5
+life 0 10
+color1 3072 768 384 64
+color2 256 128 64 64
+area 0 0 0 0 5
+spawn 8191
+
+wait 999

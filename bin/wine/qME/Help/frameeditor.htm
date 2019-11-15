@@ -1,0 +1,713 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Frame Editor</title>
+<base target="main">
+<meta name="FORMATTER" content="Microsoft FrontPage 2.0">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF"
+vlink="#C0C0C0">
+
+<h1><font color="#FF0000" face="Arial">Frame Editor</font></h1>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The frame editor
+is used for editing the 3D mesh and painting on the skin in 3D.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><!--webbot
+bot="ImageMap"
+rectangle=" (210,20) (232, 42)  #Single+or+Three+Editor+Panels"
+rectangle=" (254,22) (279, 46)  #Show+Triangle+Backsides"
+rectangle=" (469,22) (496, 45)  #Taking+Snapshots"
+rectangle=" (446,22) (471, 46)  #Resolution+Selection"
+rectangle=" (424,22) (448, 46)  #Zoom+Selection"
+rectangle=" (394,20) (418, 47)  #Skin+Recording"
+rectangle=" (351,21) (396, 45)  #Spotlight"
+rectangle=" (283,22) (351, 46)  #Rendering+Mode"
+rectangle=" (231,22) (255, 46)  #Projection+Mode"
+rectangle=" (50,22) (209, 46)  #Camera+Presets"
+rectangle=" (2,22) (51, 48)  #Animation+Controls"
+rectangle=" (0,51) (496, 414)  #Edit+Panel" src="frameeditor.gif"
+border="0" width="497" height="420" startspan --><MAP NAME="FrontPageMap"><AREA SHAPE="RECT" COORDS="210, 20, 232, 42" HREF="#Single or Three Editor Panels"><AREA SHAPE="RECT" COORDS="254, 22, 279, 46" HREF="#Show Triangle Backsides"><AREA SHAPE="RECT" COORDS="469, 22, 496, 45" HREF="#Taking Snapshots"><AREA SHAPE="RECT" COORDS="446, 22, 471, 46" HREF="#Resolution Selection"><AREA SHAPE="RECT" COORDS="424, 22, 448, 46" HREF="#Zoom Selection"><AREA SHAPE="RECT" COORDS="394, 20, 418, 47" HREF="#Skin Recording"><AREA SHAPE="RECT" COORDS="351, 21, 396, 45" HREF="#Spotlight"><AREA SHAPE="RECT" COORDS="283, 22, 351, 46" HREF="#Rendering Mode"><AREA SHAPE="RECT" COORDS="231, 22, 255, 46" HREF="#Projection Mode"><AREA SHAPE="RECT" COORDS="50, 22, 209, 46" HREF="#Camera Presets"><AREA SHAPE="RECT" COORDS="2, 22, 51, 48" HREF="#Animation Controls"><AREA SHAPE="RECT" COORDS="0, 51, 496, 414" HREF="#Edit Panel"></MAP><a
+href="_vti_bin/shtml.exe/frameeditor.htm/map"><img
+src="frameeditor.gif" width="497" ismap usemap="#FrontPageMap"
+height="420" border="0"></a><!--webbot bot="ImageMap" endspan
+i-checksum="55244" --></font></p>
+
+<h3><a name="Animation Controls"><font face="Arial">Animation
+Controls</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="animctrls.gif" width="46" height="22"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">These two buttons
+control the playing of animations. Pressing the right button will
+start playing the scene that is selected in the main window's
+frame tree panel. Pressing the left button will stop the scene
+playing.</font></p>
+
+<h3><a name="Camera Presets"><font face="Arial">Camera Presets</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="campresets.gif" width="154" height="23"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">These presets let
+you choose a predefined viewing angle in the </font><a
+href="#Edit Panel"><font color="#FFFFFF" size="2" face="Arial">Edit
+Panel</font></a><font color="#FFFFFF" size="2" face="Arial">.
+From left to right these presets let you view the model from :</font></p>
+
+<ul>
+    <li><font color="#FFFFFF" size="2" face="Arial">Front, the
+        Y/Z plane</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">Back, Y/Z
+        plane</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">Top, X/Y
+        plane</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">Bottom, X/Y
+        plane</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">Right, Y/Z
+        plane</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">Left, Y/Z
+        plane</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">As Weapon,
+        shows you the model as if it was a weapon model. </font></li>
+</ul>
+
+<h3><a name="Single or Three Editor Panels"><font color="#FFFFFF"
+face="Arial">Single or Three Editor Panels</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="singlethreepanel.gif" width="23" height="23"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Use this button to
+switch between a single editor panel and three editor panels. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">If you want to
+view the model from different directions simultaneously during
+editing you should use the three editor panels. If you want to
+work with a single editor use the single editor panel.</font></p>
+
+<h3><a name="Projection Mode"><font color="#FFFFFF" face="Arial">Projection
+Mode</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="perspbtn.gif" width="23" height="22"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Use this button to
+switch between perspective and parallel projection. When the
+button is up, Perspective projection is used and when the button
+is down Parallel projection is used. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Parallel
+projection does not take into account depth information,
+perspective projection does. Normally the </font><a
+href="#Edit Panel"><font color="#FFFFFF" size="2" face="Arial">Edit
+Panel</font></a><font color="#FFFFFF" size="2" face="Arial">
+shows the model with perspective projection. This will show the
+model in a way that resembles most closely the way it would look
+in reality. However, a drawback of Perspective projection is that
+it is very hard to align parts of the model (like objects or
+vertices) exactly. Because objects that are draw farther away are
+rendered smaller than objects nearby.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You will want to
+use the parallel projection mode, for example because you want to
+align vertices. To activate parallel project click the button to
+make it go down. To get perspective correct projection click the
+button to make it go up.</font></p>
+
+<h3><a name="Show Triangle Backsides"><font color="#FFFFFF"
+face="Arial">Show Triangle Backsides</font></a></h3>
+
+<p><img src="tribacksides.gif" width="25" height="23"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Press this button
+to show the backside of triangles. The backsides of triangles are
+shown in dark red. Normally you will not see any back side
+triangles popping up, but in models that are created from import
+files some or all of the triangles may be flipped.</font></p>
+
+<h3><a name="Rendering Mode"><font face="Arial">Render Mode</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="rendermode.gif" width="70" height="23"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">These three
+buttons determine how the model is rendered in the </font><a
+href="#Edit Panel"><font color="#FFFFFF" size="2" face="Arial">Edit
+Panel</font></a><font color="#FFFFFF" size="2" face="Arial">.</font></p>
+
+<p><img src="rendermodes.gif" width="600" height="130"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Pressing the first
+button will select wireframe mode in the </font><a
+href="#Edit Panel"><font color="#FFFFFF" size="2" face="Arial">Edit
+Panel</font></a><font color="#FFFFFF" size="2" face="Arial">. In
+wire frame mode you can see through the model. The red box you
+see in this mode indicates the model's bounding box. Take a look
+at the </font><a href="modelpropeditor.htm"><font color="#FFFFFF"
+size="2" face="Arial">model property editor</font></a><font
+color="#FFFFFF" size="2" face="Arial"> to see the exact
+dimensions of the bounding box for either the current frame or a
+cumulative bounding box for the complete model.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Pressing the
+second button puts the </font><a href="#Edit Panel"><font
+color="#FFFFFF" size="2" face="Arial">Edit Panel</font></a><font
+color="#FFFFFF" size="2" face="Arial"> in solid rendering mode.
+The triangles are rendered as white polygons with a black border.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Pressing the third
+button will put the </font><a href="#Edit Panel"><font
+color="#FFFFFF" size="2" face="Arial">Edit Panel</font></a><font
+color="#FFFFFF" size="2" face="Arial"> in textured rendering
+mode. In this mode the spotlight button and the skin recorder
+button will be enabled.</font></p>
+
+<h3><a name="Spotlight"><font face="Arial">Spotlight</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="spotlight.gif" width="46" height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Use these buttons
+to turn on a spotlight to illuminate your model and to position
+the spotlight. The spotlight implemented in qME will do simple
+Gouraud shading. The ambient light level that is used during
+shading is identical to the gamma correction you can select in
+the </font><a href="optioneditor.htm"><font color="#FFFFFF"
+size="2" face="Arial">options</font></a><font color="#FFFFFF"
+size="2" face="Arial"> dialog. So to change ambient lighting,
+change the gamma correction.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The left button is
+used to turn on the spotlight. The spotlight initially shines
+from above. Pushing down the right button will snap the spotlight
+to your camera position, which means that the light seems to
+becoming from the viewing direction. Now position the spotlight
+by rotating the model until the spotlight shines on the spot you
+want illuminated. Now pushing the right button again will make it
+stay up and unsnap the spotlight from the camera position.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">An alternative way
+to change the position of the spotlight is by using the camera
+tool. You can left click drag to move and right click drag to
+rotate your camera around the model. When you hold down the CTRL
+key when doing this, the spotlight will snap to your camera.
+Releasing the CTRL key again will unsnap the spotlight from your
+camera and leave it at the position it had at the moment of
+unsnapping. Note however that this method seems to introduce some
+strange &quot;trailing&quot; effects where the model will go on
+turning long after you have stopped moving the mouse. The
+preferred method of positioning the spotlight is by using the
+right spotlight button.</font></p>
+
+<h3><a name="Skin Recording"><font face="Arial">Skin Recording</font></a></h3>
+
+<p><font size="2" face="Arial"><img src="skinrec.gif" width="27"
+height="25"></font></p>
+
+<p><font size="2" face="Arial">You can create nicely shaded skins
+from flat colored ones by using the skin recorder. Just press
+down the skin recorder button to start a recording session. Note
+that the skin recorder is only enabled when textured rendering
+mode is selected.</font></p>
+
+<p><font size="2" face="Arial">The principle of skin recording is
+quite simple. When you press the skin recorder button a new skin
+is created internally. While qME is rendering the model, texels
+(pixels in a skin) are read from the current skin and shaded
+according to the spotlight and ambient light settings. These
+texels are then written to the new internal skin. When you press
+the skin recorder button again, the skin recorder will stop
+recording and you get to select if you want to keep or discard
+the new skin.</font></p>
+
+<p><font size="2" face="Arial">To quickly create a shaded skin,
+do the following :</font></p>
+
+<ol>
+    <li><font size="2" face="Arial">Paint your model in solid
+        colors.</font></li>
+    <li><font size="2" face="Arial">Turn on the spotlight by
+        clicking the spotlight button.</font></li>
+    <li><font size="2" face="Arial">Click skin record button</font></li>
+    <li><font size="2" face="Arial">Move your camera position
+        around the model so you see every detail of it (needed
+        for recording)</font></li>
+    <li><font size="2" face="Arial">Click skin record button
+        again, this will show a dialog allowing you to insert the
+        recorded skin into your skin list.</font></li>
+</ol>
+
+<h3><a name="Zoom Selection"><font face="Arial">Zoom Selection</font></a></h3>
+
+<p><font face="Arial"><img src="zoombtn.gif" width="25"
+height="24"></font></p>
+
+<p><font size="2" face="Arial">The zoom button will pop-up the
+menu below that allows you to change the zoom percentage.</font></p>
+
+<p><img src="framezoommnu.gif" width="81" height="176"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Change the zoom
+percentage to take a closer look at your model.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">When you have the
+camera tool selected, you will be able to left click to zoom in
+one step and right click to zoom out one step. Also holding down
+both mouse buttons and moving the mouse up and down will zoom in
+and out.</font></p>
+
+<h3><a name="Resolution Selection"><font face="Arial">Resolution
+Selection</font></a></h3>
+
+<p><img src="resolutionmnu.gif" width="101" height="124"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">qME gives you
+flexible control over the rendering resolution. The resolution
+selection menu lets you choose the resolution for viewing the
+model. You'll mostly select low resolutions in order to speed up
+the rendering when viewing an animation and higher resolutions
+during editing.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">If you select
+&quot;Auto Focus&quot; the </font><a href="#Edit Panel"><font
+color="#FFFFFF" size="2" face="Arial">edit panel</font></a><font
+color="#FFFFFF" size="2" face="Arial"> will match the resolution
+to the panel size, giving you the best resolution possible.</font></p>
+
+<h3><a name="Taking Snapshots"><font face="Arial">Taking
+Snapshots</font></a></h3>
+
+<p><img src="snapshotbtn.gif" width="23" height="23"></p>
+
+<p><img src="snapshotmnu.gif" width="152" height="40"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The snapshot menu
+lets you take snapshots of the </font><a href="#Edit Panel"><font
+color="#FFFFFF" size="2" face="Arial">edit pane</font></a><font
+color="#FFFFFF" size="2" face="Arial">l contents. The snapshot
+can be put on the clipboard or saved into a file.</font></p>
+
+<h3><a name="Edit Panel"><font face="Arial">Edit Panel</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="editpanel.gif" width="421" height="223"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The edit panel is
+the main 3D editor for editing the selected frame. You will do
+most of the model editing in this view, using tools to move
+vertices and triangles and objects around and to paint on the
+model directly in 3D.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The way you edit
+in qME is different from the 'normal' way of editing found in
+most 3D modellers. Most modellers use a 4 view editor where you
+can edit the model in one of the three 2D windows and use the
+single 3D preview window to see the result. qME takes a radical
+break from this approach and let's you do everything in a single
+integrated 3D editor. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You can choose
+between a single editor panel or three editor panels. If you
+favor the 2D editing experience, use the </font><a
+href="#Camera Presets"><font color="#FFFFFF" size="2"
+face="Arial">camera presets</font></a><font color="#FFFFFF"
+size="2" face="Arial"> to select a standard viewing direction in
+each one of the three editor panels.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The tool palette
+found in the main window lets you select a tool to use in the
+edit panel.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><!--webbot
+bot="ImageMap" rectangle=" (154,19) (232, 50)  #Object+Tools"
+rectangle=" (127,19) (155, 48)  #Dropper+Tool"
+rectangle=" (106,22) (129, 50)  #Fill+Tool"
+rectangle=" (77,21) (105, 47)  #Pen+Tool"
+rectangle=" (51,21) (79, 50)  #Triangle+Tool"
+rectangle=" (33,21) (52, 47)  #Vertex+Tool"
+rectangle=" (5,22) (32, 46)  #Camera+Tool" src="toolpalette.gif"
+border="0" width="233" height="51" startspan --><MAP NAME="FrontPageMap1"><AREA SHAPE="RECT" COORDS="154, 19, 232, 50" HREF="#Object Tools"><AREA SHAPE="RECT" COORDS="127, 19, 155, 48" HREF="#Dropper Tool"><AREA SHAPE="RECT" COORDS="106, 22, 129, 50" HREF="#Fill Tool"><AREA SHAPE="RECT" COORDS="77, 21, 105, 47" HREF="#Pen Tool"><AREA SHAPE="RECT" COORDS="51, 21, 79, 50" HREF="#Triangle Tool"><AREA SHAPE="RECT" COORDS="33, 21, 52, 47" HREF="#Vertex Tool"><AREA SHAPE="RECT" COORDS="5, 22, 32, 46" HREF="#Camera Tool"></MAP><a
+href="_vti_bin/shtml.exe/frameeditor.htm/map1"><img
+src="toolpalette.gif" width="233" ismap usemap="#FrontPageMap1"
+height="51" border="0"></a><!--webbot bot="ImageMap" endspan
+i-checksum="13099" --></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Use the tool
+palette to activate a tool. When you select a tool, the tool
+properties palette is changed to show the properties for the
+selected tool. Initially you will find the tool properties
+palette directly on the right side of the tool palette.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">In most cases
+clicking outside the model with a tool will default to camera
+tool behavior. This means that for example when you have the
+vertex tool selected, you can still rotate and move the camera
+around the model.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Below you'll find
+a description of what you can do with each tool in the edit
+panel.</font></p>
+
+<h4><a name="Camera Tool"><font face="Arial">Camera Tool</font></a></h4>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="cambtn.gif" width="25" height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">With the camera
+tool you can change the angle and position from which you view
+the model. You can also zoom-in (left click) and zoom-out (right
+click) of the model. The camera tool allows you to view the frame
+and animations from all direction without actually changing the
+model.</font></p>
+
+<ul>
+    <li><font color="#FFFFFF" size="2" face="Arial">To rotate the
+        camera around your model, right click an drag the mouse. </font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">To move the
+        camera in the view plane, left click and drag the mouse.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">To zoom in
+        and out, hold down both mouse buttons and move the mouse
+        up and down.</font></li>
+</ul>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Note, that the
+camera tool will never change your model, it only changes the
+angle and position from which you view the model.</font></p>
+
+<h4><a name="Vertex Tool"><font face="Arial">Vertex Tool</font></a></h4>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="vtxbtn.gif" width="24" height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">This tool is used
+to select and drag around vertices in a frame and to insert new
+vertices. Un-selected vertices are a solid black color and
+selected vertices are a solid blue color.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You can insert new
+vertices by holding down the CTRL and ALT key and then left
+clicking the editor panel. The vertex will be inserted at the
+same depth as the closest neighbor vertex from the viewing
+direction.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You can
+multi-select vertices with a selection rectangle or by selecting
+them one by one. To&nbsp;select multiple vertices one by one,
+hold down the SHIFT key and click every vertex you want to select
+separately. Use a selection rectangle by left clicking outside
+the model and then dragging a selection rectangle around the
+vertices you want to select.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">If you have some
+vertices selected you can right click anywhere in the frame edit
+panel to bring up the vertex menu. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><!--webbot
+bot="ImageMap" rectangle=" (0,46) (229, 67)  #Delete+Vertices"
+polygon=" (1,94) (354,93) (354,387) (227,387) (227,114) (2,115) #Assign+Vertices+to+Object"
+rectangle=" (0,76) (231, 95)  #Assign+Vertices+to+New+Object"
+rectangle=" (0,35) (232, 53)  #Make+Triangle"
+rectangle=" (1,17) (233, 34)  #Merge+Vertices"
+rectangle=" (0,1) (232, 17)  #Split+Vertices"
+src="vertexmenu.gif" border="0" width="355" height="388"
+startspan --><MAP NAME="FrontPageMap2"><AREA SHAPE="RECT" COORDS="0, 46, 229, 67" HREF="#Delete Vertices"><AREA SHAPE="POLYGON" COORDS="1, 94, 354, 93, 354, 387, 227, 387, 227, 114, 2, 115" HREF="#Assign Vertices to Object"><AREA SHAPE="RECT" COORDS="0, 76, 231, 95" HREF="#Assign Vertices to New Object"><AREA SHAPE="RECT" COORDS="0, 35, 232, 53" HREF="#Make Triangle"><AREA SHAPE="RECT" COORDS="1, 17, 233, 34" HREF="#Merge Vertices"><AREA SHAPE="RECT" COORDS="0, 1, 232, 17" HREF="#Split Vertices"></MAP><a href="_vti_bin/shtml.exe/frameeditor.htm/map2"><img
+src="vertexmenu.gif" width="355" ismap usemap="#FrontPageMap2"
+height="388" border="0"></a><!--webbot bot="ImageMap" endspan
+i-checksum="9750" --></font></p>
+
+<ul>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Split Vertices"><font color="#FFFFFF" size="2"
+        face="Arial">Split Vertices</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will give
+        every triangle that uses the vertex it's own vertex. So
+        if for example you have two triangles that share a
+        vertex, after splitting this vertex both triangles would
+        have their own vertex. </font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Merge Vertices"><font color="#FFFFFF" size="2"
+        face="Arial">Merge Vertices</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; does the
+        opposite of splitting vertices. If you select two
+        vertices of two triangles and merge them, the triangles
+        share a vertex after the merge. If you select two
+        vertices of a single triangle and merge them, you will
+        create degenerate triangles.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Make Triangle"><font color="#FFFFFF" size="2"
+        face="Arial">Make Triangle</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will turn a
+        selection of three vertices into a triangle. The triangle
+        is aligned with any triangle that shares an edge with the
+        newly created triangle.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Delete Vertices"><font color="#FFFFFF" size="2"
+        face="Arial">Delete Vertices</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will delete
+        the selected vertices and any triangles that are using
+        the selected vertices.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Assign Vertices to New Object"><font
+        color="#FFFFFF" size="2" face="Arial">Assign Vertices to
+        New Object</font></a><font color="#FFFFFF" size="2"
+        face="Arial">&quot; will create a new object and assign
+        the selected vertices to this object. The pivot is placed
+        at the center of the selected vertices.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Assign Vertices to Object"><font color="#FFFFFF"
+        size="2" face="Arial">Assign Vertices to Object</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will assign
+        the selected vertices to an object that you can select
+        from the object sub-menu.</font></li>
+</ul>
+
+<h4><a name="Triangle Tool"><font face="Arial">Triangle Tool</font></a></h4>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="tribtn.gif" width="25" height="23"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">This tool is used
+to select and drag around triangles in a frame. You can select
+multiple triangles by holding down the shift key and then
+clicking the triangles you want to select. Selected triangles are
+blue and have black borders.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You can flip and
+flood align triangles directly by using either or both the CTRL
+and ALT keys. To flip a triangle left click a triangle while
+holding down the CTRL key. To flood aligning triangles use the
+ALT key and then left click a triangle. This will flood align
+triangles with the clicked one. Holding down both the CTRL and
+ALT key and then left clicking a triangle will first flip the
+clicked triangle and then flood align all triangles with the
+flipped one.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">If you have some
+triangles selected, then you can right click anywhere in the
+frame edit panel to pop-up the triangle menu.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><!--webbot
+bot="ImageMap"
+polygon=" (4,81) (312,79) (311,238) (231,238) (230,101) (3,101) #Assign+Triangles+to+Object"
+rectangle=" (6,59) (232, 82)  #Assign+Triangles+to+New+Object"
+rectangle=" (4,40) (230, 59)  #Delete+Triangles"
+rectangle=" (6,23) (232, 41)  #Flood+Align+Triangles"
+rectangle=" (5,5) (233, 23)  #Flip+Triangles"
+src="trianglemenu.gif" border="0" width="313" height="239"
+startspan --><MAP NAME="FrontPageMap3"><AREA SHAPE="POLYGON" COORDS="4, 81, 312, 79, 311, 238, 231, 238, 230, 101, 3, 101" HREF="#Assign Triangles to Object"><AREA SHAPE="RECT" COORDS="6, 59, 232, 82" HREF="#Assign Triangles to New Object"><AREA SHAPE="RECT" COORDS="4, 40, 230, 59" HREF="#Delete Triangles"><AREA SHAPE="RECT" COORDS="6, 23, 232, 41" HREF="#Flood Align Triangles"><AREA SHAPE="RECT" COORDS="5, 5, 233, 23" HREF="#Flip Triangles"></MAP><a href="_vti_bin/shtml.exe/frameeditor.htm/map3"><img
+src="trianglemenu.gif" width="313" ismap usemap="#FrontPageMap3"
+height="239" border="0"></a><!--webbot bot="ImageMap" endspan
+i-checksum="5607" --></font></p>
+
+<ul>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Flip Triangles"><font color="#FFFFFF" size="2"
+        face="Arial">Flip Triangles</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will flip
+        the side of the triangles around. So if you were first
+        looking at the front side of a triangle, after flipping
+        you will see dark red triangles (when you have the show
+        triangle backsides button pressed down) or you will see
+        through the model meaning you see the back side of the
+        flipped triangle. In Quake you will see through back
+        sides, so it is advisable to make models in such a way
+        that you are always looking at the front side of
+        triangles.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Flood Align Triangles"><font color="#FFFFFF"
+        size="2" face="Arial">Flood Align Triangles</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will make
+        triangles that share edges with the selected triangles
+        face the same way as the selected ones</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Delete Triangles"><font color="#FFFFFF" size="2"
+        face="Arial">Delete Triangles</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will delete
+        the selected triangles from the model.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Assign Triangles to New Object"><font
+        color="#FFFFFF" size="2" face="Arial">Assign Triangle
+        Vertices to New Object</font></a><font color="#FFFFFF"
+        size="2" face="Arial">&quot; will create a new object and
+        assign the vertices are part of the selected triangles to
+        this object. The pivot is placed at the center of the
+        selected vertices.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Assign Triangles to Object"><font color="#FFFFFF"
+        size="2" face="Arial">Assign Triangle Vertices to Object</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will assign
+        the vertices that are part of the selected triangles to
+        an object that you can select from the object sub-menu.</font></li>
+</ul>
+
+<h4><a name="Pen Tool"><font face="Arial">Pen Tool</font></a></h4>
+
+<p><font size="2" face="Arial"><img src="penbtn.gif" width="25"
+height="23"></font></p>
+
+<p><font size="2" face="Arial">You can paint directly on your
+model in 3D using the pen tool.</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">To paint left click and drag
+        on the model.</font></li>
+    <li><font size="2" face="Arial">To select a color, right
+        click on the model.</font></li>
+</ul>
+
+<p><font size="2" face="Arial">The pen size used during painting
+can be selected in the tool properties palette. </font><font
+color="#FFFFFF" size="2" face="Arial">The tool properties for the
+paint tools have been </font><a
+href="mainwindow.htm#Toolproperties"><font color="#FFFFFF"
+size="2" face="Arial">described in detail</font></a><font
+color="#FFFFFF" size="2" face="Arial"> in the main window
+description.</font></p>
+
+<p><font size="2" face="Arial"><img src="pentoolprops.gif"
+width="626" height="51"></font></p>
+
+<p><font size="2" face="Arial">The color that is used for
+painting can also be selected in the color palette or in the </font><a
+href="coloreditor.htm"><font size="2" face="Arial">skin color
+editor</font></a><font size="2" face="Arial">.</font></p>
+
+<p><font size="2" face="Arial"><img src="colorpal.gif"
+width="524" height="51"></font></p>
+
+<h4><a name="Fill Tool"><font face="Arial">Flood Fill Tool</font></a></h4>
+
+<p><font face="Arial"><img src="floodbtn.gif" width="25"
+height="24"></font></p>
+
+<p><font size="2" face="Arial">The flood fill tool will replace
+an area of solid color with the currently selected color.</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">To flood fill an area, left
+        click on the model.</font></li>
+    <li><font size="2" face="Arial">To select a color, right
+        click on the model.</font></li>
+</ul>
+
+<h4><a name="Dropper Tool"><font face="Arial">Color Dropper Tool</font></a></h4>
+
+<p><font face="Arial"><img src="dropbtn.gif" width="25"
+height="24"></font></p>
+
+<p><font size="2" face="Arial">The color dropper is used to
+select the current color from the model and to replace a color in
+the current skin.</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">To select a color, left or
+        right click on the model. </font></li>
+    <li><font size="2" face="Arial">To replace a color left click
+        on the model with the ALT key down, this will replace all
+        pixels with the same color as the clicked pixel with the
+        current color.</font></li>
+</ul>
+
+<h4><a name="Object Tools"><font face="Arial">Object Tools</font></a></h4>
+
+<p><font face="Arial"><img src="Objbtn.gif" width="73"
+height="25"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">With the object
+tools you can move, rotate and scale objects. When any one of the
+object tools is selected, you can configure the tool via the tool
+properties palette. The tool properties for the object tools have
+been </font><a href="mainwindow.htm#Toolproperties"><font
+color="#FFFFFF" size="2" face="Arial">described in detail</font></a><font
+color="#FFFFFF" size="2" face="Arial"> in the main window
+description.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="objhandles.gif" width="174" height="116"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">All object tools
+let you select an object in the edit panel. Below is a cut out
+where you can see that the &quot;turret&quot; in the chopper
+model is selected, the outline also shows this. The coordinate
+system displayed for the selected object has three unit vectors.
+Red indicates the Z direction, blue indicates the X direction and
+yellow indicates the Y direction. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The first tool is
+the &quot;object move tool&quot;. It lets you select and move an
+object in the model. For objects that have child objects, the
+child objects are moved too. So if you would move the turret, the
+cannon which is a child of the turret would move too.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The second tool is
+the &quot;object rotate tool&quot;. It lets you select and rotate
+an object around its center. To get better control over the
+rotation grab one of the handles. Although you can rotate
+directly with the tool, it is usually more convenient to use the </font><a
+href="mainwindow.htm#Toolproperties"><font color="#FFFFFF"
+size="2" face="Arial">tool properties</font></a><font
+color="#FFFFFF" size="2" face="Arial"> palette to set the
+rotation exactly.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The third tool is
+the &quot;object scale tool&quot;. It lets you select and scale
+an object. You can use the </font><a
+href="mainwindow.htm#Toolproperties"><font color="#FFFFFF"
+size="2" face="Arial">tool properties</font></a><font
+color="#FFFFFF" size="2" face="Arial"> palette to set the scale
+exactly. Note that you can use negative scaling to turn an object
+inside out.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">If you have an
+object selected, you can right click anywhere in the frame edit
+panel to pop-up the object menu.</font></p>
+
+<p><!--webbot bot="ImageMap"
+polygon=" (2,42) (363,44) (365,339) (240,336) (239,63) (1,64) #Assign+Object+Vertices+to+Object"
+rectangle=" (2,19) (240, 39)  #Delete+Object"
+rectangle=" (3,0) (240, 20)  #New+Object" src="objectmnu.gif"
+border="0" width="366" height="338" startspan --><MAP NAME="FrontPageMap4"><AREA SHAPE="POLYGON" COORDS="2, 42, 363, 44, 365, 339, 240, 336, 239, 63, 1, 64" HREF="#Assign Object Vertices to Object"><AREA SHAPE="RECT" COORDS="2, 19, 240, 39" HREF="#Delete Object"><AREA SHAPE="RECT" COORDS="3, 0, 240, 20" HREF="#New Object"></MAP><a
+href="_vti_bin/shtml.exe/frameeditor.htm/map4"><img
+src="objectmnu.gif" width="366" ismap usemap="#FrontPageMap4"
+height="338" border="0"></a><!--webbot bot="ImageMap" endspan
+i-checksum="59094" --></p>
+
+<ul>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="New Object"><font color="#FFFFFF" size="2"
+        face="Arial">New Object</font></a><font color="#FFFFFF"
+        size="2" face="Arial">&quot; will create a new object as
+        a child of the currently selected object in the </font><a
+        href="mainwindow.htm#Object Tree Panel"><font
+        color="#FFFFFF" size="2" face="Arial">object tree panel</font></a><font
+        color="#FFFFFF" size="2" face="Arial">.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Delete Object"><font color="#FFFFFF" size="2"
+        face="Arial">Delete Object</font></a><font
+        color="#FFFFFF" size="2" face="Arial">&quot; will delete
+        the currently selected object in the </font><a
+        href="mainwindow.htm#Object Tree Panel"><font
+        color="#FFFFFF" size="2" face="Arial">object tree panel</font></a><font
+        color="#FFFFFF" size="2" face="Arial">. Deleting an
+        object will also delete the vertices of the object. Note
+        however that deleting an object will not delete the child
+        objects of the object. Children are attached to the
+        parent of the deleted object.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">&quot;</font><a
+        name="Assign Object Vertices to Object"><font
+        color="#FFFFFF" size="2" face="Arial">Assign Object
+        Vertices to Object</font></a><font color="#FFFFFF"
+        size="2" face="Arial">&quot; will assign the vertices
+        that are part of the selected object to an object that
+        you can select from the object sub-menu.</font></li>
+</ul>
+</body>
+</html>

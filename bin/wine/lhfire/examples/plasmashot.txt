@@ -1,0 +1,51 @@
+render 64 64 plasmashot_%04d.tga
+frames 10 25 0 15
+particles 10000
+passes 16
+camera 0 0 -256
+
+rendertype 2
+
+area 0 0 50 0 0
+velocity 0 0 0 0 0
+size 256 256
+life 100 100
+color 256 512 1024 256
+spawn 1
+
+area 0 0 0 0 16
+velocity 0 0 0 0 13
+size 0 32
+life 0 5
+color1 512 512 512 64
+color2 32 128 512 32
+
+seed 1346
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+seed 1346
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25 spawn 10 wait 0.25
+clear
+seed 1346
+area 0 0 0 0 0
+life 0 4.75
+velocity 0 0 0 10 20
+spawn 1000
+time 100

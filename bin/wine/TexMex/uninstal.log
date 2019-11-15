@@ -1,0 +1,77 @@
+[Header]
+Signature=VISE
+Version=0001
+RemoveInUseFiles=0
+RegistryKeyName=TexMex
+Product Name=TexMex
+[WinNT]
+AdminPrivileges=1
+[Directories2]
+count=7
+0=C:\Program Files
+1=C:\Program Files\TexMex
+2=C:\Documents and Settings
+3=C:\Documents and Settings\All Users
+4=C:\Documents and Settings\All Users\スタート メニュー
+5=C:\Documents and Settings\All Users\スタート メニュー\プログラム
+6=C:\Documents and Settings\All Users\スタート メニュー\プログラム\TexMex
+[Files]
+count=8
+0=C:\Program Files\TexMex\TexMex.exe
+1=C:\Program Files\TexMex\texmex.chm
+2=C:\Program Files\TexMex\ReadMe.txt
+3=C:\Program Files\TexMex\tips.txt
+4=C:\Documents and Settings\All Users\スタート メニュー\プログラム\TexMex\TexMex.lnk
+5=C:\Documents and Settings\All Users\スタート メニュー\プログラム\TexMex\TexMex Help.lnk
+6=C:\Documents and Settings\All Users\スタート メニュー\プログラム\TexMex\Texmex ReadMe.lnk
+7=C:\Documents and Settings\All Users\スタート メニュー\プログラム\TexMex\Remove TexMex.lnk
+[Shortcuts]
+0=C:\DOCUME~1\Andy\デスク~1\TexMex.lnk
+[AlwaysRemoveRegKeys]
+0=HKEY_CLASSES_ROOT,.wad
+count=6
+1=HKEY_CLASSES_ROOT,wadfile
+2=HKEY_CLASSES_ROOT,wadfile\DefaultIcon
+3=HKEY_CLASSES_ROOT,wadfile\shell
+4=HKEY_CLASSES_ROOT,wadfile\shell\open
+5=HKEY_CLASSES_ROOT,wadfile\shell\open\command
+[RegKeys]
+0=HKEY_CLASSES_ROOT,.wad
+count=13
+1=HKEY_CLASSES_ROOT,wadfile
+2=HKEY_CLASSES_ROOT,wadfile
+3=HKEY_CLASSES_ROOT,wadfile\DefaultIcon
+4=HKEY_CLASSES_ROOT,wadfile
+5=HKEY_CLASSES_ROOT,wadfile\shell
+6=HKEY_CLASSES_ROOT,wadfile
+7=HKEY_CLASSES_ROOT,wadfile\shell
+8=HKEY_CLASSES_ROOT,wadfile\shell\open
+9=HKEY_CLASSES_ROOT,wadfile
+10=HKEY_CLASSES_ROOT,wadfile\shell
+11=HKEY_CLASSES_ROOT,wadfile\shell\open
+12=HKEY_CLASSES_ROOT,wadfile\shell\open\command
+[RegNames2]
+0=HKEY_CLASSES_ROOT||.wad|| || || ||1946737215
+count=4
+1=HKEY_CLASSES_ROOT||wadfile|| || || ||2637521462
+2=HKEY_CLASSES_ROOT||wadfile\DefaultIcon|| || || ||1068637794
+3=HKEY_CLASSES_ROOT||wadfile\shell\open\command|| || || ||248867280
+[AlwaysRemoveRegNames2]
+0=HKEY_CLASSES_ROOT||.wad|| 
+count=4
+1=HKEY_CLASSES_ROOT||wadfile|| 
+2=HKEY_CLASSES_ROOT||wadfile\DefaultIcon|| 
+3=HKEY_CLASSES_ROOT||wadfile\shell\open\command|| 
+[Strings]
+IDS_STRING1=Are you sure you want to completely remove the selected application and all of its components?
+IDS_STRING2=Confirm File Deletion
+IDS_STRING3=The system indicates that the following shared file is no longer used by any programs.
+IDS_STRING4=Remove Shared File?
+IDS_STRING5=Uninstall successfully completed.
+IDS_STRING6=Uninstall
+IDS_STRING7=If any programs are still using this file and it is removed, those programs may not function. Are you sure you want to remove the shared file?
+IDS_STRING8=Uninstall was partially successful.
+IDS_ADMINPRIVILEGESNEEDED=Administrative privileges are needed to uninstall this software.
+IDS_YES=&Yes
+IDS_NO=&No
+IDS_YESTOALL=Yes to &All

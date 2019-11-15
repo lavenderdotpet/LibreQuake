@@ -1,0 +1,26 @@
+render 128 128 sprocketexplosion_%04d.tga
+frames 1 6 0 5
+particles 1000
+passes 8
+camera 0 0 -256
+
+seed 2353
+
+size 0 64
+color1 3072 512 256 128
+color2 0 0 0 64
+life 0 5.75
+
+area 0 0 0 0 0
+velocity 0 0 0 0 20
+spawn 500
+
+area 20 -15 0 0 0
+velocity 10 -6 0 0 10
+spawn 100
+
+area -15 15 0 0 0
+velocity -7 9 0 0 10
+spawn 50
+
+time 20

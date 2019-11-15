@@ -1,0 +1,42 @@
+render 128 128 plasmabolt_%04d.tga
+frames 0.4 1.6 0 12
+particles 16384
+passes 16
+camera 0 0 -128
+area 0 0 0 0 0
+velocity 0 0 0 100 150
+size 0 12
+life 0 0.3
+color1 1024 640 256 512
+color2 1024 640 256 128
+
+time 0.0
+seed 341
+spawn 500
+time 0.1
+spawn 500
+time 0.2
+spawn 500
+time 0.3
+spawn 500
+
+time 0.4
+seed 341
+spawn 500
+time 0.5
+spawn 500
+time 0.6
+spawn 500
+time 0.7
+spawn 500
+
+time 0.8
+
+clear
+seed 5123
+area 0 0 0 0 0
+velocity 0 0 0 25 75
+size 0 16
+life 0 0.8
+spawn 3000
+time 2.0

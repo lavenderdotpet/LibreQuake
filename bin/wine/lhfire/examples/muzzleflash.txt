@@ -1,0 +1,136 @@
+render 32 32 muzzleflash_%04d.tga
+frames 0 20 0 20
+particles 1024
+passes 64
+camera 0 0 -384
+
+area 0 0 0 0 0
+velocity 0 0 0 48 96
+life 1 1
+
+seed 2467
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+camera 0 0 -256
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+clear
+size 5 10 color1 1024 768 512 256 color2 256 128 64 256 spawn 64
+size 5 10 color1 512 384 256 256 color2 128 64 32 256 spawn 32
+size 2 4 color1 256 256 256 256 color2 128 128 128 256 spawn 512
+wait 1
+
+wait 1000

@@ -1,0 +1,20 @@
+You can modify textures within a BSP file and save back to the BSP from the file menu
+Clicking the detail view icon will always bring a hidded detail view back to the front 
+You can select more than one item by using Ctrl+Left Click
+You can find a texture quickly by typing its name in the wad view.
+You can change the display size of textures in the wad view using + and -
+The tiling size in the Tiled view can be adjusted using [ and ]
+You can adjust the zoom of the Deatil view using + and -
+Kickin says 'Never take a knife to a gunfight'
+TexMex keeps a log of all textures extractions, so you can trace back where those obscure textures cam from.
+You can copy&paste between TexMex and most other graphics applications.#@#@All neccessary conversions are handled automatically.
+Tex-Mex can read WAD2, WAD3 and BSP files.#@#@As well as WAL, BMP, PCX, JPG and TGA files as images.When you paste or load an image#@The item will automatically resize#@to accomodate the new image.
+Pasted and loaded images are#@automatically remapped to use the#@Quake palette.
+Auto-mip will scale the image#@to generate the three sub-mips#@that Quake requires for a texture.
+If you need to import a lot of images as Textures create an Empty wad select Import from the File menu.#@You can now choose the required file format and Select all the files you wish to import.#@#@A new texture Item is created for each image.
+Non-texture items can be removed#@automatically when a Wad is loaded.#@#@Check the option in preferences.
+The background and text colors#@for both views can be changed in#@the preferences section.
+Do people really read these tips?#@#@I always turn them off from the start :)
+There's now more#@
+No, really, that's it
+You don't believe me ?#@

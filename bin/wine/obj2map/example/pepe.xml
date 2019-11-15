@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OBJ2MAPSettings>
+  <MAPOutput></MAPOutput>
+  <BrushMethod>Spikes</BrushMethod>
+  <CopyToClipboard>False</CopyToClipboard>
+  <Depth>1</Depth>
+  <Scale>100</Scale>
+  <DecimalPlaces>8</DecimalPlaces>
+  <Class>func_detail</Class>
+  <VisibleTexture>DEFAULT</VisibleTexture>
+  <HiddenTexture>SKIP</HiddenTexture>
+  <AxisAligned>False</AxisAligned>
+  <MapVersion>Valve</MapVersion>
+  <WADOption>Auto</WADOption>
+  <WADPath></WADPath>
+  <wadTextureSizeX>480</wadTextureSizeX>
+  <wadTextureSizeY>480</wadTextureSizeY>
+</OBJ2MAPSettings>

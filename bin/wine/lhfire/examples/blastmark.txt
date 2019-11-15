@@ -1,0 +1,152 @@
+render 128 128 blastmark_%04d.tga
+frames 0 8 0 8
+particles 200
+passes 16
+
+seed 1234
+
+camera 0 0 -192
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+camera 0 0 -256
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+camera 0 0 -320
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+camera 0 0 -384
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+camera 0 0 -448
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+camera 0 0 -512
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+camera 0 0 -576
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+camera 0 0 -640
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 50
+size 0 10
+life 0 1
+color1 256 256 256 512
+color2 256 256 256 256
+spawn 100
+area 0 0 0 0 0
+velocity 0 0 0 50 100
+size 0 25
+life 0 1
+color1 256 256 256 2048
+color2 256 256 256 1024
+spawn 100
+wait 1
+
+time 100

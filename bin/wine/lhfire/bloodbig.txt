@@ -1,0 +1,25 @@
+render 128 128 bloodbig_%04d.tga
+frames 0 5 0 5
+particles 5000
+passes 64
+camera 0 0 -192
+
+seed 2467
+label mainloop
+clear
+area 0 0 0 0 30
+velocity 0 0 0 0 40
+size 2 4
+life 0 1
+color1 128 0 0 128
+color2 64 0 0 64
+spawn 500
+area 0 0 0 0 0
+velocity 0 0 0 30 80
+size 5 10
+life 0 1
+color1 128 0 0 128
+color2 64 0 0 64
+spawn 500
+wait 1
+goto mainloop

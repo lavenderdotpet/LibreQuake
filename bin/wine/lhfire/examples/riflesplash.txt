@@ -1,0 +1,110 @@
+render 64 64 riflesplash_04d.tga
+frames 0 1 0 6
+particles 16384
+passes 64
+camera 0 0 -64
+
+decay 1 0
+
+rendertype 1
+
+seed 3271
+
+color1 1024 2048 4096 32
+color2 64 128 512 32
+
+goto core2
+
+blah blah
+pressure 10 0
+weight 2 2
+size 0 0
+area 0 0 0 0 8
+velocity 0 0 0 0 0
+spawn 8
+
+pressure 0 0
+weight 0 0
+
+size 3 3
+decay 1 0
+life 0 1
+area 0 0 0 0 6
+velocity -16   -16   0 0 8 spawn 2000
+velocity  16   -16   0 0 8 spawn 2000
+velocity -16    16   0 0 8 spawn 2000
+velocity  16    16   0 0 8 spawn 2000
+velocity -22.6   0   0 0 8 spawn 2000
+velocity  22.6   0   0 0 8 spawn 2000
+velocity   0   -22.6 0 0 8 spawn 2000
+velocity   0    22.6 0 0 8 spawn 2000
+
+wait 1
+
+label core
+
+clear
+
+mass 0.5 1.5
+
+pressure 0 0
+weight 0 0
+
+area 0 0 0 0 8
+velocity 0 0 0 0 8
+size 1 1
+decay 1 0
+life 0 1
+area 0 0 0 0 5
+spawn 16000
+
+size 0 0
+
+area 0 0 0 0 0
+velocity 0 0 0 0 0
+
+life 1 1
+
+mass 0 0
+pressure 0 0
+weight 4000 4000
+spawn 0
+
+seed 128
+
+mass 0 1
+
+area 0 0 0 0 8
+velocity 0 0 0 0 8
+
+weight 100 100
+pressure 0 0
+spawn 0
+
+area 0 0 0 0 8
+velocity 0 0 0 0 8
+weight 0 0
+life 0 1
+
+pressure 40 0 spawn 10 wait 0.05
+pressure 35 0 spawn 10 wait 0.05
+pressure 30 0 spawn 10 wait 0.05
+pressure 25 0 spawn 10 wait 0.05
+pressure 20 0 spawn 10 wait 0.05
+pressure 15 0 spawn 10 wait 0.05
+
+wait 1
+
+label core2
+
+clear
+
+area 0 0 0 0 8
+velocity 0 0 0 8 32
+size 2 2
+decay 1 0
+life 0 1
+spawn 6000
+
+wait 1
+

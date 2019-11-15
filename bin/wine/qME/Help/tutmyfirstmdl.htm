@@ -1,0 +1,413 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Tutorial - Your First Model</title>
+<base target="main">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF"
+vlink="#C0C0C0">
+
+<h1><font color="#FF0000" face="Arial">Your First Model</font></h1>
+
+<p><font color="#FFFFFF" size="1" face="Arial">Initial version of
+this tutorial was made by Smoke</font></p>
+
+<p><font size="2" face="Arial">OK peeps, this is the fun part !</font></p>
+
+<p><font size="2" face="Arial">Your first Quake Model (unless
+you've already made one) is going to be a spiffy new animated
+missile for the Rocket Launcher ! </font></p>
+
+<h2 align="left"><font face="Arial">Creating a frame</font></h2>
+
+<p align="left"><font size="2" face="Arial">First we are going to
+create a single frame that we will use as the starting point for
+our model. You create and edit the 3D frame with the </font><a
+href="frameeditor.htm"><font size="2" face="Arial">frame editor</font></a><font
+size="2" face="Arial">.</font></p>
+
+<h4 align="left"><font size="2" face="Arial">Setting up the frame
+editor</font></h4>
+
+<p><font size="2" face="Arial">Before we start, we need to set up
+the frame editor so you can see the model fairly well. Make sure
+you have opened the editor by clicking the <img
+src="frameedit.gif" width="23" height="23">button.</font></p>
+
+<p><font size="2" face="Arial">We are first going to change the
+background color of the frame editor. To do this click
+&quot;Options|Edit&quot; in the menu bar. It will bring up the </font><a
+href="optioneditor.htm"><font size="2" face="Arial">options
+dialog</font></a><font size="2" face="Arial">, now click the tab
+that says &quot;Frame editor&quot; you will see a group with a
+caption saying &quot;Background color&quot;. In this group there
+will be a little box with a number and the words &quot;Palette
+index&quot; in front of it. Now press the button with
+&quot;...&quot; on it to bring up a color palette. OK select a
+color in the top row of the palette that looks like a nice gray
+not too light and not too dark. After you click a color the
+palette index should be set somewhere in the range 7 to 10.
+That's where mine is set, most of the gfx in Quake are dark and
+this gray color will allow you to see the objects better. Don't
+select white unless your ready to be blinded :) OK now close the
+options dialog by pressing the OK button</font></p>
+
+<p><font size="2" face="Arial">Now back to the frame editor.
+Because we want to be able to line-up vertices later on, you
+should press down the <img src="perspbtn.gif" width="23"
+height="22"> button, to get parallel projection instead of
+perspective projection.</font></p>
+
+<p><font size="2" face="Arial">Because a missile is a relatively
+small model, we need to setup the viewer to get a close-up look
+of the model, select a zoom factor of 900 % using the <img
+src="zoombtn.gif" width="25" height="24"> button.</font></p>
+
+<p><font size="2" face="Arial">You will need to insert a lot of
+objects from the object library in this tutorial. So if you can't
+find the object library palette in the upper right corner of the
+qME </font><a href="mainwindow.htm"><font size="2" face="Arial">main
+window</font></a><font size="2" face="Arial"> you have a problem.
+You should see something like this...</font></p>
+
+<p><font size="2" face="Arial"><img src="prefabpalette.gif"
+width="143" height="53"></font></p>
+
+<p><font size="2" face="Arial">If for some strange reason you
+can't find it, then something went wrong during installation of
+qME. If you do see the geometry tab, then just skip to the next
+paragraph. The &quot;geometry&quot; tab is nothing more than a
+directory on you hard disk, so you need to find and select the
+directory that <strong>contains</strong> the &quot;geometry&quot;
+directory Let me repeat that... you need to find the directory
+that <strong>contains </strong>the &quot;geometry&quot;
+directory. You can change the directory by using the </font><a
+href="optioneditor.htm"><font size="2" face="Arial">options
+dialog</font></a><font size="2" face="Arial"> under the general
+tab and then select OK after you have set the path to the object
+library correctly.</font></p>
+
+<p><font size="2" face="Arial">Now we've got all that setup, we
+are ready to start editing.</font></p>
+
+<p><font size="2" face="Arial">Keep in mind that you can use
+these <img src="NAI10.jpg" width="130" height="22"> buttons to
+select different views to help line things up and I highly
+suggest it!</font></p>
+
+<h4><font size="2" face="Arial">Creating a fin for our rocket</font></h4>
+
+<p><font size="2" face="Arial">What we are going to do first is
+create a fin for our rocket. Because there will be two fins in
+our model, we are going to create a prefab fin model that we can
+insert twice.</font></p>
+
+<ol>
+    <li><font size="2" face="Arial">Insert a cube by pressing the
+        <img src="box.gif" width="25" height="24"> button on the
+        object library palette.</font></li>
+    <li><font size="2" face="Arial">Hit the <img
+        src="objectscale.gif" width="25" height="25"> button to
+        get the object scale tool.</font></li>
+    <li><font size="2" face="Arial">Click on the cube to select
+        it, then put a cursor in the scale boxes and scale the
+        cube down to .4 .7 .2. If you have typed in a value,
+        hitting the return key will actually set the value, but
+        also going to another edit box will set it.</font></li>
+    <li><font size="2" face="Arial">Now hit the <img
+        src="vtxbtn.gif" width="24" height="24">&nbsp;button to
+        edit the vertices to make our cube look more like a fin.
+        Viewed from above with the render mode set to wireframe
+        this should look something like this:</font></li>
+</ol>
+
+<blockquote>
+    <p><font size="2" face="Arial"><img src="topfinwire.gif"
+    width="167" height="150"></font></p>
+</blockquote>
+
+<ol>
+    <li value="5"><font size="2" face="Arial">Now select
+        &quot;File|Save Model&quot; from the menu and save the
+        model in a file called &quot;FIN.MDL&quot;. Remember
+        where you put it, you will need it shortly.</font></li>
+</ol>
+
+<p><font size="2" face="Arial"><strong>Note</strong>, you also
+could put the fin into the object library. If you save the fin in
+a directory on the same level as the geometry directory or in the
+geometry directory itself, and you select
+&quot;Options|Edit&quot; followed by clicking OK, the object
+palette will be updated and your model will be available from the
+object library.</font></p>
+
+<h4><font size="2" face="Arial">Creating the rocket</font></h4>
+
+<ol>
+    <li><font size="2" face="Arial">Lets start from scratch again
+        by selecting &quot;File|New Model&quot; .</font></li>
+    <li><font size="2" face="Arial">Now press the <img
+        src="sphere.gif" width="24" height="24"> button on the
+        object library palette to put a sphere into your model.</font></li>
+    <li><font size="2" face="Arial">Hit the <img
+        src="objectscale.gif" width="25" height="25"> button to
+        get the object scale tool.</font></li>
+    <li><font size="2" face="Arial">Click on the sphere to select
+        it, then put a cursor in the scale boxes and scale the
+        sphere down to .3 .3 .3.</font></li>
+    <li><font size="2" face="Arial">Now insert a cylinder <img
+        src="cylinder.gif" width="25" height="24"> and scale it
+        down to .7 .2 .2, pretty easy eh? </font></li>
+    <li><font size="2" face="Arial">Now for some confusion, do
+        you see the colored lines? Good. Now, the blue line faces
+        the front of the model, we are making a missile so we
+        want the shaft (shaft = the cylinder you just added) to
+        point away from the front, like a tail. I'm not going to
+        show you exactly how to do it cause you have to learn how
+        to use the program sometime, but you should select the
+        object move tool<img src="objectmove.gif" width="25"
+        height="25"> to move objects around. Anyway, you'll know
+        when this isn't lined up right when you launch a missile
+        and it fly's sideways towards its destination :).
+        Anyway...after scaling the cylinder down, line it up
+        using the object move tool, so it sticks out of the
+        sphere and starts to look somewhat like a weird missile.</font></li>
+    <li><font size="2" face="Arial">Now we need to insert our
+        fins into the model. Select &quot;File|Merge Model&quot;
+        and select your prefab &quot;FIN.MDL&quot;. You will see
+        that a fin is merged into your model.</font></li>
+    <li><font size="2" face="Arial">Hit the <img
+        src="objectrot.gif" width="25" height="24"> button to get
+        the object rotate tool and select the fin you just
+        inserted. Put the cursor in the rotate boxes and rotate
+        the object to 90,0,0.</font></li>
+    <li><font size="2" face="Arial">Now we need to insert the
+        second fin into the model. Select &quot;File|Merge
+        Model&quot; and select the &quot;FIN.MDL&quot; again.</font></li>
+    <li><font size="2" face="Arial">Use the object move tool <img
+        src="objectmove.gif" width="25" height="25"> to move the
+        fins to where a fin on a missile would go. Note that
+        these fins are supposed to stick out of BOTH sides of the
+        shaft. Just mess around with the fins until they look
+        good.</font></li>
+    <li><font size="2" face="Arial">Now insert a cone from the
+        object library palette. Rotate it 90 degrees on the Y
+        axis (hint: X </font><font color="#FFFF00" size="2"
+        face="Arial">Y </font><font size="2" face="Arial">Z).
+        Scale it down to .2 .2 .2 and put it on the end of the
+        shaft so it looks like a flame.</font></li>
+    <li><font size="2" face="Arial">Now, since this is a missile
+        from the Rocket Launcher we want it to glow and smoke so
+        we click this <img src="editprop.gif" width="24"
+        height="23">&nbsp;button. You should see the </font><a
+        href="modelpropeditor.htm"><font size="2" face="Arial">model
+        properties editor</font></a><font size="2" face="Arial">
+        now. In there you will see a check box under
+        &quot;Flags&quot; marked &quot;Rocket Smoke Trail&quot;
+        put a check mark in it and click OK. That will make the
+        model have the &quot;EF_ROCKET&quot; flag and when shown
+        in Quake it will glow and smoke. Cool eh? :)</font></li>
+</ol>
+
+<p><font size="2" face="Arial">Read on, to find out how to paint
+on your newly created model.</font></p>
+
+<h2 align="left"><font face="Arial">Painting a skin</font></h2>
+
+<p align="left"><font size="2" face="Arial">You can paint on the
+skin in either 2D with the skin texture editor or in 3D directly
+on the model in the frame editor. </font></p>
+
+<p align="left"><font size="2" face="Arial">To use the 2D skin
+texture editor, click this <img src="skinedit.gif" width="23"
+height="23"> button. You can also paint the skin with an external
+paint program, just export it, paint on it and import it again. I
+will teach you how to export or paint it within qME, I won't
+teach you how to use a different program to paint it though :).</font></p>
+
+<h4 align="left"><font size="2" face="Arial">Internal painting</font></h4>
+
+<ol>
+    <li><font size="2" face="Arial">Select the <img
+        src="penbtn.gif" width="25" height="23">&nbsp;button to
+        get the pencil.</font></li>
+    <li><font size="2" face="Arial">To select the color you want
+        to use in painting, select a color from the color palette
+        you normally find on the bottom of the main window. You
+        also can right click on the skin to select a color
+        already present in the skin itself.</font></li>
+    <li><font size="2" face="Arial">Draw, either in the Skin
+        Texture Editor or in the Frame Editor.</font></li>
+</ol>
+
+<h4 align="left"><font size="2" face="Arial">External painting</font></h4>
+
+<p><font size="2" face="Arial">Now if you want to paint your skin
+in a different program (like Paint Shop Pro) this is what ya do.</font></p>
+
+<ol>
+    <li><font size="2" face="Arial">Click in the upper left panel
+        that contains these <img src="skinoutline.gif" width="91"
+        height="16"> lines.</font></li>
+    <li><font size="2" face="Arial">Select the skin you want to
+        paint on, in this case it will most likely be called
+        &quot;new skin&quot;. To change the name of the skin
+        click on the skin you want to rename and click the name
+        label. After clicking it, the label will go into edit
+        mode. Anyway, select the skin you want to export (NOTE:
+        you MUST select a skin before you can export and if there
+        are more than one skin, select the right one!) now use
+        the &quot;File|Export Skin&quot; menu to save the skin.</font></li>
+    <li><font size="2" face="Arial">Select a place and name for
+        the file you are exporting and click OK.</font></li>
+    <li><font size="2" face="Arial">Fire up your fav paint
+        program on it and DRAW! =Þ~</font></li>
+    <li><font size="2" face="Arial">After drawing the skin in a
+        different program you might want to import it into your
+        new model. So, if you closed qME open it back up and open
+        your model, click &quot;File|Import Skin&quot; menu to
+        find the file that contains your skin and click OK.</font></li>
+    <li><font size="2" face="Arial">Now if the skin you just
+        imported is not the FIRST in the list, grab it (left
+        click drag) and drag it onto the first skin this will
+        move it to the first place in the list. </font></li>
+    <li><font size="2" face="Arial">Voila your first Quake model
+        with qME ! Pretty easy huh? :)</font></li>
+</ol>
+
+<p><font size="2" face="Arial">Read on, to find out how to add
+animation frames to your model.</font></p>
+
+<h2 align="left"><font face="Arial">Animating the model</font></h2>
+
+<p><font size="2" face="Arial">Now we are going to add some
+animation frames. </font></p>
+
+<p><font size="2" face="Arial">What we are trying to accomplish
+here is making the rocket look more realistic during flight. If
+you ever have seen a real missile launch from close by, you might
+have noticed that these things behave quite differently from the
+normal Quake missiles. In particular at take-off the missiles
+control mechanisms that guide it make it jump wildly as it hurls
+towards it target.</font></p>
+
+<p><font size="2" face="Arial">What we are going to do is add a
+client side animation. This means you can let Quake do the
+animation playing without programming a single line of QC code !</font></p>
+
+<p><font size="2" face="Arial">To create an animation this is
+what you need to do.</font></p>
+
+<ol>
+    <li><font size="2" face="Arial">First we need to set up the
+        joints in the model. Joints are the animation parameters
+        that define motion for the model. Select the root object
+        in the </font><a href="mainwindow.htm#Object Tree Panel"><font
+        size="2" face="Arial">object tree panel</font></a><font
+        size="2" face="Arial">, right click and select &quot;Edit
+        Object Joints&quot; from the local menu.</font></li>
+    <li><font size="2" face="Arial">Now in the dialog you see
+        now, check the TY and TZ boxes and give the joints the
+        names &quot;left right&quot; and &quot;up down&quot;.
+        Click close to close the dialog. We now have created two
+        joints in our model that allow us to control the
+        animation in the Joint Track Editor.</font></li>
+    <li><font size="2" face="Arial">Now select our single frame
+        in the </font><a href="mainwindow.htm#Frame Tree Panel"><font
+        size="2" face="Arial">frame tree panel</font></a><font
+        size="2" face="Arial">, right click and duplicate the
+        frame 10 times, then duplicate the first frame again, so
+        you get a total of 12 frames.</font></li>
+    <li><font size="2" face="Arial">Well lets start animating !
+        Open the </font><a href="jointtrackeditor.htm"><font
+        size="2" face="Arial">Joint Track Editor</font></a><font
+        size="2" face="Arial"> by pressing the <img
+        src="jointbtn.gif" width="23" height="22"> button and
+        select the cells in the first column of the grid. Press
+        the <img src="keyframebtn.gif" width="24" height="22">
+        button to turn these two values into key values. The
+        values turn now from gray in to black, which means you
+        can change them. You need to double click the values to
+        edit them.</font></li>
+</ol>
+
+<p><font size="2" face="Arial"><img src="tut1joints.gif"
+width="595" height="110"></font></p>
+
+<ol type="1" start="5">
+    <li><font size="2" face="Arial">Well go on with changing gray
+        tween values into key values for frame 4, 6,7 and finally
+        frame 10. If you are finished with changing the key
+        values, press the <img src="updatebtn.gif" width="25"
+        height="25"> button. This will calculate the in-between
+        values and update the model. Your grid should now look
+        exactly likethe one you see above.</font></li>
+    <li><font size="2" face="Arial">Now go to the frame editor
+        and play the animation by using the green play button
+        from the animation controls <img src="animctrls.gif"
+        width="46" height="22"> and see how the rocket jumps up
+        and down and moves from left to right.</font></li>
+    <li><font size="2" face="Arial">Finally we need to instruct
+        Quake that it needs to play the animation automatically.
+        To do this, right click the scene in the frame tree panel
+        and select &quot;Group Frames for Scene&quot; from the
+        local menu. Now we are halfway there. Again select the
+        scene and right click it again and choose &quot;Edit
+        Duration of Frames for Scene&quot;. Make all durations
+        '0.05' which will play back the animation at a framerate
+        of 20 frames per second.</font></li>
+</ol>
+
+<p><font size="2" face="Arial">Read on to find out how you can
+use your new rocket in Quake.</font></p>
+
+<h2 align="left"><font face="Arial">Using your missile in Quake</font></h2>
+
+<p><font size="2" face="Arial">Well this is what I got in the
+end, does yours look anything like it ?</font></p>
+
+<p><font size="2" face="Arial"><img src="myfirstmdl.gif"
+width="199" height="55"></font></p>
+
+<p><font size="2" face="Arial">OK, now you wanna see the thing in
+Quake right? Right. This is what ya do. Let's assume you
+installed Quake in C:\QUAKE\, then this is the root directory for
+new game patches. If you installed Quake in another directory,
+that's OK, use that directory in the description below whenever
+you see C:\QUAKE\ in the text.</font></p>
+
+<p><font size="2" face="Arial">We are going to create a new game
+patch to view our missile. Use the explorer or a DOS box to
+create the MYMDL sub directory directly under the game root. Then
+create a PROGS sub directory directly under that one. The result
+should be C:\QUAKE\MYMDL\PROGS\ . Now go back to qME and choose
+&quot;File|Save As&quot; to save your model as MISSILE.MDL in the
+PROGS directory you just created (You don't have to type the
+extension, qME will automatically put &quot;.mdl&quot; at the
+end!)</font></p>
+
+<p><font size="2" face="Arial">Now you start a DOS box, change
+the current directory to C:\QUAKE\ and type :</font></p>
+
+<p><font size="2" face="Arial">quake -game mymdl +map e1m1</font></p>
+
+<p><font size="2" face="Arial">Now once you're inside Quake bring
+down the console with &quot;~&quot; and type &quot;impulse
+9&quot; this will give you the rocket launcher and all other
+weapons.</font></p>
+
+<p><font size="2" face="Arial">Now get ready for some serious
+gibbing with your collection of spanking new rockets :)</font></p>
+
+<p><font size="2" face="Arial">If you want to see your missile a
+little less in motion, save it as GRENADE.MDL in the same PROGS
+directory where you saved it as MISSILE.MDL, this will replace
+the grenade with your missile model. You will then see your
+missile bouncing of walls instead of the normal grenade.</font></p>
+</body>
+</html>

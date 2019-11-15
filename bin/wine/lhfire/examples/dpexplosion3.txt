@@ -1,0 +1,67 @@
+render 128 128 dpexplosion3_%04d.tga
+frames 1 11 0 30
+particles 32768
+passes 4
+camera 0 0 -320
+
+seed 954
+
+rendertype 1
+
+life 10 10
+decay 0 0
+weight 1000 1000
+mass 0 0
+size 0 0
+color 0 0 0 0
+velocity 0 0 0 0 0
+
+pressure 1060 750
+area 0 0 0 0 0
+spawn 1
+
+pressure 1050 1000
+area 0 0 0 15 30
+spawn 4
+
+pressure 1000 925
+area 0 0 0 25 40
+spawn 5
+
+mass 0.4 1.1
+life 3 10
+decay 1 0.3
+pressure 0 0
+weight 0 0
+
+velocity 0 0 0 0 5
+color1 32 32 32 192
+color2 0 0 0 192
+size 4 8
+
+area 5 10 0 0 10
+spawn 4000
+area 0 0 0 0 15
+spawn 8000
+area -15 10 0 0 5
+spawn 2000
+area 0 -15 0 0 5
+spawn 2000
+
+mass 0.3 1
+life 0 9
+decay 1 0
+
+velocity 0 0 0 0 0
+color1 2560 768 384 384
+color2 192 64 32 384
+size 3 6
+area 10 5 0 0 15
+spawn 4000
+area 0 0 0 0 15
+spawn 8000
+area -15 5 0 0 5
+spawn 2000
+area 0 -10 0 0 5
+spawn 2000
+wait 10

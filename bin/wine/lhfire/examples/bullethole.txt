@@ -1,0 +1,20 @@
+render 32 32 bullethole_%04d.tga
+frames 0 10 0 10
+particles 1000
+passes 16
+camera 0 0 -64
+
+area 0 0 0 0 8
+velocity 0 0 0 0 40
+size 0 10
+life 0 1
+color1 0 0 0 256
+color2 0 0 0 128
+
+seed 1234
+
+label mainloop
+clear
+spawn 25
+wait 1
+goto mainloop

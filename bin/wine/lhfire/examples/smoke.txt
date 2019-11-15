@@ -1,0 +1,19 @@
+render 32 32 smoke_%04d.tga
+frames 0 1 0 1
+particles 32
+passes 16
+camera 64 -64 -256
+
+rendertype 0
+area 0 0 0 8 8
+velocity 0 0 0 20 32
+size 0.01 0.01
+life 1 1
+color1 256 256 256 64
+color2 0 0 0 64
+
+seed 1389
+
+spawn 12
+
+time 100
