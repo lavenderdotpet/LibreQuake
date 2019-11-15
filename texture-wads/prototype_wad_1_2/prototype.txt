@@ -1,0 +1,39 @@
+============================================================
+Name:				Prototype WAD
+Date:				18th August 2017 (last updated: 3rd June 2019)
+File:             	prototype.zip
+Author:           	Aleksander "Khreathor" Marhall 
+Email:            	khreathor@khreathor.xyz
+Twitter:            https://twitter.com/khreathor
+URL:              	http://khreathor.xyz/site/prototype/
+Version:          	1.2
+
+============================================================
+
+Version 1.2 changes (3rd June 2019):
+-----------------
+- Uniform colors added (including fullbrights)
+- Gold/Silver key texture added
+
+Version 1.1 changes (17th April 2019):
+-----------------
+- 16x16 and 32x32 texture variants added
+- lava texture added
+- *lavaskip,*slimeskip added
+- *hintskip added
+
+============================================================
+
+COPYRIGHT NOTICES
+-----------------
+
+Feel free to use it with any Quake release.
+I'm fine if you use it with other games, but give me a credit.
+
+If you want to make HD texture versions based on this WAD,
+You have to pay me $10000 and invite me to piniata party.
+This is no joke...
+
+Have fun!
+
+============================================================
