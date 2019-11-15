@@ -1206,7 +1206,6 @@ void() item_artifact_super_damage =
 
 	precache_model ("progs/quaddama.mdl");
 	precache_sound ("items/damage.wav");
-	precache_sound ("items/damage2.wav");
 	precache_sound ("items/damage3.wav");
 	self.noise = "items/damage.wav";
 	setmodel (self, "progs/quaddama.mdl");
