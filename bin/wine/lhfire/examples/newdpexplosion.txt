@@ -1,0 +1,44 @@
+render 128 128 newdpexplosion_%04d.tga
+frames 0 6 0 6
+particles 8192
+passes 8
+camera 0 0 -320
+worldbox -128 -128 -118 128 128 138
+
+seed 147
+
+rendertype 1
+
+decay 1 1
+life 100 100
+velocity 0 0 0 0 0
+color 0 0 0 0
+size 0 0
+pressure 20 20
+weight 0 0
+boxspawn 16 16 16 -128 -128 -118 128 128 138
+
+life 0 5
+decay 1 0
+pressure 0 0
+weight 1 0
+
+velocity 0 0 0 15 25
+color1 64 64 64 384
+color2 32 32 32 768
+size 10 20
+area 0 0 10 0 30
+spawn 1000
+
+decay 1 0
+pressure 1 0
+weight 0 0
+
+velocity 0 0 0 5 25
+color1 2560 1024 512 384
+color2 192 64 32 384
+size 4 8
+area 0 0 10 0 30
+spawn 1000
+
+wait 10

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Concepts</title>
+<base target="main">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF">
+
+<h1><font color="#FF0000" face="Arial">Concepts</font></h1>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Before you start
+modeling, you need to know a few modeling concepts that are very
+specific to Quake.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Read this section
+carefully, since it contains valuable tips and tricks that allow
+you to successfully create a model for Quake.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Monsters perform a
+number of actions. These actions are modeled as scenes. Scenes
+are sequences of frames that sometimes are played in a continuous
+loop like when a monster is running or standing. Sometimes a
+scene is played once, like when a monster is dying.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">In general
+monsters have the following kinds of scenes :</font></p>
+
+<ul>
+    <li><font color="#FFFFFF" size="2" face="Arial">stand :
+        monster is standing, waiting for you to arrive.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">walk :
+        monster is walking around guarding an area.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">run : monster
+        is chasing you.</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">attack :
+        monster is attacking you</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">pain :
+        monster is having pain</font></li>
+    <li><font color="#FFFFFF" size="2" face="Arial">death :
+        monster is dropping dead in some way</font></li>
+</ul>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Most monsters have
+a variety of different attack, pain and death scenes, to make the
+actions look a bit more realistic.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">It's amazing to
+see with how little frames a run scene is animated. A soldier
+that is running has a run scene of no more than 8 frames. The
+reason for this is that scenes are played back with a fixed rate
+of 10 frames per second. This would make a run scene of 8 frames
+which depicts a soldier taking two steps take 0,8 seconds, which
+is realistic for running. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">If you insert too
+many frames into a fast action scene, it will look like a slow
+motion replay. On the other hand sometimes you need to insert
+more frames to make the animation go slower. For example to
+prevent a standing monster from looking like it has a violent
+shaking affliction, you need to insert a lot of frames. Assuming
+the monster is looking around and turns its head every 10 seconds
+or so, this would mean you'd need 100 frames to show that.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">For models like
+torches that stay in one spot and that don't interact with the
+players, you can turn the scene into a framegroup. A framegroup
+is a special scene where you can specify a duration for every
+frame. Framegroup animations are handled on the client side, you
+might have noticed that during network play when the server stops
+you still can see the torches burning. Well that is because the
+animations are played on the client side.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The structure of
+Quake models limits the things you can do in animations. There is
+a single list of triangles for all the frames in the model. This
+means that every frame must have the same number of vertices.
+What you cannot do is for example let the monster swing an ax in
+one scene and remove this ax in another scene. There is a trick
+to workaround this limitation though. To make an object disappear
+you need to scale down the object to a minuscule size and put it
+inside the body of the monster. The original Quake models use
+this trick very often.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You can have more
+than one skin in your model, but there is only a single list of
+skin vertices that map the skins onto the 3D frames. This means
+that all your skins need exactly the same layout and the same
+size. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Objects and pivots
+are concepts that are not originally found in Quake models, but
+that are introduced by qME. An object is used to group vertices
+and triangles in a model. For example a chainsaw is an object and
+a monster's head can be an object etc.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">When importing an
+original Quake model, the model is scanned for groups of
+triangles that are separate from each other. These separate
+groups of triangles are turned into separate objects. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Objects are
+organized in a tree. At the root of the tree there is a root
+object that has other objects as its children. Applying an
+operation like scaling to the object will apply it automatically
+to its child objects.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Pivots are kind of
+like bones for your model. A pivot controls the position and
+orientation and scale of the vertices in your object in a single
+frame. Just like bones are attached to flesh in your body. Moving
+a pivot means moving the object in that frame and thus the
+vertices. For every object there is a pivot in every frame. This
+means that when you have for example 10 frames and you have 3
+objects, you have a total of 30 pivots. </font></p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+render 32 32 bloodsplatter_%04d.tga
+frames 0 20 0 20
+particles 1000
+passes 16
+camera 0 0 -128
+
+area 0 0 0 0 20
+velocity 0 0 0 0 10
+size 2 4
+life 0 4
+color1 128 0 0 128
+color2 64 0 0 64
+
+seed 2345
+
+label mainloop
+clear
+spawn 250
+wait 5
+goto mainloop
+
+time 100

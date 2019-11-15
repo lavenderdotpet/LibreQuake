@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Skin Texture Editor</title>
+<base target="main">
+<meta name="FORMATTER" content="Microsoft FrontPage 2.0">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF"
+vlink="#C0C0C0">
+
+<h1><font color="#FF0000" face="Arial">Skin Texture Editor</font></h1>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The skin editor is
+used for editing skin vertices and painting on the skins.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><!--webbot
+bot="ImageMap"
+rectangle=" (170,14) (195, 36)  #Show+Triangle+Mesh"
+rectangle=" (3,48) (292, 272)  #Edit+Panel"
+rectangle=" (266,22) (289, 46)  #Taking+Snapshots"
+rectangle=" (244,23) (266, 46)  #Zoom+Selection"
+rectangle=" (200,24) (244, 47)  #Shirt+and+Pants+Color+Selection"
+rectangle=" (143,22) (168, 44)  #Rearrange+Object+Skins"
+rectangle=" (121,23) (142, 44)  #Recalculate+Skin+Vertices"
+rectangle=" (98,23) (118, 45)  #Paint+Triangles"
+rectangle=" (4,22) (96, 47)  #Clipboard+Operations"
+src="skineditor.gif" border="0" width="293" height="273"
+startspan --><MAP NAME="FrontPageMap"><AREA SHAPE="RECT" COORDS="170, 14, 195, 36" HREF="#Show Triangle Mesh"><AREA SHAPE="RECT" COORDS="3, 48, 292, 272" HREF="#Edit Panel"><AREA SHAPE="RECT" COORDS="266, 22, 289, 46" HREF="#Taking Snapshots"><AREA SHAPE="RECT" COORDS="244, 23, 266, 46" HREF="#Zoom Selection"><AREA SHAPE="RECT" COORDS="200, 24, 244, 47" HREF="#Shirt and Pants Color Selection"><AREA SHAPE="RECT" COORDS="143, 22, 168, 44" HREF="#Rearrange Object Skins"><AREA SHAPE="RECT" COORDS="121, 23, 142, 44" HREF="#Recalculate Skin Vertices"><AREA SHAPE="RECT" COORDS="98, 23, 118, 45" HREF="#Paint Triangles"><AREA SHAPE="RECT" COORDS="4, 22, 96, 47" HREF="#Clipboard Operations"></MAP><a href="_vti_bin/shtml.exe/skineditor.htm/map"><img
+src="skineditor.gif" width="293" ismap usemap="#FrontPageMap"
+height="273" border="0"></a><!--webbot bot="ImageMap" endspan
+i-checksum="447" --></font></p>
+
+<h3><a name="Clipboard Operations"><font face="Arial">Clipboard
+Operations</font></a></h3>
+
+<p><img src="skinclipboard.gif" width="89" height="22"></p>
+
+<p><font size="2" face="Arial">From left to right these buttons
+perform the following operations:</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">Cut, make a copy of the
+        current skin to the clipboard and delete it from the
+        model</font></li>
+    <li><font size="2" face="Arial">Copy, make a copy of the
+        current skin to the clipboard.</font></li>
+    <li><font size="2" face="Arial">Paste, from the clipboard
+        paste a skin into the model.</font></li>
+    <li><font size="2" face="Arial">Delete, remove the current
+        skin from the model.</font></li>
+</ul>
+
+<h3><a name="Paint Triangles"><font face="Arial">Paint Triangles</font></a></h3>
+
+<p><font size="2" face="Arial"><img src="painttribtn.gif"
+width="24" height="23"></font></p>
+
+<p><font size="2" face="Arial">Use this button to paint the
+outlines of the skin triangles on the skin.</font></p>
+
+<h3><a name="Recalculate Skin Vertices"><font face="Arial">Recalculate
+Skin Vertices</font></a></h3>
+
+<p><font face="Arial"><img src="recalctribtn.gif" width="23"
+height="22"></font></p>
+
+<p><font size="2" face="Arial">Use this button to recalculate the
+skin vertices from a base frame, or when you don't have a base
+frame to create one.</font></p>
+
+<p><font size="2" face="Arial">A base frame is important if you
+want your model to look good, because it is used to get a good 2D
+skin to 3D frame mapping. A skin to frame mapping is good when
+every triangle in the 3D frame has enough pixels in the skin to
+show a correct texture with little stretch or other forms of
+deformation.</font></p>
+
+<p><font size="2" face="Arial">The base frame is the first frame
+in the base scene. You need to arrange the objects and even the
+vertices in your base frame in such a way that after
+recalculating skin vertices, all the triangles of your frame are
+shown as triangles (and not as lines) in the skin.</font></p>
+
+<p><font size="2" face="Arial">In qME you mostly assemble your
+models from prefab objects. These objects are already created in
+such a way that there is an optimal skin to frame mapping. The
+skins and skin vertices of prefab objects are combined into a
+single skin. Pressing recalculate skin vertices in this situation
+will not work as you expect. In fact it will probably create a
+very messy skin to frame mapping as the base frame you created
+with the prefab objects is not useable as a base for skin vertex
+recalculation. Furthermore, any skin texture that was painted
+will be lost since triangles will be located somewhere completely
+different. </font></p>
+
+<p><font size="2" face="Arial">What you can do in this situation
+is rename the base scene in the 3D frame editor to something like
+&quot;frame&quot;. Then when you press the recalculate skin
+vertices button, qME replies with &quot;Cannot locate 'base'
+frame, shall I reconstruct it ?&quot; replying yes to this dialog
+will create a base frame from the skin vertices. This is actually
+a reverse recalculate skin vertices operation.</font></p>
+
+<p><font size="2" face="Arial">When you are not working with
+prefab objects, but you are creating new objects by moving and
+merging vertices and combining primitives, you will need to use
+the recalculate skin vertices operation, since vertex operations
+inherently destroy the optimal skin to frame mapping.</font></p>
+
+<p><font size="2" face="Arial">Now if you would NOT take special
+precautions in creating a base frame, almost certainly a number
+of triangles will degenerate to lines when you recalculate the
+skin vertices. This gives the triangles a very ugly looking
+stripy texture.</font></p>
+
+<p><font size="2" face="Arial">To illustrate the degeneration of
+triangles look at the simple box below. The image is a snapshot
+taken from the 3D editor and you can see that the box has
+triangles that are parallel to the X unit vector. The skin vertex
+recalculation has to create a flat 2D image to captures all
+triangles on the 3D frame. This means a complete dimension has to
+be eliminated. To do this, all vertices of the base frame are
+projected on the YZ plane. These projected vertices are the
+actual skin vertices.</font></p>
+
+<p><font size="2" face="Arial"><img src="cubewire.gif"
+width="205" height="215"></font></p>
+
+<p><font size="2" face="Arial">Well below is what happens when
+you press the recalculate skin vertices button and then paint
+triangles button to paint the outlines of the skin triangles on
+the skin.</font></p>
+
+<p><font size="2" face="Arial"><img src="cuberecalc.gif"
+width="208" height="104"></font></p>
+
+<p><font size="2" face="Arial">As you can see, only four
+triangles of the model have been preserved. The other eight
+triangles have degenerated to lines. Since these lines are white,
+the eight degenerate triangles are all completely white as can be
+seen in the 3D snapshot in texturemapped rendering mode below.</font></p>
+
+<p><img src="cubedegen.gif" width="87" height="81"></p>
+
+<p><font size="2" face="Arial">Now to get a better skin to frame
+mapping, we rotate the cube by using the rotate object tool in
+the 3D frame editor. The cube is rotated over and angle of 45
+degrees around both Y and Z axis. As you can see, there are no
+triangles parallel to the X unit vector any more.</font></p>
+
+<p><font size="2" face="Arial"><img src="cubewire2.gif"
+width="130" height="114"></font></p>
+
+<p><font size="2" face="Arial">Recalculating the skin vertices
+now will give a much better result. We first created a new skin
+by using the </font><a href="mainwindow.htm#Skin Tree Panel"><font
+size="2" face="Arial">skin tree panel</font></a><font size="2"
+face="Arial"> in the main window. Then we pressed the recalculate
+skin vertices button and the paint triangles button. The
+resulting skin is shown below.</font></p>
+
+<p><img src="cuberecalc2.gif" width="208" height="104"></p>
+
+<p><font size="2" face="Arial">As you can see, all triangles are
+now visible in the skin. The 3D textured snapshot of the cube
+looks a lot better too.</font></p>
+
+<p><font size="2" face="Arial"><img src="cubedegen2.gif"
+width="104" height="99"></font></p>
+
+<h3><a name="Rearrange Object Skins"><font face="Arial">Rearrange
+Object Skins</font></a></h3>
+
+<p><font size="2" face="Arial"><img src="cropskinbtn.gif"
+width="24" height="23"></font></p>
+
+<p><font size="2" face="Arial">The re-arrange object skin button
+rearranges the skins of objects horizontally. Use this option if
+you have inserted and then removed a number of prefab objects in
+your model. Since skins of deleted objects are not removed, the
+skin of model would grow to an unacceptable size if you would not
+use the re-arrange object skins operation.</font></p>
+
+<p><font size="2" face="Arial">Don't use this operation on a
+model that has a lot of small objects, since the objects will be
+layed out horizontally, this usually will create a very wide skin
+with lots of unused texture. In a future release I will change
+the layout algorithm to make optimal use of the skin height, so
+it will also work for models made out of small objects.</font></p>
+
+<h3><a name="Show Triangle Mesh"><font face="Arial">Show Triangle
+Mesh</font></a></h3>
+
+<p><img src="showtrimesh.gif" width="24" height="23"></p>
+
+<p><font size="2" face="Arial">This button is useful if you are
+painting on the skin and you want to know what the triangle
+layout of the skin triangles is. </font></p>
+
+<p><font size="2" face="Arial">Pressing down this button will
+toggle the showing of the triangle mesh. This button wil NOT
+paint the triangles onto the skin like the paint triangles button
+does.</font></p>
+
+<h3><a name="Shirt and Pants Color Selection"><font face="Arial">Shirt
+and Pants Color Selection</font></a></h3>
+
+<h3><img src="shirtpantcolbtn.gif" width="46" height="23"></h3>
+
+<p><font size="2" face="Arial">These buttons allow you to change
+the shirt and pants color on your model. Note that this will NOT
+modify your model in any way, it only shows you how a player
+model would look in Quake, when you select a certain shirt or
+pants color.</font></p>
+
+<h3><a name="Zoom Selection"><font face="Arial">Zoom Selection</font></a></h3>
+
+<p><font face="Arial"><img src="zoombtn.gif" width="25"
+height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">This button will
+pop-up a menu that allows you to change the zoom percentage to
+take a closer look at your skin. </font></p>
+
+<p><img src="framezoommnu.gif" width="81" height="176"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">When the camera
+tool is selected, you also can left click and right click with
+the mouse button to zoom in and out of your skin.</font></p>
+
+<h3><a name="Taking Snapshots"><font face="Arial">Taking
+Snapshots</font></a></h3>
+
+<p><img src="snapshotbtn.gif" width="23" height="23"></p>
+
+<p><img src="snapshotmnu.gif" width="152" height="40"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The snapshot menu
+lets you take snapshots of the </font><a href="#Edit Panel"><font
+color="#FFFFFF" size="2" face="Arial">edit pane</font></a><font
+color="#FFFFFF" size="2" face="Arial">l contents. The snapshot
+can be put on the clipboard or saved into a file.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Note that you
+should not use snapshots as a base for skins, since snapshots
+usually loose colors in the process. Use the copy button in the
+clipboard operations to make an exact copy of your skin with the
+correct palette.</font></p>
+
+<h3><a name="Edit Panel"><font face="Arial">Edit Panel</font></a></h3>
+
+<p><img src="skineditpnl.gif" width="260" height="207"></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">In the edit panel
+you paint on the skin with paint tools and and move skin vertices
+with the vertex tool. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The tool palette
+found in the main window lets you select a tool to use in the
+edit panel.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><!--webbot
+bot="ImageMap" rectangle=" (154,19) (232, 50)  #Object+Tools"
+rectangle=" (127,19) (155, 48)  "
+rectangle=" (106,22) (129, 50)  "
+rectangle=" (77,21) (105, 47)  " rectangle=" (51,21) (79, 50)  "
+rectangle=" (33,21) (52, 47)  " rectangle=" (5,22) (32, 46)  "
+src="toolpalette.gif" border="0" width="233" height="51"
+startspan --><MAP NAME="FrontPageMap1"><AREA SHAPE="RECT" COORDS="154, 19, 232, 50" HREF="#Object Tools"><AREA SHAPE="RECT" COORDS="127, 19, 155, 48" NOHREF><AREA SHAPE="RECT" COORDS="106, 22, 129, 50" NOHREF><AREA SHAPE="RECT" COORDS="77, 21, 105, 47" NOHREF><AREA SHAPE="RECT" COORDS="51, 21, 79, 50" NOHREF><AREA SHAPE="RECT" COORDS="33, 21, 52, 47" NOHREF><AREA SHAPE="RECT" COORDS="5, 22, 32, 46" NOHREF></MAP><a href="_vti_bin/shtml.exe/skineditor.htm/map1"><img
+src="toolpalette.gif" width="233" ismap usemap="#FrontPageMap1"
+height="51" border="0"></a><!--webbot bot="ImageMap" endspan
+i-checksum="1481" --></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Use the tool
+palette to activate a tool. When you select a tool, the </font><a
+href="mainwindow.htm#Toolproperties"><font color="#FFFFFF"
+size="2" face="Arial">tool properties</font></a><font
+color="#FFFFFF" size="2" face="Arial"> palette is changed to show
+the properties for the selected tool. Initially you will find the
+tool properties palette directly on the right side of the tool
+palette.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Below you'll find
+a description of what you can do with each tool in the edit
+panel.</font></p>
+
+<h4><a name="Camera Tool"><font face="Arial">Camera Tool</font></a></h4>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="cambtn.gif" width="25" height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">With the camera
+tool you can zoom-in (left click) and zoom-out (right click).</font></p>
+
+<h4><a name="Vertex Tool"><font face="Arial">Vertex Tool</font></a></h4>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="vtxbtn.gif" width="24" height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">This tool is used
+to select and drag around vertices in a skin.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You can
+multi-select vertices with a selection rectangle or by selecting
+them one by one. To&nbsp;select multiple vertices one by one,
+hold down the SHIFT key and click every vertex you want to select
+separately. Use a selection rectangle by left clicking outside
+the vertices and then left click and drag a selection rectangle
+around the vertices you want to select.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">You can also move
+around all vertices at once, by holding down the CTRL key, left
+clicking a vertex and then move the mouse to drag the vertices
+around.</font></p>
+
+<h4><a name="Pen Tool"><font face="Arial">Pen Tool</font></a></h4>
+
+<p><font size="2" face="Arial"><img src="penbtn.gif" width="25"
+height="23"></font></p>
+
+<p><font size="2" face="Arial">You can paint on the skin by using
+the pen tool.</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">To paint left click and drag
+        on the skin.</font></li>
+    <li><font size="2" face="Arial">To select a color, right
+        click on the skin.</font></li>
+</ul>
+
+<p><font size="2" face="Arial">The pen size used during painting
+can be selected in the tool properties palette. </font><font
+color="#FFFFFF" size="2" face="Arial">The tool properties for the
+paint tools have been </font><a
+href="mainwindow.htm#Toolproperties"><font color="#FFFFFF"
+size="2" face="Arial">described in detail</font></a><font
+color="#FFFFFF" size="2" face="Arial"> in the main window
+description.</font></p>
+
+<p><font size="2" face="Arial"><img src="pentoolprops.gif"
+width="626" height="51"></font></p>
+
+<p><font size="2" face="Arial">The color that is used for
+painting can also be selected in the color palette or in the </font><a
+href="coloreditor.htm"><font size="2" face="Arial">skin color
+editor</font></a><font size="2" face="Arial">.</font></p>
+
+<p><font size="2" face="Arial"><img src="colorpal.gif"
+width="524" height="51"></font></p>
+
+<h4><a name="Fill Tool"><font face="Arial">Flood Fill Tool</font></a></h4>
+
+<p><font face="Arial"><img src="floodbtn.gif" width="25"
+height="24"></font></p>
+
+<p><font size="2" face="Arial">The flood fill tool will replace
+an area of solid color with the currently selected color.</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">To flood fill an area, left
+        click on the skin.</font></li>
+    <li><font size="2" face="Arial">To select a color, right
+        click on the skin.</font></li>
+</ul>
+
+<h4><a name="Dropper Tool"><font face="Arial">Color Dropper Tool</font></a></h4>
+
+<p><font face="Arial"><img src="dropbtn.gif" width="25"
+height="24"></font></p>
+
+<p><font size="2" face="Arial">The color dropper is used to
+select the current color from the skin and to completely replace
+a color in the skin.</font></p>
+
+<ul>
+    <li><font size="2" face="Arial">To select a color, left or
+        right click on the skin. </font></li>
+    <li><font size="2" face="Arial">To replace a color left click
+        on the skin with the ALT key down, this will replace all
+        pixels with the same color as the clicked pixel with the
+        current color.</font></li>
+</ul>
+</body>
+</html>

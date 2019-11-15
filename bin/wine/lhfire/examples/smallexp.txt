@@ -1,0 +1,31 @@
+render 32 32 smallexp_%04d.tga
+frames 0 6 0 6
+particles 4096
+passes 8
+camera 0 0 -320
+
+seed 147
+
+decay 1 0
+
+velocity 0 0 0 30 50
+color1 256 256 256 768
+color2 64 32 16 768
+size 5 10
+life 0 3
+area 0 0 10 0 30
+spawn 1000
+
+decay 1 0
+
+velocity 0 0 0 0 20
+color1 128 48 24 768
+color2 64 24 12 768
+size 5 10
+life 0 5
+area 0 0 0 0 30
+spawn 500
+color1 640 256 128 768
+color2 192 64 32 768
+spawn 1500
+wait 10

@@ -1,0 +1,15 @@
+render 64 64 glow_%04d.tga
+frames 0.1 0.1 0 1
+particles 10
+passes 2
+camera 0 0 -256
+
+area 0 0 0 0 0
+velocity 0 0 0 0 0
+size 128 128
+life 100 100
+color1 256000 256000 256000 256
+color2 256000 256000 256000 256
+spawn 1
+
+time 2.0

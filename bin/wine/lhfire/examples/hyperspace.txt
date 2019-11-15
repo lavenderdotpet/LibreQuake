@@ -1,0 +1,60 @@
+render 128 128 hyperspace_%04d.tga
+frames 0 2 0 12
+particles 65536
+passes 16
+camera 0 0 -64
+
+decay 1 0
+
+rendertype 1
+
+seed 32765
+
+weight 800 800
+pressure 1500 -1600
+mass 0 0
+velocity 0 0 0 0 0
+size 0 0
+decay 0 0
+life 2 2
+color 0 0 0 0
+area 0 0 0 0 0
+spawn 1
+
+weight 30 30
+pressure 0 0
+mass 2 2
+velocity 0 0 0 0 5
+size 0 0
+decay 0 0
+life 2 2
+color 0 0 0 0
+area 0 0 0 5 5
+spawn 30
+
+weight 0 0
+pressure 0 0
+mass 2 2
+velocity 0 0 0 8 8
+size 0 0.6
+decay 1 0
+life 0 2
+color1 64 128 1024 128
+color2 0 0 0 128
+area 0 0 0 0 6
+spawn 40000
+
+weight 0 0
+pressure 0 0
+mass 2 2
+velocity 0 0 0 8 8
+size 0 1
+decay 1 0
+life 0 2
+color1 512 512 512 128
+color2 512 512 512 128
+area 0 0 0 0 5
+spawn 20000
+
+wait 10
+

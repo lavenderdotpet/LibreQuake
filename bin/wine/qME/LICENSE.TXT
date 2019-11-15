@@ -1,0 +1,222 @@
+ 
+ 
+           qME END USER LICENSE AGREEMENT 
+ 
+  PLEASE READ THE FOLLOWING SINGLE-USER LICENSE 
+  AGREEMENT CAREFULLY BEFORE USING "qME".  THIS IS 
+  A LEGAL AGREEMENT BETWEEN YOU, THE END USER, AND 
+  BARENTZ, LTD.  BY INSTALLING AND/OR USING "qME", 
+  YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS 
+  AGREEMENT.  IF YOU DO NOT AGREE WITH THESE TERMS, 
+  DO NOT INSTALL AND/OR USE "qME".  THIS PRODUCT 
+  REQUIRES A REGISTERED VERSION OF QUAKE TO OPERATE 
+  PROPERLY.  IT WILL NOT OPERATE PROPERLY WITH THE 
+  SHAREWARE/LIMITED VERSION OF QUAKE. 
+ 
+   Article 1 -- Grant Of License: 
+ 
+  Barentz, Ltd. ("Barentz") grants you a non- 
+  exclusive license to use "qME" subject to the 
+  terms of this Agreement.  For the purposes 
+  herein, "qME" shall constitute all component 
+  parts that are distributed with "qME" including 
+  all program files, prefabricated objects and 
+  documentation (hereinafter "Software").  In 
+  addition, any and all files CREATED or MODIFIED 
+  by "qME" (including, but not limited to files 
+  such as *.MDL, *.DXF, and *.CAD) will automatically 
+  become part of the licensed Software and subject 
+  to the terms and provisions of this Agreement.  
+  The Software is licensed as a single product.  
+  Its component parts may not be separated or 
+  distributed EXCEPT AS EXPRESSLY PROVIDED IN 
+  THIS AGREEMENT.  The Software is solely for your 
+  own personal use, on one computer at one time.  
+  You may use this Software on a different computer, 
+  but it may not be used on two or more computers 
+  at the same time.  You may make a working copy of the 
+  Software and a backup copy for archival purposes 
+  only. 
+ 
+   Article 2 -- Restrictions On Use: 
+ 
+   . You may use and distribute FREE-OF-CHARGE the 
+     model files that have been output by the 
+     Software (*.MDL).
+ 
+   . You may NOT use the Software to create 
+     Derivative Works.  For the purposes herein, 
+     "Derivative Works" shall mean any "*.MDL" 
+     files, which were originally created 
+     by the Software, that you intend to sell, 
+     or distribute in some manner OTHER than 
+     FREE-OF-CHARGE.  If you wish to create 
+     Derivative Works, please contact 
+     Barentz about a "Commercial Exploitation 
+     Agreement". 
+ 
+   . With the exception of *.QBT, *.QET and *.QGP 
+     files, whose file structure has already been 
+     published or made available to the general 
+     public, you may not reverse engineer, 
+     translate, port, modify, decompile, or 
+     disassemble the Software.  Furthermore, you 
+     shall not derive or attempt to derive the 
+     source code, source files or structure of all 
+     or any portion of the Software by reverse 
+     engineering, disassembly, decompilation or by 
+     any other means EXCEPT those files listed 
+     herein whose file structure has already been 
+     published or made available to the general 
+     public. 
+ 
+   . You may not rent, publish, sell, lease, 
+     sublicense or market the Software or use it in 
+     any manner not expressly authorized by this 
+     Agreement. 
+ 
+   . You may transfer the Software and accompanying 
+     written materials on a permanent basis 
+     provided you retain no copies and the 
+     recipient agrees to the terms of this 
+     Agreement. 
+ 
+   . You shall not use the Software to operate a 
+     service bureau or for any other use involving 
+     the processing of data of any other persons or 
+     entities. 
+ 
+   . You may not alter or remove any copyright 
+     notices or proprietary legends contained in, 
+     or on, the Software. 
+ 
+   Article 3 -- Ownership, Copyrights & Trademarks: 
+ 
+  Barentz is a non-exclusive licensee of the 
+  Software, which was created by Barentz's 
+  licensor, Rene Post (collectively, the "Copyright 
+  Owners").  Barentz and Copyright Owners shall 
+  retain all ownership rights in the Software.  The 
+  Software is protected by United States Copyright 
+  law and also by International Treaty provisions. 
+  Any use of the Software in violation of these 
+  laws shall constitute a termination of this 
+  Agreement and can result in prosecution.  The 
+  Software is Copyright (c) 1996-97 by Rene 
+  Post. UNPUBLISHED. ALL RIGHTS RESERVED UNDER THE 
+  COPYRIGHT LAWS OF THE UNITED STATES AND 
+  INTERNATIONAL TREATY PROVISIONS.  "qME" is a 
+  trademark of Rene Post. 
+ 
+   Article 4 -- Term: 
+ 
+  This license is effective until terminated.  You 
+  may terminate it at any time by destroying the 
+  Software together with all copies and 
+  modifications in any form.  This License also 
+  terminates if you fail to comply with the terms 
+  and conditions of this Agreement. 
+ 
+   Article 5 -- No Warranty: 
+ 
+  BARENTZ MAKES AND USER RECEIVES NO WARRANTY, 
+  WHETHER EXPRESS OR IMPLIED,  AND ALL WARRANTIES 
+  OF MERCHANTABILITY AND FITNESS FOR ANY PARTICULAR 
+  PURPOSE ARE EXPRESSLY EXCLUDED.  The Software is 
+  provided to you on an "AS IS" and "WITH ALL 
+  FAULTS" basis.  You assume the entire risk of 
+  loss in using the Software.  The Software is 
+  complex and contains non-conformities, defects 
+  and errors.  Barentz does not warrant that the 
+  Software will meet your needs or expectations 
+  (whether due to hardware related capabilities or 
+  otherwise) or that operation of the Software will 
+  be error-free or uninterrupted, or that any non- 
+  conformity, defect or error can or will be 
+  corrected. 
+ 
+   Article 6 -- Limitations On Liability & 
+   Remedies: 
+ 
+  BARENTZ ASSUMES NO LIABILITY FOR ANY FILES 
+  CREATED, MODIFIED OR DISTRIBUTED UNDER THIS 
+  AGREEMENT, INCLUDING WITHOUT LIMITATION, 
+  LIABILITY FOR PATENT OR COPYRIGHT INFRINGEMENT. 
+  FURTHERMORE, IN NO EVENT SHALL BARENTZ, LTD. BE 
+  LIABLE FOR ANY DAMAGES, CLAIM OR LOSS INCURRED BY 
+  USER (INCLUDING WITHOUT LIMITATION COMPENSATORY, 
+  INCIDENTAL, INDIRECT, SPECIAL, CONSEQUENTIAL OR 
+  EXEMPLARY DAMAGES, LOST PROFITS, LOST SALES OR 
+  BUSINESS, EXPENDITURES, INVESTMENTS, OR 
+  COMMITMENTS IN CONNECTION WITH ANY BUSINESS, LOSS 
+  OF ANY GOODWILL, OR DAMAGES RESULTING FROM LOST 
+  OR CORRUPTED DATA OR INABILITY TO USE YOUR 
+  COMPUTER, OR THE USE OF OTHER PROGRAMS OR DATA ON 
+  YOUR COMPUTER, OR THE SOFTWARE) IRRESPECTIVE OF 
+  WHETHER BARENTZ, LTD. HAS BEEN INFORMED OF, KNEW 
+  OF, OR SHOULD HAVE KNOWN OF, THE LIKELIHOOD OF 
+  SUCH DAMAGES.  THIS LIMITATION APPLIES TO ALL 
+  CAUSES OF ACTION IN THE AGGREGATE, INCLUDING 
+  WITHOUT LIMITATION BREACH OF CONTRACT, BREACH OF 
+  WARRANTY, NEGLIGENCE, STRICT LIABILITY, 
+  MISREPRESENTATION, AND OTHER TORTS.  IF BARENTZ, 
+  LTD'S EXCLUSION OF ANY WARRANTY AND/OR LIMITATION 
+  OF LIABILITY SET FORTH IN THIS AGREEMENT SHALL 
+  FOR ANY REASON WHATSOEVER BE HELD UNENFORCEABLE 
+  OR INAPPLICABLE, USER AGREES THAT BARENTZ, LTD'S 
+  LIABILITY TO ANY PARTY SHALL NOT EXCEED THE 
+  PURCHASE PRICE OF THE SOFTWARE.  Some states do 
+  not allow the exclusion or limitation of 
+  incidental or consequential damages or the 
+  limitation of duration of an implied warranty, so 
+  the limitation or exclusion herein may not apply 
+  to you. 
+ 
+   Article 7 -- General: 
+ 
+   . This is the exclusive Agreement between 
+     Barentz and you regarding its subject matter. 
+     You shall pay any taxes on the Software or 
+     transactions, except for those based on 
+     Barentz's annual net income. 
+ 
+   . Copyright Owners shall be third party 
+     beneficiaries of Barentz's rights under this 
+     Agreement, but they are not a party hereto and 
+     shall have no obligation hereunder. 
+ 
+   . If any provision of this Agreement is declared 
+     invalid or unenforceable, the remaining 
+     provisions of this Agreement shall remain in 
+     effect. 
+ 
+   . This Agreement supersedes and replaces any and all 
+     previous Agreements, whether written or oral, 
+     with you regarding the Software. 
+ 
+   . This Agreement shall be governed by the laws 
+     of the State of Texas, except for that body of 
+     law dealing with conflicts of law. 
+ 
+   COMMERCIAL COMPUTER SOFTWARE 
+ 
+  The Software is a "commercial item", as that term 
+  is defined at 48 C.F.R. 2.101 (Oct. 1995) 
+  consisting of "commercial computer software" and 
+  "commercial computer documentation," as such 
+  terms are used in 48 C.F.R. 12.212 (Sept. 1995). 
+  Consistent with 48 C.F.R. 12.212 and 48 C.F.R. 
+  227.7202-1 through 227.7202-4 (June 1995), all 
+  U.S. Governmental End Users acquire the Software 
+  with only those license rights set forth herein. 
+  The Software is Copyright (c) 1996-97 by Rene
+  Post UNPUBLISHED.  ALL RIGHTS RESERVED UNDER THE 
+  COPYRIGHT LAWS OF THE UNITED STATES AND 
+  INTERNATIONAL TREATY PROVISIONS.  qME is a 
+  trademark of Rene Post.  For purpose of 
+  any public disclosure provision under any 
+  federal, state or local law, it is agreed that 
+  this Software is a trade secret and proprietary 
+  commercial Software is not subject to disclosure. 
+ 
+ 

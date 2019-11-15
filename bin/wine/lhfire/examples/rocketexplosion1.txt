@@ -1,0 +1,36 @@
+render 128 128 rocketexplosion1_%04d.tga
+frames 0.1 0.9 0 8
+particles 10000
+passes 16
+camera 0 0 -256
+
+seed 7654
+
+time 0.0
+area 0 0 0 0 0
+velocity 0 0 0 0 90
+size 0 5
+life 0 0.9
+color1 64 48 32 1024
+color2 0 0 0 256
+spawn 1000
+
+area 0 0 0 0 12
+velocity 0 0 0 25 100
+size 0 5
+color1 1024 384 256 1024
+color2 192 0 0 256
+time 0.1
+life 0 0.8
+spawn 3000
+velocity 75 100 0 15 40
+spawn 500
+velocity 0 0 0 25 100
+time 0.15
+life 0 0.7
+spawn 2000
+time 0.2
+life 0 0.6
+spawn 1000
+
+time 2.0

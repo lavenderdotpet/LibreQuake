@@ -1,0 +1,30 @@
+; This contents file was created with HelpScribble 3.4.0
+; Registered to: madmax!
+
+:BASE WALLY.hlp
+:TITLE Wally Quake2 WAL Editor
+1 Welcome to Wally=Scribble5
+1 Introduction
+2 Introduction to Wally=Scribble10
+2 Version History=Scribble15
+2 Credits=Scribble17
+1 User Guide
+2 Wally Menus
+3 File Menu=Scribble100
+3 Edit Menu=Scribble120
+3 Image Menu=Scribble130
+3 View Menu=Scribble110
+2 Wally Toolbars
+3 Wally File Toolbar=Scribble60
+3 Wally Image Toolbar=Scribble40
+3 Colour Palette Toolbar=Scribble90
+2 Wally Settings
+3 Wally Options=Scribble67
+3 ReMipDLX Options=Scribble21
+2 ReMip Deluxe
+3 About ReMipDLX=Scribble19
+3 Using ReMipDLX=Scribble26
+3 ReMipDLX Options=Scribble21
+1 Tutorials
+2 Using .WAL Files=Scribble30
+2 Creating a New Texture with Wally=Scribble140

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Joint Track Editor</title>
+<base target="main">
+<meta name="FORMATTER" content="Microsoft FrontPage 2.0">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF"
+vlink="#C0C0C0">
+
+<h1><font color="#FF0000" face="Arial">Joint Track Editor</font></h1>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The joint track
+editor is used for editing how joints should move in the current
+scene. To actually specify the joints in your model, you need to
+go to the </font><a href="mainwindow.htm#Object Tree Panel"><font
+color="#FFFFFF" size="2" face="Arial">object tree panel</font></a><font
+color="#FFFFFF" size="2" face="Arial"> and define </font><a
+href="mainwindow.htm#joint editor"><font color="#FFFFFF" size="2"
+face="Arial">joints</font></a><font color="#FFFFFF" size="2"
+face="Arial"> there first.</font></p>
+
+<h3><!--webbot bot="ImageMap"
+rectangle=" (3,49) (485, 162)  #Joint+Track+Grid"
+rectangle=" (432,21) (477, 46)  #Narrow+or+Widen+Grid+Cells"
+rectangle=" (36,23) (86, 47)  #Mark+as+Key+or+Tween+Value"
+rectangle=" (3,22) (35, 49)  #Update+Scene"
+src="jointtrackeditor.gif" border="0" width="486" height="163"
+startspan --><MAP NAME="FrontPageMap"><AREA SHAPE="RECT" COORDS="3, 49, 485, 162" HREF="#Joint Track Grid"><AREA SHAPE="RECT" COORDS="432, 21, 477, 46" HREF="#Narrow or Widen Grid Cells"><AREA SHAPE="RECT" COORDS="36, 23, 86, 47" HREF="#Mark as Key or Tween Value"><AREA SHAPE="RECT" COORDS="3, 22, 35, 49" HREF="#Update Scene"></MAP><a
+href="_vti_bin/shtml.exe/jointtrackeditor.htm/map"><img
+src="jointtrackeditor.gif" width="486" ismap
+usemap="#FrontPageMap" height="163" border="0"></a><!--webbot
+bot="ImageMap" endspan i-checksum="13131" --></h3>
+
+<h3><a name="Update Scene"><font face="Arial">Update Scene</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="updatebtn.gif" width="25" height="25"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">Calculate tween
+values and update the scene.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">After this button
+is pressed, the tween values for all the joint tracks are
+recalculated and written to the frames. You get the best idea of
+what the effects of your changes to the joint tracks are when you
+view the animation during the changing and updating of the joint
+tracks.</font></p>
+
+<h3><a name="Mark as Key or Tween Value"><font face="Arial">Mark
+as Key / tween Value</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="keytween.gif" width="46" height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The first button
+will change a selected range of cells into key values. The second
+button will change the selected range of cells into tween values.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">In the grid you
+can see the difference in tween values which are gray and key
+values which are black. The key values are the only ones that can
+be changed the tween values are recalculated after you press the
+update scene button.</font></p>
+
+<h3><a name="Narrow or Widen Grid Cells"><font face="Arial">Narrow
+/ Widen Grid Cells</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial"><img
+src="narwidegrid.gif" width="46" height="24"></font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">The first button
+will make the grid cells more narrow and the second button will
+make the grid cells wider. </font></p>
+
+<h3><a name="Joint Track Grid"><font face="Arial">Joint Track
+Grid</font></a></h3>
+
+<p><font color="#FFFFFF" size="2" face="Arial">A joint track is a
+sequence of values that specify the position of a joint in a
+sequence of frames. It is represented in the joint track editor
+as a horizontal row in the grid. For a joint track you can
+specify key values in the sequence that you wish to set yourself,
+and you specify the rest of the joint track as tween values to be
+calculated as a linear interpolation by qME. </font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">In the grid you
+can select multiple cells with the mouse by dragging or with the
+cursor keys when you hold down the SHIFT key. Then you can press
+either the &quot;Mark as Key Value&quot; or &quot;Mark as Tween
+Value&quot; button to turn the selected cells into key or tween
+values.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">For key values you
+can change the values in the grid by double clicking it and then
+typing in new values. When you have finished with filling in the
+key values, you press the </font><a href="#Update Scene"><font
+color="#FFFFFF" size="2" face="Arial">update scene button</font></a><font
+color="#FFFFFF" size="2" face="Arial"> and the scene will be
+updated with new values for the joint track after the in-between
+values have been interpolated.</font></p>
+
+<p><font color="#FFFFFF" size="2" face="Arial">I usually have the
+animation playing in the frame editor when I edit the joint
+tracks. This allows me to view the animation changing during the
+editing of the joint tracks.</font></p>
+</body>
+</html>

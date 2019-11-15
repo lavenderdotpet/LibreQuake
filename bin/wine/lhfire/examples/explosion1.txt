@@ -1,0 +1,34 @@
+render 128 128 explosion1_%04d.tga
+frames 0 10 0 6
+particles 1024
+passes 8
+camera 0 0 -256
+
+decay 1 0.5
+
+rendertype 2
+
+seed 7654
+
+velocity 0 0 0 8 8
+size 0 20
+life 0 10
+color1 64 64 64 256
+color2 0 0 0 256
+area 0 0 0 0 40
+spawn 250
+
+velocity 0 0 0 5 5
+size 0 8
+life 0 10
+color1 4096 768 384 256
+color2 3072 512 256 256
+
+area 0 0 0 0 20
+spawn 500
+area 30 20 0 0 15
+spawn 125
+area -10 -30 0 0 15
+spawn 125
+wait 10
+

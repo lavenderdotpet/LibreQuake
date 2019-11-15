@@ -1,0 +1,154 @@
+------------------------------------------------------------------------
+r4031 | coderjoe | 2004-03-15 22:53:23 -0800 (Mon, 15 Mar 2004) | 2 lines
+Changed paths:
+   M /trunk/hmap2
+   M /trunk/hmap2/.cvsignore
+   M /trunk/hmap2/fast.bat
+   M /trunk/hmap2/full.bat
+   M /trunk/hmap2/hmapreadme.txt
+   M /trunk/hmap2/revis.bat
+   M /trunk/lhfire/scriptinginfo.txt
+   M /trunk/twilight/doc/COPYING-BSD.txt
+   M /trunk/twilight/doc/COPYING-strl.txt
+   M /trunk/twilight/doc/COPYING.txt
+   M /trunk/twilight/doc/Credits.txt
+   M /trunk/twilight/doc/TODO.txt
+   M /trunk/twilight/doc/cvar.txt
+
+fix newlines.
+
+------------------------------------------------------------------------
+r3081 | havoc | 2003-06-10 14:07:29 -0700 (Tue, 10 Jun 2003) | 4 lines
+Changed paths:
+   M /trunk/lhfire/framebuffer.c
+   M /trunk/lhfire/script.c
+   M /trunk/lhfire/scriptinginfo.txt
+
+added spritetype command to allow making sprite types other than vp_parallel (thanks to Gilgamesh for requesting this)
+documented spritetype
+documented worldbox
+
+------------------------------------------------------------------------
+r3014 | havoc | 2003-05-22 05:32:52 -0700 (Thu, 22 May 2003) | 2 lines
+Changed paths:
+   M /trunk/lhfire/makefile
+
+makefile upgraded to support compilation on win32 mingw, Linux native, Linux cross-gcc (Thanks to Elric for the makefile this was based on)
+
+------------------------------------------------------------------------
+r3013 | havoc | 2003-05-22 05:30:49 -0700 (Thu, 22 May 2003) | 2 lines
+Changed paths:
+   M /trunk/lhfire/frame.c
+
+did not need to include search.h
+
+------------------------------------------------------------------------
+r2777 | havoc | 2003-02-21 15:09:02 -0800 (Fri, 21 Feb 2003) | 2 lines
+Changed paths:
+   M /trunk/lhfire/examples/blood.txt
+   M /trunk/lhfire/examples/bloodbig.txt
+   M /trunk/lhfire/examples/dpexplosion1.txt
+   M /trunk/lhfire/examples/dpexplosion2.txt
+   M /trunk/lhfire/examples/dpexplosion3.txt
+   M /trunk/lhfire/examples/dpexplosion4.txt
+   M /trunk/lhfire/examples/glow.txt
+   M /trunk/lhfire/examples/hyperspace.txt
+   M /trunk/lhfire/examples/muzzleflash.txt
+   M /trunk/lhfire/examples/newdpexplosion.txt
+   M /trunk/lhfire/examples/newexplosion.txt
+   M /trunk/lhfire/examples/riflesplash.txt
+   M /trunk/lhfire/examples/smallexp.txt
+   M /trunk/lhfire/examples/smoke.txt
+   M /trunk/lhfire/examples/spaceexplosion128.txt
+   M /trunk/lhfire/examples/spaceexplosion256.txt
+
+fix line endings
+
+------------------------------------------------------------------------
+r2776 | havoc | 2003-02-21 15:00:16 -0800 (Fri, 21 Feb 2003) | 3 lines
+Changed paths:
+   A /trunk/lhfire/examples
+   A /trunk/lhfire/examples/README.brokenfiles.txt
+   A /trunk/lhfire/examples/blastmark.txt
+   A /trunk/lhfire/examples/blood.txt
+   A /trunk/lhfire/examples/bloodbig.txt
+   A /trunk/lhfire/examples/bloodsplatter.txt
+   A /trunk/lhfire/examples/bullethole.txt
+   A /trunk/lhfire/examples/despondent1.txt
+   A /trunk/lhfire/examples/dpexplosion.txt
+   A /trunk/lhfire/examples/dpexplosion1.txt
+   A /trunk/lhfire/examples/dpexplosion2.txt
+   A /trunk/lhfire/examples/dpexplosion3.txt
+   A /trunk/lhfire/examples/dpexplosion4.txt
+   A /trunk/lhfire/examples/explosion.txt
+   A /trunk/lhfire/examples/explosion1.txt
+   A /trunk/lhfire/examples/explosion2.txt
+   A /trunk/lhfire/examples/glow.txt
+   A /trunk/lhfire/examples/hyperspace.txt
+   A /trunk/lhfire/examples/muzzleflash.txt
+   A /trunk/lhfire/examples/newdpexplosion.txt
+   A /trunk/lhfire/examples/newexplosion.txt
+   A /trunk/lhfire/examples/pellethole.txt
+   A /trunk/lhfire/examples/plasmabolt.txt
+   A /trunk/lhfire/examples/plasmabolt2.txt
+   A /trunk/lhfire/examples/plasmamark.txt
+   A /trunk/lhfire/examples/plasmashot.txt
+   A /trunk/lhfire/examples/riflesplash.txt
+   A /trunk/lhfire/examples/rocketexplosion1.txt
+   A /trunk/lhfire/examples/rocketexplosion2.txt
+   A /trunk/lhfire/examples/rocketexplosion3.txt
+   A /trunk/lhfire/examples/smallexp.txt
+   A /trunk/lhfire/examples/smoke.txt
+   A /trunk/lhfire/examples/spaceexplosion128.txt
+   A /trunk/lhfire/examples/spaceexplosion256.txt
+   A /trunk/lhfire/examples/sprocketexplosion.txt
+   A /trunk/lhfire/examples/torchflamebase.txt
+   A /trunk/lhfire/examples/torchflametop.txt
+
+the examples arrive.
+some are broken, these are noted in README.brokenfiles.txt
+
+------------------------------------------------------------------------
+r2416 | havoc | 2002-09-21 17:38:22 -0700 (Sat, 21 Sep 2002) | 2 lines
+Changed paths:
+   A /trunk/dpmodel/dpmodel.dsp
+   A /trunk/dpmodel/dpmodel.dsw
+   A /trunk/lhfire/lhfire.dsp
+   A /trunk/lhfire/lhfire.dsw
+
+MSVC 6 project
+
+------------------------------------------------------------------------
+r2415 | havoc | 2002-09-21 17:37:30 -0700 (Sat, 21 Sep 2002) | 2 lines
+Changed paths:
+   M /trunk/lhfire/particle.c
+
+fix for double to float conversion warnings
+
+------------------------------------------------------------------------
+r2074 | havoc | 2002-07-23 19:35:07 -0700 (Tue, 23 Jul 2002) | 2 lines
+Changed paths:
+   M /trunk/lhfire
+   A /trunk/lhfire/.cvsignore
+
+added *.d and other files
+
+------------------------------------------------------------------------
+r2055 | havoc | 2002-07-17 18:30:21 -0700 (Wed, 17 Jul 2002) | 2 lines
+Changed paths:
+   A /trunk/lhfire
+   A /trunk/lhfire/frame.c
+   A /trunk/lhfire/framebuffer.c
+   A /trunk/lhfire/main.c
+   A /trunk/lhfire/makefile
+   A /trunk/lhfire/math.c
+   A /trunk/lhfire/palette.lmp
+   A /trunk/lhfire/particle.c
+   A /trunk/lhfire/particle.h
+   A /trunk/lhfire/render.c
+   A /trunk/lhfire/script.c
+   A /trunk/lhfire/scriptinginfo.txt
+
+Initial revision
+
+------------------------------------------------------------------------

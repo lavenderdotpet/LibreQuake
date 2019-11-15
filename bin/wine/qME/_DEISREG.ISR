@@ -1,0 +1,3 @@
+[Admin Install]
+Admin=1
+Error=This installation can only be uninstalled by a user with administrative priviledges. Uninstallation will now exit.

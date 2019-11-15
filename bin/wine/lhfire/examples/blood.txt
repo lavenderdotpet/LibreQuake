@@ -1,0 +1,20 @@
+render 32 32 blood_%04d.tga
+frames 0 10 0 10
+particles 1000
+passes 16
+camera 0 0 -64
+
+area 0 0 0 0 4
+velocity 0 0 0 0 30
+size 2 4
+life 0 1
+color1 128 0 0 128
+color2 64 0 0 64
+
+seed 1234
+label mainloop
+clear
+spawn 250
+wait 1
+goto mainloop
+

@@ -1,0 +1,156 @@
+adquedit.txt
+AdQuedit: The Quake Workstation
+a quake editing utility, frontend, and environment
+Release Version 1.3 8/19/97
+http://goldrush.com/~hicks/adquedit/
+hicks@goldrush.com
+
+
+AdQuedit: The Quake Workstation is my addition to Quake editing
+development. The main purpose of this program is to supply an
+easy, flexible, and useable means to manipulate the many file
+formats that Quake has. Features include replacing textures
+in bsp files, editing entity lists, changing model skins,
+creating sprites, making mip textures, and extensive
+wad editing, and much more. And all cholesterol free!
+
+
+You will find the slightly outdated manual at the web site above.
+
+
+system requirements: 
+	Runs in Win95. Should run in WinNT, I don't have
+it but people have convinced me it works. You must run
+AdQuedit in a video mode with more than 256 colors. I can't
+be certain on ram requirements, but it is likely that if
+you can run Quake, you can run AdQuedit.
+
+
+legal:
+	I am not responsible for anything unfortunate
+that happens as a result of using this program.
+	This program can be distributed through any means
+you want as long as you don't profit from it and so long
+as this file is included with the distribution. Inclusion
+of this program with any book or compilation cd or anything
+remotely like that is forbidden without my permission.
+	If you use the utility to develop a commercial product,
+it would be cool if you sent me a free copy of it. That's just
+a suggestion though, not a requirement.
+	Everything about the program is either trademarked or
+copyrighted by me except 'Quake' which belongs to Id Software. 
+
+
+cost:
+	As of release 1.3, AdQuedit series version 1 is
+freeware. Registered users of the AdQuedit version 1 series
+are eligable for free upgrade to the registered version
+AdQuedit 2 when it gets released. If you have registered
+for AdQuedit, please send me your email address so that a
+copy of AdQuedit 2 can be sent to you when it is completed.
+
+
+Goodbye,
+Cable Hicks
+hicks@goldrush.com
+http://goldrush.com/~hicks/
+
+------------------------ Changes ------------------------
+Version 1.3
+	Bugs Fixed:
+
+	* AdQuedit series version 1 is officially freeware
+
+	* got rid of the crash when deleting game configs
+
+	* you can no longer directly delete base or project
+	  directories (I'm not comfortable with it.)
+
+	* AdQuedit is now clued to the fact that mip textures
+	  must have dimensions multiple of 16, not 8 as was
+	  previously thunk by me.
+
+	* Problems that occured when AdQuedit crashes during
+	  its first run should be fixed. If this happens to
+	  you and it still messes things up, delete the 
+	  adquedit.ini file in your \windows diretory.
+
+	* Problems with files not winding up in the Recycle
+	  Bin when being deleted have been fixed to the best
+	  of my knowledge. I deleted my Quake directory as
+	  a test and I was able to restore it.
+
+	* Problems with AdQuedit for some reason having this
+	  urge to start out minimized, with the only other
+	  size option being maximized.
+
+	Serious Known Bugs Not Fixed:
+	  This is intended to be the last version 1 series 
+	  release so these issues can not be fixed until
+	  the new architexture is introduced in version 2.
+
+	- Minor errors being reported concerning file 
+	  descriptions after a file has been created.
+
+	- Messed up file names occuring with file or
+	  directories that start with a number. (!)
+	  Windows is beautiful sometimes.
+
+	- Deleting a directory from the treeview causing
+	  a crash...but only sometimes.
+
+	- wad files blowing up for no particular reason.
+
+
+Version 1.25
+	* using large fonts caused the graphics 
+	 to be displaced when displayed
+
+	* the icons weren't showing up as transparent 
+	 in the file views
+
+	* added an option for making pak entry names
+	 all in lower case when a pak is created
+
+Version 1.21
+	* fixed the fact you couldn't do cut/copy/paste
+	 functions on files most of the time
+
+Version 1.2
+   	* redid about box (woohoo!)
+
+   	* editing the list of hidden directories when one
+       	 hidden did not exist caused a crash
+
+   	* fixed memory leak in the file view which could 
+      	 eat away memory bit by bit
+
+   	* deleted files go to the Recycle Bin
+
+Version 1.15
+ 	* Fixed a bug in the mip making functions
+  	 which would screw up the fullbrights.
+
+Version 1.1 
+ Mainly bug fixes. Enhance mip making ability.
+
+	* problems caused when moving directory onto
+	  itself or one of its children
+
+	* check for full brights on mip making
+
+	* file association modification
+
+	* capture return key & delete key when renaming
+
+	* crash when renaming a file twice
+
+	* the window is no longer created bigger than the
+	  screen which could happen if you ran the program
+          at a smaller resolution than you once did
+
+	* F5 accelerator for update views
+
+	* only remaps a pcx palette to the default palette
+	  if they are different. This helps when dealing
+	  with full brights.

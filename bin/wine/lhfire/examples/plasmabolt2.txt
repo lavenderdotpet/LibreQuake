@@ -1,0 +1,33 @@
+render 128 128 plasmabolt2_%04d.tga
+frames 0.4 0.8 0 4
+particles 4096
+passes 8
+camera 0 0 -128
+area 0 0 0 0 32
+velocity 0 0 0 50 100
+size 0 16
+life 0 0.4
+color1 256 512 768 512
+color2 256 512 768 128
+
+label burnloop
+
+seed 341
+spawn 300
+wait 0.05
+spawn 300
+wait 0.05
+spawn 300
+wait 0.05
+spawn 300
+wait 0.05
+spawn 300
+wait 0.05
+spawn 300
+wait 0.05
+spawn 300
+wait 0.05
+spawn 300
+wait 0.05
+
+goto burnloop

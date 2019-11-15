@@ -1,0 +1,92 @@
+// sample convdefs.txt file for OpenArena
+
+texture DEFAULT   e7/e7panelwood2
+texture NODRAW    common/caulk
+
+texture F_SKY1    skies/moonsky
+texture FWATER1   liquids/vorwater
+texture FWATER4   liquids/softwater
+texture GRASS1    czest3ctf/grass_lush
+texture GRASS2    czest3ctf/grass_lush
+texture GRAY1     base_wall/concrete_dark
+texture FLAT18    base_wall/concrete_dark
+texture FLAT19    base_wall/concrete_dark
+texture FLAT1     base_wall/concrete_dark
+texture BRICK7    gothic_block/blocks18c_3
+texture BRICK11   gothic_wall/proto_brik
+texture STARTAN3  gothic_block/blocks18c_3
+texture FLOOR4_8  gothic_floor/largeblockfloor4
+texture FLOOR7_1  base_floor/diamond2c
+texture CEIL3_5   gothic_floor/largeblockfloor4
+texture CEMENT1   base_wall/concrete_dark
+texture CEMENT9   base_wall/concrete_dark
+texture GATE2     sfx/bounce_concrete
+texture SUPPORT2  base_trim/pewter
+texture FIRELAV2  base_light/proto_lightred
+texture STONE     gothic_wall/gold_brick
+texture METAL     base_trim/dark_tin2
+texture METAL6    base_trim/dark_tin2
+texture CEIL5_2   base_trim/dark_tin2
+texture STUCCO    base_wall/patch10
+texture STUCCO2   base_wall/patch10_beatup3
+texture WOOD12    e7/e7panelwood
+texture CEIL1_1   e7/e7panelwood
+texture FLOOR1_6  ajctf/redscroll
+texture FLOOR1_1  ajctf/bluescroll
+// texture FLOOR7_1  gothic_floor/largeblockfloor4
+// texture METAL     base_wall/shinybluemetal1
+// texture CEIL5_1   base_wall/shinybluemetal1
+// texture CEIL5_2   base_wall/shinybluemetal1
+
+entity  1    info_player_start
+entity  2    info_player_start
+entity  3    info_player_start
+entity  4    info_player_start
+entity  11   info_player_deathmatch
+entity  14   misc_teleporter_dest
+
+// entity  34   light
+
+entity 2001 weapon_nailgun
+entity 82 weapon_supershotgun
+entity 2002 weapon_supernailgun
+entity 2003 weapon_rocketlauncher
+entity 2004 weapon_grenadelauncher
+entity 2006 weapon_lightning
+
+entity 2011 item_health
+entity 2012 item_health
+entity 2018 item_armor1
+entity 2019 item_armor2
+entity 83 item_armorInv
+entity 2013 item_armorInv
+entity 2022 item_artifact_invulnerability
+entity 2023 item_artifact_super_damage
+entity 2024 item_artifact_invisibility
+entity 2025 item_artifact_envirosuit
+
+entity 5 item_key1
+entity 40 item_key1
+entity 13 item_key2
+entity 38 item_key2
+entity 6 item_key1
+entity 39 item_key1
+
+entity 3004 monster_army
+entity 9 monster_enforcer
+entity 65 monster_enforcer
+entity 3001 monster_dog
+entity 3002 monster_knight
+entity 58 monster_knight
+entity 3006 monster_wizard
+entity 3005 monster_ogre
+entity 69 monster_hell_knight
+entity 3003 monster_zombie
+entity 68 monster_shalrath
+entity 71 monster_tarbaby
+entity 66 monster_shambler
+entity 67 monster_ogre
+entity 64 monster_zombie
+entity 7 monster_shambler
+entity 16 monster_shambler
+entity 88 monster_shambler

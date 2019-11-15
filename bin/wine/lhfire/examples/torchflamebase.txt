@@ -1,0 +1,24 @@
+render 32 32 torchflamebase_%04d.tga
+frames 10 20 0 10
+particles 8000
+passes 16
+camera 0 0 -256
+
+size 0 8
+color1 8192 1280 512 16
+color2 192 0 0 16
+life 0 4
+
+label mainloop
+seed 4353
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+area 0 0 0 0 24 velocity 0 0 0 0 24 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25 spawn 800 wait 0.25
+goto mainloop

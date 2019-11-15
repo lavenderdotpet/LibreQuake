@@ -1,0 +1,40 @@
+render 128 128 despondent1_%04d.tga
+frames 0 10 0 20
+particles 32768
+passes 8
+camera 0 0 -480
+
+seed 323
+
+rendertype 1
+airfriction 0.5
+
+color  4096  512 384 256                       decay 1 0   mass 1 1 size 256 256 life 3 3 velocity   0   0   0 0   0 area 0 0 0 0 0 spawn    1
+color1  512  192 128  64 color2 192  64 32  64 decay 1 0.3 mass 1 1 size   9   9 life 0 9 velocity   0   0   0 0  50 area 0 0 0 0 0 spawn 6000
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 9 velocity   0   0   0 0  70 area 0 0 0 0 0 spawn 2000
+wait 1.7
+
+color  4096 1024 512 128                       decay 1 0   mass 1 1 size  96  96 life 3 3 velocity -40  50 -20 0   0 area 0 0 0 0 0 spawn    1
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity -40  50 -20 0  50 area 0 0 0 0 0 spawn 1000
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity -30  36 -15 0  40 area 0 0 0 0 0 spawn 1000
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity -20  25 -10 0  30 area 0 0 0 0 0 spawn 1000
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity -10  12  -5 0  20 area 0 0 0 0 0 spawn 1000
+wait 0.3
+
+color  4096 1024 512 128                       decay 1 0   mass 1 1 size  96  96 life 3 3 velocity -30 -80 -15 0   0 area 0 0 0 0 0 spawn    1
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity -30 -80 -15 0  20 area 0 0 0 0 0 spawn  500
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity -22 -60 -11 0  30 area 0 0 0 0 0 spawn  500
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity -15 -40  -7 0  40 area 0 0 0 0 0 spawn  500
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity  -6 -20  -3 0  50 area 0 0 0 0 0 spawn  500
+wait 0.8
+
+color  4096 1024 512 128                       decay 1 0   mass 1 1 size  96  96 life 3 3 velocity  70 -20  20 0   0 area 0 0 0 0 0 spawn    1
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity  70 -20  20 0  50 area 0 0 0 0 0 spawn  500
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity  42 -14  15 0  50 area 0 0 0 0 0 spawn  500
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity  34 -10  10 0  60 area 0 0 0 0 0 spawn  500
+color1 2048  768 512  64 color2 384 128 64  64 decay 1 0.3 mass 1 1 size   9   9 life 0 5 velocity  14  -4   5 0  40 area 0 0 0 0 0 spawn  500
+wait 0.7
+
+color  4096 1024 512 128                       decay 1 0   mass 1 1 size 192 192 life 5 5 velocity   0   0   0 0   0 area 0 0 0 0 0 spawn    1
+color1 1024  768 384  96 color2  96  64 32  96 decay 1 0.3 mass 1 1 size   9   9 life 0 6 velocity   0   0   0 0 100 area 0 0 0 0 0 spawn 2000
+wait 100
