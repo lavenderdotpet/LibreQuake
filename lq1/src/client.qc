@@ -1051,7 +1051,7 @@ void() CheckPowerups =
 		{
 			if (self.super_time == 1)
 			{
-				sprint (self, "The Crusher Sigil's power dwindling\n");
+				sprint (self, "The Crusher Sigil's power is dwindling\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/damage2.wav", 1, ATTN_NORM);
 				self.super_time = time + 1;
@@ -1346,15 +1346,15 @@ void(entity targ, entity attacker) ClientObituary =
 			if (attacker.flags & FL_MONSTER)
 			{
 				if (attacker.classname == "monster_army")
-					bprint (" was shot by a Grunt\n");
+					bprint (" was killed by a Foot Soldier\n");
 				if (attacker.classname == "monster_demon1")
 					bprint (" was eviscerated by a Fiend\n");
 				if (attacker.classname == "monster_dog")
-					bprint (" was mauled by a Rottweiler\n");
+					bprint (" was bitten by a Rottweiler\n");
 				if (attacker.classname == "monster_dragon")
-					bprint (" was fried by a Dragon\n");
+					bprint (" was destroyed by a Dragon\n");
 				if (attacker.classname == "monster_enforcer")
-					bprint (" was blasted by an Enforcer\n");
+					bprint (" was blasted by a Commando\n");
 				if (attacker.classname == "monster_fish")
 					bprint (" was fed to the Rotfish\n");
 				if (attacker.classname == "monster_hell_knight")
@@ -1432,13 +1432,13 @@ void(entity targ, entity attacker) ClientObituary =
 			{
 				if (targ.health < -15)
 				{
-					bprint (" shouldn't have played with lava\n");
+					bprint (" combusted\n");
 					return;
 				}
 				if (random() < 0.5)
 					bprint (" fell into a volcano\n");
 				else
-					bprint (" burst into flames\n");
+					bprint (" shouldn't have played with lava\n");
 				return;
 			}
 

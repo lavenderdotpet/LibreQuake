@@ -253,6 +253,8 @@ void() worldspawn =
 
 	precache_sound ("misc/water1.wav");			// swimming
 	precache_sound ("misc/water2.wav");			// swimming
+	
+	precache_sound ("items/damage2.wav");		// quad damage wearing off
 
 	precache_model ("progs/player.mdl");
 	precache_model ("progs/eyes.mdl");
