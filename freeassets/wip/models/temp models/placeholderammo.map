@@ -1,0 +1,25 @@
+// Game: Quake
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+// brush 0
+{
+( -16 -64 -16 ) ( -16 -63 -16 ) ( -16 -64 -15 ) __TB_empty -0 -0 -0 1 1
+( -64 -16 -16 ) ( -64 -16 -15 ) ( -63 -16 -16 ) __TB_empty -0 -0 -0 1 1
+( -64 -64 -16 ) ( -63 -64 -16 ) ( -64 -63 -16 ) __TB_empty 0 0 0 1 1
+( 64 64 16 ) ( 64 65 16 ) ( 65 64 16 ) __TB_empty 0 0 0 1 1
+( 64 16 16 ) ( 65 16 16 ) ( 64 16 17 ) __TB_empty -0 -0 -0 1 1
+( 16 64 16 ) ( 16 64 17 ) ( 16 65 16 ) __TB_empty -0 -0 -0 1 1
+}
+}
+// entity 1
+{
+"classname" "light"
+"origin" "-40 -56 8"
+}
+// entity 2
+{
+"classname" "light"
+"origin" "24 -40 56"
+}
