@@ -1406,15 +1406,15 @@ void(entity targ, entity attacker) ClientObituary =
 				}
 				if (rnum == IT_ROCKET_LAUNCHER)
 				{
-					if (attacker.items & IT_INVULNERABILITY)
-					{
-						deathstring = LOC_DEATH_ROCKET_LAUNCHER_PA;
-						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_PB;
-					}
-					else if (attacker.items & IT_QUAD)
+					if (attacker.items & IT_QUAD)
 					{
 						deathstring = LOC_DEATH_ROCKET_LAUNCHER_QA;
 						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_QB;
+					}
+					else if (attacker.items & IT_INVULNERABILITY)
+					{
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_PA;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_PB;
 					}
 					else if (targ.health < -40)
 					{

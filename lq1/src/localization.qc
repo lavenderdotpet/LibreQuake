@@ -15,7 +15,7 @@
 //Note that the leading space is required.
 //If you don't include it, there will be no space between the player's name and the rest of the text.
 #define LOC_JOIN		" joined the match"
-#define LOC_EXIT		" reached the exits"
+#define LOC_EXIT		" reached the exit"
 #define LOC_EXIT_DM_A	" exited the match with "
 #define LOC_EXIT_DM_B	" frags"
 
@@ -70,7 +70,7 @@
 //Monster death messages
 #define LOC_DEATH_ARMY 			" was killed by a Foot Soldier"
 #define LOC_DEATH_ENFORCER 		" was blasted by a Commando"
-#define LOC_DEATH_DOG 			" was bitten by a Rottweiler"
+#define LOC_DEATH_DOG 			" was bitten by a Hellhound"
 #define LOC_DEATH_OGRE 			" was destroyed by an Ogre"
 #define LOC_DEATH_DEMON1 		" was eviscerated by a Fiend"
 #define LOC_DEATH_WIZARD 		" was scragged by a Scrag"
