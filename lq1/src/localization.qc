@@ -74,7 +74,7 @@
 #define LOC_DEATH_OGRE 			" was destroyed by an Ogre"
 #define LOC_DEATH_DEMON1 		" was eviscerated by a Fiend"
 #define LOC_DEATH_WIZARD 		" was scragged by a Scrag"
-#define LOC_DEATH_ZOMBIE		"'s brain was eaten by a Zombie"
+#define LOC_DEATH_ZOMBIE		" was cursed by a Husk"
 #define LOC_DEATH_KNIGHT 		" was slashed by a Knight"
 #define LOC_DEATH_HELL_KNIGHT 	" was slain by a Death Knight"
 #define LOC_DEATH_FISH 			" was fed to the Rotfish"
@@ -155,7 +155,7 @@
 #define LOC_DEATH_SUPER_NAILGUN_1B	"'s Chaingun"
 #define LOC_DEATH_SUPER_NAILGUN_2A	" was hunted down by "
 #define LOC_DEATH_SUPER_NAILGUN_2B	"'s Chaingun"
-#define LOC_DEATH_SUPER_NAILGUN_QA	"'s chips were cashed in by "
+#define LOC_DEATH_SUPER_NAILGUN_QA	"'s chips were cashed by "
 #define LOC_DEATH_SUPER_NAILGUN_QB	""
 
 #define LOC_DEATH_GRENADE_LAUNCHER_1A	" tripped over "
@@ -190,7 +190,7 @@
 #define LOC_DEATH_LIGHTNING_D2B	""
 
 //More Multiplayer death messages
-#define LOC_DEATH_TELEFRAG_A	"was telefragged by "
+#define LOC_DEATH_TELEFRAG_A	" was teleported into by "
 #define LOC_DEATH_TELEFRAG_B	""
 
 #define LOC_DEATH_DEFLECT_A	"'s telefrag on "
