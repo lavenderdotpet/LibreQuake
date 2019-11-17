@@ -99,7 +99,7 @@ The damage is coming from inflictor, but get mad at attacker
 This should be the only function that ever reduces health.
 ============
 */
-void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
+void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 {
 	local	vector	dir;
 	local	entity	oldself;
@@ -150,8 +150,9 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 // check for godmode or invincibility
 	if (targ.flags & FL_GODMODE)
 		return;
-	if (targ.invincible_finished >= time)
+	if (targ.invincible_finished > time && !(damage >= 666000 && damage < 666005))
 	{
+		bprint("FINAL");
 		if (self.invincible_sound < time)
 		{
 			sound (targ, CHAN_ITEM, "items/protect3.wav", 1, ATTN_NORM);
@@ -161,7 +162,6 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 	}
 
 // team play damage avoidance
-//	if ( (teamplay == 1) && (targ.team > 0)&&(targ.team == attacker.team) )
 	if ( (teamplay == 1) && (targ.team > 0) && (targ.team == attacker.team)
 	&& (targ != attacker) 			
 	&& (attacker.classname == "player")

@@ -339,7 +339,7 @@ When the player touches this, he gets sent to the map listed in the "map" variab
 void() trigger_changelevel =
 {
 	if (!self.map)
-		objerror (LOC_ERR_CHANGELEVEL_NOMAP);
+		objerror ("changelevel trigger doesn't have map");
 	
 	InitTrigger ();
 	self.touch = changelevel_touch;
@@ -472,7 +472,7 @@ entity() SelectSpawnPoint =
 	
 	spot = find (world, classname, "info_player_start");
 	if (!spot)
-		error (LOC_ERR_NOSTART);
+		error ("PutClientInServer: no info_player_start on level");
 	
 	return spot;
 };
@@ -1233,7 +1233,9 @@ void(entity targ, entity attacker) ClientObituary =
 			bprint (LOC_DEATH_DEFLECT_A);
 			bprint (targ.netname);
 			bprint (LOC_DEATH_DEFLECT_B);
-
+			bprint (attacker.enemy.netname);
+			bprint (LOC_DEATH_DEFLECT_C);
+			bprint ("\n");
 			targ.frags = targ.frags - 1;
 			return;
 		}
