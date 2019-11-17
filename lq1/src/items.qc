@@ -167,7 +167,7 @@ void() health_touch =
 			return;
 	}
 	
-	sprint(other, "You receive ");
+	sprint(other, LOC_PICKUP_HEALTH);
 	s = ftos(self.healamount);
 	sprint(other, s);
 	sprint(other, " health\n");
@@ -276,8 +276,9 @@ void() armor_touch =
 	if (deathmatch == 1)
 		self.nextthink = time + 20;
 	self.think = SUB_regen;
-
-	sprint(other, "You got armor\n");
+	
+	sprint(other, LOC_PICKUP);
+	sprint(other, self.netname);
 // armor touch sound
 	sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
@@ -296,6 +297,7 @@ void() item_armor1 =
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
 	self.skin = 0;
+	self.netname = "100 armor";
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
 };
@@ -309,6 +311,7 @@ void() item_armor2 =
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
 	self.skin = 1;
+	self.netname = "150 armor";
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
 };
@@ -322,6 +325,7 @@ void() item_armorInv =
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
 	self.skin = 2;
+	self.netname = "200 armor";
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
 };
@@ -462,7 +466,7 @@ void() weapon_touch =
 	else
 		objerror ("weapon_touch: unknown classname");
 
-	sprint (other, "You got the ");
+	sprint (other, LOC_PICKUP);
 	sprint (other, self.netname);
 	sprint (other, "\n");
 // weapon touch sound
@@ -510,7 +514,7 @@ void() weapon_supershotgun =
 	precache_model ("progs/g_shot.mdl");
 	setmodel (self, "progs/g_shot.mdl");
 	self.weapon = IT_SUPER_SHOTGUN;
-	self.netname = "Double-barrelled Shotgun";
+	self.netname = LOC_NETNAME_SUPER_SHOTGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -524,7 +528,7 @@ void() weapon_nailgun =
 	precache_model ("progs/g_nail.mdl");
 	setmodel (self, "progs/g_nail.mdl");
 	self.weapon = IT_NAILGUN;
-	self.netname = "Nailgun";
+	self.netname = LOC_NETNAME_NAILGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -538,7 +542,7 @@ void() weapon_supernailgun =
 	precache_model ("progs/g_nail2.mdl");
 	setmodel (self, "progs/g_nail2.mdl");
 	self.weapon = IT_SUPER_NAILGUN;
-	self.netname = "Super Nailgun";
+	self.netname = LOC_NETNAME_SUPER_NAILGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -552,7 +556,7 @@ void() weapon_grenadelauncher =
 	precache_model ("progs/g_rock.mdl");
 	setmodel (self, "progs/g_rock.mdl");
 	self.weapon = 3;
-	self.netname = "Grenade Launcher";
+	self.netname = LOC_NETNAME_GRENADE_LAUNCHER;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -566,7 +570,7 @@ void() weapon_rocketlauncher =
 	precache_model ("progs/g_rock2.mdl");
 	setmodel (self, "progs/g_rock2.mdl");
 	self.weapon = 3;
-	self.netname = "Rocket Launcher";
+	self.netname = LOC_NETNAME_ROCKET_LAUNCHER;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -581,7 +585,7 @@ void() weapon_lightning =
 	precache_model ("progs/g_light.mdl");
 	setmodel (self, "progs/g_light.mdl");
 	self.weapon = 3;
-	self.netname = "Thunderbolt";
+	self.netname = LOC_NETNAME_LIGHTNING;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -647,7 +651,7 @@ local float		best;
 
 	bound_other_ammo ();
 	
-	sprint (other, "You got ");
+	sprint (other, LOC_PICKUP);
 	sprint (other, ftos(self.aflag));
 	sprint (other, " ");
 	sprint (other, self.netname);
@@ -709,7 +713,7 @@ void() item_shells =
 		self.aflag = 20;
 	}
 	self.weapon = 1;
-	self.netname = "shells";
+	self.netname = LOC_NETNAME_SHELLS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -734,7 +738,7 @@ void() item_spikes =
 		self.aflag = 25;
 	}
 	self.weapon = 2;
-	self.netname = "nails";
+	self.netname = LOC_NETNAME_NAILS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -759,7 +763,7 @@ void() item_rockets =
 		self.aflag = 5;
 	}
 	self.weapon = 3;
-	self.netname = "rockets";
+	self.netname = LOC_NETNAME_ROCKETS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -785,7 +789,7 @@ void() item_cells =
 		self.aflag = 6;
 	}
 	self.weapon = 4;
-	self.netname = "cells";
+	self.netname = LOC_NETNAME_CELLS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -879,7 +883,7 @@ void() key_touch =
 	if (other.items & self.items)
 		return;
 
-	sprint (other, "You got the ");
+	sprint (other, LOC_PICKUP);
 	sprint (other, self.netname);
 	sprint (other,"\n");
 
@@ -934,19 +938,19 @@ void() item_key1 =
 	{
 		precache_model ("progs/w_s_key.mdl");
 		setmodel (self, "progs/w_s_key.mdl");
-		self.netname = "silver key";
+		self.netname = LOC_NETNAME_SILVER_KEY;
 	}
 	else if (world.worldtype == 1)
 	{
 		precache_model ("progs/m_s_key.mdl");
 		setmodel (self, "progs/m_s_key.mdl");
-		self.netname = "silver runekey";
+		self.netname = LOC_NETNAME_SILVER_RUNEKEY;
 	}
 	else if (world.worldtype == 2)
 	{
 		precache_model2 ("progs/b_s_key.mdl");
 		setmodel (self, "progs/b_s_key.mdl");
-		self.netname = "silver keycard";
+		self.netname = LOC_NETNAME_SILVER_KEYCARD;
 	}
 	key_setsounds();
 	self.touch = key_touch;
@@ -972,19 +976,19 @@ void() item_key2 =
 	{
 		precache_model ("progs/w_g_key.mdl");
 		setmodel (self, "progs/w_g_key.mdl");
-		self.netname = "gold key";
+		self.netname = LOC_NETNAME_GOLD_KEY;
 	}
 	if (world.worldtype == 1)
 	{
 		precache_model ("progs/m_g_key.mdl");
 		setmodel (self, "progs/m_g_key.mdl");
-		self.netname = "gold runekey";
+		self.netname = LOC_NETNAME_GOLD_RUNEKEY;
 	}
 	if (world.worldtype == 2)
 	{
 		precache_model2 ("progs/b_g_key.mdl");
 		setmodel (self, "progs/b_g_key.mdl");
-		self.netname = "gold keycard";
+		self.netname = LOC_NETNAME_GOLD_KEYCARD;
 	}
 	key_setsounds();
 	self.touch = key_touch;
@@ -1011,7 +1015,7 @@ void() sigil_touch =
 	if (other.health <= 0)
 		return;
 
-	centerprint (other, "You got the rune!");
+	centerprint (other, LOC_RUNE);
 
 	sound (other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
@@ -1082,10 +1086,7 @@ void() powerup_touch =
 		return;
 
 	
-	sprint (other, "You got ");
-	if (self.classname != "item_artifact_invulnerability") {
-		sprint (other, "the ");
-	}
+	sprint (other, LOC_PICKUP);
 	sprint (other, self.netname);
 	sprint (other,"\n");
 
@@ -1152,7 +1153,7 @@ void() item_artifact_invulnerability =
 	precache_sound ("items/protect3.wav");
 	self.noise = "items/protect.wav";
 	setmodel (self, "progs/invulner.mdl");
-	self.netname = "Lucifer's Aegis";
+	self.netname = LOC_NETNAME_PENT;
 	self.items = IT_INVULNERABILITY;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
@@ -1170,7 +1171,7 @@ void() item_artifact_envirosuit =
 	precache_sound ("items/suit2.wav");
 	self.noise = "items/suit.wav";
 	setmodel (self, "progs/suit.mdl");
-	self.netname = "Hazmat Suit";
+	self.netname = LOC_NETNAME_BIO;
 	self.items = IT_SUIT;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
@@ -1190,7 +1191,7 @@ void() item_artifact_invisibility =
 	precache_sound ("items/inv3.wav");
 	self.noise = "items/inv1.wav";
 	setmodel (self, "progs/invisibl.mdl");
-	self.netname = "Eye of Eryx";
+	self.netname = LOC_NETNAME_RING;
 	self.items = IT_INVISIBILITY;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
@@ -1209,7 +1210,7 @@ void() item_artifact_super_damage =
 	precache_sound ("items/damage3.wav");
 	self.noise = "items/damage.wav";
 	setmodel (self, "progs/quaddama.mdl");
-	self.netname = "Crusher Sigil!";
+	self.netname = LOC_NETNAME_QUAD;
 	self.items = IT_QUAD;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
@@ -1238,15 +1239,7 @@ void() BackpackTouch =
 		return;
 
 	acount = 0;
-	sprint (other, "You get ");
-
-	if (self.items)
-		if ((other.items & self.items) == 0)
-		{
-			acount = 1;
-			sprint (other, "the ");
-			sprint (other, self.netname);
-		}
+	sprint (other, LOC_PICKUP);
 
 // if the player was using his best weapon, change up to the new one if better		
 	stemp = self;
@@ -1275,7 +1268,8 @@ void() BackpackTouch =
 		acount = 1;
 		s = ftos(self.ammo_shells);
 		sprint (other, s);
-		sprint (other, " shells");
+		sprint (other, " ");
+		sprint (other, LOC_NETNAME_SHELLS);
 	}
 	if (self.ammo_nails)
 	{
@@ -1284,7 +1278,8 @@ void() BackpackTouch =
 		acount = 1;
 		s = ftos(self.ammo_nails);
 		sprint (other, s);
-		sprint (other, " nails");
+		sprint (other, " ");
+		sprint (other, LOC_NETNAME_NAILS);
 	}
 	if (self.ammo_rockets)
 	{
@@ -1293,7 +1288,8 @@ void() BackpackTouch =
 		acount = 1;
 		s = ftos(self.ammo_rockets);
 		sprint (other, s);
-		sprint (other, " rockets");
+		sprint (other, " ");
+		sprint (other, LOC_NETNAME_ROCKETS);
 	}
 	if (self.ammo_cells)
 	{
@@ -1302,10 +1298,12 @@ void() BackpackTouch =
 		acount = 1;
 		s = ftos(self.ammo_cells);
 		sprint (other, s);
-		sprint (other, " cells");
+		sprint (other, " ");
+		sprint (other, LOC_NETNAME_CELLS);
 	}
 	
-	sprint (other, " from a backpack\n");
+	sprint (other, LOC_BACKPACK);
+	sprint (other, "\n");
 // backpack touch sound
 	sound (other, CHAN_ITEM, "weapons/lock4.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
