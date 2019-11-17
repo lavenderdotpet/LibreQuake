@@ -1219,9 +1219,9 @@ void(entity targ, entity attacker) ClientObituary =
 		if (attacker.classname == "teledeath")
 		{
 			bprint (targ.netname);
-			bprint (LOC_DEATH_DEFLECT_A);
+			bprint (LOC_DEATH_TELEFRAG_A);
 			bprint (attacker.owner.netname);
-			bprint (LOC_DEATH_DEFLECT_B);
+			bprint (LOC_DEATH_TELEFRAG_B);
 			bprint ("\n");
 
 			attacker.owner.frags = attacker.owner.frags + 1;
@@ -1230,9 +1230,9 @@ void(entity targ, entity attacker) ClientObituary =
 
 		if (attacker.classname == "teledeath2")
 		{
-			bprint (LOC_DEATH_TELEFRAG_A);
+			bprint (LOC_DEATH_DEFLECT_A);
 			bprint (targ.netname);
-			bprint (LOC_DEATH_TELEFRAG_B);
+			bprint (LOC_DEATH_DEFLECT_B);
 
 			targ.frags = targ.frags - 1;
 			return;

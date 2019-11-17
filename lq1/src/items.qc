@@ -279,6 +279,7 @@ void() armor_touch =
 	
 	sprint(other, LOC_PICKUP);
 	sprint(other, self.netname);
+	sprint(other, "\n");
 // armor touch sound
 	sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
