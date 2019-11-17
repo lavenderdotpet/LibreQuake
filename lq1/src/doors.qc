@@ -220,17 +220,17 @@ void() door_touch =
 		{
 			if (world.worldtype == 2)
 			{
-				centerprint (other, "You need the silver keycard");
+				twoprint (other, LOC_KEY_NEED, LOC_NETNAME_SILVER_KEYCARD);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 			else if (world.worldtype == 1)
 			{
-				centerprint (other, "You need the silver runekey");
+				twoprint (other, LOC_KEY_NEED, LOC_NETNAME_SILVER_RUNEKEY);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 			else if (world.worldtype == 0)
 			{
-				centerprint (other, "You need the silver key");
+				twoprint (other, LOC_KEY_NEED, LOC_NETNAME_SILVER_KEY);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 		}
@@ -238,17 +238,17 @@ void() door_touch =
 		{
 			if (world.worldtype == 2)
 			{
-				centerprint (other, "You need the gold keycard");
+				twoprint (other, LOC_KEY_NEED, LOC_NETNAME_GOLD_KEYCARD);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 			else if (world.worldtype == 1)
 			{
-				centerprint (other, "You need the gold runekey");
+				twoprint (other, LOC_KEY_NEED, LOC_NETNAME_GOLD_RUNEKEY);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);			
 			}
 			else if (world.worldtype == 0)
 			{
-				centerprint (other, "You need the gold key");
+				twoprint (other, LOC_KEY_NEED, LOC_NETNAME_GOLD_KEY);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 		}
@@ -766,7 +766,7 @@ void () func_door_secret =
 	self.blocked = secret_blocked;
 	self.speed = 50;
 	self.use = fd_secret_use;
-	if ( !self.targetname || self.spawnflags&SECRET_YES_SHOOT)
+	if ( !self.targetname || self.spawnflags & SECRET_YES_SHOOT)
 	{
 		self.health = 10000;
 		self.takedamage = DAMAGE_YES;

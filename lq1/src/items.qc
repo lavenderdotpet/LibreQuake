@@ -514,7 +514,7 @@ void() weapon_supershotgun =
 	precache_model ("progs/g_shot.mdl");
 	setmodel (self, "progs/g_shot.mdl");
 	self.weapon = IT_SUPER_SHOTGUN;
-	self.netname = "Double-barrelled Shotgun";
+	self.netname = LOC_NETNAME_SUPER_SHOTGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -528,7 +528,7 @@ void() weapon_nailgun =
 	precache_model ("progs/g_nail.mdl");
 	setmodel (self, "progs/g_nail.mdl");
 	self.weapon = IT_NAILGUN;
-	self.netname = "Nailgun";
+	self.netname = LOC_NETNAME_NAILGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -542,7 +542,7 @@ void() weapon_supernailgun =
 	precache_model ("progs/g_nail2.mdl");
 	setmodel (self, "progs/g_nail2.mdl");
 	self.weapon = IT_SUPER_NAILGUN;
-	self.netname = "Super Nailgun";
+	self.netname = LOC_NETNAME_SUPER_NAILGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -556,7 +556,7 @@ void() weapon_grenadelauncher =
 	precache_model ("progs/g_rock.mdl");
 	setmodel (self, "progs/g_rock.mdl");
 	self.weapon = 3;
-	self.netname = "Grenade Launcher";
+	self.netname = LOC_NETNAME_GRENADE_LAUNCHER;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -570,7 +570,7 @@ void() weapon_rocketlauncher =
 	precache_model ("progs/g_rock2.mdl");
 	setmodel (self, "progs/g_rock2.mdl");
 	self.weapon = 3;
-	self.netname = "Rocket Launcher";
+	self.netname = LOC_NETNAME_ROCKET_LAUNCHER;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -585,7 +585,7 @@ void() weapon_lightning =
 	precache_model ("progs/g_light.mdl");
 	setmodel (self, "progs/g_light.mdl");
 	self.weapon = 3;
-	self.netname = "Thunderbolt";
+	self.netname = LOC_NETNAME_LIGHTNING;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -713,7 +713,7 @@ void() item_shells =
 		self.aflag = 20;
 	}
 	self.weapon = 1;
-	self.netname = "shells";
+	self.netname = LOC_NETNAME_SHELLS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -738,7 +738,7 @@ void() item_spikes =
 		self.aflag = 25;
 	}
 	self.weapon = 2;
-	self.netname = "nails";
+	self.netname = LOC_NETNAME_NAILS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -763,7 +763,7 @@ void() item_rockets =
 		self.aflag = 5;
 	}
 	self.weapon = 3;
-	self.netname = "rockets";
+	self.netname = LOC_NETNAME_ROCKETS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -789,7 +789,7 @@ void() item_cells =
 		self.aflag = 6;
 	}
 	self.weapon = 4;
-	self.netname = "cells";
+	self.netname = LOC_NETNAME_CELLS;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -938,19 +938,19 @@ void() item_key1 =
 	{
 		precache_model ("progs/w_s_key.mdl");
 		setmodel (self, "progs/w_s_key.mdl");
-		self.netname = "silver key";
+		self.netname = LOC_NETNAME_SILVER_KEY;
 	}
 	else if (world.worldtype == 1)
 	{
 		precache_model ("progs/m_s_key.mdl");
 		setmodel (self, "progs/m_s_key.mdl");
-		self.netname = "silver runekey";
+		self.netname = LOC_NETNAME_SILVER_RUNEKEY;
 	}
 	else if (world.worldtype == 2)
 	{
 		precache_model2 ("progs/b_s_key.mdl");
 		setmodel (self, "progs/b_s_key.mdl");
-		self.netname = "silver keycard";
+		self.netname = LOC_NETNAME_SILVER_KEYCARD;
 	}
 	key_setsounds();
 	self.touch = key_touch;
@@ -976,19 +976,19 @@ void() item_key2 =
 	{
 		precache_model ("progs/w_g_key.mdl");
 		setmodel (self, "progs/w_g_key.mdl");
-		self.netname = "gold key";
+		self.netname = LOC_NETNAME_GOLD_KEY;
 	}
 	if (world.worldtype == 1)
 	{
 		precache_model ("progs/m_g_key.mdl");
 		setmodel (self, "progs/m_g_key.mdl");
-		self.netname = "gold runekey";
+		self.netname = LOC_NETNAME_GOLD_RUNEKEY;
 	}
 	if (world.worldtype == 2)
 	{
 		precache_model2 ("progs/b_g_key.mdl");
 		setmodel (self, "progs/b_g_key.mdl");
-		self.netname = "gold keycard";
+		self.netname = LOC_NETNAME_GOLD_KEYCARD;
 	}
 	key_setsounds();
 	self.touch = key_touch;
@@ -1015,7 +1015,7 @@ void() sigil_touch =
 	if (other.health <= 0)
 		return;
 
-	centerprint (other, "You got the rune!");
+	centerprint (other, LOC_RUNE);
 
 	sound (other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");

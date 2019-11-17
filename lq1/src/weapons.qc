@@ -1003,13 +1003,15 @@ void() W_ChangeWeapon =
 	
 	if (!(self.items & fl))
 	{	// don't have the weapon or the ammo
-		sprint (self, "no weapon.\n");
+		sprint (self, LOC_NO_WEAPON);
+		sprint (self, "\n");
 		return;
 	}
 	
 	if (am)
 	{	// don't have the ammo
-		sprint (self, "not enough ammo.\n");
+		sprint (self, LOC_NO_AMMO);
+		sprint (self, "\n");
 		return;
 	}
 

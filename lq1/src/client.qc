@@ -234,7 +234,7 @@ void() ExitIntermission =
 		if ( (serverflags&15) == 15)
 		{
 			WriteByte (MSG_ALL, SVC_FINALE);
-			WriteString (MSG_ALL, LOC_EPILOGUE_FINAL);
+			WriteString (MSG_ALL, LOC_EPILOGUE_RUNES);
 			return;
 		}
 		
@@ -396,7 +396,7 @@ void() ClientKill =
 	if ((intermission_running)&&((coop)||(deathmatch)))  // not allowed during intermission
 		return;
 	bprint (self.netname);
-	bprint (LOC_SUICIDE);
+	bprint (LOC_DEATH_SUICIDE);
 	bprint ("\n");
 	set_suicide_frame ();
 	self.modelindex = modelindex_player;
@@ -1168,7 +1168,8 @@ called when a player connects to a server
 void() ClientConnect =
 {
 	bprint (self.netname);
-	bprint (" joined the match\n");
+	bprint (LOC_JOIN);
+	bprint ("\n");
 	
 // a client connecting during an intermission can cause problems
 	if (intermission_running)
@@ -1192,9 +1193,10 @@ void() ClientDisconnect =
 
 	// let everyone else know
 	bprint (self.netname);
-	bprint (" exited the match with ");
+	bprint (LOC_EXIT_DM_A);
 	bprint (ftos(self.frags));
-	bprint (" frags\n");
+	bprint (LOC_EXIT_DM_B);
+	bprint ("\n");
 	sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 	set_suicide_frame ();
 };
@@ -1246,7 +1248,14 @@ void(entity targ, entity attacker) ClientObituary =
 				
 				if (targ.weapon == 64 && targ.waterlevel > 1)
 				{
-					bprint ();
+					//Very small chance to use the alternate discharge line
+					
+					if (time - (floor(time / 33) * 33) < 1) {
+						bprint (LOC_DEATH_DISCHARGE_2);
+					} else {
+						bprint (LOC_DEATH_DISCHARGE_1);
+					}
+					bprint("\n");
 					return;
 				}
 				if (targ.weapon == IT_GRENADE_LAUNCHER) {
@@ -1282,74 +1291,172 @@ void(entity targ, entity attacker) ClientObituary =
 				rnum = attacker.weapon;
 				if (rnum == IT_AXE)
 				{
-					if (attacker.items & IT_QUAD) {
-						deathstring = ;
-						deathstring2 = ;
-					} else {
-						if (random() > .03) {
-							deathstring = ;
-							deathstring2 = ;
-						} else {
-							deathstring = ;
-							deathstring2 = ;
-						}
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_AXE_QA;
+						deathstring2 = LOC_DEATH_AXE_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_AXE_1A;
+						deathstring2 = LOC_DEATH_AXE_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_AXE_2A;
+						deathstring2 = LOC_DEATH_AXE_2B;
 					}
 				}
 				if (rnum == IT_SHOTGUN)
 				{
-					deathstring = ;
-					deathstring2 = ;
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_SHOTGUN_QA;
+						deathstring2 = LOC_DEATH_SHOTGUN_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_SHOTGUN_1A;
+						deathstring2 = LOC_DEATH_SHOTGUN_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_SHOTGUN_2A;
+						deathstring2 = LOC_DEATH_SHOTGUN_2B;
+					}
 				}
 				if (rnum == IT_SUPER_SHOTGUN)
 				{
-					if (random() > .03) {
-						deathstring = ;
-					} else {
-						deathstring = ;
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_SUPER_SHOTGUN_QA;
+						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_QB;
 					}
-					deathstring2 = ;
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_SUPER_SHOTGUN_1A;
+						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_SUPER_SHOTGUN_2A;
+						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_2B;
+					}
 				}
 				if (rnum == IT_NAILGUN)
 				{
-					deathstring = ;
-					deathstring2 = "\n";
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_NAILGUN_QA;
+						deathstring2 = LOC_DEATH_NAILGUN_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_NAILGUN_1A;
+						deathstring2 = LOC_DEATH_NAILGUN_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_NAILGUN_2A;
+						deathstring2 = LOC_DEATH_NAILGUN_2B;
+					}
 				}
 				if (rnum == IT_SUPER_NAILGUN)
 				{
-					deathstring = " was gunned down by ";
-					deathstring2 = "\n";
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_SUPER_NAILGUN_QA;
+						deathstring2 = LOC_DEATH_SUPER_NAILGUN_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_SUPER_NAILGUN_1A;
+						deathstring2 = LOC_DEATH_SUPER_NAILGUN_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_AXE_2A;
+						deathstring2 = LOC_DEATH_AXE_2B;
+					}
 				}
 				if (rnum == IT_GRENADE_LAUNCHER)
 				{
-					deathstring = " landed on ";
-					deathstring2 = "'s grenade\n";
-					if (targ.health < -40)
+					if (attacker.items & IT_QUAD)
 					{
-						deathstring = " was torn asunder by ";
-						deathstring2 = "'s grenade\n";
+						deathstring = LOC_DEATH_GRENADE_LAUNCHER_QA;
+						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_QB;
+					}
+					else if (targ.health < -40)
+					{
+						deathstring = LOC_DEATH_GRENADE_LAUNCHER_GA;
+						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_GB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_GRENADE_LAUNCHER_1A;
+						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_GRENADE_LAUNCHER_2A;
+						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_2B;
 					}
 				}
 				if (rnum == IT_ROCKET_LAUNCHER)
 				{
-					deathstring = " was immolated by ";
-					deathstring2 = "'s rocket\n";
-					if (targ.health < -40)
+					if (attacker.items & IT_INVULNERABILITY)
 					{
-						deathstring = " was blasted apart by ";
-						deathstring2 = "'s rocket\n" ;
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_PA;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_PB;
+					}
+					else if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_QA;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_QB;
+					}
+					else if (targ.health < -40)
+					{
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_GA;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_GB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_1A;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_2A;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_2B;
 					}
 				}
 				if (rnum == IT_LIGHTNING)
 				{
-					if (attacker.waterlevel > 1) {
-						deathstring = " was electrocuted by ";
-					} else{
-						if (random() < .03) {
-							deathstring = " was given shock treatment by ";
+					if (attacker.waterlevel > 1)
+					{
+						if (time - (floor(time / 33) * 33) < 1) {
+							deathstring = LOC_DEATH_LIGHTNING_D2A;
+							deathstring2 = LOC_DEATH_LIGHTNING_D2B;
+						} else {
+							deathstring = LOC_DEATH_LIGHTNING_D1A;
+							deathstring2 = LOC_DEATH_LIGHTNING_D1B;
 						}
-						deathstring = " was fried by ";
 					}
-					deathstring2 = "\n";
+					else if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_LIGHTNING_QA;
+						deathstring2 = LOC_DEATH_LIGHTNING_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_LIGHTNING_1A;
+						deathstring2 = LOC_DEATH_LIGHTNING_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_LIGHTNING_2A;
+						deathstring2 = LOC_DEATH_LIGHTNING_2B;
+					}
 				}
 				bprint (targ.netname);
 				bprint (deathstring);
@@ -1432,8 +1539,14 @@ void(entity targ, entity attacker) ClientObituary =
 				if (random() < 0.5)
 				{
 					bprint (LOC_DEATH_DROWN1);
-				} else {
+				}
+				else if (random() < 0.9)
+				{
 					bprint (LOC_DEATH_DROWN2);
+				}
+				else 
+				{
+					bprint (LOC_DEATH_DROWN3);
 				}
 				bprint ("\n");
 				return;
@@ -1466,11 +1579,39 @@ void(entity targ, entity attacker) ClientObituary =
 				return;
 			}
 			
-			// fell to their death?
-			if (targ.deathtype == "falling")
+			// fell to their death
+			if (targ.deathtype == "falling" || (attacker.classname == "trigger_hurt" && attacker.dmg == 666000))
 			{
 				targ.deathtype = "";
-				bprint (LOC_DEATH_FALL);
+				if (random() > .1) {
+					bprint (LOC_DEATH_FALL_1);
+				} else {
+					bprint (LOC_DEATH_FALL_2);
+				}
+				bprint ("\n");
+				return;
+			}
+			
+			// fell out into space
+			if (attacker.classname == "trigger_hurt" && attacker.dmg == 666001)
+			{
+				if (random() > .5) {
+					bprint (LOC_DEATH_SPACE_1);
+				} else {
+					bprint (LOC_DEATH_SPACE_2);
+				}
+				bprint ("\n");
+				return;
+			}
+			
+			// fell out into the void
+			if (attacker.classname == "trigger_hurt" && attacker.dmg == 666002)
+			{
+				if (random() > .5) {
+					bprint (LOC_DEATH_VOID_1);
+				} else {
+					bprint (LOC_DEATH_VOID_2);
+				}
 				bprint ("\n");
 				return;
 			}

@@ -654,6 +654,8 @@ void(string s) changelevel = #70;
 void(string var, string val) cvar_set = #72;	// sets cvar.value
 
 void(entity client, string s) centerprint = #73;	// sprint, but in middle
+void(entity client, string s, string s2) twoprint = #73;
+void(entity client, string s, string s2, string s3) threeprint = #73;
 
 void(vector pos, string samp, float vol, float atten) ambientsound = #74;
 
