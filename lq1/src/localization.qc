@@ -15,13 +15,13 @@
 //Note that the leading space is required.
 //If you don't include it, there will be no space between the player's name and the rest of the text.
 #define LOC_JOIN		" joined the match"
-#define LOC_EXIT		" exited the level"
+#define LOC_EXIT		" reached the exit"
 #define LOC_EXIT_DM_A	" exited the match with "
 #define LOC_EXIT_DM_B	" frags"
 
 //User interface
-#define LOC_NO_WEAPON		"Weapon not collected"
-#define LOC_NO_AMMO			"Out of ammo"
+#define LOC_NO_WEAPON	"Weapon not collected"
+#define LOC_NO_AMMO		"Out of ammo"
 
 //Item collection
 #define LOC_PICKUP			"You got "
@@ -70,7 +70,7 @@
 //Monster death messages
 #define LOC_DEATH_ARMY 			" was killed by a Foot Soldier"
 #define LOC_DEATH_ENFORCER 		" was blasted by a Commando"
-#define LOC_DEATH_DOG 			" was bitten by a Rottweiler"
+#define LOC_DEATH_DOG 			" was bitten by a Hellhound"
 #define LOC_DEATH_OGRE 			" was destroyed by an Ogre"
 #define LOC_DEATH_DEMON1 		" was eviscerated by a Fiend"
 #define LOC_DEATH_WIZARD 		" was scragged by a Scrag"
@@ -111,14 +111,14 @@
 #define LOC_DEATH_SELF_GRENADE	" wasn't careful with explosives"
 #define LOC_DEATH_SELF_ROCKET	" blew themself up"
 #define LOC_DEATH_SELF_OTHER	" had a death-wish"
-#define LOC_DEATH_SUICIDE		" suicides"
+#define LOC_DEATH_SUICIDE		" suicided"
 #define LOC_DEATH_OTHER			" died"
 
 //Multiplayer death messages
 //Deathstring 1 is the standard one
 //Deathstring 2 has a 1/33 chance to be used instead
 //Deathstring G is used for when the victim was gibbed (Grenade Launcher and Rocket Launcher only)
-//Deathstring Q will be used if the attacker had a Quad Damage
+//Deathstring Q is used if the attacker had a Quad Damage
 //Deathstring P is used if the attacker had a Pentagram (Rocket Launcher only)
 //Deathstring D1 is used if the attack was a discharge (Lightning Gun only)
 //Deathstring D2 has a 1/33 chance to be used instead (Lightning Gun only)
@@ -181,7 +181,7 @@
 #define LOC_DEATH_LIGHTNING_1A	" was fried by "
 #define LOC_DEATH_LIGHTNING_1B	"'s Lightning Cannon"
 #define LOC_DEATH_LIGHTNING_2A	" was given shock treatment by "
-#define LOC_DEATH_LIGHTNING_2B	""
+#define LOC_DEATH_LIGHTNING_2B	"'s Lightning Cannon"
 #define LOC_DEATH_LIGHTNING_QA	" took "
 #define LOC_DEATH_LIGHTNING_QB	"'s last train to glory"
 #define LOC_DEATH_LIGHTNING_D1A	" was electrocuted by "
@@ -193,18 +193,15 @@
 #define LOC_DEATH_TELEFRAG_A	" was teleported into by "
 #define LOC_DEATH_TELEFRAG_B	""
 
-#define LOC_DEATH_DEFLECT_A	"'s telefrag on "
-#define LOC_DEATH_DEFLECT_B	" was deflected by Lucifer's influence"
+#define LOC_DEATH_DEFLECT_A ""
+#define LOC_DEATH_DEFLECT_B	"'s telefrag on "
+#define LOC_DEATH_DEFLECT_C	" was deflected by Lucifer's influence"
 
 #define LOC_TEAMKILL_1	" kills a teammate"
 #define LOC_TEAMKILL_2	" invokes friendly-fire"
 #define LOC_TEAMKILL_3	" should really apologize"
 #define LOC_TEAMKILL_4	" doesn't know what team they're on"
 
-//Error messages
-//Not sure if I'll actually do all of these
-#define LOC_ERR_CHANGELEVEL_NOMAP "changelevel trigger doesn't have map"
-#define LOC_ERR_NOSTART "PutClientInServer: no info_player_start on level"
 
 
 
