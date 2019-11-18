@@ -1,7 +1,18 @@
 ---- vis / ericw-tools  ----
 running with 8 threads
 testlevel = 4
-LoadBSPFile: 'b_bh100.bsp'
+LoadBSPFile: 'starttest.bsp'
 BSP is version 29
-LoadPortals: couldn't read b_bh100.prt
-No vising performed.
+     6 leafs
+     5 portals
+Calculating Base Vis:
+0....1....2....3....4....5....6....7....8....9
+Calculating Full Vis:
+0....1....2....3....4....5....6....7....8....9
+WARNING: Leaf portals saw into leaf (1)
+average leafs visible: 3
+c_noclip: 0
+c_chains: 30
+visdatasize:6  compressed from 6
+Writing starttest.bsp as BSP version 29
+  0.0 seconds elapsed
