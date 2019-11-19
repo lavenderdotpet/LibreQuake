@@ -1,0 +1,19 @@
+../qwprogs.dat
+
+../src/localization.qc	//localization file
+defs.qc
+subs.qc
+combat.qc
+items.qc
+weapons.qc
+world.qc
+client.qc
+spectate.qc
+player.qc
+../src/doors.qc
+../src/buttons.qc
+triggers.qc
+plats.qc
+misc.qc
+
+server.qc
