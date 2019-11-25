@@ -666,7 +666,7 @@ void () fd_secret_done =
 	{
 		self.health = 10000;
 		self.takedamage = DAMAGE_YES;
-		self.th_pain = (void(entity,float))fd_secret_use;	
+		self.th_pain = (void(entity,float))fd_secret_use;
 	}
 	sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 };
