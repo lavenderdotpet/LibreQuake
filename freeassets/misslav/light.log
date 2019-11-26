@@ -1,36 +1,37 @@
 ---- light / ericw-tools  ----
 Raytracing backend: Embree
 running with 8 threads
-LoadBSPFile: 'starttest.bsp'
+LoadBSPFile: 'start.bsp'
 BSP is version 29
-SetQdirFromPath: no "maps" in '/home/lavender/starttest.bsp'--- ConvertTextures ---
+SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
 --- LoadEntities ---
-58 entities read, 12 are lights.
+71 entities read, 20 are lights.
 --- OptionsSummary ---
+    "sunlight" was set to "200" from map
 Embree_TraceInit: Embree version: 2.17.7
 Embree_TraceInit:
-	5 sky faces
-	49 solid faces
+	8 sky faces
+	122 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
-SetupLights: 12 initial lights
-SetupLights: 12 after surface lights
-SetupLights: 12 after jittering
+SetupLights: 20 initial lights
+SetupLights: 20 after surface lights
+SetupLights: 20 after jittering
 --- EstimateLightVisibility ---
-0....1....2....3....4....5....6....7....8....9
-Final count: 12 lights, 0 suns in use.
+0....1....2....3....4....5....6....7....8....9..
+Final count: 20 lights, 1 suns in use.
 --- LightWorld ---
 --- LightThread ---
 0....1....2....3....4....5....6....7....8....9....
 Lighting Completed.
 
-lightdatasize: 5212
+lightdatasize: 11129
 0 switchable light styles (32 max)
-Writing starttest.bsp as BSP version 29
-0.009 seconds elapsed
+Writing start.bsp as BSP version 29
+0.022 seconds elapsed
 
 stats:
-4.123370 lights tested, 4.097638 hits per sample point
+3.756766 lights tested, 3.363954 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
 0.000000 bounce lights tested, 0.000000 hits per sample point
 0 empty lightmaps

@@ -6,7 +6,7 @@ Output file: starttest.bsp
 *** WARNING 06: No info_player_deathmatch entities in level
            66 faces
            11 brushes
-           58 entities
+           57 entities
             6 unique texnames
            18 texinfo
 
@@ -79,7 +79,7 @@ Wrote starttest.bsp
             6 textures          70988
               lightdata             0
               visdata               0
-              entdata            3640
+              entdata            3579
 
-0.007 seconds elapsed
-Peak memory usage: 478020 (466.8k)
+0.006 seconds elapsed
+Peak memory usage: 477972 (466.8k)

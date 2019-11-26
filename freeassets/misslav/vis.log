@@ -1,18 +1,22 @@
 ---- vis / ericw-tools  ----
+ambient sound calculation disabled
 running with 8 threads
 testlevel = 4
-LoadBSPFile: 'starttest.bsp'
+LoadBSPFile: 'start.bsp'
 BSP is version 29
-     6 leafs
-     5 portals
+    17 leafs
+    22 portals
 Calculating Base Vis:
-0....1....2....3....4....5....6....7....8....9
+0....1....2....3....4....5....6....7....8....9...
 Calculating Full Vis:
-0....1....2....3....4....5....6....7....8....9
+0....1....2....3....4....5....6....7....8....9...
 WARNING: Leaf portals saw into leaf (1)
-average leafs visible: 3
+WARNING: Leaf portals saw into leaf (2)
+WARNING: Leaf portals saw into leaf (5)
+WARNING: Leaf portals saw into leaf (12)
+average leafs visible: 8
 c_noclip: 0
-c_chains: 30
-visdatasize:6  compressed from 6
-Writing starttest.bsp as BSP version 29
+c_chains: 185
+visdatasize:58  compressed from 51
+Writing start.bsp as BSP version 29
   0.0 seconds elapsed
