@@ -24,6 +24,7 @@
 #define LOC_EXIT		" exited the level"
 #define LOC_EXIT_DM_A	" left the game with "
 #define LOC_EXIT_DM_B	" frags"
+#define LOC_FULL		"Ackk! All spots are full. Selecting random spawn spot."
 
 //User interface
 #define LOC_NO_WEAPON	"no weapon"
@@ -33,13 +34,16 @@
 #define LOC_PICKUP			"You got "
 #define LOC_PICKUP_HEALTH	"You receive "
 #define LOC_BACKPACK		" from a backpack"
+#define LOC_BONUS			" attains bonus powers!!!"
 
 //Item names
-#define LOC_QUAD_FADE	"Quad Damage is wearing offs"
+#define LOC_QUAD_FADE	"Quad Damage is wearing off"
+#define LOC_OCT_FADE	"OctaPower is wearing off"
 #define LOC_PENT_FADE	"Protection is almost burned out"
 #define LOC_RING_FADE	"Ring of Shadows magic is fading"
 #define LOC_BIO_FADE	"Air supply in Biosuit expiring"
 
+#define LOC_NETNAME_QUAD	"the Quad Damage"
 #define LOC_NETNAME_QUAD	"the Quad Damage"
 #define LOC_NETNAME_PENT	"the Pentagram of Protection"
 #define LOC_NETNAME_RING	"The Ring of Shadows"
@@ -199,7 +203,7 @@
 #define LOC_DEATH_TELEFRAG_A	" was telefragged by "
 #define LOC_DEATH_TELEFRAG_B	""
 
-#define LOC_DEATH_DEFLECT_A "Satan's power deflects "
+#define LOC_DEATH_DEFLECT_A	"Satan's power deflects "
 #define LOC_DEATH_DEFLECT_B	"'s telefrag on "
 #define LOC_DEATH_DEFLECT_C	""
 

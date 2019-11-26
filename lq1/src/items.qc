@@ -1149,9 +1149,6 @@ void() item_artifact_invulnerability =
 	self.touch = powerup_touch;
 
 	precache_model ("progs/invulner.mdl");
-	precache_sound ("items/protect.wav");
-	precache_sound ("items/protect2.wav");
-	precache_sound ("items/protect3.wav");
 	self.noise = "items/protect.wav";
 	setmodel (self, "progs/invulner.mdl");
 	self.netname = LOC_NETNAME_PENT;
@@ -1168,8 +1165,6 @@ void() item_artifact_envirosuit =
 	self.touch = powerup_touch;
 
 	precache_model ("progs/suit.mdl");
-	precache_sound ("items/suit.wav");
-	precache_sound ("items/suit2.wav");
 	self.noise = "items/suit.wav";
 	setmodel (self, "progs/suit.mdl");
 	self.netname = LOC_NETNAME_BIO;
@@ -1187,9 +1182,6 @@ void() item_artifact_invisibility =
 	self.touch = powerup_touch;
 
 	precache_model ("progs/invisibl.mdl");
-	precache_sound ("items/inv1.wav");
-	precache_sound ("items/inv2.wav");
-	precache_sound ("items/inv3.wav");
 	self.noise = "items/inv1.wav";
 	setmodel (self, "progs/invisibl.mdl");
 	self.netname = LOC_NETNAME_RING;
@@ -1207,8 +1199,6 @@ void() item_artifact_super_damage =
 	self.touch = powerup_touch;
 
 	precache_model ("progs/quaddama.mdl");
-	precache_sound ("items/damage.wav");
-	precache_sound ("items/damage3.wav");
 	self.noise = "items/damage.wav";
 	setmodel (self, "progs/quaddama.mdl");
 	self.netname = LOC_NETNAME_QUAD;
@@ -1251,8 +1241,8 @@ void() BackpackTouch =
 // change weapons
 	other.ammo_shells = other.ammo_shells + self.ammo_shells;
 	other.ammo_nails = other.ammo_nails + self.ammo_nails;
-	other.ammo_rockets = other.ammo_rockets + self.ammo_nails;
-	other.ammo_cells = other.ammo_cells + self.ammo_nails;
+	other.ammo_rockets = other.ammo_rockets + self.ammo_rockets;
+	other.ammo_cells = other.ammo_cells + self.ammo_cells;
 
 	new = self.items;
 	if (!new)

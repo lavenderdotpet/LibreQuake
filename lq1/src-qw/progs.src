@@ -2,7 +2,7 @@
 
 ../src/localization.qc	//localization file
 defs.qc
-subs.qc
+../src/subs.qc
 combat.qc
 items.qc
 weapons.qc
@@ -13,7 +13,7 @@ player.qc
 ../src/doors.qc
 ../src/buttons.qc
 triggers.qc
-plats.qc
+../src/plats.qc
 misc.qc
 
 server.qc
