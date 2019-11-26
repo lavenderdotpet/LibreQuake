@@ -152,7 +152,6 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 		return;
 	if (targ.invincible_finished > time && !(damage >= 666000 && damage < 666005))
 	{
-		bprint("FINAL");
 		if (self.invincible_sound < time)
 		{
 			sound (targ, CHAN_ITEM, "items/protect3.wav", 1, ATTN_NORM);

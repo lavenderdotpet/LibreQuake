@@ -18,6 +18,7 @@
 #define LOC_EXIT		" reached the exit"
 #define LOC_EXIT_DM_A	" exited the match with "
 #define LOC_EXIT_DM_B	" frags"
+#define LOC_FULL		"All slots full. Selecting spawn point at random."
 
 //User interface
 #define LOC_NO_WEAPON	"Weapon not collected"
@@ -27,14 +28,17 @@
 #define LOC_PICKUP			"You got "
 #define LOC_PICKUP_HEALTH	"You receive "
 #define LOC_BACKPACK		" from a backpack"
+#define LOC_BONUS			" is coming for you all!!!"
 
 //Item names
 #define LOC_QUAD_FADE	"The Crusher Sigil's power is dwindling"
+#define LOC_OCT_FADE	"The Ultra-Mega-Crusher Sigil's power is dwindling"
 #define LOC_PENT_FADE	"Lucifer's Aegis is almost gone!"
 #define LOC_RING_FADE	"The Eye of Eryx is fading away"
 #define LOC_BIO_FADE	"Your Hazmat Suit is about to expire"
 
 #define LOC_NETNAME_QUAD	"the Crusher Sigil!"
+#define LOC_NETNAME_OCT		"the Ultra-Mega-Crusher Sigil!"
 #define LOC_NETNAME_PENT	"Lucifer's Aegis"
 #define LOC_NETNAME_RING	"The Eye of Eryx"
 #define LOC_NETNAME_BIO		"the Hazmat Suit"
@@ -69,9 +73,9 @@
 
 //Monster death messages
 #define LOC_DEATH_ARMY 			" was killed by a Foot Soldier"
-#define LOC_DEATH_ENFORCER 		" was blasted by a Commando"
+#define LOC_DEATH_ENFORCER 		" was eliminated by a Commando"
 #define LOC_DEATH_DOG 			" was bitten by a Hellhound"
-#define LOC_DEATH_OGRE 			" was destroyed by an Ogre"
+#define LOC_DEATH_OGRE 			" was blasted by a Deep One"
 #define LOC_DEATH_DEMON1 		" was eviscerated by a Fiend"
 #define LOC_DEATH_WIZARD 		" was scragged by a Scrag"
 #define LOC_DEATH_ZOMBIE		" was cursed by a Husk"

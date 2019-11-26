@@ -420,11 +420,11 @@ float   EF_FLAG2                = 32;
 float 	EF_BLUE		=	64;	// Blue Globe effect for Quad
 float	EF_RED		=	128;	// Red Globe effect for Pentagram
 // messages
-float   MSG_BROADCAST   = 0;            // unreliable to all
+float   MSG_BROADCAST   = 4;            // for multicast() call
 float   MSG_ONE                 = 1;            // reliable to one (msg_entity)
 float   MSG_ALL                 = 2;            // reliable to all
 float   MSG_INIT                = 3;            // write to the init string
-float   MSG_MULTICAST   = 4;            // for multicast() call
+#define MSG_MULTICAST MSG_BROADCAST
 
 // message levels
 float   PRINT_LOW               = 0;            // pickup messages

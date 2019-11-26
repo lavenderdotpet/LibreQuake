@@ -273,7 +273,6 @@ void() monster_boss =
 
 	precache_sound ("weapons/rocket1i.wav");
 	precache_sound ("boss1/out1.wav");
-	precache_sound ("boss1/sight1.wav");
 	precache_sound ("misc/power.wav");
 	precache_sound ("boss1/throw.wav");
 	precache_sound ("boss1/pain.wav");

@@ -376,23 +376,6 @@ void() T_MissileTouch =
 {
 	local float     damg;
 
-//	if (deathmatch == 4)
-//	{
-//	if ( ((other.weapon == 32) || (other.weapon == 16)))
-//		{	
-//			if (random() < 0.1)
-//			{
-//				if (other != world)
-//				{
-//	//				bprint (PRINT_HIGH, "Got here\n");
-//					other.deathtype = "blaze";
-//					T_Damage (other, self, self.owner, 1000 );
-//					T_RadiusDamage (self, self.owner, 1000, other);
-//				}
-//			}
-//		}	
-//	}
-
 	if (other == self.owner)
 		return;         // don't explode on owner
 
@@ -1188,7 +1171,7 @@ void() CheatCommand =
 		IT_ROCKET_LAUNCHER |
 		IT_KEY1 | IT_KEY2;
 
-	self.ammo_cells = 200;
+	self.ammo_cells = 100;
 	self.items = self.items | IT_LIGHTNING;
 
 	self.weapon = IT_ROCKET_LAUNCHER;
