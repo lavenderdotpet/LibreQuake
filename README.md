@@ -129,7 +129,7 @@ All levels for *LibreQuake* must be vanilla-compatible, requiring an
 expanded-limits or limit-removing engine is not permissible.  
 This means you may not exceed the limits of the original *quake* engine,
 and do not depend on additional mapping features.  
-Levels should be in *quake*’s original format, not in “valve”-format.
+
 
 It is sensible to also heed the following guidelines:
 

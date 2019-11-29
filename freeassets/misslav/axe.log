@@ -1,0 +1,64 @@
+---- qbsp / ericw-tools  ----
+Input file: axe.map
+Output file: axe.bsp
+
+---- LoadMapFile ----
+*** WARNING 05: No info_player_start entity in level
+*** WARNING 06: No info_player_deathmatch entities in level
+           42 faces
+            3 brushes
+            1 entities
+            2 unique texnames
+            6 texinfo
+
+Opened WAD: /home/lavender/LibreQuake/texture-wads/KvsWad.wad
+Processing hull 0...
+---- Brush_LoadEntity ----
+            3 brushes
+           40 planes
+---- CSGFaces ----
+           42 brushfaces
+           50 csgfaces
+           49 mergedfaces
+---- SolidBSP ----
+           57 split nodes
+           10 solid leafs
+           48 empty leafs
+            0 water leafs
+            0 detail leafs
+            0 detail illusionary leafs
+            0 detail fence leafs
+            0 illusionary visblocker leafs
+          112 leaffaces
+           77 nodefaces
+---- Portalize ----
+           48 vis leafs
+           48 vis clusters
+          151 vis portals
+---- FillOutside ----
+*** WARNING 19: No entities in empty space -- no filling performed (hull 0)
+---- MakeFaceEdges ----
+---- GrowRegions ----
+Processing hull 1...
+*** WARNING 19: No entities in empty space -- no filling performed (hull 1)
+Processing hull 2...
+*** WARNING 19: No entities in empty space -- no filling performed (hull 2)
+---- WriteBSPFile ----
+Wrote axe.bsp
+          140 planes             2800
+          100 vertexes           1200
+           57 nodes              1368
+            6 texinfo             240
+           77 faces              1540
+          155 clipnodes          1240
+           49 leafs              1372
+          112 marksurfaces        224
+          310 surfedges          1240
+          196 edges               784
+            2 textures          10972
+              lightdata             0
+              visdata               0
+              entdata              88
+
+0.012 seconds elapsed
+Peak memory usage: 648416 (0.6M)
