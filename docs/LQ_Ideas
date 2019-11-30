@@ -1,0 +1,30 @@
+Test
+- ep3 map taking place in a canyon with temple entrances on the sides, insides are mix of caves and temples. Could have bridges on the canyon part as well as underwater sections, be it between temples or inside the canyon towards the temples and vice versa
+
+- ep3 base map is some sort of port, with fishing stuff alongside a pipe system
+
+- Reworked Cthon Fight: ok so it's like the usual, but the thing is everytime you successfully shock cthon, the switches you pressed are locked out, and you gotta find another pair of switches in the arena to enable the shockers, this gives the player agency on how to take him down, also considering the level design could make some switches riskier to activate Then after it's done, cthon rises again, but injured and he can be harmed with conventional fire (but here it's another monster entity that spawns in)
+
+-Zombie replacements (Husks) first appear in e2m2 and get a special introduction level
+
+-Final level is instead a mini-episode that is based around the misc_teleporttrain entity, so it is clear to the player that it can be used to telefrag the final boss. Note that misc_teleporttrain is bugged in the default progs. Telefragging normal monsters with it causes the game to crash. We have to ensure the misc_teleporttrain can't telefrag monsters. (So using Scrags in this episode is probably a bad idea.)
+
+Adding onto Ivan_Void's backstory, the first level of each episode should end with the player entering a giant portal. Then the second level has them exiting the same portal in the other dimension. The surrounding area is a corrupted version of the ending of the first level, which the player can now explore. It might be a minute or two before they encounter a monster in this new strange world.
+
+Buffalobach's spontaneous things:
+    Boss list: 
+
+LIBREQUAKE BACKSTORY
+
+By Ivan_Void
+
+Somewhere near the end of the 21st century, humanity's desire to explore and colonize the universe has been fufilled thanks to a new radical technology developed with the purpose of transporting inanimate objects, living beings, and radio-signals from one location to another within an instant faster than light. Such technology was labeled: The Slipgate Teleportation Technology.
+Thanks to teleportation, humanity could break free from their shackles to their native solar system and explore the universe and exploit its near-infinite resources to their benefit and prosperity.
+
+50 years after the emergence of The Slipgate Teleportation Technology, humanity has kickstarted its coloniazation of various Earth-like planets in the universe. On one of said planets, a planet labeled LQ-021⍺, a peculiar crystal material was discovered. That crystal material has been found to be useful as a source of energy for the afforomentioned Slipgates, which demanded a considerable amount of power to initialize and teleport various objects, and other various technological devices such as spaceships, vehicles, houses and more. Thanks to such material, humanity could expand further at faster rate than before.
+
+One eventful day, the Slipgate device on LQ-021⍺ was met with a severe malfunction due to strain on the system, caused by overusage, complete oversight by the commanding officer at the time, and one operator's coffee spill on the computer responsible for the teleportaion coordinates. As a result, 86 cargo crates full of weaponry, ammunition and medical supplies to be transported to a completely different location. A location not even indicated on their databases. After very in depth investigation into the entire incident, it was found the 86 cargos were transported to the correct location, but in a completely different parallel dimension.
+
+Said event caused great interest to the powerful, and malignant forces from the beyond. The terrifying entities controlled armies which could conquer anything they desired.
+
+

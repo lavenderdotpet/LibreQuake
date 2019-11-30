@@ -62,7 +62,7 @@ D: Models
 
 S: therektafire
 E: 
-D: Maps
+D: Maps, maphacks
 
 S: eightbit
 E: 
@@ -85,6 +85,10 @@ S: GHOST , H34DSH007ER
 E: ericdw1000@gmail.com
 D: discord booster 
 
+S: Squid V.
+E: 
+D: Level textures
+
 S: 
 E: 
 D: 
@@ -97,8 +101,4 @@ S:
 E: 
 D: 
 
-S: 
-E: 
-D: 
-
-
+	
