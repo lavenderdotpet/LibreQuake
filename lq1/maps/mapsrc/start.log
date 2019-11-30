@@ -1,0 +1,84 @@
+---- qbsp / ericw-tools  ----
+Input file: start.map
+Output file: start.bsp
+
+---- LoadMapFile ----
+*** WARNING 06: No info_player_deathmatch entities in level
+          216 faces
+           36 brushes
+           80 entities
+           16 unique texnames
+           43 texinfo
+
+Opened WAD: /home/lavender/LibreQuake/texture-wads/prototype.wad
+Opened WAD: /home/lavender/LibreQuake/texture-wads/lq.wad
+Processing hull 0...
+---- Brush_LoadEntity ----
+           29 brushes
+           28 planes
+---- CSGFaces ----
+          174 brushfaces
+          136 csgfaces
+          102 mergedfaces
+---- SolidBSP ----
+          182 split nodes
+           55 solid leafs
+          111 empty leafs
+           17 water leafs
+            0 detail leafs
+            0 detail illusionary leafs
+            0 detail fence leafs
+            0 illusionary visblocker leafs
+          401 leaffaces
+          394 nodefaces
+---- Portalize ----
+          128 vis leafs
+          128 vis clusters
+          272 vis portals
+---- FillOutside ----
+           92 outleafs
+---- MergeAll ----
+           78 mergefaces
+---- SolidBSP ----
+           46 split nodes
+           30 solid leafs
+           14 empty leafs
+            3 water leafs
+            0 detail leafs
+            0 detail illusionary leafs
+            0 detail fence leafs
+            0 illusionary visblocker leafs
+          168 leaffaces
+          137 nodefaces
+---- Portalize ----
+           17 vis leafs
+           17 vis clusters
+           22 vis portals
+---- Tjunc ----
+          115 world edges
+          438 edge points
+          150 edges added by tjunctions
+            0 faces added by tjunctions
+---- MakeFaceEdges ----
+---- GrowRegions ----
+Processing hull 1...
+Processing hull 2...
+---- WriteBSPFile ----
+Wrote start.bsp
+           88 planes             1760
+          234 vertexes           2808
+           88 nodes              2112
+           33 texinfo            1320
+          176 faces              3520
+          175 clipnodes          1400
+           60 leafs              1680
+          206 marksurfaces        412
+          848 surfedges          3392
+          432 edges              1728
+           19 textures         320780
+              lightdata             0
+              visdata               0
+              entdata            5110
+
+0.019 seconds elapsed
+Peak memory usage: 1225044 (1.2M)
