@@ -1,0 +1,104 @@
+///credit template///
+N: real name
+S: screen name
+E: Email
+W: Website
+D: Contributions
+////////////////////////
+
+S: Ivan_Void
+E: voyisch@gmail.com
+D: sounds, maps
+
+S: aDaya
+E: biver.arthur@gmail.com
+W: https://biverarthur.wixsite.com/portfolio
+D: Models, Textures, Sounds
+
+S: Clay
+E: 
+D: Models, Textures
+
+N: Calvin Martinez
+S: ZungryWare
+E: CalvinMartinezDV@gmail.com
+D: Code, Maps, Textures
+
+S: Fimbul K
+E: 
+D: Textures, Maps, Models
+
+S: Giwake
+E: 
+D: Textures, Models
+
+S: John Biggs
+E: 
+D: Textures, Maps
+
+S: GooseJelly
+E: 
+D: Textures, Maps
+
+S: Greenwood
+E: 
+D: Textures, Maps
+
+S: MissLav
+E: MissLav@protonmail.com
+D: textures, models, configs
+
+S: Futuretime23
+E: 
+D: Music
+
+S: Milky
+E: 
+D: Sounds    
+
+S: Chillo
+E: danielleepeterson86@gmail.com
+D: Models
+
+S: therektafire
+E: 
+D: Maps, maphacks
+
+S: eightbit
+E: 
+D: models
+
+S: beak
+E: 
+D: textures
+
+S: giwake
+E: 
+D: sound, models
+
+S: Nolcoz
+E: 
+D: textures
+
+N: Eric Wilson
+S: GHOST , H34DSH007ER
+E: ericdw1000@gmail.com
+D: discord booster 
+
+S: Squid V.
+E: 
+D: Level textures
+
+S: 
+E: 
+D: 
+
+S: 
+E: 
+D: 
+
+S: 
+E: 
+D: 
+
+	
