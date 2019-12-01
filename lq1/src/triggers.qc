@@ -318,11 +318,12 @@ void() tdeath_touch =
 	entity targ = other;
 	entity attacker = self.owner;
 	
-	if (targ == attacker)
+	if (targ == attacker) {
 		return;
+	}
 	
 	//Non-players cannot telefrag players
-	if (attacker.classname != "player")
+	if (attacker.classname != "player" && targ.classname == "player")
 	{	
 		T_Damage (attacker, self, self, 666000);
 		return;
