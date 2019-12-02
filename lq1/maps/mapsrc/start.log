@@ -6,8 +6,8 @@ Output file: start.bsp
 *** WARNING 06: No info_player_deathmatch entities in level
           216 faces
            36 brushes
-           80 entities
-           16 unique texnames
+           81 entities
+           15 unique texnames
            43 texinfo
 
 Opened WAD: /home/lavender/LibreQuake/texture-wads/prototype.wad
@@ -75,10 +75,10 @@ Wrote start.bsp
           206 marksurfaces        412
           848 surfedges          3392
           432 edges              1728
-           19 textures         320780
+           18 textures         315296
               lightdata             0
               visdata               0
-              entdata            5110
+              entdata            5183
 
-0.019 seconds elapsed
-Peak memory usage: 1225044 (1.2M)
+0.018 seconds elapsed
+Peak memory usage: 1225052 (1.2M)
