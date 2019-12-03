@@ -362,6 +362,7 @@ float	CHAN_WEAPON		= 1;
 float	CHAN_VOICE		= 2;
 float	CHAN_ITEM		= 3;
 float	CHAN_BODY		= 4;
+float	CHAN_JUMP		= 7;
 
 float	ATTN_NONE		= 0;
 float	ATTN_NORM		= 1;

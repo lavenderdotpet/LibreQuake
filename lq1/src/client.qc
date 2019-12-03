@@ -779,7 +779,7 @@ void() PlayerJump =
 	
 	self.button2 = 0;
 // player jumping sound
-	sound (self, CHAN_BODY, "player/plyrjmp8.wav", 1, ATTN_NORM);
+	sound (self, CHAN_JUMP, "player/plyrjmp8.wav", 1, ATTN_NORM);
 	self.velocity_z = self.velocity_z + 270;
 };
 
@@ -1383,15 +1383,18 @@ void(entity targ, entity attacker) ClientObituary =
 				}
 				if (rnum == IT_GRENADE_LAUNCHER)
 				{
-					if (attacker.items & IT_QUAD)
+					if (targ.health < -40)
 					{
-						deathstring = LOC_DEATH_GRENADE_LAUNCHER_QA;
-						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_QB;
-					}
-					else if (targ.health < -40)
-					{
-						deathstring = LOC_DEATH_GRENADE_LAUNCHER_GA;
-						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_GB;
+						if (attacker.items & IT_QUAD)
+						{
+							deathstring = LOC_DEATH_GRENADE_LAUNCHER_QA;
+							deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_QB;
+						}
+						else
+						{
+							deathstring = LOC_DEATH_GRENADE_LAUNCHER_GA;
+							deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_GB;
+						}
 					}
 					else if (random() > .03)
 					{
@@ -1406,20 +1409,30 @@ void(entity targ, entity attacker) ClientObituary =
 				}
 				if (rnum == IT_ROCKET_LAUNCHER)
 				{
-					if (attacker.items & IT_QUAD)
+					if (targ.health < -40)
 					{
-						deathstring = LOC_DEATH_ROCKET_LAUNCHER_QA;
-						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_QB;
-					}
-					else if (attacker.items & IT_INVULNERABILITY)
-					{
-						deathstring = LOC_DEATH_ROCKET_LAUNCHER_PA;
-						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_PB;
-					}
-					else if (targ.health < -40)
-					{
-						deathstring = LOC_DEATH_ROCKET_LAUNCHER_GA;
-						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_GB;
+						if (attacker.items & IT_QUAD)
+						{
+							if (random() < .3)
+							{
+								deathstring = LOC_DEATH_ROCKET_LAUNCHER_Q1A;
+								deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_Q1B;
+							}
+							else if (random() < .6)
+							{
+								deathstring = LOC_DEATH_ROCKET_LAUNCHER_Q2A;
+								deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_Q2B;
+							}
+							else
+							{
+								deathstring = LOC_DEATH_ROCKET_LAUNCHER_Q3A;
+								deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_Q3B;
+							}
+						}
+						else {
+							deathstring = LOC_DEATH_ROCKET_LAUNCHER_GA;
+							deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_GB;
+						}
 					}
 					else if (random() > .03)
 					{

@@ -1,6 +1,6 @@
 ../progs.dat
 
-localization.qc	//localization file
+localization_id1.qc	//localization file
 quake.qc
 defs.qc
 subs.qc

@@ -129,7 +129,6 @@
 //Deathstring 2 has a 1/33 chance to be used instead
 //Deathstring G is used for when the victim was gibbed (Grenade Launcher and Rocket Launcher only)
 //Deathstring Q is used if the attacker had a Quad Damage
-//Deathstring P is used if the attacker had a Pentagram (Rocket Launcher only)
 //Deathstring D1 is used if the attack was a discharge (Lightning Gun only)
 //Deathstring D2 has a 1/33 chance to be used instead (Lightning Gun only)
 //The format for printing is: victim name, deathstring A, attacker name, deathstring B
@@ -165,7 +164,7 @@
 #define LOC_DEATH_SUPER_NAILGUN_1B	""
 #define LOC_DEATH_SUPER_NAILGUN_2A	" was punctured by "
 #define LOC_DEATH_SUPER_NAILGUN_2B	""
-#define LOC_DEATH_SUPER_NAILGUN_QA	" was punctured by "
+#define LOC_DEATH_SUPER_NAILGUN_QA	" was straw-cuttered by "
 #define LOC_DEATH_SUPER_NAILGUN_QB	""
 
 #define LOC_DEATH_GRENADE_LAUNCHER_1A	" eats "
@@ -183,10 +182,12 @@
 #define LOC_DEATH_ROCKET_LAUNCHER_2B	"'s rocket"
 #define LOC_DEATH_ROCKET_LAUNCHER_GA	" was gibbed by "
 #define LOC_DEATH_ROCKET_LAUNCHER_GB	"'s rocket"
-#define LOC_DEATH_ROCKET_LAUNCHER_QA	" was gibbed by "
-#define LOC_DEATH_ROCKET_LAUNCHER_QB	"'s rocket"
-#define LOC_DEATH_ROCKET_LAUNCHER_PA	" rides "
-#define LOC_DEATH_ROCKET_LAUNCHER_PB	"'s rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1A	" was brutalized by "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1B	"'s quad rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q2A	" was smeared by "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q2B	"'s wuad rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q3A	" was ripped a new one by "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q3B	"'s quad rocket"
 
 #define LOC_DEATH_LIGHTNING_1A	" accepts "
 #define LOC_DEATH_LIGHTNING_1B	"'s shaft"

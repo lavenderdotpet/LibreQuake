@@ -21,7 +21,7 @@
 #define LOC_FULL		"All slots full. Selecting spawn point at random."
 
 //User interface
-#define LOC_NO_WEAPON	"Weapon not collected"
+#define LOC_NO_WEAPON	"You don't have that weapon"
 #define LOC_NO_AMMO		"Out of ammo"
 
 //Item collection
@@ -75,18 +75,18 @@
 #define LOC_DEATH_ARMY 			" was killed by a Foot Soldier"
 #define LOC_DEATH_ENFORCER 		" was eliminated by a Commando"
 #define LOC_DEATH_DOG 			" was bitten by a Hellhound"
-#define LOC_DEATH_OGRE 			" was blasted by a Deep One"
-#define LOC_DEATH_DEMON1 		" was eviscerated by a Fiend"
-#define LOC_DEATH_WIZARD 		" was scragged by a Scrag"
+#define LOC_DEATH_OGRE 			" was obliterated by a Deep One"
+#define LOC_DEATH_DEMON1 		" was killed by a ???"
+#define LOC_DEATH_WIZARD 		" was killed by a ???"
 #define LOC_DEATH_ZOMBIE		" was cursed by a Husk"
-#define LOC_DEATH_KNIGHT 		" was slashed by a Knight"
-#define LOC_DEATH_HELL_KNIGHT 	" was slain by a Death Knight"
-#define LOC_DEATH_FISH 			" was fed to the Rotfish"
-#define LOC_DEATH_SHAMBLER 		" was smashed by a Shambler"
-#define LOC_DEATH_SHALRATH 		" was exploded by a Vore"
-#define LOC_DEATH_TARBABY 		" was slimed by a Spawn"
-#define LOC_DEATH_BOSS 			" was fireballed by Cthon"
-#define LOC_DEATH_OLDONE 		" became one with Shub-Niggurath"
+#define LOC_DEATH_KNIGHT 		" was killed by a ???"
+#define LOC_DEATH_HELL_KNIGHT 	" was killed by a ???"
+#define LOC_DEATH_FISH 			" was killed by a ???"
+#define LOC_DEATH_SHAMBLER 		" was killed by a ???"
+#define LOC_DEATH_SHALRATH 		" was killed by a ???"
+#define LOC_DEATH_TARBABY 		" was absorbed by an Ooze"
+#define LOC_DEATH_BOSS 			" was killed by a ???"
+#define LOC_DEATH_OLDONE 		" was killed by a ???"
 #define LOC_DEATH_MONSTER		" was slain by some abomnination"
 
 //Environmental and Misc. death messages
@@ -98,7 +98,7 @@
 #define LOC_DEATH_LEAVE			" tried to escape the arena"
 #define LOC_DEATH_DROWN1		" ran out of air"
 #define LOC_DEATH_DROWN2		" drowned"
-#define LOC_DEATH_DROWN3		" fell to a watery grave"
+#define LOC_DEATH_DROWN3		" fell to his watery grave"
 #define LOC_DEATH_SLIME1		" shouldn't have played with acid"
 #define LOC_DEATH_SLIME2		" was burned by the acid"
 #define LOC_DEATH_LAVA1			" combusted"
@@ -107,15 +107,15 @@
 #define LOC_DEATH_FALL_1		" fell off a cliff"
 #define LOC_DEATH_FALL_2		" took a long flight off a short runway"
 #define LOC_DEATH_SPACE_1		" fell into space"
-#define LOC_DEATH_SPACE_2		" fell into space"
+#define LOC_DEATH_SPACE_2		" fell into deep space"
 #define LOC_DEATH_VOID_1		" fell into the void"
 #define LOC_DEATH_VOID_2		" fell out of existence"
-#define LOC_DEATH_DISCHARGE_1	" electrocuted themself"
+#define LOC_DEATH_DISCHARGE_1	" electrocuted himself"
 #define LOC_DEATH_DISCHARGE_2	" took a toaster bath"
 #define LOC_DEATH_SELF_GRENADE	" wasn't careful with explosives"
-#define LOC_DEATH_SELF_ROCKET	" blew themself up"
+#define LOC_DEATH_SELF_ROCKET	" blew himself up"
 #define LOC_DEATH_SELF_OTHER	" had a death-wish"
-#define LOC_DEATH_SUICIDE		" suicided"
+#define LOC_DEATH_SUICIDE		" commited suicide"
 #define LOC_DEATH_OTHER			" died"
 
 //Multiplayer death messages
@@ -123,7 +123,6 @@
 //Deathstring 2 has a 1/33 chance to be used instead
 //Deathstring G is used for when the victim was gibbed (Grenade Launcher and Rocket Launcher only)
 //Deathstring Q is used if the attacker had a Quad Damage
-//Deathstring P is used if the attacker had a Pentagram (Rocket Launcher only)
 //Deathstring D1 is used if the attack was a discharge (Lightning Gun only)
 //Deathstring D2 has a 1/33 chance to be used instead (Lightning Gun only)
 //The format for printing is: victim name, deathstring A, attacker name, deathstring B
@@ -177,10 +176,12 @@
 #define LOC_DEATH_ROCKET_LAUNCHER_2B	"'s rocket"
 #define LOC_DEATH_ROCKET_LAUNCHER_GA	" was blasted apart by "
 #define LOC_DEATH_ROCKET_LAUNCHER_GB	"'s rocket"
-#define LOC_DEATH_ROCKET_LAUNCHER_QA	" rode "
-#define LOC_DEATH_ROCKET_LAUNCHER_QB	"'s pale horse"
-#define LOC_DEATH_ROCKET_LAUNCHER_PA	" will see "
-#define LOC_DEATH_ROCKET_LAUNCHER_PB	" in hell"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1A	" rode "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1B	"'s pale horse"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q2A	" rode "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q2B	"'s pale horse"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q3A	" rode "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q3B	"'s pale horse"
 
 #define LOC_DEATH_LIGHTNING_1A	" was fried by "
 #define LOC_DEATH_LIGHTNING_1B	"'s Lightning Cannon"
@@ -204,7 +205,7 @@
 #define LOC_TEAMKILL_1	" kills a teammate"
 #define LOC_TEAMKILL_2	" invokes friendly-fire"
 #define LOC_TEAMKILL_3	" should really apologize"
-#define LOC_TEAMKILL_4	" doesn't know what team they're on"
+#define LOC_TEAMKILL_4	" doesn't know what team he's on"
 
 
 
