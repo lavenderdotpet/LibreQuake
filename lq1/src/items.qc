@@ -227,8 +227,11 @@ void() item_megahealth_rot =
 	
 	if (deathmatch != 2)	// deathmatch 2 is silly old rules
 	{
-		self.nextthink = time + 20;
-		self.think = SUB_regen;
+		if (deathmatch)
+		{
+			self.nextthink = time + 20;
+			self.think = SUB_regen;
+		}
 	}
 };
 
@@ -246,8 +249,11 @@ void() item_megahealth_hold =
 	
 	if (deathmatch != 2)	// deathmatch 2 is silly old rules
 	{
-		self.nextthink = time + 20;
-		self.think = SUB_regen;
+		if (deathmatch)
+		{
+			self.nextthink = time + 20;
+			self.think = SUB_regen;
+		}
 	}
 };
 
