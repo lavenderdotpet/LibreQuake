@@ -60,8 +60,8 @@ void() SetChangeParms =
 	parm8 = self.weapon;
 	parm9 = self.armortype * 100;
 	
-	//Fix for the engine-side rune bug
-	//Serverflags are now stored in parm16
+	//Fix for the engine-side disappearing runes bug
+	//Serverflags are stored in parm16 when changing levels since save files are bugged with serverflags
 	parm16 = serverflags;
 };
 
@@ -97,8 +97,8 @@ void() DecodeLevelParms =
 	self.weapon = parm8;
 	self.armortype = parm9 * 0.01;
 	
-	//Fix for the engine-side rune bug
-	//Serverflags are now stored in parm16
+	//Fix for the engine-side disappearing runes bug
+	//Serverflags are stored in parm16 when changing levels since save files are bugged with serverflags
 	serverflags = serverflags | parm16;
 };
 
@@ -271,7 +271,7 @@ void() execute_changelevel =
 		intermission_exittime = time + 5;
 	else
 		intermission_exittime = time + 2;
-
+	
 	WriteByte (MSG_ALL, SVC_CDTRACK);
 	WriteByte (MSG_ALL, 3);
 	WriteByte (MSG_ALL, 3);

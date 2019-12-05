@@ -567,6 +567,9 @@ void(entity e, vector min, vector max) setsize = #4;
 void() break						= #6;
 float() random						= #7;		// returns 0 - 1
 void(entity e, float chan, string samp, float vol, float atten) sound = #8;
+
+
+
 vector(vector v) normalize			= #9;
 void(string e) error				= #10;
 void(string e) objerror				= #11;
@@ -691,5 +694,3 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage;
 float (entity e, float healamount, float ignore) T_Heal; // health function
 
 float(entity targ, entity inflictor) CanDamage;
-
-

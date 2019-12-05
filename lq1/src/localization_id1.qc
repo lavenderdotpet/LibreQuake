@@ -185,7 +185,7 @@
 #define LOC_DEATH_ROCKET_LAUNCHER_Q1A	" was brutalized by "
 #define LOC_DEATH_ROCKET_LAUNCHER_Q1B	"'s quad rocket"
 #define LOC_DEATH_ROCKET_LAUNCHER_Q2A	" was smeared by "
-#define LOC_DEATH_ROCKET_LAUNCHER_Q2B	"'s wuad rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q2B	"'s quad rocket"
 #define LOC_DEATH_ROCKET_LAUNCHER_Q3A	" was ripped a new one by "
 #define LOC_DEATH_ROCKET_LAUNCHER_Q3B	"'s quad rocket"
 
