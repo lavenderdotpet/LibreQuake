@@ -327,36 +327,123 @@ void() func_train =
 	self.think = func_train_find;
 };
 
-/*QUAKED misc_teleporttrain (0 .5 .8) (-8 -8 -8) (8 8 8)
-This is used for the final bos
+//Code for the fixed teleporttrain written by c0burn and modified by ZungryWare
+void() teleporttrain_calcmove;
+void() teleporttrain_next =
+{
+	setorigin(self, self.enemy.origin);
+	
+	if (!self.target)
+	{
+		self.enemy = world;
+		return;
+	}
+	self.enemy = find(world, targetname, self.target);
+	if (self.enemy.classname == "path_corner")
+	{
+		vector dir = normalize(self.enemy.origin - self.origin);
+		self.velocity = dir * self.speed;
+		self.target = self.enemy.target;
+	}
+	else
+	{
+		objerror("unable to find target\n");
+		remove(self);
+	}
+	teleporttrain_calcmove();
+};
+/*void() teleporttrain_move =
+{	
+	if (!self.enemy)
+	{
+		self.velocity = '0 0 0';
+		self.think = SUB_Null;
+		return;
+	}
+	
+	if (vlen(self.origin - self.enemy.origin) < self.size_x)
+		teleporttrain_next();
+
+	self.think = teleporttrain_move;
+	self.nextthink = time + 0.1;
+};*/
+void() teleporttrain_calcmove =
+{
+	local float len;
+	local vector delta;
+	local float spd;
+	
+	delta = self.enemy.origin - self.origin;
+	len = vlen(delta);
+	spd = vlen(self.velocity);
+	self.nextthink = time + (len / spd);
+	self.think = teleporttrain_next;
+};
+void() teleporttrain_use =
+{
+	if (self.velocity == '0 0 0')
+	{
+		teleporttrain_next();
+	}
+	
+};
+void() teleporttrain_find =
+{
+	// always start positioned on the first path_corner
+	self.enemy = find(world, targetname, self.target);
+	if (self.enemy.classname == "path_corner")
+	{
+		setorigin (self, self.enemy.origin);
+		self.target = self.enemy.target;
+	}
+	else
+	{
+		objerror("unable to find target\n");
+		remove(self);
+		return;
+	}
+	
+	// not triggered, so start immediately
+	if (!self.targetname)
+	{
+		teleporttrain_calcmove();
+		//self.think = teleporttrain_move;
+		//self.nextthink = time + 0.1;
+	}
+	else
+	{
+		self.use = teleporttrain_use;
+	}
+};
+/*QUAKED misc_teleporttrain (.5 .5 .5) (-16 -16 -16) (16 16 16) X X X X X X X X NOT_IN_EASY NOT_IN_NORMAL NOT_IN_HARD NOT_IN_DM
+{	model("progs/teleport.mdl");	}
+
+Teleporter target for final boss level. Must target a series of 'path_corner' entities.
+It will position itself on its first target at map load.
+If a targetname is set, it must be triggered to start moving, otherwise it will start automatically.
 */
 void() misc_teleporttrain =
-{	
-	if (!self.speed)
-		self.speed = 100;
+{
 	if (!self.target)
-		objerror ("func_train without a target");
+	{
+		objerror ("no target");
+		remove(self);
+		return;
+	}
+	if (self.speed <= 0)
+		self.speed = 100;
 
-	self.cnt = 1;
 	self.solid = SOLID_NOT;
-	self.movetype = MOVETYPE_PUSH;
-	self.blocked = train_blocked;
-	self.use = train_use;
-	self.avelocity = '100 200 300';
-
-	self.noise = ("misc/null.wav");
-	precache_sound ("misc/null.wav");
-	self.noise1 = ("misc/null.wav");
-	precache_sound ("misc/null.wav");
-
-	precache_model2 ("progs/teleport.mdl");
+	self.movetype = MOVETYPE_FLY;
+	precache_model ("progs/teleport.mdl");
 	setmodel (self, "progs/teleport.mdl");
-	setsize (self, self.mins , self.maxs);
-	setorigin (self, self.origin);
+	setsize (self, '-16 -16 -16', '16 16 16');
 
-// start trains on the second frame, to make sure their targets have had
-// a chance to spawn
-	self.nextthink = self.ltime + 0.1;
-	self.think = func_train_find;
+	//Causes the ball to spin around like it was originally intended to.
+	self.avelocity = '40 80 120';
+	//self.avelocity = '100 200 300';
+	
+	self.think = teleporttrain_find;
+	self.nextthink = time + 0.1;
 };
 
