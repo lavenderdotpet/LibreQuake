@@ -331,7 +331,7 @@ void() func_train =
 void() teleporttrain_calcmove;
 void() teleporttrain_next =
 {
-	setorigin(self, self.enemy.origin);
+	setorigin(self, self.enemy.origin + '16 16 16');
 	
 	if (!self.target)
 	{
@@ -341,7 +341,7 @@ void() teleporttrain_next =
 	self.enemy = find(world, targetname, self.target);
 	if (self.enemy.classname == "path_corner")
 	{
-		vector dir = normalize(self.enemy.origin - self.origin);
+		vector dir = normalize((self.enemy.origin + '16 16 16') - self.origin);
 		self.velocity = dir * self.speed;
 		self.target = self.enemy.target;
 	}
@@ -370,7 +370,7 @@ void() teleporttrain_calcmove =
 	local vector delta;
 	local float spd;
 	
-	delta = self.enemy.origin - self.origin;
+	delta = (self.enemy.origin + '16 16 16') - self.origin;
 	len = vlen(delta);
 	spd = vlen(self.velocity);
 	self.nextthink = time + (len / spd);
@@ -390,7 +390,7 @@ void() teleporttrain_find =
 	self.enemy = find(world, targetname, self.target);
 	if (self.enemy.classname == "path_corner")
 	{
-		setorigin (self, self.enemy.origin);
+		setorigin (self, self.enemy.origin + '16 16 16');
 		self.target = self.enemy.target;
 	}
 	else
@@ -404,8 +404,6 @@ void() teleporttrain_find =
 	if (!self.targetname)
 	{
 		teleporttrain_calcmove();
-		//self.think = teleporttrain_move;
-		//self.nextthink = time + 0.1;
 	}
 	else
 	{
