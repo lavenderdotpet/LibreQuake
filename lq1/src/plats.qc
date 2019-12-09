@@ -352,21 +352,18 @@ void() teleporttrain_next =
 	}
 	teleporttrain_calcmove();
 };
-/*void() teleporttrain_move =
-{	
-	if (!self.enemy)
-	{
-		self.velocity = '0 0 0';
-		self.think = SUB_Null;
-		return;
-	}
+void() teleporttrain_wait =
+{
+	float waittime;
+	if (self.enemy.wait)
+		waittime = self.enemy.wait;
+	else
+		waittime = .1;
 	
-	if (vlen(self.origin - self.enemy.origin) < self.size_x)
-		teleporttrain_next();
-
-	self.think = teleporttrain_move;
-	self.nextthink = time + 0.1;
-};*/
+	self.velocity = '0 0 0';
+	self.nextthink = time + waittime;
+	self.think = teleporttrain_next;
+}
 void() teleporttrain_calcmove =
 {
 	local float len;
@@ -377,7 +374,7 @@ void() teleporttrain_calcmove =
 	len = vlen(delta);
 	spd = vlen(self.velocity);
 	self.nextthink = time + (len / spd);
-	self.think = teleporttrain_next;
+	self.think = teleporttrain_wait;
 };
 void() teleporttrain_use =
 {

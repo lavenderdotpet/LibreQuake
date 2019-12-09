@@ -1238,6 +1238,7 @@ ImpulseCommands
 
 ============
 */
+
 void() ImpulseCommands =
 {
 	if (self.impulse >= 1 && self.impulse <= 8)
