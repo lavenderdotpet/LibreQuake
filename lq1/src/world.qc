@@ -1,20 +1,11 @@
-
 void() InitBodyQue;
-
 
 void() main =
 {
 	dprint ("main function\n");
-
-// sounds loaded by C code
-	precache_sound ("misc/menu1.wav");
-	precache_sound ("misc/menu2.wav");
-	precache_sound ("misc/menu3.wav");
-
-	precache_sound ("ambience/water1.wav");
-	precache_sound ("ambience/wind2.wav");
+	//The precaches that were here originally are not needed.
+	//They were simply signals to the pak builder to include files.
 };
-
 
 entity	lastspawn;
 
@@ -50,7 +41,7 @@ void() worldspawn =
 	precache_sound ("demon/dland2.wav");		// landing thud
 	precache_sound ("misc/h2ohit1.wav");		// landing splash
 
-// setup precaches allways needed
+// setup precaches always needed
 	precache_sound ("items/itembk2.wav");		// item respawn sound
 	precache_sound ("player/plyrjmp8.wav");		// player jump
 	precache_sound ("player/land.wav");			// player landing
@@ -209,6 +200,16 @@ void() worldspawn =
 
 	// 63 testing
 	lightstyle(63, "a");
+	
+#ifndef ID1
+	//LibreQuake has more than ten tracks, so the world's height key is used to pick the track
+	//But don't do this in the Id1 progs, since the Id1 ost doesn't have more than ten tracks
+	if (world.height) {
+		WriteByte (MSG_ALL, SVC_CDTRACK);
+		WriteByte (MSG_ALL, world.height);
+		WriteByte (MSG_ALL, 3);
+	}
+#endif
 };
 
 void() StartFrame =

@@ -213,7 +213,8 @@
 #define LOC_TEAMKILL_3	" gets a frag for the other team"
 #define LOC_TEAMKILL_4	" loses another friend"
 
-
+//This is a special flag used to differentiate the Id1 progs from the LibreQuake progs.
+#define ID1
 
 
 
