@@ -98,7 +98,7 @@
 #define LOC_DEATH_LEAVE			" tried to escape the arena"
 #define LOC_DEATH_DROWN1		" ran out of air"
 #define LOC_DEATH_DROWN2		" drowned"
-#define LOC_DEATH_DROWN3		" fell to his watery grave"
+#define LOC_DEATH_DROWN3		" fell to a watery grave"
 #define LOC_DEATH_SLIME1		" shouldn't have played with acid"
 #define LOC_DEATH_SLIME2		" was burned by the acid"
 #define LOC_DEATH_LAVA1			" combusted"

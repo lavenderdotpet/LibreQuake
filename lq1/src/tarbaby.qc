@@ -96,9 +96,15 @@ void()	Tar_JumpTouch =
 	{
 		if ( vlen(self.velocity) > 400 )
 		{
-			ldmg = 10 + 10*random();
-			T_Damage (other, self, self, ldmg);	
-			sound (self, CHAN_WEAPON, "blob/hit1.wav", 1, ATTN_NORM);
+			//The spawn can't deal leap damage to the player immediately after already doing do.
+			//Solves some weird hit-detection issues where the spawn could insta-kill players or deal multiple hits at once.
+			if (self.count < time)
+			{
+				ldmg = 10 + 10*random();
+				T_Damage (other, self, self, ldmg);	
+				sound (self, CHAN_WEAPON, "blob/hit1.wav", 1, ATTN_NORM);
+			}
+			self.count = time + .3;
 		}
 	}
 	else
