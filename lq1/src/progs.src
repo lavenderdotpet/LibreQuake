@@ -1,6 +1,7 @@
 ../progs.dat
 
 localization.qc	//localization file
+quake.qc
 defs.qc
 subs.qc
 fight.qc

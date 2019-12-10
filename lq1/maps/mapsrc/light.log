@@ -5,7 +5,7 @@ LoadBSPFile: 'start.bsp'
 BSP is version 29
 SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
 --- LoadEntities ---
-80 entities read, 22 are lights.
+81 entities read, 22 are lights.
 --- OptionsSummary ---
     "sunlight" was set to "200" from map
 Embree_TraceInit: Embree version: 2.17.7
@@ -28,7 +28,7 @@ Lighting Completed.
 lightdatasize: 11216
 0 switchable light styles (32 max)
 Writing start.bsp as BSP version 29
-0.022 seconds elapsed
+0.019 seconds elapsed
 
 stats:
 4.242540 lights tested, 3.739824 hits per sample point

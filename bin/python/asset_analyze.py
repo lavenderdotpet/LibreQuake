@@ -60,7 +60,7 @@ def main():
 					count_complete += 1
 					bprint(bold(items[0]) + " is being accounted for by " + bold(items[1]))
 	file1.close()
-	print("\nItems complete: " + bold(str(count_complete) + "/" + str(count_total)))
+	print("\nItems accounted for: " + bold(str(count_complete) + "/" + str(count_total)))
 	percent = (1.0*count_complete/count_total)*100
 	percent_truncate = int(percent * 1000) / 1000.0
 	print("We're " + bold(str(percent_truncate) + "%") + " of the way there!")

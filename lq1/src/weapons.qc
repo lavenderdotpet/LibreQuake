@@ -40,7 +40,7 @@ void() W_FireAxe =
 	local	vector	org;
 
 	makevectors (self.v_angle);
-	source = self.origin + '0 0 16';
+	source = self.origin + '0 0 22';
 	traceline (source, source + v_forward*64, FALSE, self);
 	if (trace_fraction == 1.0)
 		return;
@@ -235,13 +235,13 @@ Go to the trouble of combining multiple pellets into a single damage call.
 */
 void(float shotcount, vector dir, vector spread) FireBullets =
 {
-	local	vector direction;
+	local	vector  direction;
 	local	vector	src;
 	
 	makevectors(self.v_angle);
 
 	src = self.origin + v_forward*10;
-	src_z = self.absmin_z + self.size_z * 0.7;
+	src_z = self.absmin_z + self.size_z * .83;
 
 	ClearMultiDamage ();
 	while (shotcount > 0)
@@ -1225,12 +1225,20 @@ void() QuadCheat =
 	dprint ("quad cheat\n");
 };
 
+void() debug_func =
+{
+	entity e = find(world, classname, "door");
+	bprint(vtos(e.origin));
+	bprint("\n");
+}
+
 /*
 ============
 ImpulseCommands
 
 ============
 */
+
 void() ImpulseCommands =
 {
 	if (self.impulse >= 1 && self.impulse <= 8)

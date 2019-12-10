@@ -108,6 +108,7 @@ float	H_MEGA = 2;
 .float	healamount, healtype;
 void() health_touch;
 void() item_megahealth_rot;
+void() item_megahealth_hold;
 
 void() item_health =
 {	
@@ -185,19 +186,23 @@ void() health_touch =
 	{
 		//But don't rot if they are already rotting.
 		if (!(other.items & IT_SUPERHEALTH)) {
-			other.items = other.items | IT_SUPERHEALTH;
-			self.nextthink = time + 5;
 			self.think = item_megahealth_rot;
-			self.owner = other;
+		} else {
+			self.think = item_megahealth_hold;
 		}
+		self.nextthink = time + 5;
+		other.items = other.items | IT_SUPERHEALTH;
+		self.owner = other;
 	}
 	else
 	{
 		if (deathmatch != 2)		// deathmatch 2 is the silly old rules
 		{
 			if (deathmatch)
+			{
 				self.nextthink = time + 20;
-			self.think = SUB_regen;
+				self.think = SUB_regen;
+			}
 		}
 	}
 	
@@ -220,10 +225,35 @@ void() item_megahealth_rot =
 // just blindly subtract the flag off
 	other.items = other.items - (other.items & IT_SUPERHEALTH);
 	
-	if (deathmatch == 1)	// deathmatch 2 is silly old rules
+	if (deathmatch != 2)	// deathmatch 2 is silly old rules
 	{
-		self.nextthink = time + 20;
-		self.think = SUB_regen;
+		if (deathmatch)
+		{
+			self.nextthink = time + 20;
+			self.think = SUB_regen;
+		}
+	}
+};
+
+//Same as rot, but doesn't actually reduce their health.
+void() item_megahealth_hold =
+{
+	other = self.owner;
+	
+	if (other.health > other.max_health)
+	{
+		return;
+	}
+
+	other.items = other.items - (other.items & IT_SUPERHEALTH);
+	
+	if (deathmatch != 2)	// deathmatch 2 is silly old rules
+	{
+		if (deathmatch)
+		{
+			self.nextthink = time + 20;
+			self.think = SUB_regen;
+		}
 	}
 };
 

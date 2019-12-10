@@ -112,7 +112,7 @@ void() f_death1 =[      $death1,        f_death2        ] {
 sound (self, CHAN_VOICE, "fish/death.wav", 1, ATTN_NORM);
 };
 void() f_death2 =[      $death2,        f_death3        ] {};
-void() f_death3 =[      $death3,        f_death4        ] {};
+void() f_death3 =[      $death3,        f_death4        ] {self.solid = SOLID_NOT;};
 void() f_death4 =[      $death4,        f_death5        ] {};
 void() f_death5 =[      $death5,        f_death6        ] {};
 void() f_death6 =[      $death6,        f_death7        ] {};
@@ -130,7 +130,7 @@ void() f_death17 =[      $death17,       f_death18       ] {};
 void() f_death18 =[      $death18,       f_death19       ] {};
 void() f_death19 =[      $death19,       f_death20       ] {};
 void() f_death20 =[      $death20,       f_death21       ] {};
-void() f_death21 =[      $death21,       f_death21       ] {self.solid = SOLID_NOT;};
+void() f_death21 =[      $death21,       f_death21       ] {/*self.solid = SOLID_NOT;*/};
 
 void() f_pain1  =[      $pain1, f_pain2 ] {};
 void() f_pain2  =[      $pain2, f_pain3 ] {ai_pain(6);};

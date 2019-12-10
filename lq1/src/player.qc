@@ -572,9 +572,7 @@ void() PlayerDie =
 		return;
 	}
 	
-	i = cvar("temp1");
-	if (!i)
-		i = 1 + floor(random()*6);
+	i = 1 + floor(random()*6);
 	
 	if (i == 1)
 		player_diea1();

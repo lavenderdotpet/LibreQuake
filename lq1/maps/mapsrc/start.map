@@ -671,19 +671,6 @@
 "classname" "func_button"
 // brush 0
 {
-( -16 192 -192 ) ( -16 224 -224 ) ( -16 224 -192 ) +1button1 -1 -1 -0 0.5 0.5
-( -24 192 -192 ) ( -8 192 -224 ) ( -24 192 -224 ) rock1 -0 -0 -0 1 1
-( -24 192 -224 ) ( -8 224 -224 ) ( -24 224 -224 ) rock1 -0 -0 -0 1 1
-( -24 192 -192 ) ( -8 224 -192 ) ( -8 192 -192 ) rock1 -0 -0 -0 1 1
-( -24 224 -224 ) ( -8 224 -192 ) ( -24 224 -192 ) rock1 -0 -0 -0 1 1
-( -8 224 -192 ) ( -8 192 -224 ) ( -8 192 -192 ) rock1 -0 -0 -0 1 1
-}
-}
-// entity 70
-{
-"classname" "func_button"
-// brush 0
-{
 ( -16 144 -192 ) ( -16 176 -224 ) ( -16 176 -192 ) +1button2 -16 -0 -0 1 1
 ( -24 144 -192 ) ( -8 144 -224 ) ( -24 144 -224 ) rock1 -0 -0 -0 1 1
 ( -24 144 -224 ) ( -8 176 -224 ) ( -24 176 -224 ) rock1 -0 16 -0 1 1
@@ -692,7 +679,7 @@
 ( -8 176 -192 ) ( -8 144 -224 ) ( -8 144 -192 ) rock1 -16 -0 -0 1 1
 }
 }
-// entity 71
+// entity 70
 {
 "classname" "func_button"
 // brush 0
@@ -705,50 +692,69 @@
 ( -8 128 -192 ) ( -8 96 -224 ) ( -8 96 -192 ) rock1 96 -0 -0 1 1
 }
 }
-// entity 72
+// entity 71
 {
 "classname" "light_globe"
 "origin" "-104 456 -176"
 }
-// entity 73
+// entity 72
 {
 "classname" "misc_teleporttrain"
 "origin" "-168 504 -144"
 "target" "path1"
 }
-// entity 74
+// entity 73
 {
 "classname" "path_corner"
 "origin" "-88 424 -144"
 "targetname" "path2"
 "target" "path3"
 }
-// entity 75
+// entity 74
 {
 "classname" "path_corner"
 "origin" "-408 568 -144"
 "targetname" "path1"
 "target" "path2"
 }
-// entity 76
+// entity 75
 {
 "classname" "path_corner"
 "origin" "-440 264 -144"
 "targetname" "path3"
 "target" "path1"
 }
-// entity 77
+// entity 76
 {
 "classname" "light_globe"
 "origin" "-104 408 -240"
 }
-// entity 78
+// entity 77
 {
 "classname" "ambient_drip"
 "origin" "-16 440 -136"
 }
-// entity 79
+// entity 78
 {
 "classname" "air_bubbles"
 "origin" "-168 408 -240"
+}
+// entity 79
+{
+"classname" "func_button"
+// brush 0
+{
+( -16 192 -192 ) ( -16 224 -224 ) ( -16 224 -192 ) +0button1 -1 -1 -0 0.5 0.5
+( -24 192 -192 ) ( -8 192 -224 ) ( -24 192 -224 ) rock1 -0 -0 -0 1 1
+( -24 192 -224 ) ( -8 224 -224 ) ( -24 224 -224 ) rock1 -0 -0 -0 1 1
+( -24 192 -192 ) ( -8 224 -192 ) ( -8 192 -192 ) rock1 -0 -0 -0 1 1
+( -24 224 -224 ) ( -8 224 -192 ) ( -24 224 -192 ) rock1 -0 -0 -0 1 1
+( -8 224 -192 ) ( -8 192 -224 ) ( -8 192 -192 ) rock1 -0 -0 -0 1 1
+}
+}
+// entity 80
+{
+"classname" "monster_enforcer"
+"origin" "-352 480 -224"
+"angle" "90"
 }
