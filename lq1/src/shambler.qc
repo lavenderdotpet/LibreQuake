@@ -6,11 +6,6 @@ SHAMBLER
 ==============================================================================
 */
 
-$cd id1/models/shams
-$origin 0 0 24
-$base base		
-$skin base
-
 $frame stand1 stand2 stand3 stand4 stand5 stand6 stand7 stand8 stand9
 $frame stand10 stand11 stand12 stand13 stand14 stand15 stand16 stand17
 

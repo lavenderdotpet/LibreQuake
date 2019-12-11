@@ -5,11 +5,6 @@ BOSS-ONE
 
 ==============================================================================
 */
-$cd id1/models/boss1
-$origin 0 0 -15
-$base base
-$skin skin
-$scale 5
 
 $frame rise1 rise2 rise3 rise4 rise5 rise6 rise7 rise8 rise9 rise10
 $frame rise11 rise12 rise13 rise14 rise15 rise16 rise17 

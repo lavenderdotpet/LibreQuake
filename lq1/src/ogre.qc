@@ -6,11 +6,6 @@ OGRE
 ==============================================================================
 */
 
-$cd id1/models/ogre_c
-$origin 0 0 24
-$base base		
-$skin base
-
 $frame	stand1 stand2 stand3 stand4 stand5 stand6 stand7 stand8 stand9
 
 $frame walk1 walk2 walk3 walk4 walk5 walk6 walk7

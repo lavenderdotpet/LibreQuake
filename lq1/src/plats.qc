@@ -260,7 +260,6 @@ void() train_next =
 };
 
 void() func_train_find =
-
 {
 	local entity	targ;
 
@@ -331,6 +330,7 @@ void() func_train =
 void() teleporttrain_calcmove;
 void() teleporttrain_next =
 {
+	local vector dir;
 	setorigin(self, self.enemy.origin + '16 16 16');
 	
 	if (!self.target)
@@ -341,7 +341,7 @@ void() teleporttrain_next =
 	self.enemy = find(world, targetname, self.target);
 	if (self.enemy.classname == "path_corner")
 	{
-		vector dir = normalize((self.enemy.origin + '16 16 16') - self.origin);
+		dir = normalize((self.enemy.origin + '16 16 16') - self.origin);
 		self.velocity = dir * self.speed;
 		self.target = self.enemy.target;
 	}
@@ -354,15 +354,16 @@ void() teleporttrain_next =
 };
 void() teleporttrain_wait =
 {
-	float waittime;
-	if (self.enemy.wait)
-		waittime = self.enemy.wait;
+	local float wait_time;
+	if (self.enemy.wait > 0)
+		wait_time = self.enemy.wait;
 	else
-		waittime = .1;
+		wait_time = .1;
 	
 	self.velocity = '0 0 0';
-	self.nextthink = time + waittime;
+	self.nextthink = time + wait_time;
 	self.think = teleporttrain_next;
+	
 }
 void() teleporttrain_calcmove =
 {
@@ -382,7 +383,6 @@ void() teleporttrain_use =
 	{
 		teleporttrain_next();
 	}
-	
 };
 void() teleporttrain_find =
 {
@@ -403,7 +403,7 @@ void() teleporttrain_find =
 	// not triggered, so start immediately
 	if (!self.targetname)
 	{
-		teleporttrain_calcmove();
+		teleporttrain_next();
 	}
 	else
 	{
@@ -426,7 +426,9 @@ void() misc_teleporttrain =
 		return;
 	}
 	if (self.speed <= 0)
+	{
 		self.speed = 100;
+	}
 
 	self.solid = SOLID_NOT;
 	self.movetype = MOVETYPE_FLY;

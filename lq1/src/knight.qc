@@ -6,11 +6,6 @@ KNIGHT
 ==============================================================================
 */
 
-$cd id1/models/knight
-$origin 0 0 24
-$base base
-$skin badass3
-
 $frame stand1 stand2 stand3 stand4 stand5 stand6 stand7 stand8 stand9
 
 $frame runb1 runb2 runb3 runb4 runb5 runb6 runb7 runb8

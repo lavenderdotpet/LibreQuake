@@ -1,8 +1,3 @@
-$cd id1/models/fish
-$origin 0 0 24
-$base base		
-$skin skin
-
 $frame attack1 attack2 attack3 attack4 attack5 attack6 
 $frame attack7 attack8 attack9 attack10 attack11 attack12 attack13 
 $frame attack14 attack15 attack16 attack17 attack18 

@@ -6,11 +6,6 @@ SOLDIER / PLAYER
 ==============================================================================
 */
 
-$cd id1/models/soldier3
-$origin 0 -6 24
-$base base		
-$skin skin
-
 $frame stand1 stand2 stand3 stand4 stand5 stand6 stand7 stand8
 
 $frame death1 death2 death3 death4 death5 death6 death7 death8

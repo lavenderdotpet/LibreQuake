@@ -1227,8 +1227,7 @@ void() QuadCheat =
 
 void() debug_func =
 {
-	entity e = find(world, classname, "door");
-	bprint(vtos(e.origin));
+	bprint(ftos(time));
 	bprint("\n");
 }
 
@@ -1252,7 +1251,9 @@ void() ImpulseCommands =
 		ServerflagsCommand ();
 	if (self.impulse == 12)
 		CycleWeaponReverseCommand ();
-
+	
+	//if (self.impulse == 77) {debug_func ();}
+		
 	if (self.impulse == 255)
 		QuadCheat ();
 		

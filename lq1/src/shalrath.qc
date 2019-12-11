@@ -5,11 +5,6 @@ SHAL-RATH
 
 ==============================================================================
 */
-$cd id1/models/shalrath
-$origin 0 0 24
-$base base
-$skin skin
-$scale 0.7
 
 $frame attack1 attack2 attack3 attack4 attack5 attack6 attack7 attack8
 $frame attack9 attack10 attack11

@@ -5,16 +5,12 @@ OLD ONE
 
 ==============================================================================
 */
-$cd id1/models/old_one
-$origin 0 0 24
-$base base
-$skin skin
-$scale 1
 
 void() finale_1;
 void() finale_2;
 void() finale_3;
 void() finale_4;
+void() checksight;
 
 
 entity	shub;
@@ -31,52 +27,63 @@ $frame shake15 shake16 shake17 shake18 shake19 shake20
 
 //void() old_stand     =[      $old1,       old_stand    ] {};
 
-void() old_idle1        =[      $old1,  old_idle2       ] {};
+void() old_idle1        =[      $old1,  old_idle2       ] {checksight();};
 void() old_idle2        =[      $old2,  old_idle3       ] {};
 void() old_idle3        =[      $old3,  old_idle4       ] {};
-void() old_idle4        =[      $old4,  old_idle5       ] {};
+void() old_idle4        =[      $old4,  old_idle5       ] {checksight();};
 void() old_idle5        =[      $old5,  old_idle6       ] {};
 void() old_idle6        =[      $old6,  old_idle7       ] {};
-void() old_idle7        =[      $old7,  old_idle8       ] {};
+void() old_idle7        =[      $old7,  old_idle8       ] {checksight();};
 void() old_idle8        =[      $old8,  old_idle9       ] {};
 void() old_idle9        =[      $old9,  old_idle10      ] {};
-void() old_idle10       =[      $old10, old_idle11      ] {};
+void() old_idle10       =[      $old10, old_idle11      ] {checksight();};
 void() old_idle11       =[      $old11, old_idle12      ] {};
 void() old_idle12       =[      $old12, old_idle13      ] {};
-void() old_idle13       =[      $old13, old_idle14      ] {};
+void() old_idle13       =[      $old13, old_idle14      ] {checksight();};
 void() old_idle14       =[      $old14, old_idle15      ] {};
 void() old_idle15       =[      $old15, old_idle16      ] {};
-void() old_idle16       =[      $old16, old_idle17      ] {};
+void() old_idle16       =[      $old16, old_idle17      ] {checksight();};
 void() old_idle17       =[      $old17, old_idle18      ] {};
 void() old_idle18       =[      $old18, old_idle19      ] {};
-void() old_idle19       =[      $old19, old_idle20      ] {};
+void() old_idle19       =[      $old19, old_idle20      ] {checksight();};
 void() old_idle20       =[      $old20, old_idle21      ] {};
 void() old_idle21       =[      $old21, old_idle22      ] {};
-void() old_idle22       =[      $old22, old_idle23      ] {};
+void() old_idle22       =[      $old22, old_idle23      ] {checksight();};
 void() old_idle23       =[      $old23, old_idle24      ] {};
 void() old_idle24       =[      $old24, old_idle25      ] {};
-void() old_idle25       =[      $old25, old_idle26      ] {};
+void() old_idle25       =[      $old25, old_idle26      ] {checksight();};
 void() old_idle26       =[      $old26, old_idle27      ] {};
 void() old_idle27       =[      $old27, old_idle28      ] {};
-void() old_idle28       =[      $old28, old_idle29      ] {};
+void() old_idle28       =[      $old28, old_idle29      ] {checksight();};
 void() old_idle29       =[      $old29, old_idle30      ] {};
 void() old_idle30       =[      $old30, old_idle31      ] {};
-void() old_idle31       =[      $old31, old_idle32      ] {};
+void() old_idle31       =[      $old31, old_idle32      ] {checksight();};
 void() old_idle32       =[      $old32, old_idle33      ] {};
 void() old_idle33       =[      $old33, old_idle34      ] {};
-void() old_idle34       =[      $old34, old_idle35      ] {};
+void() old_idle34       =[      $old34, old_idle35      ] {checksight();};
 void() old_idle35       =[      $old35, old_idle36      ] {};
 void() old_idle36       =[      $old36, old_idle37      ] {};
-void() old_idle37       =[      $old37, old_idle38      ] {};
+void() old_idle37       =[      $old37, old_idle38      ] {checksight();};
 void() old_idle38       =[      $old38, old_idle39      ] {};
 void() old_idle39       =[      $old39, old_idle40      ] {};
-void() old_idle40       =[      $old40, old_idle41      ] {};
+void() old_idle40       =[      $old40, old_idle41      ] {checksight();};
 void() old_idle41       =[      $old41, old_idle42      ] {};
 void() old_idle42       =[      $old42, old_idle43      ] {};
-void() old_idle43       =[      $old43, old_idle44      ] {};
+void() old_idle43       =[      $old43, old_idle44      ] {checksight();};
 void() old_idle44       =[      $old44, old_idle45      ] {};
 void() old_idle45       =[      $old45, old_idle46      ] {};
-void() old_idle46       =[      $old46, old_idle1       ] {};
+void() old_idle46       =[      $old46, old_idle1       ] {checksight();};
+
+
+void() checksight {
+	if (!self.count) {
+		if (visible(checkclient())) {
+			sound (self, CHAN_VOICE, "boss2/sight.wav", 1, ATTN_NONE);
+			self.count = 1;
+		}
+	}
+}
+
 
 
 void() old_thrash1        =[ $shake1,  old_thrash2       ] {lightstyle(0, "m");};
@@ -263,7 +270,6 @@ void() monster_oldone =
 	precache_model2 ("progs/oldone.mdl");
 
 	precache_sound2 ("boss2/death.wav");
-	precache_sound2 ("boss2/idle.wav");
 	precache_sound2 ("boss2/sight.wav");
 	precache_sound2 ("boss2/pop2.wav");
 

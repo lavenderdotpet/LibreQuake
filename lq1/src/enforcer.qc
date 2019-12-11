@@ -6,11 +6,6 @@ SOLDIER / PLAYER
 ==============================================================================
 */
 
-$cd id1/models/enforcer
-$origin 0 -6 24
-$base base		
-$skin skin
-
 $frame stand1 stand2 stand3 stand4 stand5 stand6 stand7
 
 $frame walk1 walk2 walk3 walk4 walk5 walk6 walk7 walk8 walk9 walk10

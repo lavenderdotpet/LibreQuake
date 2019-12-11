@@ -6,11 +6,6 @@ WIZARD
 ==============================================================================
 */
 
-$cd id1/models/a_wizard
-$origin 0 0 24
-$base wizbase	
-$skin wizbase
-
 $frame hover1 hover2 hover3 hover4 hover5 hover6 hover7 hover8
 $frame hover9 hover10 hover11 hover12 hover13 hover14 hover15
 

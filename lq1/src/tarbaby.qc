@@ -1,16 +1,10 @@
 /*
 ==============================================================================
 
-BLOB
+SPAWN
 
 ==============================================================================
 */
-
-$cd id1/models/tarbaby
-$origin 0 0 24
-$base base		
-
-$skin skin
 
 $frame walk1 walk2 walk3 walk4  walk5 walk6 walk7 walk8 walk9 walk10
 $frame walk11 walk12 walk13 walk14 walk15 walk16 walk17 walk18 walk19
