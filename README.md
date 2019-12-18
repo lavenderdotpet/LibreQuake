@@ -61,7 +61,7 @@ intervention to make it so.
 The following should solve it:
 
   * Use the `+game` command line parameter.  
-    For example, to play you can enter `+game +id1` either at a command
+    For example, to play you can enter `+game id1` either at a command
     line, or adding it to an application shortcut.
 
 Additionally, for Unix-like operating systems, such as GNU/Linux or a

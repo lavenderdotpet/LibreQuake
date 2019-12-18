@@ -12,3 +12,13 @@ stuffcmds
 
 // demos
 startdemos demo1 demo2 demo3
+
+exec default.cfg
+
+clear 
+
+Echo =============================
+Echo check out the new comands
+echo Zoom for the zoom function
+echo Dev for dev bindings
+Echo =============================
