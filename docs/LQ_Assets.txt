@@ -1,10 +1,11 @@
-//This list contains every asset that needs replacing in the game. 
+//This is ZungryWare's master asset list.
+//This list contains every asset that needs replacing in the game.
 //Each item includes its path in the pak file and who is taking care of that asset.
-//DON'T REMOVE ITEMS FROM THE LIST! Just put down who made them!
+//DO NOT REMOVE ITEMS FROM THE LIST! Just put down who made them!
 //The format is: "ITEM_PATH - AUTHOR"
 //Keep this format, since I will be writing a Python Script that generates a report on this information
 //Additional notes can be included in parenthesis.
-//Maps are listed separately in this etherpad: https://scalar.vector.im/etherpad/p/LQ_Maps
+//Maps are listed separately in this etherpad: https://scalar.vector.im/etherpad/p/LQ_Maps_sW5slIkU48ejmFAv
 
 //Misc settings stuff
 pak0/default.cfg - MissLav
@@ -12,39 +13,39 @@ pak0/demo1.dem
 pak0/demo2.dem
 pak0/demo3.dem
 pak0/progs.dat - ZungryWare
-pak0/quake.rc - Can use original
+pak0/quake.rc - MissLav
 
 //GFX.wad items
-pak0/gfx.wad/conchars.lmp
-pak0/gfx.wad/ANUM_0
-pak0/gfx.wad/ANUM_1
-pak0/gfx.wad/ANUM_2
-pak0/gfx.wad/ANUM_3
-pak0/gfx.wad/ANUM_4
-pak0/gfx.wad/ANUM_5
-pak0/gfx.wad/ANUM_6
-pak0/gfx.wad/ANUM_7
-pak0/gfx.wad/ANUM_8
-pak0/gfx.wad/ANUM_9
-pak0/gfx.wad/ANUM_MINUS
-pak0/gfx.wad/BACKTILE
-pak0/gfx.wad/DISC
-pak0/gfx.wad/FACE1
-pak0/gfx.wad/FACE2
-pak0/gfx.wad/FACE3
-pak0/gfx.wad/FACE4
-pak0/gfx.wad/FACE5
-pak0/gfx.wad/FACE_INV2
-pak0/gfx.wad/FACE_INVIS
-pak0/gfx.wad/FACE_INVUL1
-pak0/gfx.wad/FACE_INVUL2
-pak0/gfx.wad/FACEP1
-pak0/gfx.wad/FACEP2
-pak0/gfx.wad/FACEP3
-pak0/gfx.wad/FACEP4
-pak0/gfx.wad/FACEP5
-pak0/gfx.wad/FACE_QUAD
-pak0/gfx.wad/IBAR
+pak0/gfx.wad/conchars.lmp - Shpuld & MissLav
+pak0/gfx.wad/ANUM_0 - MissLav
+pak0/gfx.wad/ANUM_1 - MissLav
+pak0/gfx.wad/ANUM_2 - MissLav
+pak0/gfx.wad/ANUM_3 - MissLav
+pak0/gfx.wad/ANUM_4 - MissLav
+pak0/gfx.wad/ANUM_5 - MissLav
+pak0/gfx.wad/ANUM_6 - MissLav
+pak0/gfx.wad/ANUM_7 - MissLav
+pak0/gfx.wad/ANUM_8 - MissLav
+pak0/gfx.wad/ANUM_9 - MissLav
+pak0/gfx.wad/ANUM_MINUS - MissLav
+pak0/gfx.wad/BACKTILE - MissLav
+pak0/gfx.wad/DISC - MissLav
+pak0/gfx.wad/FACE1 - MissLav [TEMP]
+pak0/gfx.wad/FACE2 - MissLav [TEMP]
+pak0/gfx.wad/FACE3 - MissLav [TEMP]
+pak0/gfx.wad/FACE4 - MissLav [TEMP]
+pak0/gfx.wad/FACE5 - MissLav [TEMP]
+pak0/gfx.wad/FACE_INV2 - MissLav [TEMP]
+pak0/gfx.wad/FACE_INVIS - MissLav [TEMP]
+pak0/gfx.wad/FACE_INVUL1 - MissLav [TEMP]
+pak0/gfx.wad/FACE_INVUL2 - MissLav [TEMP]
+pak0/gfx.wad/FACEP1 - MissLav [TEMP]
+pak0/gfx.wad/FACEP2 - MissLav [TEMP]
+pak0/gfx.wad/FACEP3 - MissLav [TEMP]
+pak0/gfx.wad/FACEP4 - MissLav [TEMP]
+pak0/gfx.wad/FACEP5 - MissLav [TEMP]
+pak0/gfx.wad/FACE_QUAD - MissLav [TEMP]
+pak0/gfx.wad/IBAR - MissLav
 pak0/gfx.wad/INV2_LIGHTNG {all 7 frames}
 pak0/gfx.wad/INV2_NAILGUN {all 7 frames}
 pak0/gfx.wad/INV2_RLAUNCH {all 7 frames}
@@ -63,20 +64,20 @@ pak0/gfx.wad/IN_5
 pak0/gfx.wad/IN_6
 pak0/gfx.wad/IN_7
 pak0/gfx.wad/IN_8
-pak0/gfx.wad/NET
-pak0/gfx.wad/NUM_0
-pak0/gfx.wad/NUM_1
-pak0/gfx.wad/NUM_2
-pak0/gfx.wad/NUM_3
-pak0/gfx.wad/NUM_4
-pak0/gfx.wad/NUM_5
-pak0/gfx.wad/NUM_6
-pak0/gfx.wad/NUM_7
-pak0/gfx.wad/NUM_8
-pak0/gfx.wad/NUM_9
-pak0/gfx.wad/NUM_COLON
-pak0/gfx.wad/NUM_MINUS
-pak0/gfx.wad/NUM_SLASH
+pak0/gfx.wad/NET - MissLav
+pak0/gfx.wad/NUM_0 - MissLav
+pak0/gfx.wad/NUM_1 - MissLav
+pak0/gfx.wad/NUM_2 - MissLav
+pak0/gfx.wad/NUM_3 - MissLav
+pak0/gfx.wad/NUM_4 - MissLav
+pak0/gfx.wad/NUM_5 - MissLav
+pak0/gfx.wad/NUM_6 - MissLav
+pak0/gfx.wad/NUM_7 - MissLav
+pak0/gfx.wad/NUM_8 - MissLav
+pak0/gfx.wad/NUM_9 - MissLav
+pak0/gfx.wad/NUM_COLON - MissLav
+pak0/gfx.wad/NUM_MINUS - MissLav
+pak0/gfx.wad/NUM_SLASH - MissLav
 pak0/gfx.wad/OUT_1
 pak0/gfx.wad/OUT_2
 pak0/gfx.wad/OUT_3
@@ -85,30 +86,30 @@ pak0/gfx.wad/OUT_5
 pak0/gfx.wad/OUT_6
 pak0/gfx.wad/OUT_7
 pak0/gfx.wad/OUT_8
-pak0/gfx.wad/RAM
+pak0/gfx.wad/RAM - MissLav
 pak0/gfx.wad/SBA1_INVIS {all 6 frames}
 pak0/gfx.wad/SBA1_INVUL {all 6 frames}
 pak0/gfx.wad/SBA1_KEY1 {all 6 frames}
 pak0/gfx.wad/SBA1_KEY2 {all 6 frames}
 pak0/gfx.wad/SBA1_QUAD {all 6 frames}
 pak0/gfx.wad/SBA1_SUIT {all 6 frames}
-pak0/gfx.wad/SBAR
+pak0/gfx.wad/SBAR - MissLav
 pak0/gfx.wad/SB_ARMOR1
 pak0/gfx.wad/SB_ARMOR2
 pak0/gfx.wad/SB_ARMOR3
 pak0/gfx.wad/SB_CELLS
-pak0/gfx.wad/SB_NAILS
+pak0/gfx.wad/SB_NAILS - MissLav
 pak0/gfx.wad/SB_ROCKET
-pak0/gfx.wad/SB_SHELLS
+pak0/gfx.wad/SB_SHELLS - MissLav
 pak0/gfx.wad/SB_SIGIL1
 pak0/gfx.wad/SB_SIGIL2
 pak0/gfx.wad/SB_SIGIL3
 pak0/gfx.wad/SB_SIGIL4
 pak0/gfx.wad/SCOREBAR
-pak0/gfx.wad/TURTLE
+pak0/gfx.wad/TURTLE - MissLav
 
 //Menu Graphics
-pak0/gfx/bigbox.lmp
+pak0/gfx/bigbox.lmp - MissLav
 pak0/gfx/box_bl.lmp
 pak0/gfx/box_bm.lmp
 pak0/gfx/box_br.lmp
@@ -120,58 +121,58 @@ pak0/gfx/box_tl.lmp
 pak0/gfx/box_tm.lmp
 pak0/gfx/box_tr.lmp
 pak0/gfx/colormap.lmp - Can use original
-pak0/gfx/complete.lmp
-pak0/gfx/conback.lmp
-pak0/gfx/dim_drct.lmp
-pak0/gfx/dim_ipx.lmp
-pak0/gfx/dim_modm.lmp
-pak0/gfx/dim_mult.lmp
-pak0/gfx/dim_tcp.lmp
-pak0/gfx/finale.lmp
+pak0/gfx/complete.lmp - ZungryWare
+pak0/gfx/conback.lmp - ???
+pak0/gfx/dim_drct.lmp - ZungryWare
+pak0/gfx/dim_ipx.lmp - ZungryWare
+pak0/gfx/dim_modm.lmp - ZungryWare
+pak0/gfx/dim_mult.lmp - ZungryWare
+pak0/gfx/dim_tcp.lmp - ZungryWare
+pak0/gfx/finale.lmp - ZungryWare
 pak0/gfx/help0.lmp (The text of this will be based on decisions we haven't made yet, so leave this one for now.)
 pak0/gfx/help1.lmp (see above)
 pak0/gfx/help2.lmp (see above)
 pak0/gfx/help3.lmp (see above)
 pak0/gfx/help4.lmp (see above)
 pak0/gfx/help5.lmp (see above)
-pak0/gfx/inter.lmp
-pak0/gfx/loading.lmp
-pak0/gfx/mainmenu.lmp
+pak0/gfx/inter.lmp - ZungryWare
+pak0/gfx/loading.lmp - ZungryWare
+pak0/gfx/mainmenu.lmp - ZungryWare
 pak0/gfx/menudot1.lmp
 pak0/gfx/menudot2.lmp
 pak0/gfx/menudot3.lmp
 pak0/gfx/menudot4.lmp
 pak0/gfx/menudot5.lmp
 pak0/gfx/menudot6.lmp
-pak0/gfx/menuplr.lmp
-pak0/gfx/mp_menu.lmp
-pak0/gfx/netmen1.lmp
-pak0/gfx/netmen2.lmp
-pak0/gfx/netmen3.lmp
-pak0/gfx/netmen4.lmp
-pak0/gfx/netmen5.lmp
-pak0/gfx/p_load.lmp
-pak0/gfx/p_multi.lmp
-pak0/gfx/p_option.lmp
-pak0/gfx/p_save.lmp
+pak0/gfx/menuplr.lmp - ZungryWare [TEMP]
+pak0/gfx/mp_menu.lmp - ZungryWare
+pak0/gfx/netmen1.lmp - ZungryWare
+pak0/gfx/netmen2.lmp - ZungryWare
+pak0/gfx/netmen3.lmp - ZungryWare
+pak0/gfx/netmen4.lmp - ZungryWare
+pak0/gfx/netmen5.lmp - ZungryWare
+pak0/gfx/p_load.lmp - ZungryWare
+pak0/gfx/p_multi.lmp - ZungryWare
+pak0/gfx/p_option.lmp - ZungryWare
+pak0/gfx/p_save.lmp - ZungryWare
 pak0/gfx/palette.lmp - Can use original
-pak0/gfx/pause.lmp
-pak0/gfx/qplaque.lmp
-pak0/gfx/ranking.lmp
+pak0/gfx/pause.lmp - ZungryWare
+pak0/gfx/qplaque.lmp - ZungryWare
+pak0/gfx/ranking.lmp - ZungryWare
 pak0/gfx/sell.lmp - ZungryWare
-pak0/gfx/sp_menu.lmp
-pak0/gfx/ttl_cstm.lmp
-pak0/gfx/ttl_main.lmp
-pak0/gfx/ttl_sgl.lmp
-pak0/gfx/vidmodes.lmp
-pak1/gfx/pop.lmp - Can use original (I think? This is the file that indicates that the game is registered, so I think we need it to stay the same.)
+pak0/gfx/sp_menu.lmp - ZungryWare
+pak0/gfx/ttl_cstm.lmp - ZungryWare
+pak0/gfx/ttl_main.lmp - ZungryWare
+pak0/gfx/ttl_sgl.lmp - ZungryWare
+pak0/gfx/vidmodes.lmp - ZungryWare
+pak1/gfx/pop.lmp - Arkii (converted from the GPL Hexcode one in the engine)
 
 //BSP Models
 pak0/maps/b_batt0.bsp
 pak0/maps/b_batt1.bsp
-pak0/maps/b_bh10.bsp
-pak0/maps/b_bh100.bsp
-pak0/maps/b_bh25.bsp
+pak0/maps/b_bh10.bsp - MissLav & Clay
+pak0/maps/b_bh100.bsp - MissLav & Clay
+pak0/maps/b_bh25.bsp - MissLav & Clay
 pak0/maps/b_explob.bsp
 pak0/maps/b_nail0.bsp
 pak0/maps/b_nail1.bsp
@@ -184,27 +185,27 @@ pak1/maps/b_exbox2.bsp
 //MDL Models and sprites
 pak0/progs/armor.mdl
 pak0/progs/backpack.mdl - MissLav
-pak0/progs/bolt.mdl
-pak0/progs/bolt2.mdl
-pak0/progs/bolt3.mdl
+pak0/progs/bolt.mdl - Chillo
+pak0/progs/bolt2.mdl - Chillo
+pak0/progs/bolt3.mdl - Chillo
 pak0/progs/boss.mdl
-pak0/progs/demon.mdl
-pak0/progs/dog.mdl
+pak0/progs/demon.mdl - Clay & MissLav
+pak0/progs/dog.mdl - chillo [likely to change]
 pak0/progs/end1.mdl - ZungryWare
-pak0/progs/eyes.mdl
-pak0/progs/flame.mdl
-pak0/progs/flame2.mdl
-pak0/progs/g_light.mdl
-pak0/progs/g_nail.mdl
-pak0/progs/g_nail2.mdl
-pak0/progs/g_rock.mdl
-pak0/progs/g_rock2.mdl
-pak0/progs/g_shot.mdl
-pak0/progs/g_shot1.mdl (Not technically in the original game, but may as well include it since the shotgun model is already made.)
+pak0/progs/eyes.mdl - Fimbuk K.
+pak0/progs/flame.mdl - Clay
+pak0/progs/flame2.mdl - Clay
+pak0/progs/g_light.mdl - adaya
+pak0/progs/g_nail.mdl - adaya
+pak0/progs/g_nail2.mdl - adaya
+pak0/progs/g_rock.mdl - adaya
+pak0/progs/g_rock2.mdl - adaya
+pak0/progs/g_shot.mdl - adaya
+pak0/progs/g_shot1.mdl [For Mods] - adaya
 pak0/progs/gib1.mdl
 pak0/progs/gib2.mdl
 pak0/progs/gib3.mdl
-pak0/progs/grenade.mdl
+pak0/progs/grenade.mdl - MissLav [likely to change]
 pak0/progs/h_demon.mdl
 pak0/progs/h_dog.mdl
 pak0/progs/h_guard.mdl
@@ -213,38 +214,38 @@ pak0/progs/h_ogre.mdl
 pak0/progs/h_player.mdl
 pak0/progs/h_shams.mdl
 pak0/progs/h_wizard.mdl
-pak0/progs/h_zombie.mdl
+pak0/progs/h_zombie.mdl 
 pak0/progs/invisibl.mdl - Clay and ZungryWare
-pak0/progs/invulner.mdl
-pak0/progs/knight.mdl
+pak0/progs/invulner.mdl - adaya
+pak0/progs/knight.mdl - Clay
 pak0/progs/lavaball.mdl
 pak0/progs/m_g_key.mdl
 pak0/progs/m_s_key.mdl
-pak0/progs/missile.mdl
-pak0/progs/ogre.mdl
-pak0/progs/player.mdl
-pak0/progs/quaddama.mdl
+pak0/progs/missile.mdl - MissLav [likely to change]
+pak0/progs/ogre.mdl - clay
+pak0/progs/player.mdl  - giwake [temp]
+pak0/progs/quaddama.mdl - adaya
 pak0/progs/s_bubble.spr
 pak0/progs/s_explod.spr
 pak0/progs/s_light.mdl
 pak0/progs/s_light.spr
-pak0/progs/s_spike.mdl
+pak0/progs/s_spike.mdl - MissLav
 pak0/progs/shambler.mdl
 pak0/progs/soldier.mdl
-pak0/progs/spike.mdl
+pak0/progs/spike.mdl - MissLav
 pak0/progs/suit.mdl
-pak0/progs/v_axe.mdl
-pak0/progs/v_light.mdl
-pak0/progs/v_nail.mdl
-pak0/progs/v_nail2.mdl
-pak0/progs/v_rock.mdl
-pak0/progs/v_rock2.mdl
-pak0/progs/v_shot.mdl
-pak0/progs/v_shot2.mdl
+pak0/progs/v_axe.mdl - adaya
+pak0/progs/v_light.mdl - adaya
+pak0/progs/v_nail.mdl - adaya
+pak0/progs/v_nail2.mdl - adaya
+pak0/progs/v_rock.mdl - adaya
+pak0/progs/v_rock2.mdl - adaya
+pak0/progs/v_shot.mdl - adaya
+pak0/progs/v_shot2.mdl - adaya
 pak0/progs/w_g_key.mdl
 pak0/progs/w_s_key.mdl
 pak0/progs/w_spike.mdl
-pak0/progs/wizard.mdl
+pak0/progs/wizard.mdl - Clay
 pak0/progs/zom_gib.mdl
 pak0/progs/zombie.mdl - Clay, Fimbul K. and ZungryWare
 pak1/progs/b_g_key.mdl
@@ -253,18 +254,21 @@ pak1/progs/end2.mdl - ZungryWare
 pak1/progs/end3.mdl - ZungryWare
 pak1/progs/end4.mdl - ZungryWare
 pak1/progs/enforcer.mdl
-pak1/progs/fish.mdl
+pak1/progs/fish.mdl - ???
 pak1/progs/h_hellkn.mdl
 pak1/progs/h_mega.mdl
 pak1/progs/h_shal.mdl
 pak1/progs/hknight.mdl
 pak1/progs/k_spike.mdl
-pak1/progs/laser.mdl
+pak1/progs/laser.mdl - MissLav
 pak1/progs/oldone.mdl
-pak1/progs/shalrath.mdl
-pak1/progs/tarbaby.mdl
-pak1/progs/teleport.mdl
-pak1/progs/v_spike.mdl
+pak1/progs/shalrath.mdl - chillo [TEMP]
+pak1/progs/tarbaby.mdl - ZungryWare
+pak1/progs/teleport.mdl - chillo & MissLav
+pak1/progs/v_spike.mdl - chillo & MissLav
+pak2/boss2.mdl
+pak2/boss3.mdl
+pak2/boss4.mdl
 
 //Sounds
 pak0/sound/ambience/buzz1.wav
@@ -297,11 +301,11 @@ pak0/sound/demon/dland2.wav
 pak0/sound/demon/dpain1.wav
 pak0/sound/demon/idle1.wav
 pak0/sound/demon/sight2.wav
-pak0/sound/dog/dattack.wav
-pak0/sound/dog/ddeath.wav
-pak0/sound/dog/dpain1.wav
-pak0/sound/dog/dsight.wav
-pak0/sound/dog/idle.wav
+pak0/sound/dog/dattack.wav - Giwake
+pak0/sound/dog/ddeath.wav - Giwake
+pak0/sound/dog/dpain1.wav - Giwake
+pak0/sound/dog/dsight.wav - Giwake
+pak0/sound/dog/idle.wav - Giwake
 pak0/sound/doors/airdoor1.wav
 pak0/sound/doors/airdoor2.wav
 pak0/sound/doors/basesec1.wav
@@ -337,8 +341,8 @@ pak0/sound/items/protect2.wav
 pak0/sound/items/protect3.wav
 pak0/sound/items/r_item1.wav
 pak0/sound/items/r_item2.wav
-pak0/sound/items/suit.wav
-pak0/sound/items/suit2.wav
+pak0/sound/items/suit.wav - ???
+pak0/sound/items/suit2.wav - ???
 pak0/sound/knight/idle.wav
 pak0/sound/knight/kdeath.wav
 pak0/sound/knight/khurt.wav
@@ -379,15 +383,15 @@ pak0/sound/plats/train1.wav
 pak0/sound/plats/train2.wav
 pak0/sound/player/axhit1.wav
 pak0/sound/player/axhit2.wav
-pak0/sound/player/death1.wav
+pak0/sound/player/death1.wav - Ivan_V & Misslav
 pak0/sound/player/death2.wav
 pak0/sound/player/death3.wav
 pak0/sound/player/death4.wav
 pak0/sound/player/death5.wav
-pak0/sound/player/drown1.wav
+pak0/sound/player/drown1.wav - Ivan_V & Misslav
 pak0/sound/player/drown2.wav
-pak0/sound/player/gasp1.wav
-pak0/sound/player/gasp2.wav
+pak0/sound/player/gasp1.wav - Ivan_V & Misslav
+pak0/sound/player/gasp2.wav - Ivan_V & Misslav
 pak0/sound/player/gib.wav
 pak0/sound/player/h2odeath.wav
 pak0/sound/player/h2ojump.wav
@@ -398,12 +402,12 @@ pak0/sound/player/land2.wav
 pak0/sound/player/lburn1.wav
 pak0/sound/player/lburn2.wav
 pak0/sound/player/pain1.wav
-pak0/sound/player/pain2.wav
-pak0/sound/player/pain3.wav
-pak0/sound/player/pain4.wav
-pak0/sound/player/pain5.wav
-pak0/sound/player/pain6.wav
-pak0/sound/player/plyrjmp8.wav
+pak0/sound/player/pain2.wav - Ivan_V & Misslav
+pak0/sound/player/pain3.wav - Ivan_V & Misslav
+pak0/sound/player/pain4.wav - Ivan_V & Misslav
+pak0/sound/player/pain5.wav - Ivan_V & Misslav
+pak0/sound/player/pain6.wav - Ivan_V & Misslav
+pak0/sound/player/plyrjmp8.wav - Ivan_V & Misslav
 pak0/sound/player/slmbrn2.wav
 pak0/sound/player/teledth1.wav
 pak0/sound/player/tornoff2.wav
@@ -424,22 +428,22 @@ pak0/sound/soldier/pain2.wav
 pak0/sound/soldier/sattck1.wav
 pak0/sound/soldier/sight1.wav
 pak0/sound/weapons/ax1.wav
-pak0/sound/weapons/bounce.wav
-pak0/sound/weapons/grenade.wav
-pak0/sound/weapons/guncock.wav
-pak0/sound/weapons/lhit.wav
-pak0/sound/weapons/lock4.wav
-pak0/sound/weapons/lstart.wav
-pak0/sound/weapons/pkup.wav
+pak0/sound/weapons/bounce.wav - ???
+pak0/sound/weapons/grenade.wav - ???
+pak0/sound/weapons/guncock.wav - ???
+pak0/sound/weapons/lhit.wav - ???
+pak0/sound/weapons/lock4.wav - ???
+pak0/sound/weapons/lstart.wav - ???
+pak0/sound/weapons/pkup.wav - ???
 pak0/sound/weapons/r_exp3.wav
 pak0/sound/weapons/ric1.wav
 pak0/sound/weapons/ric2.wav
 pak0/sound/weapons/ric3.wav
-pak0/sound/weapons/rocket1i.wav
-pak0/sound/weapons/sgun1.wav
-pak0/sound/weapons/shotgn2.wav
-pak0/sound/weapons/spike2.wav
-pak0/sound/weapons/tink1.wav
+pak0/sound/weapons/rocket1i.wav - ???
+pak0/sound/weapons/sgun1.wav - ???
+pak0/sound/weapons/shotgn2.wav - ???
+pak0/sound/weapons/spike2.wav - ???
+pak0/sound/weapons/tink1.wav - ???
 pak0/sound/wizard/hit.wav
 pak0/sound/wizard/wattack.wav
 pak0/sound/wizard/wdeath.wav
@@ -447,15 +451,15 @@ pak0/sound/wizard/widle.wav
 pak0/sound/wizard/widle2.wav
 pak0/sound/wizard/wpain.wav
 pak0/sound/wizard/wsight.wav
-pak0/sound/zombie/idle_w2.wav
+pak0/sound/zombie/idle_w2.wav - ???
 pak0/sound/zombie/z_fall.wav
-pak0/sound/zombie/z_gib.wav
+pak0/sound/zombie/z_gib.wav - ???
 pak0/sound/zombie/z_hit.wav
-pak0/sound/zombie/z_idle.wav
-pak0/sound/zombie/z_idle1.wav
+pak0/sound/zombie/z_idle.wav - ???
+pak0/sound/zombie/z_idle1.wav - ???
 pak0/sound/zombie/z_miss.wav
 pak0/sound/zombie/z_pain.wav
-pak0/sound/zombie/z_pain1.wav
+pak0/sound/zombie/z_pain1.wav - ???
 pak0/sound/zombie/z_shot1.wav
 pak1/sound/blob/death1.wav
 pak1/sound/blob/hit1.wav
@@ -482,22 +486,23 @@ pak1/sound/hknight/pain1.wav
 pak1/sound/hknight/sight1.wav
 pak1/sound/hknight/slash1.wav
 pak1/sound/misc/basekey.wav
-pak1/sound/shalrath/attack.wav
-pak1/sound/shalrath/attack2.wav
-pak1/sound/shalrath/death.wav
-pak1/sound/shalrath/idle.wav
-pak1/sound/shalrath/pain.wav
-pak1/sound/shalrath/sight.wav
+pak1/sound/shalrath/attack.wav - Misslav & Giwake
+pak1/sound/shalrath/attack2.wav - Misslav & Giwake
+pak1/sound/shalrath/death.wav - Misslav & Giwake
+pak1/sound/shalrath/idle.wav - Misslav & Giwake
+pak1/sound/shalrath/pain.wav - Misslav & Giwake
+pak1/sound/shalrath/sight.wav - Misslav & Giwake
 
 //Music
-music/track2.ogg
-music/track3.ogg
-music/track4.ogg
-music/track5.ogg
-music/track6.ogg
-music/track7.ogg
-music/track8.ogg
-music/track9.ogg
-music/track10.ogg
-music/track11.ogg
+music/track02.ogg - Immorpher
+music/track03.ogg - Immorpher
+music/track04.ogg - Immorpher
+music/track05.ogg - Immorpher
+music/track06.ogg - Immorpher
+music/track07.ogg - Immorpher
+music/track08.ogg - Immorpher
+music/track09.ogg - Immorpher
+music/track10.ogg - Immorpher
+music/track11.ogg - Immorpher
+//We can have more than ten tracks if we want, but they aren't required
 

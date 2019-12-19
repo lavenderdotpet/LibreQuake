@@ -1,0 +1,99 @@
+Map List:
+Include the level name, author, and what weapons the level will give the player. Put an asterisk by the weapon to denote that it's a secret item.
+Feel free to include requests for earlier and later maps in the episode, such as if you want your level to have the first appearance of a weapon.
+If you don't know where the level will fit into the episode yet, put it in the "Unsorted Singleplayer Levels" section.
+See the bottom for the guidelines we have set for how the campaign will work.
+
+Base Theme (Freedoom Base Textures):
+e1m1: 
+e2m1: 
+e3m1: 
+e4m1: Damnation Station by ZungryWare; NG, SSG
+e5m1: 
+
+Medieval Theme:
+e1m2: 
+e1m3: 
+e1m4: Nameless Marionettes by ZungryWare; SSG, GL, RL* (First Appearance of Zombies, First GL in episode.)
+e1m5: 
+e1m6: 
+e1m7 (boss level): 
+e1m8 (secret, low gravity): Moon City map with halflife inspiration 
+
+Mayan Theme:
+e2m2: 
+e2m3: TBD by Therektafire, TBD
+e2m4: TBD by Fairweather; TBD
+e2m5:  TBD by Fairweather; TBD
+e2m6 (boss level): 
+e2m7 (secret): El Dorado by TBD; TBD
+
+Greek Theme:
+e3m2: 
+e3m3: 
+e3m4: 
+e3m5: Vikos Gorge by ZungryWare; NG, SSG, SNG, GL, RL, LG
+e3m6 (boss level): 
+e3m7 (secret): 
+
+Metal Underground Theme (Squid V metal textures):
+e4m2: Glistening Metal by ZungryWare; LG, SSG, NG (Exit to secret level.)
+e4m3: Lavaducts by Nolcoz; SSG, NG, GL, SNG*
+e4m4: 
+e4m5: Iron Madness by ZungryWare; NG, SSG, RL
+e4m6: 
+e4m7 (boss level): Asunder by ZungryWare; SSG, SNG, RL
+e4m8 (secret):
+
+Other:
+e5m2: 
+end (boss level): 
+start: (testmap) MissLav
+
+Unsorted Singleplayer Levels:
+Libre Hades by Greenwood; SSG, GL, SNG; Unthemed
+
+Deathmatch: 
+lqdm1: The Wicked Night by ZungryWare; Base Themed
+lqdm2: Burning Jealousy by ZungryWare; Metal Themed
+lqdm3: All or Nothing by ZungryWare; Unthemed
+lqdm4: Psychofuge by ZungryWare; Metal Themed
+lqdm5: Hellion by ZungryWare; Base Themed
+lqdm6: Boomstick Basement by ZungryWare; Medieval/Base Themed
+lqdm7: The Hinterlands by ZungryWare; Medieval Themed
+lqdm8: Enigma by ZungryWare; Mayan Themed
+
+Monster First-Appearances:
+Grunt, Dog: e1m1
+Ogre, Knight, Scrag: e1m2 (only non-base level with grunts)
+Fiend: e1m3
+Zombie: e1m4
+Shambler: e1m6
+Enforcer: e2m1
+Hell Knight: e2m2
+Rotfish: e2m2
+Shalrath: e3m2
+Spawn: e4m2
+Shub-Niggurath: end
+
+Theming:
+Episode 4's levels all take place underground. (Except for the second level and secret level.) They all end with the player jumping into a pit to the next level.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

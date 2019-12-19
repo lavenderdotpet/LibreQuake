@@ -19,3 +19,7 @@ Buffalobach's version (separate elements):
     
     If these teleporters take the player to alternate realities, why do those realities have mayan and greek architecture? Runic makes sense, since it's otherworldly. I guess it doesn't have to make sense.
 
+aDaya's justification on why each episodes is just different time periods:
+	The forces of Shoggoth have traveled through dimensions through time where in each of them they conquered Earth, with the game's Present being next when the game begins, starting with the human colonies (hence why we always start with a base map for each episode)
+	Their goals being to completely conquer earth through space and time. They conquer the present last because they have built most of their forces in the past periods, and they need that to counter our technology, by sheer numbers
+

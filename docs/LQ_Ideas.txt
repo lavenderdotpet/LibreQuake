@@ -5,14 +5,19 @@ Test
 
 - Reworked Cthon Fight: ok so it's like the usual, but the thing is everytime you successfully shock cthon, the switches you pressed are locked out, and you gotta find another pair of switches in the arena to enable the shockers, this gives the player agency on how to take him down, also considering the level design could make some switches riskier to activate Then after it's done, cthon rises again, but injured and he can be harmed with conventional fire (but here it's another monster entity that spawns in)
 
--Zombie replacements (Husks) first appear in e2m2 and get a special introduction level
+Zungryware's Ideas:
+-Zombie replacements (Husks) first appear in e1m4 and get a special introduction level
 
--Final level is instead a mini-episode that is based around the misc_teleporttrain entity, so it is clear to the player that it can be used to telefrag the final boss. Note that misc_teleporttrain is bugged in the default progs. Telefragging normal monsters with it causes the game to crash. We have to ensure the misc_teleporttrain can't telefrag monsters. (So using Scrags in this episode is probably a bad idea.)
+-Final level is instead a mini-episode that is based around the misc_teleporttrain entity, so it is clear to the player that it can be used to teleport into the final boss. Note that misc_teleporttrain is bugged in the default progs. Telefragging normal monsters with it causes the game to crash. We have to ensure the misc_teleporttrain can't telefrag monsters. (So using Scrags in this episode is probably a bad idea.)
+
+-Or we could get rid of the misc_teleporttrain final boss and just make it a regular old teleporter. Then we could focus on making a really killer finale fight instead.
+
+-Fight where the player is travelling on a train travelling super fast in a circle around an area while some enemies give chase on another train behind. Could be done with some map hacks.
 
 Adding onto Ivan_Void's backstory, the first level of each episode should end with the player entering a giant portal. Then the second level has them exiting the same portal in the other dimension. The surrounding area is a corrupted version of the ending of the first level, which the player can now explore. It might be a minute or two before they encounter a monster in this new strange world.
 
-Buffalobach's spontaneous things:
-    Boss list: 
+Buffalobach's small dumpster (what's rejected will be removed):
+Alternative enemy variants: lizard knight - in heavy armor and with stronger sword; shambler lobster - occasionally encountered bullet sponge and has different colour; weaker variant of whatever the first boss is, appear as normal strong enemies after episode one, have different colour; ... 
 
 LIBREQUAKE BACKSTORY
 

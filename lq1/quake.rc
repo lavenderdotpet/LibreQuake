@@ -13,6 +13,8 @@ stuffcmds
 // demos
 startdemos demo1 demo2 demo3
 
+registered
+
 exec default.cfg
 
 clear 
