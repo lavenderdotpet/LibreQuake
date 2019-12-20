@@ -167,7 +167,7 @@
 #define LOC_DEATH_GRENADE_LAUNCHER_2B	"'s grenade"
 #define LOC_DEATH_GRENADE_LAUNCHER_GA	" was torn asunder by "
 #define LOC_DEATH_GRENADE_LAUNCHER_GB	"'s grenade"
-#define LOC_DEATH_GRENADE_LAUNCHER_QA	"'s plug was pulled by "
+#define LOC_DEATH_GRENADE_LAUNCHER_QA	"'s clock was cleaned by "
 #define LOC_DEATH_GRENADE_LAUNCHER_QB	""
 
 #define LOC_DEATH_ROCKET_LAUNCHER_1A	" was shattered by "

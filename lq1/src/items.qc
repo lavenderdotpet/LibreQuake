@@ -1134,7 +1134,7 @@ void() powerup_touch =
 		self.think = SUB_regen;
 	}	
 
-	sound (other, CHAN_VOICE, self.noise, 1, ATTN_NORM);
+	sound (other, CHAN_POWERUP, self.noise, 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
 	self.solid = SOLID_NOT;
 	other.items = other.items | self.items;

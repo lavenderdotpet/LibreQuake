@@ -209,7 +209,7 @@ void(float damage, vector dir) TraceAttack =
 	vel = vel * 200;
 
 	org = trace_endpos - dir*4;
-
+	
 	if (trace_ent.takedamage)
 	{
 		SpawnBlood (org, vel*0.2, damage);

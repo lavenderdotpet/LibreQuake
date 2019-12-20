@@ -87,7 +87,7 @@ void() worldspawn =
 // player gib sounds
 	precache_sound ("player/gib.wav");			// player gib sound
 	precache_sound ("player/udeath.wav");		// player gib sound
-	precache_sound ("player/tornoff2.wav");		// gib sound
+	precache_sound ("player/tornoff2.wav");		// leave game
 
 // player pain sounds
 
