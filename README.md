@@ -14,7 +14,7 @@ containing thousands of *quake* levels and other modifications
 *LibreQuake* aims to be compatible with these and allows most to be
 played without the need to use non-free software.
 
-The engine uses a directory called `id1`, within that directory
+The engine uses a directory called `id1/`, within that directory
 there are two archives called `pak0.pak` and `pak1.pak`,
 these archives contain all the game data except the soundtrack.
 While the *quake* engine source code is free,
@@ -30,7 +30,7 @@ For more information, see ~~http://LibreQuake.github.io/~~
 # How to Play
 
 Since *LibreQuake* is only the game data, you will still need to
-download an engine separately.  
+download an engine.
 These are also often termed “source ports” by the community.  
 There are an overwhelming number of choices available, a lengthy list of
  which is available on the 
@@ -40,7 +40,7 @@ One particularly recommended by the *LibreQuake* project is
 [QuakeSpasm](http://quakespasm.sourceforge.net/download.htm).  
 This engine offers good support for
 single-player and the majority of mods created for both
-*quake* and *LibreQuake*.
+*Quake* and *LibreQuake*.
 
 On _Windows_, you should place *LibreQuake*’s data files (those ending
 with `.pak`) in a directory named `id1` with the engine 
@@ -95,7 +95,7 @@ We know people hate legalese, but this is important. This applies to
 
 You must be careful when basing on existing graphics or sounds.
 Most *quake* projects are lax on reusing intellectual property.  
-There are many mods which contain modified *quake* sprites, for example.
+There are many mods which contain modified *quake* models, for example.
 However, due to the nature of this project, we do not have the same
 liberty to rip as we please.
 
@@ -146,19 +146,7 @@ It is sensible to also heed the following guidelines:
      It is desirable that *LibreQuake* levels should be playable on 
      low-powered hardware, such as phones and old computers.
 
-  4. Test your levels in 
-     [DOS Quake](ftp://ftp.idsoftware.com/idstuff/quake/quake108.zip) 
-     to make sure that vanilla compatibility is maintained.  
-     This is an engine with strict adherence to vanilla quake limits and
-     bugs, and working in it assures that levels can be played with any
-     *quake* engine.
 
-## Graphics
-
-Graphics should generally have the same color and size as the original
-*quake* graphics, as to remain compatible with mods.  
-Otherwise, levels may end up looking like a nightmare in design.  
-They may be thematically different as long as it doesn’t clash.
 
 ## Submitting your work
 
