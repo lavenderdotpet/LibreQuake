@@ -233,7 +233,7 @@ pak0/progs/s_spike.mdl - MissLav
 pak0/progs/shambler.mdl
 pak0/progs/soldier.mdl
 pak0/progs/spike.mdl - MissLav
-pak0/progs/suit.mdl
+pak0/progs/suit.mdl - Bryan H.
 pak0/progs/v_axe.mdl - adaya
 pak0/progs/v_light.mdl - adaya
 pak0/progs/v_nail.mdl - adaya
