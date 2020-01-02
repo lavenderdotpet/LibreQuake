@@ -44,8 +44,8 @@
 #define LOC_NETNAME_BIO		"the Hazmat Suit"
 
 #define LOC_NETNAME_SUPER_SHOTGUN		"the Super Shotgun"
-#define LOC_NETNAME_NAILGUN				"the Nailgun"
-#define LOC_NETNAME_SUPER_NAILGUN		"the Super Nailgun"
+#define LOC_NETNAME_NAILGUN				"the Machine Gun"
+#define LOC_NETNAME_SUPER_NAILGUN		"the Chaingun"
 #define LOC_NETNAME_GRENADE_LAUNCHER	"the Grenade Launcher"
 #define LOC_NETNAME_ROCKET_LAUNCHER		"the Rocket Launcher"
 #define LOC_NETNAME_LIGHTNING			"the Lightning Cannon"
@@ -69,14 +69,14 @@
 #define LOC_COUNTER_COUNT_2		"You have more to go..."
 #define LOC_COUNTER_COMPLETE	"Sequence finished!"
 #define LOC_SECRET				"You discovered a secret area!"
-#define LOC_RUNE				"You collected a rune!"
+#define LOC_RUNE				"You got a rune!"
 
 //Monster death messages
 #define LOC_DEATH_ARMY 			" was killed by a Foot Soldier"
 #define LOC_DEATH_ENFORCER 		" was eliminated by a Commando"
 #define LOC_DEATH_DOG 			" was bitten by a Hellhound"
 #define LOC_DEATH_OGRE 			" was obliterated by a Deep One"
-#define LOC_DEATH_DEMON1 		" was slaughtered by a Moon Beast"
+#define LOC_DEATH_DEMON1 		" was killed by a ???"
 #define LOC_DEATH_WIZARD 		" was killed by a ???"
 #define LOC_DEATH_ZOMBIE		" was cursed by a Husk"
 #define LOC_DEATH_KNIGHT 		" was killed by a ???"
@@ -148,16 +148,16 @@
 #define LOC_DEATH_SUPER_SHOTGUN_QB	""
 
 #define LOC_DEATH_NAILGUN_1A	" was pierced by "
-#define LOC_DEATH_NAILGUN_1B	"'s Nailgun"
+#define LOC_DEATH_NAILGUN_1B	"'s Machine Gun"
 #define LOC_DEATH_NAILGUN_2A	" was perforated by "
-#define LOC_DEATH_NAILGUN_2B	"'s Nailgun"
+#define LOC_DEATH_NAILGUN_2B	"'s Machine Gun"
 #define LOC_DEATH_NAILGUN_QA	" was sent beyond the veil by "
 #define LOC_DEATH_NAILGUN_QB	""
 
 #define LOC_DEATH_SUPER_NAILGUN_1A	" was gunned down by "
-#define LOC_DEATH_SUPER_NAILGUN_1B	"'s Super Nailgun"
+#define LOC_DEATH_SUPER_NAILGUN_1B	"'s Chaingun"
 #define LOC_DEATH_SUPER_NAILGUN_2A	" was hunted down by "
-#define LOC_DEATH_SUPER_NAILGUN_2B	"'s Super Nailgun"
+#define LOC_DEATH_SUPER_NAILGUN_2B	"'s Chaingun"
 #define LOC_DEATH_SUPER_NAILGUN_QA	"'s chips were cashed by "
 #define LOC_DEATH_SUPER_NAILGUN_QB	""
 

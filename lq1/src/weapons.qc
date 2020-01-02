@@ -209,7 +209,6 @@ void(float damage, vector dir) TraceAttack =
 	vel = vel * 200;
 
 	org = trace_endpos - dir*4;
-	
 	if (trace_ent.takedamage)
 	{
 		SpawnBlood (org, vel*0.2, damage);
@@ -242,15 +241,16 @@ void(float shotcount, vector dir, vector spread) FireBullets =
 
 	src = self.origin + v_forward*10;
 	src_z = self.absmin_z + self.size_z * .83;
-
+	
 	ClearMultiDamage ();
 	while (shotcount > 0)
 	{
 		direction = dir + crandom()*spread_x*v_right + crandom()*spread_y*v_up;
 
 		traceline (src, src + direction*2048, FALSE, self);
-		if (trace_fraction != 1.0)
+		if (trace_fraction != 1.0) {
 			TraceAttack (4, direction);
+		}
 
 		shotcount = shotcount - 1;
 	}

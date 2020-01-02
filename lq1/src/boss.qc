@@ -34,7 +34,6 @@ void(vector p) boss_missile;
 
 void() boss_face =
 {
-	
 // go for another player if multi player
 	if (self.enemy.health <= 0 || random() < 0.02)
 	{

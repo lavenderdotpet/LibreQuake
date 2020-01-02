@@ -202,7 +202,6 @@ void() door_touch =
 		return;
 
 	self.owner.attack_finished = time + 2;
-
 	if (self.owner.message != "")
 	{
 		centerprint (other, self.owner.message);
@@ -257,8 +256,9 @@ void() door_touch =
 
 	other.items = other.items - self.items;
 	self.touch = SUB_Null;
-	if (self.enemy)
+	if (self.enemy) {
 		self.enemy.touch = SUB_Null;	// get paired door
+	}
 	door_use ();
 };
 
