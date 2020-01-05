@@ -835,13 +835,20 @@ void() item_shells =
 	{
 		precache_model ("maps/b_shell1.bsp");
 		setmodel (self, "maps/b_shell1.bsp");
-		self.aflag = 40;
+		if (arenamode())
+			self.aflag = 20;
+		else
+			self.aflag = 40;
+		
 	}
 	else
 	{
 		precache_model ("maps/b_shell0.bsp");
 		setmodel (self, "maps/b_shell0.bsp");
-		self.aflag = 20;
+		if (arenamode())
+			self.aflag = 10;
+		else
+			self.aflag = 20;
 	}
 	self.weapon = 1;
 	self.netname = LOC_NETNAME_SHELLS;
@@ -920,13 +927,19 @@ void() item_cells =
 	{
 		precache_model ("maps/b_batt1.bsp");
 		setmodel (self, "maps/b_batt1.bsp");
-		self.aflag = 12;
+		if (arenamode())
+			self.aflag = 60;
+		else
+			self.aflag = 12;
 	}
 	else
 	{
 		precache_model ("maps/b_batt0.bsp");
 		setmodel (self, "maps/b_batt0.bsp");
-		self.aflag = 6;
+		if (arenamode())
+			self.aflag = 30;
+		else
+			self.aflag = 6;
 	}
 	self.weapon = 4;
 	self.netname = LOC_NETNAME_CELLS;
