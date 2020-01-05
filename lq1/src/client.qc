@@ -319,7 +319,7 @@ void() changelevel_touch =
 
 	SUB_UseTargets ();
 
-	if ( (self.spawnflags & 1) && (deathmatch == 0) )
+	if ( (self.spawnflags & 1) && (!deathmatch))
 	{	// NO_INTERMISSION
 		GotoNextMap();
 		return;
@@ -1637,3 +1637,9 @@ void(entity targ, entity attacker) ClientObituary =
 		}
 	}
 };
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+//Deathmatch settings
+
+//For if weapons should stay instead of disappearing once picked up
+float() weaponstay =
+{
+	if (deathmatch || coop)
+	{
+		if (deathmatch != 1 && deathmatch != 8)
+		{
+			return 1;
+		}
+	}
+	return 0;
+};
+
+//Items don't respawn in deathmatch 2
+float() itemrespawn =
+{
+	if (deathmatch && deathmatch != 2)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+//For deathmatch 1, which uses the old ammo respawn time
+float() slowammo =
+{
+	if (deathmatch == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+//For deathmatch 4
+float() supermode =
+{
+	if (deathmatch == 4)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+//For deathmatch 5
+float() supermodeplus =
+{
+	if (deathmatch == 5)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+//Makes the game play more like Quake III
+float() arenarules =
+{
+	if (deathmatch == 8)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+//Disables powerups for 1v1 modes
+float() powerupdisable =
+{
+	if (deathmatch != 6 || deathmatch != 7)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+

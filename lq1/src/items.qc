@@ -303,7 +303,7 @@ void() armor_touch =
 
 	self.solid = SOLID_NOT;
 	self.model = string_null;
-	if (deathmatch == 1)
+	if (itemrespawn())
 		self.nextthink = time + 20;
 	self.think = SUB_regen;
 	
@@ -441,7 +441,7 @@ void() weapon_touch =
 	best = W_BestWeapon();
 	self = stemp;
 
-	if (deathmatch == 2 || coop)
+	if (weaponstay())
 		leave = 1;
 	else
 		leave = 0;
@@ -528,8 +528,13 @@ void() weapon_touch =
 // remove it in single player, or setup for respawning in deathmatch
 	self.model = string_null;
 	self.solid = SOLID_NOT;
-	if (deathmatch == 1)
-		self.nextthink = time + 30;
+	if (itemrespawn()) {
+		if (arenarules()) {
+			self.nextthink = time + 5;
+		} else {
+			self.nextthink = time + 30;
+		}
+	}
 	self.think = SUB_regen;
 	
 	activator = other;
@@ -711,8 +716,13 @@ local float		best;
 // remove it in single player, or setup for respawning in deathmatch
 	self.model = string_null;
 	self.solid = SOLID_NOT;
-	if (deathmatch == 1)
-		self.nextthink = time + 30;
+	if (itemrespawn()) {
+		if (slowammo()) {
+			self.nextthink = time + 30;
+		} else {
+			self.nextthink = time + 15;
+		}
+	}
 	self.think = SUB_regen;
 
 	activator = other;
