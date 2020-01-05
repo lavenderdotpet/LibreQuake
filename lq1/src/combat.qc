@@ -147,7 +147,10 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	{
 		dir = targ.origin - (inflictor.absmin + inflictor.absmax) * 0.5;
 		dir = normalize(dir);
-		targ.velocity = targ.velocity + dir*damage*8;
+		if (arenamode())
+			targ.velocity = targ.velocity + dir*damage*12;
+		else
+			targ.velocity = targ.velocity + dir*damage*8;
 	}
 
 // check for godmode or invincibility
