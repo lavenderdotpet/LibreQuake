@@ -51,7 +51,19 @@ void() W_FireAxe =
 	{
 		trace_ent.axhitme = 1;
 		SpawnBlood (org, '0 0 0', 20);
-		T_Damage (trace_ent, self, self, 20);
+		if (supermode() || supermode2())
+		{
+			T_Damage (trace_ent, self, self, 75);
+		}
+		else if (arenamode())
+		{
+			T_Damage (trace_ent, self, self, 50);
+		}
+		else
+		{
+			T_Damage (trace_ent, self, self, 20);
+		}
+		
 	}
 	else
 	{	// hit wall
@@ -290,16 +302,30 @@ void() W_FireSuperShotgun =
 		W_FireShotgun ();
 		return;
 	}
-		
-	sound (self ,CHAN_WEAPON, "weapons/shotgn2.wav", 1, ATTN_NORM);	
-
+	
 	self.punchangle_x = -4;
 	
 	self.currentammo = self.ammo_shells = self.ammo_shells - 2;
+	
 	dir = aim (self, 100000);
+	
 	FireBullets (14, dir, '0.14 0.08 0');
+	sound (self ,CHAN_WEAPON, "weapons/shotgn2.wav", 1, ATTN_NORM);	
 };
 
+void() W_FireSuperShotgun2 =
+{
+	local vector dir;
+	
+	self.punchangle_x = -4;
+	
+	self.currentammo = self.ammo_shells = self.ammo_shells - 1;
+	
+	dir = aim (self, 100000);
+	
+	FireBullets (28, dir, '0.07 0.07 0');
+	sound (self ,CHAN_WEAPON, "weapons/shotgn2.wav", 1, ATTN_NORM);	
+};
 
 /*
 ==============================================================================
@@ -339,7 +365,10 @@ void() T_MissileTouch =
 		return;
 	}
 
-	damg = 100 + random()*20;
+	if (arenamode())
+		damg = 100 + random()*20;
+	else
+		damg = 100;
 	
 	if (other.health)
 	{
@@ -350,7 +379,11 @@ void() T_MissileTouch =
 
 	// don't do radius damage to the other, because all the damage
 	// was done in the impact
-	T_RadiusDamage (self, self.owner, 120, other);
+	
+	if (arenamode())
+		T_RadiusDamage (self, self.owner, 100, other);
+	else
+		T_RadiusDamage (self, self.owner, 120, other);
 
 //	sound (self, CHAN_WEAPON, "weapons/r_exp3.wav", 1, ATTN_NORM);
 	self.origin = self.origin - 8*normalize(self.velocity);
@@ -475,7 +508,7 @@ void() W_FireLightning =
 	}
 
 // explode if under water
-	if (self.waterlevel > 1)
+	if (self.waterlevel > 1 && !arenamode())
 	{
 		cells = self.ammo_cells;
 		self.ammo_cells = 0;
@@ -507,7 +540,10 @@ void() W_FireLightning =
 	WriteCoord (MSG_BROADCAST, trace_endpos_y);
 	WriteCoord (MSG_BROADCAST, trace_endpos_z);
 
-	LightningDamage (self.origin, trace_endpos + v_forward*4, self, 30);
+	if (arenamode())
+		LightningDamage (self.origin, trace_endpos + v_forward*4, self, 16);
+	else
+		LightningDamage (self.origin, trace_endpos + v_forward*4, self, 30);
 };
 
 
@@ -516,7 +552,10 @@ void() W_FireLightning =
 
 void() GrenadeExplode =
 {
-	T_RadiusDamage (self, self.owner, 120, world);
+	if (arenamode())
+		T_RadiusDamage (self, self.owner, 100, other);
+	else
+		T_RadiusDamage (self, self.owner, 120, other);
 
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 	WriteByte (MSG_BROADCAST, TE_EXPLOSION);
@@ -645,30 +684,48 @@ void() W_FireSuperSpikes =
 
 void(float ox) W_FireSpikes =
 {
-	local vector	dir;
+	local vector dir;
+	local vector src;
 	
 	makevectors (self.v_angle);
 	
-	if (self.ammo_nails >= 2 && self.weapon == IT_SUPER_NAILGUN)
-	{
-		W_FireSuperSpikes ();
-		return;
-	}
-
 	if (self.ammo_nails < 1)
 	{
 		self.weapon = W_BestWeapon ();
 		W_SetCurrentAmmo ();
 		return;
 	}
+	
+	if (self.ammo_nails >= 2 && self.weapon == IT_SUPER_NAILGUN)
+	{
+		W_FireSuperSpikes ();
+		return;
+	}
+	else
+	{
+		if (arenamode()) 
+		{
+			sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
+			self.attack_finished = time + 0.2;
+			self.currentammo = self.ammo_nails = self.ammo_nails - 1;
+			dir = aim (self, 100000);
+			src = self.origin + '0 0 22';
+			traceline (src, src + dir*2048, FALSE, self);
+			TraceAttack(7, dir);
+			self.punchangle_x = -2;
+		}
+		else
+		{
+			sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
+			self.attack_finished = time + 0.2;
+			self.currentammo = self.ammo_nails = self.ammo_nails - 1;
+			dir = aim (self, 1000);
+			//dir = dir + crandom()*spread_x*v_right + crandom()*spread_y*v_up;
+			launch_spike (self.origin + '0 0 16' + v_right*ox, dir);
 
-	sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
-	self.attack_finished = time + 0.2;
-	self.currentammo = self.ammo_nails = self.ammo_nails - 1;
-	dir = aim (self, 1000);
-	launch_spike (self.origin + '0 0 16' + v_right*ox, dir);
-
-	self.punchangle_x = -2;
+			self.punchangle_x = -2;
+		}
+	}
 };
 
 
@@ -730,8 +787,16 @@ void() superspike_touch =
 // hit something that bleeds
 	if (other.takedamage)
 	{
-		spawn_touchblood (18);
-		T_Damage (other, self, self.owner, 18);
+		if (arenamode() && self.owner.classname == "player")
+		{
+			spawn_touchblood (40);
+			T_Damage (other, self, self.owner, 40);
+		}
+		else
+		{
+			spawn_touchblood (18);
+			T_Damage (other, self, self.owner, 18);
+		}
 	}
 	else
 	{
@@ -897,7 +962,11 @@ void() W_Attack =
 			player_axec1 ();
 		else
 			player_axed1 ();
-		self.attack_finished = time + 0.5;
+		
+		if (arenamode())
+			self.attack_finished = time + 0.4;
+		else
+			self.attack_finished = time + 0.5;
 	}
 	else if (self.weapon == IT_SHOTGUN)
 	{
@@ -908,8 +977,16 @@ void() W_Attack =
 	else if (self.weapon == IT_SUPER_SHOTGUN)
 	{
 		player_shot1 ();
-		W_FireSuperShotgun ();
-		self.attack_finished = time + 0.7;
+		if (arenamode())
+		{
+			W_FireSuperShotgun2 ();
+			self.attack_finished = time + 1;
+		}
+		else
+		{
+			W_FireSuperShotgun ();
+			self.attack_finished = time + 0.7;
+		}
 	}
 	else if (self.weapon == IT_NAILGUN)
 	{

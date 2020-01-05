@@ -55,6 +55,7 @@
 #define LOC_NETNAME_GRENADE_LAUNCHER	"the Grenade Launcher"
 #define LOC_NETNAME_ROCKET_LAUNCHER		"the Rocket Launcher"
 #define LOC_NETNAME_LIGHTNING			"the Thunderbolt"
+#define LOC_NETNAME_RAILGUN				"the Railgun"
 
 #define LOC_NETNAME_SHELLS	"shells"
 #define LOC_NETNAME_NAILS	"nails"

@@ -53,7 +53,7 @@ float() supermode =
 };
 
 //For deathmatch 5
-float() supermodeplus =
+float() supermode2 =
 {
 	if (deathmatch == 5)
 	{
@@ -66,7 +66,7 @@ float() supermodeplus =
 };
 
 //Makes the game play more like Quake III
-float() arenarules =
+float() arenamode =
 {
 	if (deathmatch == 8)
 	{
@@ -78,10 +78,10 @@ float() arenarules =
 	}
 };
 
-//Disables powerups for 1v1 modes
+//Disables powerups. Useful for 1v1 modes.
 float() powerupdisable =
 {
-	if (deathmatch != 6 || deathmatch != 7)
+	if (deathmatch == 6 || deathmatch == 7 || deathmatch == 9)
 	{
 		return 1;
 	}

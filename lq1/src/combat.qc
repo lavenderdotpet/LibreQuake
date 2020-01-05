@@ -114,7 +114,10 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 
 // check for quad damage powerup on the attacker
 	if (attacker.super_damage_finished > time)
-		damage = damage * 4;
+		if (supermode())
+			damage = damage * 8;
+		else
+			damage = damage * 4;
 
 // save damage based on the target's armor level
 
@@ -218,7 +221,10 @@ void(entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDam
 	local	entity	head;
 	local	vector	org;
 
-	head = findradius(inflictor.origin, damage+40);
+	if (arenamode())
+		head = findradius(inflictor.origin, 120);
+	else
+		head = findradius(inflictor.origin, damage+40);
 	
 	while (head)
 	{

@@ -89,7 +89,9 @@ float (entity e, float healamount, float ignore) T_Heal =
 	e.health = e.health + healamount;
 	if ((!ignore) && (e.health >= other.max_health))
 		e.health = other.max_health;
-		
+	
+	if (e.health > 200 && arenamode())
+		e.health = 200;
 	if (e.health > 250)
 		e.health = 250;
 	return 1;
@@ -157,6 +159,8 @@ void() health_touch =
 	
 	if (self.healtype == 2) // Megahealth?  Ignore max_health...
 	{
+		if (other.health >= 200 && arenamode())
+			return;
 		if (other.health >= 250)
 			return;
 		if (!T_Heal(other, self.healamount, 1))
@@ -184,15 +188,23 @@ void() health_touch =
 	// Megahealth = rot down the player's super health
 	if (self.healtype == 2)
 	{
-		//But don't rot if they are already rotting.
-		if (!(other.items & IT_SUPERHEALTH)) {
-			self.think = item_megahealth_rot;
-		} else {
-			self.think = item_megahealth_hold;
+		//Megahealth works differently in arenamode
+		if (arenamode())
+		{
+			self.nextthink = time + 60;
+			self.think = SUB_regen;
 		}
-		self.nextthink = time + 5;
-		other.items = other.items | IT_SUPERHEALTH;
-		self.owner = other;
+		else
+		{
+			//But don't rot if they are already rotting.
+			if (!(other.items & IT_SUPERHEALTH))
+				self.think = item_megahealth_rot;
+			else
+				self.think = item_megahealth_hold;
+			self.nextthink = time + 5;
+			other.items = other.items | IT_SUPERHEALTH;
+			self.owner = other;
+		}
 	}
 	else
 	{
@@ -265,11 +277,18 @@ ARMOR
 ===============================================================================
 */
 
-void() armor_touch;
+void() armor_touch_arena;
 
 void() armor_touch =
 {
 	local	float	type, value, bit;
+	
+	//Armor works different in arenamode, so use a different touch function
+	if (arenamode())
+	{
+		armor_touch_arena();
+		return;
+	}	
 	
 	if (other.health <= 0)
 		return;
@@ -308,7 +327,8 @@ void() armor_touch =
 	self.think = SUB_regen;
 	
 	sprint(other, LOC_PICKUP);
-	sprint(other, self.netname);
+	sprint(other, ftos(value));
+	sprint(other, LOC_ARMOR);
 	sprint(other, "\n");
 // armor touch sound
 	sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
@@ -318,6 +338,51 @@ void() armor_touch =
 	SUB_UseTargets();				// fire all targets / killtargets
 };
 
+void() armor_touch_arena =
+{
+	local float value;	
+	
+	if (other.health <= 0)
+		return;
+	if (other.classname != "player")
+		return;
+
+	if (self.classname == "item_armor1")
+	{
+		value = 20;
+	}
+	if (self.classname == "item_armor2")
+	{
+		value = 50;
+	}
+	if (self.classname == "item_armorInv")
+	{
+		value = 100;
+	}
+		
+	other.armortype = .66;
+	other.armorvalue += value;
+	if (other.armorvalue > 200)
+		other.armorvalue = 200;
+	other.items = other.items - (other.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR3;
+
+	self.solid = SOLID_NOT;
+	self.model = string_null;
+	if (itemrespawn())
+		self.nextthink = time + 25;
+	self.think = SUB_regen;
+	
+	sprint(other, LOC_PICKUP);
+	sprint(other, ftos(value));
+	sprint(other, LOC_ARMOR);
+	sprint(other, "\n");
+// armor touch sound
+	sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
+	stuffcmd (other, "bf\n");
+	
+	activator = other;
+	SUB_UseTargets();				// fire all targets / killtargets
+};
 
 /*QUAKED item_armor1 (0 .5 .8) (-16 -16 0) (16 16 32)
 */
@@ -328,7 +393,6 @@ void() item_armor1 =
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
 	self.skin = 0;
-	self.netname = "100 armor";
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
 };
@@ -342,7 +406,6 @@ void() item_armor2 =
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
 	self.skin = 1;
-	self.netname = "150 armor";
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
 };
@@ -356,7 +419,6 @@ void() item_armorInv =
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
 	self.skin = 2;
-	self.netname = "200 armor";
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
 };
@@ -529,7 +591,7 @@ void() weapon_touch =
 	self.model = string_null;
 	self.solid = SOLID_NOT;
 	if (itemrespawn()) {
-		if (arenarules()) {
+		if (arenamode()) {
 			self.nextthink = time + 5;
 		} else {
 			self.nextthink = time + 30;
@@ -547,24 +609,13 @@ void() weapon_touch =
 
 void() weapon_supershotgun =
 {
+	if (supermode())
+		return;
+	
 	precache_model ("progs/g_shot.mdl");
 	setmodel (self, "progs/g_shot.mdl");
 	self.weapon = IT_SUPER_SHOTGUN;
 	self.netname = LOC_NETNAME_SUPER_SHOTGUN;
-	self.touch = weapon_touch;
-	setsize (self, '-16 -16 0', '16 16 56');
-	StartItem ();
-};
-
-/*QUAKED weapon_nailgun (0 .5 .8) (-16 -16 0) (16 16 32)
-*/
-
-void() weapon_nailgun =
-{
-	precache_model ("progs/g_nail.mdl");
-	setmodel (self, "progs/g_nail.mdl");
-	self.weapon = IT_NAILGUN;
-	self.netname = LOC_NETNAME_NAILGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -575,10 +626,37 @@ void() weapon_nailgun =
 
 void() weapon_supernailgun =
 {
+	if (supermode())
+		return;
+	
 	precache_model ("progs/g_nail2.mdl");
 	setmodel (self, "progs/g_nail2.mdl");
 	self.weapon = IT_SUPER_NAILGUN;
 	self.netname = LOC_NETNAME_SUPER_NAILGUN;
+	self.touch = weapon_touch;
+	setsize (self, '-16 -16 0', '16 16 56');
+	StartItem ();
+};
+
+/*QUAKED weapon_nailgun (0 .5 .8) (-16 -16 0) (16 16 32)
+*/
+
+void() weapon_nailgun =
+{
+	if (supermode())
+		return;
+	
+	if (arenamode())
+	{
+		self.classname = "weapon_supernailgun";
+		weapon_supernailgun();
+		return;
+	}
+
+	precache_model ("progs/g_nail.mdl");
+	setmodel (self, "progs/g_nail.mdl");
+	self.weapon = IT_NAILGUN;
+	self.netname = LOC_NETNAME_NAILGUN;
 	self.touch = weapon_touch;
 	setsize (self, '-16 -16 0', '16 16 56');
 	StartItem ();
@@ -589,6 +667,9 @@ void() weapon_supernailgun =
 
 void() weapon_grenadelauncher =
 {
+	if (supermode())
+		return;
+	
 	precache_model ("progs/g_rock.mdl");
 	setmodel (self, "progs/g_rock.mdl");
 	self.weapon = 3;
@@ -603,6 +684,9 @@ void() weapon_grenadelauncher =
 
 void() weapon_rocketlauncher =
 {
+	if (supermode())
+		return;
+	
 	precache_model ("progs/g_rock2.mdl");
 	setmodel (self, "progs/g_rock2.mdl");
 	self.weapon = 3;
@@ -618,6 +702,9 @@ void() weapon_rocketlauncher =
 
 void() weapon_lightning =
 {
+	if (supermode())
+		return;
+	
 	precache_model ("progs/g_light.mdl");
 	setmodel (self, "progs/g_light.mdl");
 	self.weapon = 3;
@@ -739,6 +826,9 @@ float WEAPON_BIG2 = 1;
 
 void() item_shells =
 {
+	if (supermode())
+		return;
+	
 	self.touch = ammo_touch;
 
 	if (self.spawnflags & WEAPON_BIG2)
@@ -764,6 +854,9 @@ void() item_shells =
 
 void() item_spikes =
 {
+	if (supermode())
+		return;
+	
 	self.touch = ammo_touch;
 
 	if (self.spawnflags & WEAPON_BIG2)
@@ -789,6 +882,9 @@ void() item_spikes =
 
 void() item_rockets =
 {
+	if (supermode())
+		return;
+	
 	self.touch = ammo_touch;
 
 	if (self.spawnflags & WEAPON_BIG2)
@@ -815,6 +911,9 @@ void() item_rockets =
 
 void() item_cells =
 {
+	if (supermode())
+		return;
+	
 	self.touch = ammo_touch;
 
 	if (self.spawnflags & WEAPON_BIG2)
@@ -1137,9 +1236,16 @@ void() powerup_touch =
 		
 		if ((self.classname == "item_artifact_invulnerability") ||
 			(self.classname == "item_artifact_invisibility"))
+		{
 			self.nextthink = time + 60*5;
+		}
 		else
-			self.nextthink = time + 60;
+		{
+			if (arenamode())
+				self.nextthink = time + 60*3;
+			else
+				self.nextthink = time + 60;
+		}
 		
 		self.think = SUB_regen;
 	}	
@@ -1186,6 +1292,9 @@ Player is invulnerable for 30 seconds
 */
 void() item_artifact_invulnerability =
 {
+	if (powerupdisable())
+		return;
+	
 	self.touch = powerup_touch;
 
 	precache_model ("progs/invulner.mdl");
@@ -1195,6 +1304,16 @@ void() item_artifact_invulnerability =
 	self.items = IT_INVULNERABILITY;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
+	
+	//In Arena Mode, items don't spawn until 60 seconds after the round starts
+	if (arenamode())
+	{
+		self.mdl = self.model;
+		self.nextthink = time + 60;
+		self.think = SUB_regen;
+		self.solid = SOLID_NOT;
+		self.model = string_null;
+	}
 };
 
 /*QUAKED item_artifact_envirosuit (0 .5 .8) (-16 -16 -24) (16 16 32)
@@ -1202,6 +1321,9 @@ Player takes no damage from water or slime for 30 seconds
 */
 void() item_artifact_envirosuit =
 {
+	if (powerupdisable())
+		return;
+	
 	self.touch = powerup_touch;
 
 	precache_model ("progs/suit.mdl");
@@ -1211,6 +1333,15 @@ void() item_artifact_envirosuit =
 	self.items = IT_SUIT;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
+	
+	if (arenamode())
+	{
+		self.mdl = self.model;
+		self.nextthink = time + 60;
+		self.think = SUB_regen;
+		self.solid = SOLID_NOT;
+		self.model = string_null;
+	}
 };
 
 
@@ -1219,6 +1350,9 @@ Player is invisible for 30 seconds
 */
 void() item_artifact_invisibility =
 {
+	if (powerupdisable())
+		return;
+	
 	self.touch = powerup_touch;
 
 	precache_model ("progs/invisibl.mdl");
@@ -1228,6 +1362,15 @@ void() item_artifact_invisibility =
 	self.items = IT_INVISIBILITY;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
+	
+	if (arenamode())
+	{
+		self.mdl = self.model;
+		self.nextthink = time + 60;
+		self.think = SUB_regen;
+		self.solid = SOLID_NOT;
+		self.model = string_null;
+	}
 };
 
 
@@ -1236,15 +1379,31 @@ The next attack from the player will do 4x damage
 */
 void() item_artifact_super_damage =
 {
+	if (powerupdisable())
+		return;
+	
 	self.touch = powerup_touch;
 
 	precache_model ("progs/quaddama.mdl");
 	self.noise = "items/damage.wav";
 	setmodel (self, "progs/quaddama.mdl");
-	self.netname = LOC_NETNAME_QUAD;
+	if (supermode())
+		self.netname = LOC_NETNAME_OCT;
+	else
+		self.netname = LOC_NETNAME_QUAD;
+	
 	self.items = IT_QUAD;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
+	
+	if (arenamode())
+	{
+		self.mdl = self.model;
+		self.nextthink = time + 60;
+		self.think = SUB_regen;
+		self.solid = SOLID_NOT;
+		self.model = string_null;
+	}
 };
 
 
@@ -1268,6 +1427,10 @@ void() BackpackTouch =
 		return;
 	if (other.health <= 0)
 		return;
+	
+	if (supermode())
+		if (other.invincible_time > 0)
+			return;
 
 	acount = 0;
 	sprint (other, LOC_PICKUP);

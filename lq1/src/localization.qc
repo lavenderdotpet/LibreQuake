@@ -29,6 +29,7 @@
 #define LOC_PICKUP_HEALTH	"You receive "
 #define LOC_BACKPACK		" from a backpack"
 #define LOC_BONUS			" is coming for you all!!!"
+#define LOC_ARMOR			" armor"
 
 //Item names
 #define LOC_QUAD_FADE	"The Crusher Sigil's power is dwindling"
@@ -49,6 +50,7 @@
 #define LOC_NETNAME_GRENADE_LAUNCHER	"the Grenade Launcher"
 #define LOC_NETNAME_ROCKET_LAUNCHER		"the Rocket Launcher"
 #define LOC_NETNAME_LIGHTNING			"the Lightning Cannon"
+#define LOC_NETNAME_RAILGUN				"the Railgun"
 
 #define LOC_NETNAME_SHELLS	"shells"
 #define LOC_NETNAME_NAILS	"nails"
