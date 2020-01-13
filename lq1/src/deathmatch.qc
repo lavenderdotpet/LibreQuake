@@ -40,6 +40,7 @@ float() slowammo =
 };
 
 //For deathmatch 4
+//Starts each player off with every weapon and infinite ammo
 float() supermode =
 {
 	if (deathmatch == 4)
@@ -53,6 +54,7 @@ float() supermode =
 };
 
 //For deathmatch 5
+//Starts each player off with every weapon and a fair amount of ammo
 float() supermode2 =
 {
 	if (deathmatch == 5)
@@ -81,7 +83,8 @@ float() arenamode =
 //Disables powerups. Useful for 1v1 modes.
 float() powerupdisable =
 {
-	if (deathmatch == 6 || deathmatch == 7 || deathmatch == 9)
+	//In duel and all odd-numbered modes above that, powerups are turned off.
+	if (deathmatch == 6 || (deathmatch >= 7 && (deathmatch / 2) != floor(deathmatch / 2)))
 	{
 		return 1;
 	}
@@ -91,3 +94,26 @@ float() powerupdisable =
 	}
 };
 
+float() mediumweapons =
+{
+	if (deathmatch == 10 || deathmatch == 11)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+float() weakweapons =
+{
+	if (deathmatch == 12 || deathmatch == 13)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};

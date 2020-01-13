@@ -594,7 +594,7 @@ void() weapon_touch =
 
 void() weapon_supershotgun =
 {
-	if (supermode())
+	if (supermode() || supermode2())
 		return;
 	
 	precache_model ("progs/g_shot.mdl");
@@ -611,7 +611,10 @@ void() weapon_supershotgun =
 
 void() weapon_supernailgun =
 {
-	if (supermode())
+	if (supermode() || supermode2())
+		return;
+	
+	if (weakweapons())
 		return;
 	
 	precache_model ("progs/g_nail2.mdl");
@@ -628,7 +631,7 @@ void() weapon_supernailgun =
 
 void() weapon_nailgun =
 {
-	if (supermode())
+	if (supermode() || supermode2())
 		return;
 	
 	if (arenamode())
@@ -652,7 +655,10 @@ void() weapon_nailgun =
 
 void() weapon_grenadelauncher =
 {
-	if (supermode())
+	if (supermode() || supermode2())
+		return;
+	
+	if (weakweapons())
 		return;
 	
 	precache_model ("progs/g_rock.mdl");
@@ -669,8 +675,15 @@ void() weapon_grenadelauncher =
 
 void() weapon_rocketlauncher =
 {
-	if (supermode())
+	if (supermode() || supermode2())
 		return;
+	
+	if (mediumweapons() || weakweapons())
+	{
+		self.classname = "weapon_supershotgun";
+		weapon_supershotgun();
+		return;
+	}
 	
 	precache_model ("progs/g_rock2.mdl");
 	setmodel (self, "progs/g_rock2.mdl");
@@ -687,8 +700,15 @@ void() weapon_rocketlauncher =
 
 void() weapon_lightning =
 {
-	if (supermode())
+	if (supermode() || supermode2())
 		return;
+	
+	if (mediumweapons() || weakweapons())
+	{
+		self.classname = "weapon_nailgun";
+		weapon_nailgun();
+		return;
+	}
 	
 	precache_model ("progs/g_light.mdl");
 	setmodel (self, "progs/g_light.mdl");
@@ -1387,6 +1407,42 @@ void() BackpackTouch =
 
 	acount = 0;
 	sprint (other, LOC_PICKUP);
+	
+	//Implement dmm4 backpacks
+	if (supermode())
+	{
+		other.health = other.health + 10;
+		sprint (other, "10 additional health\n");
+		if ((other.health > 250) && (other.health < 300))
+			sound (other, CHAN_ITEM, "items/protect3.wav", 1, ATTN_NORM);
+		else
+			sound (other, CHAN_ITEM, "weapons/lock4.wav", 1, ATTN_NORM);
+		stuffcmd (other, "bf\n");
+		remove(self);
+
+		if (other.health > 299)
+		{               
+			if (other.invincible_time != 1)
+			{
+				other.invincible_time = 1;
+				other.invincible_finished = time + 30;
+				other.items = other.items | IT_INVULNERABILITY;
+				
+				other.super_time = 1;
+				other.super_damage_finished = time + 30;
+				other.items = other.items | IT_QUAD;
+
+				other.ammo_cells = 0;
+	
+				sound (other, CHAN_VOICE, "boss1/sight1.wav", 1, ATTN_NORM);
+				stuffcmd (other, "bf\n");               
+				bprint (other.netname);
+				bprint (LOC_BONUS);
+			}
+		}
+		self = other;
+		return;
+	}
 
 // if the player was using his best weapon, change up to the new one if better		
 	stemp = self;
