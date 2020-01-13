@@ -563,9 +563,9 @@ void() W_FireLightning =
 void() GrenadeExplode =
 {
 	if (arenamode())
-		T_RadiusDamage (self, self.owner, 100, other);
+		T_RadiusDamage (self, self.owner, 100, world);
 	else
-		T_RadiusDamage (self, self.owner, 120, other);
+		T_RadiusDamage (self, self.owner, 120, world);
 
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 	WriteByte (MSG_BROADCAST, TE_EXPLOSION);
