@@ -65,7 +65,7 @@ float() supermode2 =
 	}
 };
 
-//Makes the game play more like Quake III
+//Rebalances the weapons to play more like Quake III
 float() arenamode =
 {
 	if (deathmatch == 8)

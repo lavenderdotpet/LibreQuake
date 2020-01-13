@@ -594,11 +594,13 @@ void() PutClientInServer =
 	}
 	if (arenamode())
 	{
-		self.health = 125;
-		self.ammo_shells = 0;
-		self.ammo_nails = 50;
-		self.items = (self.items | IT_SHOTGUN) - IT_SHOTGUN;
+		//In arenamode, the player is given a bit of starting armor
+		self.health = 100;
+		self.armorvalue = 25;
+		self.armortype = .3;
 		self.items = self.items | IT_NAILGUN;
+		self.ammo_nails = 50;
+		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR1;
 	}
 	
 	W_SetCurrentAmmo ();
@@ -1206,20 +1208,6 @@ void() PlayerPostThink =
 
 	if (!(self.flags & FL_ONGROUND))
 		self.jump_flag = self.velocity_z;
-	
-	//Stuff that happens every one second
-	if (time > self.count)
-	{
-		if (arenamode())
-		{
-			self.count = time + 1;
-			if (self.health > 100)
-				self.health -= 1;
-			if (self.armorvalue > 100)
-				self.armorvalue -= 1;
-		}
-		
-	}
 	
 
 	CheckPowerups ();

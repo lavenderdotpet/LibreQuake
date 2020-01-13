@@ -224,10 +224,7 @@ void(entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDam
 	local	entity	head;
 	local	vector	org;
 
-	if (arenamode())
-		head = findradius(inflictor.origin, 120);
-	else
-		head = findradius(inflictor.origin, damage+40);
+	head = findradius(inflictor.origin, damage+40);
 	
 	while (head)
 	{

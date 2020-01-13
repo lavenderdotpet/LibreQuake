@@ -182,7 +182,7 @@ void() army_fire =
 	dir = en.origin - en.velocity*0.2;
 	dir = normalize (dir - self.origin);
 	
-	FireBullets (4, dir, '0.1 0.1 0');
+	FireBullets (4, dir, '0.1 0.1 0', 4);
 };
 
 

@@ -51,6 +51,7 @@ void() W_FireAxe =
 	{
 		trace_ent.axhitme = 1;
 		SpawnBlood (org, '0 0 0', 20);
+		//Axe damage changes in deathmatch modes
 		if (supermode() || supermode2())
 		{
 			T_Damage (trace_ent, self, self, 75);
@@ -244,7 +245,7 @@ Used by shotgun, super shotgun, and enemy soldier firing
 Go to the trouble of combining multiple pellets into a single damage call.
 ================
 */
-void(float shotcount, vector dir, vector spread) FireBullets =
+void(float shotcount, vector dir, vector spread, float damage) FireBullets =
 {
 	local	vector  direction;
 	local	vector	src;
@@ -261,7 +262,7 @@ void(float shotcount, vector dir, vector spread) FireBullets =
 
 		traceline (src, src + direction*2048, FALSE, self);
 		if (trace_fraction != 1.0) {
-			TraceAttack (4, direction);
+			TraceAttack (damage, direction);
 		}
 
 		shotcount = shotcount - 1;
@@ -284,7 +285,7 @@ void() W_FireShotgun =
 	
 	self.currentammo = self.ammo_shells = self.ammo_shells - 1;
 	dir = aim (self, 100000);
-	FireBullets (6, dir, '0.04 0.04 0');
+	FireBullets (6, dir, '0.04 0.04 0', 4);
 };
 
 
@@ -309,7 +310,7 @@ void() W_FireSuperShotgun =
 	
 	dir = aim (self, 100000);
 	
-	FireBullets (14, dir, '0.14 0.08 0');
+	FireBullets (14, dir, '0.14 0.08 0', 4);
 	sound (self ,CHAN_WEAPON, "weapons/shotgn2.wav", 1, ATTN_NORM);	
 };
 
@@ -319,11 +320,14 @@ void() W_FireSuperShotgun2 =
 	
 	self.punchangle_x = -4;
 	
-	self.currentammo = self.ammo_shells = self.ammo_shells - 1;
+	self.currentammo = self.ammo_shells = self.ammo_shells - 2;
+	if (self.ammo_shells < 0) {
+		self.currentammo = self.ammo_shells = 0;
+	}
 	
 	dir = aim (self, 100000);
 	
-	FireBullets (28, dir, '0.07 0.07 0');
+	FireBullets (11, dir, '0.07 0.07 0', 10);
 	sound (self ,CHAN_WEAPON, "weapons/shotgn2.wav", 1, ATTN_NORM);	
 };
 
@@ -365,6 +369,7 @@ void() T_MissileTouch =
 		return;
 	}
 
+	//Rockets do less damage in arenamode
 	if (arenamode())
 		damg = 100 + random()*20;
 	else
@@ -507,7 +512,7 @@ void() W_FireLightning =
 		return;
 	}
 
-// explode if under water
+// explode if under water, unless in arenamode
 	if (self.waterlevel > 1 && !arenamode())
 	{
 		cells = self.ammo_cells;
@@ -540,6 +545,7 @@ void() W_FireLightning =
 	WriteCoord (MSG_BROADCAST, trace_endpos_y);
 	WriteCoord (MSG_BROADCAST, trace_endpos_z);
 
+	//Lightning gun deals less damage in arenamode
 	if (arenamode())
 		LightningDamage (self.origin, trace_endpos + v_forward*4, self, 16);
 	else
@@ -664,7 +670,10 @@ void(vector org, vector dir) launch_spike =
 	setsize (newmis, VEC_ORIGIN, VEC_ORIGIN);		
 	setorigin (newmis, org);
 
-	newmis.velocity = dir * 1000;
+	if (arenamode())
+		newmis.velocity = dir * 1700;
+	else
+		newmis.velocity = dir * 1000;
 };
 
 void() W_FireSuperSpikes =
@@ -685,7 +694,6 @@ void() W_FireSuperSpikes =
 void(float ox) W_FireSpikes =
 {
 	local vector dir;
-	local vector src;
 	
 	makevectors (self.v_angle);
 	
@@ -703,28 +711,14 @@ void(float ox) W_FireSpikes =
 	}
 	else
 	{
-		if (arenamode()) 
-		{
-			sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
-			self.attack_finished = time + 0.2;
-			self.currentammo = self.ammo_nails = self.ammo_nails - 1;
-			dir = aim (self, 100000);
-			src = self.origin + '0 0 22';
-			traceline (src, src + dir*2048, FALSE, self);
-			TraceAttack(7, dir);
-			self.punchangle_x = -2;
-		}
-		else
-		{
-			sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
-			self.attack_finished = time + 0.2;
-			self.currentammo = self.ammo_nails = self.ammo_nails - 1;
-			dir = aim (self, 1000);
-			//dir = dir + crandom()*spread_x*v_right + crandom()*spread_y*v_up;
-			launch_spike (self.origin + '0 0 16' + v_right*ox, dir);
+		sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
+		self.attack_finished = time + 0.2;
+		self.currentammo = self.ammo_nails = self.ammo_nails - 1;
+		dir = aim (self, 1000);
+		//dir = dir + crandom()*spread_x*v_right + crandom()*spread_y*v_up;
+		launch_spike (self.origin + '0 0 16' + v_right*ox, dir);
 
-			self.punchangle_x = -2;
-		}
+		self.punchangle_x = -2;
 	}
 };
 
@@ -787,6 +781,7 @@ void() superspike_touch =
 // hit something that bleeds
 	if (other.takedamage)
 	{
+		//Spikes deal more damage in arenamode
 		if (arenamode() && self.owner.classname == "player")
 		{
 			spawn_touchblood (40);
@@ -963,10 +958,7 @@ void() W_Attack =
 		else
 			player_axed1 ();
 		
-		if (arenamode())
-			self.attack_finished = time + 0.4;
-		else
-			self.attack_finished = time + 0.5;
+		self.attack_finished = time + 0.5;
 	}
 	else if (self.weapon == IT_SHOTGUN)
 	{
@@ -977,6 +969,7 @@ void() W_Attack =
 	else if (self.weapon == IT_SUPER_SHOTGUN)
 	{
 		player_shot1 ();
+		//Shotgun works differently in ArenaMode
 		if (arenamode())
 		{
 			W_FireSuperShotgun2 ();

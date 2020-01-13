@@ -90,8 +90,6 @@ float (entity e, float healamount, float ignore) T_Heal =
 	if ((!ignore) && (e.health >= other.max_health))
 		e.health = other.max_health;
 	
-	if (e.health > 200 && arenamode())
-		e.health = 200;
 	if (e.health > 250)
 		e.health = 250;
 	return 1;
@@ -159,8 +157,6 @@ void() health_touch =
 	
 	if (self.healtype == 2) // Megahealth?  Ignore max_health...
 	{
-		if (other.health >= 200 && arenamode())
-			return;
 		if (other.health >= 250)
 			return;
 		if (!T_Heal(other, self.healamount, 1))
@@ -188,23 +184,15 @@ void() health_touch =
 	// Megahealth = rot down the player's super health
 	if (self.healtype == 2)
 	{
-		//Megahealth works differently in arenamode
-		if (arenamode())
-		{
-			self.nextthink = time + 60;
-			self.think = SUB_regen;
-		}
+
+		//But don't rot if they are already rotting in singleplayer
+		if (!(other.items & IT_SUPERHEALTH) || deathmatch)
+			self.think = item_megahealth_rot;
 		else
-		{
-			//But don't rot if they are already rotting.
-			if (!(other.items & IT_SUPERHEALTH))
-				self.think = item_megahealth_rot;
-			else
-				self.think = item_megahealth_hold;
-			self.nextthink = time + 5;
-			other.items = other.items | IT_SUPERHEALTH;
-			self.owner = other;
-		}
+			self.think = item_megahealth_hold;
+		self.nextthink = time + 5;
+		other.items = other.items | IT_SUPERHEALTH;
+		self.owner = other;
 	}
 	else
 	{
@@ -284,11 +272,12 @@ void() armor_touch =
 	local	float	type, value, bit;
 	
 	//Armor works different in arenamode, so use a different touch function
-	if (arenamode())
+	//Disabled for now.
+	/*if (arenamode())
 	{
 		armor_touch_arena();
 		return;
-	}	
+	}*/
 	
 	if (other.health <= 0)
 		return;
@@ -591,11 +580,7 @@ void() weapon_touch =
 	self.model = string_null;
 	self.solid = SOLID_NOT;
 	if (itemrespawn()) {
-		if (arenamode()) {
-			self.nextthink = time + 5;
-		} else {
-			self.nextthink = time + 30;
-		}
+		self.nextthink = time + 30;
 	}
 	self.think = SUB_regen;
 	
@@ -835,20 +820,14 @@ void() item_shells =
 	{
 		precache_model ("maps/b_shell1.bsp");
 		setmodel (self, "maps/b_shell1.bsp");
-		if (arenamode())
-			self.aflag = 20;
-		else
-			self.aflag = 40;
+		self.aflag = 40;
 		
 	}
 	else
 	{
 		precache_model ("maps/b_shell0.bsp");
 		setmodel (self, "maps/b_shell0.bsp");
-		if (arenamode())
-			self.aflag = 10;
-		else
-			self.aflag = 20;
+		self.aflag = 20;
 	}
 	self.weapon = 1;
 	self.netname = LOC_NETNAME_SHELLS;
@@ -927,6 +906,7 @@ void() item_cells =
 	{
 		precache_model ("maps/b_batt1.bsp");
 		setmodel (self, "maps/b_batt1.bsp");
+		//Cells last a lot longer in arenamode
 		if (arenamode())
 			self.aflag = 60;
 		else
@@ -1254,10 +1234,7 @@ void() powerup_touch =
 		}
 		else
 		{
-			if (arenamode())
-				self.nextthink = time + 60*3;
-			else
-				self.nextthink = time + 60;
+			self.nextthink = time + 60;
 		}
 		
 		self.think = SUB_regen;
@@ -1317,16 +1294,6 @@ void() item_artifact_invulnerability =
 	self.items = IT_INVULNERABILITY;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
-	
-	//In Arena Mode, items don't spawn until 60 seconds after the round starts
-	if (arenamode())
-	{
-		self.mdl = self.model;
-		self.nextthink = time + 60;
-		self.think = SUB_regen;
-		self.solid = SOLID_NOT;
-		self.model = string_null;
-	}
 };
 
 /*QUAKED item_artifact_envirosuit (0 .5 .8) (-16 -16 -24) (16 16 32)
@@ -1346,15 +1313,6 @@ void() item_artifact_envirosuit =
 	self.items = IT_SUIT;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
-	
-	if (arenamode())
-	{
-		self.mdl = self.model;
-		self.nextthink = time + 60;
-		self.think = SUB_regen;
-		self.solid = SOLID_NOT;
-		self.model = string_null;
-	}
 };
 
 
@@ -1375,20 +1333,11 @@ void() item_artifact_invisibility =
 	self.items = IT_INVISIBILITY;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
-	
-	if (arenamode())
-	{
-		self.mdl = self.model;
-		self.nextthink = time + 60;
-		self.think = SUB_regen;
-		self.solid = SOLID_NOT;
-		self.model = string_null;
-	}
 };
 
 
 /*QUAKED item_artifact_super_damage (0 .5 .8) (-16 -16 -24) (16 16 32)
-The next attack from the player will do 4x damage
+Player will deal 4x damage for the next 30 seconds
 */
 void() item_artifact_super_damage =
 {
@@ -1408,15 +1357,6 @@ void() item_artifact_super_damage =
 	self.items = IT_QUAD;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
-	
-	if (arenamode())
-	{
-		self.mdl = self.model;
-		self.nextthink = time + 60;
-		self.think = SUB_regen;
-		self.solid = SOLID_NOT;
-		self.model = string_null;
-	}
 };
 
 
