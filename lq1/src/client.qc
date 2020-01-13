@@ -553,10 +553,10 @@ void() PutClientInServer =
 	
 	if (supermode())
 	{
-		self.ammo_nails = 255;
-		self.ammo_shells = 255;
-		self.ammo_rockets = 255;
-		self.ammo_cells = 255;
+		self.ammo_nails = 666;
+		self.ammo_shells = 666;
+		self.ammo_rockets = 666;
+		self.ammo_cells = 666;
 		self.items = self.items | IT_NAILGUN;
 		self.items = self.items | IT_SUPER_NAILGUN;
 		self.items = self.items | IT_SUPER_SHOTGUN;

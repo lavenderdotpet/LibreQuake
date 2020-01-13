@@ -283,7 +283,8 @@ void() W_FireShotgun =
 
 	self.punchangle_x = -2;
 	
-	self.currentammo = self.ammo_shells = self.ammo_shells - 1;
+	if (!supermode())
+		self.currentammo = self.ammo_shells = self.ammo_shells - 1;
 	dir = aim (self, 100000);
 	FireBullets (6, dir, '0.04 0.04 0', 4);
 };
@@ -306,7 +307,8 @@ void() W_FireSuperShotgun =
 	
 	self.punchangle_x = -4;
 	
-	self.currentammo = self.ammo_shells = self.ammo_shells - 2;
+	if (!supermode())
+		self.currentammo = self.ammo_shells = self.ammo_shells - 2;
 	
 	dir = aim (self, 100000);
 	
@@ -413,7 +415,8 @@ void() W_FireRocket =
 {
 	local	entity missile;
 	
-	self.currentammo = self.ammo_rockets = self.ammo_rockets - 1;
+	if (!supermode())
+		self.currentammo = self.ammo_rockets = self.ammo_rockets - 1;
 	
 	sound (self, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
 
@@ -512,8 +515,8 @@ void() W_FireLightning =
 		return;
 	}
 
-// explode if under water, unless in arenamode
-	if (self.waterlevel > 1 && !arenamode())
+// explode if under water, unless in arenamode or either of the supermodes
+	if (self.waterlevel > 1 && !arenamode() && !supermode() && !supermode2())
 	{
 		cells = self.ammo_cells;
 		self.ammo_cells = 0;
@@ -529,7 +532,8 @@ void() W_FireLightning =
 	}
 	self.punchangle_x = -2;
 
-	self.currentammo = self.ammo_cells = self.ammo_cells - 1;
+	if (!supermode())
+		self.currentammo = self.ammo_cells = self.ammo_cells - 1;
 
 	org = self.origin + '0 0 16';
 	
@@ -599,7 +603,8 @@ void() W_FireGrenade =
 {
 	local	entity missile;
 	
-	self.currentammo = self.ammo_rockets = self.ammo_rockets - 1;
+	if (!supermode())
+		self.currentammo = self.ammo_rockets = self.ammo_rockets - 1;
 	
 	sound (self, CHAN_WEAPON, "weapons/grenade.wav", 1, ATTN_NORM);
 
@@ -682,7 +687,8 @@ void() W_FireSuperSpikes =
 	
 	sound (self, CHAN_WEAPON, "weapons/spike2.wav", 1, ATTN_NORM);
 	self.attack_finished = time + 0.2;
-	self.currentammo = self.ammo_nails = self.ammo_nails - 2;
+	if (!supermode())
+		self.currentammo = self.ammo_nails = self.ammo_nails - 2;
 	dir = aim (self, 1000);
 	launch_spike (self.origin + '0 0 16', dir);
 	newmis.touch = superspike_touch;
@@ -713,7 +719,8 @@ void(float ox) W_FireSpikes =
 	{
 		sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
 		self.attack_finished = time + 0.2;
-		self.currentammo = self.ammo_nails = self.ammo_nails - 1;
+		if (!supermode())
+			self.currentammo = self.ammo_nails = self.ammo_nails - 1;
 		dir = aim (self, 1000);
 		//dir = dir + crandom()*spread_x*v_right + crandom()*spread_y*v_up;
 		launch_spike (self.origin + '0 0 16' + v_right*ox, dir);
