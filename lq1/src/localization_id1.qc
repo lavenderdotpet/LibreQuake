@@ -55,6 +55,7 @@
 #define LOC_NETNAME_GRENADE_LAUNCHER	"the Grenade Launcher"
 #define LOC_NETNAME_ROCKET_LAUNCHER		"the Rocket Launcher"
 #define LOC_NETNAME_LIGHTNING			"the Thunderbolt"
+#define LOC_NETNAME_RAILGUN				"the Railgun"
 
 #define LOC_NETNAME_SHELLS	"shells"
 #define LOC_NETNAME_NAILS	"nails"
@@ -143,8 +144,8 @@
 #define LOC_DEATH_SHOTGUN_1B	"'s boomstick"
 #define LOC_DEATH_SHOTGUN_2A	" chewed on "
 #define LOC_DEATH_SHOTGUN_2B	"'s boomstick"
-#define LOC_DEATH_SHOTGUN_QA	" chewed on "
-#define LOC_DEATH_SHOTGUN_QB	"'s boomstick"
+#define LOC_DEATH_SHOTGUN_QA	" was lead-poisoned by "
+#define LOC_DEATH_SHOTGUN_QB	""
 
 #define LOC_DEATH_SUPER_SHOTGUN_1A	" ate 2 loads of "
 #define LOC_DEATH_SUPER_SHOTGUN_1B	"'s buckshot"
@@ -162,7 +163,7 @@
 
 #define LOC_DEATH_SUPER_NAILGUN_1A	" was punctured by "
 #define LOC_DEATH_SUPER_NAILGUN_1B	""
-#define LOC_DEATH_SUPER_NAILGUN_2A	" was punctured by "
+#define LOC_DEATH_SUPER_NAILGUN_2A	" was ventilated by "
 #define LOC_DEATH_SUPER_NAILGUN_2B	""
 #define LOC_DEATH_SUPER_NAILGUN_QA	" was straw-cuttered by "
 #define LOC_DEATH_SUPER_NAILGUN_QB	""
@@ -193,8 +194,8 @@
 #define LOC_DEATH_LIGHTNING_1B	"'s shaft"
 #define LOC_DEATH_LIGHTNING_2A	" accepts "
 #define LOC_DEATH_LIGHTNING_2B	"'s shaft"
-#define LOC_DEATH_LIGHTNING_QA	" accepts "
-#define LOC_DEATH_LIGHTNING_QB	"'s shaft"
+#define LOC_DEATH_LIGHTNING_QA	" gets a natural disaster from "
+#define LOC_DEATH_LIGHTNING_QB	""
 #define LOC_DEATH_LIGHTNING_D1A	" accepts "
 #define LOC_DEATH_LIGHTNING_D1B	"'s discharge"
 #define LOC_DEATH_LIGHTNING_D2A	" accepts "

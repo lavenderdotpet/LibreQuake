@@ -659,7 +659,6 @@ For optimzation testing, starts a lot of sounds.
 */
 
 void() misc_noisemaker =
-
 {
 	precache_sound2 ("enforcer/enfire.wav");
 	precache_sound2 ("enforcer/enfstop.wav");

@@ -319,7 +319,7 @@ void() changelevel_touch =
 
 	SUB_UseTargets ();
 
-	if ( (self.spawnflags & 1) && (deathmatch == 0) )
+	if ( (self.spawnflags & 1) && (!deathmatch))
 	{	// NO_INTERMISSION
 		GotoNextMap();
 		return;
@@ -512,8 +512,6 @@ void() PutClientInServer =
 	self.invincible_time = 0;
 
 	DecodeLevelParms ();
-	
-	W_SetCurrentAmmo ();
 
 	self.attack_finished = time;
 	self.th_pain = player_pain;
@@ -552,6 +550,60 @@ void() PutClientInServer =
 	}
 
 	spawn_tdeath (self.origin, self);
+	
+	if (supermode())
+	{
+		self.ammo_nails = 666;
+		self.ammo_shells = 666;
+		self.ammo_rockets = 666;
+		self.ammo_cells = 666;
+		self.items = self.items | IT_NAILGUN;
+		self.items = self.items | IT_SUPER_NAILGUN;
+		self.items = self.items | IT_SUPER_SHOTGUN;
+		self.items = self.items | IT_ROCKET_LAUNCHER;
+		self.items = self.items | IT_LIGHTNING;
+		
+		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR3;
+		self.armorvalue = 200;
+		self.armortype = 0.8;
+		self.health = 250;
+		self.items = self.items | IT_INVULNERABILITY;
+		self.invincible_time = 1;
+		self.invincible_finished = time + 3;
+	}
+
+	if (supermode2())
+	{
+		self.ammo_nails = 80;
+		self.ammo_shells = 30;
+		self.ammo_rockets = 10;
+		self.ammo_cells = 30;
+		self.items = self.items | IT_NAILGUN;
+		self.items = self.items | IT_SUPER_NAILGUN;
+		self.items = self.items | IT_SUPER_SHOTGUN;
+		self.items = self.items | IT_ROCKET_LAUNCHER;
+		self.items = self.items | IT_GRENADE_LAUNCHER;
+		self.items = self.items | IT_LIGHTNING;
+		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR3;
+		self.armorvalue = 200;
+		self.armortype = 0.8;
+		self.health = 200;
+		self.items = self.items | IT_INVULNERABILITY;
+		self.invincible_time = 1;
+		self.invincible_finished = time + 3;
+	}
+	if (arenamode())
+	{
+		//In arenamode, the player is given a bit of starting armor
+		self.health = 100;
+		self.armorvalue = 25;
+		self.armortype = .3;
+		self.items = self.items | IT_NAILGUN;
+		self.ammo_nails = 50;
+		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR1;
+	}
+	
+	W_SetCurrentAmmo ();
 };
 
 
@@ -1055,7 +1107,10 @@ void() CheckPowerups =
 		{
 			if (self.super_time == 1)
 			{
-				sprint (self, LOC_QUAD_FADE);
+				if (supermode())
+					sprint (self, LOC_OCT_FADE);
+				else
+					sprint (self, LOC_QUAD_FADE);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/damage2.wav", 1, ATTN_NORM);
@@ -1153,8 +1208,11 @@ void() PlayerPostThink =
 
 	if (!(self.flags & FL_ONGROUND))
 		self.jump_flag = self.velocity_z;
-
+	
 	CheckPowerups ();
+	
+	if (lastmanstanding())
+		sprint(self, "Last Man Standing coming soon!\n");
 };
 
 
@@ -1637,3 +1695,9 @@ void(entity targ, entity attacker) ClientObituary =
 		}
 	}
 };
+
+
+
+
+
+

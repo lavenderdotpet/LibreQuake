@@ -114,7 +114,10 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 
 // check for quad damage powerup on the attacker
 	if (attacker.super_damage_finished > time)
-		damage = damage * 4;
+		if (supermode())
+			damage = damage * 8;
+		else
+			damage = damage * 4;
 
 // save damage based on the target's armor level
 
@@ -144,7 +147,10 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	{
 		dir = targ.origin - (inflictor.absmin + inflictor.absmax) * 0.5;
 		dir = normalize(dir);
-		targ.velocity = targ.velocity + dir*damage*8;
+		if (arenamode())
+			targ.velocity = targ.velocity + dir*damage*12;
+		else
+			targ.velocity = targ.velocity + dir*damage*8;
 	}
 
 // check for godmode or invincibility
