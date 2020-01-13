@@ -1408,7 +1408,7 @@ void() BackpackTouch =
 	acount = 0;
 	sprint (other, LOC_PICKUP);
 	
-	//Implement dmm4 backpacks
+	//supermode backpacks
 	if (supermode())
 	{
 		other.health = other.health + 10;
@@ -1438,6 +1438,7 @@ void() BackpackTouch =
 				stuffcmd (other, "bf\n");               
 				bprint (other.netname);
 				bprint (LOC_BONUS);
+				bprint ("\n");
 			}
 		}
 		self = other;

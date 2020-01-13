@@ -1209,8 +1209,10 @@ void() PlayerPostThink =
 	if (!(self.flags & FL_ONGROUND))
 		self.jump_flag = self.velocity_z;
 	
-
 	CheckPowerups ();
+	
+	if (lastmanstanding())
+		sprint(self, "Last Man Standing coming soon!\n");
 };
 
 

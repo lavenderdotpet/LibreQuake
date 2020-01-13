@@ -94,6 +94,19 @@ float() powerupdisable =
 	}
 };
 
+//Like duel, but the game resets everytime a player dies
+float() lastmanstanding =
+{
+	if (deathmatch == 7)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
 float() mediumweapons =
 {
 	if (deathmatch == 10 || deathmatch == 11)
