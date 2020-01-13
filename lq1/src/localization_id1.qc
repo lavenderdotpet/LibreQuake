@@ -35,6 +35,7 @@
 #define LOC_PICKUP_HEALTH	"You receive "
 #define LOC_BACKPACK		" from a backpack"
 #define LOC_BONUS			" attains bonus powers!!!"
+#define LOC_ARMOR			" armor"
 
 //Item names
 #define LOC_QUAD_FADE	"Quad Damage is wearing off"
@@ -44,7 +45,7 @@
 #define LOC_BIO_FADE	"Air supply in Biosuit expiring"
 
 #define LOC_NETNAME_QUAD	"the Quad Damage"
-#define LOC_NETNAME_QUAD	"the Quad Damage"
+#define LOC_NETNAME_OCT		"the Octapower"
 #define LOC_NETNAME_PENT	"the Pentagram of Protection"
 #define LOC_NETNAME_RING	"The Ring of Shadows"
 #define LOC_NETNAME_BIO		"the Biosuit"
