@@ -40,7 +40,7 @@ void() SetChangeParms =
 
 // remove items
 	self.items = self.items - (self.items & 
-	(IT_KEY1 | IT_KEY2 | IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD) );
+	(IT_KEY1 | IT_KEY2 | IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD | IT_SUPERHEALTH) );
 
 // bind health to be between 50 and 100 (or 25 and 50 if playing on copper nightmare)
 	if (coppernightmare())
@@ -1255,8 +1255,6 @@ void() PlayerPostThink =
 		bprint("Alternate Nightmare Mode Enabled\n");
 		bprint("Level must be restarted to apply changes.\n");
 	}
-	if (skill < 3)
-		cvar_set("temp1", ftos((cvar("temp1") | SET_COPPERNIGHTMARE) - SET_COPPERNIGHTMARE));
 	
 	if (lastmanstanding())
 		sprint(self, "Last Man Standing coming soon!\n");
