@@ -253,7 +253,7 @@ void() sham_magic10    =[      $magic10,      sham_magic11   ]
 {CastLightning();};
 void() sham_magic11    =[      $magic11,      sham_magic12   ]
 {
-if (skill == 3)
+if (skill == 3 && !coppernightmare())
 	CastLightning();
 };
 void() sham_magic12    =[      $magic12,      sham_run1	   ] {};

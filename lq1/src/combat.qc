@@ -105,6 +105,9 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	local	entity	oldself;
 	local	float	save;
 	local	float	take;
+	
+	//Damage is the damage that is being dealt.
+	//Take is the amount of that damage that will actually be dealt to the health bar
 
 	if (!targ.takedamage)
 		return;
@@ -118,10 +121,15 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 			damage = damage * 8;
 		else
 			damage = damage * 4;
+		
+	take = damage;
+	
+	//Reduced self damage in copper nightmare, so rocket jumping is still viable
+	if (coppernightmare() && attacker == targ)
+		take = take * 0.5;
 
 // save damage based on the target's armor level
-
-	save = ceil(targ.armortype*damage);
+	save = ceil(targ.armortype*take);
 	if (save >= targ.armorvalue)
 	{
 		save = targ.armorvalue;
@@ -130,7 +138,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	}
 	
 	targ.armorvalue = targ.armorvalue - save;
-	take = ceil(damage-save);
+	take = ceil(take-save);
 
 // add to the damage total for clients, which will be sent as a single
 // message at the end of the frame
@@ -206,7 +214,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	{
 		self.th_pain (attacker, take);
 	// nightmare mode monsters don't go into pain frames often
-		if (skill == 3)
+		if (skill == 3 && !coppernightmare())
 			self.pain_finished = time + 5;		
 	}
 
@@ -292,3 +300,10 @@ void(entity attacker, float damage) T_BeamDamage =
 	}
 };
 
+float() coppernightmare = 
+{
+	if (cvar("temp1") & SET_COPPERNIGHTMARE && skill == 3)
+		return TRUE;
+	else
+		return FALSE;
+}

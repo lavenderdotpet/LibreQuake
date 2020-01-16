@@ -41,12 +41,23 @@ void() SetChangeParms =
 // remove items
 	self.items = self.items - (self.items & 
 	(IT_KEY1 | IT_KEY2 | IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD) );
+
+// bind health to be between 50 and 100 (or 25 and 50 if playing on copper nightmare)
+	if (coppernightmare())
+	{
+		if (self.health > 50)
+			self.health = 50;
+		if (self.health < 25)
+			self.health = 25;
+	}
+	else
+	{
+		if (self.health > 100)
+			self.health = 100;
+		if (self.health < 50)
+			self.health = 50;
+	}
 	
-// cap super health
-	if (self.health > 100)
-		self.health = 100;
-	if (self.health < 50)
-		self.health = 50;
 	parm1 = self.items;
 	parm2 = self.health;
 	parm3 = self.armorvalue;
@@ -96,6 +107,23 @@ void() DecodeLevelParms =
 	self.ammo_cells = parm7;
 	self.weapon = parm8;
 	self.armortype = parm9 * 0.01;
+	
+	//Bind health to be between 50 and 100 (or 25 and 50 if playing on copper nightmare)
+	//This is now done in the decode as well, to ensure the settings take effect on restart in copper nightmare
+	if (coppernightmare())
+	{
+		if (self.health > 50)
+			self.health = 50;
+		if (self.health < 25)
+			self.health = 25;
+	}
+	else
+	{
+		if (self.health > 100)
+			self.health = 100;
+		if (self.health < 50)
+			self.health = 50;
+	}
 	
 	//Fix for the engine-side disappearing runes bug
 	//Serverflags are stored in parm16 when changing levels since save files are bugged with serverflags
@@ -495,12 +523,10 @@ void() PutClientInServer =
 	spot = SelectSpawnPoint ();
 
 	self.classname = "player";
-	self.health = 100;
 	self.takedamage = DAMAGE_AIM;
 	self.solid = SOLID_SLIDEBOX;
 	self.movetype = MOVETYPE_WALK;
 	self.show_hostile = 0;
-	self.max_health = 100;
 	self.flags = FL_CLIENT;
 	self.air_finished = time + 12;
 	self.dmg = 2;   		// initial water damage
@@ -510,6 +536,17 @@ void() PutClientInServer =
 	self.invincible_finished = 0;
 	self.effects = 0;
 	self.invincible_time = 0;
+	
+	if (coppernightmare() && !deathmatch)
+	{
+		self.health = 50;
+		self.max_health = 50;
+	}
+	else
+	{
+		self.health = 100;
+		self.max_health = 100;
+	}
 
 	DecodeLevelParms ();
 
@@ -1211,6 +1248,16 @@ void() PlayerPostThink =
 	
 	CheckPowerups ();
 	
+	if (skill == 4)
+	{
+		localcmd("skill 3\n");
+		cvar_set("temp1", ftos(cvar("temp1") | SET_COPPERNIGHTMARE));
+		bprint("Alternate Nightmare Mode Enabled\n");
+		bprint("Level must be restarted to apply changes.\n");
+	}
+	if (skill < 3)
+		cvar_set("temp1", ftos((cvar("temp1") | SET_COPPERNIGHTMARE) - SET_COPPERNIGHTMARE));
+	
 	if (lastmanstanding())
 		sprint(self, "Last Man Standing coming soon!\n");
 };
@@ -1258,6 +1305,9 @@ void() ClientDisconnect =
 	sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 	set_suicide_frame ();
 };
+
+void() OgreFireGrenade;
+void() train_blocked;
 
 /*
 ===========
@@ -1576,21 +1626,51 @@ void(entity targ, entity attacker) ClientObituary =
 				return;
 			}
 			if (attacker.solid == SOLID_BSP && attacker != world)
-			{	
-				bprint (LOC_DEATH_SQUISH);
-				bprint ("\n");
-				return;
+			{
+				//This pertains to the firebar map hack
+				if (attacker.classname == "train" && attacker.touch == train_blocked)
+				{
+					bprint (LOC_DEATH_FIREBAR);
+					bprint ("\n");
+					return;
+				}
+				else
+				{
+					bprint (LOC_DEATH_SQUISH);
+					bprint ("\n");
+					return;
+				}
 			}
 			if (attacker.classname == "trap_shooter" || attacker.classname == "trap_spikeshooter")
 			{
-				if (attacker.spawnflags & 2) {
+				if (attacker.spawnflags & 2)
+				{
 					bprint (LOC_DEATH_TRAP_LASER);
 					bprint ("\n");
-				} else {
+				}
+				else
+				{
 					bprint (LOC_DEATH_TRAP_SPIKE);
 					bprint ("\n");
 				}
 				return;
+			}
+			//These death messages are special and pertain to evil map hacks
+			//If the mapmaker is not using evil map hacks, these will never show up
+			if (attacker.classname == "info_notnull")
+			{
+				if (attacker.use == W_FireRocket)
+				{
+					bprint (LOC_DEATH_TRAP_ROCKET);
+					bprint ("\n");
+					return;
+				}
+				else if (attacker.use == W_FireGrenade || attacker.use == OgreFireGrenade)
+				{
+					bprint (LOC_DEATH_TRAP_GRENADE);
+					bprint ("\n");
+					return;
+				}
 			}
 			if (attacker.classname == "fireball")
 			{

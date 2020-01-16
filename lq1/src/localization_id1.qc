@@ -100,8 +100,11 @@
 //Environmental and Misc. death messages
 #define LOC_DEATH_EXPLO_BOX 	" exploded"
 #define LOC_DEATH_SQUISH 		" was squished"
+#define LOC_DEATH_FIREBAR	 	" was burned by a fire bar"
 #define LOC_DEATH_TRAP_SPIKE	" was spiked"
 #define LOC_DEATH_TRAP_LASER	" was lasered"
+#define LOC_DEATH_TRAP_ROCKET 	" was rocketed"
+#define LOC_DEATH_TRAP_GRENADE 	" was grenaded"
 #define LOC_DEATH_FIREBALL		" ate a lavaball"
 #define LOC_DEATH_LEAVE			" tried to leave"
 #define LOC_DEATH_DROWN1		" sleeps with the fishes"

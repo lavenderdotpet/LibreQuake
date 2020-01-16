@@ -5,7 +5,7 @@ float() weaponstay =
 {
 	if (deathmatch || coop)
 	{
-		if (deathmatch != 1 && deathmatch != 8)
+		if (deathmatch != 1)
 		{
 			return 1;
 		}
@@ -70,7 +70,7 @@ float() supermode2 =
 //Rebalances the weapons to play more like Quake III
 float() arenamode =
 {
-	if (deathmatch == 8)
+	if (deathmatch == 8 || deathmatch == 9)
 	{
 		return 1;
 	}

@@ -417,7 +417,7 @@ some monsters refire twice automatically
 void(float normal) SUB_AttackFinished =
 {
 	self.cnt = 0;		// refire count for nightmare
-	if (skill != 3)
+	if (skill != 3 || coppernightmare())
 		self.attack_finished = time + normal;
 };
 
@@ -425,7 +425,7 @@ float (entity targ) visible;
 
 void (void() thinkst) SUB_CheckRefire =
 {
-	if (skill != 3)
+	if (skill != 3 || coppernightmare())
 		return;
 	if (self.cnt == 1)
 		return;

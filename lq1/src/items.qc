@@ -273,11 +273,11 @@ void() armor_touch =
 	
 	//Armor works different in arenamode, so use a different touch function
 	//Disabled for now.
-	/*if (arenamode())
+	if (arenamode())
 	{
 		armor_touch_arena();
 		return;
-	}*/
+	}
 	
 	if (other.health <= 0)
 		return;
@@ -563,14 +563,21 @@ void() weapon_touch =
 	
 	stemp = self;
 	self = other;
-
-	if (!deathmatch)
-		self.weapon = new;
-	else
-		Deathmatch_Weapon (old, new);
-
-	W_SetCurrentAmmo();
-
+	
+	if (!(cvar("temp1") & SET_NOSWITCH))
+	{
+		if (!deathmatch)
+		{
+			self.weapon = new;
+			W_SetCurrentAmmo();
+		}
+		else
+		{
+			Deathmatch_Weapon (old, new);
+			W_SetCurrentAmmo();
+		}
+	}
+	
 	self = stemp;
 
 	if (leave)

@@ -690,8 +690,24 @@ void() SUB_Remove;
 //	combat.qc
 //
 void(entity targ, entity inflictor, entity attacker, float damage) T_Damage;
+float() coppernightmare;
 
 
 float (entity e, float healamount, float ignore) T_Heal; // health function
 
 float(entity targ, entity inflictor) CanDamage;
+
+//Additional settings added by LibreQuake, stored in temp1
+
+//No automatic switch when picking up a new weapon
+#define SET_NOSWITCH 1
+//When attempting to switch from the rocket or grenade launcher to another weapon, always switch off
+//Saves you from situations where you try to switch to a weapon that's out of ammo, then you blow yourself up
+#define SET_SAFEROCKETS 2
+//Enables the alternative nightmare setting from copper where your max health is reduced
+//Can also be enabled by setting your skill to 4. (The game will set it back to 3, but it will still enable this.)
+#define SET_COPPERNIGHTMARE 4
+
+
+
+

@@ -896,8 +896,11 @@ float() W_BestWeapon =
 	local	float	it;
 	
 	it = self.items;
-
-	if (self.waterlevel <= 1 && self.ammo_cells >= 1 && (it & IT_LIGHTNING) )
+	
+	//Zungryware: Changed it so being in water at all prevents the game from switching you to LG
+	//Prevents some dumb autoswitch kills
+	//Previously was "self.waterlevel <= 1"
+	if (self.waterlevel <= 0 && self.ammo_cells >= 1 && (it & IT_LIGHTNING) )
 			return IT_LIGHTNING;
 	if(self.ammo_nails >= 2 && (it & IT_SUPER_NAILGUN) )
 		return IT_SUPER_NAILGUN;
@@ -1089,6 +1092,12 @@ void() W_ChangeWeapon =
 	{	// don't have the ammo
 		sprint (self, LOC_NO_AMMO);
 		sprint (self, "\n");
+		// safe rockets setting
+		if (cvar("temp1") & SET_SAFEROCKETS && (self.weapon == IT_ROCKET_LAUNCHER || self.weapon == IT_GRENADE_LAUNCHER))
+		{
+			self.weapon = W_BestWeapon ();
+			W_SetCurrentAmmo ();
+		}
 		return;
 	}
 
@@ -1304,7 +1313,7 @@ void() QuadCheat =
 
 void() debug_func =
 {
-	bprint(ftos(time));
+	bprint(ftos(skill));
 	bprint("\n");
 }
 
@@ -1329,7 +1338,7 @@ void() ImpulseCommands =
 	if (self.impulse == 12)
 		CycleWeaponReverseCommand ();
 	
-	//if (self.impulse == 77) {debug_func ();}
+	if (self.impulse == 77) {debug_func ();}
 		
 	if (self.impulse == 255)
 		QuadCheat ();
