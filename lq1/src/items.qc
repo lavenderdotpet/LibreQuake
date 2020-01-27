@@ -171,7 +171,8 @@ void() health_touch =
 	sprint(other, LOC_PICKUP_HEALTH);
 	s = ftos(self.healamount);
 	sprint(other, s);
-	sprint(other, " health\n");
+	sprint(other, LOC_HEALTH);
+	sprint(other, "\n");
 	
 // health touch sound
 	sound(other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
@@ -184,12 +185,11 @@ void() health_touch =
 	// Megahealth = rot down the player's super health
 	if (self.healtype == 2)
 	{
-
-		//But don't rot if they are already rotting in singleplayer
-		if (!(other.items & IT_SUPERHEALTH) || deathmatch)
-			self.think = item_megahealth_rot;
-		else
+		//But don't rot if they are already above max hp (and it isn't deathmatch)
+		if (other.health > other.max_health && !deathmatch)
 			self.think = item_megahealth_hold;
+		else
+			self.think = item_megahealth_rot;
 		self.nextthink = time + 5;
 		other.items = other.items | IT_SUPERHEALTH;
 		self.owner = other;

@@ -29,6 +29,7 @@
 #define LOC_PICKUP_HEALTH	"You receive "
 #define LOC_BACKPACK		" from a backpack"
 #define LOC_BONUS			" is coming for you all!!!"
+#define LOC_HEALTH			" health"
 #define LOC_ARMOR			" armor"
 
 //Item names
@@ -49,7 +50,7 @@
 #define LOC_NETNAME_SUPER_NAILGUN		"the Super Nailgun"
 #define LOC_NETNAME_GRENADE_LAUNCHER	"the Grenade Launcher"
 #define LOC_NETNAME_ROCKET_LAUNCHER		"the Rocket Launcher"
-#define LOC_NETNAME_LIGHTNING			"the Lightning Cannon"
+#define LOC_NETNAME_LIGHTNING			"the Thunder Cannon"
 #define LOC_NETNAME_RAILGUN				"the Railgun"
 
 #define LOC_NETNAME_SHELLS	"shells"
@@ -92,7 +93,7 @@
 #define LOC_DEATH_MONSTER		" was slain by some abomnination"
 
 //Environmental and Misc. death messages
-#define LOC_DEATH_EXPLO_BOX 	" exploded"
+#define LOC_DEATH_EXPLO_BOX 	" was detonated by an explosive crate"
 #define LOC_DEATH_SQUISH 		" was crushed"
 #define LOC_DEATH_FIREBAR	 	" was seared by a fire bar"
 #define LOC_DEATH_TRAP_SPIKE	" was shot by a spike turret"
@@ -189,9 +190,9 @@
 #define LOC_DEATH_ROCKET_LAUNCHER_Q3B	"'s pale horse"
 
 #define LOC_DEATH_LIGHTNING_1A	" was fried by "
-#define LOC_DEATH_LIGHTNING_1B	"'s Lightning Cannon"
+#define LOC_DEATH_LIGHTNING_1B	"'s Thunder Cannon"
 #define LOC_DEATH_LIGHTNING_2A	" was given shock treatment by "
-#define LOC_DEATH_LIGHTNING_2B	"'s Lightning Cannon"
+#define LOC_DEATH_LIGHTNING_2B	"'s Thunder Cannon"
 #define LOC_DEATH_LIGHTNING_QA	" took "
 #define LOC_DEATH_LIGHTNING_QB	"'s last train to glory"
 #define LOC_DEATH_LIGHTNING_D1A	" was electrocuted by "

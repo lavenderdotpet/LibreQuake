@@ -272,13 +272,19 @@ void(entity attacker, float damage)	sham_pain =
 	sound (self, CHAN_VOICE, "shambler/shurt2.wav", 1, ATTN_NORM);
 
 	if (self.health <= 0)
-		return;		// allready dying, don't go into pain frame
+		return;		// already dying, don't go into pain frame
 
 	if (random()*400 > damage)
 		return;		// didn't flinch
 
 	if (self.pain_finished > time)
 		return;
+	
+	if (self.owner) {
+		self.owner.frame = 2;
+		self.owner = 0;
+	}
+	
 	self.pain_finished = time + 2;
 		
 	sham_pain1 ();
