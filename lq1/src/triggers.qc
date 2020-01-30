@@ -555,9 +555,13 @@ void() hurt_on =
 
 void() hurt_touch =
 {
-	if (other.takedamage)
+	if (other.takedamage && self.nextthink < time)
 	{
-		self.solid = SOLID_NOT;
+		//ZungryWare: This fix makes it so nextthink is used to track cooldowns instead of setting its solidity
+		//Fixes a bug where the trigger_hurt stops working if force_retouch is set while it's on cooldown
+		//Jesus fuck this game is buggy
+		
+		//self.solid = SOLID_NOT;
 		T_Damage (other, self, self, self.dmg);
 		self.think = hurt_on;
 		self.nextthink = time + 1;

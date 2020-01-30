@@ -1730,19 +1730,6 @@ void(entity targ, entity attacker) ClientObituary =
 				return;
 			}
 			
-			// fell to their death
-			if (targ.deathtype == "falling" || (attacker.classname == "trigger_hurt" && attacker.dmg == 666000))
-			{
-				targ.deathtype = "";
-				if (random() > .1) {
-					bprint (LOC_DEATH_FALL_1);
-				} else {
-					bprint (LOC_DEATH_FALL_2);
-				}
-				bprint ("\n");
-				return;
-			}
-			
 			// fell out into space
 			if (attacker.classname == "trigger_hurt" && attacker.dmg == 666001)
 			{
@@ -1758,10 +1745,23 @@ void(entity targ, entity attacker) ClientObituary =
 			// fell out into the void
 			if (attacker.classname == "trigger_hurt" && attacker.dmg == 666002)
 			{
-				if (random() > .5) {
+				if (random() > .25) {
 					bprint (LOC_DEATH_VOID_1);
 				} else {
 					bprint (LOC_DEATH_VOID_2);
+				}
+				bprint ("\n");
+				return;
+			}
+			
+			// fell to their death
+			if (targ.deathtype == "falling" || (attacker.classname == "trigger_hurt" && attacker.dmg == 666000))
+			{
+				targ.deathtype = "";
+				if (random() > .1) {
+					bprint (LOC_DEATH_FALL_1);
+				} else {
+					bprint (LOC_DEATH_FALL_2);
 				}
 				bprint ("\n");
 				return;
