@@ -1,3 +1,11 @@
+/*
+==============================================================================
+
+FISH
+
+==============================================================================
+*/
+
 $frame attack1 attack2 attack3 attack4 attack5 attack6 
 $frame attack7 attack8 attack9 attack10 attack11 attack12 attack13 
 $frame attack14 attack15 attack16 attack17 attack18 
@@ -13,26 +21,24 @@ $frame swim18
 $frame pain1 pain2 pain3 pain4 pain5 pain6 pain7 pain8 
 $frame pain9 
 
-void() swimmonster_start;
-
-void() f_stand1  =[      $swim1, f_stand2 ] {ai_stand();};
-void() f_stand2  =[      $swim2, f_stand3 ] {ai_stand();};
-void() f_stand3  =[      $swim3, f_stand4 ] {ai_stand();};
-void() f_stand4  =[      $swim4, f_stand5 ] {ai_stand();};
-void() f_stand5  =[      $swim5, f_stand6 ] {ai_stand();};
-void() f_stand6  =[      $swim6, f_stand7 ] {ai_stand();};
-void() f_stand7  =[      $swim7, f_stand8 ] {ai_stand();};
-void() f_stand8  =[      $swim8, f_stand9 ] {ai_stand();};
-void() f_stand9  =[      $swim9, f_stand10  ] {ai_stand();};
-void() f_stand10 =[      $swim10, f_stand11 ] {ai_stand();};
-void() f_stand11 =[      $swim11, f_stand12 ] {ai_stand();};
-void() f_stand12 =[      $swim12, f_stand13 ] {ai_stand();};
-void() f_stand13 =[      $swim13, f_stand14 ] {ai_stand();};
-void() f_stand14 =[      $swim14, f_stand15 ] {ai_stand();};
-void() f_stand15 =[      $swim15, f_stand16 ] {ai_stand();};
-void() f_stand16 =[      $swim16, f_stand17 ] {ai_stand();};
-void() f_stand17 =[      $swim17, f_stand18 ] {ai_stand();};
-void() f_stand18 =[      $swim18, f_stand1 ] {ai_stand();};
+void() f_stand1		=[      $swim1, f_stand2	] {ai_stand();};
+void() f_stand2		=[      $swim2, f_stand3	] {ai_stand();};
+void() f_stand3		=[      $swim3, f_stand4	] {ai_stand();};
+void() f_stand4		=[      $swim4, f_stand5	] {ai_stand();};
+void() f_stand5		=[      $swim5, f_stand6	] {ai_stand();};
+void() f_stand6		=[      $swim6, f_stand7	] {ai_stand();};
+void() f_stand7		=[      $swim7, f_stand8	] {ai_stand();};
+void() f_stand8		=[      $swim8, f_stand9	] {ai_stand();};
+void() f_stand9		=[      $swim9, f_stand10	] {ai_stand();};
+void() f_stand10	=[      $swim10, f_stand11	] {ai_stand();};
+void() f_stand11	=[      $swim11, f_stand12	] {ai_stand();};
+void() f_stand12	=[      $swim12, f_stand13	] {ai_stand();};
+void() f_stand13	=[      $swim13, f_stand14	] {ai_stand();};
+void() f_stand14	=[      $swim14, f_stand15	] {ai_stand();};
+void() f_stand15	=[      $swim15, f_stand16	] {ai_stand();};
+void() f_stand16	=[      $swim16, f_stand17	] {ai_stand();};
+void() f_stand17	=[      $swim17, f_stand18	] {ai_stand();};
+void() f_stand18	=[      $swim18, f_stand1	] {ai_stand();};
 
 void() f_walk1  =[      $swim1, f_walk2 ] {ai_walk(8);};
 void() f_walk2  =[      $swim2, f_walk3 ] {ai_walk(8);};
@@ -104,7 +110,7 @@ void() f_attack17       =[      $attack17,      f_attack18] {ai_charge(10);};
 void() f_attack18       =[      $attack18,      f_run1    ] {ai_charge(10);};
 
 void() f_death1 =[      $death1,        f_death2        ] {
-sound (self, CHAN_VOICE, "fish/death.wav", 1, ATTN_NORM);
+	sound (self, CHAN_VOICE, "fish/death.wav", 1, ATTN_NORM);
 };
 void() f_death2 =[      $death2,        f_death3        ] {};
 void() f_death3 =[      $death3,        f_death4        ] {self.solid = SOLID_NOT;};

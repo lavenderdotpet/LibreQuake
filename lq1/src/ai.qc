@@ -1,8 +1,6 @@
 void() movetarget_f;
 void() t_movetarget;
 void() knight_walk1;
-void() knight_bow6;
-void() knight_bow1;
 void(entity etemp, entity stemp, entity stemp, float dmg) T_Damage;
 /*
 
@@ -705,13 +703,11 @@ void(float dist) ai_run =
 	
 	if (self.attack_state == AS_MISSILE)
 	{
-//dprint ("ai_run_missile\n");
 		ai_run_missile ();
 		return;
 	}
 	if (self.attack_state == AS_MELEE)
 	{
-//dprint ("ai_run_melee\n");
 		ai_run_melee ();
 		return;
 	}
@@ -728,4 +724,6 @@ void(float dist) ai_run =
 // head straight in
 	movetogoal (dist);		// done in C code...
 };
+
+
 
