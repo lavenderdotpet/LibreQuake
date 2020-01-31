@@ -7,6 +7,22 @@ void() monster_death_use;
 
 //============================================================================
 
+float() nightmare = 
+{
+	if (skill == 3 && !(cvar("temp1") & SET_COPPERNIGHTMARE))
+		return TRUE;
+	else
+		return FALSE;
+}
+
+float() coppernightmare = 
+{
+	if (skill == 3 && cvar("temp1") & SET_COPPERNIGHTMARE)
+		return TRUE;
+	else
+		return FALSE;
+}
+
 /*
 ============
 CanDamage
@@ -214,7 +230,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	{
 		self.th_pain (attacker, take);
 	// nightmare mode monsters don't go into pain frames often
-		if (skill == 3 && !coppernightmare())
+		if (nightmare())
 			self.pain_finished = time + 5;		
 	}
 
@@ -300,10 +316,4 @@ void(entity attacker, float damage) T_BeamDamage =
 	}
 };
 
-float() coppernightmare = 
-{
-	if (cvar("temp1") & SET_COPPERNIGHTMARE && skill == 3)
-		return TRUE;
-	else
-		return FALSE;
-}
+

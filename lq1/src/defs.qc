@@ -705,7 +705,6 @@ float(entity targ, entity inflictor) CanDamage;
 //Saves you from situations where you try to switch to a weapon that's out of ammo, then you blow yourself up
 #define SET_SAFEROCKETS 2
 //Enables the alternative nightmare setting from copper where your max health is reduced
-//Can also be enabled by setting your skill to 4. (The game will set it back to 3, but it will still enable this.)
 #define SET_COPPERNIGHTMARE 4
 
 

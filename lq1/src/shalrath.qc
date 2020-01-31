@@ -161,7 +161,7 @@ void() ShalHome =
 		return;
 	}
 	dir = normalize(vtemp - self.origin);
-	if (skill == 3 && !coppernightmare())
+	if (nightmare())
 		self.velocity = dir * 350;
 	else
 		self.velocity = dir * 250;

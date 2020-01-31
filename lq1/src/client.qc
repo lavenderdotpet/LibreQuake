@@ -1248,14 +1248,6 @@ void() PlayerPostThink =
 	
 	CheckPowerups ();
 	
-	if (skill == 4)
-	{
-		localcmd("skill 3\n");
-		cvar_set("temp1", ftos(cvar("temp1") | SET_COPPERNIGHTMARE));
-		bprint("Alternate Nightmare Mode Enabled\n");
-		bprint("Level must be restarted to apply changes.\n");
-	}
-	
 	if (lastmanstanding())
 		sprint(self, "Last Man Standing coming soon!\n");
 };

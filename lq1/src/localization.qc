@@ -69,9 +69,9 @@
 //Misc. entity messages
 #define LOC_COUNTER_COUNT_1A	""
 #define LOC_COUNTER_COUNT_1B	" more to go..."
-#define LOC_COUNTER_COUNT_2		"You have more to go..."
+#define LOC_COUNTER_COUNT_2		"There are several more to go..."
 #define LOC_COUNTER_COMPLETE	"Sequence finished!"
-#define LOC_SECRET				"You discovered a secret area!"
+#define LOC_SECRET				"You discovered a secret!"
 #define LOC_RUNE				"You got a rune!"
 
 //Monster death messages
