@@ -7,22 +7,6 @@ void() monster_death_use;
 
 //============================================================================
 
-float() nightmare = 
-{
-	if (skill == 3 && !(cvar("temp1") & SET_COPPERNIGHTMARE))
-		return TRUE;
-	else
-		return FALSE;
-}
-
-float() coppernightmare = 
-{
-	if (skill == 3 && cvar("temp1") & SET_COPPERNIGHTMARE)
-		return TRUE;
-	else
-		return FALSE;
-}
-
 /*
 ============
 CanDamage

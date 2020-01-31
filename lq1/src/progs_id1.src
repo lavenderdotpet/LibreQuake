@@ -4,7 +4,7 @@ localization_id1.qc	//localization file
 quake.qc
 defs.qc
 subs.qc
-deathmatch.qc
+gamemodes.qc
 fight.qc
 ai.qc
 combat.qc
