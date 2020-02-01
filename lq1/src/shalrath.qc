@@ -180,7 +180,7 @@ void() ShalMissileTouch =
 
 	if (other.classname == "monster_zombie")
 		T_Damage (other, self, self, 110);	
-	T_RadiusDamage (self, self.owner, 40, world);
+	T_RadiusDamage (self, self.owner, 40, world, "");
 	sound (self, CHAN_WEAPON, "weapons/r_exp3.wav", 1, ATTN_NORM);
 
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);

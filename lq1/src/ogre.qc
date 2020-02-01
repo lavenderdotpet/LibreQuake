@@ -47,7 +47,7 @@ $frame pull1 pull2 pull3 pull4 pull5 pull6 pull7 pull8 pull9 pull10 pull11
 
 void() OgreGrenadeExplode =
 {
-	T_RadiusDamage (self, self.owner, 40, world);
+	T_RadiusDamage (self, self.owner, 40, world, "");
 	sound (self, CHAN_VOICE, "weapons/r_exp3.wav", 1, ATTN_NORM);
 
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);

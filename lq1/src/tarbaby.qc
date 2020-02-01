@@ -164,7 +164,7 @@ void() tbaby_die1	=[ $exp,	tbaby_die2	]
 };
 void() tbaby_die2	=[ $exp,	tbaby_run1	] 
 {
-	T_RadiusDamage (self, self, 120, world);
+	T_RadiusDamage (self, self, 120, world, "");
 
 	sound (self, CHAN_VOICE, "blob/death1.wav", 1, ATTN_NORM);
 	self.origin = self.origin - 8*normalize(self.velocity);

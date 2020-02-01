@@ -691,7 +691,7 @@ void(float dist) ai_run =
 		self.search_time = time + 5;
 
 // look for other coop players
-	if (coop && self.search_time < time)
+	if (cooperative() && self.search_time < time)
 	{
 		if (FindTarget ())
 			return;

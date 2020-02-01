@@ -31,7 +31,8 @@ void() door_go_up;
 
 void() door_blocked =
 {
-	T_Damage (other, self, self, self.dmg);
+	other.deathtype = "squish";
+	T_Damage (other, self, self.goalentity, self.dmg);
 	
 // if a door has a negative wait, it would never come back if blocked,
 // so let it just squash the object to death real fast
@@ -137,6 +138,7 @@ void() door_fire =
 	starte = self;
 	do
 	{
+		self.goalentity = activator;
 		door_go_up ();
 		self = self.enemy;
 	} while ( (self != starte) && (self != world) );

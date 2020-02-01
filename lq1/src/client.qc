@@ -28,7 +28,27 @@ void() info_intermission =
 {
 };
 
+void(float track) ChangeCDTrack =
+{
+	WriteByte (MSG_ALL, SVC_CDTRACK);
+	WriteByte (MSG_ALL, track);
+#ifndef qw
+	WriteByte (MSG_ALL, 3);
+#endif
+}
 
+float(entity p1, entity p2) OnSameTeam =
+{
+#ifdef qw
+	if (infokey(p1, "team") == "")
+		return FALSE;
+	return infokey(p1, "team") == infokey(p2, "team");
+#else
+	if (p1.team == 0)
+		return FALSE;
+	return p1.team == p2.team;
+#endif
+}
 
 void() SetChangeParms =
 {
@@ -162,7 +182,7 @@ entity() FindIntermission =
 	if (spot)
 		return spot;
 	
-// testinfo_player_start is only found in regioned levels
+// testplayerstart is only found in regioned levels
 	spot = find (world, classname, "testplayerstart");
 	if (spot)
 		return spot;
@@ -176,10 +196,22 @@ entity() FindIntermission =
 string nextmap;
 void() GotoNextMap =
 {
-	if (cvar("samelevel"))	// if samelevel is set, stay on same level
+	if (cvar("samelevel") == 1)	// if samelevel is set, stay on same level
+	{
 		changelevel (mapname);
+	}
 	else
+	{
+#ifdef qw
+		local string newmap = infokey(world, mapname);
+		if (newmap != "")
+			changelevel (newmap);
+		else
+			changelevel (nextmap);
+#else
 		changelevel (nextmap);
+#endif
+	}
 };
 
 
@@ -198,13 +230,12 @@ void() ExitIntermission =
 //
 // run some text if at the end of an episode
 //
+#ifndef qw
 	if (intermission_running == 2)
 	{
 		if (world.model == "maps/e1m7.bsp")
 		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
+			ChangeCDTrack(2);
 			if (!cvar("registered"))
 			{
 				WriteByte (MSG_ALL, SVC_FINALE);
@@ -219,9 +250,7 @@ void() ExitIntermission =
 		}
 		else if (world.model == "maps/e2m6.bsp")
 		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
+			ChangeCDTrack(2);
 
 			WriteByte (MSG_ALL, SVC_FINALE);
 			WriteString (MSG_ALL, LOC_EPILOGUE_2);
@@ -229,9 +258,7 @@ void() ExitIntermission =
 		}
 		else if (world.model == "maps/e3m6.bsp")
 		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
+			ChangeCDTrack(2);
 
 			WriteByte (MSG_ALL, SVC_FINALE);
 			WriteString (MSG_ALL, LOC_EPILOGUE_3);
@@ -239,9 +266,7 @@ void() ExitIntermission =
 		}
 		else if (world.model == "maps/e4m7.bsp")
 		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
+			ChangeCDTrack(2);
 
 			WriteByte (MSG_ALL, SVC_FINALE);
 			WriteString (MSG_ALL, LOC_EPILOGUE_4);
@@ -268,6 +293,7 @@ void() ExitIntermission =
 		
 	}
 	GotoNextMap();
+#endif
 };
 
 /*
@@ -300,28 +326,40 @@ void() execute_changelevel =
 	else
 		intermission_exittime = time + 2;
 	
-	WriteByte (MSG_ALL, SVC_CDTRACK);
-	WriteByte (MSG_ALL, 3);
-	WriteByte (MSG_ALL, 3);
-	
 	pos = FindIntermission ();
+	
+	ChangeCDTrack(3);
+	
+#ifdef qw
+	WriteByte (MSG_ALL, SVC_INTERMISSION);
+	WriteCoord (MSG_ALL, pos.origin_x);
+	WriteCoord (MSG_ALL, pos.origin_y);
+	WriteCoord (MSG_ALL, pos.origin_z);
+	WriteAngle (MSG_ALL, pos.mangle_x);
+	WriteAngle (MSG_ALL, pos.mangle_y);
+	WriteAngle (MSG_ALL, pos.mangle_z);
+#endif
 
 	other = find (world, classname, "player");
 	while (other != world)
 	{
+#ifndef qw
 		other.view_ofs = '0 0 0';
 		other.angles = other.v_angle = pos.mangle;
 		other.fixangle = TRUE;		// turn this way immediately
 		other.nextthink = time + 0.5;
+#endif
 		other.takedamage = DAMAGE_NO;
 		other.solid = SOLID_NOT;
 		other.movetype = MOVETYPE_NONE;
 		other.modelindex = 0;
 		setorigin (other, pos.origin);
 		other = find (other, classname, "player");
-	}	
+	}
 
+#ifndef qw
 	WriteByte (MSG_ALL, SVC_INTERMISSION);
+#endif
 };
 
 
@@ -329,18 +367,26 @@ void() changelevel_touch =
 {
 	if (other.classname != "player")
 		return;
-
+		
+#ifdef qw
+	if ((cvar("samelevel") == 2) || ((cvar("samelevel") == 3) && (mapname != "start")))
+	{
+		T_Damage (other, self, self, 50000);
+		return;
+	}
+#else
 	if ((cvar("noexit") == 1) || ((cvar("noexit") == 2) && (mapname != "start")))
 	{
 		T_Damage (other, self, self, 50000);
 		return;
 	}
+#endif
 
-	if (coop || deathmatch)
+	if (cooperative() || deathmatch)
 	{
-		bprint (other.netname);
-		bprint (LOC_EXIT);
-		bprint ("\n");
+		bprint (PRINT_HIGH, other.netname);
+		bprint (PRINT_HIGH, LOC_EXIT);
+		bprint (PRINT_HIGH, "\n");
 	}
 	
 	nextmap = self.map;
@@ -387,7 +433,7 @@ void() set_suicide_frame;
 // called by ClientKill and DeadThink
 void() respawn =
 {
-	if (coop)
+	if (cooperative())
 	{
 		// make a copy of the dead body for appearances sake
 		CopyToBodyQue (self);
@@ -421,13 +467,16 @@ Player entered the suicide command
 */
 void() ClientKill =
 {
-	if ((intermission_running)&&((coop)||(deathmatch)))  // not allowed during intermission
+	if ((intermission_running)&&((cooperative())||(deathmatch)))  // not allowed during intermission
 		return;
-	bprint (self.netname);
-	bprint (LOC_DEATH_SUICIDE);
-	bprint ("\n");
+	bprint (PRINT_MEDIUM, self.netname);
+	bprint (PRINT_MEDIUM, LOC_DEATH_SUICIDE);
+	bprint (PRINT_MEDIUM, "\n");
 	set_suicide_frame ();
 	self.modelindex = modelindex_player;
+#ifdef qw
+	logfrag (self, self);
+#endif
 	self.frags = self.frags - 2;	// extra penalty
 	respawn ();
 };
@@ -456,7 +505,7 @@ entity() SelectSpawnPoint =
 		return spot;
 		
 // choose a info_player_deathmatch point
-	if (coop)
+	if (cooperative())
 	{
 		lastspawn = find(lastspawn, classname, "info_player_coop");
 		if (lastspawn == world)
@@ -504,6 +553,8 @@ entity() SelectSpawnPoint =
 	
 	return spot;
 };
+
+
 
 /*
 ===========
@@ -580,7 +631,7 @@ void() PutClientInServer =
 
 	player_stand1 ();
 	
-	if (deathmatch || coop)
+	if (deathmatch || cooperative())
 	{
 		makevectors(self.angles);
 		spawn_tfog (self.origin + v_forward*20);
@@ -750,8 +801,10 @@ void() NextLevel =
 		}
 	}
 
-	nextmap = o.map;
+#ifndef qw
 	gameover = TRUE;
+#endif
+	nextmap = o.map;
 	
 	if (o.nextthink < time)
 	{
@@ -769,24 +822,26 @@ Exit deathmatch games upon conditions
 */
 void() CheckRules =
 {
-	local	float		timelimit;
-	local	float		fraglimit;
+	local	float	timelimit2;
+	local	float	fraglimit2;
 	
-	if (gameover)	// someone else quit the game already
+#ifndef qw
+	if (gameover)
 		return;
-		
-	timelimit = cvar("timelimit") * 60;
-	fraglimit = cvar("fraglimit");
+#endif
+	
+	timelimit2 = cvar("timelimit") * 60;
+	fraglimit2 = cvar("fraglimit");
 	
 //	if (timelimit && time >= timelimit)
-	if (deathmatch && timelimit && time >= timelimit)	// 1998-07-27 Timelimit/Fraglimit fix by Maddes
+	if (deathmatch && timelimit2 && time >= timelimit2)	// 1998-07-27 Timelimit/Fraglimit fix by Maddes
 	{
 		NextLevel ();
 		return;
 	}
 	
 //	if (fraglimit && self.frags >= fraglimit)
-	if (deathmatch && fraglimit && self.frags >= fraglimit)	// 1998-07-27 Timelimit/Fraglimit fix by Maddes
+	if (deathmatch && fraglimit2 && self.frags >= fraglimit2)	// 1998-07-27 Timelimit/Fraglimit fix by Maddes
 	{
 		NextLevel ();
 		return;
@@ -836,12 +891,14 @@ void() PlayerJump =
 	
 	if (self.waterlevel >= 2)
 	{
+#ifndef qw
 		if (self.watertype == CONTENT_WATER)
 			self.velocity_z = 100;
 		else if (self.watertype == CONTENT_SLIME)
 			self.velocity_z = 80;
 		else
 			self.velocity_z = 50;
+#endif
 
 // play swiming sound
 		if (self.swim_flag < time)
@@ -957,9 +1014,10 @@ void() WaterMove =
 		self.flags = self.flags + FL_INWATER;
 		self.dmgtime = 0;
 	}
-	
+#ifndef qw
 	if (! (self.flags & FL_WATERJUMP) )
 		self.velocity = self.velocity - 0.8*self.waterlevel*frametime*self.velocity;
+#endif
 };
 
 void() CheckWaterJump =
@@ -1011,6 +1069,8 @@ void() PlayerPreThink =
 		return;		// intermission or finale
 
 	makevectors (self.v_angle);		// is this still used
+	
+	self.deathtype = "";
 
 	CheckRules ();
 	WaterMove ();
@@ -1072,8 +1132,8 @@ void() CheckPowerups =
 		{
 			if (self.invisible_time == 1)
 			{
-				sprint (self, LOC_RING_FADE);
-				sprint (self, "\n");
+				sprint (self, PRINT_HIGH, LOC_RING_FADE);
+				sprint (self, PRINT_HIGH, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/inv2.wav", 1, ATTN_NORM);
 				self.invisible_time = time + 1;
@@ -1108,8 +1168,8 @@ void() CheckPowerups =
 		{
 			if (self.invincible_time == 1)
 			{
-				sprint (self, LOC_PENT_FADE);
-				sprint (self, "\n");
+				sprint (self, PRINT_HIGH, LOC_PENT_FADE);
+				sprint (self, PRINT_HIGH, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/protect2.wav", 1, ATTN_NORM);
 				self.invincible_time = time + 1;
@@ -1129,9 +1189,10 @@ void() CheckPowerups =
 			self.invincible_finished = 0;
 		}
 		if (self.invincible_finished > time)
-			self.effects = self.effects | EF_DIMLIGHT;
+			self.effects = self.effects | EF_DIMLIGHT | EF_RED;
 		else
 			self.effects = self.effects - (self.effects & EF_DIMLIGHT);
+			self.effects = self.effects - (self.effects & EF_RED);
 	}
 
 // super damage
@@ -1145,10 +1206,10 @@ void() CheckPowerups =
 			if (self.super_time == 1)
 			{
 				if (supermode())
-					sprint (self, LOC_OCT_FADE);
+					sprint (self, PRINT_HIGH, LOC_OCT_FADE);
 				else
-					sprint (self, LOC_QUAD_FADE);
-				sprint (self, "\n");
+					sprint (self, PRINT_HIGH, LOC_QUAD_FADE);
+				sprint (self, PRINT_HIGH, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/damage2.wav", 1, ATTN_NORM);
 				self.super_time = time + 1;
@@ -1166,11 +1227,19 @@ void() CheckPowerups =
 			self.items = self.items - IT_QUAD;
 			self.super_damage_finished = 0;
 			self.super_time = 0;
+			if (supermode())
+			{
+				self.ammo_cells = 255;
+				self.armorvalue = 1;
+				self.armortype = 0.8;
+				self.health = 100;
+			}
 		}
 		if (self.super_damage_finished > time)
-			self.effects = self.effects | EF_DIMLIGHT;
+			self.effects = self.effects | EF_DIMLIGHT | EF_BLUE;
 		else
 			self.effects = self.effects - (self.effects & EF_DIMLIGHT);
+			self.effects = self.effects - (self.effects & EF_BLUE);
 	}	
 
 // suit	
@@ -1183,8 +1252,8 @@ void() CheckPowerups =
 		{
 			if (self.rad_time == 1)
 			{
-				sprint (self, LOC_BIO_FADE);
-				sprint (self, "\n");
+				sprint (self, PRINT_HIGH, LOC_BIO_FADE);
+				sprint (self, PRINT_HIGH, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/suit2.wav", 1, ATTN_NORM);
 				self.rad_time = time + 1;
@@ -1224,8 +1293,6 @@ void() PlayerPostThink =
 		
 // do weapon stuff
 
-	W_WeaponFrame ();
-
 // check to see if player landed and play landing sound	
 	if ((self.jump_flag < -300) && (self.flags & FL_ONGROUND) && (self.health > 0))
 	{
@@ -1233,9 +1300,9 @@ void() PlayerPostThink =
 			sound (self, CHAN_BODY, "player/h2ojump.wav", 1, ATTN_NORM);
 		else if (self.jump_flag < -650)
 		{
+			self.deathtype = "falling";
 			T_Damage (self, world, world, 5); 
 			sound (self, CHAN_VOICE, "player/land2.wav", 1, ATTN_NORM);
-			self.deathtype = "falling";
 		}
 		else
 			sound (self, CHAN_VOICE, "player/land.wav", 1, ATTN_NORM);
@@ -1248,8 +1315,10 @@ void() PlayerPostThink =
 	
 	CheckPowerups ();
 	
+	W_WeaponFrame ();
+	
 	if (lastmanstanding())
-		sprint(self, "Last Man Standing coming soon!\n");
+		sprint(self, PRINT_HIGH, "Last Man Standing coming soon!\n");
 };
 
 
@@ -1262,9 +1331,9 @@ called when a player connects to a server
 */
 void() ClientConnect =
 {
-	bprint (self.netname);
-	bprint (LOC_JOIN);
-	bprint ("\n");
+	bprint (PRINT_HIGH, self.netname);
+	bprint (PRINT_HIGH, LOC_JOIN);
+	bprint (PRINT_HIGH, "\n");
 	
 // a client connecting during an intermission can cause problems
 	if (intermission_running)
@@ -1281,17 +1350,20 @@ called when a player disconnects from a server
 */
 void() ClientDisconnect =
 {
+#ifndef qw
 	if (gameover)
 		return;
+#endif
+	
 	// if the level end trigger has been activated, just return
 	// since they aren't *really* leaving
 
 	// let everyone else know
-	bprint (self.netname);
-	bprint (LOC_EXIT_DM_A);
-	bprint (ftos(self.frags));
-	bprint (LOC_EXIT_DM_B);
-	bprint ("\n");
+	bprint (PRINT_HIGH, self.netname);
+	bprint (PRINT_HIGH, LOC_EXIT_DM_A);
+	bprint (PRINT_HIGH, ftos(self.frags));
+	bprint (PRINT_HIGH, LOC_EXIT_DM_B);
+	bprint (PRINT_HIGH, "\n");
 	sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 	set_suicide_frame ();
 };
@@ -1313,29 +1385,64 @@ void(entity targ, entity attacker) ClientObituary =
 	rnum = random();
 
 	if (targ.classname == "player")
-	{
+	{	
 		if (attacker.classname == "teledeath")
 		{
-			bprint (targ.netname);
-			bprint (LOC_DEATH_TELEFRAG_A);
-			bprint (attacker.owner.netname);
-			bprint (LOC_DEATH_TELEFRAG_B);
-			bprint ("\n");
-
+			bprint (PRINT_MEDIUM, targ.netname);
+			bprint (PRINT_MEDIUM, LOC_DEATH_TELEFRAG_A);
+			bprint (PRINT_MEDIUM, attacker.owner.netname);
+			bprint (PRINT_MEDIUM, LOC_DEATH_TELEFRAG_B);
+			bprint (PRINT_MEDIUM, "\n");
+			
+			logfrag (attacker.owner, targ);
 			attacker.owner.frags = attacker.owner.frags + 1;
 			return;
 		}
 
 		if (attacker.classname == "teledeath2")
 		{
-			bprint (LOC_DEATH_DEFLECT_A);
-			bprint (targ.netname);
-			bprint (LOC_DEATH_DEFLECT_B);
-			bprint (attacker.enemy.netname);
-			bprint (LOC_DEATH_DEFLECT_C);
-			bprint ("\n");
+			bprint (PRINT_MEDIUM, LOC_DEATH_DEFLECT_A);
+			bprint (PRINT_MEDIUM, targ.netname);
+			bprint (PRINT_MEDIUM, LOC_DEATH_DEFLECT_B);
+			bprint (PRINT_MEDIUM, attacker.enemy.netname);
+			bprint (PRINT_MEDIUM, LOC_DEATH_DEFLECT_C);
+			bprint (PRINT_MEDIUM, "\n");
+			
+			logfrag (targ, targ);
 			targ.frags = targ.frags - 1;
 			return;
+		}
+		
+		if (targ.deathtype == "squish")
+		{
+			if (teamplay && OnSameTeam(targ, attacker) && targ != attacker)
+			{
+				bprint (PRINT_MEDIUM, attacker.netname);
+				bprint (PRINT_MEDIUM, LOC_TEAMKILL_5);
+				bprint (PRINT_MEDIUM, "\n");
+				logfrag (attacker, attacker);
+				attacker.frags = attacker.frags - 1; 
+				return;
+			}
+			else if (attacker.classname == "player" && attacker != targ)
+			{
+				bprint (PRINT_MEDIUM, targ.netname);
+				bprint (PRINT_MEDIUM, LOC_DEATH_SQUISH2);
+				bprint (PRINT_MEDIUM, attacker.netname);
+				bprint (PRINT_MEDIUM, "\n");
+				logfrag (attacker, targ);
+				attacker.frags = attacker.frags + 1;
+				return;
+			}
+			else
+			{
+				bprint (PRINT_MEDIUM, targ.netname);
+				bprint (PRINT_MEDIUM, LOC_DEATH_SQUISH);
+				bprint (PRINT_MEDIUM, "\n");
+				logfrag (targ, targ);
+				targ.frags = targ.frags - 1;
+				return;
+			}
 		}
 
 		if (attacker.classname == "player")
@@ -1343,32 +1450,41 @@ void(entity targ, entity attacker) ClientObituary =
 			if (targ == attacker)
 			{
 				// killed self
+				logfrag (attacker, attacker);
 				attacker.frags = attacker.frags - 1;
-				bprint (targ.netname);
 				
-				if (targ.weapon == 64 && targ.waterlevel > 1)
+				bprint (PRINT_MEDIUM, targ.netname);
+				if (targ.deathtype == "discharge")
 				{
 					//Very small chance to use the alternate discharge line
 					
 					if (time - (floor(time / 33) * 33) < 1) {
-						bprint (LOC_DEATH_DISCHARGE_2);
+						bprint (PRINT_MEDIUM, LOC_DEATH_DISCHARGE_2);
 					} else {
-						bprint (LOC_DEATH_DISCHARGE_1);
+						bprint (PRINT_MEDIUM, LOC_DEATH_DISCHARGE_1);
 					}
-					bprint("\n");
+					bprint(PRINT_MEDIUM, "\n");
+					return;
+				}
+				if (targ.deathtype == "selfwater")
+				{
+					bprint (PRINT_MEDIUM, LOC_DEATH_DISCHARGE_3);
+					bprint (PRINT_MEDIUM, "\n");
+					
+					targ.frags = targ.frags - 1;
 					return;
 				}
 				if (targ.weapon == IT_GRENADE_LAUNCHER) {
-					bprint (LOC_DEATH_SELF_GRENADE);
+					bprint (PRINT_MEDIUM, LOC_DEATH_SELF_GRENADE);
 				} else if (targ.weapon == IT_ROCKET_LAUNCHER) {
-					bprint (LOC_DEATH_SELF_ROCKET);
+					bprint (PRINT_MEDIUM, LOC_DEATH_SELF_ROCKET);
 				} else {
-					bprint (LOC_DEATH_SELF_OTHER);
+					bprint (PRINT_MEDIUM, LOC_DEATH_SELF_OTHER);
 				}
-				bprint("\n");
+				bprint(PRINT_MEDIUM, "\n");
 				return;
 			}
-			else if ( (teamplay == 2) && (targ.team > 0)&&(targ.team == attacker.team) )
+			else if (teamplay && OnSameTeam(targ, attacker))
 			{
 				if (rnum < 0.25)
 					deathstring = LOC_TEAMKILL_1;
@@ -1378,72 +1494,20 @@ void(entity targ, entity attacker) ClientObituary =
 					deathstring = LOC_TEAMKILL_3;
 				else
 					deathstring = LOC_TEAMKILL_4;
-				bprint (attacker.netname);
-				bprint (deathstring);
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, attacker.netname);
+				bprint (PRINT_MEDIUM, deathstring);
+				bprint (PRINT_MEDIUM, "\n");
+				logfrag (attacker, attacker);
 				attacker.frags = attacker.frags - 1;
 				return;
 			}
 			else
 			{
+				logfrag (attacker, targ);
 				attacker.frags = attacker.frags + 1;
 
 				rnum = attacker.weapon;
-				if (rnum == IT_AXE)
-				{
-					if (attacker.items & IT_QUAD)
-					{
-						deathstring = LOC_DEATH_AXE_QA;
-						deathstring2 = LOC_DEATH_AXE_QB;
-					}
-					else if (random() > .03)
-					{
-						deathstring = LOC_DEATH_AXE_1A;
-						deathstring2 = LOC_DEATH_AXE_1B;
-					}
-					else
-					{
-						deathstring = LOC_DEATH_AXE_2A;
-						deathstring2 = LOC_DEATH_AXE_2B;
-					}
-				}
-				if (rnum == IT_SHOTGUN)
-				{
-					if (attacker.items & IT_QUAD)
-					{
-						deathstring = LOC_DEATH_SHOTGUN_QA;
-						deathstring2 = LOC_DEATH_SHOTGUN_QB;
-					}
-					else if (random() > .03)
-					{
-						deathstring = LOC_DEATH_SHOTGUN_1A;
-						deathstring2 = LOC_DEATH_SHOTGUN_1B;
-					}
-					else
-					{
-						deathstring = LOC_DEATH_SHOTGUN_2A;
-						deathstring2 = LOC_DEATH_SHOTGUN_2B;
-					}
-				}
-				if (rnum == IT_SUPER_SHOTGUN)
-				{
-					if (attacker.items & IT_QUAD)
-					{
-						deathstring = LOC_DEATH_SUPER_SHOTGUN_QA;
-						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_QB;
-					}
-					else if (random() > .03)
-					{
-						deathstring = LOC_DEATH_SUPER_SHOTGUN_1A;
-						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_1B;
-					}
-					else
-					{
-						deathstring = LOC_DEATH_SUPER_SHOTGUN_2A;
-						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_2B;
-					}
-				}
-				if (rnum == IT_NAILGUN)
+				if (targ.deathtype == "nail")
 				{
 					if (attacker.items & IT_QUAD)
 					{
@@ -1461,7 +1525,7 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring2 = LOC_DEATH_NAILGUN_2B;
 					}
 				}
-				if (rnum == IT_SUPER_NAILGUN)
+				else if (targ.deathtype == "supernail")
 				{
 					if (attacker.items & IT_QUAD)
 					{
@@ -1479,7 +1543,7 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring2 = LOC_DEATH_AXE_2B;
 					}
 				}
-				if (rnum == IT_GRENADE_LAUNCHER)
+				else if (targ.deathtype == "grenade")
 				{
 					if (targ.health < -40)
 					{
@@ -1505,7 +1569,7 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_2B;
 					}
 				}
-				if (rnum == IT_ROCKET_LAUNCHER)
+				else if (targ.deathtype == "rocket")
 				{
 					if (targ.health < -40)
 					{
@@ -1543,7 +1607,61 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_2B;
 					}
 				}
-				if (rnum == IT_LIGHTNING)
+				else if (rnum == IT_AXE)
+				{
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_AXE_QA;
+						deathstring2 = LOC_DEATH_AXE_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_AXE_1A;
+						deathstring2 = LOC_DEATH_AXE_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_AXE_2A;
+						deathstring2 = LOC_DEATH_AXE_2B;
+					}
+				}
+				else if (rnum == IT_SHOTGUN)
+				{
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_SHOTGUN_QA;
+						deathstring2 = LOC_DEATH_SHOTGUN_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_SHOTGUN_1A;
+						deathstring2 = LOC_DEATH_SHOTGUN_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_SHOTGUN_2A;
+						deathstring2 = LOC_DEATH_SHOTGUN_2B;
+					}
+				}
+				else if (rnum == IT_SUPER_SHOTGUN)
+				{
+					if (attacker.items & IT_QUAD)
+					{
+						deathstring = LOC_DEATH_SUPER_SHOTGUN_QA;
+						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_QB;
+					}
+					else if (random() > .03)
+					{
+						deathstring = LOC_DEATH_SUPER_SHOTGUN_1A;
+						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_1B;
+					}
+					else
+					{
+						deathstring = LOC_DEATH_SUPER_SHOTGUN_2A;
+						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_2B;
+					}
+				}
+				else if (rnum == IT_LIGHTNING)
 				{
 					if (attacker.waterlevel > 1)
 					{
@@ -1571,48 +1689,48 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring2 = LOC_DEATH_LIGHTNING_2B;
 					}
 				}
-				bprint (targ.netname);
-				bprint (deathstring);
-				bprint (attacker.netname);
-				bprint (deathstring2);
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, targ.netname);
+				bprint (PRINT_MEDIUM, deathstring);
+				bprint (PRINT_MEDIUM, attacker.netname);
+				bprint (PRINT_MEDIUM, deathstring2);
+				bprint (PRINT_MEDIUM, "\n");
 			}
 			return;
 		}
 		else
 		{
 			targ.frags = targ.frags - 1;
-			bprint (targ.netname);
+			bprint (PRINT_MEDIUM, targ.netname);
 
 			// killed by a montser?
 			if (attacker.flags & FL_MONSTER)
 			{
-				if (attacker.classname == "monster_army")				{bprint (LOC_DEATH_ARMY);}
-				else if (attacker.classname == "monster_demon1")		{bprint (LOC_DEATH_DEMON1);}
-				else if (attacker.classname == "monster_dog")			{bprint (LOC_DEATH_DOG);}
-				else if (attacker.classname == "monster_enforcer")		{bprint (LOC_DEATH_ENFORCER);}
-				else if (attacker.classname == "monster_fish")			{bprint (LOC_DEATH_FISH);}
-				else if (attacker.classname == "monster_hell_knight")	{bprint (LOC_DEATH_HELL_KNIGHT);}
-				else if (attacker.classname == "monster_knight")		{bprint (LOC_DEATH_KNIGHT);}
-				else if (attacker.classname == "monster_ogre")			{bprint (LOC_DEATH_OGRE);}
-				else if (attacker.classname == "monster_oldone")		{bprint (LOC_DEATH_OLDONE);}
-				else if (attacker.classname == "monster_boss")			{bprint (LOC_DEATH_BOSS);}
-				else if (attacker.classname == "monster_shalrath")		{bprint (LOC_DEATH_SHALRATH);}
-				else if (attacker.classname == "monster_shambler")		{bprint (LOC_DEATH_SHAMBLER);}
-				else if (attacker.classname == "monster_tarbaby")		{bprint (LOC_DEATH_TARBABY);}
-				else if (attacker.classname == "monster_wizard")		{bprint (LOC_DEATH_WIZARD);}
-				else if (attacker.classname == "monster_zombie")		{bprint (LOC_DEATH_ZOMBIE);}
-				else 													{bprint (LOC_DEATH_MONSTER);}
+				if (attacker.classname == "monster_army")				{bprint (PRINT_HIGH, LOC_DEATH_ARMY);}
+				else if (attacker.classname == "monster_demon1")		{bprint (PRINT_HIGH, LOC_DEATH_DEMON1);}
+				else if (attacker.classname == "monster_dog")			{bprint (PRINT_HIGH, LOC_DEATH_DOG);}
+				else if (attacker.classname == "monster_enforcer")		{bprint (PRINT_HIGH, LOC_DEATH_ENFORCER);}
+				else if (attacker.classname == "monster_fish")			{bprint (PRINT_HIGH, LOC_DEATH_FISH);}
+				else if (attacker.classname == "monster_hell_knight")	{bprint (PRINT_HIGH, LOC_DEATH_HELL_KNIGHT);}
+				else if (attacker.classname == "monster_knight")		{bprint (PRINT_HIGH, LOC_DEATH_KNIGHT);}
+				else if (attacker.classname == "monster_ogre")			{bprint (PRINT_HIGH, LOC_DEATH_OGRE);}
+				else if (attacker.classname == "monster_oldone")		{bprint (PRINT_HIGH, LOC_DEATH_OLDONE);}
+				else if (attacker.classname == "monster_boss")			{bprint (PRINT_HIGH, LOC_DEATH_BOSS);}
+				else if (attacker.classname == "monster_shalrath")		{bprint (PRINT_HIGH, LOC_DEATH_SHALRATH);}
+				else if (attacker.classname == "monster_shambler")		{bprint (PRINT_HIGH, LOC_DEATH_SHAMBLER);}
+				else if (attacker.classname == "monster_tarbaby")		{bprint (PRINT_HIGH, LOC_DEATH_TARBABY);}
+				else if (attacker.classname == "monster_wizard")		{bprint (PRINT_HIGH, LOC_DEATH_WIZARD);}
+				else if (attacker.classname == "monster_zombie")		{bprint (PRINT_HIGH, LOC_DEATH_ZOMBIE);}
+				else 													{bprint (PRINT_HIGH, LOC_DEATH_MONSTER);}
 				
-				bprint("\n");
+				bprint(PRINT_MEDIUM, "\n");
 				return;
 			}
 
 			// tricks and traps
 			if (attacker.classname == "explo_box")
 			{
-				bprint (LOC_DEATH_EXPLO_BOX);
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, LOC_DEATH_EXPLO_BOX);
+				bprint (PRINT_MEDIUM, "\n");
 				return;
 			}
 			if (attacker.solid == SOLID_BSP && attacker != world)
@@ -1620,14 +1738,14 @@ void(entity targ, entity attacker) ClientObituary =
 				//This pertains to the firebar map hack
 				if (attacker.classname == "train" && attacker.touch == train_blocked)
 				{
-					bprint (LOC_DEATH_FIREBAR);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_FIREBAR);
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 				else
 				{
-					bprint (LOC_DEATH_SQUISH);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_SQUISH);
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 			}
@@ -1635,13 +1753,13 @@ void(entity targ, entity attacker) ClientObituary =
 			{
 				if (attacker.spawnflags & 2)
 				{
-					bprint (LOC_DEATH_TRAP_LASER);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_TRAP_LASER);
+					bprint (PRINT_MEDIUM, "\n");
 				}
 				else
 				{
-					bprint (LOC_DEATH_TRAP_SPIKE);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_TRAP_SPIKE);
+					bprint (PRINT_MEDIUM, "\n");
 				}
 				return;
 			}
@@ -1651,27 +1769,27 @@ void(entity targ, entity attacker) ClientObituary =
 			{
 				if (attacker.use == W_FireRocket)
 				{
-					bprint (LOC_DEATH_TRAP_ROCKET);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_TRAP_ROCKET);
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 				else if (attacker.use == W_FireGrenade || attacker.use == OgreFireGrenade)
 				{
-					bprint (LOC_DEATH_TRAP_GRENADE);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_TRAP_GRENADE);
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 			}
 			if (attacker.classname == "fireball")
 			{
-				bprint (LOC_DEATH_FIREBALL);
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, LOC_DEATH_FIREBALL);
+				bprint (PRINT_MEDIUM, "\n");
 				return;
 			}
 			if (attacker.classname == "trigger_changelevel")
 			{
-				bprint (LOC_DEATH_LEAVE);
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, LOC_DEATH_LEAVE);
+				bprint (PRINT_MEDIUM, "\n");
 				return;
 			}
 
@@ -1681,44 +1799,44 @@ void(entity targ, entity attacker) ClientObituary =
 			{
 				if (random() < 0.5)
 				{
-					bprint (LOC_DEATH_DROWN1);
+					bprint (PRINT_MEDIUM, LOC_DEATH_DROWN1);
 				}
 				else if (random() < 0.9)
 				{
-					bprint (LOC_DEATH_DROWN2);
+					bprint (PRINT_MEDIUM, LOC_DEATH_DROWN2);
 				}
 				else 
 				{
-					bprint (LOC_DEATH_DROWN3);
+					bprint (PRINT_MEDIUM, LOC_DEATH_DROWN3);
 				}
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, "\n");
 				return;
 			}
 			else if (rnum == -4)
 			{
 				if (random() < 0.5)
 				{
-					bprint (LOC_DEATH_SLIME1);
+					bprint (PRINT_MEDIUM, LOC_DEATH_SLIME1);
 				} else {
-					bprint (LOC_DEATH_SLIME2);
+					bprint (PRINT_MEDIUM, LOC_DEATH_SLIME2);
 				}
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, "\n");
 				return;
 			}
 			else if (rnum == -5)
 			{
 				if (targ.health < -15)
 				{
-					bprint (LOC_DEATH_LAVA1);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_LAVA1);
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 				if (random() < 0.5) {
-					bprint (LOC_DEATH_LAVA2);
+					bprint (PRINT_MEDIUM, LOC_DEATH_LAVA2);
 				} else {
-					bprint (LOC_DEATH_LAVA3);
+					bprint (PRINT_MEDIUM, LOC_DEATH_LAVA3);
 				}
-				bprint ("\n");
+				bprint (PRINT_MEDIUM, "\n");
 				return;
 			}
 			
@@ -1727,21 +1845,21 @@ void(entity targ, entity attacker) ClientObituary =
 				//fell out into space
 				if (attacker.dmg == 666001) {
 					if (random() > .5) {
-						bprint (LOC_DEATH_SPACE_1);
+						bprint (PRINT_MEDIUM, LOC_DEATH_SPACE_1);
 					} else {
-						bprint (LOC_DEATH_SPACE_2);
+						bprint (PRINT_MEDIUM, LOC_DEATH_SPACE_2);
 					}
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 				//fell out into the void
 				if (attacker.dmg == 666002) {
 					if (random() > .25) {
-						bprint (LOC_DEATH_VOID_1);
+						bprint (PRINT_MEDIUM, LOC_DEATH_VOID_1);
 					} else {
-						bprint (LOC_DEATH_VOID_2);
+						bprint (PRINT_MEDIUM, LOC_DEATH_VOID_2);
 					}
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 				//fell to their death
@@ -1749,18 +1867,18 @@ void(entity targ, entity attacker) ClientObituary =
 				{
 					targ.deathtype = "";
 					if (random() > .1) {
-						bprint (LOC_DEATH_FALL_1);
+						bprint (PRINT_MEDIUM, LOC_DEATH_FALL_1);
 					} else {
-						bprint (LOC_DEATH_FALL_2);
+						bprint (PRINT_MEDIUM, LOC_DEATH_FALL_2);
 					}
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 				//shub-niggurath aura
 				if (world.model == "maps/end.bsp" && attacker.dmg <= 30)
 				{
-					bprint (LOC_DEATH_OLDONE);
-					bprint ("\n");
+					bprint (PRINT_MEDIUM, LOC_DEATH_OLDONE);
+					bprint (PRINT_MEDIUM, "\n");
 					return;
 				}
 			}
@@ -1768,8 +1886,8 @@ void(entity targ, entity attacker) ClientObituary =
 			
 			
 			// hell if I know; he's just dead!!!
-			bprint (LOC_DEATH_OTHER);
-			bprint ("\n");
+			bprint (PRINT_MEDIUM, LOC_DEATH_OTHER);
+			bprint (PRINT_MEDIUM, "\n");
 		}
 	}
 };

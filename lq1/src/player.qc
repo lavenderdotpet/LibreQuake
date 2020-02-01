@@ -132,47 +132,56 @@ void() player_run	=[ $rockrun1,	player_run	]
 	self.walkframe = self.walkframe + 1;
 };
 
-
-void() player_shot1	=[$shotatt1,	player_shot2	]
+void() muzzleflash =
 {
-	self.weaponframe=1;
+#ifdef qw
+	WriteByte (MSG_BROADCAST, SVC_MUZZLEFLASH);
+	WriteEntity (MSG_BROADCAST, self);
+	multicast (self.origin, MULTICAST_PVS);
+#else
 	self.effects = self.effects | EF_MUZZLEFLASH;
+#endif
 };
-void() player_shot2	=[$shotatt2,	player_shot3	] {self.weaponframe=2;};
-void() player_shot3	=[$shotatt3,	player_shot4	] {self.weaponframe=3;};
-void() player_shot4	=[$shotatt4,	player_shot5	] {self.weaponframe=4;};
-void() player_shot5	=[$shotatt5,	player_shot6	] {self.weaponframe=5;};
-void() player_shot6	=[$shotatt6,	player_run		] {self.weaponframe=6;};
 
-void() player_axe1	=[$axatt1,	player_axe2	] {self.weaponframe=1;};
-void() player_axe2	=[$axatt2,	player_axe3	] {self.weaponframe=2;};
-void() player_axe3	=[$axatt3,	player_axe4	] {self.weaponframe=3;W_FireAxe();};
-void() player_axe4	=[$axatt4,	player_run	] {self.weaponframe=4;};
+void() player_shot1	=[ $shotatt1,	player_shot2	] {self.weaponframe=1;muzzleflash();};
+void() player_shot2	=[ $shotatt2,	player_shot3	] {self.weaponframe=2;};
+void() player_shot3	=[ $shotatt3,	player_shot4	] {self.weaponframe=3;};
+void() player_shot4	=[ $shotatt4,	player_shot5	] {self.weaponframe=4;};
+void() player_shot5	=[ $shotatt5,	player_shot6	] {self.weaponframe=5;};
+void() player_shot6	=[ $shotatt6,	player_run		] {self.weaponframe=6;};
 
-void() player_axeb1	=[$axattb1,	player_axeb2	] {self.weaponframe=5;};
-void() player_axeb2	=[$axattb2,	player_axeb3	] {self.weaponframe=6;};
-void() player_axeb3	=[$axattb3,	player_axeb4	] {self.weaponframe=7;W_FireAxe();};
-void() player_axeb4	=[$axattb4,	player_run		] {self.weaponframe=8;};
+void() player_axe1	=[ $axatt1,	player_axe2	] {self.weaponframe=1;};
+void() player_axe2	=[ $axatt2,	player_axe3	] {self.weaponframe=2;};
+void() player_axe3	=[ $axatt3,	player_axe4	] {self.weaponframe=3;W_FireAxe();};
+void() player_axe4	=[ $axatt4,	player_run	] {self.weaponframe=4;};
 
-void() player_axec1	=[$axattc1,	player_axec2	] {self.weaponframe=1;};
-void() player_axec2	=[$axattc2,	player_axec3	] {self.weaponframe=2;};
-void() player_axec3	=[$axattc3,	player_axec4	] {self.weaponframe=3;W_FireAxe();};
-void() player_axec4	=[$axattc4,	player_run		] {self.weaponframe=4;};
+void() player_axeb1	=[ $axattb1,	player_axeb2	] {self.weaponframe=5;};
+void() player_axeb2	=[ $axattb2,	player_axeb3	] {self.weaponframe=6;};
+void() player_axeb3	=[ $axattb3,	player_axeb4	] {self.weaponframe=7;W_FireAxe();};
+void() player_axeb4	=[ $axattb4,	player_run		] {self.weaponframe=8;};
 
-void() player_axed1	=[$axattd1,	player_axed2	] {self.weaponframe=5;};
-void() player_axed2	=[$axattd2,	player_axed3	] {self.weaponframe=6;};
-void() player_axed3	=[$axattd3,	player_axed4	] {self.weaponframe=7;W_FireAxe();};
-void() player_axed4	=[$axattd4,	player_run		] {self.weaponframe=8;};
+void() player_axec1	=[ $axattc1,	player_axec2	] {self.weaponframe=1;};
+void() player_axec2	=[ $axattc2,	player_axec3	] {self.weaponframe=2;};
+void() player_axec3	=[ $axattc3,	player_axec4	] {self.weaponframe=3;W_FireAxe();};
+void() player_axec4	=[ $axattc4,	player_run		] {self.weaponframe=4;};
+
+void() player_axed1	=[ $axattd1,	player_axed2	] {self.weaponframe=5;};
+void() player_axed2	=[ $axattd2,	player_axed3	] {self.weaponframe=6;};
+void() player_axed3	=[ $axattd3,	player_axed4	] {self.weaponframe=7;W_FireAxe();};
+void() player_axed4	=[ $axattd4,	player_run		] {self.weaponframe=8;};
 
 
 //============================================================================
 
-void() player_nail1	=[$nailatt1, player_nail2	]	
- {
-	self.effects = self.effects | EF_MUZZLEFLASH;
+void() player_nail1	=[ $nailatt1, player_nail2	]
+{
+	muzzleflash();
 
-	if (!self.button0)
-		{player_run ();return;}
+	if (!self.button0 || intermission_running || self.impulse)
+	{
+		player_run ();
+		return;
+	}
 	self.weaponframe = self.weaponframe + 1;
 	if (self.weaponframe == 9)
 		self.weaponframe = 1;
@@ -180,11 +189,11 @@ void() player_nail1	=[$nailatt1, player_nail2	]
 	W_FireSpikes (4);
 	self.attack_finished = time + 0.2;
 };
-void() player_nail2	=[$nailatt2, player_nail1	]
-	{
-	self.effects = self.effects | EF_MUZZLEFLASH;
+void() player_nail2	=[ $nailatt2, player_nail1	]
+{
+	muzzleflash();
 
-	if (!self.button0)
+	if (!self.button0 || intermission_running || self.impulse)
 		{player_run ();return;}
 	self.weaponframe = self.weaponframe + 1;
 	if (self.weaponframe == 9)
@@ -197,10 +206,10 @@ void() player_nail2	=[$nailatt2, player_nail1	]
 //============================================================================
 
 void() player_light1	=[$light1, player_light2	]	
- {
-	self.effects = self.effects | EF_MUZZLEFLASH;
+{
+	muzzleflash();
 
-	if (!self.button0)
+	if (!self.button0 || intermission_running)
 		{player_run ();return;}
 	self.weaponframe = self.weaponframe + 1;
 	if (self.weaponframe == 5)
@@ -210,10 +219,10 @@ void() player_light1	=[$light1, player_light2	]
 	self.attack_finished = time + 0.2;
 };
 void() player_light2	=[$light2, player_light1	]
-	{
-	self.effects = self.effects | EF_MUZZLEFLASH;
+{
+	muzzleflash();
 
-	if (!self.button0)
+	if (!self.button0 || intermission_running)
 		{player_run ();return;}
 	self.weaponframe = self.weaponframe + 1;
 	if (self.weaponframe == 5)
@@ -226,11 +235,7 @@ void() player_light2	=[$light2, player_light1	]
 //============================================================================
 
 
-void() player_rocket1	=[$rockatt1, player_rocket2	]
-{
-	self.weaponframe=1;
-	self.effects = self.effects | EF_MUZZLEFLASH;
-};
+void() player_rocket1	=[$rockatt1, player_rocket2		] {self.weaponframe=1;muzzleflash();};
 void() player_rocket2	=[$rockatt2,	player_rocket3	] {self.weaponframe=2;};
 void() player_rocket3	=[$rockatt3,	player_rocket4	] {self.weaponframe=3;};
 void() player_rocket4	=[$rockatt4,	player_rocket5	] {self.weaponframe=4;};
@@ -266,7 +271,6 @@ local float		rs;
 // slime pain sounds
 	if (self.watertype == CONTENT_SLIME)
 	{
-// FIX ME	put in some steam here
 		if (self.waterlevel == 3)
 			DeathBubbles(1);
 		if (random() > 0.5)
@@ -361,7 +365,6 @@ void() player_die_ax1;
 void() DeathBubblesSpawn =
 {
 local entity	bubble;
-//	if (self.owner.waterlevel != 3)
 	if ((self.owner.waterlevel != 3) && (self.owner.health > 0))
 		{
 			remove(self);	// remove bubble spawner
@@ -379,8 +382,7 @@ local entity	bubble;
 	bubble.frame = 0;
 	bubble.cnt = 0;
 	setsize (bubble, '-8 -8 -8', '8 8 8');
-//	self.nextthink = time + 0.1;
-	self.nextthink = time + 0.01;
+	self.nextthink = time + 0.1;
 	self.think = DeathBubblesSpawn;
 	self.air_finished = self.air_finished + 1;
 	if (self.air_finished >= self.bubble_count)
@@ -395,13 +397,11 @@ local entity	bubble_spawner;
 	setorigin (bubble_spawner, self.origin);
 	bubble_spawner.movetype = MOVETYPE_NONE;
 	bubble_spawner.solid = SOLID_NOT;
-//	bubble_spawner.nextthink = time + 0.1;
-	bubble_spawner.nextthink = time + 0.01;
+	bubble_spawner.nextthink = time + 0.1;
 	bubble_spawner.think = DeathBubblesSpawn;
 	bubble_spawner.air_finished = 0;
 	bubble_spawner.owner = self;
 	bubble_spawner.bubble_count = num_bubbles;
-//	return;
 };
 
 
@@ -412,7 +412,7 @@ local float		rs;
 	// water death sounds
 	if (self.waterlevel == 3)
 	{
-		DeathBubbles(20);
+		DeathBubbles(5);
 		sound (self, CHAN_VOICE, "player/h2odeath.wav", 1, ATTN_NONE);
 		return;
 	}
@@ -451,12 +451,10 @@ vector(float dm) VelocityForDamage =
 
 	if (dm > -50)
 	{
-//		dprint ("level 1\n");
 		v = v * 0.7;
 	}
 	else if (dm > -200)
 	{
-//		dprint ("level 3\n");
 		v = v * 2;
 	}
 	else
@@ -534,17 +532,27 @@ void() PlayerDie =
 {
 	local	float	i;
 	
-//	self.items = self.items - (self.items & IT_INVISIBILITY);
-	self.items = self.items - (self.items &
-	(IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD) );
-	self.invisible_finished = 0;	// don't die as eyes
+	self.items = self.items - (self.items & (IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD) );
+	
+	//In free-for-all deathmatch games, drop powerups on death
+	if (deathmatch && !teamplay)
+	{
+		if (self.super_damage_finished > 0)
+			DropQuad (self.super_damage_finished - time);
+		if (self.invisible_finished > 0)
+			DropRing (self.invisible_finished - time);
+		if (self.radsuit_finished > 0)
+			DropBio (self.radsuit_finished - time);
+	}
+	
+	self.invisible_finished = 0;
 	self.invincible_finished = 0;
 	self.super_damage_finished = 0;
 	self.radsuit_finished = 0;
 	self.effects = 0;	// 1998-07-23 Glowing corpse of players which had quad/pentagram until respawn fix by Maddes
-	self.modelindex = modelindex_player;	// don't use eyes
+	self.modelindex = modelindex_player;
 
-	if (deathmatch || coop)
+	if (deathmatch || cooperative())
 		DropBackpack();
 	
 	self.weaponmodel="";

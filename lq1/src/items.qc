@@ -24,7 +24,219 @@ void() noclass =
 	remove (self);
 };
 
+void() q_touch =
+{
+	local string	s;
+	local entity oself;
 
+	if (other.classname != "player")
+		return;
+	if (other.health <= 0)
+		return;
+
+	self.mdl = self.model;
+
+	sound (other, CHAN_VOICE, self.noise, 1, ATTN_NORM);
+	stuffcmd (other, "bf\n");
+	self.solid = SOLID_NOT;
+	other.items = other.items | IT_QUAD;
+	self.model = string_null;
+	if (supermode())
+	{
+		other.armortype = 0;
+		other.armorvalue = 0;
+		other.ammo_cells = 0;
+		
+		oself = self;
+		self = other;
+		W_SetCurrentAmmo();
+		self = oself;
+	}
+
+// do the apropriate action
+	other.super_time = 1;
+	other.super_damage_finished = self.cnt;
+
+	s = ftos(rint(other.super_damage_finished - time));
+
+	bprint (PRINT_LOW, other.netname);
+	bprint (PRINT_LOW, LOC_RECOVER_A);
+	if (supermode())
+		bprint (PRINT_LOW, LOC_NETNAME_QUAD);
+	else 
+		bprint (PRINT_LOW, LOC_NETNAME_OCT);
+	bprint (PRINT_LOW, LOC_RECOVER_B);
+	bprint (PRINT_LOW, s);
+	bprint (PRINT_LOW, LOC_RECOVER_C);
+	bprint (PRINT_LOW, "\n");
+};
+
+
+void(float timeleft) DropQuad =
+{
+	local entity	item;
+	local string	s;
+	
+	bprint (PRINT_LOW, self.netname);
+	bprint (PRINT_LOW, LOC_LOST);
+	if (deathmatch == 4)
+		bprint (PRINT_LOW, LOC_NETNAME_QUAD);
+	else
+		bprint (PRINT_LOW, LOC_NETNAME_OCT);
+	bprint (PRINT_LOW, LOC_RECOVER_B);
+	s = ftos(rint(timeleft));
+	bprint (PRINT_LOW, s);
+	bprint (PRINT_LOW, LOC_RECOVER_C);
+	bprint (PRINT_LOW, "\n");
+
+	item = spawn();
+	item.origin = self.origin;
+	
+	item.velocity_z = 300;
+	item.velocity_x = -100 + (random() * 200);
+	item.velocity_y = -100 + (random() * 200);
+	
+	item.flags = FL_ITEM;
+	item.solid = SOLID_TRIGGER;
+	item.movetype = MOVETYPE_TOSS;
+	item.noise = "items/damage.wav";
+	setmodel (item, "progs/quaddama.mdl");
+	setsize (item, '-16 -16 -24', '16 16 32');
+	item.cnt = time + timeleft;
+	item.touch = q_touch;
+	item.nextthink = time + timeleft;
+	item.think = SUB_Remove;
+};
+
+void() r_touch =
+{
+	local string	s;
+
+	if (other.classname != "player")
+		return;
+	if (other.health <= 0)
+		return;
+
+	self.mdl = self.model;
+
+	sound (other, CHAN_VOICE, self.noise, 1, ATTN_NORM);
+	stuffcmd (other, "bf\n");
+	self.solid = SOLID_NOT;
+	other.items = other.items | IT_INVISIBILITY;
+	self.model = string_null;
+
+// do the apropriate action
+	other.invisible_time = 1;
+	other.invisible_finished = self.cnt;
+	s=ftos(rint(other.invisible_finished - time));
+	
+	bprint (PRINT_LOW, other.netname);
+	bprint (PRINT_LOW, LOC_RECOVER_A);
+	bprint (PRINT_LOW, LOC_NETNAME_RING);
+	bprint (PRINT_LOW, LOC_RECOVER_B);
+	bprint (PRINT_LOW, s);
+	bprint (PRINT_LOW, LOC_RECOVER_C);
+	bprint (PRINT_LOW, "\n");
+};
+
+
+void(float timeleft) DropRing =
+{
+	local entity	item;
+	local string	s;
+	
+	bprint (PRINT_LOW, self.netname);
+	bprint (PRINT_LOW, LOC_LOST);
+	bprint (PRINT_LOW, LOC_NETNAME_RING);
+	bprint (PRINT_LOW, LOC_RECOVER_B);
+	s = ftos(rint(timeleft));
+	bprint (PRINT_LOW, s);
+	bprint (PRINT_LOW, LOC_RECOVER_C);
+	bprint (PRINT_LOW, "\n");
+
+	item = spawn();
+	item.origin = self.origin;
+	
+	item.velocity_z = 300;
+	item.velocity_x = -100 + (random() * 200);
+	item.velocity_y = -100 + (random() * 200);
+	
+	item.flags = FL_ITEM;
+	item.solid = SOLID_TRIGGER;
+	item.movetype = MOVETYPE_TOSS;
+	item.noise = "items/inv1.wav";
+	setmodel (item, "progs/invisibl.mdl");
+	setsize (item, '-16 -16 -24', '16 16 32');
+	item.cnt = time + timeleft;
+	item.touch = r_touch;
+	item.nextthink = time + timeleft;    // remove after 30 seconds
+	item.think = SUB_Remove;
+};
+
+void() b_touch =
+{
+	local string	s;
+
+	if (other.classname != "player")
+		return;
+	if (other.health <= 0)
+		return;
+
+	self.mdl = self.model;
+
+	sound (other, CHAN_VOICE, self.noise, 1, ATTN_NORM);
+	stuffcmd (other, "bf\n");
+	self.solid = SOLID_NOT;
+	other.items = other.items | IT_SUIT;
+	self.model = string_null;
+
+// do the apropriate action
+	other.rad_time = 1;
+	other.radsuit_finished = self.cnt;
+	s=ftos(rint(other.radsuit_finished - time));
+	
+	bprint (PRINT_LOW, other.netname);
+	bprint (PRINT_LOW, LOC_RECOVER_A);
+	bprint (PRINT_LOW, LOC_NETNAME_BIO);
+	bprint (PRINT_LOW, LOC_RECOVER_B);
+	bprint (PRINT_LOW, s);
+	bprint (PRINT_LOW, LOC_RECOVER_C);
+	bprint (PRINT_LOW, "\n");
+};
+
+
+void(float timeleft) DropBio =
+{
+	local entity	item;
+	local string	s;
+	
+	bprint (PRINT_LOW, self.netname);
+	bprint (PRINT_LOW, LOC_LOST);
+	bprint (PRINT_LOW, LOC_NETNAME_BIO);
+	bprint (PRINT_LOW, LOC_RECOVER_B);
+	s = ftos(rint(timeleft));
+	bprint (PRINT_LOW, s);
+	bprint (PRINT_LOW, LOC_RECOVER_C);
+	bprint (PRINT_LOW, "\n");
+
+	item = spawn();
+	item.origin = self.origin;
+	
+	item.velocity_z = 300;
+	item.velocity_x = -100 + (random() * 200);
+	item.velocity_y = -100 + (random() * 200);
+	
+	item.flags = FL_ITEM;
+	item.solid = SOLID_TRIGGER;
+	item.movetype = MOVETYPE_TOSS;
+	item.noise = "items/suit.wav";
+	setmodel (item, "progs/suit.mdl");
+	setsize (item, '-16 -16 -24', '16 16 32');
+	item.cnt = time + timeleft;
+	item.touch = b_touch;
+	item.nextthink = time + timeleft;
+	item.think = SUB_Remove;
+};
 
 /*
 ============
@@ -167,12 +379,11 @@ void() health_touch =
 		if (!T_Heal(other, self.healamount, 0))
 			return;
 	}
-	
-	sprint(other, LOC_PICKUP_HEALTH);
+	sprint(other, PRINT_LOW, LOC_PICKUP_HEALTH);
 	s = ftos(self.healamount);
-	sprint(other, s);
-	sprint(other, LOC_HEALTH);
-	sprint(other, "\n");
+	sprint(other, PRINT_LOW, s);
+	sprint(other, PRINT_LOW, LOC_HEALTH);
+	sprint(other, PRINT_LOW, "\n");
 	
 // health touch sound
 	sound(other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
@@ -279,6 +490,12 @@ void() armor_touch =
 		return;
 	}
 	
+	if (supermode() && other.invincible_time > 0)
+	{
+		armor_touch_arena();
+		return;
+	}
+	
 	if (other.health <= 0)
 		return;
 	if (other.classname != "player")
@@ -315,10 +532,10 @@ void() armor_touch =
 		self.nextthink = time + 20;
 	self.think = SUB_regen;
 	
-	sprint(other, LOC_PICKUP);
-	sprint(other, ftos(value));
-	sprint(other, LOC_ARMOR);
-	sprint(other, "\n");
+	sprint(other, PRINT_LOW, LOC_PICKUP);
+	sprint(other, PRINT_LOW, ftos(value));
+	sprint(other, PRINT_LOW, LOC_ARMOR);
+	sprint(other, PRINT_LOW, "\n");
 // armor touch sound
 	sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
@@ -361,10 +578,10 @@ void() armor_touch_arena =
 		self.nextthink = time + 25;
 	self.think = SUB_regen;
 	
-	sprint(other, LOC_PICKUP);
-	sprint(other, ftos(value));
-	sprint(other, LOC_ARMOR);
-	sprint(other, "\n");
+	sprint(other, PRINT_LOW, LOC_PICKUP);
+	sprint(other, PRINT_LOW, ftos(value));
+	sprint(other, PRINT_LOW, LOC_ARMOR);
+	sprint(other, PRINT_LOW, "\n");
 // armor touch sound
 	sound(other, CHAN_ITEM, "items/armor1.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
@@ -448,6 +665,23 @@ float(float w) RankForWeapon =
 	if (w == IT_NAILGUN)
 		return 6;
 	return 7;
+};
+
+float (float w) WeaponCode =
+{
+	if (w == IT_SUPER_SHOTGUN)
+		return 3;
+	if (w == IT_NAILGUN)
+		return 4;
+	if (w == IT_SUPER_NAILGUN)
+		return 5;
+	if (w == IT_GRENADE_LAUNCHER)
+		return 6;
+	if (w == IT_ROCKET_LAUNCHER)
+		return 7;
+	if (w == IT_LIGHTNING)
+		return 8;
+	return 1;
 };
 
 /*
@@ -548,9 +782,9 @@ void() weapon_touch =
 	else
 		objerror ("weapon_touch: unknown classname");
 
-	sprint (other, LOC_PICKUP);
-	sprint (other, self.netname);
-	sprint (other, "\n");
+	sprint (other, PRINT_LOW, LOC_PICKUP);
+	sprint (other, PRINT_LOW, self.netname);
+	sprint (other, PRINT_LOW, "\n");
 // weapon touch sound
 	sound (other, CHAN_ITEM, "weapons/pkup.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
@@ -566,17 +800,18 @@ void() weapon_touch =
 	
 	if (!(cvar("temp1") & SET_NOSWITCH))
 	{
-		if (!deathmatch)
+		if (deathmatch)
+		{
+			Deathmatch_Weapon (old, new);
+		}
+		else
 		{
 			self.weapon = new;
 			W_SetCurrentAmmo();
 		}
-		else
-		{
-			Deathmatch_Weapon (old, new);
-			W_SetCurrentAmmo();
-		}
 	}
+	
+	W_SetCurrentAmmo();
 	
 	self = stemp;
 
@@ -786,11 +1021,11 @@ local float		best;
 
 	bound_other_ammo ();
 	
-	sprint (other, LOC_PICKUP);
-	sprint (other, ftos(self.aflag));
-	sprint (other, " ");
-	sprint (other, self.netname);
-	sprint (other, "\n");
+	sprint (other, PRINT_LOW, LOC_PICKUP);
+	sprint (other, PRINT_LOW, ftos(self.aflag));
+	sprint (other, PRINT_LOW, " ");
+	sprint (other, PRINT_LOW, self.netname);
+	sprint (other, PRINT_LOW, "\n");
 // ammo touch sound
 	sound (other, CHAN_ITEM, "weapons/lock4.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
@@ -1043,15 +1278,15 @@ void() key_touch =
 	if (other.items & self.items)
 		return;
 
-	sprint (other, LOC_PICKUP);
-	sprint (other, self.netname);
-	sprint (other,"\n");
+	sprint (other, PRINT_LOW, LOC_PICKUP);
+	sprint (other, PRINT_LOW, self.netname);
+	sprint (other, PRINT_LOW, "\n");
 
 	sound (other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");
 	other.items = other.items | self.items;
 
-	if (!coop)
+	if (!cooperative())
 	{	
 		self.solid = SOLID_NOT;
 		self.model = string_null;
@@ -1235,20 +1470,19 @@ POWERUPS
 ===============================================================================
 */
 
-void() powerup_touch;
-
-
 void() powerup_touch =
 {
+	local entity oself;
+	
 	if (other.classname != "player")
 		return;
 	if (other.health <= 0)
 		return;
 
 	
-	sprint (other, LOC_PICKUP);
-	sprint (other, self.netname);
-	sprint (other,"\n");
+	sprint (other, PRINT_LOW, LOC_PICKUP);
+	sprint (other, PRINT_LOW, self.netname);
+	sprint (other, PRINT_LOW, "\n");
 
 	if (deathmatch)
 	{
@@ -1296,6 +1530,16 @@ void() powerup_touch =
 	{
 		other.super_time = 1;
 		other.super_damage_finished = time + 30;
+		if (supermode()) {
+			other.armortype = 0;
+			other.armorvalue = 0;
+			other.ammo_cells = 0;
+			
+			oself = self;
+			self = other;
+			W_SetCurrentAmmo();
+			self = oself;
+		}
 	}	
 
 	activator = other;
@@ -1318,6 +1562,7 @@ void() item_artifact_invulnerability =
 	self.noise = "items/protect.wav";
 	setmodel (self, "progs/invulner.mdl");
 	self.netname = LOC_NETNAME_PENT;
+	self.effects = self.effects | EF_RED;
 	self.items = IT_INVULNERABILITY;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
@@ -1380,7 +1625,7 @@ void() item_artifact_super_damage =
 		self.netname = LOC_NETNAME_OCT;
 	else
 		self.netname = LOC_NETNAME_QUAD;
-	
+	self.effects = self.effects | EF_BLUE;
 	self.items = IT_QUAD;
 	setsize (self, '-16 -16 -24', '16 16 32');
 	StartItem ();
@@ -1402,6 +1647,7 @@ void() BackpackTouch =
 	local	float	best, old, new;
 	local		entity	stemp;
 	local	float	acount;
+	local entity oself;
 	
 	if (other.classname != "player")
 		return;
@@ -1413,13 +1659,15 @@ void() BackpackTouch =
 			return;
 
 	acount = 0;
-	sprint (other, LOC_PICKUP);
+	sprint (other, PRINT_LOW, LOC_PICKUP);
 	
 	//supermode backpacks
 	if (supermode())
 	{
 		other.health = other.health + 10;
-		sprint (other, "10 additional health\n");
+		sprint (other, PRINT_LOW, "10");
+		sprint (other, PRINT_LOW, LOC_HEALTH_BACKPACK);
+		sprint (other, PRINT_LOW, "\n");
 		if ((other.health > 250) && (other.health < 300))
 			sound (other, CHAN_ITEM, "items/protect3.wav", 1, ATTN_NORM);
 		else
@@ -1440,12 +1688,17 @@ void() BackpackTouch =
 				other.items = other.items | IT_QUAD;
 
 				other.ammo_cells = 0;
+				
+				oself = self;
+				self = other;
+				W_SetCurrentAmmo();
+				self = oself;
 	
 				sound (other, CHAN_VOICE, "boss1/sight1.wav", 1, ATTN_NORM);
 				stuffcmd (other, "bf\n");               
-				bprint (other.netname);
-				bprint (LOC_BONUS);
-				bprint ("\n");
+				bprint (PRINT_HIGH, other.netname);
+				bprint (PRINT_HIGH, LOC_BONUS);
+				bprint (PRINT_HIGH, "\n");
 			}
 		}
 		self = other;
@@ -1475,46 +1728,46 @@ void() BackpackTouch =
 	if (self.ammo_shells)
 	{
 		if (acount)
-			sprint(other, ", ");
+			sprint(other, PRINT_LOW, ", ");
 		acount = 1;
 		s = ftos(self.ammo_shells);
-		sprint (other, s);
-		sprint (other, " ");
-		sprint (other, LOC_NETNAME_SHELLS);
+		sprint (other, PRINT_LOW, s);
+		sprint (other, PRINT_LOW, " ");
+		sprint (other, PRINT_LOW, LOC_NETNAME_SHELLS);
 	}
 	if (self.ammo_nails)
 	{
 		if (acount)
-			sprint(other, ", ");
+			sprint(other, PRINT_LOW, ", ");
 		acount = 1;
 		s = ftos(self.ammo_nails);
-		sprint (other, s);
-		sprint (other, " ");
-		sprint (other, LOC_NETNAME_NAILS);
+		sprint (other, PRINT_LOW, s);
+		sprint (other, PRINT_LOW, " ");
+		sprint (other, PRINT_LOW, LOC_NETNAME_NAILS);
 	}
 	if (self.ammo_rockets)
 	{
 		if (acount)
-			sprint(other, ", ");
+			sprint(other, PRINT_LOW, ", ");
 		acount = 1;
 		s = ftos(self.ammo_rockets);
-		sprint (other, s);
-		sprint (other, " ");
-		sprint (other, LOC_NETNAME_ROCKETS);
+		sprint (other, PRINT_LOW, s);
+		sprint (other, PRINT_LOW, " ");
+		sprint (other, PRINT_LOW, LOC_NETNAME_ROCKETS);
 	}
 	if (self.ammo_cells)
 	{
 		if (acount)
-			sprint(other, ", ");
+			sprint(other, PRINT_LOW, ", ");
 		acount = 1;
 		s = ftos(self.ammo_cells);
-		sprint (other, s);
-		sprint (other, " ");
-		sprint (other, LOC_NETNAME_CELLS);
+		sprint (other, PRINT_LOW, s);
+		sprint (other, PRINT_LOW, " ");
+		sprint (other, PRINT_LOW, LOC_NETNAME_CELLS);
 	}
 	
-	sprint (other, LOC_BACKPACK);
-	sprint (other, "\n");
+	sprint (other, PRINT_LOW, LOC_BACKPACK);
+	sprint (other, PRINT_LOW, "\n");
 // backpack touch sound
 	sound (other, CHAN_ITEM, "weapons/lock4.wav", 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");

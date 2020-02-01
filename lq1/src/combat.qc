@@ -83,8 +83,10 @@ void(entity targ, entity attacker) Killed =
 	
 	self.takedamage = DAMAGE_NO;
 	self.touch = SUB_Null;
+	self.effects = 0;
 
 	monster_death_use();
+
 	self.th_die ();
 	
 	self = oself;
@@ -175,11 +177,16 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	}
 
 // team play damage avoidance
-	if ( (teamplay == 1) && (targ.team > 0) && (targ.team == attacker.team)
-	&& (targ != attacker) 			
-	&& (attacker.classname == "player")
-	&& (inflictor.classname != "door") )	// because squishing a teammate is still possible
+	if ((teamplay == 1) && (OnSameTeam(attacker, targ)) &&
+		(attacker.classname == "player") &&
+		inflictor.classname != "door")
 		return;
+
+	if ((teamplay == 3) && (OnSameTeam(attacker, targ)) &&
+		(attacker.classname == "player") &&
+		(targ != attacker)&& inflictor.classname !="door")
+		return;
+	
 		
 // do the damage
 	targ.health = targ.health - take;
@@ -193,7 +200,8 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 // react to the damage
 	oldself = self;
 	self = targ;
-
+	
+#ifndef qw
 	if ( (self.flags & FL_MONSTER) && attacker != world)
 	{
 	// get mad unless of the same class (except for soldiers)
@@ -209,6 +217,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 			}
 		}
 	}
+#endif
 
 	if (self.th_pain)
 	{
@@ -226,7 +235,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 T_RadiusDamage
 ============
 */
-void(entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage =
+void(entity inflictor, entity attacker, float damage, entity ignore, string dtype) T_RadiusDamage =
 {
 	local	float 	points;
 	local	entity	head;
@@ -250,8 +259,10 @@ void(entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDam
 				if (points > 0)
 				{
 					if (CanDamage (head, inflictor))
-					{	// shambler takes half damage from all explosions
-						if (head.classname == "monster_shambler")						
+					{	
+						head.deathtype = dtype;
+						// shambler takes half damage from all explosions
+						if (head.classname == "monster_shambler")
 							T_Damage (head, inflictor, attacker, points*0.5);
 						else
 							T_Damage (head, inflictor, attacker, points);

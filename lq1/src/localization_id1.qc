@@ -33,8 +33,14 @@
 //Item collection
 #define LOC_PICKUP			"You got "
 #define LOC_PICKUP_HEALTH	"You receive "
+#define LOC_LOST			" lost "
+#define LOC_RECOVER_A		" recovered "
+#define LOC_RECOVER_B		" with "
+#define LOC_RECOVER_C		" seconds left!"
 #define LOC_BACKPACK		" from a backpack"
 #define LOC_BONUS			" attains bonus powers!!!"
+#define LOC_HEALTH			" health"
+#define LOC_HEALTH_BACKPACK	" additional health"
 #define LOC_ARMOR			" armor"
 
 //Item names
@@ -100,9 +106,10 @@
 //Environmental and Misc. death messages
 #define LOC_DEATH_EXPLO_BOX 	" exploded"
 #define LOC_DEATH_SQUISH 		" was squished"
-#define LOC_DEATH_FIREBAR	 	" was burned by a fire bar"
+#define LOC_DEATH_SQUISH 		" was squished by "
+#define LOC_DEATH_FIREBAR	 	" was seared by a fire bar"
 #define LOC_DEATH_TRAP_SPIKE	" was spiked"
-#define LOC_DEATH_TRAP_LASER	" was lasered"
+#define LOC_DEATH_TRAP_LASER	" was zapped"
 #define LOC_DEATH_TRAP_ROCKET 	" was rocketed"
 #define LOC_DEATH_TRAP_GRENADE 	" was grenaded"
 #define LOC_DEATH_FIREBALL		" ate a lavaball"
@@ -123,6 +130,7 @@
 #define LOC_DEATH_VOID_2		" fell into the void"
 #define LOC_DEATH_DISCHARGE_1	" discharges into the water."
 #define LOC_DEATH_DISCHARGE_2	" discharges into the water."
+#define LOC_DEATH_DISCHARGE_2	" electrocutes himself."
 #define LOC_DEATH_SELF_GRENADE	" tries to put the pin back in"
 #define LOC_DEATH_SELF_ROCKET	" becomes bored with life"
 #define LOC_DEATH_SELF_OTHER	" becomes bored with life"

@@ -498,8 +498,12 @@ Only used on start map.
 */
 void() trigger_setskill =
 {
+#ifdef qw
+	remove(self);
+#else
 	InitTrigger ();
 	self.touch = trigger_skill_touch;
+#endif
 };
 
 
@@ -559,7 +563,6 @@ void() hurt_touch =
 	{
 		//ZungryWare: This fix makes it so nextthink is used to track cooldowns instead of setting its solidity
 		//Fixes a bug where the trigger_hurt stops working if force_retouch is set while it's on cooldown
-		//Jesus fuck this game is buggy
 		
 		//self.solid = SOLID_NOT;
 		T_Damage (other, self, self, self.dmg);
