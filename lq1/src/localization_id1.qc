@@ -106,7 +106,7 @@
 //Environmental and Misc. death messages
 #define LOC_DEATH_EXPLO_BOX 	" exploded"
 #define LOC_DEATH_SQUISH 		" was squished"
-#define LOC_DEATH_SQUISH 		" was squished by "
+#define LOC_DEATH_SQUISH2 		" was squished by "
 #define LOC_DEATH_FIREBAR	 	" was seared by a fire bar"
 #define LOC_DEATH_TRAP_SPIKE	" was spiked"
 #define LOC_DEATH_TRAP_LASER	" was zapped"
@@ -130,7 +130,7 @@
 #define LOC_DEATH_VOID_2		" fell into the void"
 #define LOC_DEATH_DISCHARGE_1	" discharges into the water."
 #define LOC_DEATH_DISCHARGE_2	" discharges into the water."
-#define LOC_DEATH_DISCHARGE_2	" electrocutes himself."
+#define LOC_DEATH_DISCHARGE_3	" electrocutes himself."
 #define LOC_DEATH_SELF_GRENADE	" tries to put the pin back in"
 #define LOC_DEATH_SELF_ROCKET	" becomes bored with life"
 #define LOC_DEATH_SELF_OTHER	" becomes bored with life"
@@ -225,6 +225,7 @@
 #define LOC_TEAMKILL_2	" checks his glasses"
 #define LOC_TEAMKILL_3	" gets a frag for the other team"
 #define LOC_TEAMKILL_4	" loses another friend"
+#define LOC_TEAMKILL_5	" squishes a teammate"
 
 //This is a special flag used to differentiate the Id1 progs from the LibreQuake progs.
 #define ID1
