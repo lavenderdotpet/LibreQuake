@@ -290,7 +290,7 @@ void() misc_explobox2 =
 	setsize (self, '0 0 0', '32 32 32');
 	precache_sound ("weapons/r_exp3.wav");
 	self.health = 20;
-	self.th_die = barrel_explode;
+	self.th_die = barrel_explode_think;
 	self.takedamage = DAMAGE_AIM;
 
 	self.origin_z = self.origin_z + 2;

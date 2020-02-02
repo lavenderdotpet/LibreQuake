@@ -122,7 +122,7 @@
 #define LOC_DEATH_SPACE_2		"'s screams went unheard"
 #define LOC_DEATH_VOID_1		" fell into the void"
 #define LOC_DEATH_VOID_2		" fell out of existence"
-#define LOC_DEATH_DISCHARGE_1	" got shock treatment"
+#define LOC_DEATH_DISCHARGE_1	" mixed water with electricity"
 #define LOC_DEATH_DISCHARGE_2	" took a toaster bath"
 #define LOC_DEATH_DISCHARGE_3	" shouldn't have played with electricity"
 #define LOC_DEATH_SELF_GRENADE	" wasn't careful with explosives"

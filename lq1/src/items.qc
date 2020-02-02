@@ -62,9 +62,9 @@ void() q_touch =
 	bprint (PRINT_LOW, other.netname);
 	bprint (PRINT_LOW, LOC_RECOVER_A);
 	if (supermode())
-		bprint (PRINT_LOW, LOC_NETNAME_QUAD);
-	else 
 		bprint (PRINT_LOW, LOC_NETNAME_OCT);
+	else 
+		bprint (PRINT_LOW, LOC_NETNAME_QUAD);
 	bprint (PRINT_LOW, LOC_RECOVER_B);
 	bprint (PRINT_LOW, s);
 	bprint (PRINT_LOW, LOC_RECOVER_C);
@@ -79,10 +79,10 @@ void(float timeleft) DropQuad =
 	
 	bprint (PRINT_LOW, self.netname);
 	bprint (PRINT_LOW, LOC_LOST);
-	if (deathmatch == 4)
-		bprint (PRINT_LOW, LOC_NETNAME_QUAD);
-	else
+	if (supermode())
 		bprint (PRINT_LOW, LOC_NETNAME_OCT);
+	else
+		bprint (PRINT_LOW, LOC_NETNAME_QUAD);
 	bprint (PRINT_LOW, LOC_RECOVER_B);
 	s = ftos(rint(timeleft));
 	bprint (PRINT_LOW, s);

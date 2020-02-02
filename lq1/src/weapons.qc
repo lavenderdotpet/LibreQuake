@@ -573,7 +573,7 @@ void(entity from, float damage) LightningHit =
 	WriteCoord (MSG_BROADCAST, trace_endpos_z);
 	multicast (trace_endpos, MULTICAST_PVS);
 #else
-	particle (trace_endpos, '0 0 100', 47, damage*4);
+	particle (trace_endpos, '0 0 100', 15, damage*2);
 #endif
 
 	T_Damage (trace_ent, from, from, damage);
@@ -1498,7 +1498,7 @@ void() ImpulseCommands =
 	if (self.impulse >= 1 && self.impulse <= 8)
 		W_ChangeWeapon ();
 
-	if (self.impulse == 9)
+	if (self.impulse == 9 || self.impulse == 101)
 		CheatCommand ();
 	if (self.impulse == 10)
 		CycleWeaponCommand ();
