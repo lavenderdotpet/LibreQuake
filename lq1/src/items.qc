@@ -397,7 +397,7 @@ void() health_touch =
 	if (self.healtype == 2)
 	{
 		//But don't rot if they are already above max hp (and it isn't deathmatch)
-		if (other.health > other.max_health && !deathmatch)
+		if (other.items & IT_SUPERHEALTH && !deathmatch)
 			self.think = item_megahealth_hold;
 		else
 			self.think = item_megahealth_rot;
