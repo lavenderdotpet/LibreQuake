@@ -135,10 +135,12 @@ void() player_run	=[ $rockrun1,	player_run	]
 void() muzzleflash =
 {
 #ifdef qw
+//QuakeWorld only
 	WriteByte (MSG_BROADCAST, SVC_MUZZLEFLASH);
 	WriteEntity (MSG_BROADCAST, self);
 	multicast (self.origin, MULTICAST_PVS);
 #else
+//NetQuake only
 	self.effects = self.effects | EF_MUZZLEFLASH;
 #endif
 };

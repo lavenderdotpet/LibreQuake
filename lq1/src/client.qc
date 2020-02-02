@@ -33,6 +33,7 @@ void(float track) ChangeCDTrack =
 	WriteByte (MSG_ALL, SVC_CDTRACK);
 	WriteByte (MSG_ALL, track);
 #ifndef qw
+//NetQuake only
 	WriteByte (MSG_ALL, 3);
 #endif
 }
@@ -40,10 +41,12 @@ void(float track) ChangeCDTrack =
 float(entity p1, entity p2) OnSameTeam =
 {
 #ifdef qw
+//QuakeWorld only
 	if (infokey(p1, "team") == "")
 		return FALSE;
 	return infokey(p1, "team") == infokey(p2, "team");
 #else
+//NetQuake only
 	if (p1.team == 0)
 		return FALSE;
 	return p1.team == p2.team;
@@ -203,12 +206,14 @@ void() GotoNextMap =
 	else
 	{
 #ifdef qw
+//QuakeWorld only
 		local string newmap = infokey(world, mapname);
 		if (newmap != "")
 			changelevel (newmap);
 		else
 			changelevel (nextmap);
 #else
+//NetQuake only
 		changelevel (nextmap);
 #endif
 	}
@@ -231,6 +236,7 @@ void() ExitIntermission =
 // run some text if at the end of an episode
 //
 #ifndef qw
+//NetQuake only
 	if (intermission_running == 2)
 	{
 		if (world.model == "maps/e1m7.bsp")
@@ -331,6 +337,7 @@ void() execute_changelevel =
 	ChangeCDTrack(3);
 	
 #ifdef qw
+//QuakeWorld only
 	WriteByte (MSG_ALL, SVC_INTERMISSION);
 	WriteCoord (MSG_ALL, pos.origin_x);
 	WriteCoord (MSG_ALL, pos.origin_y);
@@ -344,6 +351,7 @@ void() execute_changelevel =
 	while (other != world)
 	{
 #ifndef qw
+//NetQuake only
 		other.view_ofs = '0 0 0';
 		other.angles = other.v_angle = pos.mangle;
 		other.fixangle = TRUE;		// turn this way immediately
@@ -358,6 +366,7 @@ void() execute_changelevel =
 	}
 
 #ifndef qw
+//NetQuake only
 	WriteByte (MSG_ALL, SVC_INTERMISSION);
 #endif
 };
@@ -369,12 +378,14 @@ void() changelevel_touch =
 		return;
 		
 #ifdef qw
+//QuakeWorld only
 	if ((cvar("samelevel") == 2) || ((cvar("samelevel") == 3) && (mapname != "start")))
 	{
 		T_Damage (other, self, self, 50000);
 		return;
 	}
 #else
+//NetQuake only
 	if ((cvar("noexit") == 1) || ((cvar("noexit") == 2) && (mapname != "start")))
 	{
 		T_Damage (other, self, self, 50000);
@@ -474,9 +485,7 @@ void() ClientKill =
 	bprint (PRINT_MEDIUM, "\n");
 	set_suicide_frame ();
 	self.modelindex = modelindex_player;
-#ifdef qw
 	logfrag (self, self);
-#endif
 	self.frags = self.frags - 2;	// extra penalty
 	respawn ();
 };
@@ -802,6 +811,7 @@ void() NextLevel =
 	}
 
 #ifndef qw
+//NetQuake only
 	gameover = TRUE;
 #endif
 	nextmap = o.map;
@@ -826,6 +836,7 @@ void() CheckRules =
 	local	float	fraglimit2;
 	
 #ifndef qw
+//NetQuake only
 	if (gameover)
 		return;
 #endif
@@ -1015,6 +1026,7 @@ void() WaterMove =
 		self.dmgtime = 0;
 	}
 #ifndef qw
+//NetQuake only
 	if (! (self.flags & FL_WATERJUMP) )
 		self.velocity = self.velocity - 0.8*self.waterlevel*frametime*self.velocity;
 #endif
@@ -1351,6 +1363,7 @@ called when a player disconnects from a server
 void() ClientDisconnect =
 {
 #ifndef qw
+//NetQuake only
 	if (gameover)
 		return;
 #endif

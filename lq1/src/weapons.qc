@@ -75,6 +75,7 @@ void() W_FireAxe =
 		WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 		WriteByte (MSG_BROADCAST, TE_GUNSHOT);
 #ifdef qw
+//QuakeWorld only
 		WriteByte (MSG_BROADCAST, 3);
 #endif
 		WriteCoord (MSG_BROADCAST, org_x);
@@ -139,6 +140,7 @@ SpawnBlood
 void(vector org, vector vel, float damage) SpawnBlood =
 {
 #ifdef qw
+//QuakeWorld only
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 	WriteByte (MSG_BROADCAST, TE_BLOOD);
 	WriteByte (MSG_BROADCAST, 1);
@@ -147,6 +149,7 @@ void(vector org, vector vel, float damage) SpawnBlood =
 	WriteCoord (MSG_BROADCAST, org_z);
 	multicast (org, MULTICAST_PVS);
 #else
+//NetQuake only
 	particle (org, vel*0.1, 73, damage*2);
 #endif
 };
@@ -171,6 +174,7 @@ SpawnChunk
 ================
 */
 #ifndef qw
+//NetQuake only
 void(vector org, vector vel) SpawnChunk =
 {
 	particle (org, vel*0.02, 0, 10);
@@ -191,6 +195,7 @@ entity	multi_ent;
 float	multi_damage;
 
 #ifdef qw
+//QuakeWorld only
 vector  blood_org;
 float   blood_count;
 	
@@ -204,6 +209,7 @@ void() ClearMultiDamage =
 	multi_damage = 0;
 
 #ifdef qw
+//QuakeWorld only
 	blood_count = 0;
 	puff_count = 0;
 #endif
@@ -235,6 +241,7 @@ void(entity hit, float damage) AddMultiDamage =
 void() Multi_Finish =
 {
 #ifdef qw
+//QuakeWorld only
 	if (puff_count)
 	{
 		WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
@@ -285,17 +292,21 @@ void(float damage, vector dir) TraceAttack =
 	{
 		AddMultiDamage (trace_ent, damage);
 #ifdef qw
+//QuakeWorld only
 		blood_count = blood_count + 1;
 		blood_org = org;
 #else
+//NetQuake only
 		SpawnBlood (org, vel*0.2, damage);
 #endif
 	}
 	else
 	{
 #ifdef qw
+//QuakeWorld only
 		puff_count = puff_count + 1;
 #else
+//NetQuake only
 		WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 		WriteByte (MSG_BROADCAST, TE_GUNSHOT);
 		WriteCoord (MSG_BROADCAST, org_x);
@@ -346,9 +357,11 @@ void(float shotcount, vector dir, vector spread) FireBullets =
 void() W_SmallKick =
 {
 #ifdef qw
+//QuakeWorld only
 	msg_entity = self;
 	WriteByte (MSG_ONE, SVC_SMALLKICK);
 #else
+//NetQuake only
 	self.punchangle_x = -2;
 #endif
 }
@@ -356,9 +369,11 @@ void() W_SmallKick =
 void() W_BigKick =
 {
 #ifdef qw
+//QuakeWorld only
 	msg_entity = self;
 	WriteByte (MSG_ONE, SVC_BIGKICK);
 #else
+//NetQuake only
 	self.punchangle_x = -4;
 #endif
 }
@@ -445,8 +460,10 @@ void()	s_explode6	=	[5,		SUB_Remove] {};
 void() BecomeExplosion =
 {
 #ifdef qw
+//QuakeWorld only
 	remove(self);
 #else
+//NetQuake only
 	self.movetype = MOVETYPE_NONE;
 	self.velocity = '0 0 0';
 	self.touch = SUB_Null;
@@ -464,6 +481,7 @@ void() T_MissileTouch =
 		return;		// don't explode on owner
 	
 #ifdef qw
+//QuakeWorld only
 	if (self.voided) {
 			return;
 		}
@@ -551,6 +569,7 @@ void() W_FireRocket =
 	setorigin (newmis, self.origin + v_forward*8 + '0 0 16');
 	
 #ifdef qw
+//QuakeWorld only
 	newmis.voided = 0;
 #endif
 };
@@ -566,6 +585,7 @@ LIGHTNING
 void(entity from, float damage) LightningHit =
 {
 #ifdef qw
+//QuakeWorld only
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 	WriteByte (MSG_BROADCAST, TE_LIGHTNINGBLOOD);
 	WriteCoord (MSG_BROADCAST, trace_endpos_x);
@@ -573,6 +593,7 @@ void(entity from, float damage) LightningHit =
 	WriteCoord (MSG_BROADCAST, trace_endpos_z);
 	multicast (trace_endpos, MULTICAST_PVS);
 #else
+//NetQuake only
 	particle (trace_endpos, '0 0 100', 15, damage*2);
 #endif
 
@@ -698,6 +719,7 @@ void() W_FireLightning =
 void() GrenadeExplode =
 {
 #ifdef qw
+//QuakeWorld only
 	if (self.voided) {
 		return;
 	}
@@ -785,6 +807,7 @@ void() W_FireGrenade =
 	setorigin (newmis, self.origin);
 	
 #ifdef qw
+//QuakeWorld only
 	newmis.voided = 0;
 #endif
 };
@@ -826,6 +849,7 @@ void(vector org, vector dir) launch_spike =
 		newmis.velocity = dir * 1000;
 	
 #ifdef qw
+//QuakeWorld only
 	newmis.voided = 0;
 #endif
 };
@@ -846,6 +870,7 @@ void() W_FireSuperSpikes =
 	W_SmallKick();
 	
 #ifdef qw
+//QuakeWorld only
 	newmis.voided = 0;
 #endif
 };
@@ -890,6 +915,7 @@ void() spike_touch =
 		return;
 	
 #ifdef qw
+//QuakeWorld only
 	if (self.voided) {
 		return;
 	}
@@ -938,6 +964,7 @@ void() superspike_touch =
 		return;
 	
 #ifdef qw
+//QuakeWorld only
 	if (self.voided) {
 		return;
 	}

@@ -202,6 +202,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 	self = targ;
 	
 #ifndef qw
+//NetQuake only
 	if ( (self.flags & FL_MONSTER) && attacker != world)
 	{
 	// get mad unless of the same class (except for soldiers)

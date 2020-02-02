@@ -4,8 +4,10 @@
 float() cooperative = 
 {
 #ifdef qw
+//QuakeWorld only
 	return 0;
 #else
+//NetQuake only
 	return coop;
 #endif
 }
@@ -14,8 +16,10 @@ float() cooperative =
 float() nightmare = 
 {
 #ifdef qw
+//QuakeWorld only
 	return 0;
 #else
+//NetQuake only
 	if (skill == 3 && !(cvar("temp1") & SET_COPPERNIGHTMARE))
 		return TRUE;
 	else
@@ -27,8 +31,10 @@ float() nightmare =
 float() coppernightmare = 
 {
 #ifdef qw
+//QuakeWorld only
 	return 0;
 #else
+//NetQuake only
 	if (skill == 3 && cvar("temp1") & SET_COPPERNIGHTMARE)
 		return TRUE;
 	else

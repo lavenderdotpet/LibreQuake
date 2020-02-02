@@ -499,8 +499,10 @@ Only used on start map.
 void() trigger_setskill =
 {
 #ifdef qw
+//QuakeWorld only
 	remove(self);
 #else
+//NetQuake only
 	InitTrigger ();
 	self.touch = trigger_skill_touch;
 #endif

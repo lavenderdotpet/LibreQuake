@@ -217,9 +217,11 @@ void() StartFrame =
 	deathmatch = cvar("deathmatch");
 	teamplay = cvar("teamplay");
 #ifdef qw
+//QuakeWorld only
 	timelimit = cvar("timelimit") * 60;
 	fraglimit = cvar("fraglimit");
 #else
+//NetQuake only
 	skill = cvar("skill");
 #endif
 	framecount = framecount + 1;

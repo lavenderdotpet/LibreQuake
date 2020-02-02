@@ -217,6 +217,7 @@ void() barrel_explode =
 	self.classname = "explo_box";
 	T_RadiusDamage (self, self, 160, world, "");
 #ifdef qw
+//QuakeWorld only
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 	WriteByte (MSG_BROADCAST, TE_EXPLOSION);
 	WriteCoord (MSG_BROADCAST, self.origin_x);
@@ -225,6 +226,7 @@ void() barrel_explode =
 	multicast (self.origin, MULTICAST_PHS);
 	remove (self);
 #else
+//NetQuake only
 	sound (self, CHAN_VOICE, "weapons/r_exp3.wav", 1, ATTN_NORM);
 	particle (self.origin, '0 0 0', 75, 255);
 	
