@@ -380,10 +380,28 @@ float	UPDATE_TEMP		= 3;
 // entity effects
 
 float	EF_BRIGHTFIELD	= 1;
-float	EF_MUZZLEFLASH 	= 2;
-float	EF_BRIGHTLIGHT 	= 4;
-float	EF_DIMLIGHT 	= 8;
+float	EF_MUZZLEFLASH	= 2;
+float	EF_BRIGHTLIGHT	= 4;
+float	EF_DIMLIGHT		= 8;
+// These effects don't exist in NetQuake, but define them anyway for compatibility
+float	EF_FLAG1		= 16;
+float	EF_FLAG2		= 32;
+float	EF_BLUE			= 64;
+float	EF_RED			= 128;
 
+// message levels
+float	PRINT_LOW		= 0;            // pickup messages
+float	PRINT_MEDIUM	= 1;            // death messages
+float	PRINT_HIGH		= 2;            // critical messages
+float	PRINT_CHAT		= 3;            // also goes to chat console
+
+// multicast sets
+float	MULTICAST_ALL	= 0;            // every client
+float	MULTICAST_PHS	= 1;            // within hearing
+float	MULTICAST_PVS	= 2;            // within sight
+float	MULTICAST_ALL_R	= 3;            // every client, reliable
+float	MULTICAST_PHS_R	= 4;            // within hearing, reliable
+float	MULTICAST_PVS_R	= 5;            // within sight, reliable
 
 // messages
 float	MSG_BROADCAST	= 0;		// unreliable to all
@@ -592,8 +610,13 @@ string(string s) precache_sound		= #19;
 string(string s) precache_model		= #20;
 void(entity client, string s)stuffcmd = #21;
 entity(vector org, float rad) findradius = #22;
-void(string s) bprint				= #23;
-void(entity client, string s) sprint = #24;
+
+void(string s) bprint2								= #23;
+void(entity client, string s) sprint2				= #24;
+
+void(float level, string s) bprint						= {bprint2(s);};
+void(entity client, float level, string s) sprint		= {sprint2(client, s);};
+
 void(string s) dprint				= #25;
 string(float f) ftos				= #26;
 string(vector v) vtos				= #27;
@@ -672,6 +695,10 @@ void(entity e) setspawnparms		= #78;		// set parm1... to the
 												// values at level start
 												// for coop respawn
 
+//Functions from qw. They don't do anything in netquake
+void(vector where, float set) multicast = {};
+void(entity killer, entity killee) logfrag = {};
+
 //============================================================================
 
 //
@@ -685,6 +712,8 @@ void() SUB_CalcAngleMoveDone;
 void() SUB_Null;
 void() SUB_UseTargets;
 void() SUB_Remove;
+
+float(entity p1, entity p2) OnSameTeam;
 
 //
 //	combat.qc

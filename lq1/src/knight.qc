@@ -159,27 +159,27 @@ void(entity attacker, float damage)	knight_pain =
 //ZungryWare: This animation is unused
 //I was planning to implement it for when the knight gets a kill, but it's not a very good animation
 /*
-void() knight_bow1	=[ $kneel1,	knight_bow2	] {ai_stand();};
-void() knight_bow2	=[ $kneel2,	knight_bow3	] {ai_stand();};
-void() knight_bow3	=[ $kneel3,	knight_bow4	] {ai_stand();};
-void() knight_bow4	=[ $kneel4,	knight_bow5	] {ai_stand();};
-void() knight_bow5	=[ $kneel5,	knight_bow6	] {ai_stand();};
-void() knight_bow6	=[ $kneel4,	knight_bow7	] {ai_stand();};
-void() knight_bow7	=[ $kneel3,	knight_bow8	] {ai_stand();};
-void() knight_bow8	=[ $kneel2,	knight_bow9	] {ai_stand();};
+void() knight_bow1	=[ $kneel1,	knight_bow2		] {ai_stand();};
+void() knight_bow2	=[ $kneel2,	knight_bow3		] {ai_stand();};
+void() knight_bow3	=[ $kneel3,	knight_bow4		] {ai_stand();};
+void() knight_bow4	=[ $kneel4,	knight_bow5		] {ai_stand();};
+void() knight_bow5	=[ $kneel5,	knight_bow6		] {ai_stand();};
+void() knight_bow6	=[ $kneel4,	knight_bow7		] {ai_stand();};
+void() knight_bow7	=[ $kneel3,	knight_bow8		] {ai_stand();};
+void() knight_bow8	=[ $kneel2,	knight_bow9		] {ai_stand();};
 void() knight_bow9	=[ $kneel1,	knight_bow10	] {ai_stand();};
 void() knight_bow10	=[ $walk1,	knight_stand1	] {ai_stand();};*/
 
-void() knight_die1	=[ $death1,		knight_die2	] {};
-void() knight_die2	=[ $death2,		knight_die3	] {};
-void() knight_die3	=[ $death3,		knight_die4	] {self.solid=SOLID_NOT;};
-void() knight_die4	=[ $death4,		knight_die5	] {};
-void() knight_die5	=[ $death5,		knight_die6	] {};
-void() knight_die6	=[ $death6,		knight_die7	] {};
-void() knight_die7	=[ $death7,		knight_die8	] {};
-void() knight_die8	=[ $death8,		knight_die9	] {};
-void() knight_die9	=[ $death9,		knight_die10] {};
-void() knight_die10	=[ $death10,	knight_die10] {};
+void() knight_die1	=[ $death1,		knight_die2		] {};
+void() knight_die2	=[ $death2,		knight_die3		] {};
+void() knight_die3	=[ $death3,		knight_die4		] {self.solid=SOLID_NOT;};
+void() knight_die4	=[ $death4,		knight_die5		] {};
+void() knight_die5	=[ $death5,		knight_die6		] {};
+void() knight_die6	=[ $death6,		knight_die7		] {};
+void() knight_die7	=[ $death7,		knight_die8		] {};
+void() knight_die8	=[ $death8,		knight_die9		] {};
+void() knight_die9	=[ $death9,		knight_die10	] {};
+void() knight_die10	=[ $death10,	knight_die10	] {};
 
 void() knight_dieb1		=[ $deathb1,	knight_dieb2	] {};
 void() knight_dieb2		=[ $deathb2,	knight_dieb3	] {};

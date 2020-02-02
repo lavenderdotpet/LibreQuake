@@ -27,9 +27,14 @@
 //Item collection
 #define LOC_PICKUP			"You got "
 #define LOC_PICKUP_HEALTH	"You receive "
+#define LOC_LOST			" dropped "
+#define LOC_RECOVER_A		" stole "
+#define LOC_RECOVER_B		" ("
+#define LOC_RECOVER_C		" seconds left.)"
 #define LOC_BACKPACK		" from a backpack"
 #define LOC_BONUS			" is coming for you all!!!"
 #define LOC_HEALTH			" health"
+#define LOC_HEALTH_BACKPACK	" health from a backpack"
 #define LOC_ARMOR			" armor"
 
 //Item names
@@ -69,7 +74,7 @@
 //Misc. entity messages
 #define LOC_COUNTER_COUNT_1A	""
 #define LOC_COUNTER_COUNT_1B	" more to go..."
-#define LOC_COUNTER_COUNT_2		"There are several more to go..."
+#define LOC_COUNTER_COUNT_2		"There are more to go..."
 #define LOC_COUNTER_COMPLETE	"Sequence finished!"
 #define LOC_SECRET				"You discovered a secret!"
 #define LOC_RUNE				"You got a rune!"
@@ -95,7 +100,8 @@
 //Environmental and Misc. death messages
 #define LOC_DEATH_EXPLO_BOX 	" was detonated by an explosive crate"
 #define LOC_DEATH_SQUISH 		" was crushed"
-#define LOC_DEATH_FIREBAR	 	" was seared by a fire bar"
+#define LOC_DEATH_SQUISH2 		" was crushed by "
+#define LOC_DEATH_FIREBAR	 	" was burned by a fire bar"
 #define LOC_DEATH_TRAP_SPIKE	" was shot by a spike turret"
 #define LOC_DEATH_TRAP_LASER	" was shot by a laser turret"
 #define LOC_DEATH_TRAP_ROCKET 	" was blasted by a rocket turret"
@@ -116,8 +122,9 @@
 #define LOC_DEATH_SPACE_2		"'s screams went unheard"
 #define LOC_DEATH_VOID_1		" fell into the void"
 #define LOC_DEATH_VOID_2		" fell out of existence"
-#define LOC_DEATH_DISCHARGE_1	" electrocuted himself"
+#define LOC_DEATH_DISCHARGE_1	" got shock treatment"
 #define LOC_DEATH_DISCHARGE_2	" took a toaster bath"
+#define LOC_DEATH_DISCHARGE_3	" shouldn't have played with electricity"
 #define LOC_DEATH_SELF_GRENADE	" wasn't careful with explosives"
 #define LOC_DEATH_SELF_ROCKET	" blew himself up"
 #define LOC_DEATH_SELF_OTHER	" had a death-wish"
@@ -191,11 +198,11 @@
 
 #define LOC_DEATH_LIGHTNING_1A	" was fried by "
 #define LOC_DEATH_LIGHTNING_1B	"'s Thunder Cannon"
-#define LOC_DEATH_LIGHTNING_2A	" was given shock treatment by "
+#define LOC_DEATH_LIGHTNING_2A	" was volt-charged by "
 #define LOC_DEATH_LIGHTNING_2B	"'s Thunder Cannon"
 #define LOC_DEATH_LIGHTNING_QA	" took "
 #define LOC_DEATH_LIGHTNING_QB	"'s last train to glory"
-#define LOC_DEATH_LIGHTNING_D1A	" was electrocuted by "
+#define LOC_DEATH_LIGHTNING_D1A	" was given shock treatment by "
 #define LOC_DEATH_LIGHTNING_D1B	""
 #define LOC_DEATH_LIGHTNING_D2A	" was given a toaster bath by "
 #define LOC_DEATH_LIGHTNING_D2B	""
@@ -212,6 +219,7 @@
 #define LOC_TEAMKILL_2	" invokes friendly-fire"
 #define LOC_TEAMKILL_3	" should really apologize"
 #define LOC_TEAMKILL_4	" doesn't know what team he's on"
+#define LOC_TEAMKILL_5	" got a teammate crushed"
 
 
 

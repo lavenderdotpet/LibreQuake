@@ -1,27 +1,45 @@
 //Gamemode Settings
 
+//Whether coop is enabled or not
+float() cooperative = 
+{
+#ifdef qw
+	return 0;
+#else
+	return coop;
+#endif
+}
+
 //Skill 3
 float() nightmare = 
 {
+#ifdef qw
+	return 0;
+#else
 	if (skill == 3 && !(cvar("temp1") & SET_COPPERNIGHTMARE))
 		return TRUE;
 	else
 		return FALSE;
+#endif
 }
 
 //Skill 3 with copper settings
 float() coppernightmare = 
 {
+#ifdef qw
+	return 0;
+#else
 	if (skill == 3 && cvar("temp1") & SET_COPPERNIGHTMARE)
 		return TRUE;
 	else
 		return FALSE;
+#endif
 }
 
 //For if weapons should stay instead of disappearing once picked up
 float() weaponstay =
 {
-	if (deathmatch || coop)
+	if (deathmatch || cooperative())
 	{
 		if (deathmatch != 1)
 		{

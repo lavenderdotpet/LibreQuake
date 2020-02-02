@@ -214,8 +214,14 @@ void() worldspawn =
 
 void() StartFrame =
 {
+	deathmatch = cvar("deathmatch");
 	teamplay = cvar("teamplay");
+#ifdef qw
+	timelimit = cvar("timelimit") * 60;
+	fraglimit = cvar("fraglimit");
+#else
 	skill = cvar("skill");
+#endif
 	framecount = framecount + 1;
 };
 
