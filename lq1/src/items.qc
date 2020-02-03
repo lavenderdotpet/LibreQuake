@@ -407,13 +407,10 @@ void() health_touch =
 	}
 	else
 	{
-		if (deathmatch != 2)		// deathmatch 2 is the silly old rules
+		if (itemrespawn())		// deathmatch 2 is the silly old rules
 		{
-			if (deathmatch)
-			{
-				self.nextthink = time + 20;
-				self.think = SUB_regen;
-			}
+			self.nextthink = time + 20;
+			self.think = SUB_regen;
 		}
 	}
 	
@@ -436,14 +433,11 @@ void() item_megahealth_rot =
 // just blindly subtract the flag off
 	other.items = other.items - (other.items & IT_SUPERHEALTH);
 	
-	if (deathmatch != 2)	// deathmatch 2 is silly old rules
-	{
-		if (deathmatch)
+	if (itemrespawn())		// deathmatch 2 is the silly old rules
 		{
 			self.nextthink = time + 20;
 			self.think = SUB_regen;
 		}
-	}
 };
 
 //Same as rot, but doesn't actually reduce their health.

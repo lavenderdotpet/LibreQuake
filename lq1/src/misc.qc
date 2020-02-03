@@ -190,6 +190,8 @@ local entity	fireball;
 	fireball.velocity_x = (random() * 100) - 50;
 	fireball.velocity_y = (random() * 100) - 50;
 	fireball.velocity_z = self.speed + (random() * 200);
+	fireball.avelocity_x = (random() * 140) + 40;
+	fireball.avelocity_z = (random() * 140) + 40;
 	fireball.classname = "fireball";
 	setmodel (fireball, "progs/lavaball.mdl");
 	setsize (fireball, '0 0 0', '0 0 0');
