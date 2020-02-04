@@ -190,6 +190,7 @@ local entity	fireball;
 	fireball.velocity_x = (random() * 100) - 50;
 	fireball.velocity_y = (random() * 100) - 50;
 	fireball.velocity_z = self.speed + (random() * 200);
+	//ZungryWare: Fireball now spins a bit in the air
 	fireball.avelocity_x = (random() * 140) + 40;
 	fireball.avelocity_z = (random() * 140) + 40;
 	fireball.classname = "fireball";

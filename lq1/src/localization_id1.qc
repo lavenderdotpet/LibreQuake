@@ -56,6 +56,8 @@
 #define LOC_NETNAME_RING	"The Ring of Shadows"
 #define LOC_NETNAME_BIO		"the Biosuit"
 
+#define LOC_NETNAME_AXE					"the Axe"
+#define LOC_NETNAME_SHOTGUN				"the Shotgun"
 #define LOC_NETNAME_SUPER_SHOTGUN		"the Double-Barreled Shotgun"
 #define LOC_NETNAME_NAILGUN				"the Nailgun"
 #define LOC_NETNAME_SUPER_NAILGUN		"the Super Nailgun"

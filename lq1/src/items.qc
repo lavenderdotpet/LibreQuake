@@ -1637,11 +1637,11 @@ PLAYER BACKPACKS
 
 void() BackpackTouch =
 {
-	local string	s;
+	local	string	s;
 	local	float	best, old, new;
-	local		entity	stemp;
+	local	entity	stemp;
 	local	float	acount;
-	local entity oself;
+	local	entity	oself;
 	
 	if (other.classname != "player")
 		return;
@@ -1718,7 +1718,13 @@ void() BackpackTouch =
 	other.items = other.items | new;
 	
 	bound_other_ammo ();
-
+	
+	if (self.netname != "") {
+		if (acount)
+			sprint(other, PRINT_LOW, ", ");
+		acount = 1;
+		sprint (other, PRINT_LOW, self.netname);
+	}
 	if (self.ammo_shells)
 	{
 		if (acount)
@@ -1795,22 +1801,18 @@ void() DropBackpack =
 	item.origin = self.origin - '0 0 24';
 	
 	item.items = self.weapon;
-	if (item.items == IT_AXE)
-		item.netname = "Axe";
-	else if (item.items == IT_SHOTGUN)
-		item.netname = "Shotgun";
-	else if (item.items == IT_SUPER_SHOTGUN)
-		item.netname = "Double-barrelled Shotgun";
+	if (item.items == IT_SUPER_SHOTGUN)
+		item.netname = LOC_NETNAME_SUPER_SHOTGUN;
 	else if (item.items == IT_NAILGUN)
-		item.netname = "Nailgun";
+		item.netname = LOC_NETNAME_NAILGUN;
 	else if (item.items == IT_SUPER_NAILGUN)
-		item.netname = "Super Nailgun";
+		item.netname = LOC_NETNAME_SUPER_NAILGUN;
 	else if (item.items == IT_GRENADE_LAUNCHER)
-		item.netname = "Grenade Launcher";
+		item.netname = LOC_NETNAME_GRENADE_LAUNCHER;
 	else if (item.items == IT_ROCKET_LAUNCHER)
-		item.netname = "Rocket Launcher";
+		item.netname = LOC_NETNAME_ROCKET_LAUNCHER;
 	else if (item.items == IT_LIGHTNING)
-		item.netname = "Thunderbolt";
+		item.netname = LOC_NETNAME_LIGHTNING;
 	else
 		item.netname = "";
 

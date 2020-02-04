@@ -50,6 +50,8 @@
 #define LOC_NETNAME_RING	"The Eye of Eryx"
 #define LOC_NETNAME_BIO		"the Hazmat Suit"
 
+#define LOC_NETNAME_AXE					"the Hammer"
+#define LOC_NETNAME_SHOTGUN				"the Shotgun"
 #define LOC_NETNAME_SUPER_SHOTGUN		"the Super Shotgun"
 #define LOC_NETNAME_NAILGUN				"the Nailgun"
 #define LOC_NETNAME_SUPER_NAILGUN		"the Super Nailgun"
