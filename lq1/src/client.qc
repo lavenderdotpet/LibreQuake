@@ -1718,24 +1718,30 @@ void(entity targ, entity attacker) ClientObituary =
 			// killed by a montser?
 			if (attacker.flags & FL_MONSTER)
 			{
-				if (attacker.classname == "monster_army")				{bprint (PRINT_HIGH, LOC_DEATH_ARMY);}
-				else if (attacker.classname == "monster_demon1")		{bprint (PRINT_HIGH, LOC_DEATH_DEMON1);}
-				else if (attacker.classname == "monster_dog")			{bprint (PRINT_HIGH, LOC_DEATH_DOG);}
-				else if (attacker.classname == "monster_enforcer")		{bprint (PRINT_HIGH, LOC_DEATH_ENFORCER);}
-				else if (attacker.classname == "monster_fish")			{bprint (PRINT_HIGH, LOC_DEATH_FISH);}
-				else if (attacker.classname == "monster_hell_knight")	{bprint (PRINT_HIGH, LOC_DEATH_HELL_KNIGHT);}
-				else if (attacker.classname == "monster_knight")		{bprint (PRINT_HIGH, LOC_DEATH_KNIGHT);}
-				else if (attacker.classname == "monster_ogre")			{bprint (PRINT_HIGH, LOC_DEATH_OGRE);}
-				else if (attacker.classname == "monster_oldone")		{bprint (PRINT_HIGH, LOC_DEATH_OLDONE);}
-				else if (attacker.classname == "monster_boss")			{bprint (PRINT_HIGH, LOC_DEATH_BOSS);}
-				else if (attacker.classname == "monster_shalrath")		{bprint (PRINT_HIGH, LOC_DEATH_SHALRATH);}
-				else if (attacker.classname == "monster_shambler")		{bprint (PRINT_HIGH, LOC_DEATH_SHAMBLER);}
-				else if (attacker.classname == "monster_tarbaby")		{bprint (PRINT_HIGH, LOC_DEATH_TARBABY);}
-				else if (attacker.classname == "monster_wizard")		{bprint (PRINT_HIGH, LOC_DEATH_WIZARD);}
-				else if (attacker.classname == "monster_zombie")		{bprint (PRINT_HIGH, LOC_DEATH_ZOMBIE);}
-				else 													{bprint (PRINT_HIGH, LOC_DEATH_MONSTER);}
+				if (attacker.classname == "monster_army")				{bprint (PRINT_MEDIUM, LOC_DEATH_ARMY);}
+				else if (attacker.classname == "monster_demon1")		{bprint (PRINT_MEDIUM, LOC_DEATH_DEMON1);}
+				else if (attacker.classname == "monster_dog")			{bprint (PRINT_MEDIUM, LOC_DEATH_DOG);}
+				else if (attacker.classname == "monster_enforcer")		{bprint (PRINT_MEDIUM, LOC_DEATH_ENFORCER);}
+				else if (attacker.classname == "monster_fish")			{bprint (PRINT_MEDIUM, LOC_DEATH_FISH);}
+				else if (attacker.classname == "monster_hell_knight")	{bprint (PRINT_MEDIUM, LOC_DEATH_HELL_KNIGHT);}
+				else if (attacker.classname == "monster_knight")		{bprint (PRINT_MEDIUM, LOC_DEATH_KNIGHT);}
+				else if (attacker.classname == "monster_ogre")			{bprint (PRINT_MEDIUM, LOC_DEATH_OGRE);}
+				else if (attacker.classname == "monster_oldone")		{bprint (PRINT_MEDIUM, LOC_DEATH_OLDONE);}
+				else if (attacker.classname == "monster_boss")			{bprint (PRINT_MEDIUM, LOC_DEATH_BOSS);}
+				else if (attacker.classname == "monster_shalrath")		{bprint (PRINT_MEDIUM, LOC_DEATH_SHALRATH);}
+				else if (attacker.classname == "monster_shambler")		{bprint (PRINT_MEDIUM, LOC_DEATH_SHAMBLER);}
+				else if (attacker.classname == "monster_tarbaby")		{bprint (PRINT_MEDIUM, LOC_DEATH_TARBABY);}
+				else if (attacker.classname == "monster_wizard")		{bprint (PRINT_MEDIUM, LOC_DEATH_WIZARD);}
+				else if (attacker.classname == "monster_zombie")		{bprint (PRINT_MEDIUM, LOC_DEATH_ZOMBIE);}
+				else 													{bprint (PRINT_MEDIUM, LOC_DEATH_MONSTER);}
 				
 				bprint(PRINT_MEDIUM, "\n");
+				return;
+			}
+			if (attacker.classname == "monster_boss")
+			{
+				bprint (PRINT_MEDIUM, LOC_DEATH_BOSS);
+				bprint (PRINT_MEDIUM, "\n");
 				return;
 			}
 
@@ -1895,8 +1901,6 @@ void(entity targ, entity attacker) ClientObituary =
 					return;
 				}
 			}
-			
-			
 			
 			// hell if I know; he's just dead!!!
 			bprint (PRINT_MEDIUM, LOC_DEATH_OTHER);
