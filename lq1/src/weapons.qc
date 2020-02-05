@@ -1506,8 +1506,7 @@ void() QuadCheat =
 
 void() debug_func =
 {
-	bprint2("debug");
-	bprint2("\n");
+	bprint2("debug\n");
 }
 
 /*

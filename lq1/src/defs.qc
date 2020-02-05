@@ -269,7 +269,6 @@ float	RANGE_MID				= 2;
 float	RANGE_FAR				= 3;
 
 // deadflag values
-
 float	DEAD_NO					= 0;
 float	DEAD_DYING				= 1;
 float	DEAD_DEAD				= 2;
