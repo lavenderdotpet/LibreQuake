@@ -981,7 +981,7 @@ void() WaterMove =
 	if (!self.waterlevel)
 	{
 		if (self.flags & FL_INWATER)
-		{	
+		{
 			// play leave water sound
 			sound (self, CHAN_BODY, "misc/outwater.wav", 1, ATTN_NORM);
 			self.flags = self.flags - FL_INWATER;

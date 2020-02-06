@@ -215,6 +215,13 @@
 #define LOC_DEATH_LIGHTNING_D2A	" accepts "
 #define LOC_DEATH_LIGHTNING_D2B	"'s discharge"
 
+#define LOC_DEATH_RAILGUN_1A	" was railed by "
+#define LOC_DEATH_RAILGUN_1B	""
+#define LOC_DEATH_RAILGUN_2A	" was railed by "
+#define LOC_DEATH_RAILGUN_2B	""
+#define LOC_DEATH_RAILGUN_QA	" was railed by "
+#define LOC_DEATH_RAILGUN_QB	""
+
 //More Multiplayer death messages
 #define LOC_DEATH_TELEFRAG_A	" was telefragged by "
 #define LOC_DEATH_TELEFRAG_B	""

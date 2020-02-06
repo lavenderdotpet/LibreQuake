@@ -18,7 +18,7 @@ progs_id1_qw.src: For compiling the fixed progs for the original QuakeWorld
 
 -New Singleplayer and Multiplayer Modes: In order to keep things cleaner, I have made gamemodes.qc, which handles all gamemode checks. Some new modes have been added, such as disabling powerups in deathmatch.
 
--Support for Map-Based Hacks: Some map-based hacks have been improved in these progs with new death strings.
+-Minor Tweaks: Lots of minor tweaks have been made to the game. Things like changed particle colors, making the misc_teleporttrain spin around like it was originally intended to, making Shub-Niggurath use her unused wakeup sound, and more!
 
 Hopefully you find these progs useful!
 -ZungryWare

@@ -369,6 +369,10 @@ float() FindTarget =
 	
 	if (client.health <= 0)
 		return FALSE;
+	
+	if (client.classname != "player")
+		if (client.enemy.health <= 0)
+			return FALSE;
 
 	if (client == self.enemy)
 		return FALSE;
@@ -409,7 +413,9 @@ float() FindTarget =
 			return FALSE;
 		}
 	}
-	
+	bprint2(ftos(client.health));
+	bprint2(client.classname);
+	bprint2("\n");
 	FoundTarget ();
 
 	return TRUE;

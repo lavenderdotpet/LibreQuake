@@ -209,6 +209,13 @@
 #define LOC_DEATH_LIGHTNING_D2A	" was given a toaster bath by "
 #define LOC_DEATH_LIGHTNING_D2B	""
 
+#define LOC_DEATH_RAILGUN_1A	" was picked off by "
+#define LOC_DEATH_RAILGUN_1B	"'s Railgun"
+#define LOC_DEATH_RAILGUN_2A	" was taken out by "
+#define LOC_DEATH_RAILGUN_2B	"'s Railgun"
+#define LOC_DEATH_RAILGUN_QA	"'s Plug was Pulled by "
+#define LOC_DEATH_RAILGUN_QB	""
+
 //More Multiplayer death messages
 #define LOC_DEATH_TELEFRAG_A	" was teleported into by "
 #define LOC_DEATH_TELEFRAG_B	""
