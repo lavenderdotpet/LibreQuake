@@ -413,9 +413,6 @@ float() FindTarget =
 			return FALSE;
 		}
 	}
-	bprint2(ftos(client.health));
-	bprint2(client.classname);
-	bprint2("\n");
 	FoundTarget ();
 
 	return TRUE;
