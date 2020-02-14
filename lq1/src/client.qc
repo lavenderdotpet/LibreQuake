@@ -53,6 +53,17 @@ float(entity p1, entity p2) OnSameTeam =
 #endif
 }
 
+float(entity p) GetTeam =
+{
+#ifdef qw
+//QuakeWorld only
+	return infokey(p, "team");
+#else
+//NetQuake only
+	return p.team;
+#endif
+}
+
 void() SetChangeParms =
 {
 	if (self.health <= 0)
@@ -860,10 +871,16 @@ void() CheckRules =
 };
 
 //============================================================================
+void() PlayerRevive;
 
 void() PlayerDeathThink =
 {
 	local float		forward;
+	
+	if (self.health > 0) {
+		PlayerRevive();
+		return;
+	}
 
 	if ((self.flags & FL_ONGROUND))
 	{

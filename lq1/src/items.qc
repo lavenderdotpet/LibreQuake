@@ -1396,6 +1396,38 @@ END OF LEVEL RUNES
 ===============================================================================
 */
 
+//Handles rune printing, so coop players will know if the rune was picked up
+void() sigil_print =
+{
+	local entity t;
+	local string msg;
+	
+	if (self.spawnflags & 1)
+		msg = LOC_RUNE_1;
+	else if (self.spawnflags & 2)
+		msg = LOC_RUNE_2;
+	else if (self.spawnflags & 4)
+		msg = LOC_RUNE_3;
+	else
+		msg = LOC_RUNE_4;
+	
+	do {
+		t = find(t, classname, "player");
+		
+		if (t.classname == "player") {
+			if (t == other) {
+				twoprint (other, LOC_RUNE_YOU, msg);
+			}
+			else
+			{
+				sprint(other, PRINT_HIGH, other.netname);
+				sprint(other, PRINT_HIGH, msg);
+				sprint(other, PRINT_HIGH, "\n");
+			}
+		}
+	} while (t != world);
+};
+
 void() sigil_touch =
 {
 
@@ -1403,8 +1435,8 @@ void() sigil_touch =
 		return;
 	if (other.health <= 0)
 		return;
-
-	centerprint (other, LOC_RUNE);
+	
+	sigil_print();
 
 	sound (other, CHAN_ITEM, self.noise, 1, ATTN_NORM);
 	stuffcmd (other, "bf\n");

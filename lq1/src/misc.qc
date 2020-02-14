@@ -683,13 +683,6 @@ void() ambient_comp_hum =
 	precache_sound ("ambience/comp1.wav");
 	ambientsound (self.origin, "ambience/comp1.wav", 1, ATTN_STATIC);
 };
-/*QUAKED ambient_thunder (0.3 0.1 0.6) (-10 -10 -8) (10 10 8)
-*/
-void() ambient_thunder =
-{
-	precache_sound ("ambience/thunder1.wav");
-	ambientsound (self.origin, "ambience/thunder1.wav", 0.5, ATTN_STATIC);
-};
 /*QUAKED ambient_light_buzz (0.3 0.1 0.6) (-10 -10 -8) (10 10 8)
 */
 void() ambient_light_buzz =
@@ -710,6 +703,24 @@ void() ambient_swamp2 =
 {
 	precache_sound ("ambience/swamp2.wav");
 	ambientsound (self.origin, "ambience/swamp2.wav", 0.5, ATTN_STATIC);
+};
+/*QUAKED ambient_thunder (0.3 0.1 0.6) (-10 -10 -8) (10 10 8)
+*/
+//Ambient Thunder has been re-coded so it will actually work properly
+void() thunder_think =
+{
+	self.think = thunder_think;
+	self.nextthink = time + 3 + (random() * 25);
+	
+	sound (self, CHAN_VOICE, "ambience/thunder1.wav", 1, ATTN_NORM);
+};
+
+void() ambient_thunder =
+{
+	precache_sound ("ambience/thunder1.wav");
+	
+	self.think = thunder_think;
+	self.nextthink = time + 3;
 };
 
 //============================================================================

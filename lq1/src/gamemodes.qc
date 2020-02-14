@@ -99,20 +99,7 @@ float() supermode =
 //Starts each player off with every weapon and a fair amount of ammo
 float() supermode2 =
 {
-	if (deathmatch == 5)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
-};
-
-//Rebalances the weapons to play more like Quake III
-float() arenamode =
-{
-	if (deathmatch == 8 || deathmatch == 9)
+	if (deathmatch == 5 || deathmatch == 7)
 	{
 		return 1;
 	}
@@ -136,10 +123,23 @@ float() powerupdisable =
 	}
 };
 
+//Disables all items
+float() allitemdisable =
+{
+	if (deathmatch == 7)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
 //Like duel, but the game resets everytime a player dies
 float() lastmanstanding =
 {
-	if (deathmatch == 7)
+	if (deathmatch == 7 || deathmatch == 8 || deathmatch == 9)
 	{
 		return 1;
 	}
@@ -174,3 +174,18 @@ float() weakweapons =
 		return 0;
 	}
 };
+
+//Rebalances the weapons to play more like Quake III
+float() arenamode =
+{
+	if (deathmatch == 100 || deathmatch == 101)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+

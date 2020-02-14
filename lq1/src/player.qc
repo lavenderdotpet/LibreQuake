@@ -598,6 +598,46 @@ void() PlayerDie =
 
 };
 
+//ZungryWare: Revives the player properly if they cheat themselves health when they're dead
+void() PlayerRevive =
+{
+	self.items = self.items - (self.items & (IT_INVISIBILITY | IT_INVULNERABILITY | IT_SUIT | IT_QUAD) );
+	
+	self.invisible_finished = 0;
+	self.invincible_finished = 0;
+	self.super_damage_finished = 0;
+	self.radsuit_finished = 0;
+	self.effects = 0;
+	self.modelindex = modelindex_player;
+	
+	self.classname = "player";
+	self.takedamage = DAMAGE_AIM;
+	self.solid = SOLID_SLIDEBOX;
+	self.movetype = MOVETYPE_WALK;
+	self.air_finished = time + 12;
+	self.dmg = 2;   		// initial water damage
+	self.pausetime = 0;
+	self.velocity = '0 0 0';
+	
+	self.weaponmodel = "";
+	self.view_ofs = '0 0 22';
+	self.deadflag = DEAD_NO;
+	self.flags = self.flags - (self.flags & FL_ONGROUND);
+	self.flags = self.flags | FL_CLIENT;
+	
+	self.attack_finished = time;
+	self.th_pain = player_pain;
+	self.th_die = PlayerDie;
+	
+	makevectors(self.angles);
+	spawn_tfog (self.origin + v_forward*20);
+	spawn_tdeath (self.origin, self);
+	
+	W_SetCurrentAmmo();
+	
+	player_stand1 ();
+};
+
 void() set_suicide_frame =
 {	// used by klill command and diconnect command
 	if (self.model != "progs/player.mdl")

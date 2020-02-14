@@ -8,6 +8,7 @@ fight.qc
 ai.qc
 combat.qc
 items.qc
+flags.qc
 weapons.qc
 world.qc
 client.qc

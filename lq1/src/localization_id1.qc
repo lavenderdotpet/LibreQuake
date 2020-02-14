@@ -85,7 +85,11 @@
 #define LOC_COUNTER_COUNT_2		"There are more to go..."
 #define LOC_COUNTER_COMPLETE	"Sequence completed!"
 #define LOC_SECRET				"You found a secret area!"
-#define LOC_RUNE				"You got a rune!"
+#define LOC_RUNE_YOU			"You"
+#define LOC_RUNE_1				" got the rune of Earth Magic!"
+#define LOC_RUNE_2				" got the rune of Dark Magic!"
+#define LOC_RUNE_3				" got the rune of Hell Magic!"
+#define LOC_RUNE_4				" got the rune of Elder Magic!"
 
 //Monster death messages
 #define LOC_DEATH_ARMY 			" was shot by a Grunt"
