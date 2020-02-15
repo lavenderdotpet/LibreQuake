@@ -155,6 +155,16 @@ void() worldspawn =
 	precache_model ("progs/zom_gib.mdl");
 
 	precache_model ("progs/v_light.mdl");
+	
+	if (domination())
+	{
+		precache_sound ("misc/runekey.wav");
+		
+		precache_model ("progs/end1.mdl");
+		precache_model2 ("progs/end2.mdl");
+		precache_model2 ("progs/end3.mdl");
+		precache_model2 ("progs/end4.mdl");
+	}
 
 //
 // Setup light animation tables. 'a' is total darkness, 'z' is maxbright.
@@ -224,6 +234,13 @@ void() StartFrame =
 //NetQuake only
 	skill = cvar("skill");
 #endif
+	if (framecount == 0)
+	{
+		if (domination()) {
+			find_domination_points();
+		}
+	}
+
 	framecount = framecount + 1;
 };
 

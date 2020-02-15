@@ -618,6 +618,7 @@ void() PlayerRevive =
 	self.dmg = 2;   		// initial water damage
 	self.pausetime = 0;
 	self.velocity = '0 0 0';
+	setsize (self, VEC_HULL_MIN, VEC_HULL_MAX);
 	
 	self.weaponmodel = "";
 	self.view_ofs = '0 0 22';

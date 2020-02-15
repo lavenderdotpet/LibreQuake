@@ -91,6 +91,9 @@
 #define LOC_RUNE_3				" got the rune of Hell Magic!"
 #define LOC_RUNE_4				" got the rune of Elder Magic!"
 
+//Domination mode messages
+#define LOC_DOM_TAKE			" captured rune "
+
 //Monster death messages
 #define LOC_DEATH_ARMY 			" was shot by a Grunt"
 #define LOC_DEATH_ENFORCER 		" was blasted by a Enforcer"
@@ -138,7 +141,7 @@
 #define LOC_DEATH_DISCHARGE_2	" discharges into the water."
 #define LOC_DEATH_DISCHARGE_3	" electrocutes himself."
 #define LOC_DEATH_SELF_GRENADE	" tries to put the pin back in"
-#define LOC_DEATH_SELF_ROCKET	" becomes bored with life"
+#define LOC_DEATH_SELF_ROCKET	" discovers blast radius"
 #define LOC_DEATH_SELF_OTHER	" becomes bored with life"
 #define LOC_DEATH_SUICIDE		" suicides"
 #define LOC_DEATH_OTHER			" died"

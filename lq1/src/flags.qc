@@ -4,74 +4,202 @@ float(entity p) GetTeam;
 
 void() domination_touch =
 {
+	if (other.classname != "player")
+		return;
+	
 	if (self.pausetime > time)
 		return;
 	
-	if (self.team == GetTeam(other))
+	if (self.enemy == other && !self.team)
+		return;
+	
+	if (self.team == GetTeam(other) && self.team)
 		return;
 	
 	self.pausetime = time + .5;
 	
+	bprint (PRINT_HIGH, other.netname);
+	bprint (PRINT_HIGH, LOC_DOM_TAKE);
+	bprint (PRINT_HIGH, ftos(self.count));
+	bprint (PRINT_HIGH, "\n");
+	
+	sound (self, CHAN_VOICE, "misc/runekey.wav", 1, ATTN_NORM);
+	
 	self.team = GetTeam(other);
+	
+	self.enemy = other;
 };
 
-void() info_domination_point = {};
+void() domination_think =
+{
+#ifndef qw
+	//NetQuake Only
+	self.nextthink = time + .2;
+	self.think = domination_think;
+	
+	if (self.enemy)
+	{
+		self.cnt --;
+		if (self.cnt <= 0)
+		{
+			self.cnt = 5;
+			self.enemy.frags = self.enemy.frags + 1;
+		}
+	}
+	
+	if (self.team > 8 || self.team == 0)
+		particle (self.origin + '0 0 16', '0 0 0', ((self.team - 1) * 16), 16);
+	else
+		particle (self.origin + '0 0 16', '0 0 0', ((self.team - 1) * 16) + 15, 16);
+#endif
+};
 
 //Deletes the selected entity and puts a domination point in its place
 //e is the selected entity
 //i is a number between 0 and 3 that determines the rune's model.
-void(entity e, float i) set_as_domination_point = {
+void(entity e, float runeskin, float i) set_as_domination_point = {
 	local entity oself;
 	
 	oself = self;
 	
 	self = spawn();
-	setorigin(self, e.origin);
 	
-	remove(e);
-	
-	//Sets it to a different classname, so it won't be found again by find_domination_points
-	self.classname = "domination_point";
-	self.touch = domination_touch;
-	setsize (self, '-16 -16 -24', '16 16 32');
-	
-	if (i == 0 || i == 4)
+	if (runeskin == 0 || runeskin == 4)
 		setmodel(self, "progs/end1.mdl");
-	if (i == 1 || i == 5)
+	if (runeskin == 1 || runeskin == 5)
 		setmodel(self, "progs/end2.mdl");
-	if (i == 2 || i == 6)
+	if (runeskin == 2 || runeskin == 6)
 		setmodel(self, "progs/end3.mdl");
-	if (i == 3 || i == 7)
+	if (runeskin == 3 || runeskin == 7)
 		setmodel(self, "progs/end4.mdl");
 	
-	StartItem ();
+	setsize (self, '-16 -16 -24', '16 16 32');
+	setorigin(self, e.origin + '16 16 32');
+	
+	self.classname = "domination_point";
+	self.count = i;
+	self.touch = domination_touch;
+	self.nextthink = time + .2;
+	self.think = domination_think;
+	
+	PlaceItem ();
 	
 	self = oself;
+	
+	remove(e);
 }
 
+//Defines whether the entity is able to be replaced with a domination point
+float(entity t) priority_for_entity =
+{	
+	if (t.classname == "item_shells") {return 1;}
+	if (t.classname == "item_spikes") {return 1;}
+	if (t.classname == "item_rockets") {return 1;}
+	if (t.classname == "item_cells") {return 1;}
+	
+	//if (t.classname == "weapon_nailgun") {return 1;}
+	//if (t.classname == "item_armor1") {return 1;}
+	if (t.classname == "item_health" && !(t.spawnflags & 2)) {return 1;}
+	
+	return 0;
+}
+
+#define NUM_CANDIDATES 35
+//Finds three items in the map and converts them to domination points
+//Tries to find items that are fairly far away from each other
+//It is random, so new domination points will be selected every time
 void() find_domination_points =
 {
 	local float count;
-	local float offset;
+	local float runeskin;
 	local entity t;
+	local entity candidates[NUM_CANDIDATES];
+	local float dist;
+	local float dist2;
+	local float pick1;
+	local float pick2;
+	local float pick3;
+	local float pickdistance;
 	
-	offset = floor(random() * 4);
+	//Pick the random set of three runes
+	runeskin = floor(random() * 4);
 	
-	precache_sound ("misc/runekey.wav");
+	//Build list of candidates for domination point locations
+	t = world;
+	do {
+		t = nextent(t);
+		if (priority_for_entity(t) == 1)
+		{
+			candidates[count] = t;
+			count ++;
+		}
+	} while (t != world && count < NUM_CANDIDATES);
 	
-	precache_model ("progs/end1.mdl");
-	precache_model2 ("progs/end2.mdl");
-	precache_model2 ("progs/end3.mdl");
-	precache_model2 ("progs/end4.mdl");
 	
-	while (count < 3) {
-		//We can search from world, since entities get removed after being converted into domination points
-		t = find(world, classname, "info_domination_point");
-		if (t)
-			set_as_domination_point(t, count + offset);
+	//Pick the first domination point from the candidates list at complete random
+	pick1 = floor(random() * count);
+	
+	if (!candidates[pick1])
+	{
+		bprint2("ZERO RUNES GENERATED!!\n");
+		return;
 	}
 	
-	setmodel (self, "progs/end1.mdl");
+	//Select an item that had close to the largest distance from pick1
+	//The random call is to make the placement a bit more random
+	for (float i = 0; i < count; i ++)
+	{
+		if (random() < .3)
+		{
+			dist = vlen(candidates[i].origin - candidates[pick1].origin);
+			if (dist > pickdistance && i != pick1)
+			{
+				pickdistance = dist;
+				pick2 = i;
+			}
+		}
+	}
+	pickdistance = 0;
+	
+	if (!candidates[pick2])
+	{
+		bprint2("ONE RUNE GENERATED!!\n");
+		set_as_domination_point(candidates[pick1], runeskin, 1);
+		return;
+	}
+	
+	//Lastly, select an item that had close to the largest distance from pick1 and pick2
+	//The random call is to make the placement a bit more random
+	for (float i = 0; i < count; i ++)
+	{
+		dist = vlen(candidates[i].origin - candidates[pick1].origin);
+		dist2 = vlen(candidates[i].origin - candidates[pick2].origin);
+		if (dist2 < dist)
+			dist = dist2;
+		
+		if (random() < .3)
+		{
+			dist = vlen(candidates[i].origin - candidates[pick1].origin);
+			if (dist > pickdistance && i != pick1)
+			{
+				pickdistance = dist;
+				pick3 = i;
+			}
+		}
+	}
+	pickdistance = 0;
+	
+	if (!candidates[pick3])
+	{
+		bprint2("TWO RUNES GENERATED!!\n");
+		set_as_domination_point(candidates[pick1], runeskin  , 1);
+		set_as_domination_point(candidates[pick2], runeskin+1, 2);
+		return;
+	}
+	
+	set_as_domination_point(candidates[pick1], runeskin  , 1);
+	set_as_domination_point(candidates[pick2], runeskin+1, 2);
+	set_as_domination_point(candidates[pick3], runeskin+2, 3);
 };
 
 

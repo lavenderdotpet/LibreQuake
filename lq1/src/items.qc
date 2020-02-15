@@ -309,7 +309,7 @@ float (entity e, float healamount, float ignore) T_Heal =
 
 /*QUAKED item_health (.3 .3 1) (0 0 0) (32 32 32) rotten megahealth
 Health box. Normally gives 25 points.
-Rotten box heals 5-10 points,
+Rotten box heals 15 points,
 megahealth will add 100 health, then 
 rot you down to your maximum health limit, 
 one point per second.

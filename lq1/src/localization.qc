@@ -85,6 +85,9 @@
 #define LOC_RUNE_3				" got the rune of Sorrow!"
 #define LOC_RUNE_4				" got the rune of Revelation!"
 
+//Domination mode messages
+#define LOC_DOM_TAKE			" captured rune "
+
 //Monster death messages
 #define LOC_DEATH_ARMY 			" was killed by a Foot Soldier"
 #define LOC_DEATH_ENFORCER 		" was eliminated by a Commando"
@@ -100,7 +103,7 @@
 #define LOC_DEATH_SHALRATH 		" was killed by a ???"
 #define LOC_DEATH_TARBABY 		" was absorbed by an Ooze"
 #define LOC_DEATH_BOSS 			" was killed by a ???"
-#define LOC_DEATH_OLDONE 		" was killed by a ???"
+#define LOC_DEATH_OLDONE 		" was magicked by Abhoth"
 #define LOC_DEATH_MONSTER		" was slain by some abomnination"
 
 //Environmental and Misc. death messages

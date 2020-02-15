@@ -152,7 +152,7 @@ float() lastmanstanding =
 //Disables the Rocket Launcher and Lightning Gun
 float() mediumweapons =
 {
-	if (deathmatch == 10 || deathmatch == 11)
+	if (deathmatch == 102 || deathmatch == 103)
 	{
 		return 1;
 	}
@@ -165,7 +165,20 @@ float() mediumweapons =
 //Disables all weapons except for the Super Shotgun and Nailgun
 float() weakweapons =
 {
-	if (deathmatch == 12 || deathmatch == 13)
+	if (deathmatch == 104 || deathmatch == 105)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+};
+
+//Control flags to win
+float() domination =
+{
+	if (deathmatch == 10 || deathmatch == 11)
 	{
 		return 1;
 	}
