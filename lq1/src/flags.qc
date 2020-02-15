@@ -23,7 +23,7 @@ void() domination_touch =
 	bprint (PRINT_HIGH, ftos(self.count));
 	bprint (PRINT_HIGH, "\n");
 	
-	sound (self, CHAN_VOICE, "misc/runekey.wav", 1, ATTN_NORM);
+	sound (self, CHAN_VOICE, "misc/runekey.wav", 1, ATTN_NONE);
 	
 	self.team = GetTeam(other);
 	
@@ -48,9 +48,9 @@ void() domination_think =
 	}
 	
 	if (self.team > 8 || self.team == 0)
-		particle (self.origin + '0 0 16', '0 0 0', ((self.team - 1) * 16), 16);
+		particle (self.origin + '0 0 16', '0 0 0', ((self.team - 1) * 16), 20);
 	else
-		particle (self.origin + '0 0 16', '0 0 0', ((self.team - 1) * 16) + 15, 16);
+		particle (self.origin + '0 0 16', '0 0 0', ((self.team - 1) * 16) + 15, 20);
 #endif
 };
 
@@ -96,9 +96,6 @@ float(entity t) priority_for_entity =
 	if (t.classname == "item_spikes") {return 1;}
 	if (t.classname == "item_rockets") {return 1;}
 	if (t.classname == "item_cells") {return 1;}
-	
-	//if (t.classname == "weapon_nailgun") {return 1;}
-	//if (t.classname == "item_armor1") {return 1;}
 	if (t.classname == "item_health" && !(t.spawnflags & 2)) {return 1;}
 	
 	return 0;
@@ -140,16 +137,13 @@ void() find_domination_points =
 	pick1 = floor(random() * count);
 	
 	if (!candidates[pick1])
-	{
-		bprint2("ZERO RUNES GENERATED!!\n");
 		return;
-	}
 	
 	//Select an item that had close to the largest distance from pick1
 	//The random call is to make the placement a bit more random
 	for (float i = 0; i < count; i ++)
 	{
-		if (random() < .3)
+		if (random() < .25)
 		{
 			dist = vlen(candidates[i].origin - candidates[pick1].origin);
 			if (dist > pickdistance && i != pick1)
@@ -163,7 +157,6 @@ void() find_domination_points =
 	
 	if (!candidates[pick2])
 	{
-		bprint2("ONE RUNE GENERATED!!\n");
 		set_as_domination_point(candidates[pick1], runeskin, 1);
 		return;
 	}
@@ -171,15 +164,13 @@ void() find_domination_points =
 	//Lastly, select an item that had close to the largest distance from pick1 and pick2
 	//The random call is to make the placement a bit more random
 	for (float i = 0; i < count; i ++)
-	{
-		dist = vlen(candidates[i].origin - candidates[pick1].origin);
-		dist2 = vlen(candidates[i].origin - candidates[pick2].origin);
-		if (dist2 < dist)
-			dist = dist2;
-		
-		if (random() < .3)
+	{	
+		if (random() < .25)
 		{
 			dist = vlen(candidates[i].origin - candidates[pick1].origin);
+			dist2 = vlen(candidates[i].origin - candidates[pick2].origin);
+			if (dist2 < dist)
+				dist = dist2;
 			if (dist > pickdistance && i != pick1)
 			{
 				pickdistance = dist;
@@ -191,7 +182,6 @@ void() find_domination_points =
 	
 	if (!candidates[pick3])
 	{
-		bprint2("TWO RUNES GENERATED!!\n");
 		set_as_domination_point(candidates[pick1], runeskin  , 1);
 		set_as_domination_point(candidates[pick2], runeskin+1, 2);
 		return;

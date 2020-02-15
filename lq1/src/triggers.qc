@@ -197,10 +197,15 @@ void() trigger_secret =
 {
 	total_secrets = total_secrets + 1;
 	self.wait = -1;
-	if (!self.message && !deathmatch)
+	if (!self.message)
 		self.message = LOC_SECRET;
-	if (!self.sounds && !deathmatch)
+	if (!self.sounds)
 		self.sounds = 1;
+	if (deathmatch)
+	{
+		self.sounds = 0;
+		self.message = string_null;
+	}
 	
 	if (self.sounds == 1)
 	{
