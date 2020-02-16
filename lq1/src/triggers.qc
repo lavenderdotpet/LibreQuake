@@ -587,6 +587,9 @@ defalt dmg = 5
 */
 void() trigger_hurt =
 {
+	if (world.model == "maps/end.bsp" && self.dmg <= 30)
+		return;
+	
 	InitTrigger ();
 	self.touch = hurt_touch;
 	if (!self.dmg)

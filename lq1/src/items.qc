@@ -1456,6 +1456,12 @@ End of level sigil, pick up to end episode and return to jrstart.
 
 void() item_sigil =
 {
+	if (deathmatch)
+	{
+		remove(self);
+		return;
+	}
+	
 	if (!self.spawnflags)
 		objerror ("no spawnflags");
 

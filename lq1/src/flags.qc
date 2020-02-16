@@ -37,12 +37,13 @@ void() domination_think =
 	self.nextthink = time + .2;
 	self.think = domination_think;
 	
-	if (self.enemy)
+	
+	self.cnt --;
+	if (self.cnt <= 0)
 	{
-		self.cnt --;
-		if (self.cnt <= 0)
+		self.cnt = 25;
+		if (self.enemy)
 		{
-			self.cnt = 5;
 			self.enemy.frags = self.enemy.frags + 1;
 		}
 	}
@@ -143,7 +144,7 @@ void() find_domination_points =
 	//The random call is to make the placement a bit more random
 	for (float i = 0; i < count; i ++)
 	{
-		if (random() < .25)
+		if (random() < .2)
 		{
 			dist = vlen(candidates[i].origin - candidates[pick1].origin);
 			if (dist > pickdistance && i != pick1)
@@ -165,7 +166,7 @@ void() find_domination_points =
 	//The random call is to make the placement a bit more random
 	for (float i = 0; i < count; i ++)
 	{	
-		if (random() < .25)
+		if (random() < .4)
 		{
 			dist = vlen(candidates[i].origin - candidates[pick1].origin);
 			dist2 = vlen(candidates[i].origin - candidates[pick2].origin);

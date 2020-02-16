@@ -126,11 +126,12 @@ void() SetNewParms =
 void() DecodeLevelParms =
 {
 //	if (serverflags)
-	if (!deathmatch)	
-	{
-		if (world.model == "maps/start.bsp")
-			SetNewParms ();		// take away all stuff on starting new episode
-	}
+	if (deathmatch)	
+		SetNewParms ();
+	
+	
+	if (world.model == "maps/start.bsp")
+		SetNewParms ();		// take away all stuff on starting new episode
 	
 	self.items = parm1;
 	self.health = parm2;
@@ -776,6 +777,8 @@ only called if a time or frag limit has expired
 void() NextLevel =
 {
 	local entity o;
+	local entity o2;
+	local entity t;
 
 	if (mapname == "start")
 	{
@@ -801,7 +804,12 @@ void() NextLevel =
 		else if (!(serverflags & 8))
 		{
 			mapname = "e4m1";
-			serverflags = serverflags - 7;
+			serverflags = serverflags | 8;
+		}
+		else
+		{
+			mapname = "end";
+			serverflags = (serverflags | 15) - 15;
 		}
 
 		o = spawn();
@@ -811,13 +819,36 @@ void() NextLevel =
 	{
 		// find a trigger changelevel
 		o = find(world, classname, "trigger_changelevel");
+		
+		//If the level has two exits, there's a 50% chance to use the other one instead
+		if (random() < .5)
+		{
+			o2 = find(o, classname, "trigger_changelevel");
+			if (o2)
+				o = o2;
+		}
 
-		// go back to start if no trigger_changelevel
+		// repeat the current level if no trigger_changelevel
 		if (!o)
 		{
-			mapname = "start";
+			//mapname = "start";
 			o = spawn();
 			o.map = mapname;
+		}
+	}
+	
+	//Disables all domination points so they stop counting score
+	if (domination())
+	{
+		t = world;
+		while (1)
+		{
+			t = find(t, classname, "domination_point");
+			
+			if (t)
+				t.think = SUB_Null;
+			else
+				break;
 		}
 	}
 
