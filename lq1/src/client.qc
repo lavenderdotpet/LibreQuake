@@ -42,12 +42,12 @@ float(entity p1, entity p2) OnSameTeam =
 {
 #ifdef qw
 //QuakeWorld only
-	if (infokey(p1, "team") == "")
+	if (infokey(p1, "team") == "" || !teamplay)
 		return FALSE;
 	return infokey(p1, "team") == infokey(p2, "team");
 #else
 //NetQuake only
-	if (p1.team == 0)
+	if (p1.team == 0 || !teamplay)
 		return FALSE;
 	return p1.team == p2.team;
 #endif

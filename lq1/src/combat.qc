@@ -184,7 +184,8 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage =
 
 	if ((teamplay == 3) && (OnSameTeam(attacker, targ)) &&
 		(attacker.classname == "player") &&
-		(targ != attacker)&& inflictor.classname !="door")
+		inflictor.classname !="door" &&
+		(targ != attacker))
 		return;
 	
 		

@@ -10,10 +10,10 @@ void() domination_touch =
 	if (self.pausetime > time)
 		return;
 	
-	if (self.enemy == other && !self.team)
+	if (self.enemy == other)
 		return;
 	
-	if (self.team == GetTeam(other) && self.team)
+	if (self.team == GetTeam(other) && self.team && teamplay)
 		return;
 	
 	self.pausetime = time + .5;
@@ -36,7 +36,6 @@ void() domination_think =
 	//NetQuake Only
 	self.nextthink = time + .2;
 	self.think = domination_think;
-	
 	
 	self.cnt --;
 	if (self.cnt <= 0)
