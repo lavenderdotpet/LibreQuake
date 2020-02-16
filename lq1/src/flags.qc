@@ -44,7 +44,16 @@ void() domination_think =
 		self.cnt = 25;
 		if (self.enemy)
 		{
-			self.enemy.frags = self.enemy.frags + 1;
+			if (self.team == GetTeam(self.enemy) || !teamplay)
+			{
+				self.enemy.frags = self.enemy.frags + 1;
+				self.team = GetTeam(self.enemy);
+			}
+			else
+			{
+				self.enemy = world;
+				self.team = 0;
+			}
 		}
 	}
 	

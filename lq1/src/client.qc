@@ -826,6 +826,8 @@ void() NextLevel =
 			o2 = find(o, classname, "trigger_changelevel");
 			if (o2)
 				o = o2;
+		} else {
+			bprint2("FJIWOJIO\n");
 		}
 
 		// repeat the current level if no trigger_changelevel
