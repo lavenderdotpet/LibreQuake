@@ -207,7 +207,7 @@ void() zombie_atta9		=[ $atta9,	zombie_atta10	] {ai_face();};
 void() zombie_atta10	=[ $atta10,	zombie_atta11	] {ai_face();};
 void() zombie_atta11	=[ $atta11,	zombie_atta12	] {ai_face();};
 void() zombie_atta12	=[ $atta12,	zombie_atta13	] {ai_face();};
-void() zombie_atta13	=[ $atta13,	zombie_run1		] {ai_face();ZombieFireGrenade('-10-2230');};
+void() zombie_atta13	=[ $atta13,	zombie_run1		] {ai_face();ZombieFireGrenade('-10 -22 30');};
 
 void() zombie_attb1		=[ $attb1,	zombie_attb2	] {ai_face();};
 void() zombie_attb2		=[ $attb2,	zombie_attb3	] {ai_face();};
@@ -222,7 +222,7 @@ void() zombie_attb10	=[ $attb10,	zombie_attb11	] {ai_face();};
 void() zombie_attb11	=[ $attb11,	zombie_attb12	] {ai_face();};
 void() zombie_attb12	=[ $attb12,	zombie_attb13	] {ai_face();};
 void() zombie_attb13	=[ $attb13,	zombie_attb14	] {ai_face();};
-void() zombie_attb14	=[ $attb13,	zombie_run1		] {ai_face();ZombieFireGrenade('-10-2429');};
+void() zombie_attb14	=[ $attb13,	zombie_run1		] {ai_face();ZombieFireGrenade('-10 -24 29');};
 
 void() zombie_attc1		=[ $attc1,	zombie_attc2	] {ai_face();};
 void() zombie_attc2		=[ $attc2,	zombie_attc3	] {ai_face();};
@@ -235,7 +235,7 @@ void() zombie_attc8		=[ $attc8,	zombie_attc9	] {ai_face();};
 void() zombie_attc9		=[ $attc9,	zombie_attc10	] {ai_face();};
 void() zombie_attc10	=[ $attc10,	zombie_attc11	] {ai_face();};
 void() zombie_attc11	=[ $attc11,	zombie_attc12	] {ai_face();};
-void() zombie_attc12	=[ $attc12,	zombie_run1		] {ai_face();ZombieFireGrenade('-12-1929');};
+void() zombie_attc12	=[ $attc12,	zombie_run1		] {ai_face();ZombieFireGrenade('-12 -19 29');};
 
 void() zombie_missile =
 {

@@ -158,12 +158,12 @@ void() ShalMissile =
 void() ShalHome =
 {
 	local vector	dir, vtemp;
-	vtemp = self.enemy.origin + '0 0 10';
 	if (self.enemy.health < 1)
 	{
 		remove(self);
 		return;
 	}
+	vtemp = self.enemy.origin + '0 0 10';
 	dir = normalize(vtemp - self.origin);
 	if (nightmare())
 		self.velocity = dir * 350;

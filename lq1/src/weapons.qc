@@ -492,11 +492,11 @@ void() T_MissileTouch =
 		return;
 	}
 
-	//Rockets do less damage in arenamode
-	if (arenamode())
-		damg = 100 + random()*20;
+	//Rockets do consistent damage in deathmatch
+	if (deathmatch)
+		damg = 110;
 	else
-		damg = 100;
+		damg = 100 + random()*20;
 	
 	if (other.health)
 	{
@@ -509,10 +509,7 @@ void() T_MissileTouch =
 	// don't do radius damage to the other, because all the damage
 	// was done in the impact
 	
-	if (arenamode())
-		T_RadiusDamage (self, self.owner, 100, other, "rocket");
-	else
-		T_RadiusDamage (self, self.owner, 120, other, "rocket");
+	T_RadiusDamage (self, self.owner, 120, other, "rocket");
 
 //	sound (self, CHAN_WEAPON, "weapons/r_exp3.wav", 1, ATTN_NORM);
 	self.origin = self.origin - 8*normalize(self.velocity);
@@ -1328,6 +1325,8 @@ void() CheatCommand =
 	self.weapon = IT_ROCKET_LAUNCHER;
 	self.impulse = 0;
 	W_SetCurrentAmmo ();
+	
+	bprint (PRINT_HIGH, "Weapons Cheat\n");
 };
 
 /*
