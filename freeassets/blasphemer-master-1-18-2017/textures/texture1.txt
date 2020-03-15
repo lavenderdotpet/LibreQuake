@@ -1,0 +1,251 @@
+; CORE TEXTURES
+;TextureName	Width	Height
+;*	PatchName	Xoffset	Yoffset
+; This is the crap texture; readjust what graphic is uses.
+BADPATCH		64	64
+*	WALL00		0	0
+; REAL textures start here.
+BANNER1			64	128
+*	WALL04		0	0
+*	WALL522		6	8
+BANNER2			64	128
+*	WALL04		0	0
+*	WALL520		6	8
+BANNER3			64	128
+*	WALL06		0	0
+*	WALL519		6	8
+BANNER4			64	128
+*	WALL06		0	0
+*	WALL523		6	8
+BANNER5			64	128
+*	WALL53		0	0
+*	WALL519		6	8
+BANNER6			64	128
+*	WALL53		0	0
+*	WALL523		6	8
+BANNER7			64	128
+*	WALL32		0	0
+*	WALL522		6	8
+BANNER8			64	128
+*	WALL32		0	0
+*	WALL520		6	8
+BLUEFRAG		64	128
+*	WALL508		0	0
+*	WALL508		0	64
+BRWNRCKS		64	128
+*	WALL529		0	0
+CELTIC			64	128
+*	WALL512		0	0
+CHAINSD			64	128
+*	WALL42		0	0
+CHAINMAN		256	128
+*       WALL35          0       0
+CSTLMOSS		64	128
+*	WALL04		0	0
+*	WALL26		0	96
+CSTLRCK			64	128
+*	WALL04		0	0
+CTYSTCI1		64	128
+*	WALL20		0	0
+*	WALL24		0	64
+CTYSTCI2		64	128
+*	WALL21		0	0
+*	WALL24		0	64
+CTYSTCI4		64	128 ; Altered pats...
+*	WALL24		0	0
+*	WALL24		0	64
+CTYSTUC1		64	128
+*	WALL14		0	0
+*	WALL17		0	64
+CTYSTUC2		64	128
+*	WALL15		0	0
+*	WALL18		0	64
+*	WALL25		41	38
+CTYSTUC3		64	128
+*	WALL16		0	0
+*	WALL19		0	64
+CTYSTUC4		64	128
+*	WALL15		0	0
+*	WALL18		0	64
+CTYSTUC5		64	128
+*	WALL15		0	0
+*	WALL15		0	64
+DMNMSK			128	128
+*	WALL34		0	0
+DOOREXIT		64	96
+*	WALL57		0	0
+DOORWOOD		64	128
+*	WALL37		0	0
+DOORSTON		64	128
+*	WALL59		0	0
+DRIPWALL		32	128
+*	WALL05		0	0
+GATMETL			128	128
+*	WALL524		0	0
+GATMETL2		64	32
+*	WALL525		0	0
+GATMETL3                64      32
+*       WALL526          0       0
+GATMETL4                64      64
+*       WALL527         0       0
+GATMETL5                64      128
+*       WALL528          0       0
+GRNBLOK1		128	128
+*	WALL515		0	0
+GRNBLOK2		128	128
+*	WALL515		0	0
+*	WALL516		32	0
+GRNBLOK3		128	128
+*	WALL515		0	0
+*	WALL517		46	48
+GRNBLOK4		128	128
+*	WALL515		0	0
+*	WALL516		32	0
+*	WALL517		46	48
+GRSKULL1		64	128
+*	WALL02		0	0
+GRSKULL2		128	128
+*	WALL00		0	0
+GRSKULL3		128	128
+*	WALL01		0	0
+GRSTNPB			64	128
+*	WALL06		0	0
+GRSTNPBV		64	128
+*	WALL06		0	0
+*	WALL08		0	51
+GRSTNPBW		64	128
+*	WALL06		0	0
+*	WALL07		0	51
+HORSES1			256	128
+*	WALL500		0	0
+LAVA1			64	128
+*	WALL511		0	0
+LAVAFL1                 64      128
+*       WLLLVFL1        0       0
+LAVAFL2                 64      128
+*       WLLLVFL2        0       0
+LAVAFL3                 64      128 
+*       WLLLVFL3        0       0
+LOOSERCK		64	128
+*	WALL509		0	0
+METL1			64	128
+*	WALL64		0	0
+METL2			64	128
+*	WALL63		0	0
+*	WALL63		0	64
+MOSAIC1			64	128
+*	WALL501		0	0
+MOSAIC2                 64      128
+*       WALL501          0       0
+*       WALL502          0       96
+MOSAIC3                 64      128
+*       WALL501          0       0
+*       WALL503          0       104
+MOSAIC4                 64      128
+*       WALL501          0       0
+*       WALL504          13     116
+MOSAIC5                 64      128
+*       WALL501          0      0
+*	WALL505		23	50
+MOSSRCK1		128	128
+*	WALL26		0	0
+*	WALL27		64	0
+ORNGRAY			64	100
+*	WALL50		0	0
+RCKSNMUD		64	128
+*	WALL28		0	0
+REDWALL			64	128
+*	WALL44		0	0
+*	WALL44		0	64
+ROOTWALL                128     128
+*       WALL506         0       0
+*	WLVINBR2	0	0
+SAINT1			64	128
+*	WALL56		0	0
+*	WLSTAT01	3	0
+SANDSQ2			64	128
+*	WALL12		0	0
+SKULLSB1		64	128
+*	WALL40		0	0
+SKULLSB2		128	128
+*	WALL41		0	0
+SKY1			256	128
+*	SKY1		0	0
+SKY2                    256     128
+*       SKY2            0       0
+SKY3                    256     128
+*       SKY3            0       0  
+SKY5			256	128
+*	SKY1		0	0
+SNDBLCKS		128	128
+*	WALL30		0	0
+SNDCHNKS		64	128
+*	WALL10		0	0
+SNDPLAIN		64	128
+*	WALL51		0	0
+SPINE1			64	128
+*	WALL52		0	0
+SPINE2			64	128
+*	WALL53		0	0
+SQPEB1			64	128
+*	WALL38		0	0
+SQPEB2                  64      128
+*       WALL530          0       0
+STNGLS1     		128	128
+*	WALL60      	0	0
+STNGLS2			128	128
+*	WALL513		0	0
+STNGLS3     		128	128
+*	WALL518     	0	0
+SW1OFF			64	128
+*	WALL63		0	0
+*	WALL63		0	64
+*	WALL46		16	48
+SW1ON                   64      128
+*       WALL63          0       0  
+*       WALL63          0       64 
+*       WALL45          16      48
+SW2OFF                  192      128
+*       WALL63          0       0  
+*       WALL63          0       64 
+*       PATA01          16      48
+*	MTRUNE01	64	0
+SW2ON                   192      128
+*       WALL63          0       0  
+*       WALL63          0       64 
+*       PATA00          16      48
+*	MTRUNE02	64	0
+TMBSTON1		64	48
+*	WALL54		0	0
+TMBSTON2		64	48
+*	WALL55		0	0
+TRISTON1		64	128
+*	WALL32		0	0
+TRISTON2		64	128
+*	WALL510		0	0
+WDGAT64			64	64
+*	WALL62		0	0
+WEB1_B			32	128
+*	PATA02		0	0
+WEB1_F			32	128
+*	PATA04		0	0
+WEB2_B			32	128
+*	PATA03		0	0
+WEB2_F			32	128
+*	PATA05		0	0
+WEB3_M			32	128
+*	PATA06		0	0
+WOODWL			64	128
+*	WALL49		0	0
+*	WALL49		0	64
+WATRWAL1		64	128
+*	WLLWTFL1	0	0
+WATRWAL2                64      128
+*       WLLWTFL2        0       0
+WATRWAL3                64      128
+*       WLLWTFL3        0       0
+OLDSKY2			256	128
+*	SKY1		0	0
+OLDSKY3			256	128
+*	SKY1		0	0
+;End

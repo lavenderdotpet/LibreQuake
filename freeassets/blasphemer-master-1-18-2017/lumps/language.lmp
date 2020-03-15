@@ -1,0 +1,77 @@
+[enu default]
+TXT_WPNMACE = "Necrocannon";
+TXT_WPNBLASTER = "Frostfang";
+TXT_WPNCROSSBOW = "Plaguewielder";
+TXT_WPNPHOENIXROD = "Firebreather";
+TXT_WPNSKULLROD = "Blood Sceptre";
+TXT_WPNGAUNTLETS = "Vampyric Claws";
+
+TXT_GOTYELLOWKEY = "Gold Key";
+TXT_NEEDYELLOWKEY = "You need a gold key to open this door";
+
+TXT_ARTIHEALTH = "Healing Elixir";
+TXT_ARTIFLY = "Wings of the Fallen";
+TXT_ARTIINVULNERABILITY = "Shield of the Immortal";
+TXT_ARTITOMEOFPOWER = "Black Grimoire";
+TXT_ARTIINVISIBILITY = "Wraith Cloak";
+TXT_ARTIEGG = "noname";
+TXT_ARTISUPERHEALTH = "Grail of Lifeblood";
+TXT_ARTITORCH = "noname";
+TXT_ARTIFIREBOMB = "Sigil of Death";
+TXT_ARTITELEPORT = "Mirrorgate";
+
+TXT_ITEMSHIELD1 = "Plate Armor";
+TXT_ITEMSHIELD2 = "Warlord's Armor";
+
+TXT_AMMOMACE1 = "Necrosteel";
+TXT_AMMOMACE2 = "Grim Necrosteel";
+TXT_AMMOGOLDWAND1 = "Accursed Jewel";
+TXT_AMMOGOLDWAND2 = "Accursed Seal";
+TXT_AMMOBLASTER1 = "Ice Shard";
+TXT_AMMOBLASTER2 = "Ice Jewel";
+TXT_AMMOPHOENIXROD1 = "Flame Tooth";
+TXT_AMMOPHOENIXROD2 = "Flame Jaws";
+TXT_AMMOCROSSBOW1 = "Plague Bolts";
+TXT_AMMOCROSSBOW2 = "Quiver of Plague Bolts";
+TXT_AMMOSKULLROD1 = "Bloodstone";
+TXT_AMMOSKULLROD2 = "Royal Bloodstone";
+
+MNU_WETNURSE = "Whimpering Craven";
+MNU_YELLOWBELLIES = "Still a Novice";
+MNU_BRINGEST = "Experienced Warrior";
+MNU_SMITE = "Grim and Morbid";
+MNU_BLACKPLAGUE = "Death's Right Hand";
+
+HHUSTR_E1M1 = "noname";
+HHUSTR_E1M2 = "noname";
+HHUSTR_E1M3 = "Forgotten Stronghold";
+HHUSTR_E1M7 = "The White Citadel";
+HHUSTR_E2M1 = "The Remote Outpost";
+HHUSTR_E4M1 = "Black Thrones";
+HHUSTR_E4M2 = "Desolate Ways";
+HHUSTR_E4M3 = "Spilling Holy Blood";
+HHUSTR_E4M4 = "Megaliths";
+HHUSTR_E4M5 = "noname";
+HHUSTR_E4M6 = "noname";
+HHUSTR_E4M7 = "noname";
+HHUSTR_E4M8 = "noname";
+HHUSTR_E4M9 = "noname";
+
+
+// Skibbi's Obituaries
+//Grunts
+OB_MUMMY = "%o was slaughtered by a grunt";
+OB_MUMMYLEADER = "%o pissed off the grunt leader";
+OB_WIZARDHIT = "%o was scourged by the sourcerer";
+OB_BONEKNIGHT = "%o was no match for the jack of all trades"; 
+OB_BONEKNIGHTHIT = "%o was bashed by a jack of all trades";
+OB_HERETICIMP = "%o was burned by a flying grunt";
+OB_HERETICIMPHIT = "%o was ripped by a flying grunt";
+//Bosses
+//OB_IRONLICH
+//OB_IRONLICHHIT 
+
+OB_DSPARIL1 = "%o was no match for gyte's steed";
+OB_DSPARIL1HIT = "%o was bitten by gyte's steed";
+OB_DSPARIL2 = "%o was smote by gyte";
+OB_DPSARIL2HIT = "%o was no match for gyte's melee";

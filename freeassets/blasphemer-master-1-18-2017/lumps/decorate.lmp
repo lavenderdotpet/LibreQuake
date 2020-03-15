@@ -1,0 +1,4 @@
+ACTOR HornRodFX1_Patch : HornRodFX1 replaces HornRodFX1
+{
+	RenderStyle Normal
+}
