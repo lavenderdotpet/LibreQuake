@@ -27,6 +27,10 @@ free game.
 For more information, see ~~http://LibreQuake.github.io/~~
  not available at the moment.
 
+![Texture examples](screenshots/textures_example.png)
+ 
+![Texture examples](screenshots/monsters_example.png)
+
 # How to Play
 
 Since *LibreQuake* is only the game data, you will still need to
