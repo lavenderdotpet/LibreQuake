@@ -28,8 +28,8 @@ For more information, see ~~http://LibreQuake.github.io/~~
  not available at the moment.
 
 ![Texture examples](screenshots/textures_example.png)
- 
-![Texture examples](screenshots/monsters_example.png)
+
+![Weapon examples](screenshots/weapons_example.png)
 
 # How to Play
 
