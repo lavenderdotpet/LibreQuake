@@ -1,0 +1,74 @@
+OS:	Linux 5.5.2-1-MANJARO x86_64
+wxWidgets:
+wxWidgets Library (wxGTK port)
+Version 3.1.1 (Unicode: wchar_t, debug level: 1),
+compiled at May 22 2019 11:45:00
+
+Runtime version of toolkit used is 2.24.
+Compile-time GTK+ version is 2.24.23.
+
+GL_VENDOR:	NVIDIA Corporation
+GL_RENDERER:	GeForce RTX 2080 Ti/PCIe/SSE2
+GL_VERSION:	4.6.0 NVIDIA 440.59
+TrenchBroom Version:	2019.6
+TrenchBroom Build:	v2019.6 Release
+Reason:	../common/src/Assets/TextureCollection.cpp:64: Condition 'texture != nullptr' failed: texture is null
+Stack trace:
+trenchbroom(_ZN11TrenchBroom22TrenchBroomStackWalker13getStackTraceEv+0x28) [0xb843c8]
+trenchbroom(_ZN11TrenchBroom12ensureFailedEPKciS1_RKSs+0x21e) [0x90645e]
+trenchbroom(_ZN11TrenchBroom6Assets17TextureCollection10addTextureEPNS0_7TextureE+0xb5) [0x8de9c5]
+trenchbroom(_ZN11TrenchBroom2IO11Bsp29Parser17doInitializeModelERNS_6LoggerE+0x13b) [0x91499b]
+trenchbroom(_ZN11TrenchBroom2IO17EntityModelParser15initializeModelERNS_6LoggerE+0xa) [0x9508ea]
+trenchbroom(_ZNK11TrenchBroom5Model8GameImpl17doInitializeModelERKNS_2IO4PathERNS_6LoggerE+0x852) [0xa6c0b2]
+trenchbroom(_ZNK11TrenchBroom2IO17EntityModelLoader15initializeModelERKNS0_4PathERNS_6LoggerE+0xa) [0x95089a]
+trenchbroom(_ZNK11TrenchBroom6Assets18EntityModelManager5modelERKNS_2IO4PathE+0x11e) [0x8d20de]
+trenchbroom(_ZNK11TrenchBroom6Assets18EntityModelManager5frameERKNS0_18ModelSpecificationE+0x15) [0x8d2b45]
+trenchbroom(_ZN11TrenchBroom4View11MapDocument15SetEntityModels7doVisitEPNS_5Model6EntityE+0x20) [0xd0b030]
+trenchbroom(_ZN11TrenchBroom5Model4Node16acceptAndRecurseINS_4View11MapDocument15SetEntityModelsEEEvRT_+0x13) [0xd0c8b3]
+trenchbroom(_ZN11TrenchBroom5Model4Node16acceptAndRecurseINS_4View11MapDocument15SetEntityModelsEEEvRT_+0x58) [0xd0c8f8]
+trenchbroom(_ZN11TrenchBroom5Model4Node16acceptAndRecurseINS_4View11MapDocument15SetEntityModelsEEEvRT_+0x58) [0xd0c8f8]
+trenchbroom(_ZN11TrenchBroom4View11MapDocument15setEntityModelsEv+0x31) [0xcf97f1]
+trenchbroom(_ZN11TrenchBroom4View11MapDocument10loadAssetsEv+0x6e) [0xd07eae]
+trenchbroom(_ZN11TrenchBroom4View11MapDocument12loadDocumentENS_5Model9MapFormatERKN2vm4bboxIdLm3EEESt10shared_ptrINS2_4GameEERKNS_2IO4PathE+0xfc) [0xd07fdc]
+trenchbroom(_ZN11TrenchBroom4View8MapFrame12openDocumentESt10shared_ptrINS_5Model4GameEENS3_9MapFormatERKNS_2IO4PathE+0x77) [0xd2b0e7]
+trenchbroom(_ZN11TrenchBroom4View14TrenchBroomApp12openDocumentERKSs+0x143) [0xb7e013]
+trenchbroom(_ZN11TrenchBroom4View12WelcomeFrame26OnOpenOtherDocumentClickedER14wxCommandEvent+0x73c) [0xe7807c]
+trenchbroom(_ZN12wxEvtHandler23ProcessEventIfMatchesIdERK21wxEventTableEntryBasePS_R7wxEvent+0x6b) [0x121f21b]
+trenchbroom(_ZN12wxEvtHandler23SearchDynamicEventTableER7wxEvent+0x1b7) [0x121f757]
+trenchbroom(_ZN12wxEvtHandler11TryHereOnlyER7wxEvent+0x1f) [0x121f9cf]
+trenchbroom(_ZN12wxEvtHandler19ProcessEventLocallyER7wxEvent+0x26) [0x121fa66]
+trenchbroom(_ZN12wxEvtHandler12ProcessEventER7wxEvent+0x3d) [0x121faed]
+trenchbroom(_ZN12wxEvtHandler18SafelyProcessEventER7wxEvent+0x7) [0x1221557]
+trenchbroom() [0xf3ce91]
+/usr/lib/libgobject-2.0.so.0(g_closure_invoke+0x1aa) [0x7f1d5fddcd5a]
+/usr/lib/libgobject-2.0.so.0(+0x1f2b5) [0x7f1d5fdca2b5]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit_valist+0xf8a) [0x7f1d5fdce98a]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit+0x90) [0x7f1d5fdcf7f0]
+/usr/lib/libgtk-x11-2.0.so.0(+0x86895) [0x7f1d6049b895]
+/usr/lib/libgobject-2.0.so.0(g_closure_invoke+0x1aa) [0x7f1d5fddcd5a]
+/usr/lib/libgobject-2.0.so.0(+0x1f9e4) [0x7f1d5fdca9e4]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit_valist+0xf8a) [0x7f1d5fdce98a]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit+0x90) [0x7f1d5fdcf7f0]
+/usr/lib/libgtk-x11-2.0.so.0(+0x857ba) [0x7f1d6049a7ba]
+/usr/lib/libgtk-x11-2.0.so.0(+0x12e7cc) [0x7f1d605437cc]
+/usr/lib/libgobject-2.0.so.0(g_closure_invoke+0x1aa) [0x7f1d5fddcd5a]
+/usr/lib/libgobject-2.0.so.0(+0x1eff8) [0x7f1d5fdc9ff8]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit_valist+0x51c) [0x7f1d5fdcdf1c]
+/usr/lib/libgobject-2.0.so.0(g_signal_emit+0x90) [0x7f1d5fdcf7f0]
+/usr/lib/libgtk-x11-2.0.so.0(+0x249235) [0x7f1d6065e235]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_propagate_event+0xae) [0x7f1d60541a0e]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_main_do_event+0x323) [0x7f1d60541e43]
+/usr/lib/libgdk-x11-2.0.so.0(+0x59d5e) [0x7f1d601bad5e]
+/usr/lib/libglib-2.0.so.0(g_main_context_dispatch+0x27e) [0x7f1d5fcf039e]
+/usr/lib/libglib-2.0.so.0(+0x6c1b1) [0x7f1d5fcf21b1]
+/usr/lib/libglib-2.0.so.0(g_main_loop_run+0x83) [0x7f1d5fcf30c3]
+/usr/lib/libgtk-x11-2.0.so.0(gtk_main+0xc3) [0x7f1d60540df3]
+trenchbroom(_ZN14wxGUIEventLoop5DoRunEv+0x25) [0xf0c355]
+trenchbroom(_ZN15wxEventLoopBase3RunEv+0xa0) [0x1130e70]
+trenchbroom(_ZN16wxAppConsoleBase8MainLoopEv+0x59) [0x10fce09]
+trenchbroom(_ZN11TrenchBroom4View14TrenchBroomApp5OnRunEv+0xe) [0xb7fa6e]
+trenchbroom(_Z7wxEntryRiPPw+0x3e) [0x117a93e]
+trenchbroom(main+0x28) [0x89ca08]
+/usr/lib/libc.so.6(__libc_start_main+0xf3) [0x7f1d5f68b153]
+trenchbroom() [0x8b439e]
+

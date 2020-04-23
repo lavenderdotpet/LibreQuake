@@ -1,0 +1,51 @@
+Zauberer
+
+Zauberer is a project for creating an IWAD that can run all Hexen PWADs out there. In order to play this, a source port capable of running Hexen, is required.
+
+Although the Doom engine source code is free to to the public, the IWAD required to play on the engine, is not. Zauberer aims to provide you a free-content IWAD at your disposal. The GPL licensed source code mixed with non-commercial assets creates a completely free Hexen alternative. Zauberer uses the ISC license, which can be seen in the file "LICENSE".
+Launching Zauberer
+
+In order to load this IWAD, a source port is required, of which a list is available on the Doom Wiki. Pick one that can load Hexen!
+
+On Windows, you should place Zauberer's data file (the file ending with .wad) alongside the engine (eg, zdoom.exe). On Unix-like systems, these data files should go in either /usr/share/games/doom or your home directory.
+
+Most likely, the source port you chose is already capable of running Zauberer without extra hassle.
+Assets
+
+For simplicity’s sake, just make sure whatever you wish to submit to the project is original/not based on something else, at least.
+Levels
+
+Maps should stay in "Hexen" format, obviously.
+
+Before you submit, ask yourself these questions:
+
+    Is the map balanced for this map slot?
+
+    Are all player starts functional?
+
+    Are there any special tricks being used, that could potentially break the map in various source ports?
+
+    Did I test this map thoroughly?
+
+    Is too complex or too simple?
+
+    Is it fun for the average player?
+
+Graphics
+
+Graphics should try to stay the same size and color as Hexen, but the theme can be changed. But keep it appropiate.
+Feedback on assets
+
+The best way to answer this question is to ask the community in various ways. Here are some of the typical ways of doing so:
+
+Option 1 : Post your work on the official Zauberer thread at Doomworld.
+
+Option 2 : Directly send a pull request of your submission here.
+
+Option 3 : Email CireG or someone you know that can give good feedback.
+
+Option 4 : IRC, such as #zdoom, #zandronum, #freedoom, etc
+Documenting
+
+Zauberer could use some documents, such as credits and adding to the Zauberer page at Doom Wiki.
+
