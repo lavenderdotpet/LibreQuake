@@ -6,14 +6,30 @@ W: Website
 D: Contributions
 ////////////////////////
 
+S: Rhoq
+E: smgorden@gmail.com
+D: textures
+
 S: Ivan_Void
 E: voyisch@gmail.com
-D: sounds, maps
+D: sounds
 
 S: aDaya
 E: biver.arthur@gmail.com
 W: https://biverarthur.wixsite.com/portfolio
 D: Models, Textures, Sounds
+
+N: Lain Fleming
+S: Fairweather
+E:
+W:
+D: 
+
+N: James Greenwood
+S: Greenwood
+E: padregreenwood@gmail.com
+W: jgreenwoodjr.com
+D: Maps
 
 S: Clay
 E: 
@@ -22,7 +38,7 @@ D: Models, Textures
 N: Calvin Martinez
 S: ZungryWare
 E: CalvinMartinezDV@gmail.com
-D: Code, Maps, Textures
+D: Programming, Models, Animation, Maps, Textures, Management
 
 S: Fimbul K
 E: 
@@ -46,7 +62,7 @@ D: Textures, Maps
 
 S: MissLav
 E: MissLav@protonmail.com
-D: textures, models, configs
+D: textures, models, configs, management
 
 S: Futuretime23
 E: 
@@ -73,32 +89,34 @@ E:
 D: textures
 
 S: giwake
-E: 
+E: gabriel.isaac.wake@gmail.com
 D: sound, models
 
 S: Nolcoz
-E: 
-D: textures
-
-N: Eric Wilson
-S: GHOST , H34DSH007ER
-E: ericdw1000@gmail.com
-D: discord booster 
+E: nolcozctm@gmail.com
+D: Level textures
 
 S: Squid V.
 E: 
 D: Level textures
 
-S: 
+N: Jack Folkner
+S: Diplodocus
 E: 
-D: 
+D: sound
 
-S: 
-E: 
-D: 
+S: Markie Music
+E: mikedm92@gmail.com
+D: sound, music
 
-S: 
-E: 
-D: 
+N: Jack Perkins
+S: dantescanline
+D: readme, animation
 
-	
+
+S: Quake Revitalization Project
+W: http://qrp.quakeone.com
+D: Some Textures were based on their work
+
+    
+
