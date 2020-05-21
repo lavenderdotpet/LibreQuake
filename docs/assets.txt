@@ -450,7 +450,7 @@ pak0/sound/wizard/wpain.wav
 pak0/sound/wizard/wsight.wav
 pak0/sound/zombie/idle_w2.wav -  Ivan & MissLav
 pak0/sound/zombie/z_fall.wav
-pak0/sound/zombie/z_gib.wav -FreeDoom & MissLav
+pak0/sound/zombie/z_gib.wav - FreeDoom & MissLav
 pak0/sound/zombie/z_hit.wav
 pak0/sound/zombie/z_idle.wav -  Ivan & MissLav
 pak0/sound/zombie/z_idle1.wav -  Ivan & MissLav
@@ -502,4 +502,5 @@ music/track09.ogg - Immorpher
 music/track10.ogg - Immorpher
 music/track11.ogg - Immorpher
 //We can have more than ten tracks if we want, but they aren't required
+
 

@@ -1,0 +1,95 @@
+---- qbsp / ericw-tools  ----
+Input file: lqdm13_a3.map
+Output file: lqdm13_a3.bsp
+
+---- LoadMapFile ----
+         1584 faces
+          249 brushes
+          139 entities
+           12 unique texnames
+          325 texinfo
+
+*** WARNING 01: No valid WAD filenames in worldmodel
+Processing hull 0...
+---- Brush_LoadEntity ----
+          174 brushes
+           48 detail
+          449 planes
+---- CSGFaces ----
+         1416 brushfaces
+         1262 csgfaces
+         1312 mergedfaces
+---- SolidBSP ----
+         1541 split nodes
+          502 solid leafs
+          916 empty leafs
+           57 water leafs
+           67 detail leafs
+            0 detail illusionary leafs
+            0 detail fence leafs
+            0 illusionary visblocker leafs
+         3780 leaffaces
+         3517 nodefaces
+---- Portalize ----
+         1040 vis leafs
+         1040 vis clusters
+         3429 vis portals
+---- FillOutside ----
+          109 outleafs
+---- MergeAll ----
+         1310 mergefaces
+---- SolidBSP ----
+         1100 split nodes
+          404 solid leafs
+          580 empty leafs
+           55 water leafs
+           62 detail leafs
+            0 detail illusionary leafs
+            0 detail fence leafs
+            0 illusionary visblocker leafs
+         2918 leaffaces
+         2622 nodefaces
+---- Portalize ----
+          635 vis leafs
+          546 vis clusters
+         1984 vis portals
+---- Tjunc ----
+         2149 world edges
+         7557 edge points
+         1730 edges added by tjunctions
+            0 faces added by tjunctions
+---- MakeFaceEdges ----
+---- GrowRegions ----
+Processing hull 1...
+Processing hull 2...
+*** WARNING 16: Texture 128_grey_3 not found
+*** WARNING 16: Texture 128_blood_3 not found
+*** WARNING 16: Texture sky_void not found
+*** WARNING 16: Texture clip not found
+*** WARNING 16: Texture __TB_empty not found
+*** WARNING 16: Texture 16_grey_3 not found
+*** WARNING 16: Texture trigger not found
+*** WARNING 16: Texture grey_3 not found
+*** WARNING 16: Texture *tele01 not found
+*** WARNING 16: Texture skip not found
+*** WARNING 16: Texture void not found
+*** WARNING 16: Texture 16_blood_3 not found
+---- WriteBSPFile ----
+Wrote lqdm13_a3.bsp
+         1270 planes            25400
+        11213 vertexes         134556
+         1254 nodes             30096
+          258 texinfo           10320
+         9953 faces            199060
+         3668 clipnodes         29344
+          790 leafs             22120
+        10214 marksurfaces      20428
+        42550 surfedges        170200
+        21312 edges             85248
+           12 textures             52
+              lightdata             0
+              visdata               0
+              entdata            7221
+
+0.237 seconds elapsed
+Peak memory usage: 32120772 (30.6M)

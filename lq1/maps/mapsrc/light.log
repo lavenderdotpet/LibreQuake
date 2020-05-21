@@ -1,40 +1,42 @@
 ---- light / ericw-tools  ----
 Raytracing backend: Embree
-running with 8 threads
-BSPX colored light output requested on command line.
-BSPX light directions output requested on command line.
-LoadBSPFile: 'start.bsp'
+running with 12 threads
+LoadBSPFile: 'lqdm13_a3.bsp'
 BSP is version 29
-SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
+SetQdirFromPath: no "maps" in '/home/lavender/lqdm13_a3.bsp'--- ConvertTextures ---
+Loaded extended texinfo flags from lqdm13_a3.texinfo
 --- LoadEntities ---
-61 entities read, 2 are lights.
+WARNING: entity at (-0 -232 280) (trigger_relay) has "target" set to itself
+105 entities read, 13 are lights.
 --- OptionsSummary ---
-    "sunlight" was set to "50" from map
+    "sunlight2" was set to "300" from map
+    "sunlight3" was set to "250" from map
 Embree_TraceInit: Embree version: 2.17.7
 Embree_TraceInit:
-	8 sky faces
-	146 solid faces
+	0 sky faces
+	2327 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
-SetupLights: 2 initial lights
-Creating surface lights for texture "metal3" from template at (-216 288 -240)
-SetupLights: 50 after surface lights
-SetupLights: 50 after jittering
+SetupLights: 13 initial lights
+SetupLights: 13 after surface lights
+SetupLights: 13 after jittering
+using 65 suns for _sunlight2. total light: 300.000000 color: 255.000000 255.000000 255.000000
+using 65 suns for _sunlight3. total light: 250.000000 color: 255.000000 255.000000 255.000000
 --- EstimateLightVisibility ---
-0....1....2....3....4....5....6....7....8....9....
-Final count: 50 lights, 1 suns in use.
+0....1....2....3....4....5....6....7....8....9.
+Final count: 13 lights, 130 suns in use.
 --- LightWorld ---
 --- LightThread ---
 0....1....2....3....4....5....6....7....8....9....
 Lighting Completed.
 
-lightdatasize: 9980
+lightdatasize: 120806
 0 switchable light styles (32 max)
-Writing start.bsp as BSP version 29
-0.029 seconds elapsed
+Writing lqdm13_a3.bsp as BSP version 29
+1.505 seconds elapsed
 
 stats:
-7.991085 lights tested, 6.085646 hits per sample point
+2.497359 lights tested, 0.331439 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
 0.000000 bounce lights tested, 0.000000 hits per sample point
 0 empty lightmaps
