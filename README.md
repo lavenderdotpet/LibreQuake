@@ -106,10 +106,8 @@ The general rules go as follows:
 
 ## Levels
 
-All levels for *LibreQuake* must be vanilla-compatible, requiring an
-expanded-limits or limit-removing engine is not permissible.  
-This means you may not exceed the limits of the original *quake* engine,
-and do not depend on additional mapping features.  
+Not all levels for *LibreQuake* must be vanilla-compatible
+Winquake/vanilla-compatible levels will have its own episode
 
 
 It is sensible to also heed the following guidelines:
