@@ -13,10 +13,6 @@ stuffcmds
 // demos
 startdemos example demo1 demo2 demo3
 
-registered
-
-exec default.cfg
-
 clear 
 
 Echo =============================
