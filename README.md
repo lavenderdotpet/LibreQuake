@@ -131,7 +131,7 @@ It is sensible to also heed the following guidelines:
 
 The most common, and a fairly simple method, to submit your work is by
 posting it on the [LQ Discord](https://discord.gg/H9gwFTQ)
-~~[LQ Matrix](https://matrix.to/#/+libreQuake:matrix.org).
+~~[LQ Matrix]~~(https://matrix.to/#/+libreQuake:matrix.org).
 
 This allows a quick cycle or development and feedback.
 
