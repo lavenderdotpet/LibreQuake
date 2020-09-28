@@ -21,9 +21,7 @@ D: Models, Textures, Sounds
 
 N: Lain Fleming
 S: Fairweather
-E:
-W:
-D: 
+D: Maps
 
 N: James Greenwood
 S: Greenwood
@@ -32,7 +30,6 @@ W: jgreenwoodjr.com
 D: Maps
 
 S: Clay
-E: 
 D: Models, Textures
 
 N: Calvin Martinez
@@ -41,23 +38,18 @@ E: CalvinMartinezDV@gmail.com
 D: Programming, Models, Animation, Maps, Textures, Management
 
 S: Fimbul K
-E: 
 D: Textures, Maps, Models
 
 S: Giwake
-E: 
 D: Textures, Models
 
 S: John Biggs
-E: 
 D: Textures, Maps
 
 S: GooseJelly
-E: 
 D: Textures, Maps
 
 S: Greenwood
-E: 
 D: Textures, Maps
 
 S: MissLav
@@ -65,11 +57,9 @@ E: MissLav@protonmail.com
 D: textures, models, configs, management
 
 S: Futuretime23
-E: 
 D: Music
 
 S: Milky
-E: 
 D: Sounds    
 
 S: Chillo
@@ -77,15 +67,12 @@ E: danielleepeterson86@gmail.com
 D: Models
 
 S: therektafire
-E: 
 D: Maps, maphacks
 
 S: eightbit
-E: 
 D: models
 
 S: beak
-E: 
 D: textures
 
 S: giwake
@@ -97,7 +84,7 @@ E: nolcozctm@gmail.com
 D: Level textures
 
 S: Squid V.
-E: 
+
 D: Level textures
 
 N: Jack Folkner

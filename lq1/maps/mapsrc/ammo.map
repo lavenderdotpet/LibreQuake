@@ -1,0 +1,22 @@
+// Game: Quake
+// Format: Valve
+// entity 0
+{
+"classname" "worldspawn"
+"mapversion" "220"
+"wad" "D:/QuakeDev/wads/lq_health.wad"
+}
+// entity 1
+{
+"classname" "func_detail_wall"
+"_minlight" "180"
+// brush 0
+{
+( -0 -0 -0 ) ( -0 32 4 ) ( -0 -0 4 ) hp15_side [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 -0 -0 ) ( -0 -0 4 ) ( 32 -0 4 ) hp15_side [ 1 0 0 0 ] [ 0 0 -1 -16 ] 0 1 1
+( 32 -0 -0 ) ( -0 32 -0 ) ( -0 -0 -0 ) hp_bottom [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -0 32 ) ( -0 32 32 ) ( 32 32 32 ) +0_hp15_top [ 1 0 0 -0 ] [ 0 -1 0 -0 ] -0 1 1
+( -0 32 4 ) ( 32 32 -0 ) ( 32 32 4 ) hp15_side [ -1 0 0 0 ] [ 0 0 -1 -16 ] 0 1 1
+( 32 -0 -0 ) ( 32 32 4 ) ( 32 32 -0 ) hp15_side [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}

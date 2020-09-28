@@ -1,0 +1,39 @@
+Renderer info: GeForce RTX 2080 Ti/PCIe/SSE2 version 4.6.0 NVIDIA 440.100 from NVIDIA Corporation
+Depth buffer bits: 24
+Multisampling enabled
+Adding file system path /home/lavender/Documents/games/quake/id1
+Adding file system package .pak0.pak
+Adding file system package .pak1.pak
+Adding file system package pak0.pak
+Adding file system package pak1.pak
+Loading document from /home/lavender/LibreQuake/lq1/maps/mapsrc/b_bh10.map
+Loaded entity definition file Quake.fgd
+Loading palette file gfx/palette.lmp
+Could not load texture collection 'D:/QuakeDev/wads/lq_health.wad': Cannot open file 
+Saved /home/lavender/LibreQuake/lq1/maps/mapsrc/ammo.map
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Reloading texture collections
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Loading palette file gfx/palette.lmp
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Reloading texture collections
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Created autosave backup at /home/lavender/LibreQuake/lq1/maps/mapsrc/autosave/ammo.1.map
+Reloading texture collections
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Created autosave backup at /home/lavender/LibreQuake/lq1/maps/mapsrc/autosave/ammo.2.map
+Reloading texture collections
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Created autosave backup at /home/lavender/LibreQuake/lq1/maps/mapsrc/autosave/ammo.3.map
+Reloading texture collections
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_ammo.wad'
+Created autosave backup at /home/lavender/LibreQuake/lq1/maps/mapsrc/autosave/ammo.4.map

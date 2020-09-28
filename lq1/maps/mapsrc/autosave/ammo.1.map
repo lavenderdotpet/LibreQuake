@@ -1,0 +1,22 @@
+// Game: Quake
+// Format: Valve
+// entity 0
+{
+"classname" "worldspawn"
+"mapversion" "220"
+"wad" "/home/lavender/LibreQuake/texture-wads/lq_ammo.wad"
+}
+// entity 1
+{
+"classname" "func_detail_wall"
+"_minlight" "180"
+// brush 0
+{
+( -0 -0 -0 ) ( -0 32 4 ) ( -0 -0 4 ) shells [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 -0 -0 ) ( -0 -0 4 ) ( 32 -0 4 ) shells [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 -0 -0 ) ( -0 32 -0 ) ( -0 -0 -0 ) ammo_bottom [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -0 32 ) ( -0 32 32 ) ( 32 32 32 ) ammotop [ 1 0 0 -0 ] [ 0 -1 0 -0 ] -0 1 1
+( -0 32 4 ) ( 32 32 -0 ) ( 32 32 4 ) shells [ -1 0 0 0 ] [ 0 0 -1 -16 ] 0 1 1
+( 32 -0 -0 ) ( 32 32 4 ) ( 32 32 -0 ) shells [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
