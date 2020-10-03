@@ -1,3 +1,7 @@
-"*.sav"
-"config.cfg"
-"autoexec.cfg"
+.stversions/
+lq1/*.sav
+lq1/*.cfg
+!lq1/default.cfg
+!lq1/dev.cfg
+!lq1/zoom90.cfg
+!lq1/zoom120.cfg
