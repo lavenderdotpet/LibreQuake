@@ -1,42 +1,42 @@
 ---- light / ericw-tools  ----
 Raytracing backend: Embree
 running with 12 threads
-LoadBSPFile: 'lqdm13_a3.bsp'
+LoadBSPFile: 'start.bsp'
 BSP is version 29
-SetQdirFromPath: no "maps" in '/home/lavender/lqdm13_a3.bsp'--- ConvertTextures ---
-Loaded extended texinfo flags from lqdm13_a3.texinfo
+SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
+Loaded extended texinfo flags from start.texinfo
+WARNING: Extended texinfo flags in start.texinfo does not match bsp, ignoring
 --- LoadEntities ---
-WARNING: entity at (-0 -232 280) (trigger_relay) has "target" set to itself
-105 entities read, 13 are lights.
+74 entities read, 14 are lights.
 --- OptionsSummary ---
-    "sunlight2" was set to "300" from map
-    "sunlight3" was set to "250" from map
+    "sunlight" was set to "200" from map
 Embree_TraceInit: Embree version: 2.17.7
 Embree_TraceInit:
-	0 sky faces
-	2327 solid faces
+	8 sky faces
+	483 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
-SetupLights: 13 initial lights
-SetupLights: 13 after surface lights
-SetupLights: 13 after jittering
-using 65 suns for _sunlight2. total light: 300.000000 color: 255.000000 255.000000 255.000000
-using 65 suns for _sunlight3. total light: 250.000000 color: 255.000000 255.000000 255.000000
+SetupLights: 14 initial lights
+Creating surface lights for texture "light1" from template at (-216 288 -240)
+Creating surface lights for texture "+0terminal" from template at (-224 624 -168)
+Creating surface lights for texture "light2" from template at (512 488 -64)
+SetupLights: 76 after surface lights
+SetupLights: 76 after jittering
 --- EstimateLightVisibility ---
-0....1....2....3....4....5....6....7....8....9.
-Final count: 13 lights, 130 suns in use.
+0....1....2....3....4....5....6....7....8....9....
+Final count: 76 lights, 1 suns in use.
 --- LightWorld ---
 --- LightThread ---
 0....1....2....3....4....5....6....7....8....9....
 Lighting Completed.
 
-lightdatasize: 120806
+lightdatasize: 24672
 0 switchable light styles (32 max)
-Writing lqdm13_a3.bsp as BSP version 29
-1.505 seconds elapsed
+Writing start.bsp as BSP version 29
+0.068 seconds elapsed
 
 stats:
-2.497359 lights tested, 0.331439 hits per sample point
+6.354186 lights tested, 3.338652 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
 0.000000 bounce lights tested, 0.000000 hits per sample point
 0 empty lightmaps

@@ -4,6 +4,7 @@ S: screen name
 E: Email
 W: Website
 D: Contributions
+L: Licence 
 ////////////////////////
 
 S: Rhoq
@@ -60,7 +61,7 @@ S: Futuretime23
 D: Music
 
 S: Milky
-D: Sounds    
+D: Sounds
 
 S: Chillo
 E: danielleepeterson86@gmail.com
@@ -100,10 +101,11 @@ N: Jack Perkins
 S: dantescanline
 D: readme, animation
 
+N: Philip Klevestav
+W: www.philipk.net
+E: philipk@philipk.net
+L: Creative Commons Attribution 3.0 (works with bsd3)
 
-S: Quake Revitalization Project
-W: http://qrp.quakeone.com
-D: Some Textures were based on their work
 
     
 

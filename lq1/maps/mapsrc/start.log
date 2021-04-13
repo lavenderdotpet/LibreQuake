@@ -4,81 +4,86 @@ Output file: start.bsp
 
 ---- LoadMapFile ----
 *** WARNING 06: No info_player_deathmatch entities in level
-          294 faces
-           49 brushes
-           61 entities
-           17 unique texnames
-           55 texinfo
+          779 faces
+          130 brushes
+           92 entities
+           40 unique texnames
+          170 texinfo
 
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq.wad
+Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_extra.wad
+Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_eye.wad
+Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_tech.wad
+Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_liquidfall.wad
 Processing hull 0...
 ---- Brush_LoadEntity ----
-           41 brushes
-           38 planes
+           73 brushes
+           40 detail wall
+          156 planes
 ---- CSGFaces ----
-          246 brushfaces
-          174 csgfaces
-          133 mergedfaces
+          677 brushfaces
+          545 csgfaces
+          693 mergedfaces
 ---- SolidBSP ----
-          202 split nodes
-           63 solid leafs
-          122 empty leafs
-           18 water leafs
-            0 detail leafs
+          477 split nodes
+           60 solid leafs
+          305 empty leafs
+           11 water leafs
+          102 detail leafs
             0 detail illusionary leafs
             0 detail fence leafs
             0 illusionary visblocker leafs
-          444 leaffaces
-          430 nodefaces
+         1847 leaffaces
+         1374 nodefaces
 ---- Portalize ----
-          140 vis leafs
-          140 vis clusters
-          308 vis portals
+          418 vis leafs
+          418 vis clusters
+          980 vis portals
 ---- FillOutside ----
-           99 outleafs
+           90 outleafs
 ---- MergeAll ----
-          106 mergefaces
+          624 mergefaces
 ---- SolidBSP ----
-           51 split nodes
-           32 solid leafs
-           17 empty leafs
+          299 split nodes
+           29 solid leafs
+          188 empty leafs
             3 water leafs
-            0 detail leafs
+           80 detail leafs
             0 detail illusionary leafs
             0 detail fence leafs
             0 illusionary visblocker leafs
-          206 leaffaces
-          158 nodefaces
+         1398 leaffaces
+          941 nodefaces
 ---- Portalize ----
-           20 vis leafs
+          191 vis leafs
            20 vis clusters
-           36 vis portals
+           33 vis portals
 ---- Tjunc ----
-          135 world edges
-          518 edge points
-          172 edges added by tjunctions
+          637 world edges
+         2217 edge points
+          632 edges added by tjunctions
             0 faces added by tjunctions
 ---- MakeFaceEdges ----
 ---- GrowRegions ----
 Processing hull 1...
 Processing hull 2...
-*** WARNING 16: Texture grey_3 not found
+*** WARNING 16: Texture metal2 not found
+*** WARNING 16: Texture dirt2 not found
 ---- WriteBSPFile ----
 Wrote start.bsp
-          105 planes             2100
-          274 vertexes           3288
-           99 nodes              2376
-           44 texinfo            1760
-          206 faces              4120
-          199 clipnodes          1592
-           69 leafs              1932
-          254 marksurfaces        508
-          996 surfedges          3984
-          499 edges              1996
-           23 textures         413056
+          360 planes             7200
+          859 vertexes          10308
+          387 nodes              9288
+          111 texinfo            4440
+          621 faces             12420
+          691 clipnodes          5528
+          278 leafs              7784
+          991 marksurfaces       1982
+         2920 surfedges         11680
+         1570 edges              6280
+           60 textures         711124
               lightdata             0
               visdata               0
-              entdata            4145
+              entdata            5519
 
-0.022 seconds elapsed
-Peak memory usage: 1393248 (1.3M)
+0.111 seconds elapsed
+Peak memory usage: 5138434 (4.9M)

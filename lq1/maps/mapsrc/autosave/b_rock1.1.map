@@ -1,0 +1,36 @@
+// Game: Quake
+// Format: Valve
+// entity 0
+{
+"classname" "worldspawn"
+"mapversion" "220"
+"wad" "/home/lavender/LibreQuake/texture-wads/lq_ammo.wad"
+}
+// entity 1
+{
+"classname" "func_detail_wall"
+"_minlight" "180"
+// brush 0
+{
+( 0 0 0 ) ( 0 32 4 ) ( 0 0 4 ) boom [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 0 0 ) ( 0 0 4 ) ( 32 0 4 ) boom [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 0 0 ) ( 0 32 0 ) ( 0 0 0 ) boomammo_bottom [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 16 8 6 ) ( 16 12 6 ) ( 144 12 6 ) boomammotop [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 0 16 4 ) ( 32 16 0 ) ( 32 16 4 ) boom [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 0 0 ) ( 32 32 4 ) ( 32 32 0 ) boom [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
+// entity 2
+{
+"classname" "func_detail"
+"_minlight" "180"
+// brush 0
+{
+( 0 16 32 ) ( 0 0 32 ) ( 0 0 6 ) boom [ 0 -1 0 0 ] [ 0 0 -1 -14 ] 0 1 1
+( 0 0 32 ) ( 32 0 32 ) ( 32 0 6 ) boom [ 1 0 0 0 ] [ 0 0 -1 -14 ] 0 1 1
+( 32 0 6 ) ( 32 16 6 ) ( 0 16 6 ) boomammo_bottom [ -1 0 0 0 ] [ 0 -1 0 -14 ] 0 1 1
+( 0 16 32 ) ( 32 16 32 ) ( 32 0 32 ) boomammotop [ 1 0 0 0 ] [ 0 -1 0 -14 ] 0 1 1
+( 32 16 6 ) ( 32 16 32 ) ( 0 16 32 ) boom [ -1 0 0 0 ] [ 0 0 -1 -14 ] 0 1 1
+( 32 0 32 ) ( 32 16 32 ) ( 32 16 6 ) boom [ 0 1 0 0 ] [ 0 0 -1 -14 ] 0 1 1
+}
+}

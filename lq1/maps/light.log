@@ -1,0 +1,42 @@
+---- light / ericw-tools  ----
+Raytracing backend: Embree
+running with 12 threads
+LoadBSPFile: 'start.bsp'
+BSP is version 29
+SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
+Loaded extended texinfo flags from start.texinfo
+WARNING: Extended texinfo flags in start.texinfo does not match bsp, ignoring
+--- LoadEntities ---
+65 entities read, 5 are lights.
+--- OptionsSummary ---
+    "sunlight" was set to "200" from map
+Embree_TraceInit: Embree version: 2.17.7
+Embree_TraceInit:
+	8 sky faces
+	468 solid faces
+	0 filtered faces
+	0 shadow-casting skip faces
+SetupLights: 5 initial lights
+Creating surface lights for texture "light1" from template at (-216 288 -240)
+Creating surface lights for texture "+0terminal" from template at (-224 624 -168)
+Creating surface lights for texture "light2" from template at (512 488 -64)
+SetupLights: 71 after surface lights
+SetupLights: 71 after jittering
+--- EstimateLightVisibility ---
+0....1....2....3....4....5....6....7....8....9....
+Final count: 71 lights, 1 suns in use.
+--- LightWorld ---
+--- LightThread ---
+0....1....2....3....4....5....6....7....8....9....
+Lighting Completed.
+
+lightdatasize: 23724
+0 switchable light styles (32 max)
+Writing start.bsp as BSP version 29
+0.073 seconds elapsed
+
+stats:
+6.161311 lights tested, 3.283708 hits per sample point
+0.000000 surface lights tested, 0.000000 hits per sample point
+0.000000 bounce lights tested, 0.000000 hits per sample point
+0 empty lightmaps
