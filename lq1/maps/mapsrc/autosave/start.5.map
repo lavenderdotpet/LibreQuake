@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "wad" "/home/lavender/LibreQuake/texture-wads/lq.wad"
-"_sunlight" "200"
+"_sunlight" "50"
 "_tb_mod" "lq1"
 // brush 0
 {
@@ -321,6 +321,15 @@
 ( 8 640 -0 ) ( -8 640 -256 ) ( 8 640 -256 ) brick1 -0 -0 -0 1.3 1.3
 ( 8 320 -256 ) ( 8 640 -0 ) ( 8 640 -256 ) brick1 -0 -0 -0 1.3 1.3
 }
+// brush 35
+{
+( -380 632 -196 ) ( -380 628 -64 ) ( -380 628 -196 ) dirt2 -60 16 -0 0.3 0.3
+( -124 628 -64 ) ( -388 628 -196 ) ( -388 628 -64 ) +0terminal 32 16 -0 0.3 0.3
+( -388 632 -187 ) ( -388 628 -187 ) ( -124 628 -187 ) dirt2 32 124 -0 0.3 0.3
+( -388 632 -184 ) ( -124 628 -184 ) ( -388 628 -184 ) dirt2 32 60 -0 0.3 0.3
+( -124 632 -196 ) ( -388 632 -64 ) ( -388 632 -196 ) +0terminal 32 16 -0 0.3 0.3
+( -329 632 -196 ) ( -329 628 -64 ) ( -329 632 -64 ) dirt2 -60 16 -0 0.3 0.3
+}
 }
 // entity 1
 {
@@ -561,35 +570,25 @@
 }
 // entity 41
 {
-"classname" "light_fluoro"
-"origin" "392 496 -240"
-}
-// entity 42
-{
 "classname" "misc_explobox"
 "origin" "352 592 -248"
 }
-// entity 43
+// entity 42
 {
 "classname" "misc_explobox2"
 "origin" "344 544 -248"
 }
-// entity 44
+// entity 43
 {
 "classname" "info_player_start"
 "origin" "-192 288 -224"
 }
-// entity 45
-{
-"classname" "light"
-"origin" "-40 16 -240"
-}
-// entity 46
+// entity 44
 {
 "classname" "monster_fish"
 "origin" "296 544 -224"
 }
-// entity 47
+// entity 45
 {
 "classname" "trigger_teleport"
 "target" "telemonsterroom"
@@ -603,7 +602,7 @@
 ( -8 256 -248 ) ( -8 320 -248 ) ( -8 256 -256 ) trigger -0 -0 -0 1 1
 }
 }
-// entity 48
+// entity 46
 {
 "classname" "trigger_teleport"
 "target" "telemainroom"
@@ -617,20 +616,20 @@
 ( 12 320 -248 ) ( 12 320 -256 ) ( 12 256 -248 ) trigger -0 -0 -0 1 1
 }
 }
-// entity 49
+// entity 47
 {
 "classname" "info_teleport_destination"
 "origin" "44 288 -248"
 "targetname" "telemonsterroom"
 }
-// entity 50
+// entity 48
 {
 "classname" "info_teleport_destination"
 "origin" "-44 288 -248"
 "targetname" "telemainroom"
 "angle" "180"
 }
-// entity 51
+// entity 49
 {
 "classname" "func_button"
 // brush 0
@@ -643,34 +642,34 @@
 ( -8 128 -192 ) ( -8 96 -224 ) ( -8 96 -192 ) rock1 96 -0 -0 1 1
 }
 }
-// entity 52
+// entity 50
 {
 "classname" "misc_teleporttrain"
-"origin" "-456 488 -144"
+"origin" "-464 592 -144"
 "target" "path1"
 }
-// entity 53
+// entity 51
 {
 "classname" "path_corner"
 "origin" "-48 592 -144"
 "targetname" "path2"
 "target" "path3"
 }
-// entity 54
+// entity 52
 {
 "classname" "path_corner"
 "origin" "-464 592 -144"
 "targetname" "path1"
 "target" "path2"
 }
-// entity 55
+// entity 53
 {
 "classname" "path_corner"
 "origin" "-464 48 -144"
 "targetname" "path4"
 "target" "path1"
 }
-// entity 56
+// entity 54
 {
 "classname" "func_button"
 // brush 0
@@ -683,13 +682,13 @@
 ( -8 224 -192 ) ( -8 192 -224 ) ( -8 192 -192 ) rock1 -0 -0 -0 1 1
 }
 }
-// entity 57
+// entity 55
 {
 "classname" "monster_enforcer"
 "origin" "-352 480 -224"
 "angle" "90"
 }
-// entity 58
+// entity 56
 {
 "classname" "func_button"
 // brush 0
@@ -702,10 +701,23 @@
 ( -8 176 -192 ) ( -8 144 -224 ) ( -8 144 -192 ) rock1 -16 -0 -0 1 1
 }
 }
-// entity 59
+// entity 57
 {
 "classname" "path_corner"
 "origin" "-48 48 -136"
 "targetname" "path3"
 "target" "path4"
+}
+// entity 58
+{
+"classname" "light"
+"origin" "-216 288 -240"
+"delay" "0"
+"_surface" "metal3"
+"light" "300"
+}
+// entity 59
+{
+"classname" "light_fluorospark"
+"origin" "-352 612 -200"
 }

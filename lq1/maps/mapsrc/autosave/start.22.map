@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"wad" "/home/lavender/LibreQuake/texture-wads/lq.wad;/home/lavender/LibreQuake/texture-wads/lq_extra.wad;/home/lavender/LibreQuake/texture-wads/lq_tech.wad;/home/lavender/LibreQuake/texture-wads/lq_eye.wad;/home/lavender/LibreQuake/texture-wads/lq_mayan.wad;/home/lavender/LibreQuake/texture-wads/lq_tech.wad;/home/lavender/LibreQuake/texture-wads/lq_squid_liquids.wad"
+"wad" "/home/lavender/LibreQuake/texture-wads/lq.wad;/home/lavender/LibreQuake/texture-wads/lq_extra.wad;/home/lavender/LibreQuake/texture-wads/lq_tech.wad;/home/lavender/LibreQuake/texture-wads/lq_eye.wad;/home/lavender/LibreQuake/texture-wads/lq_tech.wad;/home/lavender/LibreQuake/texture-wads/lq_squid_liquids.wad"
 "_sunlight" "200"
 "_tb_mod" "lq1"
 // brush 0
@@ -479,10 +479,37 @@
 ( -416 528 -248 ) ( -384 512 -120 ) ( -384 512 -248 ) *lava1_fbr 0 0 0 1 1
 ( -416 592 -248 ) ( -384 608 -248 ) ( -384 608 -120 ) *lava1_fbr 0 0 0 1 1
 ( -288 560 -320 ) ( -160 576 -320 ) ( -288 576 -320 ) *lava1_fbr 0 0 0 1 1
-( -504 8 -248 ) ( -504 632 -248 ) ( -8 8 -248 ) *lava1_fbr -0 -0 -0 1 1
+( -504 8 -255 ) ( -504 632 -255 ) ( -8 8 -255 ) *lava1_fbr -0 -0 -0 1 1
 ( -368 608 -248 ) ( -336 592 -248 ) ( -336 592 -120 ) *lava1_fbr 0 0 0 1 1
 ( -336 512 -248 ) ( -304 544 -120 ) ( -304 544 -248 ) *lava1_fbr 0 0 0 1 1
 ( -304 544 -248 ) ( -304 576 -120 ) ( -304 576 -248 ) *lava1_fbr 0 0 0 1 1
+}
+// brush 53
+{
+( 8 496 -256 ) ( 8 512 -192 ) ( 8 496 -192 ) csl_brk7_1 -36 16 -0 1 1
+( 24 500 -256 ) ( 8 500 -192 ) ( 24 500 -192 ) csl_brk7_1 -36 16 -0 1 1
+( 24 496 -256 ) ( 8 512 -256 ) ( 8 496 -256 ) csl_brk7_1 -36 16 -0 1 1
+( 8 496 -224 ) ( 24 512 -224 ) ( 24 496 -224 ) csl_brk7_1 -36 16 -0 1 1
+( 24 512 -192 ) ( 8 512 -256 ) ( 24 512 -256 ) csl_brk7_1 -36 16 -0 1 1
+( 20 496 -256 ) ( 20 512 -192 ) ( 20 512 -256 ) csl_brk7_1 -36 16 -0 1 1
+}
+// brush 54
+{
+( 116 496 -256 ) ( 116 512 -192 ) ( 116 496 -192 ) csl_brk7_1 -36 16 -0 1 1
+( 132 500 -256 ) ( 116 500 -192 ) ( 132 500 -192 ) csl_brk7_1 -36 16 -0 1 1
+( 132 496 -256 ) ( 116 512 -256 ) ( 116 496 -256 ) csl_brk7_1 -36 16 -0 1 1
+( 116 496 -224 ) ( 132 512 -224 ) ( 132 496 -224 ) csl_brk7_1 -36 16 -0 1 1
+( 132 512 -192 ) ( 116 512 -256 ) ( 132 512 -256 ) csl_brk7_1 -36 16 -0 1 1
+( 128 496 -256 ) ( 128 512 -192 ) ( 128 512 -256 ) csl_brk7_1 -36 16 -0 1 1
+}
+// brush 55
+{
+( 20 508 -228 ) ( 20 504 -248 ) ( 20 508 -248 ) csl_brk7_1 -36 16 0 1 1
+( 88 504 -228 ) ( 20 504 -248 ) ( 20 504 -228 ) csl_brk7_1 -36 16 0 1 1
+( 88 504 -248 ) ( 20 508 -248 ) ( 20 504 -248 ) csl_brk7_1 -36 16 0 1 1
+( 88 504 -228 ) ( 20 508 -228 ) ( 88 508 -228 ) csl_brk7_1 -36 16 0 1 1
+( 88 508 -248 ) ( 20 508 -228 ) ( 20 508 -248 ) csl_brk7_1 -36 16 0 1 1
+( 116 504 -228 ) ( 116 508 -248 ) ( 116 504 -248 ) csl_brk7_1 -36 16 -0 1 1
 }
 }
 // entity 1
@@ -842,7 +869,7 @@
 "classname" "light"
 "origin" "512 488 -64"
 "_surface" "light2"
-"style" "11"
+"style" "0"
 "light" "500"
 }
 // entity 50
@@ -1250,19 +1277,24 @@
 }
 // entity 77
 {
-"classname" "light"
-"origin" "512 576 -48"
-"delay" "0"
-"_surface" "light1"
-"light" "300"
-}
-// entity 78
-{
 "classname" "light_torch_small_walltorch"
 "origin" "876 60 -236"
 }
-// entity 79
+// entity 78
 {
 "classname" "misc_fireball"
 "origin" "-360 552 -240"
+}
+// entity 79
+{
+"classname" "func_detail_wall"
+// brush 0
+{
+( 511 588 -72 ) ( 511 588 -73 ) ( 511 589 -73 ) light1 -6.61092 -28.4706 284.036 1 1.03078
+( 512 588 -73 ) ( 511 588 -73 ) ( 511 588 -72 ) light1 8 -56 180 -1 1
+( 511 589 -73 ) ( 511 588 -73 ) ( 512 588 -73 ) light1 6.61095 -26.5882 345.964 1 1.03078
+( 512 589 -72 ) ( 512 588 -72 ) ( 511 588 -72 ) light1 6.61095 -30.5882 345.964 1 1.03078
+( 512 589 -73 ) ( 512 589 -72 ) ( 511 589 -72 ) light1 6.75 -4.25 180 -2 2
+( 512 589 -73 ) ( 512 588 -73 ) ( 512 588 -72 ) light1 -6.61098 -28.7058 284.036 1 1.03078
+}
 }

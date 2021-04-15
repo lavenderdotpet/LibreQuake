@@ -7,36 +7,37 @@ SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
 Loaded extended texinfo flags from start.texinfo
 WARNING: Extended texinfo flags in start.texinfo does not match bsp, ignoring
 --- LoadEntities ---
-74 entities read, 14 are lights.
+76 entities read, 15 are lights.
 --- OptionsSummary ---
     "sunlight" was set to "200" from map
 Embree_TraceInit: Embree version: 2.17.7
 Embree_TraceInit:
 	8 sky faces
-	483 solid faces
+	486 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
-SetupLights: 14 initial lights
-Creating surface lights for texture "light1" from template at (-216 288 -240)
+SetupLights: 15 initial lights
+Creating surface lights for texture "tlight13" from template at (-216 288 -240)
 Creating surface lights for texture "+0terminal" from template at (-224 624 -168)
 Creating surface lights for texture "light2" from template at (512 488 -64)
-SetupLights: 76 after surface lights
-SetupLights: 76 after jittering
+Creating surface lights for texture "spotlight" from template at (-240 288 -240)
+SetupLights: 81 after surface lights
+SetupLights: 81 after jittering
 --- EstimateLightVisibility ---
 0....1....2....3....4....5....6....7....8....9....
-Final count: 76 lights, 1 suns in use.
+Final count: 81 lights, 1 suns in use.
 --- LightWorld ---
 --- LightThread ---
 0....1....2....3....4....5....6....7....8....9....
 Lighting Completed.
 
-lightdatasize: 24672
+lightdatasize: 24684
 0 switchable light styles (32 max)
 Writing start.bsp as BSP version 29
-0.068 seconds elapsed
+0.057 seconds elapsed
 
 stats:
-6.354186 lights tested, 3.338652 hits per sample point
+6.756105 lights tested, 3.574840 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
 0.000000 bounce lights tested, 0.000000 hits per sample point
 0 empty lightmaps

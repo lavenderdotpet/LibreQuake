@@ -1427,6 +1427,7 @@
 "angle" "-90"
 "targetname" "door1"
 "sounds" "2"
+"lip" "2"
 // brush 0
 {
 ( -28 176 -84 ) ( -28 364 -248 ) ( -28 364 -84 ) tek_door1 0 0 0 1 1
@@ -1477,6 +1478,7 @@
 "angle" "90"
 "targetname" "door1"
 "sounds" "2"
+"lip" "2"
 // brush 0
 {
 ( -28 336 -128 ) ( -28 384 -248 ) ( -28 384 -128 ) tek_door1 0 0 0 1 1

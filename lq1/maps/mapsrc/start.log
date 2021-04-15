@@ -4,63 +4,64 @@ Output file: start.bsp
 
 ---- LoadMapFile ----
 *** WARNING 06: No info_player_deathmatch entities in level
-          779 faces
-          130 brushes
-           92 entities
+          803 faces
+          134 brushes
+           94 entities
            40 unique texnames
-          170 texinfo
+          194 texinfo
 
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_extra.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_eye.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_tech.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_liquidfall.wad
+Opened WAD: /home/lavender/Documents/Project-Working/Quake/TextureReplacement/libreq.wad
 Processing hull 0...
 ---- Brush_LoadEntity ----
-           73 brushes
-           40 detail wall
-          156 planes
+           76 brushes
+           41 detail wall
+          157 planes
 ---- CSGFaces ----
-          677 brushfaces
-          545 csgfaces
-          693 mergedfaces
+          701 brushfaces
+          554 csgfaces
+          703 mergedfaces
 ---- SolidBSP ----
-          477 split nodes
-           60 solid leafs
-          305 empty leafs
+          479 split nodes
+           61 solid leafs
+          307 empty leafs
            11 water leafs
-          102 detail leafs
+          101 detail leafs
             0 detail illusionary leafs
             0 detail fence leafs
             0 illusionary visblocker leafs
-         1847 leaffaces
-         1374 nodefaces
+         1851 leaffaces
+         1378 nodefaces
 ---- Portalize ----
-          418 vis leafs
-          418 vis clusters
-          980 vis portals
+          419 vis leafs
+          419 vis clusters
+          986 vis portals
 ---- FillOutside ----
-           90 outleafs
+           91 outleafs
 ---- MergeAll ----
-          624 mergefaces
+          634 mergefaces
 ---- SolidBSP ----
-          299 split nodes
+          294 split nodes
            29 solid leafs
-          188 empty leafs
+          184 empty leafs
             3 water leafs
-           80 detail leafs
+           79 detail leafs
             0 detail illusionary leafs
             0 detail fence leafs
             0 illusionary visblocker leafs
-         1398 leaffaces
-          941 nodefaces
+         1394 leaffaces
+          951 nodefaces
 ---- Portalize ----
-          191 vis leafs
-           20 vis clusters
-           33 vis portals
+          187 vis leafs
+           21 vis clusters
+           36 vis portals
 ---- Tjunc ----
-          637 world edges
-         2217 edge points
-          632 edges added by tjunctions
+          649 world edges
+         2257 edge points
+          624 edges added by tjunctions
             0 faces added by tjunctions
 ---- MakeFaceEdges ----
 ---- GrowRegions ----
@@ -71,19 +72,19 @@ Processing hull 2...
 ---- WriteBSPFile ----
 Wrote start.bsp
           360 planes             7200
-          859 vertexes          10308
-          387 nodes              9288
-          111 texinfo            4440
-          621 faces             12420
+          871 vertexes          10452
+          382 nodes              9168
+          127 texinfo            5080
+          634 faces             12680
           691 clipnodes          5528
-          278 leafs              7784
-          991 marksurfaces       1982
-         2920 surfedges         11680
-         1570 edges              6280
-           60 textures         711124
+          274 leafs              7672
+          996 marksurfaces       1992
+         2964 surfedges         11856
+         1590 edges              6360
+           61 textures         635008
               lightdata             0
               visdata               0
-              entdata            5519
+              entdata            5770
 
-0.111 seconds elapsed
-Peak memory usage: 5138434 (4.9M)
+0.084 seconds elapsed
+Peak memory usage: 5196588 (5.0M)
