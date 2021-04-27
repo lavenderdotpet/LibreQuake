@@ -1737,9 +1737,3 @@
 "_surface" "spotlight"
 "light" "300"
 }
-// entity 93
-{
-"classname" "monster_enforcer"
-"origin" "-128 320 -224"
-"angle" "180"
-}
