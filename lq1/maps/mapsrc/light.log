@@ -7,13 +7,13 @@ SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
 Loaded extended texinfo flags from start.texinfo
 WARNING: Extended texinfo flags in start.texinfo does not match bsp, ignoring
 --- LoadEntities ---
-76 entities read, 15 are lights.
+75 entities read, 15 are lights.
 --- OptionsSummary ---
     "sunlight" was set to "200" from map
 Embree_TraceInit: Embree version: 2.17.7
 Embree_TraceInit:
 	8 sky faces
-	486 solid faces
+	591 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
 SetupLights: 15 initial lights
@@ -31,13 +31,13 @@ Final count: 81 lights, 1 suns in use.
 0....1....2....3....4....5....6....7....8....9....
 Lighting Completed.
 
-lightdatasize: 24684
+lightdatasize: 27631
 0 switchable light styles (32 max)
 Writing start.bsp as BSP version 29
-0.057 seconds elapsed
+0.054 seconds elapsed
 
 stats:
-6.756105 lights tested, 3.574840 hits per sample point
+6.629365 lights tested, 3.542706 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
 0.000000 bounce lights tested, 0.000000 hits per sample point
 0 empty lightmaps
