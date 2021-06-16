@@ -1,4 +1,3 @@
-
 # LibreQuake
 
 
@@ -28,6 +27,7 @@ For more information, see ~~http://LibreQuake.github.io/~~
  not available at the moment.
 
 ![Texture examples](screenshots/textures_example.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMissLav%2FLibreQuake.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FMissLav%2FLibreQuake?ref=badge_shield)
 
 ![Weapon examples](screenshots/weapons_example.png)
 
@@ -103,6 +103,9 @@ The general rules go as follows:
      One of the things we want to be able to do is put this in
      GNU/Linux distributions (which can be sold or developed
      commercially).
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FMissLav%2FLibreQuake.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FMissLav%2FLibreQuake?ref=badge_large)
 
 ## Levels
 
