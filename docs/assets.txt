@@ -30,21 +30,21 @@ pak0/gfx.wad/ANUM_9 - MissLav
 pak0/gfx.wad/ANUM_MINUS - MissLav
 pak0/gfx.wad/BACKTILE - MissLav
 pak0/gfx.wad/DISC - MissLav
-pak0/gfx.wad/FACE1 - MissLav [TEMP]
-pak0/gfx.wad/FACE2 - MissLav [TEMP]
-pak0/gfx.wad/FACE3 - MissLav [TEMP]
-pak0/gfx.wad/FACE4 - MissLav [TEMP]
-pak0/gfx.wad/FACE5 - MissLav [TEMP]
-pak0/gfx.wad/FACE_INV2 - MissLav [TEMP]
-pak0/gfx.wad/FACE_INVIS - MissLav [TEMP]
-pak0/gfx.wad/FACE_INVUL1 - MissLav [TEMP]
-pak0/gfx.wad/FACE_INVUL2 - MissLav [TEMP]
-pak0/gfx.wad/FACEP1 - MissLav [TEMP]
-pak0/gfx.wad/FACEP2 - MissLav [TEMP]
-pak0/gfx.wad/FACEP3 - MissLav [TEMP]
-pak0/gfx.wad/FACEP4 - MissLav [TEMP]
-pak0/gfx.wad/FACEP5 - MissLav [TEMP]
-pak0/gfx.wad/FACE_QUAD - MissLav [TEMP]
+pak0/gfx.wad/FACE1 - Adaya
+pak0/gfx.wad/FACE2 - Adaya
+pak0/gfx.wad/FACE3 - Adaya
+pak0/gfx.wad/FACE4 - Adaya
+pak0/gfx.wad/FACE5 - Adaya
+pak0/gfx.wad/FACE_INV2 - Adaya
+pak0/gfx.wad/FACE_INVIS - Adaya
+pak0/gfx.wad/FACE_INVUL1 - Adaya
+pak0/gfx.wad/FACE_INVUL2 - Adaya
+pak0/gfx.wad/FACEP1 - Adaya
+pak0/gfx.wad/FACEP2 - Adaya
+pak0/gfx.wad/FACEP3 - Adaya
+pak0/gfx.wad/FACEP4 - Adaya
+pak0/gfx.wad/FACEP5 - Adaya
+pak0/gfx.wad/FACE_QUAD - Adaya
 pak0/gfx.wad/IBAR - MissLav
 pak0/gfx.wad/INV2_LIGHTNG {all 7 frames}
 pak0/gfx.wad/INV2_NAILGUN {all 7 frames}
@@ -502,5 +502,4 @@ music/track09.ogg - Immorpher
 music/track10.ogg - Immorpher
 music/track11.ogg - Immorpher
 //We can have more than ten tracks if we want, but they aren't required
-
 
