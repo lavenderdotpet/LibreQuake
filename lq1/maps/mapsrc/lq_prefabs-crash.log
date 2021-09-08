@@ -1,0 +1,30 @@
+Renderer info: GeForce RTX 2080 Ti/PCIe/SSE2 version 4.6.0 NVIDIA 460.80 from NVIDIA Corporation
+Depth buffer bits: 24
+Multisampling enabled
+Adding file system path /usr/share/TrenchBroom/defaults/assets
+Adding file system path /home/lavender/Documents/Project-Trenchbroom/id1
+Loading document from /home/lavender/LibreQuake/lq1/maps/mapsrc/lq_prefabs.map
+Loaded entity definition file Quake.fgd
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_organic.wad' in 0ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_extra.wad' in 14ms
+Loaded texture collection '/home/lavender/Documents/Project-Working/Quake/TextureReplacement/libreq.wad' in 4ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_mayan.wad' in 5ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_metal.wad' in 16ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_tech.wad' in 9ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_utility.wad' in 1ms
+Loaded /home/lavender/LibreQuake/lq1/maps/mapsrc/lq_prefabs.map in 509ms
+Saved /home/lavender/LibreQuake/lq1/maps/mapsrc/lq_prefabs.map in 20ms
+Parsed successfully as Valve entities (unknown position)
+Reloading texture collections
+Loading palette file gfx/palette.lmp
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_organic.wad' in 0ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_extra.wad' in 8ms
+Loaded texture collection '/home/lavender/Documents/Project-Working/Quake/TextureReplacement/libreq.wad' in 2ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_mayan.wad' in 4ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_metal.wad' in 15ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_tech.wad' in 9ms
+Loaded texture collection '/home/lavender/LibreQuake/texture-wads/lq_utility.wad' in 0ms
+Loading palette file gfx/palette.lmp
+Parsed successfully as Valve entities (unknown position)
+Parsed successfully as Valve entities (unknown position)

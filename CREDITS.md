@@ -4,7 +4,7 @@ S: screen name
 E: Email
 W: Website
 D: Contributions
-L: Licence 
+L: License
 ////////////////////////
 
 S: Rhoq
@@ -15,6 +15,7 @@ S: Ivan_Void
 E: voyisch@gmail.com
 D: sounds
 
+N: Arthur Biver
 S: aDaya
 E: biver.arthur@gmail.com
 W: https://biverarthur.wixsite.com/portfolio
@@ -37,9 +38,6 @@ N: Calvin Martinez
 S: ZungryWare
 E: CalvinMartinezDV@gmail.com
 D: Programming, Models, Animation, Maps, Textures, Management
-
-S: Fimbul K
-D: Textures, Maps, Models
 
 S: Giwake
 D: Textures, Models
@@ -67,8 +65,10 @@ S: Chillo
 E: danielleepeterson86@gmail.com
 D: Models
 
+N: James Lewis
 S: therektafire
-D: Maps, maphacks
+E: therektafire@gmail.com 
+D: Maps, maphacks, sounds
 
 S: eightbit
 D: models
@@ -82,15 +82,13 @@ D: sound, models
 
 S: Nolcoz
 E: nolcozctm@gmail.com
-D: Level textures
+D: Level textures, maps
 
 S: Squid V.
-
 D: Level textures
 
 N: Jack Folkner
 S: Diplodocus
-E: 
 D: sound
 
 S: Markie Music
@@ -106,6 +104,12 @@ W: www.philipk.net
 E: philipk@philipk.net
 L: Creative Commons Attribution 3.0 (works with bsd3)
 
+S: FK/Rat
+D: Art
+L: Public Domain
 
-    
+S: Ashat Maself
+D: Sound effects
+
+
 
