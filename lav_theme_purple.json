@@ -7,10 +7,10 @@
         "warning-color": "#8166f9",
 
         "sidebar-color": "#212121",
-        "roomlist-background-color": "#3B3B3B",
+        "roomlist-background-color": "#2B2B2B",
         "roomlist-text-color": "#ffffff",
         "roomlist-text-secondary-color": "#b9b9b9",
-        "roomlist-highlights-color": "#3b3b3b",
+        "roomlist-highlights-color": "#2B2B2B",
         "roomlist-separator-color": "#121212",
 
         "timeline-background-color": "#212121",
@@ -18,7 +18,7 @@
         "secondary-content": "#FFFFFF",
         "tertiary-content": "#FFFFFF",
         "timeline-text-secondary-color": "#777777",
-        "timeline-highlights-color": "#3B3B3B",
+        "timeline-highlights-color": "#2B2B2B",
         "reaction-row-button-selected-bg-color": "#8166f9"
     }
 }
