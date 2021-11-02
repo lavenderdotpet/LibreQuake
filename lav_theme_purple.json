@@ -18,7 +18,7 @@
         "secondary-content": "#FFFFFF",
         "tertiary-content": "#FFFFFF",
         "timeline-text-secondary-color": "#777777",
-        "timeline-highlights-color": "##3B3B3B",
+        "timeline-highlights-color": "#3B3B3B",
         "reaction-row-button-selected-bg-color": "#8166f9"
     }
 }
