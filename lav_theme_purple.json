@@ -9,8 +9,8 @@
         "sidebar-color": "#212121",
         "roomlist-background-color": "#2B2B2B",
         "roomlist-text-color": "#ffffff",
-        "roomlist-text-secondary-color": "#b9b9b9",
-        "roomlist-highlights-color": "#2B2B2B",
+        "roomlist-text-secondary-color": "#8166f9",
+        "roomlist-highlights-color": "#8166f9",
         "roomlist-separator-color": "#121212",
 
         "timeline-background-color": "#212121",
