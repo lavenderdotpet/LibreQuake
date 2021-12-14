@@ -1,70 +1,71 @@
----- qbsp / ericw-tools  ----
-Input file: start.map
+---- qbsp / ericw-tools v0.18.1-387-ga1609ae1-dirty ----
+Input file: start-compile.map
 Output file: start.bsp
 
+SetQdirFromPath: no "maps" in '/home/lavender/start-compile.map'
 ---- LoadMapFile ----
 *** WARNING 06: No info_player_deathmatch entities in level
-         1053 faces
-          167 brushes
-           94 entities
-           58 unique texnames
-          353 texinfo
+         2283 faces
+          359 brushes
+          190 entities
+           63 unique texnames
+          761 texinfo
 
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_extra.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_eye.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_tech.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_liquidfall.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_mayan.wad
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_organic.wad
 Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_utility.wad
+Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_noise.wad
 Processing hull 0...
 ---- Brush_LoadEntity ----
-          100 brushes
-            2 detail
-           49 detail wall
-          300 planes
+          219 brushes
+            4 detail
+          103 detail fence
+          711 planes
 ---- CSGFaces ----
-          957 brushfaces
-          892 csgfaces
-         1097 mergedfaces
+         2085 brushfaces
+         2141 csgfaces
+         2764 mergedfaces
 ---- SolidBSP ----
-          993 split nodes
-          193 solid leafs
-          643 empty leafs
-           33 water leafs
-          125 detail leafs
+         2400 split nodes
+          434 solid leafs
+         1490 empty leafs
+           68 water leafs
+           18 detail leafs
             0 detail illusionary leafs
-            0 detail fence leafs
+          391 detail fence leafs
             0 illusionary visblocker leafs
-         3026 leaffaces
-         2268 nodefaces
+         7352 leaffaces
+         5553 nodefaces
 ---- Portalize ----
-          801 vis leafs
-          801 vis clusters
-         2243 vis portals
+         1967 vis leafs
+         1967 vis clusters
+         5546 vis portals
 ---- FillOutside ----
-          156 outleafs
+          314 outleafs
 ---- MergeAll ----
-         1027 mergefaces
+         2639 mergefaces
 ---- SolidBSP ----
-          526 split nodes
-          103 solid leafs
-          321 empty leafs
-           10 water leafs
-           93 detail leafs
+         1401 split nodes
+          258 solid leafs
+          842 empty leafs
+           28 water leafs
+            5 detail leafs
             0 detail illusionary leafs
-            0 detail fence leafs
+          269 detail fence leafs
             0 illusionary visblocker leafs
-         2010 leaffaces
-         1387 nodefaces
+         5118 leaffaces
+         3610 nodefaces
 ---- Portalize ----
-          331 vis leafs
-          139 vis clusters
-          430 vis portals
+         1139 vis leafs
+          412 vis clusters
+         1413 vis portals
 ---- Tjunc ----
-         1150 world edges
-         3717 edge points
-         1094 edges added by tjunctions
+         2691 world edges
+         8550 edge points
+         2258 edges added by tjunctions
             0 faces added by tjunctions
 ---- MakeFaceEdges ----
 ---- GrowRegions ----
@@ -74,21 +75,22 @@ Processing hull 2...
 *** WARNING 16: Texture metal2 not found
 *** WARNING 16: Texture dirt2 not found
 ---- WriteBSPFile ----
+Writing start.bsp as BSP version Quake BSP
 Wrote start.bsp
-          734 planes            14680
-         1414 vertexes          16968
-          608 nodes             14592
-          273 texinfo           10920
-         1020 faces             20400
-         1260 clipnodes         10080
-          412 leafs             11536
-         1541 marksurfaces       3082
-         4852 surfedges         19408
-         2539 edges             10156
-           79 textures         856080
-              lightdata             0
-              visdata               0
-              entdata            5775
+     24 models      
+   1615 planes            32300
+   3163 vertexes          37956
+   1577 nodes             37848
+    626 texinfos          25040
+   2537 faces             50740
+   2898 clipnodes         23184
+   1306 leafs             36568
+   3944 marksurfaces       7888
+   6174 edges             24696
+  11787 surfedges         47148
+     95 textures        6862204
+        lightdata             0
+        visdata               0
+        entdata           11676
 
-0.114 seconds elapsed
-Peak memory usage: 8227766 (7.8M)
+0.336 seconds elapsed

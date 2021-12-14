@@ -1,43 +1,51 @@
----- light / ericw-tools  ----
-Raytracing backend: Embree
+---- light / ericw-tools v0.18.1-387-ga1609ae1-dirty ----
+extra 4x4 sampling enabled
 running with 12 threads
 LoadBSPFile: 'start.bsp'
-BSP is version 29
-SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'--- ConvertTextures ---
-Loaded extended texinfo flags from start.texinfo
+BSP is version Quake BSP
+SetQdirFromPath: no "maps" in '/home/lavender/start.bsp'
+--- ConvertTextures ---
+Loading extended texinfo flags from start.texinfo...
 WARNING: Extended texinfo flags in start.texinfo does not match bsp, ignoring
 --- LoadEntities ---
-74 entities read, 15 are lights.
+149 entities read, 30 are lights.
 --- OptionsSummary ---
     "sunlight" was set to "200" from map
-Embree_TraceInit: Embree version: 2.17.7
+Embree_TraceInit: Embree version: 3.13.2
 Embree_TraceInit:
-	33 sky faces
-	863 solid faces
+	95 sky faces
+	2188 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
-SetupLights: 15 initial lights
+SetupLights: 30 initial lights
+--- MakeSurfaceLights ---
 Creating surface lights for texture "tlight13" from template at (-216 288 -240)
 Creating surface lights for texture "+0terminal" from template at (-224 624 -168)
 Creating surface lights for texture "light2" from template at (512 488 -64)
 Creating surface lights for texture "spotlight" from template at (-240 288 -240)
-SetupLights: 81 after surface lights
-SetupLights: 81 after jittering
+Creating surface lights for texture "tlight13" from template at (0 -208 1332)
+Creating surface lights for texture "+0terminal" from template at (-16 464 1476)
+Creating surface lights for texture "light2" from template at (1456 192 1684)
+Creating surface lights for texture "spotlight" from template at (-48 -208 1332)
+SetupLights: 504 after surface lights
+SetupLights: 504 after jittering
+WARNING: couldn't nudge light in solid at 112.000000 -144.000000 1516.000000
 --- EstimateLightVisibility ---
 0....1....2....3....4....5....6....7....8....9....
-Final count: 81 lights, 1 suns in use.
+Final count: 504 lights, 1 suns in use.
 --- LightWorld ---
+--- CalculateVertexNormals ---
 --- LightThread ---
 0....1....2....3....4....5....6....7....8....9....
 Lighting Completed.
 
-lightdatasize: 30320
+lightdatasize: 62084
 0 switchable light styles (32 max)
-Writing start.bsp as BSP version 29
-0.065 seconds elapsed
+Writing start.bsp as BSP version Quake BSP
+0.680 seconds elapsed
 
 stats:
-6.384336 lights tested, 3.293214 hits per sample point
+8.562919 lights tested, 4.169791 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
 0.000000 bounce lights tested, 0.000000 hits per sample point
 0 empty lightmaps

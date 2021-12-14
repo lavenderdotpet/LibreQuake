@@ -1,0 +1,8 @@
+---- qbsp / ericw-tools v0.18.1-387-ga1609ae1-dirty ----
+Input file: startstart.map
+Output file: startstart.bsp
+
+SetQdirFromPath: no "maps" in '/home/lavender/startstart.map'
+---- LoadMapFile ----
+************ ERROR ************
+Failed to open startstart.map: No such file or directory

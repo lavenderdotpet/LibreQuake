@@ -1,19 +1,19 @@
----- vis / ericw-tools  ----
+---- vis / ericw-tools v0.18.1-387-ga1609ae1-dirty ----
 running with 12 threads
 testlevel = 4
 LoadBSPFile: 'start.bsp'
-BSP is version 29
-   331 leafs
-   139 clusters
-   430 portals
+BSP is version Quake BSP
+  1139 leafs
+   412 clusters
+  1413 portals
 Calculating Base Vis:
 0....1....2....3....4....5....6....7....8....9....
 Calculating Full Vis:
 0....1....2....3....4....5....6....7....8....9....
 Expanding clusters...
-average leafs visible: 260
+average leafs visible: 319
 c_noclip: 0
-c_chains: 206063
-visdatasize:5417  compressed from 13902
-Writing start.bsp as BSP version 29
-  0.1 seconds elapsed
+c_chains: 4205987
+visdatasize:20180  compressed from 162877
+Writing start.bsp as BSP version Quake BSP
+  2.7 seconds elapsed
