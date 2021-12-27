@@ -1,0 +1,69 @@
+---- qbsp / ericw-tools v0.18.1-388-g6e96ae7c-dirty ----
+Input file: b_nail0.map
+Output file: b_nail0.bsp
+
+gamedir: /home/lavender/LQ_Dev/LibreQuake/lq1/
+SetQ2dirFromPath: failed to find  in '/home/lavender/LQ_Dev/LibreQuake/lq1/maps/mapsrc/b_nail0.map'
+---- LoadMapFile ----
+*** WARNING 05: No info_player_start entity in level
+*** WARNING 06: No info_player_deathmatch entities in level
+            6 faces
+            1 brushes
+            2 entities
+            3 unique texnames
+            6 texinfo
+
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_health_ammo.wad
+Processing hull 0...
+---- Brush_LoadEntity ----
+            0 brushes
+            1 detail fence
+            6 planes
+---- CSGFaces ----
+            6 brushfaces
+            6 csgfaces
+           12 mergedfaces
+---- SolidBSP ----
+            6 split nodes
+            0 solid leafs
+            6 empty leafs
+            0 water leafs
+            0 detail leafs
+            0 detail illusionary leafs
+            1 detail fence leafs
+            0 illusionary visblocker leafs
+           12 leaffaces
+           12 nodefaces
+---- Portalize ----
+            7 vis leafs
+            7 vis clusters
+           12 vis portals
+---- FillOutside ----
+*** WARNING 19: No entities in empty space -- no filling performed (hull 0)
+---- MakeFaceEdges ----
+---- GrowRegions ----
+Processing hull 1...
+*** WARNING 19: No entities in empty space -- no filling performed (hull 1)
+Processing hull 2...
+*** WARNING 19: No entities in empty space -- no filling performed (hull 2)
+*** WARNING 16: Texture skip not found
+---- WriteBSPFile ----
+Writing b_nail0.bsp as BSP version Quake BSP
+Wrote b_nail0.bsp
+      1 models      
+     17 planes              340
+      8 vertexes             96
+      6 nodes               144
+      6 texinfos            240
+      6 faces               120
+     12 clipnodes            96
+      8 leafs               224
+      6 marksurfaces         12
+     13 edges                52
+     24 surfedges            96
+      4 textures           4220
+        lightdata             0
+        visdata               0
+        entdata             173
+
+0.003 seconds elapsed

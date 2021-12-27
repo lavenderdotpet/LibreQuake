@@ -1,96 +1,95 @@
----- qbsp / ericw-tools v0.18.1-387-ga1609ae1-dirty ----
-Input file: start-compile.map
+---- qbsp / ericw-tools v0.18.1-388-g6e96ae7c-dirty ----
+Input file: start.map
 Output file: start.bsp
 
-SetQdirFromPath: no "maps" in '/home/lavender/start-compile.map'
+gamedir: /home/lavender/LQ_Dev/LibreQuake/lq1/
+SetQ2dirFromPath: failed to find  in '/home/lavender/LQ_Dev/LibreQuake/lq1/maps/mapsrc/start.map'
 ---- LoadMapFile ----
 *** WARNING 06: No info_player_deathmatch entities in level
-         2283 faces
-          359 brushes
-          190 entities
+         1310 faces
+          206 brushes
+          117 entities
            63 unique texnames
-          761 texinfo
+          439 texinfo
 
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_extra.wad
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_eye.wad
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_tech.wad
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_liquidfall.wad
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_mayan.wad
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_utility.wad
-Opened WAD: /home/lavender/LibreQuake/texture-wads/lq_noise.wad
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_extra.wad
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_eye.wad
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_tech.wad
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_liquidfall.wad
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_mayan.wad
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_utility.wad
 Processing hull 0...
 ---- Brush_LoadEntity ----
-          219 brushes
-            4 detail
-          103 detail fence
-          711 planes
+          146 brushes
+            1 detail
+           42 detail fence
+          434 planes
 ---- CSGFaces ----
-         2085 brushfaces
-         2141 csgfaces
-         2764 mergedfaces
+         1208 brushfaces
+         1264 csgfaces
+         1532 mergedfaces
 ---- SolidBSP ----
-         2400 split nodes
-          434 solid leafs
-         1490 empty leafs
-           68 water leafs
-           18 detail leafs
+         1580 split nodes
+          368 solid leafs
+          985 empty leafs
+           52 water leafs
+            1 detail leafs
             0 detail illusionary leafs
-          391 detail fence leafs
+          175 detail fence leafs
             0 illusionary visblocker leafs
-         7352 leaffaces
-         5553 nodefaces
+         4148 leaffaces
+         3186 nodefaces
 ---- Portalize ----
-         1967 vis leafs
-         1967 vis clusters
-         5546 vis portals
+         1213 vis leafs
+         1213 vis clusters
+         3369 vis portals
 ---- FillOutside ----
-          314 outleafs
+          265 outleafs
 ---- MergeAll ----
-         2639 mergefaces
+         1480 mergefaces
 ---- SolidBSP ----
-         1401 split nodes
-          258 solid leafs
-          842 empty leafs
-           28 water leafs
-            5 detail leafs
+          723 split nodes
+          156 solid leafs
+          436 empty leafs
+           12 water leafs
+            1 detail leafs
             0 detail illusionary leafs
-          269 detail fence leafs
+          119 detail fence leafs
             0 illusionary visblocker leafs
-         5118 leaffaces
-         3610 nodefaces
+         2650 leaffaces
+         1867 nodefaces
 ---- Portalize ----
-         1139 vis leafs
-          412 vis clusters
-         1413 vis portals
+          567 vis leafs
+          216 vis clusters
+          656 vis portals
 ---- Tjunc ----
-         2691 world edges
-         8550 edge points
-         2258 edges added by tjunctions
+         1492 world edges
+         4668 edge points
+         1271 edges added by tjunctions
             0 faces added by tjunctions
 ---- MakeFaceEdges ----
 ---- GrowRegions ----
 Processing hull 1...
 Processing hull 2...
-*** WARNING 16: Texture __TB_empty not found
 *** WARNING 16: Texture metal2 not found
 *** WARNING 16: Texture dirt2 not found
 ---- WriteBSPFile ----
 Writing start.bsp as BSP version Quake BSP
 Wrote start.bsp
-     24 models      
-   1615 planes            32300
-   3163 vertexes          37956
-   1577 nodes             37848
-    626 texinfos          25040
-   2537 faces             50740
-   2898 clipnodes         23184
-   1306 leafs             36568
-   3944 marksurfaces       7888
-   6174 edges             24696
-  11787 surfedges         47148
-     95 textures        6862204
+     13 models      
+    977 planes            19540
+   1720 vertexes          20640
+    814 nodes             19536
+    349 texinfos          13960
+   1385 faces             27700
+   1446 clipnodes         11568
+    654 leafs             18312
+   2119 marksurfaces       4238
+   3345 edges             13380
+   6449 surfedges         25796
+     96 textures         977568
         lightdata             0
         visdata               0
-        entdata           11676
+        entdata            7224
 
-0.336 seconds elapsed
+0.169 seconds elapsed

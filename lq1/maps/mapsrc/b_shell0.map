@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "/home/lavender/LibreQuake/texture-wads/lq_ammo.wad"
+"wad" "/home/lavender/LibreQuake/texture-wads/lq_ammo.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_health_ammo.wad"
 }
 // entity 1
 {
@@ -12,11 +12,11 @@
 "_minlight" "180"
 // brush 0
 {
-( -0 -0 -0 ) ( -0 32 4 ) ( -0 -0 4 ) shells [ 0 -1 0 -0 ] [ 0 0 -1 -0 ] -0 1 1
-( 32 -0 -0 ) ( -0 -0 4 ) ( 32 -0 4 ) shells [ 1 0 0 -0 ] [ 0 0 -1 -0 ] -0 1 1
-( 32 -0 -0 ) ( -0 32 -0 ) ( -0 -0 -0 ) ammo_bottom [ -1 0 0 -0 ] [ 0 -1 0 -0 ] -0 1 1
-( 32 -0 32 ) ( -0 32 32 ) ( 32 32 32 ) ammotop [ 1 0 0 -0 ] [ 0 -1 0 -0 ] -0 1 1
-( -0 32 4 ) ( 32 32 -0 ) ( 32 32 4 ) shells [ -1 0 0 -0 ] [ 0 0 -1 -0 ] -0 1 1
-( 32 -0 -0 ) ( 32 32 4 ) ( 32 32 -0 ) shells [ 0 1 0 -0 ] [ 0 0 -1 -0 ] -0 1 1
+( 0 0 0 ) ( 0 32 4 ) ( 0 0 4 ) shellssmall [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 0 0 ) ( 0 0 4 ) ( 32 0 4 ) shellssmall [ 1 0 0 8 ] [ 0 0 -1 0 ] 0 1 1
+( 32 0 0 ) ( 0 32 0 ) ( 0 0 0 ) ammobotsmall [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 0 24 ) ( 0 32 24 ) ( 32 32 24 ) ammotopsmall [ 1 0 0 8 ] [ 0 -1 0 0 ] 0 1 1
+( 0 24 4 ) ( 32 24 0 ) ( 32 24 4 ) shellssmall [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 24 0 0 ) ( 24 32 4 ) ( 24 32 0 ) shellssmall [ 0 1 0 8 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
