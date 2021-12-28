@@ -1,0 +1,47 @@
+-more moss on the mossy textures
+-have alternate mossy style for silver colored textures
+-silver colored floor
+
+key1_2/1_3
+plat_stem
+s_floor1_8
+sfloor5_2
+sfloor5_3
+sign1
+slipbot
+slipbotsd
+sliplite
+slipside
+sliptop
+sliptopsd
+tech01_4
+tech01_5
+tech01_6
+tech01_7
+tech04_1
+tech04_2
+tech04_4
+tech04_6
+tech04_7
+tech04_8
+tech04_9
+tech07_1
+tech07_4
+tech07_6
+tech07_7
+tele_top1
+tlight2_1
+tlight2_2
+tlight4_1
+tlight4_2
+tlight4_3
+tlight5_1
+twall1_1
+twall1_2
+twall1_3
+twall2_1
+twall2_2
+twall3_1
+twall3_2
+twall3_3
+twall3_4
