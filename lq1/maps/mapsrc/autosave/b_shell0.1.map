@@ -1,0 +1,31 @@
+// Game: Quake
+// Format: Valve
+// entity 0
+{
+"classname" "worldspawn"
+"mapversion" "220"
+"wad" "/home/lavender/LibreQuake/texture-wads/lq_ammo.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_health_ammo.wad"
+// brush 0
+{
+( 0 0 64 ) ( 0 24 0 ) ( 0 24 64 ) __TB_empty [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 24 0 64 ) ( 0 0 0 ) ( 0 0 64 ) __TB_empty [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 24 24 0 ) ( 0 0 0 ) ( 24 0 0 ) __TB_empty [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 24 24 64 ) ( 0 0 64 ) ( 0 24 64 ) __TB_empty [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 24 24 64 ) ( 0 24 0 ) ( 24 24 0 ) __TB_empty [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 24 24 64 ) ( 24 0 0 ) ( 24 0 64 ) __TB_empty [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
+// entity 1
+{
+"classname" "func_detail_wall"
+"_minlight" "180"
+// brush 0
+{
+( 0 0 -24 ) ( 0 32 -20 ) ( 0 0 -20 ) shellssmall [ 0 -1 0 0 ] [ 0 0 -1 8 ] 0 1 1
+( 32 0 -24 ) ( 0 0 -20 ) ( 32 0 -20 ) shellssmall [ 1 0 0 8 ] [ 0 0 -1 8 ] 0 1 1
+( 32 0 -24 ) ( 0 32 -24 ) ( 0 0 -24 ) ammobotsmall [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 0 0 ) ( 0 32 0 ) ( 32 32 0 ) ammotopsmall [ 1 0 0 8 ] [ 0 -1 0 0 ] 0 1 1
+( 0 24 -20 ) ( 32 24 -24 ) ( 32 24 -20 ) shellssmall [ -1 0 0 0 ] [ 0 0 -1 8 ] 0 1 1
+( 24 0 -24 ) ( 24 32 -20 ) ( 24 32 -24 ) shellssmall [ 0 1 0 8 ] [ 0 0 -1 8 ] 0 1 1
+}
+}

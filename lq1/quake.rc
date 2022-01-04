@@ -11,9 +11,9 @@ exec autoexec.cfg
 stuffcmds
 
 // demos
-startdemos example demo1 demo2 demo3
+startdemos demo1 demo2 demo3
 
-clear 
+
 
 Echo =============================
 Echo check out the new comands

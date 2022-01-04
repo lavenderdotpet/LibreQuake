@@ -1,20 +1,20 @@
 ---- vis / ericw-tools v0.18.1-388-g6e96ae7c-dirty ----
 running with 12 threads
 testlevel = 4
-LoadBSPFile: 'start.bsp'
+LoadBSPFile: 'b_explob.bsp'
 BSP is version Quake BSP
-   567 leafs
-   216 clusters
-   656 portals
+     7 leafs
+    12 portals
 State file is out of date, will be overwritten
 Calculating Base Vis:
-0....1....2....3....4....5....6....7....8....9....
+0....1....2....3....4....5....6....7....8....9..
 Calculating Full Vis:
-0....1....2....3....4....5....6....7....8....9....
-Expanding clusters...
-average leafs visible: 372
+0....1....2....3....4....5....6....7....8....9..
+WARNING: Leaf portals saw into leaf (0)
+WARNING: Leaf portals saw into leaf (6)
+average leafs visible: 5
 c_noclip: 0
-c_chains: 475896
-visdatasize:9762  compressed from 40257
-Writing start.bsp as BSP version Quake BSP
-  0.2 seconds elapsed
+c_chains: 80
+visdatasize:7  compressed from 7
+Writing b_explob.bsp as BSP version Quake BSP
+  0.1 seconds elapsed
