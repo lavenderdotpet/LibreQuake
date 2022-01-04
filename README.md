@@ -41,7 +41,7 @@ There are an overwhelming number of choices available, a lengthy list of
 [quake Wiki](https://quakewiki.org/wiki/Engines).
 
 One particularly recommended by the *LibreQuake* project is
-[QuakeSpasm](http://quakespasm.sourceforge.net/download.htm).  
+[QuakeSpasmSpiked](https://triptohell.info/moodles/qss/).  
 This engine offers good support for
 single-player and the majority of mods created for both
 *Quake* and *LibreQuake*.
