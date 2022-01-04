@@ -38,12 +38,7 @@ N: Calvin Martinez
 S: ZungryWare
 E: CalvinMartinezDV@gmail.com
 D: Programming, Models, Animation, Maps, Textures, Management
-
-S: Giwake
-D: Textures, Models
-
-S: John Biggs
-D: Textures, Maps
+.
 
 S: GooseJelly
 D: Textures, Maps
@@ -99,10 +94,11 @@ N: Jack Perkins
 S: dantescanline
 D: readme, animation
 
-N: Philip Klevestav
-W: www.philipk.net
-E: philipk@philipk.net
-L: Creative Commons Attribution 3.0 (works with bsd3)
+None used as of yet
+~~N: Philip Klevestav~
+~~W: www.philipk.net~~
+~~E: philipk@philipk.net~~
+~~L: Creative Commons Attribution 3.0 (works with bsd3)~~
 
 S: FK/Rat
 D: Art
@@ -111,5 +107,17 @@ L: Public Domain
 S: Ashat Maself
 D: Sound effects
 
+N: Marcel Schubert
+S: Mr. M
+D: models, concept art(ammo)
+L: Public Domain
 
+N: David Spell
+S: dumptruck_ds
+E: lango.lan.party@gmail.com
+W: https://www.youtube.com/c/dumptruckds
+D: Maps
 
+S: ValhaHazred
+W:https://www.deviantart.com/valhahazred
+D: Concept art
