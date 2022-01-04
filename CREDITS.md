@@ -1,4 +1,5 @@
-```///credit template///
+```
+///credit template///
 N: real name
 S: screen name
 E: Email
@@ -29,7 +30,7 @@ N: James Greenwood
 S: Greenwood
 E: padregreenwood@gmail.com
 W: jgreenwoodjr.com
-D: Maps
+D: Textures, Maps
 
 S: Clay
 D: Models, Textures
@@ -38,12 +39,8 @@ N: Calvin Martinez
 S: ZungryWare
 E: CalvinMartinezDV@gmail.com
 D: Programming, Models, Animation, Maps, Textures, Management
-.
 
 S: GooseJelly
-D: Textures, Maps
-
-S: Greenwood
 D: Textures, Maps
 
 S: MissLav
@@ -120,4 +117,5 @@ D: Maps
 
 S: ValhaHazred
 W:https://www.deviantart.com/valhahazred
-D: Concept art```
+D: Concept art
+```
