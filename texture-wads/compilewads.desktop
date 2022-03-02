@@ -3,7 +3,7 @@
 [Desktop Entry]
 Name=compilewads
 Comment=compiles my wads
-Exec=sh ./.compilewads.sh
+Exec=sh ./compilewads.sh
 Icon=bash
 Type=Application
 Categories=Network;Internet;Utilities;Administration;Settings;

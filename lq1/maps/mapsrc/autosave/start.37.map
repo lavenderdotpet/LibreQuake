@@ -3,9 +3,8 @@
 // entity 0
 {
 "classname" "worldspawn"
-"wad" "/home/lavender/LibreQuake/texture-wads/lq.wad;/home/lavender/LibreQuake/texture-wads/lq_extra.wad;/home/lavender/LibreQuake/texture-wads/lq_eye.wad;/home/lavender/LibreQuake/texture-wads/lq_tech.wad;/home/lavender/LibreQuake/texture-wads/lq_liquidfall.wad;/home/lavender/LibreQuake/texture-wads/lq_prefabs.wad;/home/lavender/LibreQuake/texture-wads/lq_mayan.wad;/home/lavender/LibreQuake/texture-wads/lq_organic.wad;/home/lavender/LibreQuake/texture-wads/lq_utility.wad;/home/lavender/LibreQuake/texture-wads/lq_noise.wad"
+"wad" "/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_extra.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_eye.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_tech.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_liquidfall.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_mayan.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_utility.wad;/home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_noise.wad"
 "_sunlight" "200"
-"_tb_mod" "lq1"
 "worldtype" "1"
 // brush 0
 {
@@ -2028,6 +2027,36 @@
 ( 88 216 -144 ) ( 8 144 -144 ) ( 8 216 -144 ) *teleport 0 0 0 1 1
 ( 88 216 -144 ) ( 8 216 -232 ) ( 88 216 -232 ) *teleport 0 0 0 1 1
 ( 14 216 -144 ) ( 14 144 -232 ) ( 14 144 -144 ) *teleport 0 0 0 1 1
+}
+// brush 215
+{
+( 408 325 -224 ) ( 405 317 -248 ) ( 408 325 -248 ) skin_eye 0 0 0 1 1
+( 405 317 -248 ) ( 407 312 -224 ) ( 407 312 -248 ) skin_eye 0 0 0 1 1
+( 412 310 -224 ) ( 407 312 -248 ) ( 407 312 -224 ) skin_eye 0 0 0 1 1
+( 419 320 -248 ) ( 412 310 -248 ) ( 416 312 -248 ) skin_eye 0 0 0 1 1
+( 419 320 -224 ) ( 408 325 -224 ) ( 415 325 -224 ) skin_eye 0 0 0 1 1
+( 415 325 -224 ) ( 408 325 -248 ) ( 415 325 -248 ) skin_eye 0 0 0 1 1
+( 416 312 -224 ) ( 412 310 -248 ) ( 412 310 -224 ) skin_eye 0 0 0 1 1
+( 419 320 -224 ) ( 415 325 -248 ) ( 419 320 -248 ) skin_eye 0 0 0 1 1
+( 419 320 -224 ) ( 416 312 -248 ) ( 416 312 -224 ) skin_eye 0 0 0 1 1
+}
+// brush 216
+{
+( 412 318 -219 ) ( 412 320 -224 ) ( 412 320 -219 ) rock2 0 0 0 1 1
+( 413 319 -219 ) ( 411 319 -224 ) ( 411 319 -219 ) rock2 0 0 0 1 1
+( 413 320 -224 ) ( 411 318 -224 ) ( 413 318 -224 ) rock2 0 0 0 1 1
+( 413 320 -220 ) ( 411 318 -220 ) ( 411 320 -220 ) rock2 0 0 0 1 1
+( 413 320 -219 ) ( 411 320 -224 ) ( 413 320 -224 ) rock2 0 0 0 1 1
+( 413 320 -219 ) ( 413 318 -224 ) ( 413 318 -219 ) rock2 0 0 0 1 1
+}
+// brush 217
+{
+( 412 318 -219 ) ( 412 320 -224 ) ( 412 320 -219 ) +0lava_fall3 0 0 0 1 1
+( 413 319 -219 ) ( 411 319 -224 ) ( 411 319 -219 ) +0lava_fall3 0 0 0 1 1
+( 413 320 -220 ) ( 411 320 -220 ) ( 411 318 -220 ) +0lava_fall3 0 0 0 1 1
+( 413 320 -219 ) ( 411 318 -219 ) ( 411 320 -219 ) +0lava_fall3 0 0 0 1 1
+( 413 320 -219 ) ( 411 320 -224 ) ( 413 320 -224 ) +0lava_fall3 0 0 0 1 1
+( 413 320 -219 ) ( 413 318 -224 ) ( 413 318 -219 ) +0lava_fall3 0 0 0 1 1
 }
 }
 // entity 1

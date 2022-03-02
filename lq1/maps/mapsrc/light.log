@@ -1,46 +1,50 @@
 ---- light / ericw-tools v0.18.1-388-g6e96ae7c-dirty ----
 extra 4x4 sampling enabled
 running with 12 threads
-LoadBSPFile: 'b_explob.bsp'
+LoadBSPFile: 'nstart.bsp'
 BSP is version Quake BSP
-SetQdirFromPath: no "maps" in '/home/lavender/b_explob.bsp'
+SetQdirFromPath: no "maps" in '/home/lavender/nstart.bsp'
 --- ConvertTextures ---
-Loading extended texinfo flags from b_explob.texinfo...
 --- LoadEntities ---
-1 entities read, 0 are lights.
+WARNING: brush entity with mins (-223.00 -237.00 146.00) maxs (-224.00 -115.00 271.00) (trigger_once) has empty key/value "targetname" ""
+WARNING: brush entity with mins (-223.00 -365.00 146.00) maxs (-224.00 -243.00 271.00) (trigger_once) has empty key/value "targetname" ""
+WARNING: entity at (8 2088 824) (monster_boss) has empty key/value "target" ""
+WARNING: entity at (-328 2472 984) (path_corner) has empty key/value "wait" ""
+88 entities read, 19 are lights.
 --- OptionsSummary ---
     "bounce" was set to "1" from commandline
 Embree_TraceInit: Embree version: 3.13.2
 Embree_TraceInit:
-	0 sky faces
-	6 solid faces
+	24 sky faces
+	931 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
-SetupLights: 0 initial lights
+SetupLights: 19 initial lights
 --- MakeSurfaceLights ---
-SetupLights: 0 after surface lights
-SetupLights: 0 after jittering
+Creating surface lights for texture "light" from template at (-88 -136 152)
+SetupLights: 79 after surface lights
+SetupLights: 79 after jittering
 --- EstimateLightVisibility ---
-
-Final count: 0 lights, 0 suns in use.
+0....1....2....3....4....5....6....7....8....9....
+Final count: 79 lights, 1 suns in use.
 --- LightWorld ---
 --- CalculateVertexNormals ---
 --- MakeTextureColors ---
 --- MakeBounceLights ---
-0....1....2....3....4....5....6....7....8.
-6 bounce lights created
+0....1....2....3....4....5....6....7....8....9....
+931 bounce lights created
 --- LightThread ---
-0....1....2....3....4....5....6....7....8.
-Indirect lights: 6 bounce lights, 0 surface lights (0 light points) in use.
+0....1....2....3....4....5....6....7....8....9....
+Indirect lights: 931 bounce lights, 0 surface lights (0 light points) in use.
 Lighting Completed.
 
-lightdatasize: 88
+lightdatasize: 52772
 0 switchable light styles (32 max)
-Writing b_explob.bsp as BSP version Quake BSP
-0.069 seconds elapsed
+Writing nstart.bsp as BSP version Quake BSP
+0.774 seconds elapsed
 
 stats:
-0.000000 lights tested, 0.000000 hits per sample point
+1.784243 lights tested, 0.867469 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
-0.000000 bounce lights tested, 0.000000 hits per sample point
+31.898888 bounce lights tested, 21.713730 hits per sample point
 0 empty lightmaps

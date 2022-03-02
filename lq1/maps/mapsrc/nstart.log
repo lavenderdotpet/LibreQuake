@@ -1,0 +1,85 @@
+---- qbsp / ericw-tools v0.18.1-388-g6e96ae7c-dirty ----
+Input file: nstart.map
+Output file: nstart.bsp
+
+SetQdirFromPath: no "maps" in '/home/lavender/nstart.map'
+---- LoadMapFile ----
+          987 faces
+          156 brushes
+           89 entities
+           30 unique texnames
+          357 texinfo
+
+Opened WAD: /home/lavender/LQ_Dev/LibreQuake/texture-wads/lq_dev.wad
+Processing hull 0...
+---- Brush_LoadEntity ----
+          111 brushes
+           12 detail fence
+          222 planes
+---- CSGFaces ----
+          789 brushfaces
+         1067 csgfaces
+         1033 mergedfaces
+---- SolidBSP ----
+         1252 split nodes
+          408 solid leafs
+          695 empty leafs
+          138 water leafs
+            0 detail leafs
+            0 detail illusionary leafs
+           12 detail fence leafs
+            0 illusionary visblocker leafs
+         2808 leaffaces
+         2321 nodefaces
+---- Portalize ----
+          845 vis leafs
+          845 vis clusters
+         2034 vis portals
+---- FillOutside ----
+          442 outleafs
+---- MergeAll ----
+          965 mergefaces
+---- SolidBSP ----
+          503 split nodes
+          205 solid leafs
+          199 empty leafs
+           88 water leafs
+            0 detail leafs
+            0 detail illusionary leafs
+           12 detail fence leafs
+            0 illusionary visblocker leafs
+         1703 leaffaces
+         1175 nodefaces
+---- Portalize ----
+          299 vis leafs
+          239 vis clusters
+          590 vis portals
+---- Tjunc ----
+          970 world edges
+         3547 edge points
+         1022 edges added by tjunctions
+            0 faces added by tjunctions
+---- MakeFaceEdges ----
+---- GrowRegions ----
+Processing hull 1...
+Processing hull 2...
+---- WriteBSPFile ----
+Writing nstart.bsp as BSP version Quake BSP
+Wrote nstart.bsp
+     34 models      
+    597 planes            11940
+   1490 vertexes          17880
+    701 nodes             16824
+    230 texinfos           9200
+   1221 faces             24420
+   1377 clipnodes         11016
+    498 leafs             13944
+   1749 marksurfaces       3498
+   2933 edges             11732
+   5758 surfedges         23032
+     30 textures         161804
+        lightdata             0
+        visdata               0
+        entdata            6638
+
+0.083 seconds elapsed

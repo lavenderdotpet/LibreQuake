@@ -1864,19 +1864,19 @@
 }
 // brush 199
 {
-( -308 68 -192 ) ( -308 36 -192 ) ( -308 36 -216 ) wood3 12 4 0 1 1
-( -304 40 -220 ) ( -304 68 -220 ) ( -308 68 -216 ) wood3 100 -12 0 1 1
-( -308 68 -192 ) ( -304 64 -188 ) ( -304 40 -188 ) wood3 100 -12 0 1 1
-( -308 36 -192 ) ( -276 36 -192 ) ( -276 36 -216 ) wood3 100 4 0 1 1
-( -280 40 -220 ) ( -304 40 -220 ) ( -308 36 -216 ) wood3 100 -12 0 1 1
-( -280 40 -188 ) ( -276 36 -192 ) ( -308 36 -192 ) wood3 100 -12 0 1 1
-( -280 40 -220 ) ( -280 68 -220 ) ( -304 68 -220 ) wood3 100 -12 0 1 1
-( -304 64 -188 ) ( -280 64 -188 ) ( -280 40 -188 ) wood3 100 -12 0 1 1
-( -308 68 -192 ) ( -276 68 -192 ) ( -280 64 -188 ) wood3 100 -12 0 1 1
-( -276 68 -216 ) ( -276 68 -192 ) ( -308 68 -192 ) wood3 100 4 0 1 1
-( -276 36 -216 ) ( -276 68 -216 ) ( -280 68 -220 ) wood3 100 -12 0 1 1
-( -280 64 -188 ) ( -276 68 -192 ) ( -276 36 -192 ) wood3 100 -12 0 1 1
-( -276 36 -192 ) ( -276 68 -192 ) ( -276 68 -216 ) wood3 12 4 0 1 1
+( -308 68 -192 ) ( -308 36 -192 ) ( -308 36 -216 ) wood6 12 4 90 1 1
+( -304 40 -220 ) ( -304 68 -220 ) ( -308 68 -216 ) wood6 100 -12 90 1 1
+( -308 68 -192 ) ( -304 64 -188 ) ( -304 40 -188 ) wood6 100 -12 90 1 1
+( -308 36 -192 ) ( -276 36 -192 ) ( -276 36 -216 ) wood6 100 4 90 1 1
+( -280 40 -220 ) ( -304 40 -220 ) ( -308 36 -216 ) wood6 100 -12 90 1 1
+( -280 40 -188 ) ( -276 36 -192 ) ( -308 36 -192 ) wood6 100 -12 90 1 1
+( -280 40 -220 ) ( -280 68 -220 ) ( -304 68 -220 ) wood6 100 -12 90 1 1
+( -304 64 -188 ) ( -280 64 -188 ) ( -280 40 -188 ) wood6 100 -12 90 1 1
+( -308 68 -192 ) ( -276 68 -192 ) ( -280 64 -188 ) wood6 100 -12 90 1 1
+( -276 68 -216 ) ( -276 68 -192 ) ( -308 68 -192 ) wood6 100 4 90 1 1
+( -276 36 -216 ) ( -276 68 -216 ) ( -280 68 -220 ) wood6 100 -12 90 1 1
+( -280 64 -188 ) ( -276 68 -192 ) ( -276 36 -192 ) wood6 100 -12 90 1 1
+( -276 36 -192 ) ( -276 68 -192 ) ( -276 68 -216 ) wood6 12 4 90 1 1
 }
 // brush 200
 {
@@ -4166,18 +4166,12 @@
 }
 // entity 155
 {
-"classname" "info_player_start"
-"origin" "-144 -144 1368"
-"angle" "0"
-}
-// entity 156
-{
 "classname" "misc_teleporttrain"
 "origin" "-464 368 1524"
 "target" "path1l"
 "angle" "0"
 }
-// entity 157
+// entity 156
 {
 "classname" "path_corner"
 "origin" "240 368 1524"
@@ -4185,7 +4179,7 @@
 "target" "path3l"
 "angle" "0"
 }
-// entity 158
+// entity 157
 {
 "classname" "path_corner"
 "origin" "-464 368 1524"
@@ -4193,7 +4187,7 @@
 "target" "path2l"
 "angle" "0"
 }
-// entity 159
+// entity 158
 {
 "classname" "path_corner"
 "origin" "-464 -656 1524"
@@ -4201,7 +4195,7 @@
 "target" "path1l"
 "angle" "0"
 }
-// entity 160
+// entity 159
 {
 "classname" "path_corner"
 "origin" "240 -656 1540"
@@ -4209,7 +4203,7 @@
 "target" "path4l"
 "angle" "0"
 }
-// entity 161
+// entity 160
 {
 "classname" "light"
 "origin" "0 -208 1332"
@@ -4218,14 +4212,14 @@
 "light" "300"
 "angle" "0"
 }
-// entity 162
+// entity 161
 {
 "classname" "light_fluorospark"
 "origin" "-16 464 1476"
 "_surface" "+0terminal"
 "angle" "0"
 }
-// entity 163
+// entity 162
 {
 "classname" "light"
 "origin" "1456 192 1684"
@@ -4234,7 +4228,7 @@
 "light" "500"
 "angle" "0"
 }
-// entity 164
+// entity 163
 {
 "classname" "light"
 "origin" "112 -144 1516"
@@ -4242,80 +4236,88 @@
 "wait" "0"
 "angle" "0"
 }
-// entity 165
+// entity 164
 {
 "classname" "misc_explobox"
 "origin" "2320 -720 1348"
 }
-// entity 166
+// entity 165
 {
 "classname" "misc_explobox2"
 "origin" "2400 -720 1332"
 }
-// entity 167
+// entity 166
 {
 "classname" "monster_demon1"
 "origin" "516 416 1384"
 "angle" "270"
 }
-// entity 168
+// entity 167
 {
 "classname" "monster_tarbaby"
 "origin" "1532 432 1364"
 "angle" "270"
 }
-// entity 169
+// entity 168
 {
 "classname" "monster_army"
 "origin" "1642 432 1372"
 "angle" "270"
 }
-// entity 170
+// entity 169
 {
 "classname" "monster_enforcer"
 "origin" "1750 432 1372"
 "angle" "270"
 }
-// entity 171
+// entity 170
 {
 "classname" "monster_hell_knight"
 "origin" "1858 432 1372"
 "angle" "270"
 }
-// entity 172
+// entity 171
 {
 "classname" "monster_knight"
 "origin" "1966 432 1372"
 "angle" "270"
 }
-// entity 173
+// entity 172
 {
 "classname" "monster_zombie"
 "origin" "2074 432 1368"
 "angle" "270"
 }
-// entity 174
+// entity 173
 {
 "classname" "monster_wizard"
 "origin" "2180 432 1372"
 "angle" "270"
 }
-// entity 175
+// entity 174
 {
 "classname" "monster_fish"
 "origin" "2320 336 1364"
 "angle" "315"
 }
-// entity 176
+// entity 175
 {
 "classname" "light_torch_small_walltorch"
 "origin" "2184 -664 1344"
 "angle" "0"
 }
-// entity 177
+// entity 176
 {
 "classname" "light"
 "origin" "550 224 1340"
+"light" "300"
+"wait" "0"
+"angle" "0"
+}
+// entity 177
+{
+"classname" "light"
+"origin" "836 224 1342"
 "light" "300"
 "wait" "0"
 "angle" "0"
@@ -4331,7 +4333,7 @@
 // entity 179
 {
 "classname" "light"
-"origin" "836 224 1342"
+"origin" "1094 224 1336"
 "light" "300"
 "wait" "0"
 "angle" "0"
@@ -4339,7 +4341,7 @@
 // entity 180
 {
 "classname" "light"
-"origin" "1094 224 1336"
+"origin" "1336 224 1336"
 "light" "300"
 "wait" "0"
 "angle" "0"
@@ -4347,7 +4349,7 @@
 // entity 181
 {
 "classname" "light"
-"origin" "1336 224 1336"
+"origin" "1594 224 1340"
 "light" "300"
 "wait" "0"
 "angle" "0"
@@ -4355,7 +4357,7 @@
 // entity 182
 {
 "classname" "light"
-"origin" "1594 224 1340"
+"origin" "1858 224 1336"
 "light" "300"
 "wait" "0"
 "angle" "0"
@@ -4363,7 +4365,7 @@
 // entity 183
 {
 "classname" "light"
-"origin" "1858 224 1336"
+"origin" "2118 224 1340"
 "light" "300"
 "wait" "0"
 "angle" "0"
@@ -4371,20 +4373,12 @@
 // entity 184
 {
 "classname" "light"
-"origin" "2118 224 1340"
-"light" "300"
-"wait" "0"
-"angle" "0"
-}
-// entity 185
-{
-"classname" "light"
 "origin" "2360 224 1338"
 "light" "300"
 "wait" "0"
 "angle" "0"
 }
-// entity 186
+// entity 185
 {
 "classname" "light"
 "origin" "-48 -208 1332"
@@ -4393,7 +4387,7 @@
 "light" "300"
 "angle" "0"
 }
-// entity 187
+// entity 186
 {
 "classname" "func_detail_wall"
 // brush 0
@@ -4446,8 +4440,28 @@
 ( -276.7413888793537 32.3228827412309 -212 ) ( -277.7766650597638 28.459179436074606 -248 ) ( -277.7766650597638 28.459179436074606 -212 ) mwood1_2 14.5368805 0 0 0.9659258 1
 }
 }
-// entity 188
+// entity 187
 {
 "classname" "ambient_comp_hum"
 "origin" "-292 52 -207.5"
+}
+// entity 188
+{
+"classname" "info_teleport_destination"
+"origin" "-144 -144 1316"
+"targetname" "teleport small"
+}
+// entity 189
+{
+"classname" "trigger_teleport"
+"target" "teleport small"
+// brush 0
+{
+( 8 144 -144 ) ( 8 216 -232 ) ( 8 216 -144 ) *teleport 0 0 0 1 1
+( 88 144 -144 ) ( 8 144 -232 ) ( 8 144 -144 ) *teleport 0 0 0 1 1
+( 88 216 -232 ) ( 8 144 -232 ) ( 88 144 -232 ) *teleport 0 0 0 1 1
+( 88 216 -144 ) ( 8 144 -144 ) ( 8 216 -144 ) *teleport 0 0 0 1 1
+( 88 216 -144 ) ( 8 216 -232 ) ( 88 216 -232 ) *teleport 0 0 0 1 1
+( 16 216 -144 ) ( 16 144 -232 ) ( 16 144 -144 ) *teleport 0 0 0 1 1
+}
 }
