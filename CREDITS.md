@@ -118,4 +118,9 @@ D: Maps
 S: ValhaHazred
 W:https://www.deviantart.com/valhahazred
 D: Concept art
+
+N: Cass Python
+S: Owly
+W: https://owly.fans
+D: README file
 ```
