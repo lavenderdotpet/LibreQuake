@@ -123,4 +123,9 @@ N: Cass Python
 S: Owly
 W: https://owly.fans
 D: README file
+
+S: riktoi
+W: rikut441@gmail.com
+D: Textures
+L: Public Domain
 ```
