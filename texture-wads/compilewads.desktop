@@ -1,10 +1,20 @@
-#!/usr/bin/env xdg-open
-
 [Desktop Entry]
-Name=compilewads
+Categories=Network;Internet;Utilities;Administration;Settings;
+Comment[en_US]=compiles my wads
 Comment=compiles my wads
 Exec=sh ./compilewads.sh
+GenericName[en_US]=
+GenericName=
 Icon=bash
+MimeType=
+Name[en_US]=compilewads
+Name=compilewads
+Path=/home/lavender/LQ_Dev/LibreQuake/texture-wads/
+StartupNotify=true
+Terminal=true
+TerminalOptions=\s--noclose
 Type=Application
-Categories=Network;Internet;Utilities;Administration;Settings;
-
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
