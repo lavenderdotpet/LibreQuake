@@ -7,7 +7,7 @@ m_s_key.mdl     \\done, metal silver key
 w_g_key.mdl     \\done, greek gold key
 w_s_key.mdl     \\done, greek silver key
 
-\\end = runes
+\\runes
 end1.mdl    \\model done, shading needed
 end2.mdl    \\model done, shading needed
 end3.mdl    \\model done, shading needed
