@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: CC0-1.0
+
+# These ports should be ordered by ease-of-use, of which menu
+# simplicity and support for high-resolution take high priority.
+
+# "doom" is Debian’s generic name for their alternatives system.
+
+PORTS="doom odamex gzdoom crispy-doom chocolate-doom prboom-plus"
+
+# Just a single argument starting the command is allowed, -p, in order
+# to explicitly set a port on the command line. -- is also supported
+# so that -p can be instead sent directly to the port’s argument list.
+
+if [ $# -gt 0 ]; then
+    if [ "$1" = "-p" ]; then
+        DOOMPORT="$2"
+        shift; shift
+    elif [ "$1" = "--" ]; then
+        shift
+    fi
+fi
+
+case "$(basename "$0")" in
+    freedm)
+        IWAD=freedm.wad
+        ;;
+    freedoom1)
+        IWAD=freedoom1.wad
+        ;;
+    freedoom2 | *)
+        IWAD=freedoom2.wad
+        ;;
+esac
+
+if [ -z "$DOOMWADPATH" ]; then
+    # Support installations of Freedoom to the home directory using
+    # the XDG spec.  Makes this complicated, but let’s do it right.
+    if [ -z "$XDG_DATA_HOME" ]; then
+        if [ -z "$HOME" ]; then
+            HOME=/
+        fi
+        XDG_PATH="$HOME"/.local/share/games/doom
+    else
+        XDG_PATH="$XDG_DATA_HOME"/games/doom
+    fi
+
+    PATHS=(
+        "$XDG_PATH"
+        /usr/local/share/games/doom
+        /usr/local/share/doom
+        /usr/share/games/doom
+        /usr/share/doom
+    )
+    export DOOMWADPATH="$(echo "${PATHS[@]}" | tr ' ' :)"
+fi
+
+if [ -z "$DOOMPORT" ] && [ -h "$HOME"/.doomport ]; then
+    if [ -f "$(readlink -f "$HOME"/.doomport)" ] \
+        && [ -x "$(readlink -f "$HOME"/.doomport)" ]; then
+        DOOMPORT="$(readlink -f "$HOME"/.doomport)"
+    fi
+fi
+
+if [ "$DOOMPORT" ]; then
+    exec "$DOOMPORT" -iwad "$IWAD" "$@"
+fi
+
+dirpath=$(eval echo "\${PATH}" 2>/dev/null | tr : ' ')
+
+for port in $PORTS; do
+    for dir in $dirpath; do
+        for file in "$dir"/"$port"; do
+            if [ -f "$file" ] && [ -x "$file" ]; then
+                exec "$file" -iwad "$IWAD" "$@"
+            fi
+        done
+    done
+done
+
+# If we’ve reached this far, no engine was successfully executed.
+# print message to stderr and exit with a status of 1.
+
+cat <<EOF >&2
+$(basename "$0") could not locate nor launch a Doom engine.  Most
+likely, you simply need to install one, check your distribution
+package repositories for names such as "odamex" or "chocolate-doom" or
+seek out one and install it manually.
+
+If you believe you already have one, you may just need to modify your
+PATH environment variable to include it, or set up the $HOME/.doomport
+symbolic link to point directly to the engine of your choice.
+EOF
+exit 1

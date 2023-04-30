@@ -1,0 +1,8 @@
+This is a script that generates the big font graphics used in the menus and
+intermission screens. The font used to generate the graphics is in the
+subdirectory 'fontchars'. This is based on the original font graphics
+(found in 'font') which have been split up into individual files each
+containing a single character.
+
+The script generates the images by use of Pillow to composite
+character graphics together.
