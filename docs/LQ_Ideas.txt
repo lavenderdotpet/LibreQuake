@@ -1,0 +1,107 @@
+Test
+- ep3 map taking place in a canyon with temple entrances on the sides, insides are mix of caves and temples. Could have bridges on the canyon part as well as underwater sections, be it between temples or inside the canyon towards the temples and vice versa (Vikos Gorge)
+
+- ep3 base map is some sort of port, with fishing stuff alongside a pipe system
+
+- Reworked Cthon Fight: ok so it's like the usual, but the thing is everytime you successfully shock cthon, the switches you pressed are locked out, and you gotta find another pair of switches in the arena to enable the shockers, this gives the player agency on how to take him down, also considering the level design could make some switches riskier to activate Then after it's done, cthon rises again, but injured and he can be harmed with conventional fire (but here it's another monster entity that spawns in)
+
+
+Zungryware's Ideas:
+-Zombie replacements (Husks) first appear in e1m3 and get a special introduction level. Unlike in the original game, you have to find the Grenade Launcher. The game will teach the player to kill husks with it by flooding the only exit to the Grenade Launcher room with husks. They will have to kill them to get through!
+
+-Final level is instead a mini-episode that is based around the misc_teleporttrain entity, so it is clear to the player that it can be used to teleport into the final boss. Note that misc_teleporttrain is bugged in the default progs. Telefragging normal monsters with it causes the game to crash. Even though I have fixed this so it won't happen in the LibreQuake progs, should still make sure the misc_teleporttrain can't telefrag monsters. (So putting Scrags in the same room as a teleporttrain is a bad idea.)
+
+-Fight where the player is travelling on a train travelling super fast in a circle around an area while some enemies give chase on another train behind. Could be done with some map hacks.
+
+Buffalobach's small dumpster (what's rejected will be removed):
+Alternative enemy variants: lizard knight - in heavy armor and with stronger sword; shambler lobster - occasionally encountered bullet sponge and has different colour; weaker variant of whatever the first boss is, appear as normal strong enemies after episode one, have different colour; ...
+
+Lavender's ideas:
+-worm boss for ep2
+
+LIBREQUAKE BACKSTORY
+
+By Ivan_Void
+
+Somewhere near the end of the 21st century, humanity's desire to explore and colonize the universe has been fufilled thanks to a new radical technology developed with the purpose of transporting inanimate objects, living beings, and radio-signals from one location to another within an instant faster than light. Such technology was labeled: The Slipgate Teleportation Technology.
+Thanks to teleportation, humanity could break free from their shackles to their native solar system and explore the universe and exploit its near-infinite resources to their benefit and prosperity.
+
+50 years after the emergence of The Slipgate Teleportation Technology, humanity has kickstarted its coloniazation of various Earth-like planets in the universe. On one of said planets, a planet labeled LQ-021⍺, a peculiar crystal material was discovered. That crystal material has been found to be useful as a source of energy for the afforomentioned Slipgates, which demanded a considerable amount of power to initialize and teleport various objects, and other various technological devices such as spaceships, vehicles, houses and more. Thanks to such material, humanity could expand further at faster rate than before.
+
+One eventful day, the Slipgate device on LQ-021⍺ was met with a severe malfunction due to strain on the system, caused by overusage, complete oversight by the commanding officer at the time, and one operator's coffee spill on the computer responsible for the teleportaion coordinates. As a result, 86 cargo crates full of weaponry, ammunition and medical supplies to be transported to a completely different location. A location not even indicated on their databases. After very in depth investigation into the entire incident, it was found the 86 cargos were transported to the correct location, but in a completely different parallel dimension.
+
+Said event caused great interest to the powerful, and malignant forces from the beyond. The terrifying entities controlled armies which could conquer anything they desired.
+
+LIBREQUAKE BACKSTORY 2
+
+by ing-ing
+
+.From: Central Command
+To: Libre Quake
+
+***To all Libres!***
+
+Approximately four days ago, helium transport Prometheus disappeared on the orbit of the local gas giant Elde. You might have heard of it before, all this information is new! It wasn’t just bringing some gas to keep your field stoves on, it was responding to a distress call of unknown origin!
+
+        We still don’t know who called it, or if they had anything to do with the baffling disappearance of a 400-ton light transport. Ships don’t disappear if they get sidelined by asteroids, like some smart guys have already speculated in the comment section of the news posting, they would leave SOMETHING behind. We are not declaring class 2 alert because we need your mystery solving skills, that ship had 10 Libres on board! The Gamma group, which you should think are on a balls to walls training camp, were on board of Prometheus, and one of the guys called us two hours ago!
+
+An extract from the call:
+
+”This is Libre Storm to central command... Libre Storm from Gamma, answer dammit!”
+
+”This is central command, we’re barely reading you Storm.”
+
+”Thank Spirit! The Prometheus has crashed, we’re under fire from unknown enemy. We need backup, the Gamma has been split apart.”
+
+”Libre Storm, what’s your location?”
+
+”Inside a piece of Prometheus, the ship was torn apart, and over half of the ship is not here. We’re not on Elde, or any of it’s moons, that much I’m sure of.”
+
+”Libre Storm, do you have a Spirit available?”
+
+”Yes command.”
+
+”Have the Spirit meld with the communicator, that allows us to track the location.”
+
+... 5 Minutes of set up and instructions later...
+
+”This is high command, the element data has been confirmed... You’re on Earth, planet Earth.”
+
+”Earth? That can’t be right.”
+
+”Hold on Libre, there’s more. These co-ordinates point to a former location of Earth, to where it was over 5000 years ago, and the radioactive elements support it. You’re in South America, there can be no doubt about that.”
+
+”Well f***, what do we do now?”
+
+”Stay alive, abandon the wreck if you have to. These things the Spirit has scanned are not from Earth, you might be able to use that to your advantage. We’re sending you all surviving geographical information, this is the closest to home field advantage you’re ever going to get.”
+
+”Sir, what about the evac?”
+
+”If we can talk to each other, then we can run as well. Your portion of the ship has no Run Ports, we can’t help you before we get navigational data from the bridge of the ship. Keep this communication line open as long as you can.”
+
+”Yes command, we’re counting on you.”
+
+***
+
+This is no April fools boys. Soon you will be able to see for yourself what home used to look like. All concerning Libres report to the Run Port Hades ASAP!
+
+~
+Re: ***To all Libres!***
+From: Libre Deluge
+To: Libre Quake
+
+Did you read that shit? The command has lost their minds, which wouldn’t be new, as we all know that they lost their balls a long time ago. I’m sending mail to East and Kong, maybe we can Co-op this like back on Mara, if the new CO isn’t an oil slick.
+
+~
+From Spirit Droplet
+To: Libre Quake
+
+H-hi!
+
+The commander told that we would be a combat pair in the next mission. I heard that you were called butcher, or something? You’re my first Libre partner so I hope things will go well. I’ll try to find as many caches for you as I can, and the commander told I should also mark down all enemies for you. Maybe so that you can avoid areas with lots of enemies.
+
+The armory lady gave me an entire palette of quad sigils, it must have been a silly mistake, right?
+
+
+
+

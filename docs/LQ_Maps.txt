@@ -1,0 +1,171 @@
+LibreQuake Map List:
+Include the level name, author, and what weapons the level will give the player. Put an asterisk by the weapon to denote that it's a secret item.
+Feel free to include requests for earlier and later maps in the episode, such as if you want your level to have the first appearance of a weapon.
+If you don't know where the level will fit into the episode yet, put it in the "Unsorted Singleplayer Levels" section.
+See the bottom for the guidelines we have set for how the campaign will work.
+
+WinQ Compat (misc theme)
+e0_start
+e0m1:
+e0m2:swampy by SavageX
+e0m3:w
+e0m4:
+e0m5:
+e0m6:
+e0m7:Medusa by SavageX
+e0m8:
+e0m9:
+
+Base Theme (Freedoom Base Textures):
+e1m1:
+e2m1:
+e3m1:
+e4m1: Damnation Station by ZungryWare; NG, SSG
+e5m1:
+
+Medieval Theme: (All episode 1 levels must be compatible with old quake engines.)
+e1m2: The Feudal Anomaly by ZungryWare; NG, SSG, GL*
+e1m3: Nameless Marionettes by ZungryWare; GL, SSG, RL** (First Appearance of Zombies, First level with Ring of Shadows. Rocket Launcher is very difficult to find.)
+e1m4: Mark of the Beast by ZungryWare; SNG, GL (First Appearance of Fiends.)
+e1m5:
+e1m6: Liturgy of Blood by ZungryWare; RL, SSG, GL
+e1m7 (boss level):
+e1m8 (secret, low gravity): Moon City map with halflife inspiration?
+
+Mayan Theme:
+e2m2: TBD by Squid V; SSG, NG, GL
+e2m3: Corpse army by Nolcoz; SSG, NG, GL, RL*,LG*
+e2m4: Cipactli's Reclaiming by Nolcoz; SSG, NG, GL, SNG, RL
+e2m5:  TBD by Nolcoz
+e2m6 (final level): (worm boss with 3 phases at different locations in the map )
+e2m7 (secret): El Dorado by aDaya; TBD
+
+Greek Theme:
+e3m2:
+e3m3: Deep Myst by Nolcoz; SSG, NG, GL
+e3m4: Hounds of The Depths by Nolcoz; SSG, NG, GL, SNG, RL*
+e3m5:
+e3m6 (final level):
+e3m7 (secret):
+
+Metal Underground Theme (Squid V metal textures):
+e4m2: Glistening Metal by ZungryWare; SSG, NG (Exit to secret level.)
+e4m3: Lavaducts by Nolcoz; SSG, NG, GL, SNG*
+e4m4: Steel Forest by Nolcoz; SSG, NG, GL, SNG, RL*
+e4m5: Copper citadel by Nolcoz; SSG, NG, SNG, GL, RL
+e4m6:
+e4m7 (final level):
+e4m8 (secret): Perdition Gateway by ZungryWare; NG, SSG, LG
+
+Void Theme?:
+e5m2:
+end (finale):
+start: (testmap) MissLav
+
+Unsorted Singleplayer Levels:
+Libre Hades by Greenwood; SSG, GL, SNG; Unthemed
+
+Deathmatch:
+lqdm1: The Wicked Night by ZungryWare; Base Themed
+lqdm2: Burning Daylight by ZungryWare; Metal Themed
+lqdm3: Bloody Ultimatum by ZungryWare; Medieval/Dungeon Themed
+lqdm4: Psychofuge by ZungryWare; Metal Themed
+lqdm5: Hellion by ZungryWare; Base Themed
+lqdm6: The Hinterlands by ZungryWare; Medieval Themed
+lqdm7: Boomstick Basement by ZungryWare; Base/Brick Themed
+lqdm8: Alichar Sector by ZungryWare; Base Themed
+lqdm9: The Outlands by ZungryWare; Mayan/Base Themed
+lqdm10: Lucifer's Gambit by ZungryWare; Lucifer Themed
+lqdm11: All or Nothing by ZungryWare; Mayan Themed
+lqdm12: Javelin by ZungryWare; Mayan Themed
+lqdm13: Death Provides No Return by ZungryWare; Ultrasteel/Void Themed
+
+Things the levels must introduce to the player:
+Remember, 90% of the people playing this campaign will have never played Quake before!
+These guidelines only apply to Easy and Normal mode. The rules can be bent for Hard mode.
+e1m1: Grunt, Dog, Pressable buttons, Elevators, Doors
+e1m2: Ogre, Knight, Scrag, Keys, Armor, (only non-base level with grunts)
+e1m3: Zombie, Shootable Buttons
+e1m4: Fiend
+e1m6: Shambler
+e2m1: Enforcer
+e2m2: Hell Knight, Rotfish
+e2m3: Red Armor
+e3m2: Shalrath
+e4m3: Spawn
+e5m1: misc_teleporttrain
+end: Shub-Niggurath
+
+Theming:
+The second map for Episode 2 would be a sort of base installation in a jungle with some small temples nearby where they are basically doing excavations on the site. You then would enter a larger temple and thats where the aztec theme becomes more central. As you get deeper and deeper into the temples, the place starts to become more and more organic, with meat covering walls, teeth doors, and weird nasty organ stuff BUT not full on meat level. Still is recognizable as an aztec map. The last map would basically be where you fight the worm boss inside a meat level (which is supossed to be Tlaltecuhtli, which is basically an earth monster that was used as a basis for the world and has to be feed blood so it doesnt fuck shit up from what I remember)
+
+Episode 4's levels all take place underground. (Except for the second level and secret level.) They all end with the player jumping into a pit to the next level.
+
+Every Map Must Have:
+A music track
+A name
+Four cooperative spawns
+Deathmatch support
+
+    -These maps are designed for singleplayer, so they probably won't play very well in Deathmatch. But at least try to make it work as well as you can.
+
+    -Consider using func_walls to make passages that only exist in Deathmatch to give the level more connectivity. See e3m1 in the original game for an example of this. Or add in some new teleporters.
+
+    -You can also block off certain areas so they can't be accessed in Deathmatch. For performance reasons (and because of domination mode), you should set all entities in that area to not appear in Deathmatch.
+
+    -Consider the items that are available to players. Remember that you can set weapons to only appear in DM. Here are some ranges to go for with item availability:
+
+    0 to 2 Rocket Launcher
+
+    0 to 2 Lightning Gun
+
+    1 to 2 Grenade Launcher
+
+    1 to 2 Super Shotgun
+
+    1 to 2 Super Nailgun
+
+    0 to 2 Nailgun
+
+    0 to 1 Quad Damage
+
+    0 to 1 Pentagram
+
+    0 to 1 Ring of Shadows
+
+    0 to 2 Biosuit
+
+    0 to 1 Red Armor
+
+    1 to 2 Yellow Armor
+
+    2 to 4 Green Armor
+
+    1 to 3 Megahealth
+
+    2 to 4 Small Rocket Pack
+
+    3 to 5 Small Cell Pack
+
+    Plenty of 15 and 25 health
+
+    Plenty of Shells and Nails
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
