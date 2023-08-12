@@ -6,3 +6,4 @@ lq1/*.cfg
 !lq1/zoom90.cfg
 !lq1/zoom120.cfg
 .directory
+.nomedia
