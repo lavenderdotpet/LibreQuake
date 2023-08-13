@@ -12,10 +12,6 @@ S: Rhoq
 E: smgorden@gmail.com
 D: textures
 
-S: Ivan_Void
-E: voyisch@gmail.com
-D: sounds
-
 N: Arthur Biver
 S: aDaya
 E: biver.arthur@gmail.com
@@ -43,15 +39,20 @@ D: Programming, Models, Animation, Maps, Textures, Management
 S: GooseJelly
 D: Textures, Maps
 
-S: MissLav
+N: Silja Midsummer
+S: misslavender_lq
 E: MissLav@protonmail.com
+W: https://misslavender.neocities.org/
 D: textures, models, configs, management
+
+N: Azure Midsummer
+S: millenia3d
+W: https://millenia3d.net
+D: Models, Textures
+
 
 S: Futuretime23
 D: Music
-
-S: Milky
-D: Sounds
 
 S: Chillo
 E: danielleepeterson86@gmail.com
@@ -59,7 +60,7 @@ D: Models
 
 N: James Lewis
 S: therektafire
-E: therektafire@gmail.com 
+E: therektafire@gmail.com
 D: Maps, maphacks, sounds
 
 S: eightbit
@@ -80,7 +81,7 @@ S: Squid V.
 D: Level textures
 
 N: Jack Folkner
-S: Diplodocus
+S: Diplodokus
 D: sound
 
 S: Markie Music
@@ -91,11 +92,6 @@ N: Jack Perkins
 S: dantescanline
 D: readme, animation
 
-None used as of yet
-~~N: Philip Klevestav~
-~~W: www.philipk.net~~
-~~E: philipk@philipk.net~~
-~~L: Creative Commons Attribution 3.0 (works with bsd3)~~
 
 S: FK/Rat
 D: Art
@@ -109,11 +105,12 @@ S: Mr. M
 D: models, concept art(ammo)
 L: Public Domain
 
-N: David Spell
+None used as of yet
+~~N: David Spell
 S: dumptruck_ds
 E: lango.lan.party@gmail.com
 W: https://www.youtube.com/c/dumptruckds
-D: Maps
+D: Maps~~
 
 S: ValhaHazred
 W:https://www.deviantart.com/valhahazred
@@ -124,8 +121,16 @@ S: Owly
 W: https://owly.fans
 D: README file
 
+S: ValhaHazred
+W:https://www.deviantart.com/valhahazred
+D: Concept art
+
+S: Rob#9960
+D: Concept art
+
 S: riktoi
 W: rikut441@gmail.com
 D: Textures
 L: Public Domain
+
 ```
