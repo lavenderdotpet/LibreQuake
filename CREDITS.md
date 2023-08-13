@@ -28,6 +28,11 @@ E: padregreenwood@gmail.com
 W: jgreenwoodjr.com
 D: Textures, Maps
 
+N: Emberlynn Bland
+S: itsember
+W: https://github.com/deertears
+D: Teleport Sounds
+
 S: Clay
 D: Models, Textures
 
@@ -49,7 +54,6 @@ N: Azure Midsummer
 S: millenia3d
 W: https://millenia3d.net
 D: Models, Textures
-
 
 S: Futuretime23
 D: Music
@@ -91,7 +95,6 @@ D: sound, music
 N: Jack Perkins
 S: dantescanline
 D: readme, animation
-
 
 S: FK/Rat
 D: Art
