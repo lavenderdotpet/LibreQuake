@@ -1,139 +1,160 @@
+# Credits
+
 ```
-///credit template///
-N: real name
-S: screen name
+# credit template
+N: Real name
+S: Screen name
+P: Pronouns
+D: Discord
+G: Github
 E: Email
 W: Website
-D: Contributions
+C: Contributions
 L: License
-////////////////////////
+```
 
 S: Rhoq
+D: rhoq
 E: smgorden@gmail.com
-D: textures
+C: textures
 
 N: Arthur Biver
 S: aDaya
+D: .adaya5924
+G: https://github.com/adaya
 E: biver.arthur@gmail.com
 W: https://biverarthur.wixsite.com/portfolio
-D: Models, Textures, Sounds
+C: Models, Textures, Sounds
 
-N: Lain Fleming
-S: Fairweather
-D: Maps
+S: fw
+D: frwthr
+C: Maps
 
 N: James Greenwood
 S: Greenwood
+D: greenwoodquake
 E: padregreenwood@gmail.com
-W: jgreenwoodjr.com
-D: Textures, Maps
+W: https://alkalinequake.wordpress.com/
+C: Textures, Maps
 
 N: Emberlynn Bland
-S: itsember
-W: https://github.com/deertears
-D: Teleport Sounds
+S: Ember
+P: she/they
+D: itsember
+G: https://github.com/deertears
+C: Teleport Sounds
 
 S: Clay
-D: Models, Textures
+C: Models, Textures
 
 N: Calvin Martinez
 S: ZungryWare
+D: zungryware
+G: https://github.com/Zungrysoft
 E: CalvinMartinezDV@gmail.com
-D: Programming, Models, Animation, Maps, Textures, Management
-
-S: GooseJelly
-D: Textures, Maps
+C: Programming, Models, Animation, Maps, Textures, Management
 
 N: Silja Midsummer
-S: misslavender_lq
+S: MissLavender
+P: she/they
+D: misslavender_lq
+G: https://github.com/MissLavender-LQ/LibreQuake
 E: MissLav@protonmail.com
 W: https://misslavender.neocities.org/
-D: textures, models, configs, management
+C: textures, models, sounds, configs, management
 
 N: Azure Midsummer
-S: millenia3d
+S: Millenia3D
+P: she/they
+D: millenia3d
 W: https://millenia3d.net
-D: Models, Textures
+C: Models, Textures
 
 S: Futuretime23
-D: Music
-
-S: Chillo
-E: danielleepeterson86@gmail.com
-D: Models
+D: futuretime23
+G: https://github.com/Futuretime23
+W: https://www.youtube.com/@Futuretime23
+C: Music
 
 N: James Lewis
 S: therektafire
+D: therektafire#6910
+G: https://github.com/TheRektafire
 E: therektafire@gmail.com
-D: Maps, maphacks, sounds
+C: Maps, maphacks, sounds
 
-S: eightbit
-D: models
-
-S: beak
-D: textures
+S: Beak
+D: beakmeister
+C: textures (brick0)
 
 S: giwake
+P: they/them
+D: giwake
+G: https://github.com/giwake
 E: gabriel.isaac.wake@gmail.com
-D: sound, models
+C: sound, models
 
 S: Nolcoz
+D: nolcoz
+G: https://github.com/Nolcoz
 E: nolcozctm@gmail.com
-D: Level textures, maps
+C: Level textures, maps
 
 S: Squid V.
-D: Level textures
+D: squidvicious.
+C: Level textures
 
 N: Jack Folkner
 S: Diplodokus
-D: sound
+D: diplodokus
+G:https://github.com/diplodocus03
+C: sound
 
 S: Markie Music
+D: markiemusic
+G: https://github.com/MarkieMusic
 E: mikedm92@gmail.com
-D: sound, music
+W: https://www.markiemusic.com/
+C: sound, music
 
 N: Jack Perkins
 S: dantescanline
-D: readme, animation
+D: dantscan
+C: readme, animation
 
 S: FK/Rat
-D: Art
+D: vanillatherabbit
+C: Art
 L: Public Domain
 
 S: Ashat Maself
-D: Sound effects
+D: ashatmaself
+C: Sound effects
 
 N: Marcel Schubert
 S: Mr. M
-D: models, concept art(ammo)
+D: mister_m._
+C: models, concept art (ammo)
 L: Public Domain
 
-None used as of yet
-~~N: David Spell
-S: dumptruck_ds
-E: lango.lan.party@gmail.com
-W: https://www.youtube.com/c/dumptruckds
-D: Maps~~
-
 S: ValhaHazred
+D: valhahazred
 W:https://www.deviantart.com/valhahazred
-D: Concept art
+C: Concept art
 
 N: Cass Python
 S: Owly
+P: she/they
+D: jan cass#2262
+G: https://github.com/DynTylluan
 W: https://owly.fans
-D: README file
-
-S: ValhaHazred
-W:https://www.deviantart.com/valhahazred
-D: Concept art
+C: README file
 
 S: Rob#9960
-D: Concept art
+C: Concept art
 
 S: riktoi
+D: riktoi
 W: rikut441@gmail.com
-D: Textures
+C: Textures
 L: Public Domain
-
-```
