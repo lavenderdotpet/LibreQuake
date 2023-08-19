@@ -20,9 +20,41 @@ function clean {
     echo -n "";
 }
 
+function -h {
+    echo -n "";
+    echo "
+========================================================================
+    run ./make.sh to compile all maps
+    run ./make.sh clean to remove extra files that are left after build
+    run ./make.sh help or -h to read this msg :3
+========================================================================
+    ";
+    echo -n "";
+}
+
+function help {
+    echo -n "";
+    echo "
+========================================================================
+    run ./make.sh to compile all maps
+    run ./make.sh clean to remove extra files that are left after build
+    run ./make.sh help or -h to read this msg :3
+========================================================================
+    ";
+    echo -n "";
+}
+
 case $1 in
     clean)
     clean
+    ;;
+
+    help)
+    help
+    ;;
+
+    -h)
+    -h
     ;;
 
     *)
