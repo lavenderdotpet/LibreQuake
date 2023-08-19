@@ -8,3 +8,4 @@ lq1/*.cfg
 .directory
 .nomedia
 *.sav
+*.log
