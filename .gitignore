@@ -9,3 +9,6 @@ lq1/*.cfg
 .nomedia
 *.sav
 *.log
+*.texinfo
+*.pts
+*.prt
