@@ -1,10 +1,10 @@
+#ignored folders
 .stversions/
-lq1/*.sav
-lq1/*.cfg
-!lq1/default.cfg
-!lq1/dev.cfg
-!lq1/zoom90.cfg
-!lq1/zoom120.cfg
+.obsidian/
+.autosave/
+
+
+#ignored files
 .directory
 .nomedia
 *.sav
@@ -13,3 +13,12 @@ lq1/*.cfg
 *.pts
 *.prt
 *.json
+*.cfg
+
+
+#included files
+!lq1/default.cfg
+!lq1/dev.cfg
+!lq1/zoom90.cfg
+!lq1/zoom120.cfg
+
