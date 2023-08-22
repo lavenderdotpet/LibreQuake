@@ -12,3 +12,4 @@ lq1/*.cfg
 *.texinfo
 *.pts
 *.prt
+*.json
