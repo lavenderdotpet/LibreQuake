@@ -11,7 +11,6 @@ E: Email
 W: Website
 C: Contributions
 L: License
-```
 
 S: Rhoq
 D: rhoq
@@ -107,7 +106,7 @@ C: Level textures
 N: Jack Folkner
 S: Diplodokus
 D: diplodokus
-G:https://github.com/diplodocus03
+G: https://github.com/diplodocus03
 C: sound
 
 S: Markie Music
@@ -139,7 +138,7 @@ L: Public Domain
 
 S: ValhaHazred
 D: valhahazred
-W:https://www.deviantart.com/valhahazred
+W: https://www.deviantart.com/valhahazred
 C: Concept art
 
 N: Cass Python
@@ -158,3 +157,4 @@ D: riktoi
 W: rikut441@gmail.com
 C: Textures
 L: Public Domain
+```
