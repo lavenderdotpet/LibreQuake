@@ -1,6 +1,6 @@
 ### make commands ###
 function make {
-    cd src/ ;
+    cd src-compile/ ;
     for f in $(find . -name '*.map') ; do qbsp "$f" ; done ;
     for f in $(find . -name '*.map') ; do vis "$f" ; done ;
     for f in $(find . -name '*.map') ; do light -extra4 "$f" ; done ;
@@ -12,7 +12,7 @@ function make {
 }
 
 function -m {
-    cd src/ ;
+    cd src-compile/ ;
     for f in $(find . -name '*.map') ; do qbsp "$f" ; done ;
     for f in $(find . -name '*.map') ; do vis "$f" ; done ;
     for f in $(find . -name '*.map') ; do light -extra4 "$f" ; done ;
@@ -23,15 +23,27 @@ function -m {
     echo -e "=====Build done=====";
 }
 
+function -f {
+    cd src-compile/ ;
+    for f in $(find . -name '*.map') ; do qbsp "$f" ; done ;
+    for f in $(find . -name '*.map') ; do vis -fast "$f" ; done ;
+    for f in $(find . -name '*.map') ; do light "$f" ; done ;
+    cp *.bsp .. ;
+    cp *.log logs/ ;
+    cp *.lit .. ;
+    rm -f *.log *.bsp *.lit;
+    echo -e "=====Build done=====";
+}
+
 ### clean commands ###
 function clean {
-    cd src/ ;   
+    cd src-compile/ ;   
     rm -f *.prt *.texinfo *.pts;
     echo -e "=====Cleaning done=====";
 }
 
 function -c {
-    cd src/ ;   
+    cd src-compile/ ;   
     rm -f *.prt *.texinfo *.pts;
     echo -e "=====Cleaning done=====";
 }
@@ -68,6 +80,10 @@ case $1 in
 
     -m)
     -m
+    ;;
+
+    -f)
+    -f
     ;;
 
     clean)
