@@ -3,7 +3,7 @@ function make {
     cd src-compile/ ;
     for f in $(find . -name '*.map') ; do qbsp "$f" ; done ;
     for f in $(find . -name '*.map') ; do vis "$f" ; done ;
-    for f in $(find . -name '*.map') ; do light -extra4 "$f" ; done ;
+    for f in $(find . -name '*.map') ; do light -extra4 -bounce -dirt "$f" ; done ;
     cp *.bsp .. ; 
     cp *.log logs/ ;
     cp *.lit .. ;
@@ -15,7 +15,7 @@ function -m {
     cd src-compile/ ;
     for f in $(find . -name '*.map') ; do qbsp "$f" ; done ;
     for f in $(find . -name '*.map') ; do vis "$f" ; done ;
-    for f in $(find . -name '*.map') ; do light -extra4 "$f" ; done ;
+    for f in $(find . -name '*.map') ; do light -extra4 -bounce -dirt "$f" ; done ;
     cp *.bsp .. ; 
     cp *.log logs/ ;
     cp *.lit .. ;
