@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "D:/dev/LibreQuake/texture-wads/lq_tech.wad;D:/dev/LibreQuake/texture-wads/lq_dev.wad;D:/dev/LibreQuake/texture-wads/lq_liquidsky.wad"
+"wad" "../../../texture-wads/lq_tech.wad;../../../texture-wads/lq_dev.wad;../../../texture-wads/lq_liquidsky.wad"
 "message" "Alichar Sector"
 // brush 0
 {
