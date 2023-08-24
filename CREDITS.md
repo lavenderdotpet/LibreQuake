@@ -1,6 +1,6 @@
 # Credits
 
-```
+```markdown
 # credit template
 N: Real name
 S: Screen name
@@ -51,7 +51,8 @@ N: Calvin Martinez
 S: ZungryWare
 D: zungryware
 G: https://github.com/Zungrysoft
-E: CalvinMartinezDV@gmail.com
+E: ZungrySoftEntertainment@gmail.com
+W: https://zungrysoft.github.io
 C: Programming, Models, Animation, Maps, Textures, Management
 
 N: Silja Midsummer
@@ -67,6 +68,7 @@ N: Azure Midsummer
 S: Millenia3D
 P: she/they
 D: millenia3d
+G: https://github.com/azure-midsummer
 W: https://millenia3d.net
 C: Models, Textures
 
@@ -98,7 +100,7 @@ S: Nolcoz
 D: nolcoz
 G: https://github.com/Nolcoz
 E: nolcozctm@gmail.com
-C: Level textures, maps
+C: Models, Animation, Maps, Textures
 
 S: Squid V.
 D: squidvicious.
@@ -107,7 +109,7 @@ C: Level textures
 N: Jack Folkner
 S: Diplodokus
 D: diplodokus
-G:https://github.com/diplodocus03
+G: https://github.com/diplodocus03
 C: sound
 
 S: Markie Music
@@ -139,7 +141,7 @@ L: Public Domain
 
 S: ValhaHazred
 D: valhahazred
-W:https://www.deviantart.com/valhahazred
+W: https://www.deviantart.com/valhahazred
 C: Concept art
 
 N: Cass Python
@@ -150,7 +152,11 @@ G: https://github.com/DynTylluan
 W: https://owly.fans
 C: README file
 
-S: Rob#9960
+N: Rob
+S: EGO DEATH
+P: he/him
+D: toiletmeat
+W: https://twitter.com/Eg0_Death
 C: Concept art
 
 S: riktoi
@@ -158,3 +164,29 @@ D: riktoi
 W: rikut441@gmail.com
 C: Textures
 L: Public Domain
+
+S: SavageX
+D: savagex_official
+G: https://github.com/maikmerten
+C: Maps
+L: Public Domain
+
+N: John S. Weekley
+S: PRIMEVAL
+D: jsw_primeval
+E: primeval667@gmail.com
+W: https://johnsweekley.bandcamp.com/
+C: Music
+
+
+
+
+
+
+
+
+
+
+
+
+
