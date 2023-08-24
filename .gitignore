@@ -12,3 +12,5 @@ lq1/*.cfg
 *.texinfo
 *.pts
 *.prt
+*.png~
+*.kra~
