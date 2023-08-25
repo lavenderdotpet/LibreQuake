@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # LibreQuake Map Builder Shell Script
 # v0.0.2
@@ -6,7 +8,7 @@
 #
 
 # Map compiler paths
-LQ_QBSP_PATH="qbsp"
+LQ_BSP_PATH="qbsp"
 LQ_VIS_PATH="vis"
 LQ_LIG_PATH="light"
 
@@ -14,7 +16,7 @@ LQ_LIG_PATH="light"
 LQ_MAP_CON_PATH="buildconfigs"
 
 # Location of .map source files
-LQ_MAP_SRC_PATH="src-compile"
+LQ_MAP_SRC_PATH="src"
 
 #
 # DEFAULT COMPILATION FLAGS
@@ -24,6 +26,7 @@ LQ_MAP_SRC_PATH="src-compile"
 LQ_DEF_BSP_FLAGS=""
 LQ_DEF_VIS_FLAGS="-fast"
 LQ_DEF_LIG_FLAGS="-extra4 -bounce -dirt"
+
 
 #
 # ericw-tools qbsp check
@@ -49,6 +52,8 @@ function setup_compile_args {
     LQ_BSP_FLAGS=$LQ_DEF_BSP_FLAGS
     LQ_VIS_FLAGS=$LQ_DEF_VIS_FLAGS
     LQ_LIG_FLAGS=$LQ_DEF_LIG_FLAGS
+    # is it a bmodel?
+    LQ_IS_BMODEL=0 
 
     # Try to source a configuration file
     source "$LQ_MAP_CON_PATH/$map_name.conf" > /dev/null 2>&1
@@ -72,16 +77,19 @@ function command_make {
     cd "$LQ_MAP_SRC_PATH/"
 
     # Iterate through every map in our source directory
-    for f in $(find . -name '*.map') ; do
+    for f in $(find . -maxdepth 1 -name '*.map') ; do
         # Clean up the string a bit
         map_name=${f:2:-4}
         # Get compilation flags ready
         setup_compile_args;
         # Perform build operation, silence non-errors
         echo "- $map_name"
-        $LQ_BSP_PATH "$LQ_BSP_FLAGS $map_name.map" 1> /dev/null
-        $LQ_VIS_PATH "$LQ_VIS_FLAGS $map_name.map" 1> /dev/null
-        $LQ_LIG_PATH "$LQ_LIG_FLAGS $map_name.map" 1> /dev/null
+        $LQ_BSP_PATH $LQ_BSP_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
+        # Don't calculate vis or build lightmaps if its a bmodel
+        if [ ! $LQ_IS_BMODEL ] ; then
+            $LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
+            $LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
+        fi
     done
 
     cp *.bsp ..
