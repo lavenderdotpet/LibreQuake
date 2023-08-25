@@ -1505,8 +1505,3 @@
 "classname" "info_player_deathmatch"
 "origin" "48 -688 24"
 }
-// entity 60
-{
-"classname" "info_player_deathmatch"
-"origin" "-384 -944 -360"
-}
