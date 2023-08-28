@@ -12,6 +12,7 @@
 "_sunlight2" "82"
 "_wateralpha" ".7"
 "_telealpha" "1"
+"sounds" "5"
 // brush 0
 {
 ( -96 8 0 ) ( -96 -544 0 ) ( -96 -544 -32 ) med_cmet1 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
