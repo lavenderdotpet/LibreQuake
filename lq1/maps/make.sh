@@ -53,7 +53,7 @@ function setup_compile_args {
     LQ_VIS_FLAGS=$LQ_DEF_VIS_FLAGS
     LQ_LIG_FLAGS=$LQ_DEF_LIG_FLAGS
     # is it a bmodel?
-    LQ_IS_BMODEL=0 
+    #LQ_IS_BMODEL=0 
 
     # Try to source a configuration file
     source "$LQ_MAP_CON_PATH/$map_name.conf" > /dev/null 2>&1
@@ -85,11 +85,13 @@ function command_make {
         # Perform build operation, silence non-errors
         echo "- $map_name"
         $LQ_BSP_PATH $LQ_BSP_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
+        $LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
+        $LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
         # Don't calculate vis or build lightmaps if its a bmodel
-        if [ ! $LQ_IS_BMODEL ] ; then
-            $LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
-            $LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
-        fi
+        #if [ ! $LQ_IS_BMODEL ] ; then
+            #$LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
+            #$LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
+        #fi
     done
 
     cp *.bsp ..
