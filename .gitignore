@@ -2,7 +2,7 @@
 .stversions/
 .obsidian/
 autosave/
-
+lq1/screenshots/
 
 #ignored files
 .directory
@@ -24,4 +24,5 @@ autosave/
 !lq1/dev.cfg
 !lq1/zoom90.cfg
 !lq1/zoom120.cfg
+
 
