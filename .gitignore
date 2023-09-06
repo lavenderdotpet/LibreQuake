@@ -13,6 +13,8 @@ autosave/
 *.texinfo
 *.pts
 *.prt
+*.png~
+*.kra~
 *.json
 *.cfg
 
