@@ -5,7 +5,17 @@
 "classname" "worldspawn"
 "wad" "../../../texture-wads/lq_health_ammo.wad"
 "light" "100"
-// brush 0
+// brush 0 
+{
+"classname" "info_player_start"
+"origin" "-10000 -10000 -10000"
+}
+
+
+{
+"classname" "info_player_deathmatch"
+"origin" "-10000 -10000 -10000"
+}
 {
 ( 0 32 32 ) ( 0 0 32 ) ( 0 0 0 ) +0explob_s1 0 0 0 1 1
 ( 4 0 32 ) ( 0 4 32 ) ( 0 4 160 ) +0explob_s1 0 0 0 1 1
