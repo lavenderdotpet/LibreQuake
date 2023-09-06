@@ -6,10 +6,10 @@
 "mapversion" "220"
 "wad" "../../../texture-wads/lq_dev.wad"
 "message" "The Outlands"
-"property 1" ""
 "_sunlight" "200"
 "sunlight2" "200"
 "_sun_mangle" "-80 -80 0"
+"_tb_mod" "lq1"
 // brush 0
 {
 ( -128 -768 -32 ) ( -128 -767 -32 ) ( -128 -768 -31 ) wall_grey_c [ 0 -1 0 0 ] [ -0 -0 -1 0 ] 0 1 1
