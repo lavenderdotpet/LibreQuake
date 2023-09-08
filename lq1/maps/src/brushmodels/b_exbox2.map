@@ -1,0 +1,60 @@
+// Game: Quake
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"wad" "../../../../texture-wads/lq_health_ammo.wad"
+"light" "100"
+// brush 0 
+{
+"classname" "info_player_start"
+"origin" "-10000 -10000 -10000"
+}
+
+
+{
+"classname" "info_player_deathmatch"
+"origin" "-10000 -10000 -10000"
+}
+{
+( 0 32 32 ) ( 0 0 32 ) ( 0 0 0 ) +0explob_s1 0 0 0 1 1
+( 4 0 32 ) ( 0 4 32 ) ( 0 4 160 ) +0explob_s1 0 0 0 1 1
+( 0 28 32 ) ( 4 32 32 ) ( 4 32 160 ) +0explob_s1 0 0 0 1 1
+( 0 0 32 ) ( 32 0 32 ) ( 32 0 0 ) +0explob_s1 0 0 180 1 -1
+( 32 0 0 ) ( 32 32 0 ) ( 0 32 0 ) ammo_fl2 0 0 180 1 -1
+( 0 32 32 ) ( 32 32 32 ) ( 32 0 32 ) explob_s2 0 0 0 1 1
+( 32 32 0 ) ( 32 32 32 ) ( 0 32 32 ) +0explob_s1 0 0 0 1 1
+( 32 4 32 ) ( 28 0 32 ) ( 28 0 160 ) +0explob_s1 0 0 180 1 -1
+( 32 28 32 ) ( 28 32 160 ) ( 28 32 32 ) +0explob_s1 0 0 0 1 1
+( 32 0 32 ) ( 32 32 32 ) ( 32 32 0 ) +0explob_s1 0 0 180 1 -1
+}
+}
+// entity 1
+{
+"light" "200"
+"origin" "56 72 56"
+"classname" "light"
+}
+// entity 2
+{
+"light" "200"
+"origin" "-40 -40 -56"
+"classname" "light"
+}
+// entity 3
+{
+"light" "200"
+"origin" "-40 72 8"
+"classname" "light"
+}
+// entity 4
+{
+"origin" "64 -32 8"
+"classname" "light"
+}
+// entity 5
+{
+"classname" "light"
+"origin" "16 16 104"
+"light" "200"
+}
