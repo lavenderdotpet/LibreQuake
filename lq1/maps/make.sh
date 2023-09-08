@@ -13,7 +13,7 @@ LQ_VIS_PATH="vis"
 LQ_LIG_PATH="light"
 
 # Location of per-map compilation argument paths
-LQ_MAP_CON_PATH="-buildconfigs-"
+LQ_MAP_CON_PATH="./-buildconfigs-"
 
 # Location of .map source files
 LQ_MAP_SRC_PATH="src"
@@ -25,7 +25,7 @@ LQ_MAP_SRC_PATH="src"
 #
 LQ_DEF_BSP_FLAGS=""
 LQ_DEF_VIS_FLAGS=""
-LQ_DEF_LIG_FLAGS="-extra4 -bounce -dirt"
+LQ_DEF_LIG_FLAGS="-bounce -dirt"
 
 
 #
@@ -57,7 +57,7 @@ function setup_compile_args {
     #LQ_IS_BMODEL=0 
 
     # Try to source a configuration file
-    source "$LQ_MAP_CON_PATH/$map_name.conf" > /dev/null 2>&1
+    source "$LQ_MAP_CON_PATH/$map_name.conf" #> /dev/null 2>&1
 
     # Set force-flags if provided by the user
     if [ $LQ_FORCED_BSP_FLAGS ]; then
