@@ -10,7 +10,7 @@ G: Github
 E: Email
 W: Website
 C: Contributions
-L: License
+L: License [bsd3(same as lq) or cc0]
 ```
 
 S: Rhoq
@@ -37,15 +37,12 @@ E: padregreenwood@gmail.com
 W: https://alkalinequake.wordpress.com/
 C: Textures, Maps
 
-N: Emberlynn Bland
+N: Emberlynn Bland 
 S: Ember
 P: she/they
 D: itsember
 G: https://github.com/deertears
 C: Teleport Sounds
-
-S: Clay
-C: Models, Textures
 
 N: Calvin Martinez
 S: ZungryWare
@@ -82,7 +79,7 @@ N: James Lewis
 S: therektafire
 D: therektafire#6910
 G: https://github.com/TheRektafire
-E: therektafire@gmail.com
+E: therektafire@gmail.com 
 C: Maps, maphacks, sounds
 
 S: Beak
@@ -178,7 +175,13 @@ E: primeval667@gmail.com
 W: https://johnsweekley.bandcamp.com/
 C: Music
 
-
+S: Akai
+P: she/they/it
+D: ff0064
+G: https://github.com/akai-x86
+E: Email
+W: https://en.pronouns.page/@0xAkai
+C: slope.map
 
 
 
