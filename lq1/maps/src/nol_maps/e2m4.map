@@ -8,7 +8,7 @@
 "_tb_def" "builtin:Quake.fgd"
 "sounds" "5"
 "message" "Earth's Reclaiming"
-"credits" "Nolcoz"
+"credits_" "Nolcoz"
 "_dirt" "1"
 // brush 0
 {

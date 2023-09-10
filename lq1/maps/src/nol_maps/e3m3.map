@@ -10,7 +10,7 @@
 "_tb_def" "builtin:Quake.fgd"
 "message" "Deep Myst"
 "_sunlight2" "700"
-"credits" "Nolcoz"
+"credits_" "Nolcoz"
 "_dirt" "1"
 // brush 0
 {

@@ -9,7 +9,7 @@
 "message" "Lavaducts"
 "_tb_mod" "lq1"
 "_tb_def" "builtin:Quake.fgd"
-"credits" "Nolcoz"
+"credits_" "Nolcoz"
 "_dirt" "1"
 // brush 0
 {

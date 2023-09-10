@@ -8,7 +8,7 @@
 "worldtype" "1"
 "message" "Corpse army"
 "sounds" "8"
-"credits" "Nolcoz"
+"credits_" "Nolcoz"
 "_dirt" "1"
 // brush 0
 {

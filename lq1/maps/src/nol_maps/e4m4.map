@@ -9,7 +9,7 @@
 "_tb_def" "builtin:Quake.fgd"
 "sounds" "7"
 "message" "Steel Forest"
-"credits" "Nolcoz"
+"credits_" "Nolcoz"
 // brush 0
 {
 ( -64 -1472 0 ) ( -64 -1600 0 ) ( -64 -1600 -16 ) met_gry_sqr [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1

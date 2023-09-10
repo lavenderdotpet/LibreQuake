@@ -11,7 +11,7 @@
 "_tb_mod" "lq1"
 "light" "50"
 "_sun_mangle" "60 -45 0"
-"credits" "Nolcoz"
+"credits_" "Nolcoz"
 // brush 0
 {
 ( -2432 128 -192 ) ( -2432 129 -192 ) ( -2432 128 -191 ) may_flt1_1 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
