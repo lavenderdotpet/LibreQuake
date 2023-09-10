@@ -15,7 +15,7 @@
 "_sunlight_color" "0.83 0.91 1.00"
 "_sun_mangle" "60 -45 0"
 "_sunlight_penumbra" "4"
-"credits" "akai and misslav"
+"credits_" "akai and misslav"
 // brush 0
 {
 ( 512 624 64 ) ( 512 624 63 ) ( 512 625 64 ) wall_grey_a [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
