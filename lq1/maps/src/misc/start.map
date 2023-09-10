@@ -15,7 +15,7 @@
 "//_sunlight_color" "//0.83 0.91 1.00"
 "_sun_mangle" "60 -45 0"
 "_sunlight_penumbra" "4"
-"credits" "MissLavender"
+"credits_" "MissLavender"
 // brush 0
 {
 ( -384 -944 -80 ) ( -384 -432 -80 ) ( -384 -944 160 ) wall_grey_c [ 0 -1 0 0 ] [ 0 0 -1 48 ] 0 1 1
