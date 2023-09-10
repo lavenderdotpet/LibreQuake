@@ -5,6 +5,8 @@
 "classname" "worldspawn"
 "mapversion" "220"
 "wad" "../../../../texture-wads/lq_health_ammo.wad"
+"_credits" "Zungryware"
+"light" "100"
 }
 // entity 1
 {
