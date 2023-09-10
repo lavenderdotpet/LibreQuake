@@ -4,6 +4,7 @@
 {
 "classname" "worldspawn"
 "wad" "../../../../texture-wads/lq_health_ammo.wad"
+"_credits" "Mr.M and Nolcoz"
 "light" "100"
 // brush 0 
 {

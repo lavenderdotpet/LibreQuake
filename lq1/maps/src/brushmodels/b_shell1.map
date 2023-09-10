@@ -5,6 +5,7 @@
 "classname" "worldspawn"
 "mapversion" "220"
 "wad" "../../../../texture-wads/lq_health_ammo.wad"
+"_credits" "Mr.M and Nolcoz"
 "light" "100"
 // brush 0 
 {
@@ -177,6 +178,7 @@
 }
 // entity 5
 {
+"_credits" "Mr.M and Nolcoz"
 "light" "100"
 "origin" "16 16 56"
 "classname" "light"
