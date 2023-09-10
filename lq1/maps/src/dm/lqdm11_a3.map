@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"credits" "ZungryWare"
+"credits_" "ZungryWare"
 "wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_liquidsky.wad"
 "message" "Local Hostilities"
 "_sun_mangle" "106  -73 0"

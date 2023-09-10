@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"credits" "ZungryWare"
+"credits_" "ZungryWare"
 "mapversion" "220"
 "message" "Death Provides No Return"
 "wad" "../../../../texture-wads/lq_dev.wad"
