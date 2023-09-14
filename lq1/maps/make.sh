@@ -57,7 +57,7 @@ function setup_compile_args {
     #LQ_IS_BMODEL=0 
 
     # Try to source a configuration file
-    source "$LQ_MAP_CON_PATH/$map_name.conf" #> /dev/null 2>&1
+    source "$LQ_MAP_CON_PATH/$map_name.conf" | grep -E -i "conf:" 
 
     # Set force-flags if provided by the user
     if [ $LQ_FORCED_BSP_FLAGS ]; then
@@ -109,6 +109,8 @@ function command_make {
 
 function command_clean {
     cd "$LQ_MAP_SRC_PATH/"
+    find . -type f -name "*.bsp" -exec rm -f {} \;
+    find . -type f -name "*.lit" -exec rm -f {} \;
     find . -type f -name "*.prt" -exec rm -f {} \;
     find . -type f -name "*.texinfo" -exec rm -f {} \;
     find . -type f -name "*.pts" -exec rm -f {} \;
