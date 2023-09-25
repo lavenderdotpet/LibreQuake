@@ -86,9 +86,9 @@ function command_make {
         setup_compile_args;
         # Perform build operation, silence non-errors
         echo "- $map_name"
-        $LQ_BSP_PATH $LQ_BSP_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
-        $LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
-        $LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
+        $LQ_BSP_PATH $LQ_BSP_FLAGS $map_name.map | grep -E -i "WARNING |Leak"
+        $LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING |Leak"
+        $LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING |Leak"
         # Don't calculate vis or build lightmaps if its a bmodel
         #if [ ! $LQ_IS_BMODEL ] ; then
             #$LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
