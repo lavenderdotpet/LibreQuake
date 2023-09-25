@@ -13,7 +13,7 @@ LQ_VIS_PATH="vis"
 LQ_LIG_PATH="light"
 
 # Location of per-map compilation argument paths
-LQ_MAP_CON_PATH="buildconfigs"
+LQ_MAP_CON_PATH="./-buildconfigs-"
 
 # Location of .map source files
 LQ_MAP_SRC_PATH="src"
@@ -24,8 +24,8 @@ LQ_MAP_SRC_PATH="src"
 # "leaking" into another build.
 #
 LQ_DEF_BSP_FLAGS=""
-LQ_DEF_VIS_FLAGS="-fast"
-LQ_DEF_LIG_FLAGS="-extra4 -bounce -dirt"
+LQ_DEF_VIS_FLAGS=""
+LQ_DEF_LIG_FLAGS="-bounce -dirt"
 
 
 #
@@ -47,6 +47,7 @@ function check_for_compiler {
 # MAKE
 #
 
+
 function setup_compile_args {
     # Reset our compilation flags
     LQ_BSP_FLAGS=$LQ_DEF_BSP_FLAGS
@@ -56,7 +57,7 @@ function setup_compile_args {
     #LQ_IS_BMODEL=0 
 
     # Try to source a configuration file
-    source "$LQ_MAP_CON_PATH/$map_name.conf" > /dev/null 2>&1
+    source "$LQ_MAP_CON_PATH/$map_name.conf" | grep -E -i "conf:" 
 
     # Set force-flags if provided by the user
     if [ $LQ_FORCED_BSP_FLAGS ]; then
@@ -77,16 +78,17 @@ function command_make {
     cd "$LQ_MAP_SRC_PATH/"
 
     # Iterate through every map in our source directory
-    for f in $(find . -maxdepth 1 -name '*.map') ; do
+    #for f in $(find . -path /autosave -prune -o -name '*.map' -print) ; do
+    for f in $(find . -maxdepth 2 -name '*.map' ) ; do
         # Clean up the string a bit
         map_name=${f:2:-4}
         # Get compilation flags ready
         setup_compile_args;
         # Perform build operation, silence non-errors
         echo "- $map_name"
-        $LQ_BSP_PATH $LQ_BSP_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
-        $LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
-        $LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING|Leak"
+        $LQ_BSP_PATH $LQ_BSP_FLAGS $map_name.map | grep -E -i "WARNING |Leak"
+        $LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING |Leak"
+        $LQ_LIG_PATH $LQ_LIG_FLAGS $map_name.map | grep -E -i "WARNING |Leak"
         # Don't calculate vis or build lightmaps if its a bmodel
         #if [ ! $LQ_IS_BMODEL ] ; then
             #$LQ_VIS_PATH $LQ_VIS_FLAGS $map_name.map | grep -E -i "WARNING|Leak" 
@@ -94,10 +96,10 @@ function command_make {
         #fi
     done
 
-    cp *.bsp ..
-    cp *.log logs/
-    cp *.lit ..
-    rm -f *.log *.bsp *.lit
+
+    find . -type f -name "*.bsp" -exec mv {} .. \;
+    find . -type f -name "*.lit" -exec mv {} .. \;
+    find . -path ./-logs- -prune -o -type f -name "*.log" -exec mv {} ./-logs- \;
     echo -e "* Build DONE"
 }
 
@@ -107,7 +109,11 @@ function command_make {
 
 function command_clean {
     cd "$LQ_MAP_SRC_PATH/"
-    rm -f *.prt *.texinfo *.pts
+    find . -type f -name "*.bsp" -exec rm -f {} \;
+    find . -type f -name "*.lit" -exec rm -f {} \;
+    find . -type f -name "*.prt" -exec rm -f {} \;
+    find . -type f -name "*.texinfo" -exec rm -f {} \;
+    find . -type f -name "*.pts" -exec rm -f {} \;
     echo -e "* Clean DONE"
 }
 

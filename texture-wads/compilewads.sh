@@ -1,4 +1,5 @@
 qpakman lq_dev/*.png -o lq_dev.wad
+qpakman lq_dev_legacy/*.png -o lq_dev_legacy.wad
 qpakman lq_flesh/*.png -o lq_flesh.wad
 qpakman lq_greek/*.png -o lq_greek.wad
 qpakman lq_health_ammo/*.png -o lq_health_ammo.wad
