@@ -4,25 +4,15 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_health_ammo.wad"
+"wad" "../../../../texture-wads/lq_health_ammo.wad;../../../../texture-wads/lq_dev.wad"
 "_credits" "Zungryware"
-"light" "100"
+"light" "180"
 }
 // entity 1
 {
 "classname" "func_detail_wall"
 "_minlight" "180"
-// brush 0 
-{
-"classname" "info_player_start"
-"origin" "-10000 -10000 -10000"
-}
-
-
-{
-"classname" "info_player_deathmatch"
-"origin" "-10000 -10000 -10000"
-}
+// brush 0
 {
 ( 26 20 8 ) ( 26 12 8 ) ( 26 12 4 ) hp15_side [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 30 12 8 ) ( 30 12 4 ) ( 26 12 4 ) hp15_side [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1

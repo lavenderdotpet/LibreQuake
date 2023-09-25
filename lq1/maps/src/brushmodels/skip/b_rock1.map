@@ -4,20 +4,14 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_health_ammo.wad"
+"wad" "../../../../texture-wads/lq_health_ammo.wad;../../../../texture-wads/lq_dev.wad"
 "_credits" "Mr.M and Nolcoz"
-"light" "100"
-// brush 0 
-{
-"classname" "info_player_start"
-"origin" "-10000 -10000 -10000"
+"light" "180"
 }
-
-
+// entity 1
 {
-"classname" "info_player_deathmatch"
-"origin" "-10000 -10000 -10000"
-}
+"classname" "func_detail_wall"
+// brush 0
 {
 ( 30 14 32 ) ( 30 16 24 ) ( 30 16 32 ) ammo_r_b2 [ 0 1 0 -16 ] [ 0 0 -1 0 ] 0 -1 1
 ( 32 14 32 ) ( 30 14 24 ) ( 30 14 32 ) ammo_r_b1 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -164,32 +158,4 @@
 ( 32 16 24 ) ( 0 16 0 ) ( 32 16 0 ) ammo_r_b1 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 32 16 24 ) ( 32 0 0 ) ( 32 0 24 ) ammo_r_b2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
-}
-// entity 1
-{
-"light" "200"
-"origin" "40 56 56"
-"classname" "light"
-}
-// entity 2
-{
-"light" "200"
-"origin" "-40 -40 -56"
-"classname" "light"
-}
-// entity 3
-{
-"light" "200"
-"origin" "-40 40 8"
-"classname" "light"
-}
-// entity 4
-{
-"origin" "40 -24 8"
-"classname" "light"
-}
-// entity 5
-{
-"origin" "16 8 72"
-"classname" "light"
 }

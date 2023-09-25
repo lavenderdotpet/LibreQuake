@@ -4,21 +4,15 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_health_ammo.wad"
+"wad" "../../../../texture-wads/lq_health_ammo.wad;../../../../texture-wads/lq_dev.wad"
 "_credits" "Mr.M and Nolcoz"
-"light" "100"
+"light" "180"
 "_tb_mod" "lq1"
-// brush 0 
-{
-"classname" "info_player_start"
-"origin" "-10000 -10000 -10000"
 }
-
-
+// entity 1
 {
-"classname" "info_player_deathmatch"
-"origin" "-10000 -10000 -10000"
-}
+"classname" "func_detail_wall"
+// brush 0
 {
 ( 0 0 0 ) ( 0 1 0 ) ( 0 0 1 ) ammo_c_s2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 0 0 0 ) ( 0 0 1 ) ( 1 0 0 ) ammo_c_s1 [ -1 0 0 -8 ] [ 0 0 -1 0 ] 0 1 1
@@ -36,97 +30,30 @@
 ( 0 24 24 ) ( 24 24 24 ) ( 22 22 28 ) ammo_c_s1 [ -1 0 0 -8 ] [ 0 0 -1 0 ] 0 1 1
 ( 22 22 28 ) ( 24 24 24 ) ( 24 0 24 ) ammo_c_s2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
-}
-// entity 1
+// brush 2
 {
-"classname" "light"
-"origin" "57.2624 46.3548 56"
-"light" "200"
-}
-// entity 2
-{
-"classname" "light"
-"origin" "-30.9192 -4.55686 -56"
-"light" "200"
-}
-// entity 3
-{
-"classname" "light"
-"origin" "-12.2843 64.9898 8"
-"light" "200"
-}
-// entity 4
-{
-"classname" "light"
-"origin" "38.6274 -23.1918 8"
-}
-// entity 5
-{
-"classname" "func_group"
-"_phong" "1"
-// brush 0 
-{
-"classname" "info_player_start"
-"origin" "-10000 -10000 -10000"
-}
-
-
-{
-"classname" "info_player_deathmatch"
-"origin" "-10000 -10000 -10000"
-}
-{
-( 12 18 24 ) ( 12 6 24 ) ( 12 6 4 ) ammo_fl [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 12 18 24 ) ( 12 6 24 ) ( 12 6 4 ) ammo_bottom [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 12 6 24 ) ( 15 2 24 ) ( 15 2 4 ) ammo_c_s1 [ 0 1 0 6 ] [ 0 0 -1 0 ] 0 1 1
 ( 15 22 4 ) ( 15 22 24 ) ( 12 18 24 ) ammo_c_s1 [ 0 1 0 -2 ] [ 0 0 -1 0 ] 0 -1 1
 ( 15 2 24 ) ( 19 2 24 ) ( 19 2 4 ) ammo_c_s1 [ -1 0 0 -8 ] [ 0 0 -1 0 ] 0 1 1
-( 22 6 4 ) ( 22 18 4 ) ( 19 22 4 ) ammo_fl [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 19 22 24 ) ( 22 18 24 ) ( 22 6 24 ) ammo_fl [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 22 6 4 ) ( 22 18 4 ) ( 19 22 4 ) ammo_bottom [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 19 22 24 ) ( 22 18 24 ) ( 22 6 24 ) ammo_bottom [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( 19 22 4 ) ( 19 22 24 ) ( 15 22 24 ) ammo_c_s1 [ -1 0 0 -8 ] [ 0 0 -1 0 ] 0 1 1
 ( 19 2 24 ) ( 22 6 24 ) ( 22 6 4 ) ammo_c_s1 [ 0 -1 0 -24 ] [ 0 0 -1 0 ] 0 1 1
 ( 22 18 4 ) ( 22 18 24 ) ( 19 22 24 ) ammo_c_s1 [ 0 -1 0 16 ] [ 0 0 -1 0 ] 0 -1 1
 ( 22 6 24 ) ( 22 18 24 ) ( 22 18 4 ) ammo_c_s2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
-// brush 1
+// brush 3
 {
 ( 2 18 24 ) ( 2 6 24 ) ( 2 6 4 ) ammo_c_s2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 2 6 24 ) ( 5 2 24 ) ( 5 2 4 ) ammo_c_s1 [ 0 1 0 16 ] [ 0 0 -1 0 ] 0 1 1
 ( 5 22 4 ) ( 5 22 24 ) ( 2 18 24 ) ammo_c_s1 [ 0 1 0 -24 ] [ 0 0 -1 0 ] 0 -1 1
 ( 5 2 24 ) ( 9 2 24 ) ( 9 2 4 ) ammo_c_s1 [ -1 0 0 -8 ] [ 0 0 -1 0 ] 0 1 1
-( 12 6 4 ) ( 12 18 4 ) ( 9 22 4 ) ammo_fl [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 9 22 24 ) ( 12 18 24 ) ( 12 6 24 ) ammo_fl [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 12 6 4 ) ( 12 18 4 ) ( 9 22 4 ) ammo_bottom [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 9 22 24 ) ( 12 18 24 ) ( 12 6 24 ) ammo_bottom [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( 9 22 4 ) ( 9 22 24 ) ( 5 22 24 ) ammo_c_s1 [ -1 0 0 -8 ] [ 0 0 -1 0 ] 0 1 1
 ( 9 2 24 ) ( 12 6 24 ) ( 12 6 4 ) ammo_c_s1 [ 0 -1 0 -14 ] [ 0 0 -1 0 ] 0 1 1
 ( 12 18 4 ) ( 12 18 24 ) ( 9 22 24 ) ammo_c_s1 [ 0 -1 0 26 ] [ 0 0 -1 0 ] 0 -1 1
-( 12 6 24 ) ( 12 18 24 ) ( 12 18 4 ) ammo_fl [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 12 6 24 ) ( 12 18 24 ) ( 12 18 4 ) ammo_bottom [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
-}
-// entity 6
-{
-"classname" "light"
-"origin" "11.101 13.1716 48"
-"_credits" "Mr.M and Nolcoz"
-"light" "100"
-}
-
-// brush 0 
-{
-"classname" "info_player_start"
-"origin" "-10000 -10000 -10000"
-}
-
-
-{
-"classname" "info_player_deathmatch"
-"origin" "-10000 -10000 -10000"
-} 
-{
-"classname" "info_player_start"
-"origin" "-10000 -10000 -10000"
-}
-
-
-{
-"classname" "info_player_deathmatch"
-"origin" "-10000 -10000 -10000"
 }
