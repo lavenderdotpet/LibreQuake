@@ -191,7 +191,7 @@ pak0/progs/bolt3.mdl -
 pak0/progs/boss.mdl
 pak0/progs/demon.mdl - Clay & MissLav & Mr.M
 pak0/progs/dog.mdl -
-pak0/progs/end1.mdl - ZungryWare
+pak0/progs/end1.mdl -
 pak0/progs/eyes.mdl - Fimbuk K.
 pak0/progs/flame.mdl - Clay
 pak0/progs/flame2.mdl - Clay
@@ -230,7 +230,7 @@ pak0/progs/s_explod.spr - MissLav
 pak0/progs/s_light.mdl
 pak0/progs/s_light.spr - MissLav
 pak0/progs/s_spike.mdl - MissLav
-pak0/progs/shambler.mdl
+pak0/progs/shambler.mdl - ZungryWare
 pak0/progs/soldier.mdl
 pak0/progs/spike.mdl - MissLav
 pak0/progs/suit.mdl
@@ -250,9 +250,9 @@ pak0/progs/zom_gib.mdl
 pak0/progs/zombie.mdl - Stabby
 pak1/progs/b_g_key.mdl - ZungryWare
 pak1/progs/b_s_key.mdl - ZungryWare
-pak1/progs/end2.mdl - ZungryWare
-pak1/progs/end3.mdl - ZungryWare
-pak1/progs/end4.mdl - ZungryWare
+pak1/progs/end2.mdl -
+pak1/progs/end3.mdl -
+pak1/progs/end4.mdl -
 pak1/progs/enforcer.mdl
 pak1/progs/fish.mdl - Clay & MissLav
 pak1/progs/h_hellkn.mdl
@@ -380,31 +380,31 @@ pak0/sound/plats/train1.wav
 pak0/sound/plats/train2.wav
 pak0/sound/player/axhit1.wav
 pak0/sound/player/axhit2.wav
-pak0/sound/player/death1.wav - Ivan_V & Misslav
-pak0/sound/player/death2.wav - Ivan
-pak0/sound/player/death3.wav - Ivan
-pak0/sound/player/death4.wav - Ivan
-pak0/sound/player/death5.wav - Ivan
-pak0/sound/player/drown1.wav - Ivan_V & Misslav
-pak0/sound/player/drown2.wav - Ivan
-pak0/sound/player/gasp1.wav - Ivan_V & Misslav
-pak0/sound/player/gasp2.wav - Ivan_V & Misslav
-pak0/sound/player/gib.wav - Freedoom & MissLav
+pak0/sound/player/death1.wav
+pak0/sound/player/death2.wav
+pak0/sound/player/death3.wav
+pak0/sound/player/death4.wav
+pak0/sound/player/death5.wav
+pak0/sound/player/drown1.wav
+pak0/sound/player/drown2.wav
+pak0/sound/player/gasp1.wav
+pak0/sound/player/gasp2.wav
+pak0/sound/player/gib.wav
 pak0/sound/player/h2odeath.wav
 pak0/sound/player/h2ojump.wav
 pak0/sound/player/inh2o.wav
 pak0/sound/player/inlava.wav
-pak0/sound/player/land.wav - Ivan
-pak0/sound/player/land2.wav - Ivan
-pak0/sound/player/lburn1.wav - Ivan
-pak0/sound/player/lburn2.wav - Ivan
-pak0/sound/player/pain1.wav - Ivan
-pak0/sound/player/pain2.wav - Ivan_V & Misslav
-pak0/sound/player/pain3.wav - Ivan_V & Misslav
-pak0/sound/player/pain4.wav - Ivan_V & Misslav
-pak0/sound/player/pain5.wav - Ivan_V & Misslav
-pak0/sound/player/pain6.wav - Ivan_V & Misslav
-pak0/sound/player/plyrjmp8.wav - Ivan_V & Misslav
+pak0/sound/player/land.wav
+pak0/sound/player/land2.wav
+pak0/sound/player/lburn1.wav
+pak0/sound/player/lburn2.wav
+pak0/sound/player/pain1.wav
+pak0/sound/player/pain2.wav
+pak0/sound/player/pain3.wav
+pak0/sound/player/pain4.wav
+pak0/sound/player/pain5.wav
+pak0/sound/player/pain6.wav
+pak0/sound/player/plyrjmp8.wav
 pak0/sound/player/slmbrn2.wav
 pak0/sound/player/teledth1.wav
 pak0/sound/player/tornoff2.wav
@@ -424,10 +424,10 @@ pak0/sound/soldier/pain1.wav
 pak0/sound/soldier/pain2.wav
 pak0/sound/soldier/sattck1.wav
 pak0/sound/soldier/sight1.wav
-pak0/sound/weapons/ax1.wav
-pak0/sound/weapons/bounce.wav - Markie & MissLav & Diplodocus
-pak0/sound/weapons/grenade.wav - ???
-pak0/sound/weapons/guncock.wav - ???
+pak0/sound/weapons/ax1.wav - MissLavender
+pak0/sound/weapons/bounce.wav - Markie & MissLavender & Diplodocus
+pak0/sound/weapons/grenade.wav - Markie
+pak0/sound/weapons/guncock.wav - Markie
 pak0/sound/weapons/lhit.wav - ???
 pak0/sound/weapons/lock4.wav - ???
 pak0/sound/weapons/lstart.wav - ???
@@ -448,12 +448,12 @@ pak0/sound/wizard/widle.wav - Ashat Maself
 pak0/sound/wizard/widle2.wav - Ashat Maself
 pak0/sound/wizard/wpain.wav - Ashat Maself
 pak0/sound/wizard/wsight.wav - Ashat Maself
-pak0/sound/zombie/idle_w2.wav -  Ivan & MissLav
+pak0/sound/zombie/idle_w2.wav
 pak0/sound/zombie/z_fall.wav
 pak0/sound/zombie/z_gib.wav - FreeDoom & MissLav
 pak0/sound/zombie/z_hit.wav
-pak0/sound/zombie/z_idle.wav -  Ivan & MissLav
-pak0/sound/zombie/z_idle1.wav -  Ivan & MissLav
+pak0/sound/zombie/z_idle.wav
+pak0/sound/zombie/z_idle1.wav
 pak0/sound/zombie/z_miss.wav
 pak0/sound/zombie/z_pain.wav
 pak0/sound/zombie/z_pain1.wav - FreeDoom & MissLav

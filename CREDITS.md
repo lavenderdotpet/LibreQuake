@@ -37,7 +37,7 @@ E: padregreenwood@gmail.com
 W: https://alkalinequake.wordpress.com/
 C: Textures, Maps
 
-N: Emberlynn Bland 
+N: Emberlynn Bland
 S: Ember
 P: she/they
 D: itsember
@@ -79,7 +79,7 @@ N: James Lewis
 S: therektafire
 D: therektafire#6910
 G: https://github.com/TheRektafire
-E: therektafire@gmail.com 
+E: therektafire@gmail.com
 C: Maps, maphacks, sounds
 
 S: Beak
