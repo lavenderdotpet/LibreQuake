@@ -82,6 +82,16 @@ function command_make {
     for f in $(find . -maxdepth 2 -name '*.map' ) ; do
         # Clean up the string a bit
         map_name=${f:2:-4}
+        
+        # if a specific map is to be compiled, skip all others
+	if ! test -z "$1"
+	then
+	    if ! [ "$map_name" == "$1" ]
+	    then
+	        continue
+	    fi
+	fi
+
         # Get compilation flags ready
         setup_compile_args;
         # Perform build operation, silence non-errors
@@ -101,6 +111,18 @@ function command_make {
     find . -type f -name "*.lit" -exec mv {} .. \;
     find . -path ./-logs- -prune -o -type f -name "*.log" -exec mv {} ./-logs- \;
     echo -e "* Build DONE"
+}
+
+#
+# SINGLE MAP MAKE
+#
+function command_single {
+    if test -z "$1"
+    then
+        echo "map name needed, e.g. 'e1/e1m1'"
+        return
+    fi
+    command_make "$1";
 }
 
 #
@@ -130,9 +152,10 @@ function command_help {
     Usage: make.sh [OPERATION] [FLAGS]
 
     OPERATIONS:
-    -h, help      read this msg :3
-    -c, clean     remove extra files that are left after build
-    -m, make      compile all available maps
+    -h, help           read this msg :3
+    -c, clean          remove extra files that are left after build
+    -m, make           compile all available map OR
+    -s, single <MAP>   compile a specified single map
 
     FLAGS:
     QBSP_FLAGS    override map-specific qbsp flags with a global setting
@@ -182,6 +205,9 @@ case $1 in
     # make/-m : command_make
     make)command_make;;
     -m)command_make;;
+    # single/-s : command_single
+    single)command_single "$2";;
+    -s)command_single "$2";;
     # clean/-c : command_clean
     clean)command_clean;;
     -c)command_clean;;
