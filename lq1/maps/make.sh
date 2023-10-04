@@ -145,7 +145,7 @@ function command_clean {
 
 function command_help {
     echo -e "
-                 LibreQuake make.sh Map Builder Script /// v0.0.2
+                 LibreQuake make.sh Map Builder Script /// v0.0.3
     ==========================================================================
     This script requires ericw-tools (https://github.com/ericwa/ericw-tools/).
     --------------------------------------------------------------------------
@@ -166,6 +166,7 @@ function command_help {
     LIGHT_PATH     use a local path for qbsp instead of checking \$PATH
 
     Example: make.sh -m LIGHT_FLAGS=\"-extra4 -bounce\" QBSP_PATH=\"~/qbsp\"
+    Example: make.sh -s e1/e1m1
     =========================================================================="
 }
 
