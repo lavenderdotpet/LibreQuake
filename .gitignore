@@ -6,6 +6,8 @@ autosave/
 lq1/screenshots/
 
 #ignored files
+lq1/maps/+make-make.desktop
+lq1/maps/.bmodelbspbak.7z
 .directory
 .nomedia
 *-crash.txt
@@ -18,7 +20,7 @@ lq1/screenshots/
 *.kra~
 *.json
 *.cfg
-
+*.kate-swp
 
 #included files
 !lq1/default.cfg
@@ -27,5 +29,4 @@ lq1/screenshots/
 !lq1/zoom120.cfg
 
 
-lq1/maps/+make-make.desktop
-lq1/maps/.bmodelbspbak.7z
+
