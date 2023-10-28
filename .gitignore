@@ -8,6 +8,7 @@ lq1/screenshots/
 #ignored files
 lq1/maps/+make-make.desktop
 lq1/maps/.bmodelbspbak.7z
+lq1/config.cfg
 .directory
 .nomedia
 *-crash.txt
@@ -27,6 +28,5 @@ lq1/maps/.bmodelbspbak.7z
 !lq1/dev.cfg
 !lq1/zoom90.cfg
 !lq1/zoom120.cfg
-
 
 
