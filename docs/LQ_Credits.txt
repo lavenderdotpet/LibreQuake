@@ -2,8 +2,8 @@
 
 ```markdown
 # credit template
-N: Real name
-S: Screen name
+N: RealName
+S: ScreenName
 P: Pronouns
 D: Discord
 G: Github
@@ -162,12 +162,6 @@ W: rikut441@gmail.com
 C: Textures
 L: Public Domain
 
-S: SavageX
-D: savagex_official
-G: https://github.com/maikmerten
-C: Maps
-L: Public Domain
-
 N: John S. Weekley
 S: PRIMEVAL
 D: jsw_primeval
@@ -183,6 +177,12 @@ E: Email
 W: https://en.pronouns.page/@0xAkai
 C: slope.map
 
+N: Mikko Uusitalo
+S: NewHouse
+D: _newhouse
+E: mikkou9@gmail.com
+W: https://twitter.com/New_House9
+C: Concept art
 
 
 
