@@ -9,8 +9,8 @@ lq1/screenshots/
 lq1/maps/+make-make.desktop
 lq1/maps/.bmodelbspbak.7z
 lq1/config.cfg
-docs/lqlogos/lq-pl.png
-docs/lqlogos/lq-pl.xcf
+lq-pl.png
+lq-pl.xcf
 .directory
 .nomedia
 *-crash.txt
