@@ -5,40 +5,39 @@ If you don't know where the level will fit into the episode yet, put it in the "
 See the bottom for the guidelines we have set for how the campaign will work.
 
 WinQ Compat (misc theme)
-e0_start
 e0m1:
-e0m2:swampy by SavageX
-e0m3:w
+e0m2:
+e0m3:
 e0m4:
 e0m5:
 e0m6:
-e0m7:Medusa by SavageX
+e0m7:
 e0m8:
 e0m9:
 
-Base Theme (Freedoom Base Textures):
+Base Theme (LQ_Tech.wad):
 e1m1:
 e2m1:
 e3m1:
 e4m1: Damnation Station by ZungryWare; NG, SSG
 e5m1:
 
-Medieval Theme: (All episode 1 levels must be compatible with old quake engines.)
+Medieval Theme:
 e1m2: The Feudal Anomaly by ZungryWare; NG, SSG, GL*
 e1m3: Nameless Marionettes by ZungryWare; GL, SSG, RL** (First Appearance of Zombies, First level with Ring of Shadows. Rocket Launcher is very difficult to find.)
 e1m4: Mark of the Beast by ZungryWare; SNG, GL (First Appearance of Fiends.)
 e1m5:
 e1m6: Liturgy of Blood by ZungryWare; RL, SSG, GL
 e1m7 (boss level):
-e1m8 (secret, low gravity): Moon City map with halflife inspiration?
+e1m8 (secret, low gravity):
 
 Mayan Theme:
 e2m2: TBD by Squid V; SSG, NG, GL
 e2m3: Corpse army by Nolcoz; SSG, NG, GL, RL*,LG*
-e2m4: Cipactli's Reclaiming by Nolcoz; SSG, NG, GL, SNG, RL
-e2m5:  TBD by Nolcoz
+e2m4: Earth's Reclaiming by Nolcoz; SSG, NG, GL, SNG, RL, LG*
+e2m5: Echoes Of Decay by Nolcoz; SSG, NG, GL, SNG, RL, LG (Exit to secret level.)
 e2m6 (final level): (worm boss with 3 phases at different locations in the map )
-e2m7 (secret): El Dorado by aDaya; TBD
+e3m7 (secret):
 
 Greek Theme:
 e3m2:
@@ -68,7 +67,7 @@ Libre Hades by Greenwood; SSG, GL, SNG; Unthemed
 Deathmatch:
 lqdm1: The Wicked Night by ZungryWare; Base Themed
 lqdm2: Burning Daylight by ZungryWare; Metal Themed
-lqdm3: Bloody Ultimatum by ZungryWare; Medieval/Dungeon Themed
+lqdm3: Torture Pit by ZungryWare; Medieval/Dungeon Themed
 lqdm4: Psychofuge by ZungryWare; Metal Themed
 lqdm5: Hellion by ZungryWare; Base Themed
 lqdm6: The Hinterlands by ZungryWare; Medieval Themed
@@ -76,9 +75,9 @@ lqdm7: Boomstick Basement by ZungryWare; Base/Brick Themed
 lqdm8: Alichar Sector by ZungryWare; Base Themed
 lqdm9: The Outlands by ZungryWare; Mayan/Base Themed
 lqdm10: Lucifer's Gambit by ZungryWare; Lucifer Themed
-lqdm11: All or Nothing by ZungryWare; Mayan Themed
+lqdm11: Local Hostilities by ZungryWare; Base Themed
 lqdm12: Javelin by ZungryWare; Mayan Themed
-lqdm13: Death Provides No Return by ZungryWare; Ultrasteel/Void Themed
+lqdm13: Death Provides No Return by ZungryWare; Metal/Void Themed
 
 Things the levels must introduce to the player:
 Remember, 90% of the people playing this campaign will have never played Quake before!
@@ -115,9 +114,9 @@ Deathmatch support
 
     -Consider the items that are available to players. Remember that you can set weapons to only appear in DM. Here are some ranges to go for with item availability:
 
-    0 to 2 Rocket Launcher
+    1 to 2 Rocket Launcher
 
-    0 to 2 Lightning Gun
+    0 to 1 Lightning Gun
 
     1 to 2 Grenade Launcher
 
@@ -141,7 +140,7 @@ Deathmatch support
 
     2 to 4 Green Armor
 
-    1 to 3 Megahealth
+    1 to 3 Mega Health
 
     2 to 4 Small Rocket Pack
 

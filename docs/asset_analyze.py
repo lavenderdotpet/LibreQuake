@@ -30,7 +30,7 @@ def main():
 	
 	#Go through the file, listing incomplete items
 	print(bold("Items that still need to be accounted for:"))
-	file1 = open("assets.txt","r")
+	file1 = open("LQ_Assets.txt","r")
 	#Go through each line
 	for line in file1:
 		#Only read lines that contain a file
@@ -49,7 +49,7 @@ def main():
 	#Go through the file again, listing complete items
 	print(bold("\nItems that are complete or in progress:"))
 	
-	file1 = open("assets.txt","r")
+	file1 = open("LQ_Assets.txt","r")
 	for line in file1:
 		if line[:3] == "pak" or line[:3] == "mus":
 			items = line.split(" - ")
