@@ -11,10 +11,7 @@ qpakman lq_metal/*.png -o lq_metal.wad
 qpakman lq_props/*.png -o lq_props.wad
 qpakman lq_tech/*.png -o lq_tech.wad
 qpakman lq_terra/*.png -o lq_terra.wad
+qpakman lq_utility/*.png -o lq_utility.wad
 qpakman lq_wood/*.png -o lq_wood.wad
-
-
-
-
 
 
