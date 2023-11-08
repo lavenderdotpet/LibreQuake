@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"credits_" "ZungryWare"
+"_credits" "ZungryWare"
 "mapversion" "220"
 "wad" "../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_tech.wad"
 "message" "Ghost Quarter"
