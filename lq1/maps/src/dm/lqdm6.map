@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "D:/dev/LibreQuake/texture-wads/lq_medieval.wad;D:/dev/LibreQuake/texture-wads/lq_wood.wad;D:/dev/LibreQuake/texture-wads/lq_liquidsky.wad;D:/dev/LibreQuake/texture-wads/lq_utility.wad;D:/dev/LibreQuake/texture-wads/lq_tech.wad"
+"wad" "../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_tech.wad"
 "message" "Ghost Quarter"
 "_sun_mangle" "30 -60 0"
 "_sunlight" "150"
