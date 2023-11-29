@@ -1,67 +1,19 @@
----- light / ericw-tools v0.18.1-32-g6660c5f ----
-Raytracing backend: Embree
-running with 20 threads
+---- vis / ericw-tools v0.18.1 ----
+running with 4 threads
+testlevel = 4
 LoadBSPFile: 'misc/start.bsp'
 BSP is version 29
-gamedir: /home/lavender/LQ_Dev/LibreQuake/lq1/
-SetQ2dirFromPath: failed to find  in '/home/lavender/LQ_Dev/LibreQuake/lq1/maps/src/misc/start.bsp'--- ConvertTextures ---
-Loaded extended texinfo flags from misc/start.texinfo
---- LoadEntities ---
-144 entities read, 19 are lights.
---- OptionsSummary ---
-    "light" was set to "50" from map
-    "dirt" was set to "1" from commandline
-    "minlight_dirt" was set to "1" from map
-    "bounce" was set to "1" from commandline
-    "sunlight" was set to "100" from map
-    "sunlight2" was set to "190" from map
-    "sunlight_dirt" was set to "1" from map
-    "sunlight2_dirt" was set to "1" from map
-    "sunlight_mangle" was set to "0.353553 0.612372 -0.707107" from map
-    "sunlight_penumbra" was set to "4" from map
-Embree_TraceInit: Embree version: 2.15.0
-Embree_TraceInit:
-	36 sky faces
-	1083 solid faces
-	0 filtered faces
-	0 shadow-casting skip faces
-SetupLights: 19 initial lights
-Creating surface lights for texture "0" from template at (248 -360 376)
-Creating surface lights for texture "0" from template at (164 -372 268)
-Creating surface lights for texture "0" from template at (148 -372 268)
-Creating surface lights for texture "0" from template at (132 -372 268)
-Creating surface lights for texture "0" from template at (112 -376 268)
-Creating surface lights for texture "wall_red_a" from template at (-344 -472 -40)
-Creating surface lights for texture "wall_green_a" from template at (-312 -472 -40)
-Creating surface lights for texture "wall_blue_a" from template at (-280 -472 -40)
-Creating surface lights for texture "*teleport" from template at (-248 -472 -40)
-Creating surface lights for texture "light" from template at (-344 -504 -40)
-SetupLights: 471 after surface lights
-SetupLights: 471 after jittering
-using 65 suns for _sunlight2. total light: 190.000000 color: 255.000000 255.000000 255.000000
---- EstimateLightVisibility ---
+   536 leafs
+   265 clusters
+   697 portals
+Calculating Base Vis:
 0....1....2....3....4....5....6....7....8....9....
-Final count: 471 lights, 129 suns in use.
-Colored light entities/settings detected: .lit output enabled.
---- SetupDirt ---
-       48 dirtmap vectors
---- LightWorld ---
---- MakeTextureColors ---
---- MakeBounceLights ---
+Calculating Full Vis:
 0....1....2....3....4....5....6....7....8....9....
---- LightThread ---
-0....1....2....3....4....5....6....7....8....9....
-Indirect lights: 1166 bounce lights, 0 surface lights (0 light points) in use.
-Lighting Completed.
-
-lightdatasize: 59401
-Writing misc/start.lit
-0 switchable light styles (32 max)
+Expanding clusters...
+average leafs visible: 162
+c_noclip: 0
+c_chains: 265930
+visdatasize:4717  compressed from 35912
 Writing misc/start.bsp as BSP version 29
-0.371 seconds elapsed
-
-stats:
-61.576176 lights tested, 56.423688 hits per sample point
-0.000000 surface lights tested, 0.000000 hits per sample point
-34.736414 bounce lights tested, 29.909826 hits per sample point
-0 empty lightmaps
+  0.2 seconds elapsed
