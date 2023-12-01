@@ -8,7 +8,7 @@ There is a massive [back catalogue](https://www.quaddicted.com), spanning over t
 
 The engine uses a directory called `id1/`, within that directory there are two archives called `pak0.pak` and `pak1.pak`, these archives contain all the game data except the soundtrack. While the *Quake* engine source code is free, you would usually still need one of the proprietary data files from [id Software](http://www.idsoftware.com) to play *Quake*. *LibreQuake* aims to create a free alternative: combined with the GPL-licensed *Quake* source code, this results in a completely free game.
 
-### LibreQuakes Website [librequake,queer.sh](https://librequake.queer.sh).
+### LibreQuakes Website [librequake.queer.sh](https://librequake.queer.sh).
 
 ![Texture examples](screenshots/textures_example.png)
 
