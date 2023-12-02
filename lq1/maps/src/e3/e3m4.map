@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "C:/Games/Quakedev/wads/LQ_Wads/lq_secret.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_dev.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_terra.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_greek.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_legacy.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_wood.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_liquidsky.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_medieval.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_flesh.wad"
+"wad" "../../../../texture-wads/lq_secret.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_greek.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_props.wad"
 "sounds" "8"
 "_tb_def" "builtin:Quake.fgd"
 "_sunlight2" "150"
@@ -42534,4 +42534,9 @@
 "classname" "info_intermission"
 "origin" "128 1416 472"
 "mangle" "210 270 180"
+}
+// entity 1300
+{
+"classname" "info_player_deathmatch"
+"origin" "-400 144 232"
 }

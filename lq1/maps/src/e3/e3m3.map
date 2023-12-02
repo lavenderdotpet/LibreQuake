@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "C:/Games/Quakedev/wads/LQ_Wads/lq_dev.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_medieval.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_extra.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_greek.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_liquidsky.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_wood.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_terra.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_legacy.wad;C:/Games/Quakedev/wads/LQ_Wads/lq_greek_nol.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_extra.wad;../../../../texture-wads/lq_greek.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_greek_nol.wad"
 "fog" "0.05 1 1 1"
 "sounds" "4"
 "_tb_def" "builtin:Quake.fgd"
@@ -23386,4 +23386,9 @@
 ( -1178 1156 192 ) ( -1177 1156 192 ) ( -1178 1156 193 ) med_trim3_3 [ 1.0000000000000002 0 0 46 ] [ 0 0 -1.0000000000000002 -31 ] 4.1076016 1 1
 ( -1180 1158 192 ) ( -1180 1158 193 ) ( -1180 1159 192 ) med_trim3_3 [ 5.551115123125783e-17 1 0 2 ] [ 0 0 -1 -31 ] 4.107605 1 1
 }
+}
+// entity 663
+{
+"classname" "info_player_deathmatch"
+"origin" "-240 -880 -120"
 }
