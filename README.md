@@ -8,7 +8,7 @@ There is a massive [back catalogue](https://www.quaddicted.com), spanning over t
 
 The engine uses a directory called `id1/`, within that directory there are two archives called `pak0.pak` and `pak1.pak`, these archives contain all the game data except the soundtrack. While the *Quake* engine source code is free, you would usually still need one of the proprietary data files from [id Software](http://www.idsoftware.com) to play *Quake*. *LibreQuake* aims to create a free alternative: combined with the GPL-licensed *Quake* source code, this results in a completely free game.
 
-For more information, see [our website](https://librequake.queer.sh).
+### LibreQuakes Website [librequake.queer.sh](https://librequake.queer.sh).
 
 ![Texture examples](screenshots/textures_example.png)
 
@@ -39,7 +39,7 @@ The general rules go as follows:
   1. You must have permission for everything you submit. If you make your own resources, do not base them on resources from *Quake* or any other restricted work. If you take work from other places, please make sure that the work is freely-licensed or that you obtain permission to include it in the *LibreQuake* project. They may not place additional restrictions compared to the normal *LibreQuake* license.
 
   2. Do not try to emulate *Quake* resources exactly. Where possible, put effort to make new versions look visibly different from *Quake*. This is a tough call because our compatibility with *Quake* mods limits how far we can deviate, but it is feasible.
-  
+
   3. Be especially careful of “free textures” (or “free sounds” or “free graphics”) sites.  Although these would appear at first to be okay to use, many are free for “non-commercial use only.” One of the things we want to be able to do is put this in GNU/Linux distributions (which can be sold or developed commercially).
 
 ## Levels
@@ -51,7 +51,7 @@ It is sensible to also heed the following guidelines:
   1. Make sure that skill levels are implemented, and that all multiplayer start points, both cooperative and deathmatch, are present.
 
   2. Try to make levels appropriately difficult for their position within the progression of the game.  Also bear in mind that not all players may be as skilled a player as you.
- 
+
   3. While unrestricted by limits, do not make excessively complicated scenes. It is desirable that *LibreQuake* levels should be playable on low-powered hardware, such as phones and old computers.
 
 ## Submitting your work
