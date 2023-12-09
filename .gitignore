@@ -1,4 +1,4 @@
-#ignored folders
+# ignored folders
 .stversions/
 .obsidian/
 .autosave/
@@ -7,7 +7,7 @@ lq1/screenshots/
 working/
 releases/
 
-#ignored files
+# ignored files
 lq1/maps/+make-make.desktop
 lq1/maps/.bmodelbspbak.7z
 lq1/config.cfg
@@ -28,7 +28,7 @@ lq-pl.xcf
 *.kate-swp
 *autosave.kra
 
-#included files
+# included files
 !lq1/default.cfg
 !lq1/dev.cfg
 !lq1/zoom90.cfg
