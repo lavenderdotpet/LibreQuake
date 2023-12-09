@@ -17,6 +17,8 @@ lq-pl.xcf
 .nomedia
 *-crash.txt
 *.sav
+*.bsp
+*.lit
 *.log
 *.texinfo
 *.wad

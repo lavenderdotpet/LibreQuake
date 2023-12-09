@@ -15,6 +15,7 @@ import os
 import json
 import shutil
 import warnings
+import runpy
 
 # Builds a single file
 def build_file(source_path, destination_path, source_if_missing):
@@ -119,9 +120,13 @@ def clear_working():
 def compile_wad():
     subprocess.call(['sh', 'compilewads.sh'], cwd='texture-wads')
 
+def compile_bsp():
+    runpy.run_path('./lq1/maps/compile_maps.py', run_name="__build__")
+
 def main():
     # First, compile wads
     compile_wad()
+    compile_bsp()
 
     # Delete existing releases
     shutil.rmtree('./releases', ignore_errors=True)
@@ -132,4 +137,5 @@ def main():
         for key, value in releases.items():
             build_release(key, value)
 
-main()
+if __name__ == "__main__":
+    main()

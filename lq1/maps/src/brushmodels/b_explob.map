@@ -1,0 +1,26 @@
+// Game: Quake
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"wad" "../../../../texture-wads/lq_health_ammo.wad;../../../../texture-wads/lq_dev.wad"
+"_credits" "Mr.M and Nolcoz"
+"light" "180"
+}
+// entity 1
+{
+"classname" "func_detail_wall"
+// brush 0
+{
+( 0 16 32 ) ( 0 17 32 ) ( 0 16 33 ) +0explob2_s1 0 0 0 -1 1
+( 4 0 64 ) ( 0 4 64 ) ( 0 4 192 ) +0explob2_s1 0 0 0 -1 1
+( 0 28 64 ) ( 4 32 64 ) ( 4 32 192 ) +0explob2_s1 0 0 0 -1 1
+( 0 0 32 ) ( 0 0 33 ) ( 1 0 32 ) +0explob2_s1 0 0 0 1 1
+( 0 16 0 ) ( 1 16 0 ) ( 0 17 0 ) ammo_fl2 0 0 180 1 -1
+( 32 32 64 ) ( 32 33 64 ) ( 33 32 64 ) explob_s2 0 0 0 1 1
+( 32 32 48 ) ( 33 32 48 ) ( 32 32 49 ) +0explob2_s1 0 0 0 -1 1
+( 32 4 64 ) ( 28 0 64 ) ( 28 0 192 ) +0explob2_s1 0 0 0 1 1
+( 32 28 64 ) ( 28 32 192 ) ( 28 32 64 ) +0explob2_s1 0 0 0 1 1
+( 32 32 48 ) ( 32 32 49 ) ( 32 33 48 ) +0explob2_s1 0 0 0 1 1
+}
+}
