@@ -125,10 +125,14 @@ def compile_bsp():
     runpy.run_path('./compile_maps.py', run_name="__build__")
     os.chdir('../../')
 
+def compile_progs():
+    subprocess.call(['fteqcc', 'qcsrc/progs.src'])
+
 def main():
     # First, compile wads
     compile_wad()
     compile_bsp()
+    compile_progs()
 
     # Delete existing releases
     shutil.rmtree('./releases', ignore_errors=True)
