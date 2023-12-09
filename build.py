@@ -124,12 +124,12 @@ def main():
     compile_wad()
 
     # Delete existing releases
-    # shutil.rmtree('./releases', ignore_errors=True)
+    shutil.rmtree('./releases', ignore_errors=True)
 
     # Build each release one by one
-    # with open('build_releases.json', 'r') as json_file:
-    #     releases = json.load(json_file)
-    #     for key, value in releases.items():
-    #         build_release(key, value)
+    with open('build_releases.json', 'r') as json_file:
+        releases = json.load(json_file)
+        for key, value in releases.items():
+            build_release(key, value)
 
 main()
