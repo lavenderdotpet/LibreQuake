@@ -4,6 +4,8 @@
 .autosave/
 autosave/
 lq1/screenshots/
+working/
+releases/
 
 #ignored files
 lq1/maps/+make-make.desktop
@@ -21,7 +23,7 @@ lq-pl.xcf
 *.prt
 *.png~
 *.kra~
-*.json
+*.texinfo.json
 *.cfg
 *.kate-swp
 *autosave.kra
