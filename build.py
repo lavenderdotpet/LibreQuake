@@ -121,7 +121,9 @@ def compile_wad():
     subprocess.call(['sh', 'compilewads.sh'], cwd='texture-wads')
 
 def compile_bsp():
-    runpy.run_path('./lq1/maps/compile_maps.py', run_name="__build__")
+    os.chdir('./lq1/maps')
+    runpy.run_path('./compile_maps.py', run_name="__build__")
+    os.chdir('../../')
 
 def main():
     # First, compile wads

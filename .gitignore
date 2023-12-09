@@ -19,6 +19,7 @@ lq-pl.xcf
 *.sav
 *.bsp
 *.lit
+*.vis
 *.log
 *.texinfo
 *.wad

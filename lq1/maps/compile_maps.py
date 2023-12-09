@@ -9,7 +9,7 @@ LQ_VIS_PATH = "vis"
 LQ_LIG_PATH = "light"
 
 # Location of per-map compilation argument paths
-LQ_MAP_CON_PATH = "./-buildconfigs-"
+LQ_MAP_CON_PATH = "./src/-buildconfigs-"
 
 # Location of .map source files
 LQ_MAP_SRC_PATH = "src"
@@ -28,18 +28,22 @@ def check_for_compiler():
             sys.exit()
 
 # Setup compile arguments
-def setup_compile_args(map_name):
+def setup_compile_args(path):
     global LQ_BSP_FLAGS, LQ_VIS_FLAGS, LQ_LIG_FLAGS
     LQ_BSP_FLAGS = LQ_DEF_BSP_FLAGS
     LQ_VIS_FLAGS = LQ_DEF_VIS_FLAGS
     LQ_LIG_FLAGS = LQ_DEF_LIG_FLAGS
 
-    config_path = os.path.join(LQ_MAP_CON_PATH, f"{map_name}.conf")
+    config_path = os.path.join(LQ_MAP_CON_PATH, f"{path[6:-4]}.conf")
     if os.path.exists(config_path):
         with open(config_path, 'r') as file:
             for line in file:
-                if "conf:" in line:
-                    print(line.strip())
+                if line.startswith("LQ_BSP_FLAGS"):
+                    LQ_BSP_FLAGS = line.split("\"")[1]
+                if line.startswith("LQ_VIS_FLAGS"):
+                    LQ_VIS_FLAGS = line.split("\"")[1]
+                if line.startswith("LQ_LIG_FLAGS"):
+                    LQ_LIG_FLAGS = line.split("\"")[1]
 
 # Execute command
 def execute_command(command):
@@ -57,7 +61,6 @@ def find(directory, ext):
             if file.endswith(ext):
                 l.append(os.path.join(root, file))
     return l
-
 
 def move_file(src, dest_dir):
     # Get the base filename
@@ -83,12 +86,23 @@ def command_make(specific_map=None):
         if specific_map and map_name != specific_map:
             continue
 
-        setup_compile_args(map_name)
+        if not specific_map:
+            if "skip" in f:
+                continue
+            if "archive" in f:
+                continue
+
+        setup_compile_args(f)
         print(f"- {f}")
         devnull = open(os.devnull, 'w')
-        subprocess.call(f"qbsp {LQ_BSP_FLAGS} {f}", stdout=devnull)
-        subprocess.call(f"vis {LQ_VIS_FLAGS} {f}", stdout=devnull)
-        subprocess.call(f"light {LQ_LIG_FLAGS} {f}", stdout=devnull)
+        print(f"{LQ_BSP_PATH} {LQ_BSP_FLAGS} {map_name}.map")
+        print(f"{LQ_VIS_PATH} {LQ_VIS_FLAGS} {map_name}.bsp")
+        print(f"{LQ_LIG_PATH} {LQ_LIG_FLAGS} {map_name}.bsp")
+        print(os.path.dirname(f))
+        print()
+        subprocess.call(f"{LQ_BSP_PATH} {LQ_BSP_FLAGS} {map_name}.map", stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call(f"{LQ_VIS_PATH} {LQ_VIS_FLAGS} {map_name}.bsp", stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call(f"{LQ_LIG_PATH} {LQ_LIG_FLAGS} {map_name}.bsp", stdout=devnull, cwd=os.path.dirname(f))
 
     # Move bsp and lit files into the /lq1/maps directory
     print("Moving files...")
@@ -101,7 +115,7 @@ def command_make(specific_map=None):
 # Command single
 def command_single(map_name):
     if not map_name:
-        print("Map name needed, e.g. 'e1/e1m1'")
+        print("Map name needed, e.g. 'e1m1'")
         return
     command_make(map_name)
 
@@ -162,6 +176,4 @@ if __name__ == "__main__":
 
 # If being run from build.py
 if __name__ == "__build__":
-    os.chdir('./lq1/maps')
     command_make()
-    os.chdir('../../')
