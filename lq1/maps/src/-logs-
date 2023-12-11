@@ -7,7 +7,7 @@ gamedir: /home/lavender/LQ_Dev/LibreQuake/lq1/
 SetQ2dirFromPath: failed to find  in '/home/lavender/LQ_Dev/LibreQuake/lq1/maps/src/misc/based.bsp'--- ConvertTextures ---
 Loaded extended texinfo flags from misc/based.texinfo
 --- LoadEntities ---
-205 entities read, 72 are lights.
+206 entities read, 73 are lights.
 --- OptionsSummary ---
     "dirt" was set to "1" from commandline
     "minlight_dirt" was set to "1" from map
@@ -23,14 +23,14 @@ Embree_TraceInit:
 	2667 solid faces
 	0 filtered faces
 	0 shadow-casting skip faces
-SetupLights: 72 initial lights
+SetupLights: 73 initial lights
 Creating surface lights for texture "*slime2" from template at (328 -1000 -120)
-SetupLights: 131 after surface lights
-SetupLights: 131 after jittering
+SetupLights: 132 after surface lights
+SetupLights: 132 after jittering
 using 65 suns for _sunlight2. total light: 50.000000 color: 255.000000 255.000000 255.000000
 --- EstimateLightVisibility ---
 0....1....2....3....4....5....6....7....8....9....
-Final count: 131 lights, 66 suns in use.
+Final count: 132 lights, 66 suns in use.
 Colored light entities/settings detected: .lit output enabled.
 --- SetupDirt ---
        48 dirtmap vectors
@@ -43,14 +43,14 @@ Colored light entities/settings detected: .lit output enabled.
 Indirect lights: 2666 bounce lights, 0 surface lights (0 light points) in use.
 Lighting Completed.
 
-lightdatasize: 143768
+lightdatasize: 143464
 Writing misc/based.lit
 0 switchable light styles (32 max)
 Writing misc/based.bsp as BSP version 29
-0.443 seconds elapsed
+0.462 seconds elapsed
 
 stats:
-1.937252 lights tested, 1.493365 hits per sample point
+1.957341 lights tested, 1.513325 hits per sample point
 0.000000 surface lights tested, 0.000000 hits per sample point
-45.598139 bounce lights tested, 28.564947 hits per sample point
+46.261305 bounce lights tested, 28.963876 hits per sample point
 0 empty lightmaps
