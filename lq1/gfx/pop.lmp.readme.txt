@@ -1,0 +1,2 @@
+pop.lmp is under the gpl2 licence
+
