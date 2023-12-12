@@ -1,1 +1,0 @@
-/home/lavender/LQ_Dev/LibreQuake/CREDITS.md
