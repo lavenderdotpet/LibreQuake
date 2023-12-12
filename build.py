@@ -97,13 +97,13 @@ def build_release(name, data):
     # Build and copy pak0
     pak0_exists = len(os.listdir('working/pak0')) > 0
     if pak0_exists:
-        subprocess.call('qpakman * -o ../PAK0.PAK', cwd='working/pak0')
+        subprocess.call(['qpakman', '*', '-o', '../PAK0.PAK'], cwd='working/pak0')
         shutil.copy('working/PAK0.PAK', os.path.join('releases', name, base_dir, 'PAK0.PAK'))
 
     # Build and copy pak1
     pak1_exists = len(os.listdir('working/pak1')) > 0
     if pak1_exists:
-        subprocess.call('qpakman * -o ../PAK1.PAK', cwd='working/pak1')
+        subprocess.call(['qpakman', '*', '-o', '../PAK1.PAK'], cwd='working/pak1')
         shutil.copy('working/PAK1.PAK', os.path.join('releases', name, base_dir, 'PAK1.PAK'))
 
 # Clears the working directory and sets up empty directories
