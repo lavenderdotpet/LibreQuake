@@ -1,2 +1,2 @@
 pop.lmp is under the gpl2 licence
-
+check docs/misc-docs/pop.lmp.md for more info
