@@ -15,7 +15,7 @@ e0m7:
 e0m8:
 e0m9:
 
-Base Theme (LQ_Tech.wad):
+Tech Base Theme:
 e1m1:
 e2m1:
 e3m1:
@@ -24,15 +24,15 @@ e5m1:
 
 Medieval Theme:
 e1m2: The Feudal Anomaly by ZungryWare; NG, SSG, GL*
-e1m3: Nameless Marionettes by ZungryWare; GL, SSG, RL** (First Appearance of Zombies, First level with Ring of Shadows. Rocket Launcher is very difficult to find.)
-e1m4: Mark of the Beast by ZungryWare; SNG, GL (First Appearance of Fiends.)
+e1m3: Rogue's Passage by ZungryWare; SSG, NG, GL, SNG* (First Appearance of Zombies and Fiends.)
+e1m4: Gloomlands by ZungryWare; SSG, SNG, GL
 e1m5:
-e1m6: Liturgy of Blood by ZungryWare; RL, SSG, GL
+e1m6: Liturgy of Blood by ZungryWare; RL, SSG, SNG
 e1m7 (boss level):
 e1m8 (secret, low gravity):
 
 Mayan Theme:
-e2m2: TBD by Squid V; SSG, NG, GL
+e2m2: Dirge of the Depths by Squid V; SSG, NG, GL
 e2m3: Corpse army by Nolcoz; SSG, NG, GL, RL*,LG*
 e2m4: Earth's Reclaiming by Nolcoz; SSG, NG, GL, SNG, RL, LG*
 e2m5: Echoes Of Decay by Nolcoz; SSG, NG, GL, SNG, RL, LG (Exit to secret level.)
@@ -54,7 +54,7 @@ e4m4: Steel Forest by Nolcoz; SSG, NG, GL, SNG, RL*
 e4m5: Copper citadel by Nolcoz; SSG, NG, SNG, GL, RL
 e4m6:
 e4m7 (final level):
-e4m8 (secret): Perdition Gateway by ZungryWare; NG, SSG, LG
+e4m8 (secret):
 
 Void Theme?:
 e5m2:
@@ -69,14 +69,14 @@ lqdm1: The Wicked Night by ZungryWare; Base Themed
 lqdm2: Burning Daylight by ZungryWare; Metal Themed
 lqdm3: Torture Pit by ZungryWare; Medieval/Dungeon Themed
 lqdm4: Psychofuge by ZungryWare; Metal Themed
-lqdm5: Hellion by ZungryWare; Base Themed
-lqdm6: The Hinterlands by ZungryWare; Medieval Themed
+lqdm5: Lost Halls by ZungryWare; Mayan Themed
+lqdm6: Ghost Quarter by ZungryWare; Medieval Themed
 lqdm7: Boomstick Basement by ZungryWare; Base/Brick Themed
 lqdm8: Alichar Sector by ZungryWare; Base Themed
 lqdm9: The Outlands by ZungryWare; Mayan/Base Themed
 lqdm10: Lucifer's Gambit by ZungryWare; Lucifer Themed
 lqdm11: Local Hostilities by ZungryWare; Base Themed
-lqdm12: Javelin by ZungryWare; Mayan Themed
+lqdm12: Javelin by ZungryWare; Greek Themed
 lqdm13: Death Provides No Return by ZungryWare; Metal/Void Themed
 
 Things the levels must introduce to the player:
