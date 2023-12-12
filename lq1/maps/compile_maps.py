@@ -95,9 +95,9 @@ def command_make(specific_map=None):
         setup_compile_args(f)
         print(f"- {f}")
         devnull = open(os.devnull, 'w')
-        subprocess.call(f"{LQ_BSP_PATH} {LQ_BSP_FLAGS} {map_name}.map", stdout=devnull, cwd=os.path.dirname(f))
-        subprocess.call(f"{LQ_VIS_PATH} {LQ_VIS_FLAGS} {map_name}.bsp", stdout=devnull, cwd=os.path.dirname(f))
-        subprocess.call(f"{LQ_LIG_PATH} {LQ_LIG_FLAGS} {map_name}.bsp", stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call([LQ_BSP_PATH, LQ_BSP_FLAGS, f"{map_name}.map"], stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call([LQ_VIS_PATH, LQ_VIS_FLAGS, f"{map_name}.bsp"], stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call([LQ_LIG_PATH, LQ_LIG_FLAGS, f"{map_name}.bsp"], stdout=devnull, cwd=os.path.dirname(f))
 
     # Move bsp and lit files into the /lq1/maps directory
     print("Moving files...")
