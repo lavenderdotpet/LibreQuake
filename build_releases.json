@@ -1,0 +1,58 @@
+{
+    "full": {
+        "is_full_release": true,
+        "base_dir": "id1",
+        "components": [
+            "docs",
+            "root",
+            "config",
+            "sounds",
+            "music",
+            "models",
+            "brush_models",
+            "maps_e0",
+            "maps",
+            "maps_dm",
+            "gfx"
+        ]
+    },
+    "mod": {
+        "is_full_release": false,
+        "base_dir": "lq1",
+        "components": [
+            "docs",
+            "root",
+            "sounds",
+            "music",
+            "models",
+            "brush_models",
+            "maps_e0",
+            "maps",
+            "maps_dm",
+            "gfx"
+        ]
+    },
+    "mod_lite": {
+        "is_full_release": false,
+        "base_dir": "lq1",
+        "components": [
+            "docs",
+            "root",
+            "sounds",
+            "music",
+            "models",
+            "brush_models",
+            "maps_e0",
+            "gfx"
+        ]
+    },
+    "dev": {
+        "is_full_release": false,
+        "base_dir": "",
+        "components": [
+            "docs",
+            "texture_wads",
+            "mapsrc"
+        ]
+    }
+}
