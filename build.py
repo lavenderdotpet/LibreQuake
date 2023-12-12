@@ -10,12 +10,14 @@
 # 'releases' directory. Before doing this, the script also compiles all of the
 # wad and bsp/lit files so they can be copied over.
 
+import sys
 import subprocess
 import os
 import json
 import shutil
 import warnings
 import runpy
+import glob
 
 # Builds a single file
 def build_file(source_path, destination_path, source_if_missing):
@@ -97,13 +99,26 @@ def build_release(name, data):
     # Build and copy pak0
     pak0_exists = len(os.listdir('working/pak0')) > 0
     if pak0_exists:
-        subprocess.call(['qpakman', '*', '-o', '../PAK0.PAK'], cwd='working/pak0')
+        os.chdir('working/pak0')
+        filepaths = glob.glob('*')
+        command = ['qpakman']
+        command.extend(filepaths)
+        command.extend(['-o', '../PAK0.PAK'])
+        subprocess.call(command)
+        os.chdir('../../')
         shutil.copy('working/PAK0.PAK', os.path.join('releases', name, base_dir, 'PAK0.PAK'))
+
 
     # Build and copy pak1
     pak1_exists = len(os.listdir('working/pak1')) > 0
     if pak1_exists:
-        subprocess.call(['qpakman', '*', '-o', '../PAK1.PAK'], cwd='working/pak1')
+        os.chdir('working/pak1')
+        filepaths = glob.glob('*')
+        command = ['qpakman']
+        command.extend(filepaths)
+        command.extend(['-o', '../PAK1.PAK'])
+        subprocess.call(command)
+        os.chdir('../../')
         shutil.copy('working/PAK1.PAK', os.path.join('releases', name, base_dir, 'PAK1.PAK'))
 
 # Clears the working directory and sets up empty directories
@@ -130,9 +145,14 @@ def compile_progs():
 
 def main():
     # First, compile wads
-    compile_wad()
-    compile_bsp()
-    compile_progs()
+    if (len(sys.argv) > 1 and (sys.argv[1] == '-n' or sys.argv[1] == '--nocompile')):
+        # Skip compile
+        pass
+    else:
+        # Compile
+        compile_wad()
+        compile_bsp()
+        compile_progs()
 
     # Delete existing releases
     shutil.rmtree('./releases', ignore_errors=True)
