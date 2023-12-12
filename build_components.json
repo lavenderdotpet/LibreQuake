@@ -6,12 +6,17 @@
         "files_pak1": [],
         "files_unpacked": [
             "README.md",
+            "docs/README",
             "docs/COPYING",
             "docs/CREDITS",
             "docs/freedoom-docs/COPYING.adoc",
             "docs/freedoom-docs/CREDITS",
             "docs/freedoom-docs/CREDITS-MUSIC",
-            "docs/freedoom-docs/README.adoc"
+            "docs/freedoom-docs/README.adoc",
+            "docs/misc-docs/COPYING",
+            "docs/misc-docs/LibreProgsDeluxe.md",
+            "docs/misc-docs/pop.lmp.md"
+
         ]
     },
     "root": {
