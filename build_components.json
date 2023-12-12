@@ -1,4 +1,19 @@
 {
+    "docs": {
+        "base_dir": "",
+        "source_if_missing": "",
+        "files_pak0": [],
+        "files_pak1": [],
+        "files_unpacked": [
+            "README.md",
+            "docs/COPYING",
+            "docs/CREDITS",
+            "docs/freedoom-docs/COPYING.adoc",
+            "docs/freedoom-docs/CREDITS",
+            "docs/freedoom-docs/CREDITS-MUSIC",
+            "docs/freedoom-docs/README.adoc"
+        ]
+    },
     "root": {
         "base_dir": "lq1",
         "source_if_missing": "",

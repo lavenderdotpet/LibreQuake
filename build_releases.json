@@ -3,6 +3,7 @@
         "is_full_release": true,
         "base_dir": "id1",
         "components": [
+            "docs",
             "root",
             "config",
             "sounds",
@@ -19,6 +20,7 @@
         "is_full_release": false,
         "base_dir": "lq1",
         "components": [
+            "docs",
             "root",
             "sounds",
             "music",
@@ -34,6 +36,7 @@
         "is_full_release": false,
         "base_dir": "lq1",
         "components": [
+            "docs",
             "root",
             "sounds",
             "music",
@@ -47,6 +50,7 @@
         "is_full_release": false,
         "base_dir": "",
         "components": [
+            "docs",
             "texture_wads",
             "mapsrc"
         ]
