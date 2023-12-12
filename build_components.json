@@ -5,8 +5,8 @@
         "files_pak0": [],
         "files_pak1": [],
         "files_unpacked": [
-            "README.md",
-            "docs/README",
+            ["README.md", "docs/README.md"],
+            "docs/README-IMPORTANT-LICENCE-INFO",
             "docs/COPYING",
             "docs/CREDITS",
             "docs/freedoom-docs/COPYING.adoc",
