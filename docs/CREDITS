@@ -1,6 +1,5 @@
 # Credits
 
-```markdown
 # credit template
 N: RealName
 S: ScreenName
@@ -11,7 +10,6 @@ E: Email
 W: Website
 C: Contributions
 L: License [bsd3(same as lq) or cc0]
-```
 
 S: Rhoq
 D: rhoq
