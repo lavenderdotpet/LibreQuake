@@ -1,0 +1,6 @@
+pop.lmp is under the gpl2 licence
+<<<<<<< HEAD
+check docs/misc-docs/pop.lmp.md for more info
+=======
+
+>>>>>>> 27f758709e11ec19e57c8662ba218c882076ce66
