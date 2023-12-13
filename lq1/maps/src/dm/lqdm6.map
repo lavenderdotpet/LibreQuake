@@ -6113,8 +6113,8 @@
 // entity 82
 {
 "classname" "trigger_relay"
-"origin" "728 -200 392"
-"delay" "160"
+"origin" "728 -216 392"
+"delay" "120"
 "killtarget" "divider_wall"
 "targetname" "unlock_relay"
 }
