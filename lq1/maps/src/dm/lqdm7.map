@@ -9,6 +9,7 @@
 "sounds" "7"
 "_bouncestyled" "1"
 "_credits" "ZungryWare"
+"worldtype" "2"
 // brush 0
 {
 ( 0 192 -64 ) ( 0 -192 -64 ) ( 0 -192 -96 ) med_ebrick2 [ 0 -1 0 0 ] [ -0 -0 -1 0 ] 0 1 1

@@ -133,7 +133,9 @@ def clear_working():
     os.makedirs(f'working/unpacked', exist_ok=True)
 
 def compile_wad():
-    subprocess.call(['sh', 'compilewads.sh'], cwd='texture-wads')
+    os.chdir('texture-wads')
+    runpy.run_path('./compile_wads.py', run_name="__build__")
+    os.chdir('../')
 
 def compile_bsp():
     os.chdir('./lq1/maps')
