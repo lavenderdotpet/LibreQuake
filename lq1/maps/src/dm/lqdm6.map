@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_tech.wad"
+"wad" "D:/dev/LibreQuake/texture-wads/lq_medieval.wad;D:/dev/LibreQuake/texture-wads/lq_wood.wad;D:/dev/LibreQuake/texture-wads/lq_liquidsky.wad;D:/dev/LibreQuake/texture-wads/lq_utility.wad;D:/dev/LibreQuake/texture-wads/lq_tech.wad"
 "message" "Ghost Quarter"
 "_sun_mangle" "30 -60 0"
 "_sunlight" "150"
@@ -2998,7 +2998,7 @@
 // brush 330
 {
 ( 384 888 576 ) ( 384 872 576 ) ( 384 872 384 ) med_dr1b_blu [ -1.2246467991473532e-16 1 0 0 ] [ 0 0 -1 0 ] 180 1 1
-( 512 872 576 ) ( 512 872 384 ) ( 384 872 384 ) med_dr1b_blu [ 1 1.2246467991473532e-16 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 512 872 576 ) ( 512 872 384 ) ( 384 872 384 ) med_dr1a_blu [ 1 1.2246467991473532e-16 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 512 872 384 ) ( 512 888 384 ) ( 384 888 384 ) med_dr1b_blu [ 1 1.2246467991473532e-16 0 -64 ] [ 1.2246467991473532e-16 -1 0 64 ] 180 1 1
 ( 512 872 576 ) ( 384 872 576 ) ( 384 888 576 ) med_dr1b_blu [ -1 -1.2246467991473532e-16 0 64 ] [ 1.2246467991473532e-16 -1 0 64 ] 180 1 1
 ( 512 888 576 ) ( 384 888 576 ) ( 384 888 384 ) med_dr1b_blu [ 1 1.2246467991473532e-16 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -3560,6 +3560,14 @@
 ( 704 768 856 ) ( 696 768 704 ) ( 704 768 704 ) clip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 704 768 856 ) ( 704 736 704 ) ( 704 736 856 ) clip [ 0 1 0 -32 ] [ 0 0 -1 0 ] 0 1 1
 }
+// brush 393
+{
+( 32 -800 544 ) ( 0 -816 480 ) ( 32 -800 480 ) clip [ -0.894427190999916 -0.447213595499958 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 0 -816 480 ) ( 32 -816 544 ) ( 32 -816 480 ) clip [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 32 -800 480 ) ( 0 -816 480 ) ( 32 -816 480 ) clip [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -800 544 ) ( 32 -816 544 ) ( 0 -816 544 ) clip [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -800 544 ) ( 32 -816 480 ) ( 32 -816 544 ) clip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
 }
 // entity 1
 {
@@ -3754,7 +3762,7 @@
 }
 // entity 22
 {
-"classname" "weapon_rocketlauncher"
+"classname" "weapon_supernailgun"
 "origin" "-96 -64 488"
 }
 // entity 23
@@ -5689,7 +5697,7 @@
 // entity 79
 {
 "classname" "func_door"
-"targetname" "unlock_4"
+"targetname" "unlock_3"
 "wait" "-1"
 "lip" "-96"
 "angles" "90 0 0"
@@ -8731,7 +8739,7 @@
 {
 "classname" "item_health"
 "origin" "864 -672 384"
-"spawnflags" "1"
+"spawnflags" "0"
 }
 // entity 151
 {
@@ -9892,7 +9900,7 @@
 // entity 172
 {
 "classname" "func_door"
-"targetname" "unlock_3"
+"targetname" "unlock_4"
 "wait" "-1"
 "lip" "-304"
 "angles" "90 0 0"
@@ -9965,7 +9973,7 @@
 }
 // entity 173
 {
-"classname" "weapon_supernailgun"
+"classname" "weapon_rocketlauncher"
 "origin" "-224 992 504"
 }
 // entity 174
@@ -10327,7 +10335,7 @@
 ( -48 -920 672 ) ( -176 -920 480 ) ( -176 -920 672 ) med_dr1b_blu [ 1 -1.2246467991473532e-16 0 48 ] [ 0 0 -1 96 ] 0 1 1
 ( -48 -904 480 ) ( -176 -920 480 ) ( -48 -920 480 ) med_dr1b_blu [ 1 -1.2246467991473532e-16 0 112 ] [ 1.2246467991473532e-16 1 0 32 ] 180 1 1
 ( -48 -904 672 ) ( -176 -920 672 ) ( -176 -904 672 ) med_dr1b_blu [ -1 1.2246467991473532e-16 0 -112 ] [ 1.2246467991473532e-16 1 0 32 ] 180 1 1
-( -48 -904 672 ) ( -176 -904 480 ) ( -48 -904 480 ) med_dr1b_blu [ 1 -1.2246467991473532e-16 0 48 ] [ 0 0 -1 96 ] 0 1 1
+( -48 -904 672 ) ( -176 -904 480 ) ( -48 -904 480 ) med_dr1a_blu [ 1 -1.2246467991473532e-16 0 48 ] [ 0 0 -1 96 ] 0 1 1
 ( -48 -904 672 ) ( -48 -920 480 ) ( -48 -920 672 ) med_dr1b_blu [ 1.2246467991473532e-16 1 0 32 ] [ 0 0 -1 96 ] 0 1 1
 }
 }
