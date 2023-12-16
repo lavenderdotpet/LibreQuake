@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"wad" "D:/dev/LibreQuake/texture-wads/lq_liquidsky.wad;D:/dev/LibreQuake/texture-wads/lq_medieval.wad;D:/dev/LibreQuake/texture-wads/lq_metal.wad;D:/dev/LibreQuake/texture-wads/lq_utility.wad;D:/dev/LibreQuake/texture-wads/lq_terra.wad;D:/dev/LibreQuake/texture-wads/lq_wood.wad"
+"wad" "../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_wood.wad"
 "message" "Solstice"
 "_sun_mangle" "136  -73 0"
 "_sunlight" "120"
