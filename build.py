@@ -165,5 +165,8 @@ def main():
         for key, value in releases.items():
             build_release(key, value)
 
+    # Confirmation
+    print("Build complete!")
+
 if __name__ == "__main__":
     main()
