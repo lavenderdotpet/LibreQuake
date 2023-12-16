@@ -9,6 +9,7 @@
 "worldtype" "0"
 "sounds" "8"
 "_credits" "ZungryWare"
+"_tb_mod" "lq1"
 // brush 0
 {
 ( -224 128 0 ) ( -224 -128 0 ) ( -224 -128 -64 ) floor_grey_c [ 0 -1 0 0 ] [ 0 -0 -1 0 ] 0 1 1
@@ -4629,95 +4630,89 @@
 }
 // entity 161
 {
-"classname" "item_health"
-"origin" "528 -208 192"
-"spawnflags" "1"
-}
-// entity 162
-{
 "classname" "weapon_supershotgun"
 "origin" "608 -288 -0"
 }
-// entity 163
+// entity 162
 {
 "classname" "item_cells"
 "origin" "336 16 -0"
 }
-// entity 164
+// entity 163
 {
 "classname" "item_spikes"
 "origin" "400 16 -0"
 }
-// entity 165
+// entity 164
 {
 "classname" "item_shells"
 "origin" "-304 -48 -0"
 }
-// entity 166
+// entity 165
 {
 "classname" "item_shells"
 "origin" "-352 -48 -0"
 }
-// entity 167
+// entity 166
 {
 "classname" "item_shells"
 "origin" "-48 400 384"
 }
-// entity 168
+// entity 167
 {
 "classname" "item_spikes"
 "origin" "16 400 384"
 }
-// entity 169
+// entity 168
 {
 "classname" "item_armor2"
 "origin" "-640 -736 128"
 }
-// entity 170
+// entity 169
 {
 "classname" "item_cells"
 "origin" "304 624 224"
 }
-// entity 171
+// entity 170
 {
 "classname" "item_cells"
 "origin" "304 576 224"
 }
-// entity 172
+// entity 171
 {
 "classname" "item_cells"
 "origin" "304 528 224"
 }
-// entity 173
+// entity 172
 {
 "classname" "item_cells"
 "origin" "80 400 384"
 }
-// entity 174
+// entity 173
 {
 "classname" "item_health"
 "origin" "-112 176 32"
 "spawnflags" "1"
 }
-// entity 175
+// entity 174
 {
 "classname" "item_health"
 "origin" "80 176 32"
 "spawnflags" "1"
 }
-// entity 176
+// entity 175
 {
 "classname" "item_health"
 "origin" "80 -208 32"
 "spawnflags" "1"
 }
-// entity 177
+// entity 176
 {
 "classname" "item_health"
 "origin" "-112 -208 32"
 "spawnflags" "1"
 }
-// entity 178
+// entity 177
 {
 "classname" "trigger_once"
 "target" "key_relay"
@@ -4732,76 +4727,70 @@
 ( 1024 256 0 ) ( 1024 0 0 ) ( 1024 0 256 ) trigger [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 179
+// entity 178
 {
 "classname" "info_player_deathmatch"
 "origin" "-80 304 408"
 }
-// entity 180
+// entity 179
 {
 "classname" "info_player_deathmatch"
 "origin" "-624 368 216"
 "angle" "90"
 }
-// entity 181
-{
-"classname" "item_health"
-"origin" "528 -160 192"
-"spawnflags" "1"
-}
-// entity 182
+// entity 180
 {
 "classname" "item_armor1"
 "origin" "-480 352 384"
 }
-// entity 183
+// entity 181
 {
 "classname" "weapon_nailgun"
 "origin" "-32 -928 -0"
 }
-// entity 184
+// entity 182
 {
 "classname" "trigger_relay"
 "origin" "-584 -216 200"
 "targetname" "enter1"
 "target" "gate1"
 }
-// entity 185
+// entity 183
 {
 "classname" "trigger_relay"
 "origin" "-584 -216 184"
 "targetname" "enter1"
 "target" "enter_counter"
 }
-// entity 186
+// entity 184
 {
 "classname" "trigger_relay"
 "origin" "520 600 488"
 "targetname" "enter3"
 "target" "enter_counter"
 }
-// entity 187
+// entity 185
 {
 "classname" "trigger_relay"
 "origin" "520 600 504"
 "targetname" "enter3"
 "target" "gate3"
 }
-// entity 188
+// entity 186
 {
 "classname" "trigger_relay"
 "origin" "664 -216 232"
 "targetname" "enter2"
 "target" "enter_counter"
 }
-// entity 189
+// entity 187
 {
 "classname" "trigger_relay"
 "origin" "664 -216 248"
 "targetname" "enter2"
 "target" "gate2"
 }
-// entity 190
+// entity 188
 {
 "classname" "trigger_counter"
 "origin" "72 -88 424"
@@ -4810,7 +4799,7 @@
 "spawnflags" "1"
 "killtarget" "superkey"
 }
-// entity 191
+// entity 189
 {
 "classname" "trigger_once"
 "target" "enter_counter"
@@ -4824,7 +4813,7 @@
 ( -208 -672 0 ) ( -208 -688 0 ) ( -208 -688 128 ) trigger [ 0 1 0 16 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 192
+// entity 190
 {
 "classname" "trigger_once"
 "target" "enter_counter"
@@ -4838,7 +4827,7 @@
 ( 96 -480 192 ) ( 96 -496 192 ) ( 96 -496 320 ) trigger [ 0 1 0 -48 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 193
+// entity 191
 {
 "classname" "trigger_once"
 "target" "enter_counter"
@@ -4852,7 +4841,7 @@
 ( -640 -880 128 ) ( -640 -896 128 ) ( -640 -896 256 ) trigger [ 0 1 0 32 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 194
+// entity 192
 {
 "classname" "func_door"
 "wait" "-1"
@@ -4871,7 +4860,7 @@
 ( 128 128 -352 ) ( 128 -64 -576 ) ( 128 -64 -352 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 -32 ] 0 1 1
 }
 }
-// entity 195
+// entity 193
 {
 "classname" "trigger_relay"
 "origin" "120 -88 472"
@@ -4879,7 +4868,7 @@
 "target" "key_release1"
 "delay" "0"
 }
-// entity 196
+// entity 194
 {
 "classname" "func_detail_illusionary"
 // brush 0
@@ -4892,7 +4881,7 @@
 ( 128 128 -384 ) ( 128 -64 -608 ) ( 128 -64 -384 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 -64 ] 0 1 1
 }
 }
-// entity 197
+// entity 195
 {
 "classname" "func_door"
 "wait" "-1"
@@ -4911,7 +4900,7 @@
 ( 128 128 -256 ) ( 128 -64 -480 ) ( 128 -64 -256 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 -64 ] 0 1 1
 }
 }
-// entity 198
+// entity 196
 {
 "classname" "item_key1"
 "origin" "32 16 760"
@@ -4919,7 +4908,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 199
+// entity 197
 {
 "classname" "trigger_relay"
 "origin" "104 -88 472"
@@ -4927,7 +4916,7 @@
 "target" "key_release2"
 "delay" "90"
 }
-// entity 200
+// entity 198
 {
 "classname" "func_door"
 "wait" "-1"
@@ -4946,7 +4935,7 @@
 ( 128 128 -160 ) ( 128 -64 -384 ) ( 128 -64 -160 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 32 ] 0 1 1
 }
 }
-// entity 201
+// entity 199
 {
 "classname" "item_key1"
 "origin" "-32 16 856"
@@ -4954,7 +4943,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 202
+// entity 200
 {
 "classname" "func_door"
 "wait" "-1"
@@ -4973,7 +4962,7 @@
 ( 128 128 -64 ) ( 128 -64 -288 ) ( 128 -64 -64 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 203
+// entity 201
 {
 "classname" "item_key1"
 "origin" "64 16 952"
@@ -4981,7 +4970,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 204
+// entity 202
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5000,7 +4989,7 @@
 ( 128 128 32 ) ( 128 -64 -192 ) ( 128 -64 32 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 96 ] 0 1 1
 }
 }
-// entity 205
+// entity 203
 {
 "classname" "item_key1"
 "origin" "-64 16 1048"
@@ -5008,7 +4997,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 206
+// entity 204
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5027,7 +5016,7 @@
 ( 128 128 128 ) ( 128 -64 -96 ) ( 128 -64 128 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 64 ] 0 1 1
 }
 }
-// entity 207
+// entity 205
 {
 "classname" "item_key1"
 "origin" "96 16 1144"
@@ -5035,7 +5024,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 208
+// entity 206
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5054,7 +5043,7 @@
 ( 128 128 224 ) ( 128 -64 0 ) ( 128 -64 224 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 32 ] 0 1 1
 }
 }
-// entity 209
+// entity 207
 {
 "classname" "item_key1"
 "origin" "-96 16 1240"
@@ -5062,7 +5051,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 210
+// entity 208
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5081,7 +5070,7 @@
 ( 128 128 320 ) ( 128 -64 96 ) ( 128 -64 320 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 211
+// entity 209
 {
 "classname" "item_key1"
 "origin" "-16 16 1336"
@@ -5089,7 +5078,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 212
+// entity 210
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5108,7 +5097,7 @@
 ( 128 128 416 ) ( 128 -64 192 ) ( 128 -64 416 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 96 ] 0 1 1
 }
 }
-// entity 213
+// entity 211
 {
 "classname" "item_key1"
 "origin" "16 16 1432"
@@ -5116,7 +5105,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 214
+// entity 212
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5135,7 +5124,7 @@
 ( 128 128 512 ) ( 128 -64 288 ) ( 128 -64 512 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 64 ] 0 1 1
 }
 }
-// entity 215
+// entity 213
 {
 "classname" "item_key1"
 "origin" "-48 16 1528"
@@ -5143,7 +5132,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 216
+// entity 214
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5162,7 +5151,7 @@
 ( 128 128 608 ) ( 128 -64 384 ) ( 128 -64 608 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 32 ] 0 1 1
 }
 }
-// entity 217
+// entity 215
 {
 "classname" "item_key1"
 "origin" "48 16 1624"
@@ -5170,7 +5159,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 218
+// entity 216
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5189,7 +5178,7 @@
 ( 128 128 704 ) ( 128 -64 480 ) ( 128 -64 704 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 219
+// entity 217
 {
 "classname" "item_key1"
 "origin" "-80 16 1720"
@@ -5197,7 +5186,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 220
+// entity 218
 {
 "classname" "trigger_relay"
 "origin" "88 -88 472"
@@ -5205,7 +5194,7 @@
 "target" "key_release3"
 "delay" "180"
 }
-// entity 221
+// entity 219
 {
 "classname" "trigger_relay"
 "origin" "72 -88 472"
@@ -5213,7 +5202,7 @@
 "target" "key_release4"
 "delay" "270"
 }
-// entity 222
+// entity 220
 {
 "classname" "trigger_relay"
 "origin" "56 -88 472"
@@ -5221,7 +5210,7 @@
 "target" "key_release5"
 "delay" "360"
 }
-// entity 223
+// entity 221
 {
 "classname" "trigger_relay"
 "origin" "40 -88 472"
@@ -5229,7 +5218,7 @@
 "target" "key_release6"
 "delay" "450"
 }
-// entity 224
+// entity 222
 {
 "classname" "trigger_relay"
 "origin" "24 -88 472"
@@ -5237,7 +5226,7 @@
 "target" "key_release7"
 "delay" "540"
 }
-// entity 225
+// entity 223
 {
 "classname" "trigger_relay"
 "origin" "8 -88 472"
@@ -5245,7 +5234,7 @@
 "target" "key_release8"
 "delay" "630"
 }
-// entity 226
+// entity 224
 {
 "classname" "trigger_relay"
 "origin" "-8 -88 472"
@@ -5253,7 +5242,7 @@
 "target" "key_release9"
 "delay" "720"
 }
-// entity 227
+// entity 225
 {
 "classname" "trigger_relay"
 "origin" "-24 -88 472"
@@ -5261,7 +5250,7 @@
 "target" "key_release10"
 "delay" "810"
 }
-// entity 228
+// entity 226
 {
 "classname" "trigger_relay"
 "origin" "-40 -88 472"
@@ -5269,7 +5258,7 @@
 "target" "key_release11"
 "delay" "900"
 }
-// entity 229
+// entity 227
 {
 "classname" "trigger_relay"
 "origin" "-56 -88 472"
@@ -5277,7 +5266,7 @@
 "target" "key_release12"
 "delay" "990"
 }
-// entity 230
+// entity 228
 {
 "classname" "item_key1"
 "origin" "80 16 1816"
@@ -5285,7 +5274,7 @@
 "delay" "90"
 "use" "SUB_regen"
 }
-// entity 231
+// entity 229
 {
 "classname" "func_door"
 "wait" "-1"
@@ -5304,7 +5293,7 @@
 ( 128 128 800 ) ( 128 -64 576 ) ( 128 -64 800 ) floor_grey_c [ 0 1 0 0 ] [ 0 0 -1 96 ] 0 1 1
 }
 }
-// entity 232
+// entity 230
 {
 "classname" "trigger_relay"
 "origin" "-72 -88 472"
