@@ -10930,10 +10930,10 @@
 "classname" "func_wall"
 // brush 0
 {
-( 512 256 64 ) ( 448 256 192 ) ( 256 256 192 ) may_trm1_1 [ -1.0000000000000002 0 0 64 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
 ( 448 64 176 ) ( 448 192 192 ) ( 448 64 192 ) skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 256 64 192 ) ( 448 64 192 ) ( 512 64 64 ) may_trm1_1 [ -1.0000000000000002 0 0 64 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
 ( 448 256 160 ) ( 256 64 160 ) ( 448 64 160 ) skip [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 512 256 64 ) ( 448 256 192 ) ( 256 256 192 ) may_trm1_1 [ -1.0000000000000002 0 0 64 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
 ( 512 64 64 ) ( 448 64 192 ) ( 448 256 192 ) may_trm1_1 [ 0 1 0 8 ] [ 0.447213595499958 0 -0.894427190999916 38.4 ] 0 1 1.118034
 }
 }
@@ -11912,81 +11912,61 @@
 }
 // entity 349
 {
-"classname" "ambient_suck_wind"
+"classname" "ambient_swamp1"
 "origin" "-344 -1368 184"
 }
 // entity 350
 {
-"classname" "ambient_suck_wind"
+"classname" "ambient_swamp1"
 "origin" "-216 -1336 184"
 }
 // entity 351
 {
-"classname" "ambient_suck_wind"
+"classname" "ambient_swamp1"
 "origin" "40 -1304 184"
 }
 // entity 352
 {
-"classname" "ambient_suck_wind"
+"classname" "ambient_swamp1"
 "origin" "168 -1272 184"
 }
 // entity 353
-{
-"classname" "ambient_suck_wind"
-"origin" "168 -1368 280"
-}
-// entity 354
-{
-"classname" "ambient_suck_wind"
-"origin" "40 -1400 280"
-}
-// entity 355
-{
-"classname" "ambient_suck_wind"
-"origin" "-216 -1432 280"
-}
-// entity 356
-{
-"classname" "ambient_suck_wind"
-"origin" "-344 -1464 280"
-}
-// entity 357
 {
 "classname" "misc_fireball"
 "origin" "-40 -888 24"
 "speed" "300"
 }
-// entity 358
+// entity 354
 {
 "classname" "misc_fireball"
 "origin" "248 -696 24"
 "speed" "300"
 }
-// entity 359
+// entity 355
 {
 "classname" "info_intermission"
 "origin" "776 -1368 360"
 "mangle" "10 145 0"
 }
-// entity 360
+// entity 356
 {
 "classname" "info_intermission"
 "origin" "120 -984 424"
 "mangle" "1 35 0"
 }
-// entity 361
+// entity 357
 {
 "classname" "info_intermission"
 "origin" "69.657 89.798 296"
 "mangle" "-12 -130 0"
 }
-// entity 362
+// entity 358
 {
 "classname" "info_intermission"
 "origin" "544 -1000 136"
 "mangle" "0 90 0"
 }
-// entity 363
+// entity 359
 {
 "classname" "func_detail"
 "_phong" "1"
