@@ -520,6 +520,9 @@
         "files_pak0": [
             ["maps/start_e0.bsp", "maps/start.bsp"],
             ["maps/start_e0.lit", "maps/start.lit"],
+            ["maps/b_bh100_lite.bsp", "maps/b_bh100.bsp"],
+            ["maps/b_bh25_lite.bsp", "maps/b_bh25.bsp"],
+            ["maps/b_bh10_lite.bsp", "maps/b_bh10.bsp"],
             "maps/e0m1.bsp",
             "maps/e0m1.lit",
             "maps/e0m2.bsp",
