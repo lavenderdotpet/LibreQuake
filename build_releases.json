@@ -22,6 +22,7 @@
         "components": [
             "docs",
             "root",
+            "config",
             "sounds",
             "music",
             "models",
@@ -38,6 +39,7 @@
         "components": [
             "docs",
             "root",
+            "config",
             "sounds",
             "music",
             "models",
@@ -51,6 +53,7 @@
         "base_dir": "",
         "components": [
             "docs",
+            "config",
             "texture_wads",
             "mapsrc"
         ]
