@@ -43,7 +43,8 @@
             "models",
             "brush_models",
             "maps_e0",
-            "gfx"
+            "gfx",
+            "lite_assets"
         ]
     },
     "dev": {
