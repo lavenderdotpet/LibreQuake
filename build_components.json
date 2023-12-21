@@ -523,6 +523,8 @@
             ["maps/b_bh100_lite.bsp", "maps/b_bh100.bsp"],
             ["maps/b_bh25_lite.bsp", "maps/b_bh25.bsp"],
             ["maps/b_bh10_lite.bsp", "maps/b_bh10.bsp"],
+            ["maps/b_batt1_lite.bsp", "maps/b_batt1.bsp"],
+            ["maps/b_batt0_lite.bsp", "maps/b_batt0.bsp"],
             "maps/e0m1.bsp",
             "maps/e0m1.lit",
             "maps/e0m2.bsp",
