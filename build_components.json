@@ -79,7 +79,7 @@
             "sound/demon/dpain1.wav",
             "sound/demon/idle1.wav",
             "sound/demon/sight2.wav",
-            "sound/dog/dattack.wav",
+            "sound/dog/dattack1.wav",
             "sound/dog/ddeath.wav",
             "sound/dog/dpain1.wav",
             "sound/dog/dsight.wav",
@@ -519,6 +519,8 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
+            ["maps/start.bsp", "maps/dev.bsp"],
+            ["maps/start.lit", "maps/dev.lit"],
             ["maps/start_e0.bsp", "maps/start.bsp"],
             ["maps/start_e0.lit", "maps/start.lit"],
             ["maps/b_bh100_lite.bsp", "maps/b_bh100.bsp"],
