@@ -8,7 +8,6 @@ working/
 releases/
 
 # ignored files
-lq1/maps/+make-make.desktop
 lq1/maps/.bmodelbspbak.7z
 lq1/config.cfg
 lq1/progs.dat
@@ -18,6 +17,7 @@ lq-pl.xcf
 .directory
 .nomedia
 *-crash.txt
+*.desktop
 *.sav
 *.bsp
 *.lit
