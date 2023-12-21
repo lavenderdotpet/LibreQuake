@@ -514,12 +514,27 @@
         ],
         "files_unpacked": []
     },
-    "maps_e0": {
+
+    "lite_assets": {
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
             ["maps/start_e0.bsp", "maps/start.bsp"],
             ["maps/start_e0.lit", "maps/start.lit"],
+            ["maps/b_bh100_lite.bsp", "maps/b_bh100.bsp"],
+            ["maps/b_bh25_lite.bsp", "maps/b_bh25.bsp"],
+            ["maps/b_bh10_lite.bsp", "maps/b_bh10.bsp"],
+            ["maps/b_batt1_lite.bsp", "maps/b_batt1.bsp"],
+            ["maps/b_batt0_lite.bsp", "maps/b_batt0.bsp"]
+        ],
+        "files_pak1": [],
+        "files_unpacked": []
+
+    },
+    "maps_e0": {
+        "base_dir": "lq1",
+        "source_if_missing": "",
+        "files_pak0": [
             "maps/e0m1.bsp",
             "maps/e0m1.lit",
             "maps/e0m2.bsp",

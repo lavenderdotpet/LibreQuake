@@ -1,0 +1,20 @@
+// Game: Quake
+// Format: Valve
+// entity 0
+{
+"classname" "worldspawn"
+"mapversion" "220"
+"wad" "../../../../texture-wads/lq_health_ammo.wad"
+"_credits" "Zungryware and MissLavender"
+"light" "180"
+"_tb_mod" "lq1"
+// brush 0
+{
+( 0 0 0 ) ( 0 1 0 ) ( 0 0 1 ) +0_hp100-winq [ 0 -1 0 -32 ] [ 0 0 -1 0 ] 0 1 1
+( 0 0 0 ) ( 0 0 1 ) ( 1 0 0 ) +0_hp100-winq [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 0 0 0 ) ( 1 0 0 ) ( 0 1 0 ) +0_hp100-winq [ -1 0 0 0 ] [ 0 -1 0 32 ] 0 1 1
+( 32 32 32 ) ( 32 33 32 ) ( 33 32 32 ) +0_hp100-winq [ 1 0 0 0 ] [ 0 -1 0 32 ] 0 1 1
+( 32 32 32 ) ( 33 32 32 ) ( 32 32 33 ) +0_hp100-winq [ -1 0 0 -32 ] [ 0 0 -1 0 ] 0 1 1
+( 32 32 32 ) ( 32 32 33 ) ( 32 33 32 ) +0_hp100-winq [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
+}
