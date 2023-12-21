@@ -4,8 +4,8 @@
 # releases are specified in build_releases.json and they specify which
 # components to use. Components are specified in build_components.json and each
 # one is a big list of files that a release either wants all of or none of. Each
-# component also specifies whether each file should end up in PAK0.PAK,
-# PAK1.PAK, or just in the root folder without being packed. Files are copied to
+# component also specifies whether each file should end up in pak0.pak,
+# pak1.pak, or just in the root folder without being packed. Files are copied to
 # the 'working' directory, compiled, then copied over to a folder in the
 # 'releases' directory. Before doing this, the script also compiles all of the
 # wad and bsp/lit files so they can be copied over.
@@ -103,10 +103,10 @@ def build_release(name, data):
         filepaths = glob.glob('*')
         command = ['qpakman']
         command.extend(filepaths)
-        command.extend(['-o', '../PAK0.PAK'])
+        command.extend(['-o', '../pak0.pak'])
         subprocess.call(command)
         os.chdir('../../')
-        shutil.copy('working/PAK0.PAK', os.path.join('releases', name, base_dir, 'PAK0.PAK'))
+        shutil.copy('working/pak0.pak', os.path.join('releases', name, base_dir, 'pak0.pak'))
 
 
     # Build and copy pak1
@@ -116,10 +116,10 @@ def build_release(name, data):
         filepaths = glob.glob('*')
         command = ['qpakman']
         command.extend(filepaths)
-        command.extend(['-o', '../PAK1.PAK'])
+        command.extend(['-o', '../pak1.pak'])
         subprocess.call(command)
         os.chdir('../../')
-        shutil.copy('working/PAK1.PAK', os.path.join('releases', name, base_dir, 'PAK1.PAK'))
+        shutil.copy('working/pak1.pak', os.path.join('releases', name, base_dir, 'pak1.pak'))
 
 # Clears the working directory and sets up empty directories
 def clear_working():
