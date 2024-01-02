@@ -18,6 +18,7 @@ import shutil
 import warnings
 import runpy
 import glob
+import argparse
 
 # Builds a single file
 def build_file(source_path, destination_path, source_if_missing):
@@ -145,17 +146,12 @@ def compile_bsp():
 def compile_progs():
     subprocess.call(['fteqcc', 'qcsrc/progs.src'])
 
-def main():
-    # First, compile wads
-    if (len(sys.argv) > 1 and (sys.argv[1] == '-n' or sys.argv[1] == '--nocompile')):
-        # Skip compile
-        pass
-    else:
-        # Compile
-        compile_wad()
-        compile_bsp()
-        compile_progs()
+def compile():
+    compile_wad()
+    compile_bsp()
+    compile_progs()
 
+def build():
     # Delete existing releases
     shutil.rmtree('./releases', ignore_errors=True)
 
@@ -164,6 +160,24 @@ def main():
         releases = json.load(json_file)
         for key, value in releases.items():
             build_release(key, value)
+
+def main():
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Example script to demonstrate argparse usage.")
+    parser.add_argument('-c', '--compile-only', action='store_true', help="compile assets without building releases")
+    parser.add_argument('-n', '--no-compile', action='store_true', help="build releases without recompiling")
+    args = parser.parse_args()
+
+    # Execute subprocesses based on args
+    if (args.compile_only and args.no_compile):
+        print("Both --compile-only and --no-compile flags were provided. Doing nothing.")
+    elif (args.compile_only):
+        compile()
+    elif (args.no_compile):
+        build()
+    else:
+        compile()
+        build()
 
     # Confirmation
     print("Build complete!")
