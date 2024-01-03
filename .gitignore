@@ -26,6 +26,7 @@ lq-pl.xcf
 *.lno
 *.texinfo
 *.wad
+*.id1
 *.pts
 *.prt
 *.png~
@@ -40,4 +41,5 @@ lq-pl.xcf
 !lq1/dev.cfg
 !lq1/zoom90.cfg
 !lq1/zoom120.cfg
+
 

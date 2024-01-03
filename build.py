@@ -10,7 +10,6 @@
 # 'releases' directory. Before doing this, the script also compiles all of the
 # wad and bsp/lit files so they can be copied over.
 
-import sys
 import subprocess
 import os
 import json
@@ -18,6 +17,7 @@ import shutil
 import warnings
 import runpy
 import glob
+import argparse
 
 # Builds a single file
 def build_file(source_path, destination_path, source_if_missing):
@@ -145,17 +145,12 @@ def compile_bsp():
 def compile_progs():
     subprocess.call(['fteqcc', 'qcsrc/progs.src'])
 
-def main():
-    # First, compile wads
-    if (len(sys.argv) > 1 and (sys.argv[1] == '-n' or sys.argv[1] == '--nocompile')):
-        # Skip compile
-        pass
-    else:
-        # Compile
-        compile_wad()
-        compile_bsp()
-        compile_progs()
+def compile():
+    compile_wad()
+    compile_bsp()
+    compile_progs()
 
+def build():
     # Delete existing releases
     shutil.rmtree('./releases', ignore_errors=True)
 
@@ -164,6 +159,38 @@ def main():
         releases = json.load(json_file)
         for key, value in releases.items():
             build_release(key, value)
+
+def main():
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(description="Example script to demonstrate argparse usage.")
+    parser.add_argument('-c', '--compile', action='store_true', help="compile assets without building releases")
+    parser.add_argument('-w', '--compile-wads', action='store_true', help="just compile the texture wads")
+    parser.add_argument('-m', '--compile-maps', action='store_true', help="just compile the maps")
+    parser.add_argument('-p', '--compile-progs', action='store_true', help="just compile the progs.dat")
+    parser.add_argument('-b', '--build', action='store_true', help="build releases without recompiling")
+    args = parser.parse_args()
+
+    # Conflicting flags error
+    if args.build and (args.compile or args.compile_wads or args.compile_maps or args.compile_progs):
+        print("Incompatible flags. Use -h for help.")
+    # Compile specific flags
+    elif args.compile_wads or args.compile_maps or args.compile_progs:
+        if args.compile_wads:
+            compile_wad()
+        if args.compile_maps:
+            compile_bsp()
+        if args.compile_progs:
+            compile_progs()
+    # Compile all flag
+    elif args.compile:
+        compile()
+    # No compile flag
+    elif args.build:
+        build()
+    # Regular mode
+    else:
+        compile()
+        build()
 
     # Confirmation
     print("Build complete!")
