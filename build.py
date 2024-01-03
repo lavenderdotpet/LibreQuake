@@ -164,17 +164,31 @@ def build():
 def main():
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Example script to demonstrate argparse usage.")
-    parser.add_argument('-c', '--compile-only', action='store_true', help="compile assets without building releases")
-    parser.add_argument('-n', '--no-compile', action='store_true', help="build releases without recompiling")
+    parser.add_argument('-c', '--compile', action='store_true', help="compile assets without building releases")
+    parser.add_argument('-w', '--compile-wads', action='store_true', help="just compile the texture wads")
+    parser.add_argument('-m', '--compile-maps', action='store_true', help="just compile the maps")
+    parser.add_argument('-p', '--compile-progs', action='store_true', help="just compile the progs.dat")
+    parser.add_argument('-b', '--build', action='store_true', help="build releases without recompiling")
     args = parser.parse_args()
 
-    # Execute subprocesses based on args
-    if (args.compile_only and args.no_compile):
-        print("Both --compile-only and --no-compile flags were provided. Doing nothing.")
-    elif (args.compile_only):
+    # Conflicting flags error
+    if args.build and (args.compile or args.compile_wads or args.compile_maps or args.compile_progs):
+        print("Incompatible flags. Use -h for help.")
+    # Compile specific flags
+    elif args.compile_wads or args.compile_maps or args.compile_progs:
+        if args.compile_wads:
+            compile_wad()
+        if args.compile_maps:
+            compile_bsp()
+        if args.compile_progs:
+            compile_progs()
+    # Compile all flag
+    elif args.compile:
         compile()
-    elif (args.no_compile):
+    # No compile flag
+    elif args.build:
         build()
+    # Regular mode
     else:
         compile()
         build()
