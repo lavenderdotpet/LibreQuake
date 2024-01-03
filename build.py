@@ -10,7 +10,6 @@
 # 'releases' directory. Before doing this, the script also compiles all of the
 # wad and bsp/lit files so they can be copied over.
 
-import sys
 import subprocess
 import os
 import json
