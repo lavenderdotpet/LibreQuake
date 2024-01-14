@@ -411,6 +411,8 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
+            "maps/dev.bsp",
+            "maps/dev.lit",
             "maps/start.bsp",
             "maps/start.lit",
             "maps/e1m1.bsp",
@@ -519,8 +521,7 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
-            ["maps/start.bsp", "maps/dev.bsp"],
-            ["maps/start.lit", "maps/dev.lit"],
+            ["maps/dev.bsp", "maps/dev.bsp"],
             ["maps/start_e0.bsp", "maps/start.bsp"],
             ["maps/start_e0.lit", "maps/start.lit"],
             ["maps/b_bh100_lite.bsp", "maps/b_bh100.bsp"],
@@ -563,6 +564,7 @@
         "files_pak0": [],
         "files_pak1": [],
         "files_unpacked": [
+            "maps/src/misc/dev.map",
             "maps/src/misc/start.map",
             "maps/src/e0/e0m1.map",
             "maps/src/e0/e0m2.map",
