@@ -220,3 +220,14 @@
 #define LOC_TEAMKILL_3	" needs an eye exam"
 #define LOC_TEAMKILL_4	" betrayed their friend"
 #define LOC_TEAMKILL_5	" crushed a teammate"
+
+// Utility Messages
+#define LOC_LQDEVELOPER     "You must be a developer!"
+
+// Cutscene/Demo Camera Messages
+#define LOC_MAXCAMERAS      "You have too many cameras!"
+#define LOC_SPAWNCAMERA_A   "Camera placed successfully, "
+#define LOC_SPAWNCAMERA_B   " remaining"
+#define LOC_CAMERATIME_A    "Time between cameras changed to "
+#define LOC_CAMERATIME_B    " seconds"
+#define LOC_NOCAMERA        "Oh noes! No camera found! :("
