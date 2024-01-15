@@ -11,7 +11,7 @@ exec autoexec.cfg
 stuffcmds
 
 // demos
-//startdemos demo1 demo2 demo3
+startdemos demo1 demo2 demo3
 
 Echo
 Echo

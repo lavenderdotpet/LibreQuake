@@ -40,6 +40,7 @@
         ],
         "files_pak1": [],
         "files_unpacked": [
+            "cam.cfg",
             "dev.cfg",
             "zoom90.cfg",
             "zoom120.cfg"
@@ -528,7 +529,10 @@
             ["maps/b_bh25_lite.bsp", "maps/b_bh25.bsp"],
             ["maps/b_bh10_lite.bsp", "maps/b_bh10.bsp"],
             ["maps/b_batt1_lite.bsp", "maps/b_batt1.bsp"],
-            ["maps/b_batt0_lite.bsp", "maps/b_batt0.bsp"]
+            ["maps/b_batt0_lite.bsp", "maps/b_batt0.bsp"],
+            ["demo1_lite.dem", "demo1.dem"],
+            ["demo2_lite.dem", "demo2.dem"],
+            ["demo3_lite.dem", "demo3.dem"]
         ],
         "files_pak1": [],
         "files_unpacked": []
