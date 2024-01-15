@@ -13,12 +13,14 @@ stuffcmds
 // demos
 startdemos demo1 demo2 demo3
 
+wait
 Echo
 Echo
 Echo
 Echo
 Echo =============================
 Echo check out the new comands
-Echo Zoom for the zoom function
+Echo Zoom90 or Zoom120 for the zoom function
 Echo Dev for dev bindings
+Echo cam for the new camera system we use for the main menu demos
 Echo =============================
