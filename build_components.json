@@ -705,7 +705,8 @@
             "gfx/ttl_cstm.lmp",
             "gfx/ttl_main.lmp",
             "gfx/ttl_sgl.lmp",
-            "gfx/vidmodes.lmp"
+            "gfx/vidmodes.lmp",
+            "gfx/menumods.lmp"
         ],
         "files_pak1": [
             "gfx/pop.lmp"
