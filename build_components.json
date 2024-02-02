@@ -43,7 +43,8 @@
             "cam.cfg",
             "dev.cfg",
             "zoom90.cfg",
-            "zoom120.cfg"
+            "zoom120.cfg",
+            "accessibility.md"
         ]
     },
     "sounds": {
