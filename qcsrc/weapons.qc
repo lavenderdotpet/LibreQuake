@@ -1307,12 +1307,13 @@ void() QuadCheat =
 	dprint ("quad cheat\n");
 };
 
-/*
-============
-ImpulseCommands
+// LIBREQUAKE START
+#define LQ_IMPULSE_SPAWNCAM		200
+#define LQ_IMPULSE_CAMTIMEINC	201
+#define LQ_IMPULSE_CAMTIMEDEC	202
+#define LQ_IMPULSE_PLAYCAMERAS	203
+// LIBREQUAKE END
 
-============
-*/
 void() ImpulseCommands =
 {
 	if (self.impulse >= 1 && self.impulse <= 8)
@@ -1327,6 +1328,16 @@ void() ImpulseCommands =
 		CycleWeaponReverseCommand();
 	if (self.impulse == 255)
 		QuadCheat ();
+	// LIBREQUAKE START
+	if (self.impulse == LQ_IMPULSE_SPAWNCAM)
+		LQ_SpawnCamera();
+	if (self.impulse == LQ_IMPULSE_CAMTIMEINC)
+		LQ_AppendCameraTime(5);
+	if (self.impulse == LQ_IMPULSE_CAMTIMEDEC)
+		LQ_AppendCameraTime(-5);
+	if (self.impulse == LQ_IMPULSE_PLAYCAMERAS)
+		LQ_PlayCameras();
+	// LIBREQUAKE END
 
 	self.impulse = 0;
 };

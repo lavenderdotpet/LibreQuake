@@ -1,6 +1,6 @@
 
-# LibreQuake
-
+  ## [[Downloads/Releases]](https://github.com/MissLavender-LQ/LibreQuake/releases)
+  # LibreQuake
 
 The *LibreQuake* project aims to create a complete, free content first-person shooter game, but *LibreQuake* by itself is just the raw material for a game. It must be paired with a compatible engine to be played.
 

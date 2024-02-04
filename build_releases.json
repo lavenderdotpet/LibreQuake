@@ -16,6 +16,22 @@
             "gfx"
         ]
     },
+    "lite": {
+        "is_full_release": false,
+        "base_dir": "id1",
+        "components": [
+            "docs",
+            "root",
+            "config",
+            "sounds",
+            "music",
+            "models",
+            "brush_models",
+            "maps_e0",
+            "gfx",
+            "lite_assets"
+        ]
+    },
     "mod": {
         "is_full_release": false,
         "base_dir": "lq1",

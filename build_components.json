@@ -40,9 +40,11 @@
         ],
         "files_pak1": [],
         "files_unpacked": [
+            "cam.cfg",
             "dev.cfg",
             "zoom90.cfg",
-            "zoom120.cfg"
+            "zoom120.cfg",
+            "accessibility.md"
         ]
     },
     "sounds": {
@@ -233,7 +235,7 @@
             "sound/zombie/z_fall.wav",
             "sound/zombie/z_gib.wav",
             "sound/zombie/z_hit.wav",
-            "sound/zombie/z_idle.wav ",
+            "sound/zombie/z_idle.wav",
             "sound/zombie/z_idle1.wav",
             "sound/zombie/z_miss.wav",
             "sound/zombie/z_pain.wav",
@@ -411,6 +413,8 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
+            "maps/dev.bsp",
+            "maps/dev.lit",
             "maps/start.bsp",
             "maps/start.lit",
             "maps/e1m1.bsp",
@@ -519,15 +523,17 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
-            ["maps/start.bsp", "maps/dev.bsp"],
-            ["maps/start.lit", "maps/dev.lit"],
+            ["maps/dev.bsp", "maps/dev.bsp"],
             ["maps/start_e0.bsp", "maps/start.bsp"],
             ["maps/start_e0.lit", "maps/start.lit"],
             ["maps/b_bh100_lite.bsp", "maps/b_bh100.bsp"],
             ["maps/b_bh25_lite.bsp", "maps/b_bh25.bsp"],
             ["maps/b_bh10_lite.bsp", "maps/b_bh10.bsp"],
             ["maps/b_batt1_lite.bsp", "maps/b_batt1.bsp"],
-            ["maps/b_batt0_lite.bsp", "maps/b_batt0.bsp"]
+            ["maps/b_batt0_lite.bsp", "maps/b_batt0.bsp"],
+            ["demo1_lite.dem", "demo1.dem"],
+            ["demo2_lite.dem", "demo2.dem"],
+            ["demo3_lite.dem", "demo3.dem"]
         ],
         "files_pak1": [],
         "files_unpacked": []
@@ -563,6 +569,7 @@
         "files_pak0": [],
         "files_pak1": [],
         "files_unpacked": [
+            "maps/src/misc/dev.map",
             "maps/src/misc/start.map",
             "maps/src/e0/e0m1.map",
             "maps/src/e0/e0m2.map",
@@ -699,7 +706,8 @@
             "gfx/ttl_cstm.lmp",
             "gfx/ttl_main.lmp",
             "gfx/ttl_sgl.lmp",
-            "gfx/vidmodes.lmp"
+            "gfx/vidmodes.lmp",
+            "gfx/menumods.lmp"
         ],
         "files_pak1": [
             "gfx/pop.lmp"

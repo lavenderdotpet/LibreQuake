@@ -1,3 +1,9 @@
+#
+# LibreQuake Map Builder Python Script
+# v0.0.3
+# ---
+# MissLavander-LQ & cypress/MotoLegacy & ZungryWare/ZungrySoft
+#
 import os
 import subprocess
 import sys

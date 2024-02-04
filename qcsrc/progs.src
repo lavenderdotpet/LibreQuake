@@ -6,6 +6,9 @@ fight.qc
 ai.qc
 combat.qc
 localization.qc
+
+lq1/cutscene_camera.qc  // LQ: svc_cutscene firing camera
+
 items.qc
 weapons.qc
 world.qc
