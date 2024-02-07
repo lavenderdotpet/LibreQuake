@@ -269,25 +269,25 @@ void() armor_touch =
 	if (other.classname != "player")
 		return;
 
-	if (self.classname == "item_armor1")
-	{
-		type = 0.3;
-		value = 100;
-		bit = IT_ARMOR1;
-	}
-
-	if (self.classname == "item_armor2")
-	{
-		type = 0.6;
-		value = 150;
-		bit = IT_ARMOR2;
-	}
-
-	if (self.classname == "item_armorInv")
-	{
-		type = 0.8;
-		value = 200;
-		bit = IT_ARMOR3;
+	// cypress (07 feb 2024) -- adopted switch
+	switch(self.classname) {
+		case "item_armor1":
+			type = 0.3;
+			value = 100;
+			bit = IT_ARMOR1;
+			break;
+		case "item_armor2":
+			type = 0.6;
+			value = 150;
+			bit = IT_ARMOR2;
+			break;
+		case "item_armorInv":
+			type = 0.8;
+			value = 200;
+			bit = IT_ARMOR3;
+			break;
+		default:
+			break;
 	}
 
 	if (other.armortype*other.armorvalue >= type*value)

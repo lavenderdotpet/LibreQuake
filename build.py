@@ -143,7 +143,7 @@ def compile_bsp():
     os.chdir('../../')
 
 def compile_progs():
-    subprocess.call(['fteqcc', 'qcsrc/progs.src'])
+    subprocess.call(['fteqcc', 'qcsrc/progs.src', '-D__LIBREQUAKE__', '-O2'])
 
 def compile():
     compile_wad()
