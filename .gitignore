@@ -32,6 +32,7 @@ lq-pl.xcf
 *.pts
 *.prt
 *.png~
+*.ora~
 *.kra~
 *.texinfo.json
 *.cfg
