@@ -495,12 +495,12 @@ void() trigger_teleport =
 	local vector o;
 
 	InitTrigger ();
-	self.touch = teleport_use;
+	self.touch = teleport_touch;
 
 	// find the destination
 	if (!self.target)
 		objerror ("no target");
-	//self.use = teleport_use;
+	self.use = teleport_use;
 
 	if (!(self.spawnflags & SILENT))
 	{
