@@ -79,7 +79,7 @@ void() multi_trigger =
 	else
 	{	// we can't just remove (self) here, because this is a touch function
 		// called wheil C code is looping through area links...
-		self.touch = SUB_Null;
+		self.touch = __NULL__;
 		self.nextthink = time + 0.1;
 		self.think = SUB_Remove;
 	}
@@ -481,7 +481,8 @@ void() teleport_use =
 {
 	self.nextthink = time + 0.2;
 	force_retouch = 2;		// make sure even still objects get hit
-	self.think = SUB_Null;
+	self.think = __NULL__;
+	self.nextthink = 0; // cypress (08 feb 2024) -- engine doesnt guard against NULL think
 };
 
 /*QUAKED trigger_teleport (.5 .5 .5) ? PLAYER_ONLY SILENT
@@ -494,12 +495,12 @@ void() trigger_teleport =
 	local vector o;
 
 	InitTrigger ();
-	self.touch = teleport_touch;
+	self.touch = teleport_use;
 
 	// find the destination
 	if (!self.target)
 		objerror ("no target");
-	self.use = teleport_use;
+	//self.use = teleport_use;
 
 	if (!(self.spawnflags & SILENT))
 	{

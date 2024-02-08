@@ -227,7 +227,7 @@ void() ShalMissileTouch =
 	WriteCoord (MSG_BROADCAST, self.origin_z);
 
 	self.velocity = '0 0 0';
-	self.touch = SUB_Null;
+	self.touch = __NULL__;
 	setmodel (self, "progs/s_explod.spr");
 	self.solid = SOLID_NOT;
 	s_explode1 ();

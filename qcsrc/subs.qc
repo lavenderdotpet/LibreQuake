@@ -298,11 +298,9 @@ void() SUB_UseTargets =
 			self = t;
 			other = stemp;
 
-			if (self.use != SUB_Null)
-			{
-				if (self.use)
-					self.use ();
-			}
+			if (self.use != __NULL__)
+				self.use ();
+
 			self = stemp;
 			other = otemp;
 			activator = act;
