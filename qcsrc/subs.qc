@@ -17,9 +17,6 @@
     See file, 'COPYING', for details.
 */
 
-
-void() SUB_Null = {};
-
 void() SUB_Remove = {remove(self);};
 
 

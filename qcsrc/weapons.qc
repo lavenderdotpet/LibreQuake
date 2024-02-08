@@ -982,76 +982,67 @@ void() W_Attack =
 /*
 ============
 W_ChangeWeapon
-
+cypress (07 feb 2024) -- added wep parm
 ============
 */
-void() W_ChangeWeapon =
+void(float wep) W_ChangeWeapon =
 {
 	local	float	it, am, fl;
 
 	fl = it = self.items;
 	am = 0;
 
-	if (self.impulse == 1)
-	{
-		fl = IT_AXE;
+	// cypress (07 feb 2024) -- made a switch statement.
+	switch(wep) {
+		case 1:
+			fl = IT_AXE;
+			break;
+		case 2:
+			fl = IT_SHOTGUN;
+
+			if (self.ammo_shells < 1)
+				am = 1;
+			break;
+		case 3:
+			fl = IT_SUPER_SHOTGUN;
+
+			if (self.ammo_shells < 2)
+				am = 1;
+			break;
+		case 4:
+			fl = IT_NAILGUN;
+
+			if (self.ammo_nails < 1)
+				am = 1;
+			break;
+		case 5:
+			fl = IT_SUPER_NAILGUN;
+
+			if (self.ammo_nails < 2)
+				am = 1;
+			break;
+		case 6:
+			fl = IT_GRENADE_LAUNCHER;
+
+			if (self.ammo_rockets < 1)
+				am = 1;
+			break;
+		case 7:
+			fl = IT_ROCKET_LAUNCHER;
+
+			if (self.ammo_rockets < 1)
+				am = 1;
+			break;
+		case 8:
+			fl = IT_LIGHTNING;
+
+			if (self.ammo_cells < 1)
+				am = 1;
+			break;
+		default: 
+			break;
 	}
-
-	else if (self.impulse == 2)
-	{
-		fl = IT_SHOTGUN;
-
-		if (self.ammo_shells < 1)
-			am = 1;
-	}
-
-	else if (self.impulse == 3)
-	{
-		fl = IT_SUPER_SHOTGUN;
-
-		if (self.ammo_shells < 2)
-			am = 1;
-	}
-
-	else if (self.impulse == 4)
-	{
-		fl = IT_NAILGUN;
-
-		if (self.ammo_nails < 1)
-			am = 1;
-	}
-
-	else if (self.impulse == 5)
-	{
-		fl = IT_SUPER_NAILGUN;
-
-		if (self.ammo_nails < 2)
-			am = 1;
-	}
-
-	else if (self.impulse == 6)
-	{
-		fl = IT_GRENADE_LAUNCHER;
-
-		if (self.ammo_rockets < 1)
-			am = 1;
-	}
-
-	else if (self.impulse == 7)
-	{
-		fl = IT_ROCKET_LAUNCHER;
-		if (self.ammo_rockets < 1)
-			am = 1;
-	}
-
-	else if (self.impulse == 8)
-	{
-		fl = IT_LIGHTNING;
-		if (self.ammo_cells < 1)
-			am = 1;
-	}
-
-	self.impulse = 0;
+	// cypress end
 
 	if (!(self.items & fl))
 	{	// don't have the weapon or the ammo
@@ -1307,37 +1298,47 @@ void() QuadCheat =
 	dprint ("quad cheat\n");
 };
 
-// LIBREQUAKE START
+#define ID_IMPULSE_CHEAT		9
+#define ID_IMPULSE_CYCLEFORWARD	10
+#define ID_IMPULSE_SERVERFLAGS	11
+#define ID_IMPULSE_CYCLEREVERSE	12
+#define ID_IMPULSE_QUADCHEAT	255
+
+#ifdef __LIBREQUAKE__
+
 #define LQ_IMPULSE_SPAWNCAM		200
 #define LQ_IMPULSE_CAMTIMEINC	201
 #define LQ_IMPULSE_CAMTIMEDEC	202
 #define LQ_IMPULSE_PLAYCAMERAS	203
-// LIBREQUAKE END
+
+#endif // __LIBREQUAKE__
 
 void() ImpulseCommands =
 {
+	// cypress (07 feb 2024) -- pass self.impulse
+	// to W_ChangeWeapon for a small perf boost.
 	if (self.impulse >= 1 && self.impulse <= 8)
-		W_ChangeWeapon ();
-	if (self.impulse == 9)
-		CheatCommand ();
-	if (self.impulse == 10)
-		CycleWeaponCommand ();
-	if (self.impulse == 11)
-		ServerflagsCommand ();
-	if (self.impulse == 12)
-		CycleWeaponReverseCommand();
-	if (self.impulse == 255)
-		QuadCheat ();
-	// LIBREQUAKE START
-	if (self.impulse == LQ_IMPULSE_SPAWNCAM)
-		LQ_SpawnCamera();
-	if (self.impulse == LQ_IMPULSE_CAMTIMEINC)
-		LQ_AppendCameraTime(5);
-	if (self.impulse == LQ_IMPULSE_CAMTIMEDEC)
-		LQ_AppendCameraTime(-5);
-	if (self.impulse == LQ_IMPULSE_PLAYCAMERAS)
-		LQ_PlayCameras();
-	// LIBREQUAKE END
+		W_ChangeWeapon (self.impulse);
+
+	// cypress (07 feb 2024) -- made a switch
+	switch(self.impulse) {
+		case ID_IMPULSE_CHEAT: CheatCommand(); break;
+		case ID_IMPULSE_CYCLEFORWARD: CycleWeaponCommand(); break;
+		case ID_IMPULSE_SERVERFLAGS: ServerflagsCommand(); break;
+		case ID_IMPULSE_CYCLEREVERSE: CycleWeaponReverseCommand(); break;
+		case ID_IMPULSE_QUADCHEAT: QuadCheat(); break;
+
+#ifdef __LIBREQUAKE__
+
+		case LQ_IMPULSE_SPAWNCAM: LQ_SpawnCamera(); break;
+		case LQ_IMPULSE_CAMTIMEDEC: LQ_AppendCameraTime(5); break;
+		case LQ_IMPULSE_CAMTIMEDEC: LQ_AppendCameraTime(-5); break;
+		case LQ_IMPULSE_PLAYCAMERAS: LQ_PlayCameras(); break;
+
+#endif // __LIBREQUAKE
+
+		default: break;
+	}
 
 	self.impulse = 0;
 };

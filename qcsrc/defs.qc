@@ -355,6 +355,7 @@ float	SVC_INTERMISSION	= 30;
 float	SVC_FINALE			= 31;
 float	SVC_CDTRACK			= 32;
 float	SVC_SELLSCREEN		= 33;
+float 	SVC_CUTSCENE		= 34;
 
 
 float	TE_SPIKE		= 0;
@@ -699,9 +700,8 @@ void(entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt;
 void(vector destangle, float tspeed, void() func) SUB_CalcAngleMove;
 void()  SUB_CalcMoveDone;
 void() SUB_CalcAngleMoveDone;
-void() SUB_Null;
 void() SUB_UseTargets;
-void() SUB_Remove;
+#define SUB_Null 		__NULL__
 
 //
 //	combat.qc

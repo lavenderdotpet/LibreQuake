@@ -8,6 +8,8 @@ working/
 releases/
 
 # ignored files
+docs/lqlogos/logomockup-wip2.ora
+docs/lqlogos/logomockup-wip2.xcf
 lq1/maps/.bmodelbspbak.7z
 lq1/config.cfg
 lq1/progs.dat
@@ -30,6 +32,7 @@ lq-pl.xcf
 *.pts
 *.prt
 *.png~
+*.ora~
 *.kra~
 *.texinfo.json
 *.cfg
@@ -41,5 +44,7 @@ lq-pl.xcf
 !lq1/dev.cfg
 !lq1/zoom90.cfg
 !lq1/zoom120.cfg
+
+
 
 
