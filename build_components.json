@@ -22,13 +22,14 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
-            "progs.dat",
             "gfx.wad",
             "demo1.dem",
             "demo2.dem",
             "demo3.dem"
         ],
-        "files_pak1": [],
+        "files_pak1": [
+            "progs.dat"
+        ],
         "files_unpacked": []
     },
     "config": {
@@ -240,9 +241,7 @@
             "sound/zombie/z_miss.wav",
             "sound/zombie/z_pain.wav",
             "sound/zombie/z_pain1.wav",
-            "sound/zombie/z_shot1.wav"
-        ],
-        "files_pak1": [
+            "sound/zombie/z_shot1.wav",
             "sound/blob/death1.wav",
             "sound/blob/hit1.wav",
             "sound/blob/land1.wav",
@@ -275,6 +274,7 @@
             "sound/shalrath/pain.wav",
             "sound/shalrath/sight.wav"
         ],
+        "files_pak1": [],
         "files_unpacked": []
     },
     "music": {
@@ -363,9 +363,7 @@
             "progs/w_spike.mdl",
             "progs/wizard.mdl",
             "progs/zom_gib.mdl",
-            "progs/zombie.mdl"
-        ],
-        "files_pak1": [
+            "progs/zombie.mdl",
             "progs/b_g_key.mdl",
             "progs/b_s_key.mdl",
             "progs/end2.mdl",
@@ -385,6 +383,7 @@
             "progs/teleport.mdl",
             "progs/v_spike.mdl"
         ],
+        "files_pak1": [],
         "files_unpacked": []
     },
     "brush_models": {
@@ -397,6 +396,7 @@
             "maps/b_bh100.bsp",
             "maps/b_bh25.bsp",
             "maps/b_explob.bsp",
+            "maps/b_exbox2.bsp",
             "maps/b_nail0.bsp",
             "maps/b_nail1.bsp",
             "maps/b_rock0.bsp",
@@ -404,9 +404,7 @@
             "maps/b_shell0.bsp",
             "maps/b_shell1.bsp"
         ],
-        "files_pak1": [
-            "maps/b_exbox2.bsp"
-        ],
+        "files_pak1": [],
         "files_unpacked": []
     },
     "maps": {
@@ -432,9 +430,7 @@
             "maps/e1m7.bsp",
             "maps/e1m7.lit",
             "maps/e1m8.bsp",
-            "maps/e1m8.lit"
-        ],
-        "files_pak1": [
+            "maps/e1m8.lit",
             "maps/e2m1.bsp",
             "maps/e2m1.lit",
             "maps/e2m2.bsp",
@@ -482,13 +478,13 @@
             "maps/end.bsp",
             "maps/end.lit"
         ],
+        "files_pak1": [],
         "files_unpacked": []
     },
     "maps_dm": {
         "base_dir": "lq1",
         "source_if_missing": "",
-        "files_pak0": [],
-        "files_pak1": [
+        "files_pak0": [
             "maps/lqdm1.bsp",
             "maps/lqdm1.lit",
             "maps/lqdm2.bsp",
@@ -516,6 +512,7 @@
             "maps/lqdm13.bsp",
             "maps/lqdm13.lit"
         ],
+        "files_pak1": [],
         "files_unpacked": []
     },
 
@@ -664,7 +661,6 @@
             "gfx/box_tr.lmp",
             "gfx/colormap.lmp",
             "gfx/complete.lmp",
-            "gfx/conback.lmp",
             "gfx/dim_drct.lmp",
             "gfx/dim_ipx.lmp",
             "gfx/dim_modm.lmp",
@@ -679,7 +675,6 @@
             "gfx/help5.lmp",
             "gfx/inter.lmp",
             "gfx/loading.lmp",
-            "gfx/mainmenu.lmp",
             "gfx/menudot1.lmp",
             "gfx/menudot2.lmp",
             "gfx/menudot3.lmp",
@@ -706,10 +701,14 @@
             "gfx/ttl_cstm.lmp",
             "gfx/ttl_main.lmp",
             "gfx/ttl_sgl.lmp",
-            "gfx/vidmodes.lmp",
-            "gfx/menumods.lmp"
+            "gfx/vidmodes.lmp"
+
         ],
         "files_pak1": [
+            "gfx/sp_maps.lmp",
+            "gfx/mainmenu.lmp",
+            "gfx/conback.lmp",
+            "gfx/menumods.lmp",
             "gfx/pop.lmp"
         ],
         "files_unpacked": []
