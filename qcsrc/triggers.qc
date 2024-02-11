@@ -481,8 +481,7 @@ void() teleport_use =
 {
 	self.nextthink = time + 0.2;
 	force_retouch = 2;		// make sure even still objects get hit
-	self.think = __NULL__;
-	self.nextthink = 0; // cypress (08 feb 2024) -- engine doesnt guard against NULL think
+	self.think = SUB_Null;	// cypress (11 feb 2024) -- SUB_Null required to still be present to delay and apply retouch.
 };
 
 /*QUAKED trigger_teleport (.5 .5 .5) ? PLAYER_ONLY SILENT

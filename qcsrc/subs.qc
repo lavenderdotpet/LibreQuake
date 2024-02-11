@@ -18,6 +18,7 @@
 */
 
 void() SUB_Remove = {remove(self);};
+void() SUB_Null = {};
 
 
 /*QuakeEd only writes a single float for angles (bad idea), so up and down are
