@@ -352,7 +352,7 @@ void() changelevel_touch =
 		return;
 	}
 
-	self.touch = SUB_Null;
+	self.touch = __NULL__;
 
 	// we can't move people right now, because touch functions are called
 	// in the middle of C movement code, so set a think time to do it
