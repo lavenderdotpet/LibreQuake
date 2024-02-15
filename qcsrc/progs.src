@@ -1,11 +1,11 @@
 ../lq1/progs.dat
 
 defs.qc
+localized_text.qc       // LQ: Localized strings, also applies to Quake
 subs.qc
 fight.qc
 ai.qc
 combat.qc
-localization.qc
 
 lq1/cutscene_camera.qc  // LQ: svc_cutscene firing camera
 

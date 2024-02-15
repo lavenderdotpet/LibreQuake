@@ -338,7 +338,7 @@ void() changelevel_touch =
 	}
 
 	bprint (other.netname);
-	bprint (LOC_EXIT);
+	bprint (LOC_CLIENT_DISCON);
 	bprint ("\n");
 
 	nextmap = self.map;
@@ -1090,7 +1090,7 @@ void() CheckPowerups =
 		{
 			if (self.invisible_time == 1)
 			{
-				sprint (self, LOC_RING_FADE);
+				sprint (self, LOC_ITEM_FADE_SHADRING);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/inv2.wav", 1, ATTN_NORM);
@@ -1127,7 +1127,7 @@ void() CheckPowerups =
 		{
 			if (self.invincible_time == 1)
 			{
-				sprint (self, LOC_PENT_FADE);
+				sprint (self, LOC_ITEM_FADE_PENTPROT);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/protect2.wav", 1, ATTN_NORM);
@@ -1163,7 +1163,7 @@ void() CheckPowerups =
 		{
 			if (self.super_time == 1)
 			{
-				sprint (self, LOC_QUAD_FADE);
+				sprint (self, LOC_ITEM_FADE_QUADDMG);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/damage2.wav", 1, ATTN_NORM);
@@ -1200,7 +1200,7 @@ void() CheckPowerups =
 		{
 			if (self.rad_time == 1)
 			{
-				sprint (self, LOC_BIO_FADE);
+				sprint (self, LOC_ITEM_FADE_BIOSUIT);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/suit2.wav", 1, ATTN_NORM);
@@ -1274,7 +1274,7 @@ called when a player connects to a server
 void() ClientConnect =
 {
 	bprint (self.netname);
-	bprint (LOC_JOIN);
+	bprint (LOC_CLIENT_JOIN);
 	bprint ("\n");
 
 	// a client connecting during an intermission can cause problems
@@ -1298,9 +1298,9 @@ void() ClientDisconnect =
 
 	// let everyone else know
 	bprint (self.netname);
-	bprint (LOC_EXIT_DM_A);
+	bprint (LOC_CLIENT_DISCON_DM_A);
 	bprint (ftos(self.frags));
-	bprint (LOC_EXIT_DM_B);
+	bprint (LOC_CLIENT_DISCON_DM_B);
 	bprint ("\n");
 	sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 	set_suicide_frame ();
