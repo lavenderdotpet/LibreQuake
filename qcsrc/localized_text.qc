@@ -1,4 +1,5 @@
 /*  
+    Copyright (C) 1996-1997  Id Software, Inc.
     Copyright (C) 2023 ZungryWare <zungrysoftentertainment@gmail.com>
     Copyright (C) 2024 Ivy Bowling <motolegacy@proton.me>
 
