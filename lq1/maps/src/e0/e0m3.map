@@ -5346,6 +5346,15 @@
 ( 680 880 -472 ) ( 681 880 -472 ) ( 680 880 -471 ) clip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 656 872 -472 ) ( 656 872 -471 ) ( 656 873 -472 ) clip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
+// brush 574
+{
+( 1856 -1104 -360 ) ( 1856 -1103 -360 ) ( 1856 -1104 -359 ) clip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 1856 -1104 -360 ) ( 1856 -1104 -359 ) ( 1857 -1104 -360 ) clip [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 1856 -1104 -360 ) ( 1857 -1104 -360 ) ( 1856 -1103 -360 ) clip [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 1888 -1088 -344 ) ( 1888 -1087 -344 ) ( 1889 -1088 -344 ) clip [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( 1888 -1088 -344 ) ( 1889 -1088 -344 ) ( 1888 -1088 -343 ) clip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( 1904 -1088 -344 ) ( 1904 -1088 -343 ) ( 1904 -1087 -344 ) clip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+}
 }
 // entity 1
 {
@@ -7174,6 +7183,7 @@
 {
 "classname" "func_wall"
 "targetname" "rubble"
+"spawnflags" "2048"
 // brush 0
 {
 ( 640 128 -320 ) ( 640 80 -320 ) ( 640 80 -480 ) med_rock10b [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -7240,6 +7250,7 @@
 {
 "classname" "item_key1"
 "origin" "-352 2760 -352"
+"spawnflags" "2048"
 }
 // entity 157
 {
@@ -7305,6 +7316,7 @@
 "origin" "702 844 -396"
 "killtarget" "rubble"
 "targetname" "rubble_relay"
+"delay" "1"
 }
 // entity 162
 {
@@ -8005,4 +8017,34 @@
 ( 680 880 -472 ) ( 681 880 -472 ) ( 680 880 -471 ) med_rmet [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 656 872 -472 ) ( 656 872 -471 ) ( 656 873 -472 ) med_rmet [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
+}
+// entity 208
+{
+"classname" "info_notnull"
+"origin" "596 162 -366"
+"use" "barrel_explode"
+"targetname" "rubble_explosion2"
+}
+// entity 209
+{
+"classname" "info_notnull"
+"origin" "692 162 -366"
+"use" "barrel_explode"
+"targetname" "rubble_explosion3"
+}
+// entity 210
+{
+"classname" "trigger_relay"
+"origin" "680 200 -360"
+"targetname" "rubble_explosion"
+"target" "rubble_explosion3"
+"delay" "1"
+}
+// entity 211
+{
+"classname" "trigger_relay"
+"origin" "600 200 -376"
+"targetname" "rubble_explosion"
+"target" "rubble_explosion2"
+"delay" "0.5"
 }
