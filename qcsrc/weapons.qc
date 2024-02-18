@@ -1046,14 +1046,14 @@ void(float wep) W_ChangeWeapon =
 
 	if (!(self.items & fl))
 	{	// don't have the weapon or the ammo
-		sprint (self, LOC_NO_WEAPON);
+		sprint (self, LOC_WEAPON_INVALID);
 		sprint (self, "\n");
 		return;
 	}
 
 	if (am)
 	{	// don't have the ammo
-		sprint (self, LOC_NO_AMMO);
+		sprint (self, LOC_WEAPON_NOAMMO);
 		sprint (self, "\n");
 		return;
 	}
@@ -1335,7 +1335,7 @@ void() ImpulseCommands =
 		case LQ_IMPULSE_CAMTIMEDEC: LQ_AppendCameraTime(-5); break;
 		case LQ_IMPULSE_PLAYCAMERAS: LQ_PlayCameras(); break;
 
-#endif // __LIBREQUAKE
+#endif // __LIBREQUAKE__
 
 		default: break;
 	}
