@@ -41,6 +41,7 @@
         ],
         "files_pak1": [],
         "files_unpacked": [
+            ["-config.cfg", "config.cfg"],
             "cam.cfg",
             "dev.cfg",
             "zoom90.cfg",
@@ -310,6 +311,7 @@
             "progs/dog.mdl",
             "progs/end1.mdl",
             "progs/eyes.mdl",
+            "progs/flame0.mdl",
             "progs/flame.mdl",
             "progs/flame2.mdl",
             "progs/g_light.mdl",
