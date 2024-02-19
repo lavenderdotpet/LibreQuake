@@ -307,7 +307,7 @@ void() monster_oldone =
 	self.think = old_idle1;
 	self.nextthink = time + 0.1;	
 	self.takedamage = DAMAGE_YES;
-	self.th_pain = (void(entity attacker, float damage)) SUB_Null;
+	self.th_pain = __NULL__;
 	self.th_die = finale_1;
 	shub = self;
 	

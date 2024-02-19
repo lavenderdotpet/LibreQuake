@@ -701,7 +701,6 @@ void(vector destangle, float tspeed, void() func) SUB_CalcAngleMove;
 void()  SUB_CalcMoveDone;
 void() SUB_CalcAngleMoveDone;
 void() SUB_UseTargets;
-#define SUB_Null 		__NULL__
 
 //
 //	combat.qc
