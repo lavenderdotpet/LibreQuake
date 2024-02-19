@@ -338,7 +338,7 @@ void() changelevel_touch =
 	}
 
 	bprint (other.netname);
-	bprint (LOC_EXIT);
+	bprint (LOC_CLIENT_DISCON);
 	bprint ("\n");
 
 	nextmap = self.map;
@@ -352,7 +352,7 @@ void() changelevel_touch =
 		return;
 	}
 
-	self.touch = SUB_Null;
+	self.touch = __NULL__;
 
 	// we can't move people right now, because touch functions are called
 	// in the middle of C movement code, so set a think time to do it
@@ -1090,7 +1090,7 @@ void() CheckPowerups =
 		{
 			if (self.invisible_time == 1)
 			{
-				sprint (self, LOC_RING_FADE);
+				sprint (self, LOC_ITEM_FADE_SHADRING);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/inv2.wav", 1, ATTN_NORM);
@@ -1127,7 +1127,7 @@ void() CheckPowerups =
 		{
 			if (self.invincible_time == 1)
 			{
-				sprint (self, LOC_PENT_FADE);
+				sprint (self, LOC_ITEM_FADE_PENTPROT);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/protect2.wav", 1, ATTN_NORM);
@@ -1163,7 +1163,7 @@ void() CheckPowerups =
 		{
 			if (self.super_time == 1)
 			{
-				sprint (self, LOC_QUAD_FADE);
+				sprint (self, LOC_ITEM_FADE_QUADDMG);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/damage2.wav", 1, ATTN_NORM);
@@ -1200,7 +1200,7 @@ void() CheckPowerups =
 		{
 			if (self.rad_time == 1)
 			{
-				sprint (self, LOC_BIO_FADE);
+				sprint (self, LOC_ITEM_FADE_BIOSUIT);
 				sprint (self, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/suit2.wav", 1, ATTN_NORM);
@@ -1274,7 +1274,7 @@ called when a player connects to a server
 void() ClientConnect =
 {
 	bprint (self.netname);
-	bprint (LOC_JOIN);
+	bprint (LOC_CLIENT_JOIN);
 	bprint ("\n");
 
 	// a client connecting during an intermission can cause problems
@@ -1298,9 +1298,9 @@ void() ClientDisconnect =
 
 	// let everyone else know
 	bprint (self.netname);
-	bprint (LOC_EXIT_DM_A);
+	bprint (LOC_CLIENT_DISCON_DM_A);
 	bprint (ftos(self.frags));
-	bprint (LOC_EXIT_DM_B);
+	bprint (LOC_CLIENT_DISCON_DM_B);
 	bprint ("\n");
 	sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 	set_suicide_frame ();
@@ -1331,9 +1331,8 @@ void(entity targ, entity attacker) ClientObituary =
 		if (attacker.classname == "teledeath")
 		{
 			bprint (targ.netname);
-			bprint (LOC_DEATH_TELEFRAG_A);
+			bprint (LOC_DEATH_TELEFRAG);
 			bprint (attacker.owner.netname);
-			bprint (LOC_DEATH_TELEFRAG_B);
 			bprint ("\n");
 
 			attacker.owner.frags = attacker.owner.frags + 1;
@@ -1347,7 +1346,6 @@ void(entity targ, entity attacker) ClientObituary =
 			bprint (targ.netname);
 			bprint (LOC_DEATH_DEFLECT_B);
 			bprint (attacker.enemy.netname);
-			bprint (LOC_DEATH_DEFLECT_C);
 			bprint ("\n");
 
 			targ.frags = targ.frags - 1;
@@ -1361,14 +1359,24 @@ void(entity targ, entity attacker) ClientObituary =
 			if (attacker.dmg == 666000) {
 				bprint(targ.netname);
 
+#ifdef __LIBREQUAKE__
+
 				if (random() < 0.01)
 					bprint(LOC_DEATH_FALL_2);
 				else
 					bprint(LOC_DEATH_FALL_1);
 
+#else
+
+				bprint(LOC_DEATH_FALL);
+
+#endif // __LIBREQUAKE__
+
 				bprint("\n");
 				return;
 			}
+
+#ifdef __LIBREQUAKE__
 
 			if (attacker.dmg == 666001) {
 				bprint(targ.netname);
@@ -1393,6 +1401,9 @@ void(entity targ, entity attacker) ClientObituary =
 				bprint("\n");
 				return;
 			}
+
+#endif // __LIBREQUAKE__
+
 		}
 
 		if (attacker.classname == "player")
@@ -1405,13 +1416,18 @@ void(entity targ, entity attacker) ClientObituary =
 
 				if (targ.weapon == 64 && targ.waterlevel > 1)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (targ.watertype == CONTENT_SLIME)
 						bprint (LOC_DEATH_DISCHARGE_SLIME);
 
 					else if (targ.watertype == CONTENT_LAVA)
 						bprint (LOC_DEATH_DISCHARGE_LAVA);
-
 					else
+
+#endif // __LIBREQUAKE__
+
 						bprint (LOC_DEATH_DISCHARGE_WATER);
 
 					bprint ("\n");
@@ -1421,6 +1437,9 @@ void(entity targ, entity attacker) ClientObituary =
 					bprint (LOC_DEATH_SELF_GRENADE);
 					bprint ("\n");
 				}
+
+#ifdef __LIBREQUAKE__
+
 				else if (targ.weapon == 32) {
 					bprint (LOC_DEATH_SELF_ROCKET);
 					bprint ("\n");
@@ -1429,8 +1448,25 @@ void(entity targ, entity attacker) ClientObituary =
 					bprint (LOC_DEATH_SELF_OTHER);
 					bprint ("\n");
 				}
+
+#else
+
+				else if (rnum) {
+					bprint(LOC_DEATH_SUICIDE_WEAPON_1);
+					bprint ("\n");
+				}
+				else {
+					bprint(LOC_DEATH_SUICIDE_WEAPON_2);	
+					bprint ("\n");
+				}
+
+#endif // __LIBREQUAKE__
+
 				return;
 			}
+
+#ifdef __LIBREQUAKE__
+
 			else if ( (teamplay == 2) && (targteam == attackerteam) &&
 				(attackerteam != 0) )	// gb
 			{
@@ -1453,6 +1489,8 @@ void(entity targ, entity attacker) ClientObituary =
 				return;
 			}
 
+#endif // __LIBREQUAKE__
+
 			else
 			{
 				attacker.frags = attacker.frags + 1;
@@ -1461,6 +1499,9 @@ void(entity targ, entity attacker) ClientObituary =
 
 				if (rnum == IT_AXE)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.super_damage_finished > 0) {
 						deathstring = LOC_DEATH_AXE_QA;
 						deathstring2 = LOC_DEATH_AXE_QB;
@@ -1473,10 +1514,21 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_AXE_1A;
 						deathstring2 = LOC_DEATH_AXE_1B;
 					}
+
+#else
+
+					deathstring = LOC_DEATH_AXE_A;
+					deathstring2 = LOC_DEATH_AXE_B;
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				if (rnum == IT_SHOTGUN)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.super_damage_finished > 0) {
 						deathstring = LOC_DEATH_SHOTGUN_QA;
 						deathstring2 = LOC_DEATH_SHOTGUN_QB;
@@ -1489,10 +1541,21 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_SHOTGUN_1A;
 						deathstring2 = LOC_DEATH_SHOTGUN_1B;
 					}
+
+#else
+
+					deathstring = LOC_DEATH_SHOTGUN_A;
+					deathstring2 = LOC_DEATH_SHOTGUN_B;
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				if (rnum == IT_SUPER_SHOTGUN)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.super_damage_finished > 0) {
 						deathstring = LOC_DEATH_SUPER_SHOTGUN_QA;
 						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_QB;
@@ -1505,10 +1568,21 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_SUPER_SHOTGUN_1A;
 						deathstring2 = LOC_DEATH_SUPER_SHOTGUN_1B;
 					}
+
+#else
+
+					deathstring = LOC_DEATH_SUPER_SHOTGUN_A;
+					deathstring2 = LOC_DEATH_SUPER_SHOTGUN_B;
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				if (rnum == IT_NAILGUN)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.super_damage_finished > 0) {
 						deathstring = LOC_DEATH_NAILGUN_QA;
 						deathstring2 = LOC_DEATH_NAILGUN_QB;
@@ -1521,10 +1595,21 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_NAILGUN_1A;
 						deathstring2 = LOC_DEATH_NAILGUN_1B;
 					}
+
+#else
+
+					deathstring = LOC_DEATH_NAILGUN_A;
+					deathstring2 = LOC_DEATH_NAILGUN_B;
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				if (rnum == IT_SUPER_NAILGUN)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.super_damage_finished > 0) {
 						deathstring = LOC_DEATH_SUPER_NAILGUN_QA;
 						deathstring2 = LOC_DEATH_SUPER_NAILGUN_QB;
@@ -1537,10 +1622,21 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_SUPER_NAILGUN_1A;
 						deathstring2 = LOC_DEATH_SUPER_NAILGUN_1B;
 					}
+
+#else
+
+					deathstring = LOC_DEATH_SUPER_NAILGUN_A;
+					deathstring2 = LOC_DEATH_SUPER_NAILGUN_B;
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				if (rnum == IT_GRENADE_LAUNCHER)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.super_damage_finished > 0) {
 						deathstring = LOC_DEATH_GRENADE_LAUNCHER_QA;
 						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_QB;
@@ -1558,10 +1654,27 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_GRENADE_LAUNCHER_1A;
 						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_1B;
 					}
+
+#else
+
+					if (targ.health < -40) {
+						deathstring = LOC_DEATH_GRENADE_LAUNCHER_2A;
+						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_2B;
+					}
+					else {
+						deathstring = LOC_DEATH_GRENADE_LAUNCHER_1A;
+						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_1B;
+					}
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				if (rnum == IT_ROCKET_LAUNCHER)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.super_damage_finished > 0) {
 						rnum2 = random();
 						if (rnum2 < 0.33) {
@@ -1590,10 +1703,27 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_ROCKET_LAUNCHER_1A;
 						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_1B;
 					}
+
+#else
+
+					if (targ.health < -40) {
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_2A;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_2B;
+					}
+					else {
+						deathstring = LOC_DEATH_ROCKET_LAUNCHER_1A;
+						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_1B;
+					}
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				if (rnum == IT_LIGHTNING)
 				{
+
+#ifdef __LIBREQUAKE__
+
 					if (attacker.waterlevel > 1) {
 						if (random() < 0.5) {
 							deathstring = LOC_DEATH_LIGHTNING_D1A;
@@ -1616,6 +1746,18 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_LIGHTNING_1A;
 						deathstring2 = LOC_DEATH_LIGHTNING_1B;
 					}
+
+#else
+
+					deathstring = LOC_DEATH_LIGHTNING_A;
+
+					if (attacker.waterlevel > 1)
+						deathstring2 = LOC_DEATH_LIGHTNING_UNDERWATER;
+					else
+						deathstring2 = LOC_DEATH_LIGHTNING_ONGROUND;
+
+#endif // __LIBREQUAKE__
+
 				}
 
 				bprint (targ.netname);
@@ -1641,20 +1783,30 @@ void(entity targ, entity attacker) ClientObituary =
 			if (targ.deathtype == "falling")
 			{
 				targ.deathtype = string_null;
-				if (random() < 0.01) {
-					bprint (LOC_DEATH_FALL_2);
-					bprint ("\n");
-				}
-				else {
-					bprint (LOC_DEATH_FALL_1);
-					bprint ("\n");
-				}
+				
+#ifdef __LIBREQUAKE__
+
+				if (random() < 0.01)
+					bprint(LOC_DEATH_FALL_2);
+				else
+					bprint(LOC_DEATH_FALL_1);
+
+#else
+
+				bprint(LOC_DEATH_FALL);
+
+#endif // __LIBREQUAKE__
+
+				bprint("\n");
 				return;
 			}
 
 			if (targ.deathtype == "drowning")
 			{
 				rnum = random();
+
+#ifdef __LIBREQUAKE__
+
 				if (rnum < 0.33) {
 					bprint (LOC_DEATH_DROWN1);
 					bprint ("\n");
@@ -1667,6 +1819,19 @@ void(entity targ, entity attacker) ClientObituary =
 					bprint (LOC_DEATH_DROWN3);
 					bprint ("\n");
 				}
+
+#else
+
+				if (rnum < 0.5) {
+					bprint (LOC_DEATH_DROWN1);
+					bprint ("\n");
+				} else {
+					bprint (LOC_DEATH_DROWN2);
+					bprint ("\n");
+				}
+
+#endif // __LIBREQUAKE__
+
 				return;
 			}
 

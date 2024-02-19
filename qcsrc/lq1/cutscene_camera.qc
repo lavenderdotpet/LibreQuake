@@ -34,13 +34,13 @@ LQ_SpawnCamera
 void() LQ_SpawnCamera =
 {
     if (!cvar("developer")) {
-        bprint(LOC_LQDEVELOPER);
+        bprint(LOC_LQ_ISDEVELOPER);
         bprint("\n");
         return;
     }
 
     if (cameras_in_world >= LQ_MAXCAMERAS) {
-        bprint(LOC_MAXCAMERAS);
+        bprint(LOC_LQ_CAMERAS_MAX);
         bprint("\n");
         return;
     }
@@ -62,9 +62,9 @@ void() LQ_SpawnCamera =
 
     cameras_in_world++;
 
-    bprint(LOC_SPAWNCAMERA_A);
+    bprint(LOC_LQ_CAMERA_SPAWN_A);
     bprint(ftos(LQ_MAXCAMERAS - cameras_in_world));
-    bprint(LOC_SPAWNCAMERA_B);
+    bprint(LOC_LQ_CAMERA_SPAWN_B);
     bprint("\n");
 };
 
@@ -77,7 +77,7 @@ LQ_AppendCameraTime
 void(float time_addition) LQ_AppendCameraTime = 
 {
     if (!cvar("developer")) {
-        bprint(LOC_LQDEVELOPER);
+        bprint(LOC_LQ_ISDEVELOPER);
         bprint("\n");
         return;
     }
@@ -87,9 +87,9 @@ void(float time_addition) LQ_AppendCameraTime =
     if (time_between_cameras <= 0)
         time_between_cameras = 1;
 
-    bprint(LOC_CAMERATIME_A);
+    bprint(LOC_LQ_CAMERA_TIME_A);
     bprint(ftos(time_between_cameras));
-    bprint(LOC_CAMERATIME_B);
+    bprint(LOC_LQ_CAMERA_TIME_B);
     bprint("\n");
 };
 
@@ -153,7 +153,7 @@ LQ_PlayCameras
 void() LQ_PlayCameras =
 {
     if (!cvar("developer")) {
-        bprint(LOC_LQDEVELOPER);
+        bprint(LOC_LQ_ISDEVELOPER);
         bprint("\n");
         return;
     }
@@ -161,7 +161,7 @@ void() LQ_PlayCameras =
     entity camera = find(world, targetname, "lq_camera_1");
 
     if (camera == world) {
-        bprint(LOC_NOCAMERA);
+        bprint(LOC_LQ_CAMERA_NONE);
         bprint("\n");
         return;
     }

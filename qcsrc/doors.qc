@@ -238,19 +238,19 @@ void() door_touch =
 		{
 			if (world.worldtype == 2)
 			{
-				centerprint (other, "You need the silver keycard");
+				centerprint3(other, LOC_KEY_NEED, "the ", LOC_KEY_NAME_SILVER_CARD);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 
 			else if (world.worldtype == 1)
 			{
-				centerprint (other, "You need the silver runekey");
+				centerprint3(other, LOC_KEY_NEED, "the ", LOC_KEY_NAME_SILVER_RUNE);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 
 			else if (world.worldtype == 0)
 			{
-				centerprint (other, "You need the silver key");
+				centerprint3(other, LOC_KEY_NEED, "the ", LOC_KEY_NAME_SILVER);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 		}
@@ -259,19 +259,19 @@ void() door_touch =
 		{
 			if (world.worldtype == 2)
 			{
-				centerprint (other, "You need the gold keycard");
+				centerprint3(other, LOC_KEY_NEED, "the ", LOC_KEY_NAME_GOLD_CARD);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 
 			else if (world.worldtype == 1)
 			{
-				centerprint (other, "You need the gold runekey");
+				centerprint3(other, LOC_KEY_NEED, "the ", LOC_KEY_NAME_GOLD_RUNE);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);			
 			}
 
 			else if (world.worldtype == 0)
 			{
-				centerprint (other, "You need the gold key");
+				centerprint3(other, LOC_KEY_NEED, "the ", LOC_KEY_NAME_GOLD);
 				sound (self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 			}
 		}
@@ -280,10 +280,10 @@ void() door_touch =
 	}
 
 	other.items = other.items - self.items;
-	self.touch = SUB_Null;
+	self.touch = __NULL__;
 
 	if (self.enemy)
-		self.enemy.touch = SUB_Null;	// get paired door
+		self.enemy.touch = __NULL__;	// get paired door
 
 	door_use ();
 };
@@ -624,7 +624,7 @@ void () fd_secret_use =
 	
 	if (!(self.spawnflags & SECRET_NO_SHOOT))
 	{
-		self.th_pain = (void(entity attacker, float damage)) SUB_Null;
+		self.th_pain = __NULL__;
 		self.takedamage = DAMAGE_NO;
 	}
 

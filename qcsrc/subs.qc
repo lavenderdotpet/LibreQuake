@@ -18,6 +18,7 @@
 */
 
 void() SUB_Remove = {remove(self);};
+void() SUB_Null = {};
 
 
 /*QuakeEd only writes a single float for angles (bad idea), so up and down are
@@ -298,11 +299,9 @@ void() SUB_UseTargets =
 			self = t;
 			other = stemp;
 
-			if (self.use != SUB_Null)
-			{
-				if (self.use)
-					self.use ();
-			}
+			if (self.use != __NULL__)
+				self.use ();
+
 			self = stemp;
 			other = otemp;
 			activator = act;

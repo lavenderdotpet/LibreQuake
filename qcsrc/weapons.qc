@@ -338,7 +338,7 @@ void() BecomeExplosion =
 {
 	self.movetype = MOVETYPE_NONE;
 	self.velocity = '0 0 0';
-	self.touch = SUB_Null;
+	self.touch = __NULL__;
 	setmodel (self, "progs/s_explod.spr");
 	self.solid = SOLID_NOT;
 	s_explode1 ();
@@ -1046,14 +1046,14 @@ void(float wep) W_ChangeWeapon =
 
 	if (!(self.items & fl))
 	{	// don't have the weapon or the ammo
-		sprint (self, LOC_NO_WEAPON);
+		sprint (self, LOC_WEAPON_INVALID);
 		sprint (self, "\n");
 		return;
 	}
 
 	if (am)
 	{	// don't have the ammo
-		sprint (self, LOC_NO_AMMO);
+		sprint (self, LOC_WEAPON_NOAMMO);
 		sprint (self, "\n");
 		return;
 	}
@@ -1335,7 +1335,7 @@ void() ImpulseCommands =
 		case LQ_IMPULSE_CAMTIMEDEC: LQ_AppendCameraTime(-5); break;
 		case LQ_IMPULSE_PLAYCAMERAS: LQ_PlayCameras(); break;
 
-#endif // __LIBREQUAKE
+#endif // __LIBREQUAKE__
 
 		default: break;
 	}
