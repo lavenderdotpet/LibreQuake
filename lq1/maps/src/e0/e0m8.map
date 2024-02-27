@@ -11217,7 +11217,7 @@
 // entity 122
 {
 "classname" "trigger_changelevel"
-"map" "e0m3"
+"map" "e0m6"
 // brush 0
 {
 ( 896 2592 -1280 ) ( 896 2592 -1296 ) ( 896 2720 -1296 ) trigger [ 0 1 0 32 ] [ 0 0 -1 0 ] 0 1 1
