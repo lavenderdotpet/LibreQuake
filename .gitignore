@@ -38,6 +38,7 @@ lq-pl.xcf
 *.cfg
 *.kate-swp
 *autosave.kra
+*-compile.map
 
 # included files
 !lq1/default.cfg
