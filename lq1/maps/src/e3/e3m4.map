@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_secret.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_greek.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_props.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_greek.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_palette.wad"
 "sounds" "8"
 "_tb_def" "builtin:Quake.fgd"
 "_sunlight2" "150"
@@ -56,6 +56,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "area1"
 "_tb_id" "1"
+"_tb_linked_group_id" "{e64c57c0-9ec4-4e69-a4a2-a3d981b23226}"
 // brush 0
 {
 ( -976 -560 -48 ) ( -976 -560 208 ) ( -976 -800 208 ) grk_brk16 [ 0 -1 0 -32 ] [ 0 0 -1 -48 ] 0 1 1
@@ -9907,7 +9908,6 @@
 "_tb_name" "lamp_floor2"
 "_tb_id" "25"
 "_tb_linked_group_id" "{15a01676-c9df-494e-a190-c915b0528b55}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 "_tb_group" "1"
 }
 // entity 277
@@ -10090,6 +10090,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "the fire"
 "_tb_id" "27"
+"_tb_linked_group_id" "{e44728f8-7971-4dc1-9718-5f1329d425df}"
 "_tb_group" "1"
 }
 // entity 285
@@ -11351,6 +11352,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "circle"
 "_tb_id" "2"
+"_tb_linked_group_id" "{7e9635e1-ce48-42d2-9f6f-6d8a60a797f2}"
 }
 // entity 358
 {
@@ -11666,6 +11668,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "spawn"
 "_tb_id" "3"
+"_tb_linked_group_id" "{e0f70079-6b89-497f-8f2a-137892a1335c}"
 }
 // entity 367
 {
@@ -13114,6 +13117,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "arena2"
 "_tb_id" "4"
+"_tb_linked_group_id" "{f32bd319-ef8a-4bfe-9605-beafad2ee0bd}"
 // brush 0
 {
 ( -2896 1952 720 ) ( -2896 1952 721 ) ( -2896 1951 720 ) gardgrass_1 [ 0 1 0 -48 ] [ 0 0 -1 48 ] 180 1 1
@@ -16382,6 +16386,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "center"
 "_tb_id" "5"
+"_tb_linked_group_id" "{32b3120f-ccd7-49b6-b4ec-28e2dcbc6a4a}"
 "_tb_group" "4"
 }
 // entity 435
@@ -23326,6 +23331,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "props"
 "_tb_id" "7"
+"_tb_linked_group_id" "{2dde3437-afb8-4e6a-ac27-2dbc5f286810}"
 }
 // entity 716
 {
@@ -23635,6 +23641,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Unused_props"
 "_tb_id" "8"
+"_tb_linked_group_id" "{27a7f47d-23e8-444b-a14e-7785a48f2279}"
 }
 // entity 721
 {
@@ -24209,6 +24216,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "start_area"
 "_tb_id" "9"
+"_tb_linked_group_id" "{1afc160a-0f93-477a-9b49-ab192acbd7e2}"
 // brush 0
 {
 ( 832 -192 1392 ) ( 832 -192 1393 ) ( 832 -193 1392 ) grk_flr4_2 [ 6.12323e-17 -1 0 32 ] [ 0 0 -1 -16 ] 0 1 1
@@ -24549,6 +24557,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "secret_area"
 "_tb_id" "10"
+"_tb_linked_group_id" "{d4afba62-58d0-4140-975b-b1d1a64b1a75}"
 // brush 0
 {
 ( -2128 0 1424 ) ( -2128 16 2112 ) ( -2128 0 2112 ) grk_ebrick10 [ 0 -1 0 0 ] [ 0 0 -1 -32 ] 0 1 1
@@ -26667,6 +26676,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "hub"
 "_tb_id" "11"
+"_tb_linked_group_id" "{2624eb62-426e-4197-8856-076ce3ba6a67}"
 // brush 0
 {
 ( -544 1984 832 ) ( -544 1984 448 ) ( -544 2060 448 ) grk_brk17 [ 0 1 0 -64 ] [ 0 0 -1 0 ] 0 1 1
@@ -33360,7 +33370,6 @@
 "_tb_name" "lamp_wall"
 "_tb_id" "14"
 "_tb_linked_group_id" "{df09e28a-0aaf-47f8-9b6f-4714726e6178}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 "_tb_group" "11"
 }
 // entity 1013
@@ -34422,6 +34431,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "arena4"
 "_tb_id" "12"
+"_tb_linked_group_id" "{13dbd4ab-adf4-4895-997b-be7f2e7907ef}"
 // brush 0
 {
 ( 1120 1968 544 ) ( 1120 1968 736 ) ( 1120 1840 736 ) grk_brk16 [ -2.22045e-16 -1 0 112 ] [ 0 0 -1 0 ] 0 1 1
@@ -41377,6 +41387,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "arena3"
 "_tb_id" "6"
+"_tb_linked_group_id" "{86754f15-76bf-4d88-a0f4-cf08c616b517}"
 "_tb_group" "12"
 }
 // entity 1248

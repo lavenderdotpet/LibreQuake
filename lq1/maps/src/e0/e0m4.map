@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"wad" "../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_dev.wad"
+"wad" "../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_palette.wad"
 "_bounce" "3"
 "_dirt" "1"
 "message" "Feint-free funtime"
@@ -6237,7 +6237,6 @@
 "_tb_name" "spikeshooter"
 "_tb_id" "2"
 "_tb_linked_group_id" "{99d0cb55-ecdf-4ebb-86b0-550fa93700bc}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 60
 {

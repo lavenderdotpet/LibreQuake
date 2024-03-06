@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_flesh.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_palette.wad"
 "fog" "0.015 1 0.7 0.7"
 "sounds" "4"
 "message" "The Reading of the Dead"

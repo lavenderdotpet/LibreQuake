@@ -3,7 +3,7 @@
 // entity 0
 {
 "classname" "worldspawn"
-"wad" "../../../../texture-wads/lq_metal_nol.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_dev_legacy.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad"
+"wad" "../../../../texture-wads/lq_metal_nol.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_dev_legacy.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_palette.wad"
 "worldtype" "1"
 "sounds" "7"
 "message" "Lavaducts"
@@ -15824,6 +15824,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lava_leak_dm"
 "_tb_id" "19"
+"_tb_linked_group_id" "{a1968d8d-2d55-4883-b67a-81a2cedfb962}"
 }
 // entity 613
 {
@@ -15976,6 +15977,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lava_leak_dm"
 "_tb_id" "20"
+"_tb_linked_group_id" "{14927bf4-2193-4f53-aefa-33c288aebc32}"
 }
 // entity 620
 {
@@ -17113,6 +17115,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lava_leak_dm"
 "_tb_id" "21"
+"_tb_linked_group_id" "{531f26ca-0229-4c33-bcfd-224f60cfe375}"
 }
 // entity 734
 {

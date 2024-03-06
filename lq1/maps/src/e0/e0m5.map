@@ -8,7 +8,7 @@
 "message" "Adequate Aquatic Adventure"
 "_bounce" "3"
 "_dirt" "1"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_medieval.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_palette.wad"
 "_splitturb" "1"
 "wateralpha" "0.7"
 "fog" "0.02 0.8 0.8 1"
@@ -9032,7 +9032,6 @@
 "_tb_name" "door1"
 "_tb_id" "3"
 "_tb_linked_group_id" "{8c7ed2c1-dc2c-4ca3-a5f6-963435f4a6d3}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 92
 {
@@ -10676,7 +10675,6 @@
 "_tb_name" "support1"
 "_tb_id" "11"
 "_tb_linked_group_id" "{c7fd8e07-c1ea-4d63-9f01-290776ff3c61}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 // brush 0
 {
 ( 832 -160 544 ) ( 832 -224 544 ) ( 832 -224 400 ) may_brk1_1 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -10880,6 +10878,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "support2"
 "_tb_id" "15"
+"_tb_linked_group_id" "{b01203a0-7960-4194-adb3-7b9ce64a0e8c}"
 // brush 0
 {
 ( 1440 160 544 ) ( 1504 224 400 ) ( 1440 224 544 ) may_bnd1_2 [ 0 -4.371139006309477e-08 -0.999999999999999 0 ] [ 0 -0.999999999999999 4.371139006309477e-08 63.999992 ] 222.07503 1 1
@@ -10904,6 +10903,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "support2"
 "_tb_id" "16"
+"_tb_linked_group_id" "{f3e3e484-192f-47a2-a3da-fa6222247af8}"
 // brush 0
 {
 ( 1440 -224 544 ) ( 1504 -160 400 ) ( 1440 -160 544 ) may_bnd1_2 [ 0 -4.371139006309477e-08 -0.999999999999999 0 ] [ 0 -0.999999999999999 4.371139006309477e-08 63.999992 ] 222.07503 1 1

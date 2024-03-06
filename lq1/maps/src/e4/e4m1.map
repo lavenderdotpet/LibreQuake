@@ -8,7 +8,7 @@
 "worldtype" "2"
 "message" "Damnation Station"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad"
+"wad" "../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_palette.wad"
 "_credits" "ZungryWare"
 "_wateralpha" "0.6"
 "_tb_mod" "lq1"
@@ -21804,6 +21804,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "1"
+"_tb_linked_group_id" "{08a52d14-4747-4e89-b002-ead3cb42e13a}"
 }
 // entity 468
 {
@@ -21955,6 +21956,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "2"
+"_tb_linked_group_id" "{7587220f-a9dd-4b78-8a06-6ee4c4a9cd19}"
 }
 // entity 481
 {
@@ -22106,6 +22108,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "3"
+"_tb_linked_group_id" "{1cef9880-97ed-4a24-88f6-bd60b7a523e0}"
 }
 // entity 494
 {
@@ -22257,6 +22260,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "4"
+"_tb_linked_group_id" "{3838caeb-77db-44d4-95cf-ea941e1643f8}"
 }
 // entity 507
 {
@@ -22408,6 +22412,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "5"
+"_tb_linked_group_id" "{c49902a1-e2e3-433d-bf3a-fda79b30e1f8}"
 }
 // entity 520
 {
@@ -22559,6 +22564,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "6"
+"_tb_linked_group_id" "{92d5b291-0539-437e-9b75-2fc8359826f2}"
 }
 // entity 533
 {
@@ -22710,6 +22716,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "7"
+"_tb_linked_group_id" "{dddcf9d4-4330-4461-add6-0b94b26f995a}"
 }
 // entity 546
 {
@@ -22861,6 +22868,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "PipeLights"
 "_tb_id" "8"
+"_tb_linked_group_id" "{61cec9fc-c9a1-4bac-90f9-b5d89c9522d5}"
 }
 // entity 559
 {
@@ -26274,6 +26282,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Lamp"
 "_tb_id" "9"
+"_tb_linked_group_id" "{75244f37-5165-4c54-8555-fbe8fb3bbe1a}"
 // brush 0
 {
 ( 912 1184 0 ) ( 928 1176 -96 ) ( 912 1184 -96 ) clip [ 0.894427190999916 -0.4472135954999581 0 18.674988 ] [ 0 0 -1 0 ] 0 1 1
@@ -26421,6 +26430,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Lamp"
 "_tb_id" "11"
+"_tb_linked_group_id" "{ae1f73e4-3d7a-4e62-a298-3a1d0e4a0d59}"
 // brush 0
 {
 ( 912 1184 0 ) ( 928 1176 -96 ) ( 912 1184 -96 ) clip [ 0.894427190999916 -0.4472135954999581 0 18.674988 ] [ 0 0 -1 0 ] 0 1 1
@@ -26734,7 +26744,6 @@
 "_tb_name" "Lamp"
 "_tb_id" "23"
 "_tb_linked_group_id" "{f5c9bc63-e418-4a5a-b3d7-81484ecc6bbc}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 // brush 0
 {
 ( -96 1056 160 ) ( -96 960 160 ) ( -96 960 64 ) clip [ -3.061616997868383e-16 1 0 16 ] [ 0 0 -1 32 ] 0 1 1
@@ -28227,6 +28236,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Lamp"
 "_tb_id" "26"
+"_tb_linked_group_id" "{3e453f31-8c58-4f70-8f6e-c4e6ffb946a6}"
 // brush 0
 {
 ( 1216 1344 160 ) ( 1232 1352 64 ) ( 1232 1352 160 ) clip [ -0.894427190999916 -0.44721359549995754 0 33.40674 ] [ 0 0 -1 -32 ] 0 1 1
@@ -31872,7 +31882,6 @@
 "_tb_name" "Lamp"
 "_tb_id" "27"
 "_tb_linked_group_id" "{f0643f3d-58e6-468a-bb23-ace0d36ed87e}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 // brush 0
 {
 ( 216 1040 448 ) ( 216 976 352 ) ( 216 1040 352 ) clip [ -3.061616997868383e-16 -1 0 -16 ] [ 0 0 -1 0 ] 0 1 1

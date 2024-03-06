@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "message" "Satan's Smelly Spawn"
-"wad" "../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_props.wad"
+"wad" "../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_palette.wad"
 "_sun_mangle" "45 -65 0"
 "_sunlight" "150"
 "_sunlight2" "425"
@@ -13231,7 +13231,6 @@
 "_tb_name" "pillar_arena"
 "_tb_id" "57"
 "_tb_linked_group_id" "{de7272a9-0935-4892-964d-d506a0c6e2c0}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 // brush 0
 {
 ( 576 992 -1184 ) ( 576 1120 -1216 ) ( 576 1120 -1184 ) may_blok2_1 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
