@@ -19,17 +19,19 @@ import runpy
 import glob
 import argparse
 
+
 # Builds a single file
 def build_file(source_path, destination_path, source_if_missing):
     print(source_path)
     os.makedirs(os.path.dirname(destination_path), exist_ok=True)
     try:
         shutil.copy(source_path, destination_path)
-    except:
+    except Exception:
         if len(source_if_missing):
             shutil.copy(source_if_missing, destination_path)
         else:
             warnings.warn(f"Missing file with no substitute: {source_path}")
+
 
 # Gets a source and dest path from a file entry File. Entries can be a string
 # (where source and dest are the same) or a 2-long list (specifying the source
@@ -39,6 +41,7 @@ def extract_file(file):
         return file[0], file[1]
     else:
         return file, file
+
 
 # Builds a single component from build_components.json
 def build_component(component_data):
@@ -73,6 +76,7 @@ def build_component(component_data):
             source_if_missing,
         )
 
+
 # Build a single release from build_releases.json
 def build_release(name, data):
     # Print
@@ -82,7 +86,7 @@ def build_release(name, data):
     clear_working()
 
     # Create release directory
-    os.makedirs(f'releases', exist_ok=True)
+    os.makedirs('releases', exist_ok=True)
 
     # Pull out base directory
     base_dir = data['base_dir']
@@ -108,7 +112,6 @@ def build_release(name, data):
         os.chdir('../../')
         shutil.copy('working/pak0.pak', os.path.join('releases', name, base_dir, 'pak0.pak'))
 
-
     # Build and copy pak1
     pak1_exists = len(os.listdir('working/pak1')) > 0
     if pak1_exists:
@@ -121,34 +124,40 @@ def build_release(name, data):
         os.chdir('../../')
         shutil.copy('working/pak1.pak', os.path.join('releases', name, base_dir, 'pak1.pak'))
 
+
 # Clears the working directory and sets up empty directories
 def clear_working():
     # Remove working folder and its contents
     shutil.rmtree('./working', ignore_errors=True)
 
     # Create new empty directories
-    os.makedirs(f'working', exist_ok=True)
-    os.makedirs(f'working/pak0', exist_ok=True)
-    os.makedirs(f'working/pak1', exist_ok=True)
-    os.makedirs(f'working/unpacked', exist_ok=True)
+    os.makedirs('working', exist_ok=True)
+    os.makedirs('working/pak0', exist_ok=True)
+    os.makedirs('working/pak1', exist_ok=True)
+    os.makedirs('working/unpacked', exist_ok=True)
+
 
 def compile_wad():
     os.chdir('texture-wads')
     runpy.run_path('./compile_wads.py', run_name="__build__")
     os.chdir('../')
 
+
 def compile_bsp():
     os.chdir('./lq1/maps')
     runpy.run_path('./compile_maps.py', run_name="__build__")
     os.chdir('../../')
 
+
 def compile_progs():
     subprocess.call(['fteqcc', 'qcsrc/progs.src', '-D__LIBREQUAKE__', '-O3'])
+
 
 def compile():
     compile_wad()
     compile_bsp()
     compile_progs()
+
 
 def build():
     # Delete existing releases
@@ -159,6 +168,7 @@ def build():
         releases = json.load(json_file)
         for key, value in releases.items():
             build_release(key, value)
+
 
 def main():
     # Parse command-line arguments
@@ -194,6 +204,7 @@ def main():
 
     # Confirmation
     print("Build complete!")
+
 
 if __name__ == "__main__":
     main()
