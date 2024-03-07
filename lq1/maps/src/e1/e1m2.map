@@ -5,7 +5,7 @@
 "classname" "worldspawn"
 "mapversion" "220"
 "message" "The Feudal Anomaly"
-"wad" "../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_utility.wad"
+"wad" "../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_palette.wad"
 "_tb_def" "builtin:Quake.fgd"
 "_sunlight" "95"
 "_sun_mangle" "106  -73 0"

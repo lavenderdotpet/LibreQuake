@@ -5,7 +5,7 @@
 "mapversion" "220"
 "classname" "worldspawn"
 "_tb_mod" "lq1"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_palette.wad"
 "_bounce" "1"
 "_dirt" "1"
 "_sunlight" "300"
@@ -6067,6 +6067,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "light_red_flicker"
 "_tb_id" "9"
+"_tb_linked_group_id" "{c1659cee-1639-4a13-86e7-26e6a4a5483f}"
 }
 // entity 10
 {
@@ -6757,7 +6758,6 @@
 "_tb_name" "door_gold_light"
 "_tb_id" "23"
 "_tb_linked_group_id" "{38ec0cb0-f886-4064-bde4-127c9b0db41e}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 // brush 0
 {
 ( -976 -192 128 ) ( -976 -208 128 ) ( -976 -208 0 ) t_wall2a [ 0 -1 0 0 ] [ -0 -0 -1 0 ] 0 1 1
@@ -7275,7 +7275,6 @@
 "_tb_name" "crate"
 "_tb_id" "37"
 "_tb_linked_group_id" "{66415bb8-5a69-49d8-a868-fbc469adc6c0}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 100
 {
@@ -7482,7 +7481,6 @@
 "_tb_name" "crate_small"
 "_tb_id" "46"
 "_tb_linked_group_id" "{eee8bcec-1a0a-4a19-a0cf-795b5ad05aa8}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 118
 {
@@ -8019,7 +8017,6 @@
 "_tb_name" "detail_pillar"
 "_tb_id" "55"
 "_tb_linked_group_id" "{41568952-7b0e-4e05-8d39-1be399b50f63}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 // brush 0
 {
 ( -128 -256 296 ) ( -128 -192 176 ) ( -128 -192 296 ) t_trim2ba [ 0 4.371139006309477e-08 -0.999999999999999 0 ] [ 0 0.999999999999999 4.371139006309477e-08 0 ] 90 1 1

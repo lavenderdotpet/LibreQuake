@@ -38,12 +38,14 @@ lq-pl.xcf
 *.cfg
 *.kate-swp
 *autosave.kra
+*-compile.map
 
 # included files
 !lq1/default.cfg
 !lq1/dev.cfg
 !lq1/zoom90.cfg
 !lq1/zoom120.cfg
+!lq1/-config.cfg
 
 
 

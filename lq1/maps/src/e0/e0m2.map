@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_tech.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_palette.wad"
 "_bounce" "1"
 "_bouncecolorscale" "1"
 "_dirty" "1"

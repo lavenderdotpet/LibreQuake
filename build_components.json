@@ -22,13 +22,14 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
-            "progs.dat",
             "gfx.wad",
             "demo1.dem",
             "demo2.dem",
             "demo3.dem"
         ],
-        "files_pak1": [],
+        "files_pak1": [
+            "progs.dat"
+        ],
         "files_unpacked": []
     },
     "config": {
@@ -40,6 +41,7 @@
         ],
         "files_pak1": [],
         "files_unpacked": [
+            ["-config.cfg", "config.cfg"],
             "cam.cfg",
             "dev.cfg",
             "zoom90.cfg",
@@ -309,6 +311,7 @@
             "progs/dog.mdl",
             "progs/end1.mdl",
             "progs/eyes.mdl",
+            "progs/flame0.mdl",
             "progs/flame.mdl",
             "progs/flame2.mdl",
             "progs/g_light.mdl",
@@ -664,7 +667,6 @@
             "gfx/box_tr.lmp",
             "gfx/colormap.lmp",
             "gfx/complete.lmp",
-            "gfx/conback.lmp",
             "gfx/dim_drct.lmp",
             "gfx/dim_ipx.lmp",
             "gfx/dim_modm.lmp",
@@ -710,6 +712,12 @@
             "gfx/menumods.lmp"
         ],
         "files_pak1": [
+            "gfx/sp_maps.lmp",
+            "gfx/mainmenu.lmp",
+            "gfx/conback.lmp",
+            "gfx/menumods.lmp",
+            "gfx/levels.lmp",
+            "gfx/demos.lmp",
             "gfx/pop.lmp"
         ],
         "files_unpacked": []

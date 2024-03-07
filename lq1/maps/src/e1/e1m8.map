@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_wood.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_palette.wad"
 "_sunlight" "200"
 "_sun_mangle" "200 -70 0"
 "_sunlight2" "220"
@@ -8167,7 +8167,6 @@
 "_tb_name" "tower-hairdress"
 "_tb_id" "4"
 "_tb_linked_group_id" "{4bb17570-6ed1-4926-bdcf-d28d9e0ec63f}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 169
 {
@@ -9174,7 +9173,6 @@
 "_tb_name" "window"
 "_tb_id" "14"
 "_tb_linked_group_id" "{62dc8a97-87f5-4862-bfa5-936ba7c77183}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 220
 {

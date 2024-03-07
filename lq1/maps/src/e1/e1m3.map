@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"wad" "../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_props.wad"
+"wad" "../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_props.wad;../../../../texture-wads/lq_palette.wad"
 "sounds" "5"
 "message" "Rogue's Passage"
 "worldtype" "0"
@@ -21968,6 +21968,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "zombie_riser"
 "_tb_id" "4"
+"_tb_linked_group_id" "{1271c20b-2764-4d72-89fa-caa8723af9a7}"
 // brush 0
 {
 ( 2624 896 -256 ) ( 2624 960 -320 ) ( 2624 960 -256 ) med_csl_flr4_4 [ 0 -1 0 -32 ] [ 0 0 -1 0 ] 0 1 1
@@ -22049,6 +22050,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "zombie_riser"
 "_tb_id" "6"
+"_tb_linked_group_id" "{8e18605a-d3f7-40d7-a6a7-56ae1b7c2c3f}"
 // brush 0
 {
 ( 2880 1184 -256 ) ( 2880 1248 -320 ) ( 2880 1248 -256 ) med_csl_flr4_4 [ 0 -1 0 -32 ] [ 0 0 -1 0 ] 0 1 1
@@ -22122,6 +22124,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "zombie_riser"
 "_tb_id" "7"
+"_tb_linked_group_id" "{2fa190d4-87e9-490b-8014-d3d52ad6b966}"
 // brush 0
 {
 ( 2944 960 -256 ) ( 2944 1024 -320 ) ( 2944 1024 -256 ) med_csl_flr4_4 [ 0 -1 0 -32 ] [ 0 0 -1 0 ] 0 1 1
@@ -22202,6 +22205,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "zombie_riser"
 "_tb_id" "8"
+"_tb_linked_group_id" "{68d31646-a3cc-4ec6-989a-3932bf5aadf2}"
 // brush 0
 {
 ( 1728 1024 -256 ) ( 1728 1088 -320 ) ( 1728 1088 -256 ) med_csl_flr4_4 [ 0 1.0000000000000002 0 32 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
@@ -22275,6 +22279,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "zombie_riser"
 "_tb_id" "9"
+"_tb_linked_group_id" "{7411e508-79ed-4013-ba3b-3eb301802e3c}"
 // brush 0
 {
 ( 1728 1248 -256 ) ( 1728 1312 -320 ) ( 1728 1312 -256 ) med_csl_flr4_4 [ 0 1.0000000000000002 0 32 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
@@ -22348,6 +22353,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "zombie_riser"
 "_tb_id" "10"
+"_tb_linked_group_id" "{f144b9e9-4eea-4d7d-a781-9a5220c62472}"
 // brush 0
 {
 ( 2112 1216 -256 ) ( 2112 1280 -320 ) ( 2112 1280 -256 ) med_csl_flr4_4 [ 0 1.0000000000000002 0 64 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
@@ -22421,6 +22427,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "zombie_riser"
 "_tb_id" "11"
+"_tb_linked_group_id" "{f93fff47-4a78-4c04-bceb-3b8a085d82af}"
 // brush 0
 {
 ( 1920 960 -256 ) ( 1920 1024 -320 ) ( 1920 1024 -256 ) med_csl_flr4_4 [ 0 1.0000000000000002 0 32 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1

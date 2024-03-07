@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_extra.wad;../../../../texture-wads/lq_greek.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_greek_nol.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_greek.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_palette.wad"
 "fog" "0.05 1 1 1"
 "sounds" "4"
 "_tb_def" "builtin:Quake.fgd"
@@ -22213,6 +22213,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "fear"
 "_tb_id" "1"
+"_tb_linked_group_id" "{1bf6e4d5-7e53-405a-8291-34aaba317527}"
 // brush 0
 {
 ( -3712 768 3264 ) ( -3712 256 3264 ) ( -3712 256 -1024 ) *water0 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -22467,6 +22468,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "halway"
 "_tb_id" "2"
+"_tb_linked_group_id" "{de512df8-9e58-4d8f-bc53-fa8a71bc9a6e}"
 "_tb_group" "1"
 // brush 0
 {
@@ -22871,7 +22873,6 @@
 "_tb_name" "arch"
 "_tb_id" "8"
 "_tb_linked_group_id" "{bb63214b-b105-4b0f-81ab-f3aca79880e7}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 646
 {
@@ -23314,6 +23315,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lamp_floor2"
 "_tb_id" "24"
+"_tb_linked_group_id" "{e16d4d4f-fc3b-40cc-88ee-8776982e11db}"
 }
 // entity 660
 {

@@ -4,7 +4,7 @@
 {
 "classname" "worldspawn"
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_dev_legacy.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_flesh.wad"
+"wad" "../../../../texture-wads/lq_mayan.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_dev_legacy.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_palette.wad"
 "worldtype" "1"
 "message" "Corpse army"
 "sounds" "8"
@@ -262,6 +262,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "area1"
 "_tb_id" "799"
+"_tb_linked_group_id" "{c13ee03d-9f63-487f-b3f8-47a460b07810}"
 // brush 0
 {
 ( -80 -64 -16 ) ( -80 -63 -16 ) ( -80 -64 -15 ) may_flr1_1 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -4072,6 +4073,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "bridge"
 "_tb_id" "800"
+"_tb_linked_group_id" "{9e6b80b8-fd46-4ed3-a485-5cc238d05070}"
 // brush 0
 {
 ( 128 -672 -32 ) ( 128 -671 -32 ) ( 128 -672 -31 ) may_blok2_1 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -5251,6 +5253,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_smaller"
 "_tb_id" "801"
+"_tb_linked_group_id" "{3108d8af-8227-4cc2-82ba-4f1e3a137ff8}"
 "_tb_group" "800"
 }
 // entity 113
@@ -5333,6 +5336,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_smaller"
 "_tb_id" "802"
+"_tb_linked_group_id" "{253e0ebf-95e7-4b89-ac2d-66bbafc49d88}"
 "_tb_group" "800"
 }
 // entity 122
@@ -6182,6 +6186,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "803"
+"_tb_linked_group_id" "{ea5d75d8-09d8-42db-8540-a957b76b03b8}"
 "_tb_group" "800"
 }
 // entity 138
@@ -6299,6 +6304,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "804"
+"_tb_linked_group_id" "{b0e28ff2-a558-464b-89f1-f78d0385fb28}"
 "_tb_group" "800"
 }
 // entity 151
@@ -6377,6 +6383,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "805"
+"_tb_linked_group_id" "{33d0685c-a952-4020-af1c-c41d6efb320c}"
 "_tb_group" "800"
 }
 // entity 160
@@ -7293,6 +7300,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "806"
+"_tb_linked_group_id" "{7c7a555a-2311-4a05-8ef2-04de0b189ecc}"
 "_tb_group" "800"
 }
 // entity 200
@@ -7321,6 +7329,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_tomb"
 "_tb_id" "807"
+"_tb_linked_group_id" "{d72444b8-c8c0-4ed2-92e6-4f9ed9709545}"
 "_tb_group" "800"
 }
 // entity 203
@@ -7379,6 +7388,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "810"
+"_tb_linked_group_id" "{4d16ad41-a25f-4e05-84f1-d823a0f31d64}"
 "_tb_group" "800"
 }
 // entity 209
@@ -7674,6 +7684,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "808"
+"_tb_linked_group_id" "{9945f0d0-f319-4632-bd35-8bfccb562d7b}"
 "_tb_group" "800"
 }
 // entity 230
@@ -7692,6 +7703,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "809"
+"_tb_linked_group_id" "{c2371e73-23d5-4fef-b9a0-920061fb0132}"
 "_tb_group" "800"
 }
 // entity 232
@@ -7749,6 +7761,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "outside_key"
 "_tb_id" "811"
+"_tb_linked_group_id" "{0a599fbe-cf59-424c-9b78-2b760db67b98}"
 // brush 0
 {
 ( 1280 -1024 -384 ) ( 1280 -1023 -384 ) ( 1280 -1024 -383 ) may_brk1_0 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -8309,6 +8322,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "wiz_tomb"
 "_tb_id" "812"
+"_tb_linked_group_id" "{81f16a43-6140-4f48-8551-e854e5328e91}"
 "_tb_group" "811"
 // brush 0
 {
@@ -9643,6 +9657,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "End"
 "_tb_id" "880"
+"_tb_linked_group_id" "{605003d3-8a21-43cc-b656-db1e7e86900a}"
 "_tb_group" "811"
 // brush 0
 {
@@ -10255,6 +10270,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_line"
 "_tb_id" "813"
+"_tb_linked_group_id" "{cad1bc65-7401-448b-a894-3bdcf9d4c6cf}"
 "_tb_group" "880"
 }
 // entity 328
@@ -10335,6 +10351,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_line"
 "_tb_id" "814"
+"_tb_linked_group_id" "{6da49c30-4391-475b-bf45-adda8c4c08f4}"
 "_tb_group" "880"
 }
 // entity 335
@@ -11130,6 +11147,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "area_stairs"
 "_tb_id" "815"
+"_tb_linked_group_id" "{17fba12c-d728-4e56-a158-c217f3adc444}"
 // brush 0
 {
 ( 1376 -1632 -352 ) ( 1376 -1631 -352 ) ( 1376 -1632 -351 ) may_blok2_1 [ 0 -1 0 0 ] [ -0 -0 -1 0 ] 0 1 1
@@ -12903,6 +12921,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "816"
+"_tb_linked_group_id" "{6406f148-f1d2-446c-af53-0f82c9891c91}"
 "_tb_group" "815"
 }
 // entity 400
@@ -12944,6 +12963,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "817"
+"_tb_linked_group_id" "{770e6694-b4bd-41f1-a4da-8114940b691a}"
 "_tb_group" "815"
 }
 // entity 404
@@ -12988,6 +13008,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "818"
+"_tb_linked_group_id" "{38a95d3c-b433-4b26-a915-1c505d9ecc82}"
 "_tb_group" "815"
 }
 // entity 408
@@ -13032,6 +13053,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "819"
+"_tb_linked_group_id" "{44a51f8d-c4ac-4eaf-9ce6-9f345db3d47a}"
 "_tb_group" "815"
 }
 // entity 412
@@ -13064,6 +13086,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "822"
+"_tb_linked_group_id" "{6cc16744-3728-4eed-b383-786e8eea0fc4}"
 "_tb_group" "815"
 }
 // entity 415
@@ -13108,6 +13131,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "823"
+"_tb_linked_group_id" "{b04f7d7f-3f98-4058-bd1d-af6be17b86e9}"
 "_tb_group" "815"
 }
 // entity 419
@@ -14685,6 +14709,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "824"
+"_tb_linked_group_id" "{10a8ccc6-e640-4481-89fd-5858ea2bb882}"
 "_tb_group" "815"
 }
 // entity 443
@@ -14729,6 +14754,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "825"
+"_tb_linked_group_id" "{cf547ae4-16e6-4578-a0ab-55a27a1e7b9c}"
 "_tb_group" "815"
 }
 // entity 447
@@ -14773,6 +14799,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "826"
+"_tb_linked_group_id" "{30104946-a635-407a-9903-66eca90028e3}"
 "_tb_group" "815"
 }
 // entity 451
@@ -14817,6 +14844,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "827"
+"_tb_linked_group_id" "{070af27c-4594-420b-99da-9599e7aeed3c}"
 "_tb_group" "815"
 }
 // entity 455
@@ -14861,6 +14889,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "828"
+"_tb_linked_group_id" "{875849bb-8bce-46cc-845a-0509be8d08fd}"
 "_tb_group" "815"
 }
 // entity 459
@@ -14893,6 +14922,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "829"
+"_tb_linked_group_id" "{36b77611-71fc-40e0-8b11-abd2ee1d807b}"
 "_tb_group" "815"
 }
 // entity 462
@@ -14937,6 +14967,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "830"
+"_tb_linked_group_id" "{8a0dab81-50da-47f9-b04e-6085ff285595}"
 "_tb_group" "815"
 }
 // entity 466
@@ -14981,6 +15012,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "831"
+"_tb_linked_group_id" "{3df901ad-7af7-4dfb-8472-02922052d4ae}"
 "_tb_group" "815"
 }
 // entity 470
@@ -15025,6 +15057,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "832"
+"_tb_linked_group_id" "{e930218a-3c36-4bd1-ae7f-2aaa61991c12}"
 "_tb_group" "815"
 }
 // entity 474
@@ -15057,6 +15090,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "833"
+"_tb_linked_group_id" "{4794a020-1a38-4cc9-9aff-f56d898bea6a}"
 "_tb_group" "815"
 }
 // entity 477
@@ -15089,6 +15123,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "834"
+"_tb_linked_group_id" "{679b74fe-b8fd-4e5d-85ef-b3f74334a901}"
 "_tb_group" "815"
 }
 // entity 480
@@ -15133,6 +15168,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "835"
+"_tb_linked_group_id" "{323f0e2c-ff53-4371-aff3-5e5b975a7b22}"
 "_tb_group" "815"
 }
 // entity 484
@@ -15263,6 +15299,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "836"
+"_tb_linked_group_id" "{e87e752c-614b-481c-96b8-ac34c7a0582c}"
 "_tb_group" "815"
 }
 // entity 489
@@ -15307,6 +15344,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "837"
+"_tb_linked_group_id" "{36bd15d3-3a2e-468d-a9c6-f4feabc50a4d}"
 "_tb_group" "815"
 }
 // entity 493
@@ -15351,6 +15389,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "838"
+"_tb_linked_group_id" "{a4386451-8d35-4048-8a23-4eb66039ca97}"
 "_tb_group" "815"
 }
 // entity 497
@@ -15383,6 +15422,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "839"
+"_tb_linked_group_id" "{3bd2121a-dd0a-4141-8123-137f70f110c1}"
 "_tb_group" "815"
 }
 // entity 500
@@ -16068,6 +16108,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "840"
+"_tb_linked_group_id" "{550b6cf5-df6a-4883-b2b2-58ff984528bf}"
 "_tb_group" "815"
 }
 // entity 528
@@ -16112,6 +16153,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "841"
+"_tb_linked_group_id" "{507626fa-9acc-43dc-824b-83c0f4f6ea91}"
 "_tb_group" "815"
 }
 // entity 532
@@ -16144,6 +16186,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "842"
+"_tb_linked_group_id" "{afa172f6-f008-4d5a-87f7-0843d4492657}"
 "_tb_group" "815"
 }
 // entity 535
@@ -16176,6 +16219,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "litt_lit"
 "_tb_id" "843"
+"_tb_linked_group_id" "{0eb373fc-2b68-4bc0-916c-6dce9c1dd2a4}"
 "_tb_group" "815"
 }
 // entity 538
@@ -16931,6 +16975,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "tower"
 "_tb_id" "844"
+"_tb_linked_group_id" "{ac4870ab-e2fb-4f2a-a3c5-56b54065f5ad}"
 // brush 0
 {
 ( -96 -2016 -248 ) ( -96 -2015 -248 ) ( -96 -2016 -247 ) may_blok1_1 [ 0 0 1 24 ] [ 0 -1 0 0 ] 0 1 1
@@ -27045,6 +27090,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_tomb"
 "_tb_id" "845"
+"_tb_linked_group_id" "{e7142797-6c92-4db3-be77-bdbff24e6a91}"
 "_tb_group" "844"
 }
 // entity 758
@@ -27093,6 +27139,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "846"
+"_tb_linked_group_id" "{90b3fd70-ebfe-4ae4-bf3b-d4ab79c47ccf}"
 "_tb_group" "844"
 }
 // entity 763
@@ -27121,6 +27168,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "847"
+"_tb_linked_group_id" "{e4a671d6-ff9d-4982-b0a4-31676ba2afc4}"
 "_tb_group" "844"
 }
 // entity 766
@@ -27139,6 +27187,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "848"
+"_tb_linked_group_id" "{174e784d-19e5-4922-9337-8de0bd508dca}"
 "_tb_group" "844"
 }
 // entity 768
@@ -27167,6 +27216,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_tomb"
 "_tb_id" "849"
+"_tb_linked_group_id" "{11f7b688-b00a-42e2-959e-f20bef2c010e}"
 "_tb_group" "844"
 }
 // entity 771
@@ -27215,6 +27265,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "850"
+"_tb_linked_group_id" "{8c0057d3-cda4-4a82-b529-64355637a1d8}"
 "_tb_group" "844"
 }
 // entity 776
@@ -27233,6 +27284,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "851"
+"_tb_linked_group_id" "{ec720168-28ba-46a2-81b1-c4fc7bdf1474}"
 "_tb_group" "844"
 }
 // entity 778
@@ -27261,6 +27313,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_tomb"
 "_tb_id" "852"
+"_tb_linked_group_id" "{d957a717-31e6-4ace-be7c-1970672f67c9}"
 "_tb_group" "844"
 }
 // entity 781
@@ -27309,6 +27362,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "854"
+"_tb_linked_group_id" "{60a92e5b-f3ba-46a8-bad0-7466ca5e3a4a}"
 "_tb_group" "844"
 }
 // entity 786
@@ -27337,6 +27391,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "855"
+"_tb_linked_group_id" "{4d3c3f84-0d1b-402b-887e-0b8e2189ca30}"
 "_tb_group" "844"
 }
 // entity 789
@@ -27404,6 +27459,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "856"
+"_tb_linked_group_id" "{1ac2ec8a-c267-45f8-bca9-c5330f925baf}"
 "_tb_group" "844"
 }
 // entity 797
@@ -27422,6 +27478,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "857"
+"_tb_linked_group_id" "{b14163cc-e3a7-4ff2-a8a2-bf2031b70b47}"
 "_tb_group" "844"
 }
 // entity 799
@@ -27560,6 +27617,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "tombs"
 "_tb_id" "858"
+"_tb_linked_group_id" "{5d508a2d-d0c8-484a-a085-a8773f6ee774}"
 "_tb_group" "844"
 // brush 0
 {
@@ -28711,6 +28769,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "859"
+"_tb_linked_group_id" "{9249eee6-8886-4f5b-82e7-91c1713ace41}"
 "_tb_group" "844"
 }
 // entity 841
@@ -28729,6 +28788,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "862"
+"_tb_linked_group_id" "{013d11b1-fedd-4937-916d-61842f73111a}"
 "_tb_group" "844"
 }
 // entity 843
@@ -28775,6 +28835,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "863"
+"_tb_linked_group_id" "{5aa926f3-15d9-4cca-8354-b7a755688f41}"
 "_tb_group" "844"
 }
 // entity 848
@@ -28793,6 +28854,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_tomb"
 "_tb_id" "864"
+"_tb_linked_group_id" "{36f376ec-787b-4b67-80a6-3f190c45840d}"
 "_tb_group" "844"
 }
 // entity 850
@@ -28851,6 +28913,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "867"
+"_tb_linked_group_id" "{cb88addc-34ae-4dd2-a34f-19cc1bbae2c5}"
 "_tb_group" "844"
 }
 // entity 856
@@ -28897,6 +28960,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "868"
+"_tb_linked_group_id" "{a8577a85-64dc-4029-95e5-012bb07def30}"
 "_tb_group" "844"
 }
 // entity 861
@@ -28915,6 +28979,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_tomb"
 "_tb_id" "869"
+"_tb_linked_group_id" "{26b79247-52d9-4dd7-a1c2-684f3116e8ba}"
 "_tb_group" "844"
 }
 // entity 863
@@ -28973,6 +29038,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "872"
+"_tb_linked_group_id" "{ad246c20-057a-4033-8505-108150b75953}"
 "_tb_group" "844"
 }
 // entity 869
@@ -29020,6 +29086,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_tomb"
 "_tb_id" "873"
+"_tb_linked_group_id" "{ba447fea-f077-4d3e-b218-b6b8ba10facb}"
 "_tb_group" "844"
 }
 // entity 874
@@ -29154,6 +29221,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "874"
+"_tb_linked_group_id" "{8f1f074c-45c7-45fa-8e7b-27d7badcccec}"
 "_tb_group" "844"
 }
 // entity 890
@@ -30368,6 +30436,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "875"
+"_tb_linked_group_id" "{45e390b9-6c20-4553-a2e6-3381ea61897b}"
 "_tb_group" "844"
 }
 // entity 1017
@@ -30448,6 +30517,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "876"
+"_tb_linked_group_id" "{9240648b-8d77-4e6f-baff-86cabc61c28f}"
 "_tb_group" "844"
 }
 // entity 1026
@@ -31111,6 +31181,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "877"
+"_tb_linked_group_id" "{d2344510-7743-44af-8001-ec17d7115737}"
 "_tb_group" "844"
 }
 // entity 1082
@@ -31191,6 +31262,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "lit_pillar"
 "_tb_id" "878"
+"_tb_linked_group_id" "{5334045b-3fce-4517-bbb6-7b09e2204bc1}"
 "_tb_group" "844"
 }
 // entity 1091
@@ -31560,6 +31632,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "small_lit"
 "_tb_id" "853"
+"_tb_linked_group_id" "{9dabfc2c-3ddc-4496-a3f9-98f07f15945c}"
 "_tb_group" "844"
 }
 // entity 1116
@@ -31685,6 +31758,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "spawner"
 "_tb_id" "879"
+"_tb_linked_group_id" "{6c85ce0c-5e01-4656-a674-65456b645ca9}"
 // brush 0
 {
 ( 3200 -816 -128 ) ( 3200 -815 -128 ) ( 3200 -816 -127 ) may_flr1_2 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1

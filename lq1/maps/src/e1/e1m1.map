@@ -5,7 +5,7 @@
 "classname" "worldspawn"
 "mapversion" "220"
 "_tb_def" "builtin:Quake.fgd"
-"wad" "C:/QUAKE/TrenchBroom/wads/lq_extra.wad;C:/QUAKE/TrenchBroom/wads/LQ_fall.wad;C:/QUAKE/TrenchBroom/wads/lq_freedoom.wad;C:/QUAKE/TrenchBroom/wads/lq_tech.wad;C:/QUAKE/TrenchBroom/wads/lq_liquidsky.wad;C:/QUAKE/TrenchBroom/wads/lq_dev.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad"
+"wad" "C:/QUAKE/TrenchBroom/wads/lq_extra.wad;C:/QUAKE/TrenchBroom/wads/LQ_fall.wad;C:/QUAKE/TrenchBroom/wads/lq_freedoom.wad;C:/QUAKE/TrenchBroom/wads/lq_tech.wad;C:/QUAKE/TrenchBroom/wads/lq_liquidsky.wad;C:/QUAKE/TrenchBroom/wads/lq_dev.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_palette.wad"
 "worldtype" "2"
 "_tb_mod" "tombofthunder"
 "_sunlight2" "200"

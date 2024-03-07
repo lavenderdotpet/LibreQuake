@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"wad" "../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_tech.wad"
+"wad" "../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_palette.wad"
 "message" "Beyond Baneful Boundaries"
 "worldtype" "1"
 "_bounce" "15"
@@ -4519,7 +4519,6 @@
 "_tb_name" "item_altar"
 "_tb_id" "2"
 "_tb_linked_group_id" "{3ab51473-d46a-4ac9-a120-a0c9f00a186e}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 // brush 0
 {
 ( 176 -272 0 ) ( 176 -271 0 ) ( 176 -272 1 ) clip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -5585,6 +5584,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "ceil1"
 "_tb_id" "10"
+"_tb_linked_group_id" "{ed8f881a-9c34-48bf-acc4-db077993c76b}"
 }
 // entity 89
 {
@@ -5592,6 +5592,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Unnamed"
 "_tb_id" "9"
+"_tb_linked_group_id" "{2231020a-b92e-4566-aee7-d4ddf1691eb1}"
 "_tb_group" "10"
 // brush 0
 {
@@ -8949,7 +8950,6 @@
 "_tb_name" "lamp1"
 "_tb_id" "22"
 "_tb_linked_group_id" "{b7c17b81-fa7b-462b-af96-70630f5fed65}"
-"_tb_transformation" "1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"
 }
 // entity 227
 {
@@ -9306,6 +9306,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "screen_planet_a"
 "_tb_id" "25"
+"_tb_linked_group_id" "{444aaf64-1011-4ce9-91f9-78628f338f92}"
 }
 // entity 245
 {
@@ -9327,6 +9328,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "screen_planet_b"
 "_tb_id" "28"
+"_tb_linked_group_id" "{8c768c36-4497-4d25-9370-7c81b516cd7f}"
 }
 // entity 247
 {
@@ -9348,6 +9350,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "computer_cube1"
 "_tb_id" "31"
+"_tb_linked_group_id" "{beefb647-25bb-4c88-8865-ef2f82373b8b}"
 // brush 0
 {
 ( -256 3984 -64 ) ( -256 3985 -64 ) ( -256 3984 -63 ) comp1_3b [ -1.2836953722228372e-16 -1 0 48 ] [ -2.7755575615628914e-17 0 -1 0 ] 356.50842 1 1

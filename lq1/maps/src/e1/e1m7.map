@@ -4,7 +4,7 @@
 {
 "mapversion" "220"
 "classname" "worldspawn"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_medival_nol.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_flesh.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_medival_nol.wad;../../../../texture-wads/lq_palette.wad"
 "_sunlight" "95"
 "_sunlight2" "82"
 "_sun_mangle" "106  -73 0"
@@ -20,6 +20,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "spawn"
 "_tb_id" "9"
+"_tb_linked_group_id" "{42ab92d7-6a02-4aa9-a21b-0490bf1e9f02}"
 // brush 0
 {
 ( -640 -448 -2112 ) ( -640 -447 -2112 ) ( -640 -448 -2111 ) med_csl_brk10_f [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -225,6 +226,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Ending_area_that_is_just_e1m2"
 "_tb_id" "22"
+"_tb_linked_group_id" "{2cf6ae3f-03ba-4524-b61f-3216ce002775}"
 // brush 0
 {
 ( 2592 4032 -832 ) ( 2592 4000 -832 ) ( 2592 4000 -1088 ) med_csl_brk10b [ -2.4492935982947064e-16 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -2565,6 +2567,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "arena_test"
 "_tb_id" "14"
+"_tb_linked_group_id" "{f3f61607-86fa-49e4-8e79-92b29d91eb21}"
 // brush 0
 {
 ( -192 -160 -512 ) ( -192 -159 -512 ) ( -192 -160 -511 ) met_brn_trim32 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -5977,6 +5980,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "boss_important"
 "_tb_id" "1"
+"_tb_linked_group_id" "{1cee0bb6-d197-4b0d-933f-e6aa9634152a}"
 "_tb_group" "14"
 }
 // entity 235
@@ -6142,6 +6146,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Boss_logic"
 "_tb_id" "15"
+"_tb_linked_group_id" "{181df1ca-6ab9-48ed-9bbc-67721db47ed8}"
 "_tb_group" "1"
 // brush 0
 {
@@ -6378,6 +6383,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Phase3 start explosions"
 "_tb_id" "16"
+"_tb_linked_group_id" "{75ba8459-7e1f-423e-920a-6e88dbd51648}"
 "_tb_group" "15"
 // brush 0
 {
@@ -6460,6 +6466,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Phase2 start explosions"
 "_tb_id" "17"
+"_tb_linked_group_id" "{aeb5d04a-b109-4c28-a2c2-413ac68ab29d}"
 "_tb_group" "15"
 // brush 0
 {
@@ -6477,6 +6484,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Pre_phase1 start explosions"
 "_tb_id" "19"
+"_tb_linked_group_id" "{075656b7-f702-46f9-8437-bae0e73a63b5}"
 "_tb_group" "15"
 // brush 0
 {
@@ -6559,6 +6567,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Phase4 start explosions"
 "_tb_id" "49"
+"_tb_linked_group_id" "{d42886fc-bde5-41b7-9252-1f2c2d9fc842}"
 "_tb_group" "15"
 // brush 0
 {
@@ -6688,6 +6697,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Phase3_end start explosions"
 "_tb_id" "50"
+"_tb_linked_group_id" "{5ffd566f-efff-4ad7-870d-3d8cf152f6ba}"
 "_tb_group" "15"
 // brush 0
 {
@@ -6916,6 +6926,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Pre_phase1 explosions"
 "_tb_id" "20"
+"_tb_linked_group_id" "{476d2c1d-b318-4809-b853-c7d041e78d1a}"
 "_tb_group" "14"
 }
 // entity 313
@@ -7120,6 +7131,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "ending_part"
 "_tb_id" "24"
+"_tb_linked_group_id" "{84bdbe88-acc8-4720-a9a1-019713ed13e9}"
 "_tb_group" "14"
 // brush 0
 {
@@ -8306,6 +8318,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Killable boss test"
 "_tb_id" "47"
+"_tb_linked_group_id" "{8675176c-aef4-4da9-bb9c-bf4556754c54}"
 "_tb_group" "24"
 // brush 0
 {
@@ -8406,6 +8419,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Boss_comeback"
 "_tb_id" "48"
+"_tb_linked_group_id" "{c89f8cd5-14db-466f-9cf8-b34fc9b17cbb}"
 "_tb_group" "24"
 }
 // entity 345
@@ -10453,6 +10467,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "entrance_arena"
 "_tb_id" "25"
+"_tb_linked_group_id" "{c8c00e46-7760-40de-9d8e-f97243a6753c}"
 "_tb_group" "14"
 // brush 0
 {
@@ -13124,6 +13139,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Outside_look"
 "_tb_id" "41"
+"_tb_linked_group_id" "{4ebfdf16-0a1c-45a1-a84c-ea08628ccf2e}"
 "_tb_group" "14"
 // brush 0
 {
@@ -13707,6 +13723,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "bridge"
 "_tb_id" "44"
+"_tb_linked_group_id" "{2099cf6f-3daf-4700-8736-d91272a150ec}"
 "_tb_group" "14"
 // brush 0
 {
@@ -14189,6 +14206,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "Phase3_end_explosions"
 "_tb_id" "51"
+"_tb_linked_group_id" "{caca4c3c-fffd-4212-b7db-afcd0e9e5b76}"
 "_tb_group" "14"
 }
 // entity 588
@@ -14373,6 +14391,7 @@
 "_tb_type" "_tb_group"
 "_tb_name" "outside_area"
 "_tb_id" "45"
+"_tb_linked_group_id" "{32fd648a-ed45-4583-b604-77bb0ed97a79}"
 // brush 0
 {
 ( -2560 -2912 -768 ) ( -2560 -2911 -768 ) ( -2560 -2912 -767 ) sky_star [ 0 -1.0000000000000002 0 0 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
