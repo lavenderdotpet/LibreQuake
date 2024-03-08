@@ -1,0 +1,86 @@
+name: Build and Release
+
+on:
+  release:
+    types: [created]
+  push:
+    branches:
+      - main
+
+# Cancel redundant builds on the same branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: bash -x .github/scripts/install_deps.sh
+    - name: Build release artifacts
+      env:
+        PYTHONUNBUFFERED: 1
+      run: |
+        export PATH="/tmp/qpakman:/tmp/fteqcc:/tmp/ericw-tools:$PATH"
+        python build.py
+    - name: Zip artifacts
+      run: |
+        cd releases
+        zip -r full.zip full
+        zip -r mod.zip mod
+        zip -r lite.zip lite
+        zip -r mod_lite.zip mod_lite
+        zip -r dev.zip dev
+        cd ..
+    - name: Upload asset full.zip
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: releases/full.zip
+        asset_name: full.zip
+        asset_content_type: application/zip
+    - name: Upload asset mod.zip
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: releases/mod.zip
+        asset_name: mod.zip
+        asset_content_type: application/zip
+    - name: Upload asset lite.zip
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: releases/lite.zip
+        asset_name: lite.zip
+        asset_content_type: application/zip
+    - name: Upload asset mod_lite.zip
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: releases/mod_lite.zip
+        asset_name: mod_lite.zip
+        asset_content_type: application/zip
+    - name: Upload asset dev.zip
+      if: github.event_name == 'release'
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: releases/dev.zip
+        asset_name: dev.zip
+        asset_content_type: application/zip

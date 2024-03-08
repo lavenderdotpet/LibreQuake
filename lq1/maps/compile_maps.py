@@ -107,7 +107,7 @@ def command_make(specific_map=None):
                 continue
 
         setup_compile_args(f)
-        print(f"- {f}")
+        print(f"Compiling {f}")
         devnull = open(os.devnull, 'w')
         subprocess.call([LQ_BSP_PATH] + LQ_BSP_FLAGS.split() + [f"{map_name}.map"],
                         stdout=devnull, cwd=os.path.dirname(f))

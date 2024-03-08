@@ -27,7 +27,9 @@ def make():
         command = ['qpakman']
         command.extend(filepaths)
         command.extend(['-o', f'{wad}.wad'])
-        subprocess.call(command)
+        print(f'Compiling {wad}.wad...')
+        # Suppress output except for errors
+        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
 
 
 if __name__ == "__main__":
