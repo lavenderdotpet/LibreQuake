@@ -12,6 +12,7 @@ def make():
         'lq_liquidsky',
         'lq_mayan',
         'lq_medieval',
+        'lq_palette',
         'lq_metal',
         'lq_props',
         'lq_tech',
