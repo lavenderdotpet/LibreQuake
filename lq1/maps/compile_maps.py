@@ -25,6 +25,7 @@ LQ_DEF_BSP_FLAGS = ""
 LQ_DEF_VIS_FLAGS = ""
 LQ_DEF_LIG_FLAGS = "-bounce -dirt"
 
+
 # Check for compiler
 def check_for_compiler():
     if not LQ_BSP_PATH:
@@ -32,6 +33,7 @@ def check_for_compiler():
             print("Couldn't find ericw-tools, required to build map content.")
             print("Please see https://github.com/ericwa/ericw-tools/ for info.")
             sys.exit()
+
 
 # Setup compile arguments
 def setup_compile_args(path):
@@ -51,6 +53,7 @@ def setup_compile_args(path):
                 if line.startswith("LQ_LIG_FLAGS"):
                     LQ_LIG_FLAGS = line.split("\"")[1]
 
+
 # Execute command
 def execute_command(command):
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -59,14 +62,16 @@ def execute_command(command):
         if "WARNING" in line or "Leak" in line:
             print(line)
 
+
 # Find all files in directory with this extension
 def find(directory, ext):
-    l = []
+    result_list = []
     for root, dirs, files in os.walk(directory):
         for file in files:
             if file.endswith(ext):
-                l.append(os.path.join(root, file))
-    return l
+                result_list.append(os.path.join(root, file))
+    return result_list
+
 
 def move_file(src, dest_dir):
     # Get the base filename
@@ -81,6 +86,7 @@ def move_file(src, dest_dir):
 
     # Move the source file to the destination directory
     shutil.move(src, dest_file)
+
 
 # Command make
 def command_make(specific_map=None):
@@ -103,9 +109,12 @@ def command_make(specific_map=None):
         setup_compile_args(f)
         print(f"- {f}")
         devnull = open(os.devnull, 'w')
-        subprocess.call([LQ_BSP_PATH] + LQ_BSP_FLAGS.split() + [f"{map_name}.map"], stdout=devnull, cwd=os.path.dirname(f))
-        subprocess.call([LQ_VIS_PATH] + LQ_VIS_FLAGS.split() + [f"{map_name}.bsp"], stdout=devnull, cwd=os.path.dirname(f))
-        subprocess.call([LQ_LIG_PATH] + LQ_LIG_FLAGS.split() + [f"{map_name}.bsp"], stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call([LQ_BSP_PATH] + LQ_BSP_FLAGS.split() + [f"{map_name}.map"],
+                        stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call([LQ_VIS_PATH] + LQ_VIS_FLAGS.split() + [f"{map_name}.bsp"],
+                        stdout=devnull, cwd=os.path.dirname(f))
+        subprocess.call([LQ_LIG_PATH] + LQ_LIG_FLAGS.split() + [f"{map_name}.bsp"],
+                        stdout=devnull, cwd=os.path.dirname(f))
 
     # Move bsp and lit files into the /lq1/maps directory
     print("Moving files...")
@@ -115,6 +124,7 @@ def command_make(specific_map=None):
 
     print("* Build DONE")
 
+
 # Command single
 def command_single(map_name):
     if not map_name:
@@ -122,12 +132,14 @@ def command_single(map_name):
         return
     command_make(map_name)
 
+
 # Command clean
 def command_clean():
     for ext in [".bsp", ".lit", ".prt", ".texinfo", ".texinfo.json", ".pts", ".log"]:
         for file in find('./', ext):
             os.remove(file)
     print("* Clean DONE")
+
 
 # Command help
 def command_help():
@@ -146,17 +158,18 @@ def command_help():
 
     FLAGS:
     QBSP_FLAGS    override map-specific qbsp flags with a global setting
-    QBSP_PATH     use a local path for qbsp instead of checking \$PATH
+    QBSP_PATH     use a local path for qbsp instead of checking $PATH
     VIS_FLAGS     override map-specific vis flags with a global setting
-    VIS_PATH     use a local path for qbsp instead of checking \$PATH
+    VIS_PATH     use a local path for qbsp instead of checking $PATH
     LIGHT_FLAGS   override map-specific light flags with a global setting
-    LIGHT_PATH     use a local path for qbsp instead of checking \$PATH
+    LIGHT_PATH     use a local path for qbsp instead of checking $PATH
 
     Example: make.py -m LIGHT_FLAGS=\"-extra4 -bounce\" QBSP_PATH=\"~/qbsp\"
     Example: make.py -s e1/e1m1
     ==========================================================================
     """
     print(help_text)
+
 
 # Argument parsing
 def parse_args(args):
@@ -169,6 +182,7 @@ def parse_args(args):
 
     operation = operations.get(args[0], command_help)
     operation()
+
 
 # If being run from the command line
 if __name__ == "__main__":

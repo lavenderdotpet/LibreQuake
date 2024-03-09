@@ -1,6 +1,7 @@
 import subprocess
 import glob
 
+
 def make():
     wads_list = [
         'lq_dev',
@@ -26,6 +27,7 @@ def make():
         command.extend(filepaths)
         command.extend(['-o', f'{wad}.wad'])
         subprocess.call(command)
+
 
 if __name__ == "__main__":
     make()
