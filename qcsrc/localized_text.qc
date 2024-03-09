@@ -29,11 +29,14 @@
 
 			EPISODE EPILOGUE STRINGS
 
+        These strings in-engine have a 40 character limit before
+        truncation.
+
 ==============================================================================*/
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_EPILOGUE_0              "\nAs the ethereal essence of your very\nbeing drifts through time and space,\nyou experience relentless calm and\nserene determination. You embrace the\nliminal, formless nature of your existence\nwithin the amorphous expanse between\nrealities.\n\nSuspended between the veils of life\nand death, among the realm of celestial\ndissolution, you wait to be called upon\nagain. To regain your corporeal form\nand step into the crucible of fate.\nTo finish your task and keep at bay the\nonslaught of cosmic horrors.\n"
+#define LOC_EPILOGUE_0              "\nAs the ethereal essence of your very\nbeing drifts through time and space,\nyou experience relentless calm and\nserene determination. You embrace the\nliminal, formless nature of your\nexistence within the amorphous expanse\nbetween realities.\n\nSuspended between the veils of life\nand death, among the realm of celestial\ndissolution, you wait to be called upon\nagain. To regain your corporeal form\nand step into the crucible of fate.\nTo finish your task and keep at bay the\nonslaught of cosmic horrors.\n"
 #define LOC_EPILOGUE_1              "EPISODE 1 COMPLETION TEXT GOES HERE"
 #define LOC_EPILOGUE_1_FREEWARE     "EPISODE 1 COMPLETION TEXT GOES HERE"
 #define LOC_EPILOGUE_2              "EPISODE 2 COMPLETION TEXT GOES HERE"
