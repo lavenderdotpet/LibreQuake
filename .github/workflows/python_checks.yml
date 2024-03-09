@@ -1,9 +1,12 @@
 name: flake8
 
-on: [pull_request]
+on:
+  push:
+    paths:
+      - '**.py'
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
