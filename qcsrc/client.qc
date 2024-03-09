@@ -171,6 +171,21 @@ void() GotoNextMap =
 		changelevel (nextmap);
 };
 
+// cypress (09 mar 2024) -- use struct for epilogue levels.
+var struct
+{
+	string 	map_name;
+	float	cd_track;
+	string 	epilogue_text;
+	string 	freeware_text;
+} intermission_levels[] =
+{
+	{"maps/e1m7.bsp", 2, LOC_EPILOGUE_1, LOC_EPILOGUE_1_FREEWARE},
+	{"maps/e2m6.bsp", 2, LOC_EPILOGUE_2, __NULL__},
+	{"maps/e3m6.bsp", 2, LOC_EPILOGUE_3, __NULL__},
+	{"maps/e4m7.bsp", 2, LOC_EPILOGUE_4, __NULL__}
+};
+// --cypress
 
 void() ExitIntermission =
 {
@@ -189,62 +204,29 @@ void() ExitIntermission =
 //
 	if (intermission_running == 2)
 	{
-		if (world.model == "maps/e1m7.bsp")
+		// cypress (09 mar 2024) -- use struct for epilogue levels.
+		for (float i = 0; i < intermission_levels.length; i++)
 		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
-
-			if (!cvar("registered"))
+			if (world.model == intermission_levels[i].map_name)
 			{
-				WriteByte (MSG_ALL, SVC_FINALE);
-				WriteString (MSG_ALL, LOC_EPILOGUE_1_FREEWARE);
+				WriteByte (MSG_ALL, SVC_CDTRACK);
+				WriteByte (MSG_ALL, intermission_levels[i].cd_track);	// [cdtrack]
+				WriteByte (MSG_ALL, 3);									// [looptrack], unused.
+
+				WriteByte(MSG_ALL, SVC_FINALE);
+
+				if (!cvar("registered") && intermission_levels[i].freeware_text != __NULL__)
+				{
+					WriteString(MSG_ALL, intermission_levels[i].freeware_text);
+				}
+				else
+				{
+					WriteString(MSG_ALL, intermission_levels[i].epilogue_text);
+				}
+				return;
 			}
-
-			else
-			{
-				WriteByte (MSG_ALL, SVC_FINALE);
-				WriteString (MSG_ALL, LOC_EPILOGUE_1);
-			}
-
-			return;
 		}
-
-		else if (world.model == "maps/e2m6.bsp")
-		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
-
-			WriteByte (MSG_ALL, SVC_FINALE);
-			WriteString (MSG_ALL, LOC_EPILOGUE_2);
-
-			return;
-		}
-
-		else if (world.model == "maps/e3m6.bsp")
-		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
-
-			WriteByte (MSG_ALL, SVC_FINALE);
-			WriteString (MSG_ALL, LOC_EPILOGUE_3);
-
-			return;
-		}
-
-		else if (world.model == "maps/e4m7.bsp")
-		{
-			WriteByte (MSG_ALL, SVC_CDTRACK);
-			WriteByte (MSG_ALL, 2);
-			WriteByte (MSG_ALL, 3);
-
-			WriteByte (MSG_ALL, SVC_FINALE);
-			WriteString (MSG_ALL, LOC_EPILOGUE_4);
-
-			return;
-		}
+		// --cypress
 
 		GotoNextMap();
 	}
@@ -1314,7 +1296,13 @@ called when a player dies
 void(entity targ, entity attacker) ClientObituary =
 {
 	local	float rnum;
+
+#ifdef __LIBREQUAKE__
+
 	local	float rnum2;
+
+#endif // __LIBREQUAKE__
+
 	local	string deathstring, deathstring2;
 	deathstring = deathstring2 = string_null;
 	// From GPL QW source
