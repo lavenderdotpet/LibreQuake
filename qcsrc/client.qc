@@ -180,6 +180,13 @@ var struct
 	string 	freeware_text;
 } intermission_levels[] =
 {
+
+#ifdef __LIBREQUAKE__
+
+	{"maps/e0m7.bsp", 2, LOC_EPILOGUE_0, __NULL__},
+
+#endif // __LIBREQUAKE__
+
 	{"maps/e1m7.bsp", 2, LOC_EPILOGUE_1, LOC_EPILOGUE_1_FREEWARE},
 	{"maps/e2m6.bsp", 2, LOC_EPILOGUE_2, __NULL__},
 	{"maps/e3m6.bsp", 2, LOC_EPILOGUE_3, __NULL__},
