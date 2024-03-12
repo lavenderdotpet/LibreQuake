@@ -12,7 +12,7 @@
 "wateralpha" "0.8"
 "_sunlight" "500"
 "_sunlight_penumbra" "20"
-"sounds" "10"
+"sounds" "7"
 // brush 0
 {
 ( -192 -64 -32 ) ( -192 -63 -32 ) ( -192 -64 -31 ) skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -9473,8 +9473,8 @@
 // entity 258
 {
 "classname" "info_intermission"
-"origin" "-13.07 -2388.39 984.392"
-"mangle" "0 -90 0"
+"origin" "-23.608 -2388.39 989.07"
+"mangle" "0 -90 -90"
 }
 // entity 259
 {
