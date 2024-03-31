@@ -1,4 +1,4 @@
-# ignored folders
+#↓ignored folders↓
 .stversions/
 .obsidian/
 .autosave/
@@ -8,7 +8,7 @@ working/
 releases/
 venv/
 
-# ignored files
+#↓ignored files↓
 docs/lqlogos/logomockup-wip2.ora
 docs/lqlogos/logomockup-wip2.xcf
 lq1/maps/.bmodelbspbak.7z
@@ -29,7 +29,6 @@ lq-pl.xcf
 *.lno
 *.texinfo
 *.wad
-*.id1
 *.pts
 *.prt
 *.png~
@@ -41,7 +40,21 @@ lq-pl.xcf
 *autosave.kra
 *-compile.map
 
-# included files
+#↓custom file ignores↓
+*.id1
+*.ignore
+*.hide
+
+#↓custom folders ignores↓
+*-id1-
+*-ignore-
+*-hide-
+*-id1
+*-ignore
+*-hide
+
+
+#↓included files↓
 !lq1/default.cfg
 !lq1/dev.cfg
 !lq1/zoom90.cfg
