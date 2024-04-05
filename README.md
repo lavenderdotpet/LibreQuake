@@ -56,7 +56,7 @@ It is sensible to also heed the following guidelines:
 
 ## Submitting your work
 
-The most common, and a fairly simple method, to submit your work is by posting it on the [LQ Discord](https://discord.gg/Sb43BccfN9) ~~[LQ Matrix](https://github.com/MissLavender-LQ/LibreQuake/).~~
+The most common, and a fairly simple method, to submit your work is by posting it on the [LQ Discord](https://discord.gg/nsr6DTF6RX) ~~[LQ Matrix](https://github.com/MissLavender-LQ/LibreQuake/).~~
 
 This allows a quick cycle of development and feedback.
 
