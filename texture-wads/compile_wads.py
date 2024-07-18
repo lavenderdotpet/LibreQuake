@@ -20,6 +20,7 @@ def make():
         'lq_terra',
         'lq_utility',
         'lq_wood',
+        'lq_conc',
     ]
     for wad in wads_list:
         filepaths = glob.glob(f'{wad}/*')

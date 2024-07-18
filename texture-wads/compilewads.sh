@@ -14,5 +14,5 @@ qpakman lq_tech/*.png -o lq_tech.wad
 qpakman lq_terra/*.png -o lq_terra.wad
 qpakman lq_utility/*.png -o lq_utility.wad
 qpakman lq_wood/*.png -o lq_wood.wad
-
+qpakman lq_conc/*.png -o lq_conc.wad
 
