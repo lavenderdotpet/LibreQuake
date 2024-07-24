@@ -5,11 +5,7 @@
 "classname" "worldspawn"
 "wad" "../../../../texture-wads/lq_health_ammo.wad;../../../../texture-wads/lq_dev.wad"
 "_credits" "Mr.M and Nolcoz"
-"light" "180"
-}
-// entity 1
-{
-"classname" "func_detail_wall"
+"light" "100"
 // brush 0
 {
 ( 0 16 32 ) ( 0 17 32 ) ( 0 16 33 ) +0explob2_s1 0 0 0 -1 1
@@ -23,4 +19,33 @@
 ( 32 28 64 ) ( 28 32 192 ) ( 28 32 64 ) +0explob2_s1 0 0 0 1 1
 ( 32 32 48 ) ( 32 32 49 ) ( 32 33 48 ) +0explob2_s1 0 0 0 1 1
 }
+}
+// entity 1
+{
+"classname" "light"
+"origin" "16 16 104"
+"light" "200"
+}
+// entity 2
+{
+"light" "200"
+"origin" "-40 72 8"
+"classname" "light"
+}
+// entity 3
+{
+"light" "200"
+"origin" "56 72 56"
+"classname" "light"
+}
+// entity 4
+{
+"origin" "64 -32 8"
+"classname" "light"
+}
+// entity 5
+{
+"light" "200"
+"origin" "-40 -40 -56"
+"classname" "light"
 }
