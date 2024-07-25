@@ -147,3 +147,32 @@
 ( 32 6 20 ) ( 32 8 20 ) ( 32 8 16 ) ammo_s_b1 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
+// entity 2
+{
+"light" "200"
+"origin" "-24 -16 -56"
+"classname" "light"
+}
+// entity 3
+{
+"light" "200"
+"origin" "-24 56 8"
+"classname" "light"
+}
+// entity 4
+{
+"light" "200"
+"origin" "48 56 56"
+"classname" "light"
+}
+// entity 5
+{
+"light" "100"
+"origin" "16 16 56"
+"classname" "light"
+}
+// entity 6
+{
+"origin" "48 -16 8"
+"classname" "light"
+}

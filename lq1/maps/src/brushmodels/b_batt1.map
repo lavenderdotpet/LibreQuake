@@ -69,3 +69,32 @@
 ( 11 6 24 ) ( 11 26 24 ) ( 11 26 4 ) ammo_bottom [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
+// entity 2
+{
+"classname" "light"
+"origin" "-31 -4.3651 -56"
+"light" "200"
+}
+// entity 3
+{
+"classname" "light"
+"origin" "38.5466 -23 8"
+}
+// entity 4
+{
+"classname" "light"
+"origin" "-12.3651 65.1816 8"
+"light" "200"
+}
+// entity 5
+{
+"classname" "light"
+"origin" "15.9192 16.1918 56"
+"light" "100"
+}
+// entity 6
+{
+"classname" "light"
+"origin" "57.182 46.5466 56"
+"light" "200"
+}
