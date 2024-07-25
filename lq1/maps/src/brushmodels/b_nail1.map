@@ -63,3 +63,32 @@
 ( 30 8 24 ) ( 30 28 24 ) ( 30 28 12 ) ammo_n_b2 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
+// entity 2
+{
+"classname" "light"
+"origin" "-24 56 8"
+"light" "200"
+}
+// entity 3
+{
+"classname" "light"
+"origin" "24 24 56"
+"light" "100"
+}
+// entity 4
+{
+"classname" "light"
+"origin" "48 56 56"
+"light" "200"
+}
+// entity 5
+{
+"classname" "light"
+"origin" "48 -16 8"
+}
+// entity 6
+{
+"classname" "light"
+"origin" "-24 -16 -56"
+"light" "200"
+}
