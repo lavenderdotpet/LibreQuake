@@ -89,10 +89,12 @@ def move_file(src, dest_dir):
 
 
 # Command make
-def command_make(specific_map=None):
+def command_make(specific_map=None, specific_dir=None):
     check_for_compiler()
 
-    for f in find('./', '.map'):
+    search_dir = specific_dir if specific_dir else './'
+
+    for f in find(search_dir, '.map'):
         map_name = os.path.splitext(os.path.basename(f))[0]
 
         if specific_map and map_name != specific_map:
@@ -130,7 +132,15 @@ def command_single(map_name):
     if not map_name:
         print("Map name needed, e.g. 'e1m1'")
         return
-    command_make(map_name)
+    command_make(specific_map=map_name)
+
+
+# Command directory
+def command_directory(directory):
+    if not directory:
+        print("Directory name needed, e.g. 'e1'")
+        return
+    command_make(specific_dir=directory)
 
 
 # Command clean
@@ -151,10 +161,11 @@ def command_help():
     Usage: make.py [OPERATION] [FLAGS]
 
     OPERATIONS:
-    -h, help           read this msg :3
-    -c, clean          remove extra files that are left after build
-    -m, make           compile all available map OR
-    -s, single <MAP>   compile a specified single map
+    -h, help            read this msg :3
+    -c, clean           remove extra files that are left after build
+    -m, make            compile all available map OR
+    -s, single <MAP>    compile a specified single map
+    -d, directory <DIR> compile all maps in a specified directory
 
     FLAGS:
     QBSP_FLAGS    override map-specific qbsp flags with a global setting
@@ -176,6 +187,7 @@ def parse_args(args):
     operations = {
         '-m': command_make,
         '-s': lambda: command_single(args[1] if len(args) > 1 else None),
+        '-d': lambda: command_directory(args[1] if len(args) > 1 else None),
         '-c': command_clean,
         '-h': command_help,
     }
