@@ -22,7 +22,6 @@ import argparse
 
 # Builds a single file
 def build_file(source_path, destination_path, source_if_missing):
-    print(source_path)
     os.makedirs(os.path.dirname(destination_path), exist_ok=True)
     try:
         shutil.copy(source_path, destination_path)
@@ -95,6 +94,7 @@ def build_release(name, data):
     with open('build_components.json', 'r') as json_file:
         components = json.load(json_file)
         for component_name in data['components']:
+            print(f"Building component {component_name}...")
             build_component(components[component_name])
 
     # Copy stuff over to release folder
@@ -108,7 +108,8 @@ def build_release(name, data):
         command = ['qpakman']
         command.extend(filepaths)
         command.extend(['-o', '../pak0.pak'])
-        subprocess.call(command)
+        print('Creating pak0.pak...')
+        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
         os.chdir('../../')
         shutil.copy('working/pak0.pak', os.path.join('releases', name, base_dir, 'pak0.pak'))
 
@@ -120,7 +121,8 @@ def build_release(name, data):
         command = ['qpakman']
         command.extend(filepaths)
         command.extend(['-o', '../pak1.pak'])
-        subprocess.call(command)
+        print('Creating pak1.pak...')
+        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
         os.chdir('../../')
         shutil.copy('working/pak1.pak', os.path.join('releases', name, base_dir, 'pak1.pak'))
 
