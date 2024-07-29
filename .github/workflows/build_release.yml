@@ -34,6 +34,13 @@ jobs:
         zip -r mod_lite.zip mod_lite
         zip -r dev.zip dev
         cd ..
+    - name: Make artifact available on non-release pipelines
+      if: github.event_name != 'release'
+      uses: actions/upload-artifact@v4
+      with:
+        name: full.zip
+        path: releases/full.zip
+        retention-days: 14
     - name: Upload asset full.zip
       if: github.event_name == 'release'
       uses: actions/upload-release-asset@v1
