@@ -7,24 +7,98 @@ on:
     branches:
       - main
 
+env:
+  PYTHONUNBUFFERED: 1
+
 # Cancel redundant builds on the same branch
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build_release:
+  build_wads:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
-    - name: Build release artifacts
-      env:
-        PYTHONUNBUFFERED: 1
+    - name: Build wads
+      run: python build.py --compile-wads
+    - name: Upload texture-wads-artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: texture-wads-artifact
+        path: texture-wads/*.wad
+
+  build_progs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: bash -x .github/scripts/install_deps.sh
+    - name: Build progs
+      run: python build.py --compile-progs
+    - name: Upload progs-artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: progs-artifact
+        path: lq1/progs.dat
+
+  build_maps:
+    needs: build_wads
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        map_dir: [brushmodels, dm, e0, e1, e2, e3, e4, misc]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: bash -x .github/scripts/install_deps.sh
+    - name: Download texture-wads-artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: texture-wads-artifact
+        path: texture-wads
+    - name: Build maps
       run: |
-        export PATH="/tmp/qpakman:/tmp/fteqcc:/tmp/ericw-tools:$PATH"
-        python build.py
+        cd lq1/maps
+        python compile_maps.py -d src/${{ matrix.map_dir }}
+    - name: Upload maps-artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: maps-artifact-${{ matrix.map_dir }}
+        if-no-files-found: error
+        path: |
+          lq1/maps/*.bsp
+          lq1/maps/*.lit
+
+  assemble_releases:
+    needs: [build_wads, build_progs, build_maps]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    # Download all the artifacts created so far
+    - name: Download texture-wads-artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: texture-wads-artifact
+        path: texture-wads
+    - name: Download progs-artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: progs-artifact
+        path: lq1/
+    - name: Download maps-artifacts
+      uses: actions/download-artifact@v4
+      with:
+        pattern: maps-artifact-*
+        path: lq1/maps/
+        merge-multiple: true
+    # Assemble the releases from the artifacts
+    - name: Install dependencies
+      run: bash -x .github/scripts/install_deps.sh
+    - name: Build releases
+      run: python build.py --build
     - name: Zip artifacts
       run: |
         cd releases
@@ -34,53 +108,52 @@ jobs:
         zip -r mod_lite.zip mod_lite
         zip -r dev.zip dev
         cd ..
-    - name: Upload asset full.zip
-      if: github.event_name == 'release'
-      uses: actions/upload-release-asset@v1
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # Upload the completed release artifacts
+    - name: Upload full.zip
+      uses: actions/upload-artifact@v4
       with:
-        upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/full.zip
-        asset_name: full.zip
-        asset_content_type: application/zip
-    - name: Upload asset mod.zip
-      if: github.event_name == 'release'
-      uses: actions/upload-release-asset@v1
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: full.zip
+        path: releases/full.zip
+    - name: Upload mod.zip
+      uses: actions/upload-artifact@v4
       with:
-        upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/mod.zip
-        asset_name: mod.zip
-        asset_content_type: application/zip
-    - name: Upload asset lite.zip
-      if: github.event_name == 'release'
-      uses: actions/upload-release-asset@v1
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: mod.zip
+        path: releases/mod.zip
+    - name: Upload lite.zip
+      uses: actions/upload-artifact@v4
       with:
-        upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/lite.zip
-        asset_name: lite.zip
-        asset_content_type: application/zip
-    - name: Upload asset mod_lite.zip
-      if: github.event_name == 'release'
-      uses: actions/upload-release-asset@v1
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: lite.zip
+        path: releases/lite.zip
+    - name: Upload mod_lite.zip
+      uses: actions/upload-artifact@v4
       with:
-        upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/mod_lite.zip
-        asset_name: mod_lite.zip
-        asset_content_type: application/zip
-    - name: Upload asset dev.zip
-      if: github.event_name == 'release'
-      uses: actions/upload-release-asset@v1
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: mod_lite.zip
+        path: releases/mod_lite.zip
+    - name: Upload dev.zip
+      uses: actions/upload-artifact@v4
       with:
-        upload_url: ${{ github.event.release.upload_url }}
-        asset_path: releases/dev.zip
-        asset_name: dev.zip
-        asset_content_type: application/zip
+        name: dev.zip
+        path: releases/dev.zip
+
+  upload_to_release_page:
+    if: github.event_name == 'release'
+    needs: assemble_releases
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        release_type: [full, mod, lite, mod_lite, dev]
+    steps:
+      - name: Download release artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ matrix.release_type }}.zip
+          path: releases/
+      - name: Upload asset  ${{ matrix.release_type }}.zip
+        uses: actions/upload-release-asset@v1
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: releases/${{ matrix.release_type }}.zip
+          asset_name:  ${{ matrix.release_type }}.zip
+          asset_content_type: application/zip
