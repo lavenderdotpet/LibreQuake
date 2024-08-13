@@ -1,0 +1,105 @@
+= Blasphemer
+
+*Note: The official Blasphemer data pack is downloadable free of charge.  Any profits made from third party sales of the data or modifications thereof do not go to the original Blasphemer developers.*
+
+Blasphemer aims to create a free content package for the Heretic engine, with a theme of metal-inspired dark fantasy.
+
+== How to play
+
+Any limit-removing _Doom_ source port that is compatible with _Heretic_ can be used to play Blasphemer. Blasphemer is an iwad, meaning the complete set of resources required for a game but still requires an executable engine to be played. You can turn your favorite _Heretic_ pwads into Lovecraftian nightmares using Blasphemer.
+
+Make sure to use 
+[source,bash]
+-----------------
+-deh blasphem.hhe -hhever 1.3
+-----------------
+with crispy-heretic.
+Will need to use
+[source,bash]
+-----------------
+-heretic
+-----------------
+with dsda-heretic.
+
+== What “free” means
+
+When we speak of free content or software, we refer to the movement in
+which your freedoms to use, copy, modify, and study a work is not
+infringed.  For example, you may freely use _Blasphemer_ for any purpose
+you see fit, you may redistribute it to anyone without needing to ask
+for permission, you may modify it (provided you keep the license
+intact, see `COPYING`), and you may study it--for example, to see how
+an “IWAD” is built.  To facilitate this, you can get the full source
+code for _Blasphemer_, in this case, in the form of a DeuTex tree.
+
+You may read more about free software at the https://www.gnu.org/[GNU]
+and https://www.fsf.org/[Free Software Foundation] websites.
+
+== Contributing to Blasphemer
+
+While Blasphemer is currently fully playable, there are still many resources that need to be created or polished. You can become a contributor by submitting a new or modified resource.
+
+Submitting resources to blasphemer can be done using pull requests on github, or just posting your work to the https://www.doomworld.com/vb/freedoom/70732-blasphemer-discussion/[forums] or on https://discord.gg/M7jhmw9zn4[discord]. 
+
+If you have found a bug or other issue, you can post them to the https://github.com/Catoptromancy/blasphemer/issues[issues] page on github.
+
+The target port/engine for Blasphemer is https://doomwiki.org/wiki/Heretic-plus[Heretic-plus], it's recommended to test your maps on it. 
+
+=== Contribution Guidelines
+
+Please follow these guidelines when contributing to the project.
+
+==== The Most Important Thing
+
+This is an open content project, and as such, must adhere to strict licensing rules.  Content that you submit must be compatible with the https://opensource.org/license/bsd-3-clause[revised BSD license].  DO NOT submit material from random websites; much "free" content on the web is still under copyright to someone and cannot be included.  You may suggest material from http://OpenGameArt.org[OpenGameArt] if it fits the criteria below.
+
+  * Public Domain material is allowed, ONLY if it is unambiguously Public Domain.  Beware of sites which claim their material is "public domain" while admitting that the sources are unknown: in all likelihood they are in fact copyrighted to someone and may NOT be used.
+  * CC0 licensed material is allowed.
+  * GPL material is NOT allowed.
+  * CC-BY, CC-BY-NC, CC-BY-SA, CC-BY-NC-SA, CC-BY-ND and CC-BY-NC-ND material is NOT allowed.
+  * https://www.gnu.org/licenses/license-list.html#informal[Informal] licenses (i.e. free to use with credit) requires individual consideration. 
+  * Other licenses should be assumed to be NOT allowed.
+  
+Be aware that the BSD license allows for modification and commercial use, however, the official Blasphemer releases are, and will remain, free of charge.  
+
+==== General Concerns
+
+  * Please consider filling in slots that have no suitable assets before making replacements to slots that already have assets.
+  * Although you should keep the above point in mind, we do accept replacements for assets that are already filled in, but only if there's a clear improvement offered.  If you're unsure, run a sample of your work by us before continuing.
+  * The goal of the project is NOT to make things look and sound just like Heretic, that would be pointless.  Consider the Plaguewielder Crossbow as being at the maximum level of similarity to Heretic's assets that is desired.  Be creative!
+  * The game themes are primarily inspired by dark fantasy, black metal culture and Lovecraftian horror.
+  * While we appreciate having unique content, the nature of this project means that you may feel free to submit material you create for it to any other project you wish, as well.
+
+==== Graphics
+
+  * Use the included palette to ensure that things will look OK in-game.
+  * The shiny-plastic appearance found in some sprites derived from 3D models is NOT desired.  Either hand-edit after rendering, or make the model renders less shiny.
+  * We don't use models in the mainline releases, but some ports may support them, so if you make sprites out of models, the models themselves are also worth contributing.  We may make an optional add-on including them if we get any.
+  * Monsters should be evil and demonic looking, and the stronger they are, the weirder and more alien they ought to be.
+  * For the most expedient inclusion of graphics, please submit them as a transparent .PNG. This is the format our DeuTex compilation tool uses and other formats have to be converted by our commit team before inclusion.  
+
+==== Levels
+
+  * Target map format is standard plus limit removal. Do not use port-specific map features.
+  * Episode 1 theme is towns, castles, cathedrals, etc.
+  * Episode 2 theme is wastelands and ruins.
+  * Episode 3 theme is a warped, alien world.
+  * Episode 4 theme hasn't been chosen yet.
+  * Episode 5 theme hasn't been chosen yet.
+  * Include the end boss enemy only in E3M8.
+  * Deathmatch maps should not include monsters.
+
+== Feedback & Community
+
+Join us on https://www.doomworld.com/vb/freedoom/70732-blasphemer-discussion/[DoomWorld] and https://discord.gg/M7jhmw9zn4[Discord]!
+
+== Screenshots
+
+image::http://www.jeshimoth.com/blas014_02.png[]
+image::http://www.jeshimoth.com/blas01301.png[]
+image::http://www.jeshimoth.com/blas01302.png[]
+image::http://www.jeshimoth.com/blas01303.png[]
+image::http://www.jeshimoth.com/blas01304.png[]
+image::http://www.jeshimoth.com/blas01305.png[]
+image::http://www.jeshimoth.com/blas01306.png[]
+
