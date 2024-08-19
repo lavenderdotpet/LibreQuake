@@ -108,8 +108,17 @@ def build_release(name, data):
         command = ['qpakman']
         command.extend(filepaths)
         command.extend(['-o', '../pak0.pak'])
-        print('Creating pak0.pak...')
-        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+        print("Creating pak0.pak...")
+        try:
+            subprocess.run(
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                check=True,  # Fail on non-zero exit code
+            )
+        except subprocess.CalledProcessError as e:
+            print(f"!!! Command failed:\n{e.stdout.decode('utf-8')}")
+            raise e
         os.chdir('../../')
         shutil.copy('working/pak0.pak', os.path.join('releases', name, base_dir, 'pak0.pak'))
 
@@ -122,7 +131,16 @@ def build_release(name, data):
         command.extend(filepaths)
         command.extend(['-o', '../pak1.pak'])
         print('Creating pak1.pak...')
-        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+        try:
+            subprocess.run(
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                check=True  # Fail on non-zero exit code
+            )
+        except subprocess.CalledProcessError as e:
+            print(f"!!! Command failed:\n{e.stdout.decode('utf-8')}")
+            raise e
         os.chdir('../../')
         shutil.copy('working/pak1.pak', os.path.join('releases', name, base_dir, 'pak1.pak'))
 
@@ -152,7 +170,16 @@ def compile_bsp():
 
 
 def compile_progs():
-    subprocess.call(['fteqcc', 'qcsrc/progs.src', '-D__LIBREQUAKE__', '-O3'])
+    try:
+        subprocess.run(
+            ["fteqcc", "qcsrc/progs.src", "-D__LIBREQUAKE__", "-O3"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            check=True,  # Fail on non-zero exit code
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"!!! Command failed:\n{e.stdout.decode('utf-8')}")
+        raise e
 
 
 def compile():
