@@ -12105,7 +12105,7 @@
 {
 "classname" "light"
 "origin" "656 1344 -184"
-"delay" "15"
+"delay" "2"
 }
 // entity 369
 {

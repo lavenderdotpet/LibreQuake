@@ -28,8 +28,16 @@ def make():
         command.extend(filepaths)
         command.extend(['-o', f'{wad}.wad'])
         print(f'Compiling {wad}.wad...')
-        # Suppress output except for errors
-        subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
+        try:
+            subprocess.run(
+                command,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                check=True,  # Fail on non-zero exit code
+            )
+        except subprocess.CalledProcessError as e:
+            print(f"!!! Command failed:\n{e.stdout.decode('utf-8')}")
+            raise e
 
 
 if __name__ == "__main__":

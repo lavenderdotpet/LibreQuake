@@ -15,10 +15,7 @@ LQ_VIS_PATH = "vis"
 LQ_LIG_PATH = "light"
 
 # Location of per-map compilation argument paths
-LQ_MAP_CON_PATH = "./src/-buildconfigs-"
-
-# Location of .map source files
-LQ_MAP_SRC_PATH = "src"
+LQ_MAP_CON_PATH = "src/-buildconfigs-"
 
 # Default compilation flags
 LQ_DEF_BSP_FLAGS = ""
@@ -35,32 +32,59 @@ def check_for_compiler():
             sys.exit()
 
 
-# Setup compile arguments
-def setup_compile_args(path):
-    global LQ_BSP_FLAGS, LQ_VIS_FLAGS, LQ_LIG_FLAGS
-    LQ_BSP_FLAGS = LQ_DEF_BSP_FLAGS
-    LQ_VIS_FLAGS = LQ_DEF_VIS_FLAGS
-    LQ_LIG_FLAGS = LQ_DEF_LIG_FLAGS
+def get_config_path(map_path):
+    # We know that the config dir mirrors the map dir structure so we need to remove the common path.
+    # whats left is the relative path to the map file.
+    # Then we exchange the extension from .map to .conf
+    map_abs_path = os.path.abspath(map_path)
+    conf_abs_path = os.path.abspath(LQ_MAP_CON_PATH)
+    common_path = os.path.commonpath([map_abs_path, conf_abs_path])
+    map_rel_path = os.path.relpath(map_abs_path, common_path)
+    map_rel_path_no_ext = os.path.splitext(map_rel_path)[0]
+    return os.path.join(LQ_MAP_CON_PATH, f"{map_rel_path_no_ext}.conf")
 
-    config_path = os.path.join(LQ_MAP_CON_PATH, f"{path[6:-4]}.conf")
-    if os.path.exists(config_path):
-        with open(config_path, 'r') as file:
-            for line in file:
-                if line.startswith("LQ_BSP_FLAGS"):
-                    LQ_BSP_FLAGS = line.split("\"")[1]
-                if line.startswith("LQ_VIS_FLAGS"):
-                    LQ_VIS_FLAGS = line.split("\"")[1]
-                if line.startswith("LQ_LIG_FLAGS"):
-                    LQ_LIG_FLAGS = line.split("\"")[1]
+
+def get_config(config_path):
+    # Read the config file and return a dictionary of key-value pairs
+    if not os.path.exists(config_path):
+        print(f"No config file found at {config_path}. Using default values.")
+        return {}
+
+    config = {}
+    with open(config_path, "r") as config_file:
+        for line in config_file:
+            # Strip whitespace and ignore empty lines or comments
+            line = line.strip()
+            if line and not line.startswith("#"):
+                key, value = line.split("=", 1)  # Split on the first '=' only
+                config[key.strip()] = value.strip('"').strip()
+    return config
+
+
+def get_compile_flags(map_path):
+    config_path = get_config_path(map_path)
+    config = get_config(config_path)
+
+    LQ_BSP_FLAGS = config.get("LQ_BSP_FLAGS", LQ_DEF_BSP_FLAGS)
+    LQ_VIS_FLAGS = config.get("LQ_VIS_FLAGS", LQ_DEF_VIS_FLAGS)
+    LQ_LIG_FLAGS = config.get("LQ_LIG_FLAGS", LQ_DEF_LIG_FLAGS)
+
+    return LQ_BSP_FLAGS, LQ_VIS_FLAGS, LQ_LIG_FLAGS
 
 
 # Execute command
-def execute_command(command):
-    process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    for line in process.stdout:
-        line = line.decode().strip()
-        if "WARNING" in line or "Leak" in line:
-            print(line)
+def execute_command(command, **kwargs):
+    try:
+        subprocess.run(
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            check=True,  # Fail on non-zero exit code
+            **kwargs
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"!!! Command failed:\n{e.stdout.decode('utf-8')}")
+        raise e
 
 
 # Find all files in directory with this extension
@@ -108,15 +132,17 @@ def command_make(specific_map=None, specific_dir=None):
             if "autosave" in f:
                 continue
 
-        setup_compile_args(f)
+        LQ_BSP_FLAGS, LQ_VIS_FLAGS, LQ_LIG_FLAGS = get_compile_flags(f)
+
         print(f"Compiling {f}")
-        devnull = open(os.devnull, 'w')
-        subprocess.call([LQ_BSP_PATH] + LQ_BSP_FLAGS.split() + [f"{map_name}.map"],
-                        stdout=devnull, cwd=os.path.dirname(f))
-        subprocess.call([LQ_VIS_PATH] + LQ_VIS_FLAGS.split() + [f"{map_name}.bsp"],
-                        stdout=devnull, cwd=os.path.dirname(f))
-        subprocess.call([LQ_LIG_PATH] + LQ_LIG_FLAGS.split() + [f"{map_name}.bsp"],
-                        stdout=devnull, cwd=os.path.dirname(f))
+
+        execute_command([LQ_BSP_PATH] + LQ_BSP_FLAGS.split() + [f"{map_name}.map"], cwd=os.path.dirname(f))
+
+        if "LQ_SKIP" not in LQ_VIS_FLAGS:
+            execute_command([LQ_VIS_PATH] + LQ_VIS_FLAGS.split() + [f"{map_name}.bsp"], cwd=os.path.dirname(f))
+
+        if "LQ_SKIP" not in LQ_LIG_FLAGS:
+            execute_command([LQ_LIG_PATH] + LQ_LIG_FLAGS.split() + [f"{map_name}.bsp"], cwd=os.path.dirname(f))
 
     # Move bsp and lit files into the /lq1/maps directory
     print("Moving files...")
