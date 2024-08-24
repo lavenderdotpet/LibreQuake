@@ -57,7 +57,7 @@ External contributors (non-Collaborators) are not expected to follow this name c
 
 In general, this guide is a must-read when writing good commit messages to begin with: https://cbea.ms/git-commit/
 
-Additionally, as this reporistory contains multiple diverse components, we ask that you prefix your commit message pertaining to the component you are modifying. Here are acceptable prefixes to use:
+Additionally, as this repository contains multiple diverse components, we ask that you prefix your commit message pertaining to the component you are modifying. Here are acceptable prefixes to use:
 
 * `BUILD`: Modification of our build scripts and/or tools.
 * `CI`: Modification of the GitHub Actions Pipeline(s).
@@ -100,4 +100,4 @@ If you are a Collaborator looking to merge a Pull Request, or are just curious a
 * Our CI passes without failure.
 * 48 hours or more have passed since the PR has been marked ready for review.
 
-If the change fixes a critical issue (such as a crash, broken animaton, etc.) an exception should be made for the 48 hour rule, **however all other prerequisites must be met!**
+If the change fixes a critical issue (such as a crash, broken animation, etc.) an exception should be made for the 48 hour rule, **however all other prerequisites must be met!**
