@@ -73,7 +73,7 @@ Here is a good example for a commit subject line:
 
 `GFX: Fix colormap having incorrect fullbright count`
 
-**You must always provide more context for your changes via the commit message body.**
+When more detail about a change is necessary, please take the opportunity to write a more detailed description in the commit body.
 
 If your commit addresses an open issue, be sure to include the issue in the commit message body.
 
