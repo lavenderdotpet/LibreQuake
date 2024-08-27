@@ -12,7 +12,7 @@
     <id>librequake.desktop</id>
   </provides>
   <name>LibreQuake</name>
-  <summary>Free content first-person shooter</summary>
+  <summary>Lovecraftian first-person shooter</summary>
   <launchable type="desktop-id">io.github.lavenderdotpet.LibreQuake.desktop</launchable>
   <description>
     <p>The LibreQuake project aims to create a complete, free content first-person shooter
@@ -27,17 +27,21 @@
     <p>This release is bundled with the quakespasm sourceport which is released under the
       GPL-2.0 license. See the Github page for details about used licenses.</p>
   </description>
+  <branding>
+    <color type="primary" scheme_preference="light">#c8b2ff</color>
+    <color type="primary" scheme_preference="dark">#241f31</color>
+  </branding>
   <url type="homepage">https://librequake.queer.sh/</url>
   <url type="bugtracker">https://github.com/lavenderdotpet/LibreQuake/issues</url>
   <url type="contribute">https://github.com/lavenderdotpet/LibreQuake</url>
   <screenshots>
     <screenshot type="default">
       <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage04.png</image>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage02.png</image>
     </screenshot>
     <screenshot>
       <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage02.png</image>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage04.png</image>
     </screenshot>
     <screenshot>
       <caption>LibreQuake</caption>
