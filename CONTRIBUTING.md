@@ -98,6 +98,6 @@ If you are a Collaborator looking to merge a Pull Request, or are just curious a
 * Commits follow our convention standards.
 * If the user is a collaborator, the Branch name convention standards have been followed.
 * Our CI passes without failure.
-* 48 hours or more have passed since the PR has been marked ready for review.
+* 24 hours or more have passed since the PR has been marked ready for review.
 
 If the change fixes a critical issue (such as a crash, broken animation, etc.) an exception should be made for the 48 hour rule, **however all other prerequisites must be met!**
