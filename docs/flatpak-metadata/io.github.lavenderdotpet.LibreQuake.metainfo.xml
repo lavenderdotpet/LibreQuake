@@ -12,7 +12,7 @@
     <id>librequake.desktop</id>
   </provides>
   <name>LibreQuake</name>
-  <summary>Lovecraftian first-person shooter</summary>
+  <summary>Cosmic horror first-person shooter</summary>
   <launchable type="desktop-id">io.github.lavenderdotpet.LibreQuake.desktop</launchable>
   <description>
     <p>The LibreQuake project aims to create a complete, free content first-person shooter
