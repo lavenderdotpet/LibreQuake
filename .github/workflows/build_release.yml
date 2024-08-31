@@ -7,6 +7,10 @@ on:
     branches:
       - main
   pull_request:
+    paths:
+      - 'lq1/**'
+      - 'qsrc/**'
+      - 'texture-wads/**'
 
 env:
   PYTHONUNBUFFERED: 1
