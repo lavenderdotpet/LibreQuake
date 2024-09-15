@@ -46,7 +46,9 @@
             "dev.cfg",
             "zoom90.cfg",
             "zoom120.cfg",
-            "accessibility.md"
+            "style_modern.cfg",
+            "style_retro.cfg",
+            "accessibility.txt"
         ]
     },
     "sounds": {
