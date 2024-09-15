@@ -16,9 +16,9 @@ The engine uses a directory called `id1/`, within that directory there are two a
 
 # How to Play
 
-Since *LibreQuake* is only the game data, you will still need to download an engine. These are also often termed “source ports” by the community. There are an overwhelming number of choices available, a lengthy list of which is available on the [Quake Wiki](https://quakewiki.org/wiki/Engines).
+Since *LibreQuake* is only the game data, you will still need to download an engine (or source port). One particularly recommended by the *LibreQuake* project is [FTEQW](https://fte.triptohell.info/downloads) This engine offers great support for both singleplayer multiplayer and the majority of mods created for both *Quake* and *LibreQuake*. [QuakeSpasmSpiked](https://triptohell.info/moodles/qss) and [Ironwail](https://github.com/andrei-drexler/ironwail/releases) are also good options. For even more options, see the [Quake Wiki](https://quakewiki.org/wiki/Engines).
 
-One particularly recommended by the *LibreQuake* project is [QuakeSpasmSpiked](https://triptohell.info/moodles/qss). This engine offers good support for single-player and the majority of mods created for both *Quake* and *LibreQuake*. As of April 2020, there are no PAK packaged files, but the work in progress can be played by placing the `lq1` directory in the main directory of your engine, the same place as the original `id1` folder. Then start your engine with the command line option `+game lq1` just like any other mod. You can then start a new game or use the `map` command from the console to explore in progress maps.
+Once you have downloaded an engine, paste the downloaded id1 (or lq1) folder in the same directory you put the engine executable. This is the executable you will run to start LibreQuake.
 
 # What “Free” Means
 
