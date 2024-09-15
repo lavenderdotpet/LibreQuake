@@ -58,8 +58,7 @@ lq-pl.xcf
 #↓included files↓
 !lq1/default*.cfg
 !lq1/dev.cfg
-!lq1/style_modern.cfg
-!lq1/style_retro.cfg
+!lq1/style_*.cfg
 !lq1/zoom90.cfg
 !lq1/zoom120.cfg
 !lq1/-config.cfg
