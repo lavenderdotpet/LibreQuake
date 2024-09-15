@@ -50,8 +50,10 @@
             "zoom90.cfg",
             "zoom120.cfg",
             "style_fte_modern.cfg",
+            "style_fte_classic.cfg",
             "style_fte_retro.cfg",
             "style_ironwail_modern.cfg",
+            "style_ironwail_classic.cfg",
             "style_ironwail_retro.cfg",
             "accessibility.txt"
         ]
