@@ -56,7 +56,7 @@ lq-pl.xcf
 
 
 #↓included files↓
-!lq1/default.cfg
+!lq1/default*.cfg
 !lq1/dev.cfg
 !lq1/style_modern.cfg
 !lq1/style_retro.cfg
