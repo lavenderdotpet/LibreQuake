@@ -13,8 +13,8 @@ docs/lqlogos/logomockup-wip2.ora
 docs/lqlogos/logomockup-wip2.xcf
 lq1/maps/.bmodelbspbak.7z
 lq1/config.cfg
-lq1/progs.dat
-lq1/qwprogs.dat
+*/progs.dat
+*/qwprogs.dat
 lq1/gfx/pop.png
 lq-pl.png
 lq-pl.xcf
