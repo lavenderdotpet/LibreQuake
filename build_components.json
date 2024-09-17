@@ -25,12 +25,13 @@
             "gfx.wad",
             "demo1.dem",
             "demo2.dem",
-            "demo3.dem"
-        ],
-        "files_pak1": [
+            "demo3.dem",
             "progs.dat"
         ],
-        "files_unpacked": []
+        "files_pak1": [],
+        "files_unpacked": [
+            "qwprogs.dat"
+        ]
     },
     "config": {
         "base_dir": "lq1",
