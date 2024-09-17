@@ -45,7 +45,8 @@ void() door_go_up;
 
 void() door_blocked =
 {
-	T_Damage (other, self, self, self.dmg);
+	other.deathtype = "squish";
+	T_Damage (other, self, self.goalentity, self.dmg);
 	
 	// if a door has a negative wait, it would never come back if blocked,
 	// so let it just squash the object to death real fast
@@ -62,7 +63,7 @@ void() door_blocked =
 
 void() door_hit_top =
 {
-	sound (self, CHAN_VOICE, self.noise1, 1, ATTN_NORM);
+	sound (self, CHAN_NO_PHS_ADD+CHAN_VOICE, self.noise1, 1, ATTN_NORM);
 	self.state = STATE_TOP;
 
 	if (self.spawnflags & DOOR_TOGGLE)
@@ -74,7 +75,7 @@ void() door_hit_top =
 
 void() door_hit_bottom =
 {
-	sound (self, CHAN_VOICE, self.noise1, 1, ATTN_NORM);
+	sound (self, CHAN_NO_PHS_ADD+CHAN_VOICE, self.noise1, 1, ATTN_NORM);
 	self.state = STATE_BOTTOM;
 };
 
@@ -154,6 +155,7 @@ void() door_fire =
 	starte = self;
 	do
 	{
+		self.goalentity = activator;	// Who fired us
 		door_go_up ();
 		self = self.enemy;
 	} while ( (self != starte) && (self != world) );
@@ -718,7 +720,7 @@ void () fd_secret_done =
 		self.th_pain = (void(entity attacker, float damage)) fd_secret_use;	
 		self.th_die = fd_secret_use;//copypasta'd directly from gpl'd qw source on github. -- secret door kill crash fix
 	}
-	sound(self, CHAN_VOICE, self.noise3, 1, ATTN_NORM);
+	sound(self, CHAN_NO_PHS_ADD+CHAN_VOICE, self.noise3, 1, ATTN_NORM);
 };
 
 void () secret_blocked =
@@ -727,6 +729,7 @@ void () secret_blocked =
 		return;
 
 	self.attack_finished = time + 0.5;
+	other.deathtype = "squish";
 	T_Damage (other, self, self, self.dmg);
 };
 

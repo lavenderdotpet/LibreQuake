@@ -2,6 +2,7 @@
 
 defs.qc
 localized_text.qc       // LQ: Localized strings, also applies to Quake
+deathmatch_modes.qc
 subs.qc
 fight.qc
 ai.qc

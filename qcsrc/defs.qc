@@ -32,6 +32,12 @@ entity		world;
 float		time;
 float		frametime;
 
+#ifdef __QW__
+entity		newmis;				// if this is set, the entity that just
+								// run created a new missile that should
+								// be simulated immediately
+#endif
+
 float		force_retouch;		// force all entities to touch triggers
 								// next frame.  this is needed because
 								// non-moving things don't normally scan
@@ -42,9 +48,11 @@ float		force_retouch;		// force all entities to touch triggers
 								// to guarantee everything is touched
 string		mapname;
 
+#ifndef __QW__
 float		deathmatch;
 float		coop;
 float		teamplay;
+#endif
 
 float		serverflags;		// propagated from level to level, used to
 								// keep track of completed episodes
@@ -120,6 +128,11 @@ void		end_sys_globals;		// flag for structure dumping
 .vector		absmin, absmax;	// *** origin + mins / maxs
 
 .float		ltime;			// local time for entity
+
+#ifdef __QW__
+.float		lastruntime;
+#endif
+
 .float		movetype;
 .float		solid;
 
@@ -129,7 +142,9 @@ void		end_sys_globals;		// flag for structure dumping
 .vector		angles;
 .vector		avelocity;
 
+#ifndef __QW__
 .vector		punchangle;		// temp angle adjust from damage or recoil
+#endif
 
 .string		classname;		// spawn function
 .string		model;
@@ -174,8 +189,10 @@ void		end_sys_globals;		// flag for structure dumping
 
 .float		fixangle;
 .vector		v_angle;		// view / targeting angle for players
-.float		idealpitch;		// calculated pitch angle for lookup up slopes
 
+#ifndef __QW__
+.float		idealpitch;		// calculated pitch angle for lookup up slopes
+#endif
 
 .string		netname;
 
@@ -355,7 +372,13 @@ float	SVC_INTERMISSION	= 30;
 float	SVC_FINALE			= 31;
 float	SVC_CDTRACK			= 32;
 float	SVC_SELLSCREEN		= 33;
+#ifdef __QW__
+float   SVC_SMALLKICK		= 34;
+float   SVC_BIGKICK			= 35;
+float   SVC_MUZZLEFLASH		= 39;
+#else
 float 	SVC_CUTSCENE		= 34;
+#endif
 
 
 float	TE_SPIKE		= 0;
@@ -370,6 +393,10 @@ float	TE_KNIGHTSPIKE	= 8;
 float	TE_LIGHTNING3	= 9;
 float	TE_LAVASPLASH	= 10;
 float	TE_TELEPORT		= 11;
+#ifdef __QW__
+float   TE_BLOOD                = 12;
+float   TE_LIGHTNINGBLOOD = 13;
+#endif
 
 // sound channels
 // channel 0 never willingly overrides
@@ -379,6 +406,11 @@ float	CHAN_WEAPON		= 1;
 float	CHAN_VOICE		= 2;
 float	CHAN_ITEM		= 3;
 float	CHAN_BODY		= 4;
+#ifdef __QW__
+float   CHAN_NO_PHS_ADD = 8;
+#else
+float   CHAN_NO_PHS_ADD = 0;    // NetQuake doesn't support this mode, so set it to 0
+#endif
 
 float	ATTN_NONE		= 0;
 float	ATTN_NORM		= 1;
@@ -394,11 +426,19 @@ float	UPDATE_TEMP		= 3;
 
 // entity effects
 
+#ifdef __QW__
+float	EF_BRIGHTLIGHT 	= 4;
+float	EF_DIMLIGHT 	= 8;
+float   EF_FLAG1		= 16;
+float   EF_FLAG2		= 32;
+float 	EF_BLUE			= 64;	// Blue Globe effect for Quad
+float	EF_RED			= 128;
+#else
 float	EF_BRIGHTFIELD	= 1;
 float	EF_MUZZLEFLASH 	= 2;
 float	EF_BRIGHTLIGHT 	= 4;
 float	EF_DIMLIGHT 	= 8;
-
+#endif
 
 // messages
 float	MSG_BROADCAST	= 0;		// unreliable to all
@@ -406,24 +446,62 @@ float	MSG_ONE			= 1;		// reliable to one (msg_entity)
 float	MSG_ALL			= 2;		// reliable to all
 float	MSG_INIT		= 3;		// write to the init string
 
+#ifdef __QW__
+float   MSG_MULTICAST   = 4;		// for multicast() call
+#endif
+
+
+// message levels
+float   PRINT_LOW               = 0;            // pickup messages
+float   PRINT_MEDIUM			= 1;            // death messages
+float   PRINT_HIGH              = 2;            // critical messages
+float   PRINT_CHAT              = 3;            // also goes to chat console
+
+#ifdef __QW__
+// multicast sets
+float   MULTICAST_ALL   = 0;            // every client
+float   MULTICAST_PHS   = 1;            // within hearing
+float   MULTICAST_PVS   = 2;            // within sight
+float   MULTICAST_ALL_R = 3;            // every client, reliable
+float   MULTICAST_PHS_R = 4;            // within hearing, reliable
+float   MULTICAST_PVS_R = 5;            // within sight, reliable
+#endif
+
 //================================================
 
 //
 // globals
 //
+#ifndef __QW__
 float	movedist;
+#endif
 float	gameover;		// set when a rule exits
 
 string	string_null;	// null string, nothing should be held here
 
+#ifndef __QW__
 entity	newmis;			// launch_spike sets this after spawning it
+#endif
 
 entity	activator;		// the entity that activated a trigger or brush
 
 entity	damage_attacker;	// set by T_Damage
+entity  damage_inflictor;
 float	framecount;
 
+//
+// cvars checked each frame
+//
 float		skill;
+float		timelimit;
+float		fraglimit;
+#ifdef __QW__
+float		deathmatch;
+float		coop;
+float		teamplay;
+#endif
+
+float		rj;
 
 //================================================
 
@@ -473,7 +551,12 @@ float	AS_MISSILE		= 4;
 //
 // player only fields
 //
+.float		voided;
 .float		walkframe;
+
+// Zoid Additions
+.float		maxspeed;		// Used to set Maxspeed on a player
+.float		gravity;		// Gravity Multiplier (0 to 1.0)
 
 .float 		attack_finished;
 .float		pain_finished;
@@ -572,7 +655,7 @@ float	AS_MISSILE		= 4;
 //pitch (angles_x) is inverted in quake due to a bug
 	//use makevectors2 for monsters with nonzero pitch
 //anyone encountering this comment with a better understanding should update the comment to be more informative and useful to modders --gnounc
-void makevectors2(vector ang);		
+void(vector ang)	makevectors2;		
 
 //===========================================================================
 	
@@ -610,8 +693,17 @@ string(string s) precache_sound		= #19;
 string(string s) precache_model		= #20;
 void(entity client, string s)stuffcmd = #21;
 entity(vector org, float rad) findradius = #22;
-void(string s) bprint				= #23;
-void(entity client, string s) sprint = #24;
+
+#ifdef __QW__
+void(float level, string s) bprint					= #23;
+void(entity client, float level, string s) sprint	= #24;
+#else
+void(string s) bprint_e								= #23;
+void(entity client, string s) sprint_e				= #24;
+void(float level, string s) bprint = { bprint_e(s); };
+void(entity client, float level, string s) sprint = { sprint_e(client, s); };
+#endif
+
 void(string s) dprint				= #25;
 string(float f) ftos				= #26;
 string(vector v) vtos				= #27;
@@ -635,7 +727,11 @@ vector(entity e, float speed) aim = #44;		// returns the shooting vector
 float(string s) cvar = #45;						// return cvar.value
 void(string s) localcmd = #46;					// put string into local que
 entity(entity e) nextent = #47;					// for looping through all ents
+
+#ifndef __QW__
 void(vector o, vector d, float color, float count) particle = #48;// start a particle effect
+#endif
+
 void() ChangeYaw = #49;						// turn towards self.ideal_yaw
 											// at self.yaw_speed
 // #50 was removed
@@ -690,6 +786,19 @@ void(entity e) setspawnparms		= #78;		// set parm1... to the
 												// values at level start
 												// for coop respawn
 
+#ifdef __QW__
+void(entity killer, entity killee) logfrag = #79;    // add to stats
+#else
+void(entity killer, entity killee) logfrag = {};    // add to stats
+#endif
+
+#ifdef __QW__
+string(entity e, string key) infokey  = #80; // get a key value (world = serverinfo)
+float(string s) stof              = #81;     // convert string to float
+void(vector where, float set) multicast = #82; // sends the temp message to a set
+                                    // of clients, possibly in PVS or PHS 
+#endif
+
 //============================================================================
 
 //
@@ -698,9 +807,11 @@ void(entity e) setspawnparms		= #78;		// set parm1... to the
 void(vector tdest, float tspeed, void() func) SUB_CalcMove;
 void(entity ent, vector tdest, float tspeed, void() func) SUB_CalcMoveEnt;
 void(vector destangle, float tspeed, void() func) SUB_CalcAngleMove;
-void()  SUB_CalcMoveDone;
+void() SUB_CalcMoveDone;
 void() SUB_CalcAngleMoveDone;
+void() SUB_Null;
 void() SUB_UseTargets;
+void() SUB_Remove;
 
 //
 //	combat.qc

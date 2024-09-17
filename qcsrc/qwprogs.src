@@ -1,0 +1,21 @@
+../lq1/qwprogs.dat
+
+qw.qc                   // QW only
+defs.qc
+localized_text.qc       // LQ: Localized strings, also applies to Quake
+deathmatch_modes.qc
+server.qc               // QW only
+subs.qc
+combat.qc
+
+items.qc
+weapons.qc
+world.qc
+client.qc
+spectate.qc             // QW only
+player.qc
+doors.qc
+buttons.qc
+triggers.qc
+plats.qc
+misc.qc

@@ -110,6 +110,7 @@ void(entity targ, entity attacker) Killed =
 
 	self.takedamage = DAMAGE_NO;
 	self.touch = __NULL__;
+	self.effects = 0;
 
 	monster_death_use();
 	self.th_die ();
@@ -130,7 +131,17 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 	local	entity	oldself;
 	local	float	save;
 	local	float	take;
-	local string temp_deathtype;
+	local	string	temp_deathtype;
+	local   string	s;
+	local	float	on_team;
+
+#ifdef __QW__
+	local   string	attackerteam;
+	local	string	targteam;
+#else
+	local   float	attackerteam;
+	local	float	targteam;
+#endif
 
 	if (!targ.takedamage)
 		return;
@@ -146,8 +157,11 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 	damage_attacker = attacker;
 
 	// check for quad damage powerup on the attacker
-	if (attacker.super_damage_finished > time)
-		damage = damage * 4;
+	if (attacker.super_damage_finished > time && inflictor.classname != "door")
+		if (deathmatch_supermode() == 4)
+			damage = damage * 8;
+		else
+			damage = damage * 4;
 
 	// save damage based on the target's armor level
 	save = ceil(targ.armortype*damage);
@@ -172,12 +186,17 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 		targ.dmg_inflictor = inflictor;
 	}
 
+	damage_inflictor = inflictor;
+
 	// figure momentum add
 	if ( (inflictor != world) && (targ.movetype == MOVETYPE_WALK) )
 	{
 		dir = targ.origin - (inflictor.absmin + inflictor.absmax) * 0.5;
 		dir = normalize(dir);
 		targ.velocity = targ.velocity + dir*damage*8;
+
+		if ( (rj > 1) & ((attacker.classname == "player") & (targ.classname == "player")) & ( attacker.netname == targ.netname)) 
+			targ.velocity = targ.velocity + dir * damage * rj;
 	}
 
 	// check for godmode or invincibility
@@ -196,8 +215,27 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 	}
 
 	// team play damage avoidance
-	if ( (teamplay == 1) && (targ.team > 0)&&(targ.team == attacker.team) )
+#ifdef __QW__
+	//	ZOID 12-13-96: self.team doesn't work in QW.  Use keys
+	attackerteam = infokey(attacker, "team");
+	targteam = infokey(targ, "team");
+	on_team = attackerteam != "";
+#else
+	attackerteam = attacker.team;
+	targteam = targ.team;
+	on_team = attackerteam != 0;
+#endif
+
+	if ((teamplay == 1) && (targteam == attackerteam) &&
+		(attacker.classname == "player") && on_team &&
+		inflictor.classname !="door")
 		return;
+
+	if ((teamplay == 3) && (targteam == attackerteam) &&
+		(attacker.classname == "player") && on_team &&
+		(targ != attacker) && inflictor.classname !="door")
+		return;
+
 
 	// do the damage
 	targ.health = targ.health - take;
@@ -243,7 +281,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 /*============
 T_RadiusDamage
 ============*/
-void(entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDamage =
+void(entity inflictor, entity attacker, float damage, entity ignore, string dtype) T_RadiusDamage =
 {
 	local	float 	points;
 	local	entity	head;
@@ -271,11 +309,11 @@ void(entity inflictor, entity attacker, float damage, entity ignore) T_RadiusDam
 				if (points > 0)
 				{
 					if (CanDamage (head, inflictor))
-					{	// shambler takes half damage from all explosions
-
+					{	
+						head.deathtype = dtype;
+						// shambler takes half damage from all explosions
 						if (head.classname == "monster_shambler")
 							T_Damage (head, inflictor, attacker, points*0.5);
-
 						else
 							T_Damage (head, inflictor, attacker, points);
 					}

@@ -1,23 +1,23 @@
 /*  
-    Copyright (C) 1996-1997  Id Software, Inc.
-    Copyright (C) 2023 ZungryWare <zungrysoftentertainment@gmail.com>
-    Copyright (C) 2024 Ivy Bowling <motolegacy@proton.me>
+	Copyright (C) 1996-1997  Id Software, Inc.
+	Copyright (C) 2023 ZungryWare <zungrysoftentertainment@gmail.com>
+	Copyright (C) 2024 Ivy Bowling <motolegacy@proton.me>
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
-    See file, 'COPYING', for details.
+	See file, 'COPYING', for details.
 */
 
 //
@@ -29,8 +29,8 @@
 
 			EPISODE EPILOGUE STRINGS
 
-        These strings in-engine have a 40 character limit before
-        truncation.
+		These strings in-engine have a 40 character limit before
+		truncation.
 
 ==============================================================================*/
 
@@ -105,6 +105,7 @@
 
 #define LOC_ITEM_PICKUP_NORMAL      "You got "
 #define LOC_ITEM_PICKUP_HEALTH      "You receieve "
+#define LOC_ITEM_PICKUP_ADD_HEALTH  " additional health"
 
 #define LOC_ITEM_FROM_BACKPACK      " from a backpack"  // Unused..
 
@@ -114,28 +115,44 @@
 #ifdef __LIBREQUAKE__
 
 #define LOC_ITEM_NAME_QUADDMG       "the Crusher Sigil"
+#define LOC_ITEM_NAME_OCTDMG        "the Demolisher Sigil"
 #define LOC_ITEM_NAME_PENTPROT      "Lucifier's Protection"
 #define LOC_ITEM_NAME_SHADRING      "the Eye of Enigma"
 #define LOC_ITEM_NAME_BIOSUIT       "the Diving Suit"
 #define LOC_ITEM_NAME_BACKPACK      "Backpack"
 
 #define LOC_ITEM_FADE_QUADDMG       "Your Crusher Sigil is fading..."
+#define LOC_ITEM_FADE_OCTDMG        "Your Demolisher Sigil is fading..."
 #define LOC_ITEM_FADE_PENTPROT      "Lucifier's Protection is fading..."
 #define LOC_ITEM_FADE_SHADRING      "The Eye of Enigma is fading..."
 #define LOC_ITEM_FADE_BIOSUIT       "Air in Diving Suit is running out..."
 
+#define LOC_BONUS_POWERS            " is coming for you all!!!"
+
+#define LOC_ITEM_LOST_A				" lost "
+#define LOC_ITEM_LOST_B				" with "
+#define LOC_ITEM_LOST_C				" seconds left"
+
 #else
 
 #define LOC_ITEM_NAME_QUADDMG       "Quad Damage"
+#define LOC_ITEM_NAME_OCTDMG        "OctaPower"
 #define LOC_ITEM_NAME_PENTPROT      "Pentagram of Protection"
 #define LOC_ITEM_NAME_SHADRING      "Ring of Shadows"
 #define LOC_ITEM_NAME_BIOSUIT       "Biosuit"
 #define LOC_ITEM_NAME_BACKPACK      "Backpack"
 
 #define LOC_ITEM_FADE_QUADDMG       "Quad Damage is wearing off"
+#define LOC_ITEM_FADE_OCTDMG        "OctaPower is wearing off"
 #define LOC_ITEM_FADE_PENTPROT      "Protection is almost burned out"
 #define LOC_ITEM_FADE_SHADRING      "Ring of Shadows magic is fading"
 #define LOC_ITEM_FADE_BIOSUIT       "Air supply in Biosuit expiring"
+
+#define LOC_BONUS_POWERS            " attains bonus powers!!!"
+
+#define LOC_ITEM_LOST_A				" lost a "
+#define LOC_ITEM_LOST_B				" with "
+#define LOC_ITEM_LOST_C				" seconds remaining"
 
 #endif // __LIBREQUAKE__
 
@@ -254,7 +271,7 @@
 #define LOC_DEATH_DOG 				    " was gored by a Gore Hound"
 #define LOC_DEATH_OGRE 				    " was demolished by a Deep One"
 #define LOC_DEATH_DEMON1 			    " was disemboweled by a Moon Rat"
-#define LOC_DEATH_WIZARD 			    " was poisoned by a Messenger"
+#define LOC_DEATH_WIZARD 			    " was shot by a Messenger"
 #define LOC_DEATH_ZOMBIE			    " was pelted by a Deathless Cultist"
 #define LOC_DEATH_KNIGHT 			    " was stabbed by a Carcosan Knight"
 #define LOC_DEATH_HELL_KNIGHT 		    " was gutted by a Biohell Warrior"
@@ -262,7 +279,7 @@
 #define LOC_DEATH_SHAMBLER 			    " was shredded by a Hollow"
 #define LOC_DEATH_SHALRATH 			    " was blasted by a Servant of Nyarlathotep"
 #define LOC_DEATH_TARBABY 			    " was swarmed by a Bog Face"
-#define LOC_DEATH_BOSS 				    " was blasted by Cthulhi"
+#define LOC_DEATH_BOSS 				    " was obliterated by Cthulhi"
 #define LOC_DEATH_OLDONE 			    " became one with Shoggoth"
 
 #else
@@ -301,25 +318,25 @@
 #define LOC_DEATH_FIREBALL	    	    " was hit by a lavaball"
 #define LOC_DEATH_LEAVE		    	    " tried to escape"
 #define LOC_DEATH_DROWN1	    	    " forgot how to swim"
-#define LOC_DEATH_DROWN2	    	    " drowned"
-#define LOC_DEATH_DROWN3	    	    " ran out of air"
+#define LOC_DEATH_DROWN2	    	    " ran out of air"
 #define LOC_DEATH_SLIME1	    	    " dissolved in acid"
 #define LOC_DEATH_SLIME2	    	    " was disincorporated"
 #define LOC_DEATH_LAVA1		    	    " fell into lava"
 #define LOC_DEATH_LAVA2		    	    " combusted"
 #define LOC_DEATH_LAVA3		    	    " dove headfirst into hot lava"
-#define LOC_DEATH_FALL_1	    	    " fell off a cliff"
-#define LOC_DEATH_FALL_2	    	    " took a long walk off a short pier"
-#define LOC_DEATH_SPACE_1	    	    " fell into space"
-#define LOC_DEATH_SPACE_2	    	    "'s screams went unheard"
-#define LOC_DEATH_VOID_1		        " fell into the void"
-#define LOC_DEATH_VOID_2	    	    " fell out of existence"
+#define LOC_DEATH_FALL1		    	    " fell off a cliff"
+#define LOC_DEATH_FALL2		    	    " took a long walk off a short pier"
+#define LOC_DEATH_SPACE1	    	    " fell into space"
+#define LOC_DEATH_SPACE2	    	    "'s screams went unheard"
+#define LOC_DEATH_VOID1		    	    " fell into the void"
+#define LOC_DEATH_VOID2		    	    " fell out of existence"
 #define LOC_DEATH_DISCHARGE_WATER	    " took a toaster bath"
 #define LOC_DEATH_DISCHARGE_SLIME	    " took a toaster bath"
 #define LOC_DEATH_DISCHARGE_LAVA	    " took a toaster bath"
+#define LOC_DEATH_DISCHARGE_SELF	    "'s Lightning Gun Malfunctioned"
 #define LOC_DEATH_SELF_GRENADE	        " didn't launch the grenade far enough"
 #define LOC_DEATH_SELF_ROCKET	        " played with explosives"
-#define LOC_DEATH_SELF_OTHER	        " died"
+#define LOC_DEATH_SELF_OTHER      		" misfired"
 #define LOC_DEATH_SUICIDE		        " committed suicide"
 #define LOC_DEATH_OTHER		    	    " died"
 
@@ -340,10 +357,13 @@
 #define LOC_DEATH_LAVA2		    	    " visits the Volcano God"
 #define LOC_DEATH_LAVA3		    	    " burst into flames"
 #define LOC_DEATH_FALL	    	        " fell to his death"
-#define LOC_DEATH_DISCHARGE_WATER	    " discharges into the water."
-#define LOC_DEATH_SUICIDE_WEAPON_1      " becomes bored with life"
-#define LOC_DEATH_SUICIDE_WEAPON_2      " checks if his weapon is loaded"
+#define LOC_DEATH_DISCHARGE_WATER	    " discharges into the water"
+#define LOC_DEATH_DISCHARGE_SLIME	    " discharges into the slime"
+#define LOC_DEATH_DISCHARGE_LAVA	    " discharges into the lava"
+#define LOC_DEATH_DISCHARGE_SELF	    " electrocutes himself"
 #define LOC_DEATH_SELF_GRENADE	        " tries to put the pin back in"
+#define LOC_DEATH_SELF_ROCKET	        " becomes bored with life"
+#define LOC_DEATH_SELF_OTHER			" checks if his weapon is loaded"
 #define LOC_DEATH_SUICIDE		        " suicides"
 #define LOC_DEATH_OTHER		    	    " died"
 
@@ -365,15 +385,15 @@
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_DEATH_AXE_1A	            " was hacked to death by "
-#define LOC_DEATH_AXE_1B	            ""
+#define LOC_DEATH_AXE_1A                " was hacked to death by "
+#define LOC_DEATH_AXE_1B                ""
 #define LOC_DEATH_AXE_2A	            " was chopped to bits by "
 #define LOC_DEATH_AXE_2B	            ""
 #define LOC_DEATH_AXE_QA	            "'s bucket was kicked by "
 #define LOC_DEATH_AXE_QB	            ""
 
-#define LOC_DEATH_SHOTGUN_1A	        " sucked on "
-#define LOC_DEATH_SHOTGUN_1B	        "'s muffler"
+#define LOC_DEATH_SHOTGUN_1A           " sucked on "
+#define LOC_DEATH_SHOTGUN_1B            "'s muffler"
 #define LOC_DEATH_SHOTGUN_2A	        " nibbled on "
 #define LOC_DEATH_SHOTGUN_2B	        "'s muffler"
 #define LOC_DEATH_SHOTGUN_QA	        " was put six feet under by "
@@ -386,8 +406,8 @@
 #define LOC_DEATH_SUPER_SHOTGUN_QA	    " was sent home in a box by "
 #define LOC_DEATH_SUPER_SHOTGUN_QB	    ""
 
-#define LOC_DEATH_NAILGUN_1A	        " was pierced by "
-#define LOC_DEATH_NAILGUN_1B	        ""
+#define LOC_DEATH_NAILGUN_1A		    " was pierced by "
+#define LOC_DEATH_NAILGUN_1B		    ""
 #define LOC_DEATH_NAILGUN_2A	        " was filled with holes by "
 #define LOC_DEATH_NAILGUN_2B	        ""
 #define LOC_DEATH_NAILGUN_QA	        "'s mortal coil was shuffled off by "
@@ -417,21 +437,15 @@
 #define LOC_DEATH_ROCKET_LAUNCHER_GB	"'s rocket"
 #define LOC_DEATH_ROCKET_LAUNCHER_Q1A	" was sent beyond the veil by "
 #define LOC_DEATH_ROCKET_LAUNCHER_Q1B	""
-#define LOC_DEATH_ROCKET_LAUNCHER_Q2A	" was sent beyond the veil by "
-#define LOC_DEATH_ROCKET_LAUNCHER_Q2B	""
-#define LOC_DEATH_ROCKET_LAUNCHER_Q3A	" was sent beyond the veil by "
-#define LOC_DEATH_ROCKET_LAUNCHER_Q3B	""
 
 #define LOC_DEATH_LIGHTNING_1A	        " was electrocuted by "
 #define LOC_DEATH_LIGHTNING_1B	        ""
-#define LOC_DEATH_LIGHTNING_2A	        " was given electroshock therapy by "
+#define LOC_DEATH_LIGHTNING_2A	        " was given shock treatment by "
 #define LOC_DEATH_LIGHTNING_2B	        ""
 #define LOC_DEATH_LIGHTNING_QA	        " rode "
-#define LOC_DEATH_LIGHTNING_QB	        "'s white horse"
-#define LOC_DEATH_LIGHTNING_D1A	        " was given a toaster bath by "
-#define LOC_DEATH_LIGHTNING_D1B	        ""
-#define LOC_DEATH_LIGHTNING_D2A	        " was given a toaster bath by "
-#define LOC_DEATH_LIGHTNING_D2B	        ""
+#define LOC_DEATH_LIGHTNING_QB	        "'s pale horse"
+#define LOC_DEATH_LIGHTNING_DA	        " was given a toaster bath by "
+#define LOC_DEATH_LIGHTNING_DB	        ""
 
 #define LOC_DEATH_TELEFRAG	            " was telefragged by "
 
@@ -442,49 +456,62 @@
 #define LOC_TEAMKILL_2	                " friendly-fired"
 #define LOC_TEAMKILL_3	                " needs an eye exam"
 #define LOC_TEAMKILL_4	                " betrayed their friend"
-#define LOC_TEAMKILL_5	                " crushed a teammate"
+#define LOC_TEAMKILL_SQUISH             " crushed a teammate"
+
+#define LOC_DEATH_KILL					" killed "
 
 #else
 
-#define LOC_DEATH_AXE_A                 " was ax-murdered by "
-#define LOC_DEATH_AXE_B                 ""
+#define LOC_DEATH_AXE_1A                " was ax-murdered by "
+#define LOC_DEATH_AXE_1B                ""
 
-#define LOC_DEATH_SHOTGUN_A             " chewed on "
-#define LOC_DEATH_SHOTGUN_B             "'s boomstick"
+#define LOC_DEATH_SHOTGUN_1A            " chewed on "
+#define LOC_DEATH_SHOTGUN_1B            "'s boomstick"
 
-#define LOC_DEATH_SUPER_SHOTGUN_A       " ate 2 loads of "
-#define LOC_DEATH_SUPER_SHOTGUN_B       "'s buckshot"
+#define LOC_DEATH_SUPER_SHOTGUN_1A      " ate 2 loads of "
+#define LOC_DEATH_SUPER_SHOTGUN_1B      "'s buckshot"
+#define LOC_DEATH_SUPER_SHOTGUN_QA	    " ate 8 loads of "
+#define LOC_DEATH_SUPER_SHOTGUN_QB	    "'s buckshot"
 
-#define LOC_DEATH_NAILGUN_A             " was nailed by "
-#define LOC_DEATH_NAILGUN_B             ""
+#define LOC_DEATH_NAILGUN_1A            " was nailed by "
+#define LOC_DEATH_NAILGUN_1B            ""
 
-#define LOC_DEATH_SUPER_NAILGUN_A       " was punctured by "
-#define LOC_DEATH_SUPER_NAILGUN_B       ""
+#define LOC_DEATH_SUPER_NAILGUN_1A      " was punctured by "
+#define LOC_DEATH_SUPER_NAILGUN_1B      ""
 
 #define LOC_DEATH_GRENADE_LAUNCHER_1A   " eats "
 #define LOC_DEATH_GRENADE_LAUNCHER_1B   "'s pineapple"
-#define LOC_DEATH_GRENADE_LAUNCHER_2A   " was gibbed by "
-#define LOC_DEATH_GRENADE_LAUNCHER_2B   "'s grenade"
+#define LOC_DEATH_GRENADE_LAUNCHER_GA   " was gibbed by "
+#define LOC_DEATH_GRENADE_LAUNCHER_GB   "'s grenade"
 
-#define LOC_DEATH_ROCKET_LAUNCHER_1A    " rides "
-#define LOC_DEATH_ROCKET_LAUNCHER_1B    "'s rocket"
-#define LOC_DEATH_ROCKET_LAUNCHER_2A    " was gibbed by "
-#define LOC_DEATH_ROCKET_LAUNCHER_2B    "'s rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_1A     " rides "
+#define LOC_DEATH_ROCKET_LAUNCHER_1B     "'s rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_GA     " was gibbed by "
+#define LOC_DEATH_ROCKET_LAUNCHER_GB     "'s rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1A    " was brutalized by "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1B    "'s quad rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q2A    " was smeared by "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q2B    "'s quad rocket"
+#define LOC_DEATH_ROCKET_LAUNCHER_Q3A    " rips "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q3B    " a new one"
 
-#define LOC_DEATH_LIGHTNING_A           " accepts "
-#define LOC_DEATH_LIGHTNING_UNDERWATER  "'s discharge"
-#define LOC_DEATH_LIGHTNING_ONGROUND    "'s shaft"
+#define LOC_DEATH_LIGHTNING_1A           " accepts "
+#define LOC_DEATH_LIGHTNING_1B           "'s shaft"
+#define LOC_DEATH_LIGHTNING_DA	         " accepts "
+#define LOC_DEATH_LIGHTNING_DB	         "'s discharge"
 
 #define LOC_DEATH_TELEFRAG	            " was telefragged by "
 
 #define LOC_DEATH_DEFLECT_A	            "Satan's power deflects "
 #define LOC_DEATH_DEFLECT_B	            "'s telefrag on "
 
-// #define LOC_TEAMKILL_1	                " killed a teammate"
-// #define LOC_TEAMKILL_2	                " friendly-fired"
-// #define LOC_TEAMKILL_3	                " needs an eye exam"
-// #define LOC_TEAMKILL_4	                " betrayed their friend"
-// #define LOC_TEAMKILL_5	                " crushed a teammate"
+#define LOC_TEAMKILL_1	                " mows down a teammate"
+#define LOC_TEAMKILL_2	                " checks his glasses"
+#define LOC_TEAMKILL_3	                " gets a frag for the other team"
+#define LOC_TEAMKILL_4	                " loses another friend"
+#define LOC_TEAMKILL_SQUISH             " squished a teammate"
+
+#define LOC_DEATH_KILL					" killed "
 
 #endif // __LIBREQUAKE__
 

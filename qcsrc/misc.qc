@@ -244,7 +244,7 @@ void() fire_fly =
 
 void() fire_touch =
 {
-	T_Damage (other, self, self, 200);
+	T_Damage (other, self, self, 20);
 	remove(self);
 };
 
@@ -255,12 +255,22 @@ void() barrel_explode =
 {
 	self.takedamage = DAMAGE_NO;
 	self.classname = "explo_box";
-	T_RadiusDamage (self, self, 160, world);
+	T_RadiusDamage (self, self, 160, world, "");
+#ifdef __QW__
+	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
+	WriteByte (MSG_MULTICAST, TE_EXPLOSION);
+	WriteCoord (MSG_MULTICAST, self.origin_x);
+	WriteCoord (MSG_MULTICAST, self.origin_y);
+	WriteCoord (MSG_MULTICAST, self.origin_z+32);
+	multicast (self.origin, MULTICAST_PHS);
+	remove (self); 
+#else
 	sound (self, CHAN_VOICE, "weapons/r_exp3.wav", 1, ATTN_NORM);
 	particle (self.origin, '0 0 0', 75, 255);
 
 	self.origin_z = self.origin_z + 32;
 	BecomeExplosion ();
+#endif
 };
 
 /*QUAKED misc_explobox (0 .5 .8) (0 0 0) (32 32 64)
@@ -275,6 +285,7 @@ void() misc_explobox =
 	self.movetype = MOVETYPE_NONE;
 	precache_model ("maps/b_explob.bsp");
 	setmodel (self, "maps/b_explob.bsp");
+	setsize (self, '0 0 0', '32 32 64');
 	precache_sound ("weapons/r_exp3.wav");
 	self.health = 20;
 	self.th_die = barrel_explode;
@@ -312,6 +323,7 @@ void() misc_explobox2 =
 	self.movetype = MOVETYPE_NONE;
 	precache_model2 ("maps/b_exbox2.bsp");
 	setmodel (self, "maps/b_exbox2.bsp");
+	setsize (self, '0 0 0', '32 32 32');
 	precache_sound ("weapons/r_exp3.wav");
 	self.health = 20;
 	self.th_die = barrel_explode;
@@ -339,7 +351,76 @@ void() misc_explobox2 =
 float SPAWNFLAG_SUPERSPIKE	= 1;
 float SPAWNFLAG_LASER = 2;
 
-void(vector org, vector vec) LaunchLaser;
+void() Laser_Touch =
+{
+	local vector org;
+	
+	if (other == self.owner)
+		return;		// don't explode on owner
+
+	if (pointcontents(self.origin) == CONTENT_SKY)
+	{
+		remove(self);
+		return;
+	}
+	
+	sound (self, CHAN_WEAPON, "enforcer/enfstop.wav", 1, ATTN_STATIC);
+	org = self.origin - 8*normalize(self.velocity);
+
+	if (other.health)
+	{
+		SpawnBlood (org, self.velocity*0.2, 15);
+		other.deathtype = "laser";
+		T_Damage (other, self, self.owner, 15);
+	}
+	else
+	{
+#ifdef __QW__
+		WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
+		WriteByte (MSG_MULTICAST, TE_GUNSHOT);
+		WriteByte (MSG_MULTICAST, 5);
+		WriteCoord (MSG_MULTICAST, org_x);
+		WriteCoord (MSG_MULTICAST, org_y);
+		WriteCoord (MSG_MULTICAST, org_z);
+		multicast (org, MULTICAST_PVS);
+#else
+		WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
+		WriteByte (MSG_BROADCAST, TE_GUNSHOT);
+		WriteCoord (MSG_BROADCAST, org_x);
+		WriteCoord (MSG_BROADCAST, org_y);
+		WriteCoord (MSG_BROADCAST, org_z);
+#endif
+	}
+	
+	remove(self);	
+};
+
+void(vector org, vector vec) LaunchLaser =
+{		
+	if (self.classname == "monster_enforcer")
+		sound (self, CHAN_WEAPON, "enforcer/enfire.wav", 1, ATTN_NORM);
+
+	vec = normalize(vec);
+	
+	newmis = spawn();
+	newmis.classname = "enforcer_laser";	//gnounc
+	newmis.owner = self;
+	newmis.movetype = MOVETYPE_FLY;
+	newmis.solid = SOLID_BBOX;
+	newmis.effects = EF_DIMLIGHT;
+
+	setmodel (newmis, "progs/laser.mdl");
+	setsize (newmis, '0 0 0', '0 0 0');		
+
+	setorigin (newmis, org);
+
+	newmis.velocity = vec * 600;
+	newmis.angles = vectoangles(newmis.velocity);
+
+	newmis.nextthink = time + 5;
+	newmis.think = SUB_Remove;
+	newmis.touch = Laser_Touch;
+};
 
 void() spikeshooter_use =
 {
