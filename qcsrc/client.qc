@@ -174,7 +174,8 @@ void() GotoNextMap =
 	}
 	else
 	{
-#ifdef __QW__
+
+#ifdef __QW__ // NQ does not support infokeys
 		newmap = infokey(world, mapname);
 		if (newmap != "")
 			changelevel (newmap);
@@ -322,7 +323,7 @@ void() execute_changelevel =
 		other = find (other, classname, "player");
 	}
 
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	WriteByte (MSG_ALL, SVC_CDTRACK);
 	WriteByte (MSG_ALL, 3);
 
@@ -347,7 +348,7 @@ void() changelevel_touch =
 	if (other.classname != "player")
 		return;
 
-#ifdef __QW__
+#ifdef __QW__ // noexit cvar is not supported in QW
 	if ((cvar("samelevel") == 2) || ((cvar("samelevel") == 3) && (mapname != "start")))
 	{
 		T_Damage (other, self, self, 50000);
@@ -645,7 +646,7 @@ void() PutClientInServer =
 
 	stuffcmd(self, "-attack\n");            // Supa, prevent shooting after respawning in MP
 
-#ifdef __QW__
+#ifdef __QW__ // NQ does not support infokeys
 	// Set Rocket Jump Modifiers
 	if (stof(infokey(world, "rj")) != 0)
 	{                
@@ -913,7 +914,7 @@ void() PlayerJump =
 	if (self.waterlevel >= 2)
 	{
 
-#ifndef __QW__
+#ifndef __QW__ // QW handles this movement code in the engine for client-side prediction
 		if (self.watertype == CONTENT_WATER)
 			self.velocity_z = 100;
 
@@ -953,7 +954,7 @@ void() PlayerJump =
 	// player jumping sound
 	sound (self, CHAN_AUTO, "player/plyrjmp8.wav", 1, ATTN_NORM);
 
-#ifndef __QW__
+#ifndef __QW__ // QW handles this movement code in the engine for client-side prediction
 	self.flags = self.flags - FL_ONGROUND;	// don't stairwalk
 	self.velocity_z = self.velocity_z + 270;
 #endif
@@ -1055,7 +1056,7 @@ void() WaterMove =
 		self.dmgtime = 0;
 	}
 
-#ifndef __QW__
+#ifndef __QW__ // QW handles this movement code in the engine for client-side prediction
 	if (! (self.flags & FL_WATERJUMP) )
 		self.velocity = self.velocity - 0.8*self.waterlevel*frametime*self.velocity;
 #endif
@@ -1233,14 +1234,14 @@ void() CheckPowerups =
 		if (self.invincible_finished > time)
 		{
 			self.effects = self.effects | EF_DIMLIGHT;
-#ifdef __QW__
+#ifdef __QW__ // EF_RED is not supported in NQ
 			self.effects = self.effects | EF_RED;
 #endif
 		}
 		else
 		{
 			self.effects = self.effects - (self.effects & EF_DIMLIGHT);
-#ifdef __QW__
+#ifdef __QW__ // EF_RED is not supported in NQ
 			self.effects = self.effects - (self.effects & EF_RED);
 #endif
 		}
@@ -1288,7 +1289,7 @@ void() CheckPowerups =
 		if (self.super_damage_finished > time)
 		{
 			self.effects = self.effects | EF_DIMLIGHT;
-#ifdef __QW__
+#ifdef __QW__ // EF_BLUE is not supported in NQ
 			self.effects = self.effects | EF_BLUE;
 #endif
 		}
@@ -1296,7 +1297,7 @@ void() CheckPowerups =
 		else
 		{
 			self.effects = self.effects - (self.effects & EF_DIMLIGHT);
-#ifdef __QW__
+#ifdef __QW__ // EF_BLUE is not supported in NQ
 			self.effects = self.effects - (self.effects & EF_BLUE);
 #endif
 		}
@@ -1369,7 +1370,7 @@ void() PlayerPostThink =
 		self.jump_flag = 0;
 	}
 
-#ifdef __QW__
+#ifdef __QW__ // Honestly not sure why this branch is necessary. Possibly related to movement physics differences.
 	self.jump_flag = self.velocity_z;
 #else
 	if (!(self.flags & FL_ONGROUND))
@@ -1436,13 +1437,13 @@ void(entity targ, entity attacker) ClientObituary =
 
 	local	float	on_team;
 
-#ifdef __QW__
+#ifdef __QW__ // QW handles teams differently
 	local	string	attackerteam, targteam;
 #else
 	local	float	attackerteam, targteam;
 #endif
 
-#ifdef __QW__
+#ifdef __QW__ // QW handles teams differently
 	attackerteam = infokey(attacker, "team");
 	targteam = infokey(targ, "team");
 	on_team = attackerteam != "";

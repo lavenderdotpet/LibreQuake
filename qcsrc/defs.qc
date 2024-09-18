@@ -32,7 +32,7 @@ entity		world;
 float		time;
 float		frametime;
 
-#ifdef __QW__
+#ifdef __QW__ // NQ defines this outside of C-referenced vars
 entity		newmis;				// if this is set, the entity that just
 								// run created a new missile that should
 								// be simulated immediately
@@ -48,7 +48,7 @@ float		force_retouch;		// force all entities to touch triggers
 								// to guarantee everything is touched
 string		mapname;
 
-#ifndef __QW__
+#ifndef __QW__ // QW defines these outside of C-referenced vars
 float		deathmatch;
 float		coop;
 float		teamplay;
@@ -129,7 +129,7 @@ void		end_sys_globals;		// flag for structure dumping
 
 .float		ltime;			// local time for entity
 
-#ifdef __QW__
+#ifdef __QW__ // Unused, as far as I can tell, but needed to keep the C struct intact
 .float		lastruntime;
 #endif
 
@@ -142,7 +142,7 @@ void		end_sys_globals;		// flag for structure dumping
 .vector		angles;
 .vector		avelocity;
 
-#ifndef __QW__
+#ifndef __QW__ // Differences in engine protocols
 .vector		punchangle;		// temp angle adjust from damage or recoil
 #endif
 
@@ -190,7 +190,7 @@ void		end_sys_globals;		// flag for structure dumping
 .float		fixangle;
 .vector		v_angle;		// view / targeting angle for players
 
-#ifndef __QW__
+#ifndef __QW__ // Unused, as far as I can tell, but needed to keep the C struct intact
 .float		idealpitch;		// calculated pitch angle for lookup up slopes
 #endif
 
@@ -372,7 +372,7 @@ float	SVC_INTERMISSION	= 30;
 float	SVC_FINALE			= 31;
 float	SVC_CDTRACK			= 32;
 float	SVC_SELLSCREEN		= 33;
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 float   SVC_SMALLKICK		= 34;
 float   SVC_BIGKICK			= 35;
 float   SVC_MUZZLEFLASH		= 39;
@@ -381,21 +381,21 @@ float 	SVC_CUTSCENE		= 34;
 #endif
 
 
-float	TE_SPIKE		= 0;
-float	TE_SUPERSPIKE	= 1;
-float	TE_GUNSHOT		= 2;
-float	TE_EXPLOSION	= 3;
-float	TE_TAREXPLOSION	= 4;
-float	TE_LIGHTNING1	= 5;
-float	TE_LIGHTNING2	= 6;
-float	TE_WIZSPIKE		= 7;
-float	TE_KNIGHTSPIKE	= 8;
-float	TE_LIGHTNING3	= 9;
-float	TE_LAVASPLASH	= 10;
-float	TE_TELEPORT		= 11;
-#ifdef __QW__
-float   TE_BLOOD                = 12;
-float   TE_LIGHTNINGBLOOD = 13;
+float	TE_SPIKE			= 0;
+float	TE_SUPERSPIKE		= 1;
+float	TE_GUNSHOT			= 2;
+float	TE_EXPLOSION		= 3;
+float	TE_TAREXPLOSION		= 4;
+float	TE_LIGHTNING1		= 5;
+float	TE_LIGHTNING2		= 6;
+float	TE_WIZSPIKE			= 7;
+float	TE_KNIGHTSPIKE		= 8;
+float	TE_LIGHTNING3		= 9;
+float	TE_LAVASPLASH		= 10;
+float	TE_TELEPORT			= 11;
+#ifdef __QW__ // Differences in engine protocols
+float   TE_BLOOD			= 12;
+float   TE_LIGHTNINGBLOOD	= 13;
 #endif
 
 // sound channels
@@ -406,10 +406,10 @@ float	CHAN_WEAPON		= 1;
 float	CHAN_VOICE		= 2;
 float	CHAN_ITEM		= 3;
 float	CHAN_BODY		= 4;
-#ifdef __QW__
+#ifdef __QW__ // NetQuake doesn't support CHAN_NO_PHS_ADD. Set it to 0 so it will have no effect.
 float   CHAN_NO_PHS_ADD = 8;
 #else
-float   CHAN_NO_PHS_ADD = 0;    // NetQuake doesn't support this mode, so set it to 0
+float   CHAN_NO_PHS_ADD = 0;
 #endif
 
 float	ATTN_NONE		= 0;
@@ -426,7 +426,7 @@ float	UPDATE_TEMP		= 3;
 
 // entity effects
 
-#ifdef __QW__
+#ifdef __QW__ // Engines support different entity effects
 float	EF_BRIGHTLIGHT 	= 4;
 float	EF_DIMLIGHT 	= 8;
 float   EF_FLAG1		= 16;
@@ -446,7 +446,7 @@ float	MSG_ONE			= 1;		// reliable to one (msg_entity)
 float	MSG_ALL			= 2;		// reliable to all
 float	MSG_INIT		= 3;		// write to the init string
 
-#ifdef __QW__
+#ifdef __QW__ // Multicast is QW only
 float   MSG_MULTICAST   = 4;		// for multicast() call
 #endif
 
@@ -457,7 +457,7 @@ float   PRINT_MEDIUM			= 1;            // death messages
 float   PRINT_HIGH              = 2;            // critical messages
 float   PRINT_CHAT              = 3;            // also goes to chat console
 
-#ifdef __QW__
+#ifdef __QW__ // Multicast is QW only
 // multicast sets
 float   MULTICAST_ALL   = 0;            // every client
 float   MULTICAST_PHS   = 1;            // within hearing
@@ -472,14 +472,14 @@ float   MULTICAST_PVS_R = 5;            // within sight, reliable
 //
 // globals
 //
-#ifndef __QW__
+#ifndef __QW__ // Used for monster code; not needed in QW
 float	movedist;
 #endif
 float	gameover;		// set when a rule exits
 
 string	string_null;	// null string, nothing should be held here
 
-#ifndef __QW__
+#ifndef __QW__ // QW defines this inside of C-referenced vars
 entity	newmis;			// launch_spike sets this after spawning it
 #endif
 
@@ -495,7 +495,7 @@ float	framecount;
 float		skill;
 float		timelimit;
 float		fraglimit;
-#ifdef __QW__
+#ifdef __QW__ // NQ defines this inside of C-referenced vars
 float		deathmatch;
 float		coop;
 float		teamplay;
@@ -694,7 +694,7 @@ string(string s) precache_model		= #20;
 void(entity client, string s)stuffcmd = #21;
 entity(vector org, float rad) findradius = #22;
 
-#ifdef __QW__
+#ifdef __QW__ // QW supports print levels for console prints. NQ doesn't, so we just have it ignore the print level.
 void(float level, string s) bprint					= #23;
 void(entity client, float level, string s) sprint	= #24;
 #else
@@ -728,7 +728,7 @@ float(string s) cvar = #45;						// return cvar.value
 void(string s) localcmd = #46;					// put string into local que
 entity(entity e) nextent = #47;					// for looping through all ents
 
-#ifndef __QW__
+#ifndef __QW__ // Differences in engine protocols
 void(vector o, vector d, float color, float count) particle = #48;// start a particle effect
 #endif
 
@@ -786,13 +786,13 @@ void(entity e) setspawnparms		= #78;		// set parm1... to the
 												// values at level start
 												// for coop respawn
 
-#ifdef __QW__
+#ifdef __QW__ // logfrag is supported in QW, but not NQ. We just have NQ define it as an empty function.
 void(entity killer, entity killee) logfrag = #79;    // add to stats
 #else
 void(entity killer, entity killee) logfrag = {};    // add to stats
 #endif
 
-#ifdef __QW__
+#ifdef __QW__ // NQ does not support infokeys
 string(entity e, string key) infokey  = #80; // get a key value (world = serverinfo)
 float(string s) stof              = #81;     // convert string to float
 void(vector where, float set) multicast = #82; // sends the temp message to a set

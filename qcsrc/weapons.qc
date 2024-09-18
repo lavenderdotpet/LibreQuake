@@ -46,61 +46,6 @@ float() crandom =
 	return 2*(random() - 0.5);
 };
 
-/*
-================
-W_FireAxe
-================
-*/
-void() W_FireAxe =
-{
-	local	vector	source;
-	local	vector	org;
-
-	makevectors (self.v_angle);
-	source = self.origin + '0 0 22';
-	traceline (source, source + v_forward*64, FALSE, self);
-	if (trace_fraction == 1.0)
-		return;
-
-	org = trace_endpos - v_forward*4;
-
-	if (trace_ent.takedamage)
-	{
-		trace_ent.axhitme = 1;
-		SpawnBlood (org, '0 0 0', 20);
-		trace_ent.deathtype = "axe";
-		if (deathmatch_supermode() || deathmatch_supermode2())
-			T_Damage (trace_ent, self, self, 75);
-		else
-			T_Damage (trace_ent, self, self, 20);
-	}
-
-	else
-	{	// hit wall
-		sound (self, CHAN_WEAPON, "player/axhit2.wav", 1, ATTN_NORM);
-
-#ifdef __QW__
-		WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
-		WriteByte (MSG_MULTICAST, TE_GUNSHOT);
-		WriteByte (MSG_MULTICAST, 3);
-		WriteCoord (MSG_MULTICAST, org_x);
-		WriteCoord (MSG_MULTICAST, org_y);
-		WriteCoord (MSG_MULTICAST, org_z);
-		multicast (org, MULTICAST_PVS);
-#else
-		WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
-		WriteByte (MSG_BROADCAST, TE_GUNSHOT);
-		WriteCoord (MSG_BROADCAST, org_x);
-		WriteCoord (MSG_BROADCAST, org_y);
-		WriteCoord (MSG_BROADCAST, org_z);
-#endif
-	}
-};
-
-
-//============================================================================
-
-
 vector() wall_velocity =
 {
 	local vector	vel;
@@ -112,7 +57,6 @@ vector() wall_velocity =
 
 	return vel;
 };
-
 
 /*
 ================
@@ -151,7 +95,7 @@ SpawnBlood
 */
 void(vector org, vector vel, float damage) SpawnBlood =
 {
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 	WriteByte (MSG_MULTICAST, TE_BLOOD);
 	WriteByte (MSG_MULTICAST, 1);
@@ -164,12 +108,17 @@ void(vector org, vector vel, float damage) SpawnBlood =
 #endif
 };
 
-void(vector org) SpawnPuff =
+/*
+================
+SpawnPuff
+================
+*/
+void(vector org, float count) SpawnPuff =
 {
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 	WriteByte (MSG_MULTICAST, TE_GUNSHOT);
-	WriteByte (MSG_MULTICAST, 1);
+	WriteByte (MSG_MULTICAST, count);
 	WriteCoord (MSG_MULTICAST, org_x);
 	WriteCoord (MSG_MULTICAST, org_y);
 	WriteCoord (MSG_MULTICAST, org_z);
@@ -196,23 +145,8 @@ void(float damage) spawn_touchblood =
 	SpawnBlood (self.origin + vel*0.01, vel, damage);
 };
 
-
-/*
-================
-SpawnChunk
-================
-*/
-void(vector org, vector vel) SpawnChunk =
-{
-#ifdef __QW__
-	SpawnBlood(org, vel, 10);
-#else
-	particle (org, vel*0.02, 0, 10);
-#endif
-};
-
 void() SmallKick = {
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	msg_entity = self;
 	WriteByte (MSG_ONE, SVC_SMALLKICK);
 #else
@@ -221,12 +155,48 @@ void() SmallKick = {
 };
 
 void() BigKick = {
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	msg_entity = self;
 	WriteByte (MSG_ONE, SVC_BIGKICK);
 #else
 	self.punchangle_x = -4;
 #endif
+};
+
+/*
+================
+W_FireAxe
+================
+*/
+void() W_FireAxe =
+{
+	local	vector	source;
+	local	vector	org;
+
+	makevectors (self.v_angle);
+	source = self.origin + '0 0 22';
+	traceline (source, source + v_forward*64, FALSE, self);
+	if (trace_fraction == 1.0)
+		return;
+
+	org = trace_endpos - v_forward*4;
+
+	if (trace_ent.takedamage)
+	{
+		trace_ent.axhitme = 1;
+		SpawnBlood (org, '0 0 0', 20);
+		trace_ent.deathtype = "axe";
+		if (deathmatch_supermode() || deathmatch_supermode2())
+			T_Damage (trace_ent, self, self, 75);
+		else
+			T_Damage (trace_ent, self, self, 20);
+	}
+
+	else
+	{	// hit wall
+		sound (self, CHAN_WEAPON, "player/axhit2.wav", 1, ATTN_NORM);
+		SpawnPuff(org, 3);
+	}
 };
 
 /*
@@ -305,7 +275,7 @@ void(float damage, vector dir, string dtype) TraceAttack =
 
 	else
 	{
-		SpawnPuff(org);
+		SpawnPuff(org, 1);
 	}
 };
 
@@ -397,7 +367,7 @@ ROCKETS
 ==============================================================================
 */
 
-#ifndef __QW__
+#ifndef __QW__ // Unused by QW code
 void()	s_explode1	=	[0,		s_explode2] {};
 void()	s_explode2	=	[1,		s_explode3] {};
 void()	s_explode3	=	[2,		s_explode4] {};
@@ -415,6 +385,28 @@ void() BecomeExplosion =
 	s_explode1 ();
 };
 #endif
+
+void() MissileExplode =
+{
+#ifdef __QW__ // Differences in engine protocols
+	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
+	WriteByte (MSG_MULTICAST, TE_EXPLOSION);
+	WriteCoord (MSG_MULTICAST, self.origin_x);
+	WriteCoord (MSG_MULTICAST, self.origin_y);
+	WriteCoord (MSG_MULTICAST, self.origin_z);
+	multicast (self.origin, MULTICAST_PHS);
+
+	remove(self);
+#else
+	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
+	WriteByte (MSG_BROADCAST, TE_EXPLOSION);
+	WriteCoord (MSG_BROADCAST, self.origin_x);
+	WriteCoord (MSG_BROADCAST, self.origin_y);
+	WriteCoord (MSG_BROADCAST, self.origin_z);
+
+	BecomeExplosion ();
+#endif
+};
 
 void() T_MissileTouch =
 {
@@ -450,24 +442,7 @@ void() T_MissileTouch =
 
 	self.origin = self.origin - 8*normalize(self.velocity);
 
-#ifdef __QW__
-	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
-	WriteByte (MSG_MULTICAST, TE_EXPLOSION);
-	WriteCoord (MSG_MULTICAST, self.origin_x);
-	WriteCoord (MSG_MULTICAST, self.origin_y);
-	WriteCoord (MSG_MULTICAST, self.origin_z);
-	multicast (self.origin, MULTICAST_PHS);
-
-	remove(self);
-#else
-	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
-	WriteByte (MSG_BROADCAST, TE_EXPLOSION);
-	WriteCoord (MSG_BROADCAST, self.origin_x);
-	WriteCoord (MSG_BROADCAST, self.origin_y);
-	WriteCoord (MSG_BROADCAST, self.origin_z);
-
-	BecomeExplosion ();
-#endif
+	MissileExplode();
 };
 
 
@@ -520,7 +495,7 @@ LIGHTNING
 
 void(entity from, float damage) LightningHit =
 {
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 	WriteByte (MSG_MULTICAST, TE_LIGHTNINGBLOOD);
 	WriteCoord (MSG_MULTICAST, trace_endpos_x);
@@ -639,7 +614,7 @@ void() W_FireLightning =
 
 	traceline (org, org + v_forward*600, TRUE, self);
 
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 	WriteByte (MSG_MULTICAST, TE_LIGHTNING2);
 	WriteEntity (MSG_MULTICAST, self);
@@ -678,24 +653,7 @@ void() GrenadeExplode =
 
 	T_RadiusDamage (self, self.owner, 120, world, "grenade");
 
-#ifdef __QW__
-	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
-	WriteByte (MSG_MULTICAST, TE_EXPLOSION);
-	WriteCoord (MSG_MULTICAST, self.origin_x);
-	WriteCoord (MSG_MULTICAST, self.origin_y);
-	WriteCoord (MSG_MULTICAST, self.origin_z);
-	multicast (self.origin, MULTICAST_PHS);
-
-	remove (self);
-#else
-	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
-	WriteByte (MSG_BROADCAST, TE_EXPLOSION);
-	WriteCoord (MSG_BROADCAST, self.origin_x);
-	WriteCoord (MSG_BROADCAST, self.origin_y);
-	WriteCoord (MSG_BROADCAST, self.origin_z);
-
-	BecomeExplosion ();
-#endif
+	MissileExplode();
 };
 
 void() GrenadeTouch =
@@ -890,7 +848,7 @@ void() spike_touch =
 		else
 			te_type = TE_SPIKE;
 
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 		WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 		WriteByte (MSG_MULTICAST, te_type);
 		WriteCoord (MSG_MULTICAST, self.origin_x);
@@ -1483,7 +1441,7 @@ void() QuadCheat =
 #define ID_IMPULSE_QUADCHEAT	255
 
 #ifdef __LIBREQUAKE__
-#ifndef __QW__
+#ifndef __QW__ // Cutscene camera is not used in QW
 
 #define LQ_IMPULSE_SPAWNCAM		200
 #define LQ_IMPULSE_CAMTIMEINC	201
@@ -1509,7 +1467,7 @@ void() ImpulseCommands =
 		case ID_IMPULSE_QUADCHEAT: QuadCheat(); break;
 
 #ifdef __LIBREQUAKE__
-#ifndef __QW__
+#ifndef __QW__ // Cutscene camera is not used in QW
 
 		case LQ_IMPULSE_SPAWNCAM: LQ_SpawnCamera(); break;
 		case LQ_IMPULSE_CAMTIMEDEC: LQ_AppendCameraTime(5); break;

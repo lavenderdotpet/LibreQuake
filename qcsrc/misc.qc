@@ -256,7 +256,7 @@ void() barrel_explode =
 	self.takedamage = DAMAGE_NO;
 	self.classname = "explo_box";
 	T_RadiusDamage (self, self, 160, world, "");
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 	WriteByte (MSG_MULTICAST, TE_EXPLOSION);
 	WriteCoord (MSG_MULTICAST, self.origin_x);
@@ -375,7 +375,7 @@ void() Laser_Touch =
 	}
 	else
 	{
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 		WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 		WriteByte (MSG_MULTICAST, TE_GUNSHOT);
 		WriteByte (MSG_MULTICAST, 5);

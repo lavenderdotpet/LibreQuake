@@ -113,7 +113,7 @@ void(float timeleft) DropQuad =
 	item.nextthink = time + timeleft;    // remove it with the time left on it
 	item.think = SUB_Remove;
 
-#ifdef __QW__
+#ifdef __QW__ // EF_BLUE is not supported in NQ
 	item.effects = EF_BLUE;
 #endif
 };
@@ -1520,7 +1520,7 @@ void() item_artifact_invulnerability =
 	setmodel (self, "progs/invulner.mdl");
 	self.netname = LOC_ITEM_NAME_PENTPROT;
 
-#ifdef __QW__
+#ifdef __QW__ // EF_RED is not supported in NQ
 	self.effects = self.effects | EF_RED;
 #endif
 
@@ -1602,7 +1602,7 @@ void() item_artifact_super_damage =
 	else
 		self.netname = LOC_ITEM_NAME_QUADDMG;
 
-#ifdef __QW__
+#ifdef __QW__ // EF_BLUE is not supported in NQ
 	self.effects = self.effects | EF_BLUE;
 #endif
 

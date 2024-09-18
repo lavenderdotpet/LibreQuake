@@ -135,7 +135,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 	local   string	s;
 	local	float	on_team;
 
-#ifdef __QW__
+#ifdef __QW__ // QW handles teams differently
 	local   string	attackerteam;
 	local	string	targteam;
 #else
@@ -215,8 +215,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 	}
 
 	// team play damage avoidance
-#ifdef __QW__
-	//	ZOID 12-13-96: self.team doesn't work in QW.  Use keys
+#ifdef __QW__ // QW handles teams differently
 	attackerteam = infokey(attacker, "team");
 	targteam = infokey(targ, "team");
 	on_team = attackerteam != "";

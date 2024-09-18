@@ -168,7 +168,7 @@ void()	player_run =[	$rockrun1,	player_run	]
 
 void() muzzleflash =
 {
-#ifdef __QW__
+#ifdef __QW__ // Differences in engine protocols
 	WriteByte (MSG_MULTICAST, SVC_MUZZLEFLASH);
 	WriteEntity (MSG_MULTICAST, self);
 	multicast (self.origin, MULTICAST_PVS);
@@ -621,7 +621,7 @@ void() PlayerDie =
 
 	drop_quad = TRUE;
 	drop_ring = TRUE;
-#ifdef __QW__
+#ifdef __QW__ // NQ does not support infokeys
 	if ((stof(infokey(world,"dq"))) == 0)
 		drop_quad = FALSE;
 	if ((stof(infokey(world,"dr"))) == 0)
