@@ -1,27 +1,50 @@
-../lq1/progs.dat
+#ifdef __QW__
+#pragma progs_dat "../lq1/qwprogs.dat"
+#else
+#pragma progs_dat "../lq1/progs.dat"
+#endif
+
+#includelist
 
 defs.qc
 localized_text.qc       // LQ: Localized strings, also applies to Quake
 deathmatch_modes.qc
 subs.qc
+
+#ifdef __QW__
+server.qc
+#endif
+
+#ifndef __QW__
 fight.qc
 ai.qc
-combat.qc
-
 lq1/cutscene_camera.qc  // LQ: svc_cutscene firing camera
+#endif
+
+combat.qc
 
 items.qc
 weapons.qc
 world.qc
 client.qc
+
+#ifdef __QW__
+spectate.qc
+#endif
+
 player.qc
+
+#ifndef __QW__
 monsters.qc
+#endif
+
 doors.qc
 buttons.qc
 triggers.qc
 plats.qc
 misc.qc
 
+#ifndef __QW__
 monsters/ogre.qc
 monsters/fiend.qc
 monsters/shambler.qc
@@ -38,3 +61,6 @@ monsters/rotfish.qc		    // registered
 monsters/vore.qc			// registered
 monsters/enforcer.qc		// registered
 monsters/shub.qc			// registered
+#endif
+
+#endlist
