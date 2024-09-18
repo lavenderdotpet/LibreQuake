@@ -112,6 +112,10 @@ void(float timeleft) DropQuad =
 	item.touch = q_touch;
 	item.nextthink = time + timeleft;    // remove it with the time left on it
 	item.think = SUB_Remove;
+
+#ifdef __QW__
+	item.effects = EF_BLUE;
+#endif
 };
 
 
