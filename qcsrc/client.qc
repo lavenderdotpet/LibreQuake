@@ -101,11 +101,12 @@ void() SetNewParms =
 
 void() DecodeLevelParms =
 {
-	if (serverflags)
+	if (serverflags && world.model == "maps/start.bsp")
 	{
-		if (world.model == "maps/start.bsp")
-			SetNewParms ();		// take away all stuff on starting new episode
+		SetNewParms ();		// take away all stuff on starting new episode
 	}
+	else if (deathmatch)
+		SetNewParms ();
 
 	self.items = parm1;
 	self.health = parm2;
@@ -427,8 +428,6 @@ void() respawn =
 	{
 		// make a copy of the dead body for appearances sake
 		CopyToBodyQueue (self);
-		// set default spawn parms
-		SetNewParms ();
 		// respawn
 		PutClientInServer ();
 	}
