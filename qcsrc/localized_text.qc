@@ -431,25 +431,25 @@
 
 #define LOC_DEATH_ROCKET_LAUNCHER_1A	" was blasted by "
 #define LOC_DEATH_ROCKET_LAUNCHER_1B	"'s rocket"
-#define LOC_DEATH_ROCKET_LAUNCHER_2A	" was shredded by "
+#define LOC_DEATH_ROCKET_LAUNCHER_2A	" was fulminated by "
 #define LOC_DEATH_ROCKET_LAUNCHER_2B	"'s rocket"
 #define LOC_DEATH_ROCKET_LAUNCHER_GA	" was gibbed by "
 #define LOC_DEATH_ROCKET_LAUNCHER_GB	"'s rocket"
-#define LOC_DEATH_ROCKET_LAUNCHER_Q1A	" was sent beyond the veil by "
-#define LOC_DEATH_ROCKET_LAUNCHER_Q1B	""
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1A	" rode "
+#define LOC_DEATH_ROCKET_LAUNCHER_Q1B	"'s pale horse"
 
 #define LOC_DEATH_LIGHTNING_1A	        " was electrocuted by "
 #define LOC_DEATH_LIGHTNING_1B	        ""
 #define LOC_DEATH_LIGHTNING_2A	        " was given shock treatment by "
 #define LOC_DEATH_LIGHTNING_2B	        ""
-#define LOC_DEATH_LIGHTNING_QA	        " rode "
-#define LOC_DEATH_LIGHTNING_QB	        "'s pale horse"
+#define LOC_DEATH_LIGHTNING_QA	        " was sent beyond the veil by "
+#define LOC_DEATH_LIGHTNING_QB	        ""
 #define LOC_DEATH_LIGHTNING_DA	        " was given a toaster bath by "
 #define LOC_DEATH_LIGHTNING_DB	        ""
 
 #define LOC_DEATH_TELEFRAG	            " was telefragged by "
 
-#define LOC_DEATH_DEFLECT_A	            "Lucifer's Protection deflects "
+#define LOC_DEATH_DEFLECT_A	            "Lucifer's Protection deflected "
 #define LOC_DEATH_DEFLECT_B	            "'s telefrag on "
 
 #define LOC_TEAMKILL_1	                " killed a teammate"

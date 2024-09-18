@@ -1256,9 +1256,9 @@ void() CheckPowerups =
 			if (self.super_time == 1)
 			{
 				if (deathmatch_supermode())
-					sprint (self, PRINT_HIGH, LOC_ITEM_FADE_QUADDMG);
-				else
 					sprint (self, PRINT_HIGH, LOC_ITEM_FADE_OCTDMG);
+				else
+					sprint (self, PRINT_HIGH, LOC_ITEM_FADE_QUADDMG);
 				sprint (self, PRINT_HIGH, "\n");
 				stuffcmd (self, "bf\n");
 				sound (self, CHAN_AUTO, "items/damage2.wav", 1, ATTN_NORM);
@@ -1760,7 +1760,7 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_GRENADE_LAUNCHER_QA;
 						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_QB;
 					}
-					else if (targ.health < 40) {
+					else if (targ.health < -40) {
 						deathstring = LOC_DEATH_GRENADE_LAUNCHER_GA;
 						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_GB;
 					}
@@ -1769,7 +1769,7 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_2B;
 					}
 #else
-					if (targ.health < 40) {
+					if (targ.health < -40) {
 						deathstring = LOC_DEATH_GRENADE_LAUNCHER_GA;
 						deathstring2 = LOC_DEATH_GRENADE_LAUNCHER_GB;
 					}
@@ -1787,7 +1787,7 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring = LOC_DEATH_ROCKET_LAUNCHER_Q1A;
 						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_Q1B;
 					}
-					else if (targ.health < 40) {
+					else if (targ.health < -40) {
 						deathstring = LOC_DEATH_ROCKET_LAUNCHER_GA;
 						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_GB;
 					}
@@ -1796,7 +1796,7 @@ void(entity targ, entity attacker) ClientObituary =
 						deathstring2 = LOC_DEATH_ROCKET_LAUNCHER_2B;
 					}
 #else
-					if (targ.health < 40) {
+					if (targ.health < -40) {
 						if (attacker.super_damage_finished > 0) {
 							rnum = random();
 							if (rnum < 0.3) {
