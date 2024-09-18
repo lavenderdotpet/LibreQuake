@@ -65,17 +65,17 @@
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_CLIENT_JOIN             " joined the game"
-#define LOC_CLIENT_DISCON           " exited the level"
-#define LOC_CLIENT_DISCON_DM_A      " left the game with "
-#define LOC_CLIENT_DISCON_DM_B      " frags"
+#define LOC_CLIENT_JOIN				" joined the server"
+#define LOC_CLIENT_EXIT_LEVEL		" exited the level"
+#define LOC_CLIENT_DISCON_A			" left the server the game with "
+#define LOC_CLIENT_DISCON_B			" frags"
 
 #else
 
-#define LOC_CLIENT_JOIN             " entered the game"
-#define LOC_CLIENT_DISCON           " exited the level"
-#define LOC_CLIENT_DISCON_DM_A      " left the game with "
-#define LOC_CLIENT_DISCON_DM_B      " frags"
+#define LOC_CLIENT_JOIN				" entered the game"
+#define LOC_CLIENT_EXIT_LEVEL		" exited the level"
+#define LOC_CLIENT_DISCON_A			" left the game with "
+#define LOC_CLIENT_DISCON_B			" frags"
 
 #endif // __LIBREQUAKE__
 

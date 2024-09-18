@@ -362,9 +362,12 @@ void() changelevel_touch =
 	}
 #endif
 
-	bprint (PRINT_HIGH, other.netname);
-	bprint (PRINT_HIGH, LOC_CLIENT_DISCON);
-	bprint (PRINT_HIGH, "\n");
+	if (deathmatch || coop)
+	{
+		bprint (PRINT_HIGH, other.netname);
+		bprint (PRINT_HIGH, LOC_CLIENT_EXIT_LEVEL);
+		bprint (PRINT_HIGH, "\n");
+	}
 
 	nextmap = self.map;
 
@@ -1415,9 +1418,9 @@ void() ClientDisconnect =
 
 	// let everyone else know
 	bprint (PRINT_HIGH, self.netname);
-	bprint (PRINT_HIGH, LOC_CLIENT_DISCON_DM_A);
+	bprint (PRINT_HIGH, LOC_CLIENT_DISCON_A);
 	bprint (PRINT_HIGH, ftos(self.frags));
-	bprint (PRINT_HIGH, LOC_CLIENT_DISCON_DM_B);
+	bprint (PRINT_HIGH, LOC_CLIENT_DISCON_B);
 	bprint (PRINT_HIGH, "\n");
 	sound (self, CHAN_BODY, "player/tornoff2.wav", 1, ATTN_NONE);
 	set_suicide_frame ();
