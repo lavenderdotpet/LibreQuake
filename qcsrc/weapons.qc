@@ -164,6 +164,25 @@ void(vector org, vector vel, float damage) SpawnBlood =
 #endif
 };
 
+void(vector org) SpawnPuff =
+{
+#ifdef __QW__
+	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
+	WriteByte (MSG_MULTICAST, TE_GUNSHOT);
+	WriteByte (MSG_MULTICAST, 1);
+	WriteCoord (MSG_MULTICAST, org_x);
+	WriteCoord (MSG_MULTICAST, org_y);
+	WriteCoord (MSG_MULTICAST, org_z);
+	multicast (org, MULTICAST_PVS);
+#else
+	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
+	WriteByte (MSG_BROADCAST, TE_GUNSHOT);
+	WriteCoord (MSG_BROADCAST, org_x);
+	WriteCoord (MSG_BROADCAST, org_y);
+	WriteCoord (MSG_BROADCAST, org_z);
+#endif
+}
+
 /*
 ================
 spawn_touchblood
@@ -223,22 +242,10 @@ Collects multiple small damages into a single damage
 entity	multi_ent;
 float	multi_damage;
 
-#ifdef __QW__
-vector  blood_org;
-float   blood_count;
-vector  puff_org;
-float   puff_count;
-#endif
-
 void() ClearMultiDamage =
 {
 	multi_ent = world;
 	multi_damage = 0;
-
-#ifdef __QW__
-	blood_count = 0;
-	puff_count = 0;
-#endif
 };
 
 void() ApplyMultiDamage =
@@ -263,35 +270,6 @@ void(entity hit, float damage) AddMultiDamage =
 	else
 		multi_damage = multi_damage + damage;
 };
-
-
-void() Multi_Finish =
-{
-#ifdef __QW__
-	if (puff_count)
-	{
-		WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
-		WriteByte (MSG_MULTICAST, TE_GUNSHOT);
-		WriteByte (MSG_MULTICAST, puff_count);
-		WriteCoord (MSG_MULTICAST, puff_org_x);
-		WriteCoord (MSG_MULTICAST, puff_org_y);
-		WriteCoord (MSG_MULTICAST, puff_org_z);
-		multicast (puff_org, MULTICAST_PVS);
-	}
-
-	if (blood_count)
-	{
-		WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
-		WriteByte (MSG_MULTICAST, TE_BLOOD);
-		WriteByte (MSG_MULTICAST, blood_count);
-		WriteCoord (MSG_MULTICAST, blood_org_x);
-		WriteCoord (MSG_MULTICAST, blood_org_y);
-		WriteCoord (MSG_MULTICAST, blood_org_z);
-		multicast (puff_org, MULTICAST_PVS);
-	}
-#endif
-};
-
 
 /*
 ==============================================================================
@@ -318,12 +296,8 @@ void(float damage, vector dir, string dtype) TraceAttack =
 
 	if (trace_ent.takedamage)
 	{	
-#ifdef __QW__
-		blood_count = blood_count + 1;
-		blood_org = org;
-#else
+
 		SpawnBlood (org, vel*0.2, damage);
-#endif
 
 		trace_ent.deathtype = dtype;
 		AddMultiDamage (trace_ent, damage);
@@ -331,15 +305,7 @@ void(float damage, vector dir, string dtype) TraceAttack =
 
 	else
 	{
-#ifdef __QW__
-	puff_count = puff_count + 1;
-#else
-		WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
-		WriteByte (MSG_BROADCAST, TE_GUNSHOT);
-		WriteCoord (MSG_BROADCAST, org_x);
-		WriteCoord (MSG_BROADCAST, org_y);
-		WriteCoord (MSG_BROADCAST, org_z);
-#endif
+		SpawnPuff(org);
 	}
 };
 
@@ -362,11 +328,6 @@ void(float shotcount, vector dir, vector spread, string dtype) FireBullets =
 
 	ClearMultiDamage ();
 
-#ifdef __QW__
-	traceline (src, src + dir*2048, FALSE, self);
-	puff_org = trace_endpos - dir*4;
-#endif
-
 	while (shotcount > 0)
 	{
 		direction = dir + crandom()*spread_x*v_right + crandom()*spread_y*v_up;
@@ -378,8 +339,6 @@ void(float shotcount, vector dir, vector spread, string dtype) FireBullets =
 		shotcount = shotcount - 1;
 	}
 	ApplyMultiDamage ();
-
-	Multi_Finish ();
 };
 
 /*
