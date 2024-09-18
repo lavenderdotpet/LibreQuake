@@ -896,7 +896,7 @@ void() superspike_touch =
 	}
 	else
 	{
-#ifdef __QW___
+#ifdef __QW__ // Differences in engine protocols
 		WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
 		WriteByte (MSG_MULTICAST, TE_SUPERSPIKE);
 		WriteCoord (MSG_MULTICAST, self.origin_x);
