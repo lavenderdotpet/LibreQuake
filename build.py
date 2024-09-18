@@ -178,7 +178,7 @@ def compile_progs():
             check=True,  # Fail on non-zero exit code
         )
         subprocess.run(
-            ["fteqcc", "qcsrc/qwprogs.src", "-D__LIBREQUAKE__", "-O3"],
+            ["fteqcc", "qcsrc/progs.src", "-D__LIBREQUAKE__", "-D__QW__", "-O3"],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             check=True,  # Fail on non-zero exit code
