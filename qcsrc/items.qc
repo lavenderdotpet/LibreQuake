@@ -412,7 +412,7 @@ void() armor_touch =
 	if (other.classname != "player")
 		return;
 	
-	if (deathmatch_supermode)
+	if (deathmatch_supermode())
 		if (other.invincible_time > 0)
 			return;
 
