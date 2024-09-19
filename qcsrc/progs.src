@@ -8,7 +8,7 @@
 
 defs.qc
 localized_text.qc       // LQ: Localized strings, also applies to Quake
-deathmatch_modes.qc
+deathmatch_settings.qc
 subs.qc
 
 #ifdef __QW__

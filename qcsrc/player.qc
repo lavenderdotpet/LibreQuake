@@ -616,19 +616,8 @@ void() PlayerDie =
 {
 	local	float	i;
 	local	string	s;
-	local	float	drop_quad;
-	local	float	drop_ring;
-
-	drop_quad = TRUE;
-	drop_ring = TRUE;
-#ifdef __QW__ // NQ does not support infokeys
-	if ((stof(infokey(world,"dq"))) == 0)
-		drop_quad = FALSE;
-	if ((stof(infokey(world,"dr"))) == 0)
-		drop_ring = FALSE;
-#endif
 	
-	if (deathmatch && drop_quad) {
+	if (deathmatch_drop_quad()) {
 		if (self.super_damage_finished > 0)
 		{
 			DropQuad (self.super_damage_finished - time);
@@ -646,7 +635,7 @@ void() PlayerDie =
 		}
 	}
 
-	if (deathmatch && drop_ring) {
+	if (deathmatch_drop_ring()) {
 		if (self.invisible_finished > 0)
 		{
 			DropRing (self.invisible_finished - time);

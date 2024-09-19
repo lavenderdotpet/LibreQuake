@@ -650,31 +650,19 @@ void() PutClientInServer =
 	stuffcmd(self, "-attack\n");            // Supa, prevent shooting after respawning in MP
 
 #ifdef __QW__ // NQ does not support infokeys
-	// Set Rocket Jump Modifiers
-	if (stof(infokey(world, "rj")) != 0)
-	{                
-		rj = stof(infokey(world, "rj"));
-	}
 	axes_only = stof(infokey(world, "axe"));
 #endif
 
 	// Deathmatch 4 starting items
 	if (deathmatch_supermode())
 	{
-		self.ammo_shells = 0;
-		if (axes_only == 0)
-		{
-			self.ammo_nails = 255;
-			self.ammo_shells = 255;
-			self.ammo_rockets = 255;
-			self.ammo_cells = 255;
-			self.items = self.items | IT_NAILGUN;
-			self.items = self.items | IT_SUPER_NAILGUN;
-			self.items = self.items | IT_SUPER_SHOTGUN;
-			self.items = self.items | IT_ROCKET_LAUNCHER;
-			// self.items = self.items | IT_GRENADE_LAUNCHER;
-			self.items = self.items | IT_LIGHTNING;
-		}
+		self.items = self.items | IT_NAILGUN;
+		self.items = self.items | IT_SUPER_NAILGUN;
+		self.items = self.items | IT_SUPER_SHOTGUN;
+		self.items = self.items | IT_ROCKET_LAUNCHER;
+		// self.items = self.items | IT_GRENADE_LAUNCHER;
+		self.items = self.items | IT_LIGHTNING;
+		self.weapon = IT_ROCKET_LAUNCHER;
 		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR3;
 		self.armorvalue = 200;
 		self.armortype = 0.8;
@@ -687,16 +675,13 @@ void() PutClientInServer =
 	// Deathmatch 5 starting items
 	if (deathmatch_supermode2())
 	{
-		self.ammo_nails = 80;
-		self.ammo_shells = 30;
-		self.ammo_rockets = 10;
-		self.ammo_cells = 30;
 		self.items = self.items | IT_NAILGUN;
 		self.items = self.items | IT_SUPER_NAILGUN;
 		self.items = self.items | IT_SUPER_SHOTGUN;
 		self.items = self.items | IT_ROCKET_LAUNCHER;
 		self.items = self.items | IT_GRENADE_LAUNCHER;
 		self.items = self.items | IT_LIGHTNING;
+		self.weapon = IT_ROCKET_LAUNCHER;
 		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR3;
 		self.armorvalue = 200;
 		self.armortype = 0.8;
@@ -706,6 +691,43 @@ void() PutClientInServer =
 		self.invincible_finished = time + 3;
 	}
 
+	if (deathmatch_starting_ammo())
+	{
+		self.ammo_nails = 80;
+		self.ammo_shells = 30;
+		self.ammo_rockets = 10;
+		self.ammo_cells = 30;
+	}
+
+	if (deathmatch_unlimited_ammo())
+	{
+		self.ammo_nails = 255;
+		self.ammo_shells = 255;
+		self.ammo_rockets = 255;
+		self.ammo_cells = 255;
+	}
+
+	// Axes only
+	if (deathmatch_axe_only())
+	{
+		self.ammo_nails = 0;
+		self.ammo_shells = 0;
+		self.ammo_rockets = 0;
+		self.ammo_cells = 0;
+		self.items = self.items - (self.items & (
+			IT_SHOTGUN |
+			IT_SUPER_SHOTGUN |
+			IT_NAILGUN |
+			IT_SUPER_NAILGUN |
+			IT_GRENADE_LAUNCHER |
+			IT_ROCKET_LAUNCHER |
+			IT_LIGHTNING
+		));
+		self.weapon = IT_AXE;
+	}
+
+	
+	W_SetCurrentAmmo ();
 };
 
 

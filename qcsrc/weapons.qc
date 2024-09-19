@@ -186,7 +186,7 @@ void() W_FireAxe =
 		trace_ent.axhitme = 1;
 		SpawnBlood (org, '0 0 0', 20);
 		trace_ent.deathtype = "axe";
-		if (deathmatch_supermode() || deathmatch_supermode2())
+		if (deathmatch_buffed_axe())
 			T_Damage (trace_ent, self, self, 75);
 		else
 			T_Damage (trace_ent, self, self, 20);
@@ -324,7 +324,7 @@ void() W_FireShotgun =
 
 	SmallKick();
 	
-	if (!deathmatch_supermode())
+	if (!deathmatch_unlimited_ammo())
 		self.currentammo = self.ammo_shells = self.ammo_shells - 1;
 	
 	dir = aim (self, 100000);
@@ -351,7 +351,7 @@ void() W_FireSuperShotgun =
 
 	BigKick();
 
-	if (!deathmatch_supermode())
+	if (!deathmatch_unlimited_ammo())
 		self.currentammo = self.ammo_shells = self.ammo_shells - 2;
 
 	dir = aim (self, 100000);
@@ -454,7 +454,7 @@ W_FireRocket
 */
 void() W_FireRocket =
 {
-	if (!deathmatch_supermode())
+	if (!deathmatch_unlimited_ammo())
 		self.currentammo = self.ammo_rockets = self.ammo_rockets - 1;
 
 	sound (self, CHAN_WEAPON, "weapons/sgun1.wav", 1, ATTN_NORM);
@@ -607,7 +607,7 @@ void() W_FireLightning =
 
 	SmallKick();
 
-	if (!deathmatch_supermode())
+	if (!deathmatch_unlimited_ammo())
 		self.currentammo = self.ammo_cells = self.ammo_cells - 1;
 
 	org = self.origin + '0 0 16';
@@ -683,7 +683,7 @@ W_FireGrenade
 */
 void() W_FireGrenade =
 {
-	if (!deathmatch_supermode())
+	if (!deathmatch_unlimited_ammo())
 		self.currentammo = self.ammo_rockets = self.ammo_rockets - 1;
 
 	sound (self, CHAN_WEAPON, "weapons/grenade.wav", 1, ATTN_NORM);
@@ -766,7 +766,7 @@ void() W_FireSuperSpikes =
 	sound (self, CHAN_WEAPON, "weapons/spike2.wav", 1, ATTN_NORM);
 	self.attack_finished = time + 0.2;
 
-	if (!deathmatch_supermode())
+	if (!deathmatch_unlimited_ammo())
 		self.currentammo = self.ammo_nails = self.ammo_nails - 2;
 
 	dir = aim (self, 1000);
@@ -801,7 +801,7 @@ void(float ox) W_FireSpikes =
 	sound (self, CHAN_WEAPON, "weapons/rocket1i.wav", 1, ATTN_NORM);
 	self.attack_finished = time + 0.2;
 
-	if (!deathmatch_supermode())
+	if (!deathmatch_unlimited_ammo())
 		self.currentammo = self.ammo_nails = self.ammo_nails - 1;
 	
 	dir = aim (self, 1000);

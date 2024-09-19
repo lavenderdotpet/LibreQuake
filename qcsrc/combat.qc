@@ -134,6 +134,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 	local	string	temp_deathtype;
 	local   string	s;
 	local	float	on_team;
+	local	float	rj;
 
 #ifdef __QW__ // QW handles teams differently
 	local   string	attackerteam;
@@ -195,6 +196,7 @@ void(entity targ, entity inflictor, entity attacker, float damage) T_Damage=
 		dir = normalize(dir);
 		targ.velocity = targ.velocity + dir*damage*8;
 
+		rj = deathmatch_rocket_jump_multiplier();
 		if ( (rj > 1) & ((attacker.classname == "player") & (targ.classname == "player")) & ( attacker.netname == targ.netname)) 
 			targ.velocity = targ.velocity + dir * damage * rj;
 	}

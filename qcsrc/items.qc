@@ -266,7 +266,8 @@ void() item_megahealth_rot;
 
 void() item_health =
 {
-	self.touch = health_touch;
+	if (deathmatch_no_health())
+		return;
 
 	if (self.spawnflags & H_ROTTEN)
 	{
@@ -281,6 +282,9 @@ void() item_health =
 
 	else if (self.spawnflags & H_MEGA)
 	{
+		if (deathmatch_no_mega_health())
+			return;
+
 		precache_model("maps/b_bh100.bsp");
 		precache_sound("items/r_item2.wav");
 		setmodel(self, "maps/b_bh100.bsp");
@@ -299,6 +303,7 @@ void() item_health =
 		self.healtype = 1;
 	}
 
+	self.touch = health_touch;
 	setsize (self, '0 0 0', '32 32 56');
 	StartItem ();
 };
@@ -343,14 +348,12 @@ void() health_touch =
 	self.solid = SOLID_NOT;
 
 	// Megahealth = rot down the player's super health
-	if (self.healtype == 2)
+	if (self.healtype == 2 && !deathmatch_supermode())
 	{
 		other.items = other.items | IT_SUPERHEALTH;
 		self.owner = other;
-		if (!deathmatch_supermode()) {
-			self.nextthink = time + 5;
-			self.think = item_megahealth_rot;
-		}
+		self.nextthink = time + 5;
+		self.think = item_megahealth_rot;
 	}
 
 	else
@@ -471,6 +474,9 @@ void() armor_touch =
 
 void() item_armor1 =
 {
+	if (deathmatch_no_armor())
+		return;
+
 	self.touch = armor_touch;
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
@@ -487,6 +493,9 @@ void() item_armor1 =
 
 void() item_armor2 =
 {
+	if (deathmatch_no_armor())
+		return;
+
 	self.touch = armor_touch;
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
@@ -503,6 +512,9 @@ void() item_armor2 =
 
 void() item_armorInv =
 {
+	if (deathmatch_no_armor())
+		return;
+
 	self.touch = armor_touch;
 	precache_model ("progs/armor.mdl");
 	setmodel (self, "progs/armor.mdl");
@@ -521,17 +533,27 @@ WEAPONS
 
 void() bound_other_ammo =
 {
-	if (other.ammo_shells > 100)
-		other.ammo_shells = 100;
+	if (deathmatch_unlimited_ammo())
+	{
+		other.ammo_shells = 255;
+		other.ammo_nails = 255;
+		other.ammo_rockets = 255;
+		other.ammo_cells = 255;
+	}
+	else
+	{
+		if (other.ammo_shells > 100)
+			other.ammo_shells = 100;
 
-	if (other.ammo_nails > 200)
-		other.ammo_nails = 200;
+		if (other.ammo_nails > 200)
+			other.ammo_nails = 200;
 
-	if (other.ammo_rockets > 100)
-		other.ammo_rockets = 100;
+		if (other.ammo_rockets > 100)
+			other.ammo_rockets = 100;
 
-	if (other.ammo_cells > 100)
-		other.ammo_cells = 100;
+		if (other.ammo_cells > 100)
+			other.ammo_cells = 100;
+	}
 };
 
 
@@ -742,7 +764,7 @@ void() weapon_touch =
 
 void() weapon_supershotgun =
 {
-	if (deathmatch_supermode() || deathmatch_supermode2())
+	if (deathmatch_no_weapons())
 		return;
 	
 	precache_model ("progs/g_shot.mdl");
@@ -762,7 +784,7 @@ void() weapon_supershotgun =
 
 void() weapon_nailgun =
 {
-	if (deathmatch_supermode() || deathmatch_supermode2())
+	if (deathmatch_no_weapons())
 		return;
 	
 	precache_model ("progs/g_nail.mdl");
@@ -782,7 +804,7 @@ void() weapon_nailgun =
 
 void() weapon_supernailgun =
 {
-	if (deathmatch_supermode() || deathmatch_supermode2())
+	if (deathmatch_no_weapons())
 		return;
 	
 	precache_model ("progs/g_nail2.mdl");
@@ -802,7 +824,7 @@ void() weapon_supernailgun =
 
 void() weapon_grenadelauncher =
 {
-	if (deathmatch_supermode() || deathmatch_supermode2())
+	if (deathmatch_no_weapons())
 		return;
 
 	precache_model ("progs/g_rock.mdl");
@@ -822,7 +844,7 @@ void() weapon_grenadelauncher =
 
 void() weapon_rocketlauncher =
 {
-	if (deathmatch_supermode() || deathmatch_supermode2())
+	if (deathmatch_no_weapons())
 		return;
 	
 	precache_model ("progs/g_rock2.mdl");
@@ -843,7 +865,7 @@ void() weapon_rocketlauncher =
 
 void() weapon_lightning =
 {
-	if (deathmatch_supermode() || deathmatch_supermode2())
+	if (deathmatch_no_weapons())
 		return;
 	
 	precache_model ("progs/g_light.mdl");
@@ -951,9 +973,13 @@ void() ammo_touch =
 	self.solid = SOLID_NOT;
 
 	if (deathmatch_item_respawn())
-		self.nextthink = time + 30;
-
-	self.think = SUB_regen;
+	{
+		self.think = SUB_regen;
+		if (deathmatch_slow_ammo())
+			self.nextthink = time + 30;
+		else
+			self.nextthink = time + 15;
+	}
 
 	activator = other;
 	SUB_UseTargets();				// fire all targets / killtargets
@@ -972,7 +998,7 @@ float WEAPON_BIG2 = 1;
 
 void() item_shells =
 {
-	if (deathmatch_supermode())
+	if (deathmatch_no_ammo_pickups())
 		return;
 
 	self.touch = ammo_touch;
@@ -1005,7 +1031,7 @@ void() item_shells =
 
 void() item_spikes =
 {
-	if (deathmatch_supermode())
+	if (deathmatch_no_ammo_pickups())
 		return;
 	
 	self.touch = ammo_touch;
@@ -1038,7 +1064,7 @@ void() item_spikes =
 
 void() item_rockets =
 {
-	if (deathmatch_supermode())
+	if (deathmatch_no_ammo_pickups())
 		return;
 	
 	self.touch = ammo_touch;
@@ -1072,7 +1098,7 @@ void() item_rockets =
 
 void() item_cells =
 {
-	if (deathmatch_supermode())
+	if (deathmatch_no_ammo_pickups())
 		return;
 	
 	self.touch = ammo_touch;
@@ -1506,9 +1532,8 @@ Player is invulnerable for 30 seconds
 */
 void() item_artifact_invulnerability =
 {
-	if (deathmatch_no_powerups()) {
+	if (deathmatch_no_powerups())
 		return;
-	}
 
 	self.touch = powerup_touch;
 
@@ -1559,9 +1584,8 @@ Player is invisible for 30 seconds
 */
 void() item_artifact_invisibility =
 {
-	if (deathmatch_no_powerups()) {
+	if (deathmatch_no_powerups())
 		return;
-	}
 
 	self.touch = powerup_touch;
 
@@ -1586,9 +1610,8 @@ The next attack from the player will do 4x damage
 */
 void() item_artifact_super_damage =
 {
-	if (deathmatch_no_powerups()) {
+	if (deathmatch_no_powerups())
 		return;
-	}
 
 	self.touch = powerup_touch;
 
@@ -1763,7 +1786,7 @@ void() BackpackTouch =
 	sprint (other, PRINT_LOW, "\n");
 
 	// If backpack has a grenade or rocket launcher in it, fill it with at least five rockets
-	if ( (deathmatch && !deathmatch_classic()) && ( (WeaponCode(new)==6) || (WeaponCode(new)==7) ) && (other.ammo_rockets < 5) )
+	if ( deathmatch_backpack_min_rockets() && ( (WeaponCode(new)==6) || (WeaponCode(new)==7) ) && (other.ammo_rockets < 5) )
 		other.ammo_rockets = 5;
 
 	// backpack touch sound

@@ -501,8 +501,6 @@ float		coop;
 float		teamplay;
 #endif
 
-float		rj;
-
 //================================================
 
 //
