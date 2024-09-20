@@ -406,7 +406,7 @@ float	CHAN_WEAPON		= 1;
 float	CHAN_VOICE		= 2;
 float	CHAN_ITEM		= 3;
 float	CHAN_BODY		= 4;
-#ifdef __QW__ // NetQuake doesn't support CHAN_NO_PHS_ADD. Set it to 0 so it will have no effect.
+#ifdef __QW__ // NetQuake doesn't support CHAN_NO_PHS_ADD. Set it to 0 so it will have no effect when combined with another channel.
 float   CHAN_NO_PHS_ADD = 8;
 #else
 float   CHAN_NO_PHS_ADD = 0;
