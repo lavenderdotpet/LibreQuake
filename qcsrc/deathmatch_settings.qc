@@ -4,41 +4,29 @@
 //
 
 // Weapons stay when picked up
-float() deathmatch_weapon_stay =
-{
-    return deathmatch >= 2;
-};
+#define deathmatch_weapon_stay() \
+    (deathmatch >= 2)
 
 // Items respawn after a timer
-float() deathmatch_item_respawn =
-{
-    return deathmatch && (deathmatch != 2);
-};
+#define deathmatch_item_respawn() \
+    (deathmatch && (deathmatch != 2))
 
 // Ammo pickups take twice as long to respawn
-float() deathmatch_slow_ammo =
-{
-    return deathmatch == 1;
-};
+#define deathmatch_slow_ammo() \
+    (deathmatch == 1)
 
 // When picking up a backpack that contains a Rocket or Grenade Launcher, set the
 // player's rocket count to 5 if they have less than 5
-float() deathmatch_backpack_min_rockets
-{
-    return deathmatch >= 3;
-};
+#define deathmatch_backpack_min_rockets() \
+    (deathmatch >= 3)
 
 // All of the special rules that apply in deathmatch 4
-float() deathmatch_supermode =
-{
-    return deathmatch == 4;
-};
+#define deathmatch_supermode() \
+    (deathmatch == 4)
 
 // All of the special rules that apply in deathmatch 5
-float() deathmatch_supermode2 =
-{
-    return deathmatch == 5;
-};
+#define deathmatch_supermode2() \
+    (deathmatch == 5)
 
 // Increases the axe's damage from 20 to 75
 float() deathmatch_buffed_axe =
