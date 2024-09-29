@@ -1,0 +1,11 @@
+=========================================
+Useful Console Commands for Accessibility
+=========================================
+
+gl_zfix 1; r_polygonoffset_submodel_map *; vid_reload (to prevent texture flickering aka "z fighting")
+
+r_dynamic 0 (to disable some flashing lights)
+
+r_waterwarp 0 (to disable the water shader effect)
+
+gl_font calibri (changes the console font to Calibri)

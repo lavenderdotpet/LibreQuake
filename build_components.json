@@ -44,9 +44,16 @@
             ["-config.cfg", "config.cfg"],
             "cam.cfg",
             "dev.cfg",
+            "default_$generic.cfg",
+            "default_fte.cfg",
+            "default_darkplaces.cfg",
             "zoom90.cfg",
             "zoom120.cfg",
-            "accessibility.md"
+            "style_fte_modern.cfg",
+            "style_fte_retro.cfg",
+            "style_ironwail_modern.cfg",
+            "style_ironwail_retro.cfg",
+            "accessibility.txt"
         ]
     },
     "sounds": {
