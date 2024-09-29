@@ -35,7 +35,7 @@ float() deathmatch_buffed_axe =
         return TRUE;
 
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "ba")) != 0)
+    if (deathmatch && stof(infokey(world, "buffed_axe")) != 0)
         return TRUE;
 #endif
 
