@@ -36,6 +36,7 @@ fraglimit [VALUE]				Changes the number of frags needed to win.
 samelevel 1						Disable automatic map change after the match ends.
 serverinfo [SETTING] [VALUE]	Changes a server infokey setting to the chosen value. See infokeys below.
 
+
 ========
 Map List
 ========
@@ -55,7 +56,8 @@ map lqdm11	The Wicked Night: A medium-sized map built around a central nexus.
 map lqdm12	Javelin: Contains a respawning key you can use to permanently unlock new rooms and powerups!
 map lqdm13	Death Provides No Return: A void map with jump pads and toggling windows.
 
-Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger.
+Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger. If you want to switch to the third map in Episode 1, you would use the command "map e1m3".
+
 
 ================
 Deathmatch Modes
@@ -92,6 +94,7 @@ color 7		Salmon
 color 9		Pink
 color 11	Teal
 color 13	Blue
+
 
 ===============
 Server Infokeys
