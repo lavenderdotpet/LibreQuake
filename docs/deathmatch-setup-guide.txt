@@ -1,0 +1,134 @@
+======================
+Setting up a LAN match
+======================
+All players must download and install LibreQuake with the FTEQW engine as per the installation section of the readme file. (This guide assumes all players are using FTEQW for their engine.) All players must be connected to the same WiFi network, preferably using a wired ethernet connection.
+
+If you are the host, go to the main menu and then go to "Online -> Start Game". Then set the game settings. Recommended settings for first time play are:
+
+Deathmatch:		Deathmatch 3
+Time Limit:		10 Minutes
+Frag Limit:		10 Frags
+Map:			lqdm1
+Leave the other settings alone.
+
+Then press "Start Game".
+
+Once you're in the server, you'll need to share your local IP Address with the other players. Open your operating system's terminal. (PowerShell on Windows, Terminal on MacOS, etc.) Type "ipconfig". This will bring up a list of IP Addresses for your computer. Find the one called "IPv4 Address". It will usually look something like "192.168.0.22".
+
+To connect to the server, each other player will need to open the console and type "connect", followed by your local IP Address. For example, "connect 192.168.0.22". (Open the console either by pressing Esc on the main menu or by pressing ~ while in game.)
+
+Once everyone is in the server, each player can go to the "Online -> Setup" menu to set their player name, team name (if you have teamplay enabled), and player color.
+
+Once everyone is ready, you can enter the "restart" command in console to begin the match! Have fun!
+
+
+======================
+Useful Server Commands
+======================
+These commands must be typed into the console. Open the console either by pressing Esc on the main menu or by pressing ~ while in game.
+
+restart							Restarts the match
+map [MAP_NAME]					Changes the map. See the list of maps below.
+deathmatch [MODE]				Changes the deathmatch mode. See the list of modes below.
+teamplay [MODE]					Changes the teamplay mode. See teamplay modes below.
+timelimit [VALUE]				Changes the match time limit. Value is in minutes.
+fraglimit [VALUE]				Changes the number of frags needed to win.
+samelevel 1						Disable automatic map change after the match ends.
+serverinfo [SETTING] [VALUE]	Changes a server infokey setting to the chosen value. See infokeys below.
+
+========
+Map List
+========
+LibreQuake comes with 13 deathmatch maps. Change the map using the "map" command.
+
+map lqdm1	Solstice: A small castle map with a simple layout. This is a good map to start on.
+map lqdm2	Hyperborea: A white temple with jump pads. Great for large free-for-alls.
+map lqdm3	Torture Pit: An acid-flooded map with only lower-tier weapons.
+map lqdm4	Psychofuge: An ancient lava fortress. The dangerous lava-filled underbelly contains some of the best items!
+map lqdm5	Transport Tubes: An industrial facility with locking air tunnels that carry you around the map.
+map lqdm6	Ghost Quarter: A castle map where new weapons and armor types unlock every 40 seconds.
+map lqdm7	Boomstick Basement: A claustrophobic map with a labyrinthine structure.
+map lqdm8	Alichar Sector: A very tall map with a long elevator to reach the Red Armor.
+map lqdm9	Outlands: A temple map designed for 4v4 team deathmatch. Use the grenade launcher to unlock secret doorways!
+map lqdm10	Lucifer's Gambit: An evil temple with Lucifer's Protection as the main powerup.
+map lqdm11	The Wicked Night: A medium-sized map built around a central nexus.
+map lqdm12	Javelin: Contains a respawning key you can use to permanently unlock new rooms and powerups!
+map lqdm13	Death Provides No Return: A void map with jump pads and toggling windows.
+
+Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger.
+
+================
+Deathmatch Modes
+================
+To change the deathmatch mode, use the "deathmatch" command. LibreQuake has five different deathmatch modes which change the way the game plays. Deathmatch 3 is the recommended default mode.
+
+deathmatch 1	Items and weapons respawn. Mostly used for 4v4 team deathmatch.
+deathmatch 2	Items never respawn; weapons respawn instantly. This mode is rarely used.
+deathmatch 3	Items respawn; weapons respawn instantly. Great for free-for-all and team deathmatch.
+deathmatch 4	Spawn with all weapons, full health and armor, and infinite ammo. Collect backpacks for bonus health.
+deathmatch 5	Spawn with all weapons, full health and armor, and some ammo.
+
+
+==============
+Teamplay Modes
+==============
+To enable teamplay, use the "teamplay" command. There are four different teamplay modes:
+
+teamplay 0	Disables teamplay.
+teamplay 1	Players cannot damage themselves or teammates.
+teamplay 2	Players can damage themselves and teammates.
+teamplay 3	Players can damage themselves but not teammates.
+
+Each player will need to join a team. They can do this in the "Online -> Setup" menu or by using the command "setinfo team MY_TEAM_NAME"
+
+To make it easier to tell teams apart, you might also want to have teams choose a color. The easiest way to do this quickly is to have each team pick one of the colors below and set their color to that using the "color" command.
+
+color 0		White
+color 2		Light Blue
+color 4		Red
+color 5		Orange
+color 6		Yellow
+color 7		Salmon
+color 9		Pink
+color 11	Teal
+color 13	Blue
+
+===============
+Server Infokeys
+===============
+Infokeys allow you to further customize the game settings. Change an infokey using the serverinfo command. For example, "serverinfo have_axe_only 1" would enable the setting "have_axe_only". "serverinfo have_axe_only 0" would disable it. After you change a setting you may need to restart the match for it to take effect.
+
+Here is the list of supported infokeys:
+
+dq							Players drop the Crusher Sigil on death. (Enabled by default.)
+dr							Players drop the Eye of Enigma on death. (Enabled by default.)
+rj							Set this to a number to scale rocket jump push force by that number.
+have_axe_only				Disables all weapons except for the axe.
+buffed_axe					Increases the axe's damage from 20 to 75.
+have_unlimited_ammo			Players have unlimited ammo.
+
+have_super_shotgun			Players spawn with the Double-Barreled Shotgun.
+have_nailgun				Players spawn with the Nailgun.
+have_super_nailgun			Players spawn with the Super Nailgun.
+have_grenade_launcher		Players spawn with the Grenade Launcher.
+have_rocket_launcher		Players spawn with the Rocket Launcher.
+have_lightning_gun			Players spawn with the Lightning Gun.
+
+disable_shotgun				Disables the starting Shotgun.
+disable_super_shotgun		Disables the Double-Barreled Shotgun.
+disable_nailgun				Disables the Nailgun.
+disable_super_nailgun		Disables the Super Nailgun.
+disable_grenade_launcher	Disables the Grenade Launcher.
+disable_rocket_launcher		Disables the Rocket Launcher.
+disable_lightning_gun		Disables the Lightning_gun.
+
+disable_weapons				Removes weapon pickups from the map.
+disable_powerups			Removes powerups from the map.
+disable_armor				Removes armor pickups from the map.
+disable_health				Removes health pickups from the map.
+disable_mega_health			Removes mega-health pickups from the map.
+disable_ammo				Removes all ammo pickups from the map.
+disable_ammo_shells			Removes shell ammo pickups from the map.
+disable_ammo_nails			Removes nail ammo pickups from the map.
+disable_ammo_rockets		Removes rocket ammo pickups from the map.
+disable_ammo_cells			Removes cell ammo pickups from the map.
