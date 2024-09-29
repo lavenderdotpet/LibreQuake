@@ -656,13 +656,6 @@ void() PutClientInServer =
 	// Deathmatch 4 starting items
 	if (deathmatch_supermode())
 	{
-		self.items = self.items | IT_NAILGUN;
-		self.items = self.items | IT_SUPER_NAILGUN;
-		self.items = self.items | IT_SUPER_SHOTGUN;
-		self.items = self.items | IT_ROCKET_LAUNCHER;
-		// self.items = self.items | IT_GRENADE_LAUNCHER;
-		self.items = self.items | IT_LIGHTNING;
-		self.weapon = IT_ROCKET_LAUNCHER;
 		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR3;
 		self.armorvalue = 200;
 		self.armortype = 0.8;
@@ -675,13 +668,6 @@ void() PutClientInServer =
 	// Deathmatch 5 starting items
 	if (deathmatch_supermode2())
 	{
-		self.items = self.items | IT_NAILGUN;
-		self.items = self.items | IT_SUPER_NAILGUN;
-		self.items = self.items | IT_SUPER_SHOTGUN;
-		self.items = self.items | IT_ROCKET_LAUNCHER;
-		self.items = self.items | IT_GRENADE_LAUNCHER;
-		self.items = self.items | IT_LIGHTNING;
-		self.weapon = IT_ROCKET_LAUNCHER;
 		self.items = self.items - (self.items & (IT_ARMOR1 | IT_ARMOR2 | IT_ARMOR3)) + IT_ARMOR3;
 		self.armorvalue = 200;
 		self.armortype = 0.8;
@@ -691,12 +677,47 @@ void() PutClientInServer =
 		self.invincible_finished = time + 3;
 	}
 
-	if (deathmatch_starting_ammo())
+	if (deathmatch_no_shotgun())
 	{
+		self.items = self.items - (self.items & IT_SHOTGUN);
+		self.ammo_shells = 0;
+	}
+
+	if (deathmatch_starting_nailgun())
+	{
+		self.items = self.items | IT_NAILGUN;
 		self.ammo_nails = 80;
+		self.weapon = IT_NAILGUN;
+	}
+	if (deathmatch_starting_super_shotgun())
+	{
+		self.items = self.items | IT_SUPER_SHOTGUN;
 		self.ammo_shells = 30;
+		self.weapon = IT_SUPER_SHOTGUN;
+	}
+	if (deathmatch_starting_super_nailgun())
+	{
+		self.items = self.items | IT_SUPER_NAILGUN;
+		self.ammo_nails = 80;
+		self.weapon = IT_SUPER_NAILGUN;
+	}
+	if (deathmatch_starting_grenade_launcher())
+	{
+		self.items = self.items | IT_GRENADE_LAUNCHER;
 		self.ammo_rockets = 10;
+		self.weapon = IT_GRENADE_LAUNCHER;
+	}
+	if (deathmatch_starting_lightning_gun())
+	{
+		self.items = self.items | IT_LIGHTNING;
 		self.ammo_cells = 30;
+		self.weapon = IT_LIGHTNING;
+	}
+	if (deathmatch_starting_rocket_launcher())
+	{
+		self.items = self.items | IT_ROCKET_LAUNCHER;
+		self.ammo_rockets = 10;
+		self.weapon = IT_ROCKET_LAUNCHER;
 	}
 
 	if (deathmatch_unlimited_ammo())
@@ -725,7 +746,6 @@ void() PutClientInServer =
 		));
 		self.weapon = IT_AXE;
 	}
-
 	
 	W_SetCurrentAmmo ();
 };

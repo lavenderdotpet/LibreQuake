@@ -764,7 +764,7 @@ void() weapon_touch =
 
 void() weapon_supershotgun =
 {
-	if (deathmatch_no_weapons())
+	if (deathmatch_no_weapons_on_map() || deathmatch_no_super_shotgun_on_map())
 		return;
 	
 	precache_model ("progs/g_shot.mdl");
@@ -784,7 +784,7 @@ void() weapon_supershotgun =
 
 void() weapon_nailgun =
 {
-	if (deathmatch_no_weapons())
+	if (deathmatch_no_weapons_on_map() || deathmatch_no_nailgun_on_map())
 		return;
 	
 	precache_model ("progs/g_nail.mdl");
@@ -804,7 +804,7 @@ void() weapon_nailgun =
 
 void() weapon_supernailgun =
 {
-	if (deathmatch_no_weapons())
+	if (deathmatch_no_weapons_on_map() || deathmatch_no_super_nailgun_on_map())
 		return;
 	
 	precache_model ("progs/g_nail2.mdl");
@@ -824,7 +824,7 @@ void() weapon_supernailgun =
 
 void() weapon_grenadelauncher =
 {
-	if (deathmatch_no_weapons())
+	if (deathmatch_no_weapons_on_map() || deathmatch_no_grenade_launcher_on_map())
 		return;
 
 	precache_model ("progs/g_rock.mdl");
@@ -844,7 +844,7 @@ void() weapon_grenadelauncher =
 
 void() weapon_rocketlauncher =
 {
-	if (deathmatch_no_weapons())
+	if (deathmatch_no_weapons_on_map() || deathmatch_no_rocket_launcher_on_map())
 		return;
 	
 	precache_model ("progs/g_rock2.mdl");
@@ -865,7 +865,7 @@ void() weapon_rocketlauncher =
 
 void() weapon_lightning =
 {
-	if (deathmatch_no_weapons())
+	if (deathmatch_no_weapons_on_map() || deathmatch_no_lightning_gun_on_map())
 		return;
 	
 	precache_model ("progs/g_light.mdl");
@@ -998,7 +998,7 @@ float WEAPON_BIG2 = 1;
 
 void() item_shells =
 {
-	if (deathmatch_no_ammo_pickups())
+	if (deathmatch_no_shell_pickups())
 		return;
 
 	self.touch = ammo_touch;
@@ -1031,7 +1031,7 @@ void() item_shells =
 
 void() item_spikes =
 {
-	if (deathmatch_no_ammo_pickups())
+	if (deathmatch_no_nail_pickups())
 		return;
 	
 	self.touch = ammo_touch;
@@ -1064,7 +1064,7 @@ void() item_spikes =
 
 void() item_rockets =
 {
-	if (deathmatch_no_ammo_pickups())
+	if (deathmatch_no_rocket_pickups())
 		return;
 	
 	self.touch = ammo_touch;
@@ -1098,7 +1098,7 @@ void() item_rockets =
 
 void() item_cells =
 {
-	if (deathmatch_no_ammo_pickups())
+	if (deathmatch_no_cell_pickups())
 		return;
 	
 	self.touch = ammo_touch;

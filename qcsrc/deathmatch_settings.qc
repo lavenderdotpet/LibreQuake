@@ -50,7 +50,179 @@ float() deathmatch_axe_only =
     if (deathmatch_supermode() && stof(infokey(world, "axe")) != 0)
         return TRUE;
     
-    if (deathmatch && stof(infokey(world, "ao")) != 0)
+    if (deathmatch && stof(infokey(world, "have_axe_only")) != 0)
+        return TRUE;
+#endif
+    return FALSE;
+}
+
+// Shotgun is removed from players' starting items
+float() deathmatch_no_shotgun =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_shotgun")) != 0)
+        return TRUE;
+#endif
+    return FALSE;
+}
+
+// Super Shotgun is removed from players' starting items
+float() deathmatch_no_super_shotgun =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_super_shotgun")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Nailgun is removed from players' starting items
+float() deathmatch_no_nailgun =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_nailgun")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Super Nailgun is removed from players' starting items
+float() deathmatch_no_super_nailgun =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_super_nailgun")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Grenade Launcher is removed from players' starting items
+float() deathmatch_no_grenade_launcher =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_grenade_launcher")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Rocket Launcher is removed from players' starting items
+float() deathmatch_no_rocket_launcher =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_rocket_launcher")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Lightning Gun is removed from players' starting items
+float() deathmatch_no_lightning_gun =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_lightning_gun")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Players start with the Super Shotgun
+float() deathmatch_starting_super_shotgun =
+{
+    if (deathmatch_no_super_shotgun())
+        return FALSE;
+    
+    if (deathmatch_supermode() || deathmatch_supermode2())
+        return TRUE;
+    
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "have_super_shotgun")) != 0)
+        return TRUE;
+#endif
+    return FALSE;
+}
+
+// Players start with the Super Nailgun
+float() deathmatch_starting_nailgun =
+{
+    if (deathmatch_no_nailgun())
+        return FALSE;
+    
+    if (deathmatch_supermode() || deathmatch_supermode2())
+        return TRUE;
+    
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "have_nailgun")) != 0)
+        return TRUE;
+#endif
+    return FALSE;
+}
+
+// Players start with the Super Nailgun
+float() deathmatch_starting_super_nailgun =
+{
+    if (deathmatch_no_super_nailgun())
+        return FALSE;
+    
+    if (deathmatch_supermode() || deathmatch_supermode2())
+        return TRUE;
+    
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "have_super_nailgun")) != 0)
+        return TRUE;
+#endif
+    return FALSE;
+}
+
+// Players start with the Grenade Launcher
+float() deathmatch_starting_grenade_launcher =
+{
+    if (deathmatch_no_grenade_launcher())
+        return FALSE;
+
+    if (deathmatch_supermode2())
+        return TRUE;
+    
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "have_grenade_launcher")) != 0)
+        return TRUE;
+#endif
+    return FALSE;
+}
+
+// Players start with the Rocket Launcher
+float() deathmatch_starting_rocket_launcher =
+{
+    if (deathmatch_no_rocket_launcher())
+        return FALSE;
+    
+    if (deathmatch_supermode() || deathmatch_supermode2())
+        return TRUE;
+    
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "have_rocket_launcher")) != 0)
+        return TRUE;
+#endif
+    return FALSE;
+}
+
+// Players start with the Lightning Gun
+float() deathmatch_starting_lightning_gun =
+{
+    if (deathmatch_no_lightning_gun())
+        return FALSE;
+    
+    if (deathmatch_supermode() || deathmatch_supermode2())
+        return TRUE;
+    
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "have_lightning_gun")) != 0)
         return TRUE;
 #endif
     return FALSE;
@@ -63,35 +235,93 @@ float() deathmatch_unlimited_ammo =
         return TRUE;
 
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "ua")) != 0)
+    if (deathmatch && stof(infokey(world, "have_unlimited_ammo")) != 0)
         return TRUE;
 #endif
 
     return FALSE;
 };
 
-// Players start with some ammo
-float() deathmatch_starting_ammo =
+// Super Shotgun is removed on map load
+float() deathmatch_no_super_shotgun_on_map =
 {
-    if (deathmatch_supermode2())
+    if (deathmatch_no_super_shotgun())
+        return TRUE;
+    
+    if (deathmatch_starting_super_shotgun())
         return TRUE;
 
-#ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "sa")) != 0)
+    return FALSE;
+};
+
+// Nailgun is removed from players' starting items
+float() deathmatch_no_nailgun_on_map =
+{
+    if (deathmatch_no_nailgun())
         return TRUE;
-#endif
+    
+    if (deathmatch_starting_nailgun())
+        return TRUE;
+
+    return FALSE;
+};
+
+// Super Nailgun is removed from players' starting items
+float() deathmatch_no_super_nailgun_on_map =
+{
+    if (deathmatch_no_super_nailgun())
+        return TRUE;
+    
+    if (deathmatch_starting_super_nailgun())
+        return TRUE;
+
+    return FALSE;
+};
+
+// Grenade Launcher is removed from players' starting items
+float() deathmatch_no_grenade_launcher_on_map =
+{
+    if (deathmatch_no_grenade_launcher())
+        return TRUE;
+    
+    if (deathmatch_starting_grenade_launcher())
+        return TRUE;
+
+    return FALSE;
+};
+
+// Rocket Launcher is removed from players' starting items
+float() deathmatch_no_rocket_launcher_on_map =
+{
+    if (deathmatch_no_rocket_launcher())
+        return TRUE;
+    
+    if (deathmatch_starting_rocket_launcher())
+        return TRUE;
+
+    return FALSE;
+};
+
+// Lightning Gun is removed from players' starting items
+float() deathmatch_no_lightning_gun_on_map =
+{
+    if (deathmatch_no_lightning_gun())
+        return TRUE;
+    
+    if (deathmatch_starting_lightning_gun())
+        return TRUE;
 
     return FALSE;
 };
 
 // Weapons are removed on map load
-float() deathmatch_no_weapons =
+float() deathmatch_no_weapons_on_map =
 {
     if (deathmatch_supermode() || deathmatch_supermode2() || deathmatch_axe_only())
         return TRUE;
 
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "nw")) != 0)
+    if (deathmatch && stof(infokey(world, "disable_weapons")) != 0)
         return TRUE;
 #endif
 
@@ -105,7 +335,87 @@ float() deathmatch_no_ammo_pickups =
         return TRUE;
 
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "na")) != 0)
+    if (deathmatch && stof(infokey(world, "disable_ammo")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Shell pickups are removed on map load
+float() deathmatch_no_shell_pickups =
+{
+    if (deathmatch_no_ammo_pickups())
+        return TRUE;
+    
+    if (deathmatch_no_shotgun() && deathmatch_no_super_shotgun())
+        return TRUE;
+    
+    if (deathmatch_no_weapons_on_map() && (!deathmatch_starting_super_shotgun()))
+        return TRUE;
+
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_ammo_shells")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Nail pickups are removed on map load
+float() deathmatch_no_nail_pickups =
+{
+    if (deathmatch_no_ammo_pickups())
+        return TRUE;
+    
+    if (deathmatch_no_nailgun() && deathmatch_no_super_nailgun())
+        return TRUE;
+    
+    if (deathmatch_no_weapons_on_map() && (!deathmatch_starting_nailgun()) && (!deathmatch_starting_super_nailgun()))
+        return TRUE;
+
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_ammo_nails")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Rocket pickups are removed on map load
+float() deathmatch_no_rocket_pickups =
+{
+    if (deathmatch_no_ammo_pickups())
+        return TRUE;
+    
+    if (deathmatch_no_grenade_launcher() && deathmatch_no_rocket_launcher())
+        return TRUE;
+    
+    if (deathmatch_no_weapons_on_map() && (!deathmatch_starting_grenade_launcher()) && (!deathmatch_starting_rocket_launcher()))
+        return TRUE;
+
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_ammo_rockets")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
+// Cell pickups are removed on map load
+float() deathmatch_no_cell_pickups =
+{
+    if (deathmatch_no_ammo_pickups())
+        return TRUE;
+    
+    if (deathmatch_no_lightning_gun())
+        return TRUE;
+    
+    if (deathmatch_no_weapons_on_map() && (!deathmatch_starting_lightning_gun()))
+        return TRUE;
+
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_ammo_cells")) != 0)
         return TRUE;
 #endif
 
@@ -116,7 +426,7 @@ float() deathmatch_no_ammo_pickups =
 float() deathmatch_no_powerups =
 {
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "np")) != 0)
+    if (deathmatch && stof(infokey(world, "disable_powerups")) != 0)
         return TRUE;
 #endif
 
@@ -127,7 +437,7 @@ float() deathmatch_no_powerups =
 float() deathmatch_no_armor =
 {
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "nr")) != 0)
+    if (deathmatch && stof(infokey(world, "disable_armor")) != 0)
         return TRUE;
 #endif
 
@@ -138,7 +448,7 @@ float() deathmatch_no_armor =
 float() deathmatch_no_health =
 {
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "nh")) != 0)
+    if (deathmatch && stof(infokey(world, "disable_health")) != 0)
         return TRUE;
 #endif
 
@@ -149,7 +459,7 @@ float() deathmatch_no_health =
 float() deathmatch_no_mega_health =
 {
 #ifdef __QW__ // NQ does not support infokeys
-    if (deathmatch && stof(infokey(world, "nmh")) != 0)
+    if (deathmatch && stof(infokey(world, "disable_mega_health")) != 0)
         return TRUE;
 #endif
 
