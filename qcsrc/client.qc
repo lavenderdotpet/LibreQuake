@@ -1512,7 +1512,7 @@ void(entity targ, entity attacker) ClientObituary =
 			bprint (PRINT_MEDIUM, LOC_DEATH_DEFLECT_A);
 			bprint (PRINT_MEDIUM, targ.netname);
 			bprint (PRINT_MEDIUM, LOC_DEATH_DEFLECT_B);
-			bprint (PRINT_MEDIUM, attacker.enemy.netname);
+			bprint (PRINT_MEDIUM, attacker.owner.netname);
 			bprint (PRINT_MEDIUM, "\n");
 
 			attacker.owner.frags = attacker.owner.frags + 1;

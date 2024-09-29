@@ -377,15 +377,15 @@ void() tdeath_touch =
 			self.owner = other;
 			T_Damage (other2, self, self, 50000);
 		}
-			
-		if (other.invincible_finished > time)
+		else if (other.invincible_finished > time)
 		{
 			self.classname = "teledeath2";
-			T_Damage (self.owner, self, self, 50000);
+			other2 = self.owner;
+			self.owner = other;
+			T_Damage (other2, self, self, 50000);
 			return;
 		}
-
-		if (self.owner.classname != "player")
+		else if (self.owner.classname != "player")
 		{	// monsters explode themselves
 			T_Damage (self.owner, self, self, 50000);
 			return;
