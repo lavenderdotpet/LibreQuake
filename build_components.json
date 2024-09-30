@@ -15,7 +15,6 @@
             "docs/misc-docs/COPYING",
             "docs/misc-docs/LibreProgsDeluxe.md",
             "docs/misc-docs/pop.lmp.md"
-
         ]
     },
     "root": {
@@ -25,11 +24,11 @@
             "gfx.wad",
             "demo1.dem",
             "demo2.dem",
-            "demo3.dem"
+            "demo3.dem",
+            "progs.dat",
+            "qwprogs.dat"
         ],
-        "files_pak1": [
-            "progs.dat"
-        ],
+        "files_pak1": [],
         "files_unpacked": []
     },
     "config": {

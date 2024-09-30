@@ -34,14 +34,14 @@ LQ_SpawnCamera
 void() LQ_SpawnCamera =
 {
     if (!cvar("developer")) {
-        bprint(LOC_LQ_ISDEVELOPER);
-        bprint("\n");
+        bprint(PRINT_HIGH, LOC_LQ_ISDEVELOPER);
+        bprint(PRINT_HIGH, "\n");
         return;
     }
 
     if (cameras_in_world >= LQ_MAXCAMERAS) {
-        bprint(LOC_LQ_CAMERAS_MAX);
-        bprint("\n");
+        bprint(PRINT_HIGH, LOC_LQ_CAMERAS_MAX);
+        bprint(PRINT_HIGH, "\n");
         return;
     }
 
@@ -62,10 +62,10 @@ void() LQ_SpawnCamera =
 
     cameras_in_world++;
 
-    bprint(LOC_LQ_CAMERA_SPAWN_A);
-    bprint(ftos(LQ_MAXCAMERAS - cameras_in_world));
-    bprint(LOC_LQ_CAMERA_SPAWN_B);
-    bprint("\n");
+    bprint(PRINT_HIGH, LOC_LQ_CAMERA_SPAWN_A);
+    bprint(PRINT_HIGH, ftos(LQ_MAXCAMERAS - cameras_in_world));
+    bprint(PRINT_HIGH, LOC_LQ_CAMERA_SPAWN_B);
+    bprint(PRINT_HIGH, "\n");
 };
 
 /*
@@ -77,8 +77,8 @@ LQ_AppendCameraTime
 void(float time_addition) LQ_AppendCameraTime = 
 {
     if (!cvar("developer")) {
-        bprint(LOC_LQ_ISDEVELOPER);
-        bprint("\n");
+        bprint(PRINT_HIGH, LOC_LQ_ISDEVELOPER);
+        bprint(PRINT_HIGH, "\n");
         return;
     }
 
@@ -87,10 +87,10 @@ void(float time_addition) LQ_AppendCameraTime =
     if (time_between_cameras <= 0)
         time_between_cameras = 1;
 
-    bprint(LOC_LQ_CAMERA_TIME_A);
-    bprint(ftos(time_between_cameras));
-    bprint(LOC_LQ_CAMERA_TIME_B);
-    bprint("\n");
+    bprint(PRINT_HIGH, LOC_LQ_CAMERA_TIME_A);
+    bprint(PRINT_HIGH, ftos(time_between_cameras));
+    bprint(PRINT_HIGH, LOC_LQ_CAMERA_TIME_B);
+    bprint(PRINT_HIGH, "\n");
 };
 
 /*
@@ -153,16 +153,16 @@ LQ_PlayCameras
 void() LQ_PlayCameras =
 {
     if (!cvar("developer")) {
-        bprint(LOC_LQ_ISDEVELOPER);
-        bprint("\n");
+        bprint(PRINT_HIGH, LOC_LQ_ISDEVELOPER);
+        bprint(PRINT_HIGH, "\n");
         return;
     }
 
     entity camera = find(world, targetname, "lq_camera_1");
 
     if (camera == world) {
-        bprint(LOC_LQ_CAMERA_NONE);
-        bprint("\n");
+        bprint(PRINT_HIGH, LOC_LQ_CAMERA_NONE);
+        bprint(PRINT_HIGH, "\n");
         return;
     }
 
