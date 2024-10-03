@@ -7,7 +7,7 @@ While you set up the server, have the other players go into the "Online -> Setup
 
 If you are the host, go to the main menu and then go to "Online -> Start Game". Then set the game settings. Recommended settings for first time play are:
 
-Hostname:       Set this to whatever you want.
+Hostname:		Set this to whatever you want.
 Deathmatch:		Deathmatch 3
 Time Limit:		10 Minutes
 Frag Limit:		10 Frags
@@ -27,16 +27,16 @@ If you are still having issues, see the "Troubleshooting" section below. If you 
 Troubleshooting
 ===============
 If a player can't find the server in the server browser:
-    - Have them click "Refresh" at the top of the screen.
-    - Check the filter settings at the bottom to make sure they didn't accidentally filter out your server.
-    - Have them filter by the Hostname you set earlier.
-    - Confirm that you and the player are connected to the same local network. If you are using WiFi, the WiFi networks must be the same.
-    - If all else fails, try having another player be the host.
+	- Have them click "Refresh" at the top of the screen.
+	- Check the filter settings at the bottom to make sure they didn't accidentally filter out your server.
+	- Have them filter by the Hostname you set earlier.
+	- Confirm that you and the player are connected to the same local network. If you are using WiFi, the WiFi networks must be the same.
+	- If all else fails, try having another player be the host.
 If a player finds your server but gets an error when they try to connect, check the error message:
-    - Unknown command "nqconnect"
-        - Make sure "Show NQ" is off in the server browser filters.
-    - You have been kicked due to the file maps/lqdm1.bsp being modfied
-        - Make sure everyone is using the same version of LibreQuake.
+	- Unknown command "nqconnect"
+		- Make sure "Show NQ" is off in the server browser filters.
+	- You have been kicked due to the file maps/lqdm1.bsp being modfied
+		- Make sure everyone is using the same version of LibreQuake.
 
 
 =======================
@@ -47,11 +47,11 @@ Console commands allow you to change the game settings without having to close a
 Here are some example commands:
 
 restart							Restarts the match.
-changelevel lqdm2   			Changes the map. See the "Map List" section below.
-deathmatch 4			    	Changes the deathmatch mode. See the "Deathmatch Modes" section below. You may need to restart the match for this to take effect.
-teamplay 3				    	Changes the teamplay mode. See the "Teamplay Modes" section below.
-timelimit 60    				Changes the match time limit. Value is in minutes.
-fraglimit 25    				Changes the number of frags needed to win.
+changelevel lqdm2				Changes the map. See the "Map List" section below.
+deathmatch 4					Changes the deathmatch mode. See the "Deathmatch Modes" section below. You may need to restart the match for this to take effect.
+teamplay 3						Changes the teamplay mode. See the "Teamplay Modes" section below.
+timelimit 60					Changes the match time limit. Value is in minutes.
+fraglimit 25					Changes the number of frags needed to win.
 samelevel 1						Disables automatic map change after the match ends. Set to 0 to re-enable automatic map change.
 
 For more settings, see the "Server Infokeys" section below.
