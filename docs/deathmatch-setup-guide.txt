@@ -28,7 +28,7 @@ Useful Server Commands
 These commands must be typed into the console. Open the console either by pressing Esc on the main menu or by pressing ~ while in game.
 
 restart							Restarts the match
-map [MAP_NAME]					Changes the map. See the list of maps below.
+changelevel [MAP_NAME]			Changes the map. See the list of maps below.
 deathmatch [MODE]				Changes the deathmatch mode. See the list of modes below.
 teamplay [MODE]					Changes the teamplay mode. See teamplay modes below.
 timelimit [VALUE]				Changes the match time limit. Value is in minutes.
@@ -40,23 +40,23 @@ serverinfo [SETTING] [VALUE]	Changes a server infokey setting to the chosen valu
 ========
 Map List
 ========
-LibreQuake comes with 13 deathmatch maps. Change the map using the "map" command.
+LibreQuake comes with 13 deathmatch maps. You can change the map using the "changelevel" console command.
 
-map lqdm1	Solstice: A small castle map with a simple layout. This is a good map to start on.
-map lqdm2	Hyperborea: A white temple with jump pads. Great for large free-for-alls.
-map lqdm3	Torture Pit: An acid-flooded map with only lower-tier weapons.
-map lqdm4	Psychofuge: An ancient lava fortress. The dangerous lava-filled underbelly contains some of the best items!
-map lqdm5	Transport Tubes: An industrial facility with locking air tunnels that carry you around the map.
-map lqdm6	Ghost Quarter: A castle map where new weapons and armor types unlock every 40 seconds.
-map lqdm7	Boomstick Basement: A claustrophobic map with a labyrinthine structure.
-map lqdm8	Alichar Sector: A very tall map with a long elevator to reach the Red Armor.
-map lqdm9	Outlands: A temple map designed for 4v4 team deathmatch. Use the grenade launcher to unlock secret doorways!
-map lqdm10	Lucifer's Gambit: An evil temple with Lucifer's Protection as the main powerup.
-map lqdm11	The Wicked Night: A medium-sized map built around a central nexus.
-map lqdm12	Javelin: Contains a respawning key you can use to permanently unlock new rooms and powerups!
-map lqdm13	Death Provides No Return: A void map with jump pads and toggling windows.
+changelevel lqdm1	Solstice: A small winter castle with a simple layout. This is a good map to start on.
+changelevel lqdm2	Hyperborea: A white temple with jump pads. Great for large free-for-alls.
+changelevel lqdm3	Torture Pit: An acid-flooded dungeon with only lower-tier weapons.
+changelevel lqdm4	Psychofuge: An ancient lava fortress. The dangerous lava-filled underbelly contains some of the best items.
+changelevel lqdm5	Transport Tubes: An industrial facility with locking air tunnels that carry you around the map.
+changelevel lqdm6	Ghost Quarter: A castle where new weapons and armor types unlock every 40 seconds.
+changelevel lqdm7	Boomstick Basement: Claustrophobic corridors with a labyrinthine structure.
+changelevel lqdm8	Alichar Sector: A tall laboratory with a long elevator to reach the Red Armor.
+changelevel lqdm9	Outlands: An abandoned temple base. Use the grenade launcher to unlock secret doorways.
+changelevel lqdm10	Lucifer's Gambit: An evil temple with Lucifer's Protection as the main powerup.
+changelevel lqdm11	The Wicked Night: A medium-sized computer station built around a central nexus.
+changelevel lqdm12	Javelin: An ancient temple which contains a respawning key you can use to permanently unlock new rooms and powerups.
+changelevel lqdm13	Death Provides No Return: A void fortress with jump pads and toggling windows.
 
-Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger. If you want to switch to the third map in Episode 1, you would use the command "map e1m3".
+Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger. If you want to switch to the third map in Episode 1, you would use the command "changelevel e1m3".
 
 
 ================
