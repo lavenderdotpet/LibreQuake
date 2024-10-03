@@ -16,9 +16,27 @@ Leave the other settings alone.
 
 Then press "Start Game".
 
-To connect to your server, the other players will need to go to "Online -> Join Game". Your server should show up at the very top. They may need to click "Refresh" at the top of the screen in order to see it.
+To connect to your server, the other players will need to go to "Online -> Join Game". This will open the server list. Your server should show up at the very top. They may need to click "Refresh" at the top of the screen in order to see it.
 
 Once everyone connects, you should be ready to play LibreQuake deathmatch! Have fun!
+
+If you are still having issues, see the "Troubleshooting" section below. If you would like to learn more advanced setup, see the "Useful Console Commands" section below.
+
+
+===============
+Troubleshooting
+===============
+If a player can't find the server in the server browser:
+    - Have them click "Refresh" at the top of the screen.
+    - Check the filter settings at the bottom to make sure they didn't accidentally filter out your server.
+    - Have them filter by the Hostname you set earlier.
+    - Confirm that you and the player are connected to the same local network. If you are using WiFi, the WiFi networks must be the same.
+    - If all else fails, try having another player be the host.
+If a player finds your server but gets an error when they try to connect, check the error message:
+    - Unknown command "nqconnect"
+        - Make sure "Show NQ" is off in the server browser filters.
+    - You have been kicked due to the file maps/lqdm1.bsp being modfied
+        - Make sure everyone is using the same version of LibreQuake.
 
 
 =======================
