@@ -34,7 +34,7 @@ If a player can't find the server in the server browser:
 	- If all else fails, try having another player be the host.
 If a player finds your server but gets an error when they try to connect, check the error message:
 	- Unknown command "nqconnect"
-		- Make sure "Show NQ" is off in the server browser filters.
+		- Make sure "Show NQ" is off in the server browser filters and "Show QW" is on.
 	- You have been kicked due to the file maps/lqdm1.bsp being modfied
 		- Make sure everyone is using the same version of LibreQuake.
 
