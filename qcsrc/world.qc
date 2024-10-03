@@ -233,6 +233,7 @@ void() worldspawn =
 	precache_sound ("items/damage2.wav");
 	precache_sound ("items/damage3.wav");
 
+
 	precache_sound ("misc/power.wav");			//lightning for boss
 
 // player gib sounds
@@ -256,6 +257,8 @@ void() worldspawn =
 	precache_sound ("player/death4.wav");
 	precache_sound ("player/death5.wav");
 
+	precache_sound ("boss1/sight1.wav");
+
 // ax sounds	
 	precache_sound ("weapons/ax1.wav");			// ax swoosh
 	precache_sound ("player/axhit1.wav");		// ax hit meat
@@ -266,6 +269,11 @@ void() worldspawn =
 	precache_sound ("player/inh2o.wav");		// player enter water
 	precache_sound ("player/inlava.wav");		// player enter lava
 	precache_sound ("misc/outwater.wav");		// leaving water sound
+
+// Invulnerability sounds
+	precache_sound ("items/protect.wav");
+	precache_sound ("items/protect2.wav");
+	precache_sound ("items/protect3.wav");
 
 	precache_sound ("player/lburn1.wav");		// lava burn
 	precache_sound ("player/lburn2.wav");		// lava burn
@@ -356,6 +364,9 @@ void() worldspawn =
 
 void() StartFrame =
 {
+	timelimit = cvar("timelimit") * 60;
+	fraglimit = cvar("fraglimit");
+	deathmatch = cvar("deathmatch");
 	teamplay = cvar("teamplay");
 	skill = cvar("skill");
 	framecount = framecount + 1;

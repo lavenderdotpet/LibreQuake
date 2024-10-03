@@ -177,6 +177,12 @@ def compile_progs():
             stderr=subprocess.STDOUT,
             check=True,  # Fail on non-zero exit code
         )
+        subprocess.run(
+            ["fteqcc", "qcsrc/progs.src", "-D__LIBREQUAKE__", "-D__QW__", "-O3"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            check=True,  # Fail on non-zero exit code
+        )
     except subprocess.CalledProcessError as e:
         print(f"!!! Command failed:\n{e.stdout.decode('utf-8')}")
         raise e

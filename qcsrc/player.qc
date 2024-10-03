@@ -166,13 +166,18 @@ void()	player_run =[	$rockrun1,	player_run	]
 	self.walkframe = self.walkframe + 1;
 };
 
-
-void()	player_shot1 =	[$shotatt1, player_shot2	]
+void() muzzleflash =
 {
-	self.weaponframe=1;
+#ifdef __QW__ // Differences in engine protocols
+	WriteByte (MSG_MULTICAST, SVC_MUZZLEFLASH);
+	WriteEntity (MSG_MULTICAST, self);
+	multicast (self.origin, MULTICAST_PVS);
+#else
 	self.effects = self.effects | EF_MUZZLEFLASH;
+#endif
 };
 
+void()  player_shot1 =  [$shotatt1, player_shot2	] {self.weaponframe=1;muzzleflash();};
 void()	player_shot2 =	[$shotatt2, player_shot3	] {self.weaponframe=2;};
 void()	player_shot3 =	[$shotatt3, player_shot4	] {self.weaponframe=3;};
 void()	player_shot4 =	[$shotatt4, player_shot5	] {self.weaponframe=4;};
@@ -204,9 +209,9 @@ void()	player_axed4 =	[$axattd4, player_run	] {self.weaponframe=8;};
 
 void() player_nail1   =[$nailatt1, player_nail2  ]
 {
-	self.effects = self.effects | EF_MUZZLEFLASH;
+	muzzleflash();
 
-	if (!self.button0)
+	if (!self.button0 || intermission_running)
 		{player_run ();return;}
 
 	self.weaponframe = self.weaponframe + 1;
@@ -221,9 +226,9 @@ void() player_nail1   =[$nailatt1, player_nail2  ]
 
 void() player_nail2   =[$nailatt2, player_nail1  ]
 {
-	self.effects = self.effects | EF_MUZZLEFLASH;
+	muzzleflash();
 
-	if (!self.button0)
+	if (!self.button0 || intermission_running)
 		{player_run ();return;}
 
 	self.weaponframe = self.weaponframe + 1;
@@ -240,9 +245,9 @@ void() player_nail2   =[$nailatt2, player_nail1  ]
 
 void() player_light1   =[$light1, player_light2  ]
 {
-	self.effects = self.effects | EF_MUZZLEFLASH;
+	muzzleflash();
 
-	if (!self.button0)
+	if (!self.button0 || intermission_running)
 		{player_run ();return;}
 
 	self.weaponframe = self.weaponframe + 1;
@@ -257,9 +262,9 @@ void() player_light1   =[$light1, player_light2  ]
 
 void() player_light2   =[$light2, player_light1  ]
 {
-	self.effects = self.effects | EF_MUZZLEFLASH;
+	muzzleflash();
 
-	if (!self.button0)
+	if (!self.button0 || intermission_running)
 		{player_run ();return;}
 
 	self.weaponframe = self.weaponframe + 1;
@@ -275,12 +280,8 @@ void() player_light2   =[$light2, player_light1  ]
 //============================================================================
 
 
-void() player_rocket1   =[$rockatt1, player_rocket2  ]
-{
-	self.weaponframe=1;
-	self.effects = self.effects | EF_MUZZLEFLASH;
-};
-
+void() player_rocket1   =[$rockatt1, player_rocket2  ] {self.weaponframe=1;
+	muzzleflash();};
 void() player_rocket2   =[$rockatt2, player_rocket3  ] {self.weaponframe=2;};
 void() player_rocket3   =[$rockatt3, player_rocket4  ] {self.weaponframe=3;};
 void() player_rocket4   =[$rockatt4, player_rocket5  ] {self.weaponframe=4;};
@@ -473,7 +474,10 @@ void() DeathSound =
 	// water death sounds
 	if (self.waterlevel == 3)
 	{
-		DeathBubbles(20);
+		if (deathmatch)
+			DeathBubbles(5);
+		else
+			DeathBubbles(20);
 		sound (self, CHAN_VOICE, "player/h2odeath.wav", 1, ATTN_NONE);
 
 		return;
@@ -512,9 +516,20 @@ vector(float dm) VelocityForDamage =
 {
 	local vector v;
 
-	v_x = 100 * crandom();
-	v_y = 100 * crandom();
-	v_z = 200 + 100 * random();
+	if (deathmatch && vlen(damage_inflictor.velocity)>0)
+	{
+		v = 0.5 * damage_inflictor.velocity;
+		v = v + (25 * normalize(self.origin-damage_inflictor.origin));
+		v_z = 100 + 240 * random();
+		v_x = v_x + (200 * crandom());
+		v_y = v_y + (200 * crandom());              
+	}
+	else
+	{
+		v_x = 100 * crandom();
+		v_y = 100 * crandom();
+		v_z = 200 + 100 * random();
+	}
 
 	if (dm > -50)
 	{
@@ -600,6 +615,40 @@ void() GibPlayer =
 void() PlayerDie =
 {
 	local	float	i;
+	local	string	s;
+	
+	if (deathmatch_drop_quad()) {
+		if (self.super_damage_finished > 0)
+		{
+			DropQuad (self.super_damage_finished - time);
+			bprint (PRINT_LOW, self.netname);
+			bprint (PRINT_LOW, LOC_ITEM_LOST_A);
+			if (deathmatch_supermode())
+				bprint (PRINT_LOW, LOC_ITEM_NAME_OCTDMG);
+			else
+				bprint (PRINT_LOW, LOC_ITEM_NAME_QUADDMG);
+			bprint (PRINT_LOW, LOC_ITEM_LOST_B);
+			s = ftos(rint(self.super_damage_finished - time));
+			bprint (PRINT_LOW, s);
+			bprint (PRINT_LOW, LOC_ITEM_LOST_C);
+			bprint (PRINT_LOW, "\n");
+		}
+	}
+
+	if (deathmatch_drop_ring()) {
+		if (self.invisible_finished > 0)
+		{
+			DropRing (self.invisible_finished - time);
+			bprint (PRINT_LOW, self.netname);
+			bprint (PRINT_LOW, LOC_ITEM_LOST_A);
+			bprint (PRINT_LOW, LOC_ITEM_NAME_SHADRING);
+			bprint (PRINT_LOW, LOC_ITEM_LOST_B);
+			s = ftos(rint(self.invisible_finished - time));
+			bprint (PRINT_LOW, s);
+			bprint (PRINT_LOW, LOC_ITEM_LOST_C);
+			bprint (PRINT_LOW, "\n");
+		}
+	}
 
 	self.items = self.items - (self.items & IT_INVISIBILITY);
 	self.invisible_finished = 0;	// don't die as eyes
