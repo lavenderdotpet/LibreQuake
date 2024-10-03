@@ -20,6 +20,24 @@
 void() SUB_Remove = {remove(self);};
 void() SUB_Null = {};
 
+//pitch (angles_x) is inverted in quake due to a bug
+	//use makevectors2 for monsters with nonzero pitch
+//anyone encountering this comment with a better understanding should update the comment to be more informative and useful to modders --gnounc
+void(vector ang) makevectors2 =
+{
+	ang_x = ang_x * -1;
+	makevectors(ang);
+};
+
+float(float v) anglemod =
+{
+	while (v >= 360)
+		v = v - 360;
+	while (v < 0)
+		v = v + 360;
+	return v;
+};
+
 
 /*QuakeEd only writes a single float for angles (bad idea), so up and down are
 just constant angles.*/
@@ -310,6 +328,7 @@ void() SUB_UseTargets =
 
 };
 
+
 /*in nightmare mode, all attack_finished times become 0
 some monsters refire twice automatically*/
 
@@ -320,6 +339,7 @@ void(float normal) SUB_AttackFinished =
 	if (skill != 3)
 		self.attack_finished = time + normal;
 };
+
 
 float (entity targ) visible;
 

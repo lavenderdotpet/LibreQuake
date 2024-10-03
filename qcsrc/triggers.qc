@@ -340,35 +340,56 @@ void(vector org) spawn_tfog =
 	s.nextthink = time + 0.2;
 	s.think = play_teleport;
 
+#ifdef __QW__ // Differences in engine protocols
+	WriteByte (MSG_MULTICAST, SVC_TEMPENTITY);
+	WriteByte (MSG_MULTICAST, TE_TELEPORT);
+	WriteCoord (MSG_MULTICAST, org_x);
+	WriteCoord (MSG_MULTICAST, org_y);
+	WriteCoord (MSG_MULTICAST, org_z);
+	multicast (org, MULTICAST_PHS);
+#else
 	WriteByte (MSG_BROADCAST, SVC_TEMPENTITY);
 	WriteByte (MSG_BROADCAST, TE_TELEPORT);
 	WriteCoord (MSG_BROADCAST, org_x);
 	WriteCoord (MSG_BROADCAST, org_y);
 	WriteCoord (MSG_BROADCAST, org_z);
+#endif
 };
 
 
 void() tdeath_touch =
 {
+	local entity other2;
+
 	if (other == self.owner)
 		return;
 
+// frag anyone who teleports in on top of an invincible player
 	if (other.classname == "player")
 	{
-		if (other.invincible_finished > time) {
-			// frag anyone who teleports in on top of an invincible player
+		if (other.invincible_finished > time &&
+			self.owner.invincible_finished > time) {
+			self.classname = "teledeath3";
+			other.invincible_finished = 0;
+			self.owner.invincible_finished = 0;
+			T_Damage (other, self, self, 50000);
+			other2 = self.owner;
+			self.owner = other;
+			T_Damage (other2, self, self, 50000);
+		}
+		else if (other.invincible_finished > time)
+		{
 			self.classname = "teledeath2";
-			self.enemy = other;
-			T_Damage (self.owner, self, self, 50000);
+			other2 = self.owner;
+			self.owner = other;
+			T_Damage (other2, self, self, 50000);
 			return;
 		}
-
-		if (self.owner.classname != "player")
+		else if (self.owner.classname != "player")
 		{	// monsters explode themselves
 			T_Damage (self.owner, self, self, 50000);
 			return;
 		}
-
 	}
 
 	if (other.health)
@@ -531,6 +552,11 @@ Only used on start map.
 */
 void() trigger_setskill =
 {
+	if (deathmatch) {
+		remove (self);
+		return;
+	}
+
 	InitTrigger ();
 	self.touch = trigger_skill_touch;
 };
