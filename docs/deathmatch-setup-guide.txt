@@ -131,7 +131,7 @@ serverinfo disable_nailgun 1			Disables the Nailgun.
 serverinfo disable_super_nailgun 1		Disables the Super Nailgun.
 serverinfo disable_grenade_launcher 1	Disables the Grenade Launcher.
 serverinfo disable_rocket_launcher 1	Disables the Rocket Launcher.
-serverinfo disable_lightning_gun 1		Disables the Lightning_gun.
+serverinfo disable_lightning_gun 1		Disables the Lightning Gun.
 
 serverinfo disable_weapons 1			Removes weapon pickups from the map.
 serverinfo disable_powerups 1			Removes powerups from the map.
@@ -148,4 +148,4 @@ If you would like to set up an automatic map rotation, use the serverinfo comman
 
 serverinfo lqdm11 lqdm4
 
-This would make it so that after a match on lqdm11 is finished, the server will automatically switch to lqdm4. Do this for all of the maps in your rotation and make the last map link back up to the first one. Make sure you have "samelevel" set to 0.
+This would make it so that after a match on lqdm11 is finished, the server will automatically switch to lqdm4. Do this for each map in your rotation. Make sure you have "samelevel" set to 0.
