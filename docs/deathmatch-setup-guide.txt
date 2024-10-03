@@ -1,5 +1,5 @@
 ======================
-Setting up a LAN match
+Setting up a LAN Match
 ======================
 All players must download and install LibreQuake with the FTEQW engine as per the installation section of the readme file. (This guide assumes all players are using FTEQW for their engine.) All players must be connected to the same network, preferably using a wired ethernet connection.
 
