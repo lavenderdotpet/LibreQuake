@@ -5,6 +5,7 @@
 # MissLavander-LQ & cypress/MotoLegacy & ZungryWare/ZungrySoft
 #
 import os
+import re
 import subprocess
 import sys
 import shutil
@@ -73,18 +74,24 @@ def get_compile_flags(map_path):
 
 
 # Execute command
-def execute_command(command, **kwargs):
+def execute_command(command, fail_on_regexes=[], **kwargs):
     try:
-        subprocess.run(
+        result = subprocess.run(
             command,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             check=True,  # Fail on non-zero exit code
-            **kwargs
+            **kwargs,
         )
     except subprocess.CalledProcessError as e:
         print(f"!!! Command failed:\n{e.stdout.decode('utf-8')}")
         raise e
+
+    stdout_str = result.stdout.decode("utf-8")
+    for pattern in fail_on_regexes:
+        if re.search(pattern, stdout_str):
+            print(stdout_str)
+            raise ValueError(f"!!! Command failed: `{pattern}` found in output")
 
 
 # Find all files in directory with this extension
@@ -136,7 +143,14 @@ def command_make(specific_map=None, specific_dir=None):
 
         print(f"Compiling {f}")
 
-        execute_command([LQ_BSP_PATH] + LQ_BSP_FLAGS.split() + [f"{map_name}.map"], cwd=os.path.dirname(f))
+        unwanted_bsp_warnings = [
+            r"WARNING: unable to (find|load) texture",
+            r"WARNING: Couldn't locate texture",
+        ]
+        execute_command(
+            [LQ_BSP_PATH] + LQ_BSP_FLAGS.split() + [f"{map_name}.map"], cwd=os.path.dirname(f),
+            fail_on_regexes=unwanted_bsp_warnings,
+        )
 
         if "LQ_SKIP" not in LQ_VIS_FLAGS:
             execute_command([LQ_VIS_PATH] + LQ_VIS_FLAGS.split() + [f"{map_name}.bsp"], cwd=os.path.dirname(f))
