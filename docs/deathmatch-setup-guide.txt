@@ -1,0 +1,151 @@
+======================
+Setting up a LAN Match
+======================
+All players must download and install LibreQuake with the FTEQW engine as per the installation section of the readme file. (This guide assumes all players are using FTEQW for their engine.) All players must be connected to the same network, preferably using a wired ethernet connection.
+
+While you set up the server, have the other players go into the "Online -> Setup" menu to set their player name and color.
+
+If you are the host, go to the main menu and then go to "Online -> Start Game". Then set the game settings. Recommended settings for first time play are:
+
+Hostname:		Set this to whatever you want.
+Deathmatch:		Deathmatch 3
+Time Limit:		10 Minutes
+Frag Limit:		10 Frags
+Map:			lqdm1
+Leave the other settings alone.
+
+Then press "Start Game".
+
+To connect to your server, the other players will need to go to "Online -> Join Game". This will open the server list. Your server should show up at the very top. They may need to click "Refresh" at the top of the screen in order to see it.
+
+Once everyone connects, you should be ready to play LibreQuake deathmatch! Have fun!
+
+If you are still having issues, see the "Troubleshooting" section below. If you would like to learn more advanced setup, see the "Useful Console Commands" section below.
+
+
+===============
+Troubleshooting
+===============
+If a player can't find the server in the server browser:
+	- Have them click "Refresh" at the top of the screen.
+	- Check the filter settings at the bottom to make sure they didn't accidentally filter out your server.
+	- Have them filter by the Hostname you set earlier.
+	- Confirm that you and the player are connected to the same local network. If you are using WiFi, the WiFi networks must be the same.
+	- If all else fails, try having another player be the host.
+If a player finds your server but gets an error when they try to connect, check the error message:
+	- Unknown command "nqconnect"
+		- Make sure "Show NQ" is off in the server browser filters and "Show QW" is on.
+	- You have been kicked due to the file maps/lqdm1.bsp being modfied
+		- Make sure everyone is using the same version of LibreQuake.
+
+
+=======================
+Useful Console Commands
+=======================
+Console commands allow you to change the game settings without having to close and reopen the server. Open the console either by pressing Esc on the main menu or by pressing ~ while in game. Then type the command and press Enter/Return.
+
+Here are some example commands:
+
+restart							Restarts the match.
+changelevel lqdm2				Changes the map. See the "Map List" section below.
+deathmatch 4					Changes the deathmatch mode. See the "Deathmatch Modes" section below. You may need to restart the match for this to take effect.
+teamplay 3						Changes the teamplay mode. See the "Teamplay Modes" section below.
+timelimit 60					Changes the match time limit. Value is in minutes.
+fraglimit 25					Changes the number of frags needed to win.
+samelevel 1						Disables automatic map change after the match ends. Set to 0 to re-enable automatic map change.
+
+For more settings, see the "Server Infokeys" section below.
+
+
+========
+Map List
+========
+LibreQuake comes with 13 deathmatch maps. You can change the map using the "changelevel" console command.
+
+changelevel lqdm1	Solstice: A small winter castle with a simple layout. This is a good map to start on.
+changelevel lqdm2	Hyperborea: A white temple with jump pads. Great for large free-for-alls.
+changelevel lqdm3	Torture Pit: An acid-flooded dungeon with only lower-tier weapons.
+changelevel lqdm4	Psychofuge: An ancient lava fortress. The dangerous lava-filled underbelly contains some of the best items.
+changelevel lqdm5	Transport Tubes: An industrial facility with locking air tunnels that carry you around the map.
+changelevel lqdm6	Ghost Quarter: A castle where new weapons and armor types unlock every 40 seconds.
+changelevel lqdm7	Boomstick Basement: Claustrophobic corridors with a labyrinthine structure.
+changelevel lqdm8	Alichar Sector: A tall laboratory with a long elevator to reach the Red Armor.
+changelevel lqdm9	Outlands: An abandoned temple base. Use the grenade launcher to unlock secret doorways.
+changelevel lqdm10	Lucifer's Gambit: An evil temple with Lucifer's Protection as the main powerup.
+changelevel lqdm11	The Wicked Night: A medium-sized computer station built around a central nexus.
+changelevel lqdm12	Javelin: An ancient temple which contains a respawning key you can use to permanently unlock new rooms and powerups.
+changelevel lqdm13	Death Provides No Return: A void fortress with jump pads and toggling windows.
+
+Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger. If you want to switch to the third map in Episode 1, you would use the command "changelevel e1m3".
+
+
+================
+Deathmatch Modes
+================
+There are five different deathmatch modes which change the way the game plays. Deathmatch 3 is the recommended default mode. You can change the deathmatch mode using the "deathmatch" console command. 
+
+deathmatch 1	Items and weapons respawn. Mostly used for 4v4 team deathmatch.
+deathmatch 2	Items never respawn; weapons respawn instantly. This mode is rarely used.
+deathmatch 3	Items respawn; weapons respawn instantly. Great for free-for-all and team deathmatch.
+deathmatch 4	Spawn with all weapons, full health and armor, and infinite ammo. Collect backpacks for bonus health.
+deathmatch 5	Spawn with all weapons, full health and armor, and some ammo.
+
+
+==============
+Teamplay Modes
+==============
+There are four different teamplay modes. To enable teamplay, use the "teamplay" console command. 
+
+teamplay 0	Disables teamplay.
+teamplay 1	Players cannot damage themselves or teammates.
+teamplay 2	Players can damage themselves and teammates.
+teamplay 3	Players can damage themselves but not teammates.
+
+Each player will need to join a team. They can do this in the "Online -> Setup" menu.
+
+
+===============
+Server Infokeys
+===============
+Infokeys allow you to further customize the game settings. Change an infokey using the serverinfo console command. For example, "serverinfo have_axe_only 1" would enable the setting "have_axe_only". "serverinfo have_axe_only 0" would disable it. After you change a setting you may need to restart the match for it to take effect.
+
+Here is the list of supported infokeys:
+
+serverinfo dq 1							Players drop the Crusher Sigil on death. (Enabled by default.)
+serverinfo dr 1							Players drop the Eye of Enigma on death. (Enabled by default.)
+serverinfo rj 20						Scales rocket jump push force by a factor of 20. (Set to 0 to disable.)
+serverinfo have_axe_only 1				Disables all weapons except for the axe.
+serverinfo buffed_axe 1					Increases the axe's damage.
+serverinfo have_unlimited_ammo 1		Players have unlimited ammo.
+
+serverinfo have_super_shotgun 1			Players spawn with the Double-Barreled Shotgun.
+serverinfo have_nailgun 1				Players spawn with the Nailgun.
+serverinfo have_super_nailgun 1			Players spawn with the Super Nailgun.
+serverinfo have_grenade_launcher 1		Players spawn with the Grenade Launcher.
+serverinfo have_rocket_launcher 1		Players spawn with the Rocket Launcher.
+serverinfo have_lightning_gun 1			Players spawn with the Lightning Gun.
+
+serverinfo disable_shotgun 1			Disables the starting Shotgun.
+serverinfo disable_super_shotgun 1		Disables the Double-Barreled Shotgun.
+serverinfo disable_nailgun 1			Disables the Nailgun.
+serverinfo disable_super_nailgun 1		Disables the Super Nailgun.
+serverinfo disable_grenade_launcher 1	Disables the Grenade Launcher.
+serverinfo disable_rocket_launcher 1	Disables the Rocket Launcher.
+serverinfo disable_lightning_gun 1		Disables the Lightning Gun.
+
+serverinfo disable_weapons 1			Removes weapon pickups from the map.
+serverinfo disable_powerups 1			Removes powerups from the map.
+serverinfo disable_armor 1				Removes armor pickups from the map.
+serverinfo disable_health 1				Removes health pickups from the map.
+serverinfo disable_mega_health 1		Removes mega-health pickups from the map.
+serverinfo disable_ammo 1				Removes all ammo pickups from the map.
+serverinfo disable_ammo_shells 1		Removes shell ammo pickups from the map.
+serverinfo disable_ammo_nails 1			Removes nail ammo pickups from the map.
+serverinfo disable_ammo_rockets 1		Removes rocket ammo pickups from the map.
+serverinfo disable_ammo_cells 1			Removes cell ammo pickups from the map.
+
+If you would like to set up an automatic map rotation, use the serverinfo command like so:
+
+serverinfo lqdm11 lqdm4
+
+This would make it so that after a match on lqdm11 is finished, the server will automatically switch to lqdm4. Do this for each map in your rotation. Make sure you have "samelevel" set to 0.

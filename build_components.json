@@ -14,7 +14,8 @@
             "docs/freedoom-docs/README.adoc",
             "docs/misc-docs/COPYING",
             "docs/misc-docs/LibreProgsDeluxe.md",
-            "docs/misc-docs/pop.lmp.md"
+            "docs/misc-docs/pop.lmp.md",
+            "docs/deathmatch-setup-guide.txt"
         ]
     },
     "root": {
