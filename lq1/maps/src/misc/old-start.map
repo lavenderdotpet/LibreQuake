@@ -1586,7 +1586,7 @@
 {
 "classname" "light_fluorospark"
 "origin" "-224 624 -168"
-"_surface" "+0terminal"
+"_surface" "+0term128"
 }
 // entity 41
 {
