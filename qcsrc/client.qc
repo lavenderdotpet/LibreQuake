@@ -1109,6 +1109,7 @@ void() WaterMove =
 
 void() CheckWaterJump =
 {
+#ifndef __QW__ // QW handles this movement code in the engine for client-side prediction
 	local vector start, end;
 
 // check for a jump-out-of-water
@@ -1137,6 +1138,7 @@ void() CheckWaterJump =
 			return;
 		}
 	}
+#endif
 };
 
 
