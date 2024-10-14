@@ -2966,7 +2966,7 @@
 // entity 2
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -8813,7 +8813,7 @@
 // entity 216
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -11067,7 +11067,7 @@
 // entity 281
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -11501,7 +11501,7 @@
 // entity 296
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -13417,7 +13417,7 @@
 // entity 464
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -13461,7 +13461,7 @@
 // entity 465
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -13802,7 +13802,7 @@
 // entity 468
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -13847,7 +13847,7 @@
 // entity 469
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -18282,7 +18282,7 @@
 // entity 678
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
@@ -18328,7 +18328,7 @@
 // entity 679
 {
 "classname" "func_door"
-"sounds" "3"
+"sounds" "1"
 "lip" "24"
 "speed" "130"
 "wait" "-1"
