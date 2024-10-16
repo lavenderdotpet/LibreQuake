@@ -4695,7 +4695,7 @@
 ( -608 640 384 ) ( -608 736 384 ) ( -640 736 384 ) med_dbrick4 [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( -640 736 576 ) ( -608 736 576 ) ( -608 640 576 ) med_dbrick4 [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( -608 736 384 ) ( -608 736 576 ) ( -640 736 576 ) med_dbrick4 [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -608 640 576 ) ( -608 736 576 ) ( -608 736 384 ) med_dbrick4 [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -608 640 576 ) ( -608 736 576 ) ( -608 736 384 ) med_dbrick4 [ 0 -1 0 -32 ] [ 0 0 -1 0 ] 0 1 1
 }
 // brush 522
 {
@@ -10717,7 +10717,7 @@
 "sounds" "0"
 "_phong" "0"
 "_mincolor" "255 255 255"
-"target" "arena1_start"
+"target" "arena1_start_once"
 "spawnflags" "2048"
 // brush 0
 {
@@ -10787,7 +10787,7 @@
 "sounds" "0"
 "_phong" "0"
 "_mincolor" "255 255 255"
-"target" "arena2_start"
+"target" "arena2_start_once"
 "spawnflags" "2048"
 // brush 0
 {
@@ -20526,12 +20526,14 @@
 {
 "classname" "weapon_supershotgun"
 "origin" "-576 1344 40"
+"target" "arena1_start_once"
 }
 // entity 325
 {
 "classname" "weapon_nailgun"
 "origin" "2048 320 -35"
 "spawnflags" "2048"
+"target" "arena2_start_once"
 }
 // entity 326
 {
@@ -23115,6 +23117,7 @@
 "target" "enforcertrap"
 "targetname" "arena2_start"
 "origin" "1944 344 -56"
+"spawnflags" "2048"
 }
 // entity 589
 {
@@ -24466,6 +24469,7 @@
 "targetname" "arena2_start"
 "origin" "1944 312 -56"
 "killtarget" "arena2_start2_lock"
+"spawnflags" "2048"
 }
 // entity 628
 {
@@ -29308,7 +29312,7 @@
 // entity 908
 {
 "classname" "info_teleport_destination"
-"origin" "478.159 2392.78 496"
+"origin" "446.159 2392.78 496"
 "angle" "247"
 "spawnflags" "2048"
 "targetname" "hordedest2"
@@ -29324,7 +29328,7 @@
 // entity 910
 {
 "classname" "info_teleport_destination"
-"origin" "670.234 2391.06 496"
+"origin" "702.234 2391.06 496"
 "angle" "298"
 "spawnflags" "2048"
 "targetname" "hordedest3"
@@ -29332,7 +29336,7 @@
 // entity 911
 {
 "classname" "info_teleport_destination"
-"origin" "574.068 2392.52 592"
+"origin" "574.068 2392.52 624"
 "angle" "255"
 "spawnflags" "2048"
 "targetname" "hordedest4"
@@ -29340,7 +29344,7 @@
 // entity 912
 {
 "classname" "info_teleport_destination"
-"origin" "574.068 2391.48 400"
+"origin" "574.068 2391.48 368"
 "angle" "285"
 "spawnflags" "2048"
 "targetname" "hordedest5"
@@ -32535,4 +32539,42 @@
 ( 208 960 160 ) ( 208 960 64 ) ( 224 960 64 ) aqrust01 [ 1 0 0 0 ] [ 0 0 -1 -16 ] 180 1 1
 ( 224 928 160 ) ( 224 960 160 ) ( 224 960 64 ) aqrust01 [ 0 -1 0 -32 ] [ 0 0 -1 -16 ] 0 1 1
 }
+}
+// entity 1070
+{
+"classname" "trigger_counter"
+"origin" "-632 1416 -24"
+"target" "arena1_start"
+"count" "1"
+"spawnflags" "2049"
+"targetname" "arena1_start_once"
+}
+// entity 1071
+{
+"classname" "trigger_counter"
+"origin" "1992 280 -88"
+"targetname" "arena2_start_once"
+"count" "1"
+"spawnflags" "2049"
+"target" "arena2_start"
+}
+// entity 1072
+{
+"classname" "func_detail_wall"
+// brush 0
+{
+( -608 384 352 ) ( -608 320 352 ) ( -608 320 288 ) clip [ 0 -1.0000000000000002 0 0 ] [ 0 0 -1.0000000000000002 -32 ] 0 1 1
+( -600 312 352 ) ( -528 312 352 ) ( -528 312 288 ) clip [ 1.0000000000000002 0 0 24 ] [ 0 0 -1.0000000000000002 -32 ] 0 1 1
+( -528 320 288 ) ( -528 384 288 ) ( -600 384 288 ) clip [ -1 0 0 -24 ] [ 0 -1 0 0 ] 0 1 1
+( -600 384 352 ) ( -528 384 352 ) ( -528 320 352 ) clip [ 1 0 0 24 ] [ 0 -1 0 0 ] 0 1 1
+( -528 384 288 ) ( -528 384 352 ) ( -600 384 352 ) clip [ -1.0000000000000002 0 0 -24 ] [ 0 0 -1.0000000000000002 -32 ] 0 1 1
+( -532 320 352 ) ( -532 384 352 ) ( -532 384 288 ) clip [ 0 1 0 0 ] [ 0 0 -1 -32 ] 0 1 1
+}
+}
+// entity 1073
+{
+"classname" "light"
+"light" "300"
+"origin" "-568 348 360"
+"wait" "9"
 }
