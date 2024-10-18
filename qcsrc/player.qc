@@ -657,7 +657,7 @@ void() PlayerDie =
 	self.radsuit_finished = 0;
 	self.modelindex = modelindex_player;	// don't use eyes
 
-	if (deathmatch || coop)
+	if ((deathmatch || coop) && !deathmatch_no_backpacks())
 		DropBackpack();
 
 	self.weaponmodel=string_null;
