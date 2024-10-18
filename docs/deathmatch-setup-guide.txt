@@ -63,17 +63,17 @@ Map List
 LibreQuake comes with 13 deathmatch maps. You can change the map using the "changelevel" console command.
 
 changelevel lqdm1	Solstice: A small winter castle with a simple layout. This is a good map to start on.
-changelevel lqdm2	Hyperborea: A white temple with jump pads. Great for large free-for-alls.
-changelevel lqdm3	Torture Pit: An acid-flooded dungeon with only lower-tier weapons.
+changelevel lqdm2	Torture Pit: A small dungeon with limited weapons.
+changelevel lqdm11	The Wicked Night: A medium-sized computer station built around a central nexus.
 changelevel lqdm4	Psychofuge: An ancient lava fortress. The dangerous lava-filled underbelly contains some of the best items.
 changelevel lqdm5	Transport Tubes: An industrial facility with locking air tunnels that carry you around the map.
 changelevel lqdm6	Ghost Quarter: A castle where new weapons and armor types unlock every 40 seconds.
 changelevel lqdm7	Boomstick Basement: Claustrophobic corridors with a labyrinthine structure.
-changelevel lqdm8	Alichar Sector: A tall laboratory with a long elevator to reach the Red Armor.
+changelevel lqdm8	Alichar Sector: A tall laboratory with an elevator to reach the Red Armor.
 changelevel lqdm9	Outlands: An abandoned temple base. Use the grenade launcher to unlock secret doorways.
 changelevel lqdm10	Lucifer's Gambit: An evil temple with Lucifer's Protection as the main powerup.
-changelevel lqdm11	The Wicked Night: A medium-sized computer station built around a central nexus.
-changelevel lqdm12	Javelin: An ancient temple which contains a respawning key you can use to permanently unlock new rooms and powerups.
+changelevel lqdm11	The Dredge Arena: A large acid-flooded dungeon. Great for large free-for-alls.
+changelevel lqdm12	Javelin: A white temple with a silver key that can permanently unlock new rooms and powerups.
 changelevel lqdm13	Death Provides No Return: A void fortress with jump pads and toggling windows.
 
 Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger. If you want to switch to the third map in Episode 1, you would use the command "changelevel e1m3".
