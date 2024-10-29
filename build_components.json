@@ -37,6 +37,9 @@
         "source_if_missing": "",
         "files_pak0": [
             "default.cfg",
+            "default_$generic.cfg",
+            "default_fte.cfg",
+            "default_darkplaces.cfg",
             "quake.rc"
         ],
         "files_pak1": [],
@@ -44,9 +47,6 @@
             ["-config.cfg", "config.cfg"],
             "cam.cfg",
             "dev.cfg",
-            "default_$generic.cfg",
-            "default_fte.cfg",
-            "default_darkplaces.cfg",
             "zoom90.cfg",
             "zoom120.cfg",
             "style_fte_modern.cfg",
