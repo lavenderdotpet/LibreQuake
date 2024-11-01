@@ -35178,7 +35178,7 @@
 {
 "classname" "light"
 "origin" "1024 1792 176"
-"light" "32"
+"light" "25"
 "wait" "6"
 "delay" "2"
 "style" "10"
@@ -35187,7 +35187,7 @@
 {
 "classname" "light_fluorospark"
 "origin" "1024 1792 172"
-"light" "105"
+"light" "100"
 "wait" "0.6"
 "mangle" "0 -90 0"
 "angle" "120"
@@ -35307,8 +35307,9 @@
 {
 "classname" "light"
 "origin" "752 904 376"
-"style" "4"
-"light" "200"
+"style" "6"
+"light" "250"
+"delay" ""
 "_tb_layer" "1"
 }
 // entity 836
@@ -35786,7 +35787,7 @@
 {
 "classname" "light"
 "origin" "752 904 360"
-"style" "0"
+"style" "5"
 "light" "200"
 "_tb_layer" "1"
 }
