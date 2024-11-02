@@ -466,6 +466,17 @@ float() deathmatch_no_mega_health =
     return FALSE;
 };
 
+// Stops players from dropping backpacks on death
+float() deathmatch_no_backpacks =
+{
+#ifdef __QW__ // NQ does not support infokeys
+    if (deathmatch && stof(infokey(world, "disable_backpacks")) != 0)
+        return TRUE;
+#endif
+
+    return FALSE;
+};
+
 // Quad is dropped on death
 float() deathmatch_drop_quad =
 {
