@@ -723,6 +723,7 @@
             "gfx/mainmenu.lmp",
             "gfx/conback.lmp",
             "gfx/menumods.lmp",
+            "gfx/menudemos.lmp",
             "gfx/levels.lmp",
             "gfx/demos.lmp",
             "gfx/pop.lmp"
