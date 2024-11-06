@@ -117,6 +117,7 @@ serverinfo rj 20						Scales rocket jump push force by a factor of 20. (Set to 0
 serverinfo have_axe_only 1				Disables all weapons except for the axe.
 serverinfo buffed_axe 1					Increases the axe's damage.
 serverinfo have_unlimited_ammo 1		Players have unlimited ammo.
+serverinfo disable_backpacks 1			Players do not drop weapon or ammo backpacks on death.
 
 serverinfo have_super_shotgun 1			Players spawn with the Double-Barreled Shotgun.
 serverinfo have_nailgun 1				Players spawn with the Nailgun.
