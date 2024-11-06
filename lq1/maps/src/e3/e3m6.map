@@ -6128,7 +6128,7 @@
 {
 "classname" "item_sigil"
 "origin" "-3072 -224 984"
-"spawnflags" "2"
+"spawnflags" "4"
 "_tb_group" "93"
 }
 // entity 244
