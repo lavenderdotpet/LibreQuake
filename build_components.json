@@ -37,6 +37,9 @@
         "source_if_missing": "",
         "files_pak0": [
             "default.cfg",
+            "default_$generic.cfg",
+            "default_fte.cfg",
+            "default_darkplaces.cfg",
             "quake.rc"
         ],
         "files_pak1": [],
@@ -44,9 +47,6 @@
             ["-config.cfg", "config.cfg"],
             "cam.cfg",
             "dev.cfg",
-            "default_$generic.cfg",
-            "default_fte.cfg",
-            "default_darkplaces.cfg",
             "zoom90.cfg",
             "zoom120.cfg",
             "style_fte_modern.cfg",
@@ -498,7 +498,8 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [],
-        "files_pak1": [
+        "files_pak1": [],
+        "files_unpacked": [
             "maps/lqdm1.bsp",
             "maps/lqdm1.lit",
             "maps/lqdm2.bsp",
@@ -525,8 +526,7 @@
             "maps/lqdm12.lit",
             "maps/lqdm13.bsp",
             "maps/lqdm13.lit"
-        ],
-        "files_unpacked": []
+        ]
     },
 
     "lite_assets": {
