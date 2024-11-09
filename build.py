@@ -29,7 +29,9 @@ def build_file(source_path, destination_path, source_if_missing):
         if len(source_if_missing):
             shutil.copy(source_if_missing, destination_path)
         else:
-            warnings.warn(f"Missing file with no substitute: {source_path}")
+            # No warning for lit files, since not all maps have them
+            if not destination_path.endswith(".lit"):
+                warnings.warn(f"Missing file with no substitute: {source_path}")
 
 
 # Gets a source and dest path from a file entry File. Entries can be a string
