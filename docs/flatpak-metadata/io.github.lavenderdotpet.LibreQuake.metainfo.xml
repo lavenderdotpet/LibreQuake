@@ -22,6 +22,9 @@
       Quake levels and other modifications (“mods”) made by fans of the game. LibreQuake
       aims to be compatible with these and allows most to be played without the need to use non-free
       software.</p>
+    <p>To install mods for the flatpak version of LibreQuake you need to place them in the
+      <code>~/.var/app/io.github.lavenderdotpet.LibreQuake/.quakespasm/</code> directory.
+      This is were your config, screenshots and demos are located too.</p>
     <p>Disclaimer: In its current form LibreQuake is a work in progress effort which may
       include placeholder assets, missing textures or unfinished parts.</p>
     <p>This release is bundled with the quakespasm sourceport which is released under the
@@ -67,6 +70,6 @@
     <content_attribute id="social-chat">intense</content_attribute>
   </content_rating>
   <releases>
-    <release version="v0.07-beta" date="2024-08-16" />
+    <release version="v0.08-beta" date="2024-11-09" />
   </releases>
 </component>
