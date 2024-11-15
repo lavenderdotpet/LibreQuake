@@ -11,6 +11,9 @@ on:
       - 'lq1/**'
       - 'qsrc/**'
       - 'texture-wads/**'
+      - 'build.py'
+      - 'build_releases.json'
+      - 'build_components.json'
 
 env:
   PYTHONUNBUFFERED: 1
@@ -47,7 +50,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: progs-artifact
-        path: lq1/progs.dat
+        path: lq1/*progs.dat
 
   build_maps:
     needs: build_wads
