@@ -14,7 +14,6 @@ import subprocess
 import os
 import json
 import shutil
-import warnings
 import runpy
 import glob
 import argparse
@@ -29,9 +28,9 @@ def build_file(source_path, destination_path, source_if_missing):
         if len(source_if_missing):
             shutil.copy(source_if_missing, destination_path)
         else:
-            # No warning for lit files, since not all maps have them
+            # No error for lit files since not all maps have them
             if not destination_path.endswith(".lit"):
-                warnings.warn(f"Missing file with no substitute: {source_path}")
+                raise ValueError(f"!!! Error: Missing file with no substitute: {source_path}")
 
 
 # Gets a source and dest path from a file entry File. Entries can be a string
@@ -173,12 +172,15 @@ def compile_bsp():
 
 def compile_progs():
     try:
+        print("Compiling progs.dat...")
         subprocess.run(
             ["fteqcc", "qcsrc/progs.src", "-D__LIBREQUAKE__", "-O3"],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             check=True,  # Fail on non-zero exit code
         )
+
+        print("Compiling qwprogs.dat...")
         subprocess.run(
             ["fteqcc", "qcsrc/progs.src", "-D__LIBREQUAKE__", "-D__QW__", "-O3"],
             stdout=subprocess.PIPE,
@@ -191,9 +193,9 @@ def compile_progs():
 
 
 def compile():
+    compile_progs()
     compile_wad()
     compile_bsp()
-    compile_progs()
 
 
 def build():
