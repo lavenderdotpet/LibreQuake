@@ -73,6 +73,7 @@
         "components": [
             "docs",
             "maps_server",
+            "maps_dm",
             "progs_server",
             "config_server"
         ]
