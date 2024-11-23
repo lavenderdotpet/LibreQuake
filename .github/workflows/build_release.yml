@@ -114,6 +114,7 @@ jobs:
         zip -r mod.zip mod
         zip -r lite.zip lite
         zip -r mod_lite.zip mod_lite
+        zip -r server.zip server
         zip -r dev.zip dev
         cd ..
     # Upload the completed release artifacts
@@ -137,6 +138,11 @@ jobs:
       with:
         name: mod_lite.zip
         path: releases/mod_lite.zip
+    - name: Upload server.zip
+      uses: actions/upload-artifact@v4
+      with:
+        name: server.zip
+        path: releases/server.zip
     - name: Upload dev.zip
       uses: actions/upload-artifact@v4
       with:
@@ -149,7 +155,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        release_type: [full, mod, lite, mod_lite, dev]
+        release_type: [full, mod, lite, mod_lite, server, dev]
     steps:
       - name: Download release artifacts
         uses: actions/download-artifact@v4
