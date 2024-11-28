@@ -25,12 +25,30 @@
             "gfx.wad",
             "demo1.dem",
             "demo2.dem",
-            "demo3.dem",
+            "demo3.dem"
+        ],
+        "files_pak1": [],
+        "files_unpacked": []
+    },
+    "progs": {
+        "base_dir": "lq1",
+        "source_if_missing": "",
+        "files_pak0": [
             "progs.dat",
             "qwprogs.dat"
         ],
         "files_pak1": [],
         "files_unpacked": []
+    },
+    "progs_server": {
+        "base_dir": "lq1",
+        "source_if_missing": "",
+        "files_pak0": [],
+        "files_pak1": [],
+        "files_unpacked": [
+            "progs.dat",
+            "qwprogs.dat"
+        ]
     },
     "config": {
         "base_dir": "lq1",
@@ -52,6 +70,15 @@
             "style_ironwail_modern.cfg",
             "style_ironwail_retro.cfg",
             "accessibility.txt"
+        ]
+    },
+    "config_server": {
+        "base_dir": "lq1",
+        "source_if_missing": "",
+        "files_pak0": [],
+        "files_pak1": [],
+        "files_unpacked": [
+            "server_config.cfg"
         ]
     },
     "sounds": {
@@ -491,6 +518,92 @@
             "maps/end.lit"
         ],
         "files_unpacked": []
+    },
+    "maps_server": {
+        "base_dir": "lq1",
+        "source_if_missing": "",
+        "files_pak0": [],
+        "files_pak1": [],
+        "files_unpacked": [
+            ["maps/e0m1.bsp", "maps/lq_e0m1.bsp"],
+            ["maps/e0m1.lit", "maps/lq_e0m1.lit"],
+            ["maps/e0m2.bsp", "maps/lq_e0m2.bsp"],
+            ["maps/e0m2.lit", "maps/lq_e0m2.lit"],
+            ["maps/e0m3.bsp", "maps/lq_e0m3.bsp"],
+            ["maps/e0m3.lit", "maps/lq_e0m3.lit"],
+            ["maps/e0m4.bsp", "maps/lq_e0m4.bsp"],
+            ["maps/e0m4.lit", "maps/lq_e0m4.lit"],
+            ["maps/e0m5.bsp", "maps/lq_e0m5.bsp"],
+            ["maps/e0m5.lit", "maps/lq_e0m5.lit"],
+            ["maps/e0m6.bsp", "maps/lq_e0m6.bsp"],
+            ["maps/e0m6.lit", "maps/lq_e0m6.lit"],
+            ["maps/e0m7.bsp", "maps/lq_e0m7.bsp"],
+            ["maps/e0m7.lit", "maps/lq_e0m7.lit"],
+            ["maps/e0m8.bsp", "maps/lq_e0m8.bsp"],
+            ["maps/e0m8.lit", "maps/lq_e0m8.lit"],
+            ["maps/e1m1.bsp", "maps/lq_e1m1.bsp"],
+            ["maps/e1m1.lit", "maps/lq_e1m1.lit"],
+            ["maps/e1m2.bsp", "maps/lq_e1m2.bsp"],
+            ["maps/e1m2.lit", "maps/lq_e1m2.lit"],
+            ["maps/e1m3.bsp", "maps/lq_e1m3.bsp"],
+            ["maps/e1m3.lit", "maps/lq_e1m3.lit"],
+            ["maps/e1m4.bsp", "maps/lq_e1m4.bsp"],
+            ["maps/e1m4.lit", "maps/lq_e1m4.lit"],
+            ["maps/e1m5.bsp", "maps/lq_e1m5.bsp"],
+            ["maps/e1m5.lit", "maps/lq_e1m5.lit"],
+            ["maps/e1m6.bsp", "maps/lq_e1m6.bsp"],
+            ["maps/e1m6.lit", "maps/lq_e1m6.lit"],
+            ["maps/e1m7.bsp", "maps/lq_e1m7.bsp"],
+            ["maps/e1m7.lit", "maps/lq_e1m7.lit"],
+            ["maps/e1m8.bsp", "maps/lq_e1m8.bsp"],
+            ["maps/e1m8.lit", "maps/lq_e1m8.lit"],
+            ["maps/e2m1.bsp", "maps/lq_e2m1.bsp"],
+            ["maps/e2m1.lit", "maps/lq_e2m1.lit"],
+            ["maps/e2m2.bsp", "maps/lq_e2m2.bsp"],
+            ["maps/e2m2.lit", "maps/lq_e2m2.lit"],
+            ["maps/e2m3.bsp", "maps/lq_e2m3.bsp"],
+            ["maps/e2m3.lit", "maps/lq_e2m3.lit"],
+            ["maps/e2m4.bsp", "maps/lq_e2m4.bsp"],
+            ["maps/e2m4.lit", "maps/lq_e2m4.lit"],
+            ["maps/e2m5.bsp", "maps/lq_e2m5.bsp"],
+            ["maps/e2m5.lit", "maps/lq_e2m5.lit"],
+            ["maps/e2m6.bsp", "maps/lq_e2m6.bsp"],
+            ["maps/e2m6.lit", "maps/lq_e2m6.lit"],
+            ["maps/e2m7.bsp", "maps/lq_e2m7.bsp"],
+            ["maps/e2m7.lit", "maps/lq_e2m7.lit"],
+            ["maps/e3m1.bsp", "maps/lq_e3m1.bsp"],
+            ["maps/e3m1.lit", "maps/lq_e3m1.lit"],
+            ["maps/e3m2.bsp", "maps/lq_e3m2.bsp"],
+            ["maps/e3m2.lit", "maps/lq_e3m2.lit"],
+            ["maps/e3m3.bsp", "maps/lq_e3m3.bsp"],
+            ["maps/e3m3.lit", "maps/lq_e3m3.lit"],
+            ["maps/e3m4.bsp", "maps/lq_e3m4.bsp"],
+            ["maps/e3m4.lit", "maps/lq_e3m4.lit"],
+            ["maps/e3m5.bsp", "maps/lq_e3m5.bsp"],
+            ["maps/e3m5.lit", "maps/lq_e3m5.lit"],
+            ["maps/e3m6.bsp", "maps/lq_e3m6.bsp"],
+            ["maps/e3m6.lit", "maps/lq_e3m6.lit"],
+            ["maps/e3m7.bsp", "maps/lq_e3m7.bsp"],
+            ["maps/e3m7.lit", "maps/lq_e3m7.lit"],
+            ["maps/e4m1.bsp", "maps/lq_e4m1.bsp"],
+            ["maps/e4m1.lit", "maps/lq_e4m1.lit"],
+            ["maps/e4m2.bsp", "maps/lq_e4m2.bsp"],
+            ["maps/e4m2.lit", "maps/lq_e4m2.lit"],
+            ["maps/e4m3.bsp", "maps/lq_e4m3.bsp"],
+            ["maps/e4m3.lit", "maps/lq_e4m3.lit"],
+            ["maps/e4m4.bsp", "maps/lq_e4m4.bsp"],
+            ["maps/e4m4.lit", "maps/lq_e4m4.lit"],
+            ["maps/e4m5.bsp", "maps/lq_e4m5.bsp"],
+            ["maps/e4m5.lit", "maps/lq_e4m5.lit"],
+            ["maps/e4m6.bsp", "maps/lq_e4m6.bsp"],
+            ["maps/e4m6.lit", "maps/lq_e4m6.lit"],
+            ["maps/e4m7.bsp", "maps/lq_e4m7.bsp"],
+            ["maps/e4m7.lit", "maps/lq_e4m7.lit"],
+            ["maps/e4m8.bsp", "maps/lq_e4m8.bsp"],
+            ["maps/e4m8.lit", "maps/lq_e4m8.lit"],
+            ["maps/end.bsp", "maps/lq_end.bsp"],
+            ["maps/end.lit", "maps/lq_end.lit"]
+        ]
     },
     "maps_dm": {
         "base_dir": "lq1",
