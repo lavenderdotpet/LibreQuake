@@ -27,9 +27,8 @@ if [[ ! -f "${HIDE_LAUNCHER}" ]]; then
     --cancel-label "Quit")
 
   case "$CHOICE" in
-    "Open mod path")
-      echo "Opening mod path $XDG_DATA_HOME..."
-      xdg-open "$XDG_DATA_HOME"
+    "Open user content directory")
+      ./io.github.lavenderdotpet.LibreQuake.open-userdir.sh
       exit 2
       ;;
     "QuakeSpasm"*)
