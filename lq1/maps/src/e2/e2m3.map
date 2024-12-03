@@ -33582,6 +33582,70 @@
 }
 // entity 1195
 {
+"classname" "func_plat"
+"speed" "300"
+"sounds" "2"
+"height" "496"
+"spawnflags" "0"
+"_minlight" "200"
+// brush 0
+{
+( 288 -1424 -184 ) ( 288 -1424 -183 ) ( 288 -1425 -184 ) may_plats [ -1.2246467991473532e-16 -1 0 48 ] [ 0 0 -1 -16 ] 0 1 1
+( 416 -1424 -120 ) ( 416 -1424 -119 ) ( 417 -1424 -120 ) may_plats [ 1.0000000000000002 -1.2246467991473535e-16 0 32 ] [ 0 0 -1.0000000000000002 -16 ] 180 1 1
+( 288 -1424 -144 ) ( 288 -1425 -144 ) ( 289 -1424 -144 ) may_plats [ -1.2246467991473535e-16 -1.0000000000000002 0 48 ] [ 1.0000000000000002 -1.2246467991473535e-16 0 24 ] 180 1 1
+( 416 -1552 -128 ) ( 417 -1552 -128 ) ( 416 -1553 -128 ) may_platt [ 1 -1.2246467991473532e-16 0 32 ] [ 1.2246467991473532e-16 1 0 -48 ] 0 1 1
+( 288 -1360 -184 ) ( 289 -1360 -184 ) ( 288 -1360 -183 ) may_plats [ -1.0000000000000002 1.2246467991473535e-16 0 -32 ] [ 0 0 -1.0000000000000002 -16 ] 180 1 1
+( 352 -1552 -120 ) ( 352 -1553 -120 ) ( 352 -1552 -119 ) may_plats [ -1.2246467991473532e-16 -1 0 48 ] [ 0 0 -1 -16 ] 0 1 1
+}
+}
+// entity 1196
+{
+"classname" "func_illusionary"
+"spawnflags" "0"
+// brush 0
+{
+( 288 -1376 -96 ) ( 288 -1376 -95 ) ( 288 -1377 -96 ) may_platst [ -1.2246467991473532e-16 -1 0 32 ] [ 0 0 -1 40 ] 0 1 1
+( 292 -1408 -88 ) ( 292 -1408 -87 ) ( 293 -1408 -88 ) may_platst [ 1.0000000000000002 -1.2246467991473535e-16 0 -4 ] [ 0 0 -1.0000000000000002 40 ] 180 1 1
+( 284 -1376 -800 ) ( 284 -1377 -800 ) ( 285 -1376 -800 ) may_platst [ -1.2246467991473535e-16 -1.0000000000000002 0 32 ] [ 1.0000000000000002 -1.2246467991473535e-16 0 28 ] 180 1 1
+( 292 -1400 -124 ) ( 293 -1400 -124 ) ( 292 -1401 -124 ) may_platst [ -1.2246467991473535e-16 -1.0000000000000002 0 32 ] [ -1.0000000000000002 1.2246467991473535e-16 0 -44 ] 180 1 1
+( 284 -1376 -96 ) ( 285 -1376 -96 ) ( 284 -1376 -95 ) may_platst [ -1.0000000000000002 1.2246467991473535e-16 0 -28 ] [ 0 0 -1.0000000000000002 40 ] 180 1 1
+( 292 -1400 -88 ) ( 292 -1401 -88 ) ( 292 -1400 -87 ) may_platst [ -1.2246467991473532e-16 -1 0 32 ] [ 0 0 -1 40 ] 0 1 1
+}
+}
+// entity 1197
+{
+"classname" "func_plat"
+"speed" "300"
+"sounds" "2"
+"height" "656"
+"spawnflags" "0"
+"_minlight" "200"
+// brush 0
+{
+( 32 -704 40 ) ( 32 -704 41 ) ( 32 -705 40 ) may_plats [ 1.2246467991473532e-16 -1 0 0 ] [ 0 0 -1 16 ] 0 1 1
+( -32 -576 40 ) ( -33 -576 40 ) ( -32 -576 41 ) may_plats [ -1.0000000000000002 -1.2246467991473535e-16 0 32 ] [ 0 0 -1.0000000000000002 16 ] 0 1 1
+( 96 -576 16 ) ( 95 -576 16 ) ( 96 -577 16 ) may_plats [ 1.2246467991473535e-16 -1.0000000000000002 0 0 ] [ -1.0000000000000002 -1.2246467991473535e-16 0 24 ] 180 1 1
+( -32 -704 32 ) ( -32 -705 32 ) ( -33 -704 32 ) may_platt [ -1 -1.2246467991473532e-16 0 32 ] [ -1.2246467991473532e-16 1 0 0 ] 180 1 1
+( 96 -512 -24 ) ( 96 -512 -23 ) ( 95 -512 -24 ) may_plats [ 1.0000000000000002 1.2246467991473535e-16 0 -32 ] [ 0 0 -1.0000000000000002 16 ] 0 1 1
+( 96 -576 -24 ) ( 96 -577 -24 ) ( 96 -576 -23 ) may_plats [ 1.2246467991473532e-16 -1 0 0 ] [ 0 0 -1 16 ] 0 1 1
+}
+}
+// entity 1198
+{
+"classname" "func_illusionary"
+"spawnflags" "0"
+// brush 0
+{
+( 92 -552 40 ) ( 92 -552 41 ) ( 92 -553 40 ) may_platst [ 1.2246467991473532e-16 -1 0 48 ] [ 0 0 -1 40 ] 0 1 1
+( 92 -560 40 ) ( 91 -560 40 ) ( 92 -560 41 ) may_platst [ -1.0000000000000002 -1.2246467991473535e-16 0 -4 ] [ 0 0 -1.0000000000000002 40 ] 0 1 1
+( 100 -528 -800 ) ( 99 -528 -800 ) ( 100 -529 -800 ) may_platst [ 1.2246467991473535e-16 -1.0000000000000002 0 48 ] [ -1.0000000000000002 -1.2246467991473535e-16 0 28 ] 180 1 1
+( 92 -552 36 ) ( 92 -553 36 ) ( 91 -552 36 ) may_platst [ 1.2246467991473535e-16 -1.0000000000000002 0 48 ] [ 1.0000000000000002 1.2246467991473535e-16 0 -44 ] 180 1 1
+( 100 -528 32 ) ( 100 -528 33 ) ( 99 -528 32 ) may_platst [ 1.0000000000000002 1.2246467991473535e-16 0 -28 ] [ 0 0 -1.0000000000000002 40 ] 0 1 1
+( 96 -528 32 ) ( 96 -529 32 ) ( 96 -528 33 ) may_platst [ 1.2246467991473532e-16 -1 0 48 ] [ 0 0 -1 40 ] 0 1 1
+}
+}
+// entity 1199
+{
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "Multiplayer"
@@ -33589,7 +33653,7 @@
 "_tb_layer_sort_index" "0"
 "_tb_layer_locked" "1"
 }
-// entity 1196
+// entity 1200
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -33604,7 +33668,7 @@
 ( 1056 -952 80 ) ( 1056 -856 80 ) ( 1056 -856 72 ) may_wood1_1 [ 0 1 -0.043478260869565216 -36.52185 ] [ 0.45833333333333337 0 -0.980072463768116 -5.594208 ] 0 1 1
 }
 }
-// entity 1197
+// entity 1201
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -33655,7 +33719,7 @@
 ( 1352 -656 -272 ) ( 1352 -657 -272 ) ( 1352 -656 -271 ) may_plat_stem_m [ 0 4.371139006309477e-08 -0.999999999999999 0 ] [ 0 0.999999999999999 4.371139006309477e-08 -8 ] 90 1 1
 }
 }
-// entity 1198
+// entity 1202
 {
 "classname" "trigger_teleport"
 "target" "mp_tp01"
@@ -33671,7 +33735,7 @@
 ( 1360 -640 -256 ) ( 1360 -640 -255 ) ( 1360 -639 -256 ) trigger [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1199
+// entity 1203
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -33722,7 +33786,7 @@
 ( 1664 -408 -320 ) ( 1664 -408 -319 ) ( 1664 -407 -320 ) *tele1 [ 6.123233995736766e-17 1 0 -24 ] [ 0 0 -1 -16 ] 0 1 1
 }
 }
-// entity 1200
+// entity 1204
 {
 "classname" "trigger_teleport"
 "target" "mp_tp02"
@@ -33738,7 +33802,7 @@
 ( 1664 -400 -304 ) ( 1664 -400 -303 ) ( 1664 -399 -304 ) trigger [ 6.123233995736766e-17 1 0 -48 ] [ 0 0 -1 16 ] 0 1 1
 }
 }
-// entity 1201
+// entity 1205
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -33753,7 +33817,7 @@
 ( 1898 -672 -304 ) ( 1898 -672 -303 ) ( 1898 -671 -304 ) may_wood1_1 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1202
+// entity 1206
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -33768,7 +33832,7 @@
 ( 672 -2456 -80 ) ( 672 -2520 -96 ) ( 672 -2520 -80 ) may_blok2_1 [ 0 0 1 -8 ] [ 0 -1 0 56 ] 180 1 1
 }
 }
-// entity 1203
+// entity 1207
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -33783,7 +33847,7 @@
 ( 1776 -2432 -88 ) ( 1776 -2432 -87 ) ( 1776 -2431 -88 ) may_wood1_1 [ 0 1 0 0 ] [ 0 0 -1 -8 ] 0 1 1
 }
 }
-// entity 1204
+// entity 1208
 {
 "classname" "func_illusionary"
 "spawnflags" "1792"
@@ -33798,7 +33862,7 @@
 ( 932 -2696 -80 ) ( 932 -2696 -79 ) ( 932 -2695 -80 ) may_platst [ 0 1 0 -32 ] [ 0 0 -1 -16 ] 0 1 1
 }
 }
-// entity 1205
+// entity 1209
 {
 "classname" "func_plat"
 "speed" "300"
@@ -33817,7 +33881,7 @@
 ( 992 -2544 -80 ) ( 992 -2544 -79 ) ( 992 -2543 -80 ) may_plats [ 0 1 0 -16 ] [ 0 0 -1 24 ] 0 1 1
 }
 }
-// entity 1206
+// entity 1210
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -33832,7 +33896,7 @@
 ( 1008 -2112 -112 ) ( 1008 -2112 -111 ) ( 1008 -2111 -112 ) may_wood1_1 [ 6.123233995736767e-17 1.0000000000000002 0 0 ] [ 0 0 1.0000000000000002 0 ] 270 1 1
 }
 }
-// entity 1207
+// entity 1211
 {
 "classname" "trigger_once"
 "target" "multiplayer_stuff"
@@ -33848,7 +33912,7 @@
 ( 2240 -1216 0 ) ( 2240 -1216 1 ) ( 2240 -1215 0 ) trigger [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1208
+// entity 1212
 {
 "classname" "func_wall"
 "spawnflags" "1792"
@@ -34349,7 +34413,7 @@
 ( -160 -1568 -144 ) ( -160 -1569 -144 ) ( -160 -1568 -143 ) may_flr1_1 [ 0 -1 0 32 ] [ 0 0 -1 0 ] 180 1 1
 }
 }
-// entity 1209
+// entity 1213
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -34412,7 +34476,7 @@
 ( 1792 -2176 1024 ) ( 1792 -2177 1024 ) ( 1792 -2176 1025 ) may_platt [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1210
+// entity 1214
 {
 "classname" "trigger_relay"
 "origin" "1656 -2056 1032"
@@ -34420,7 +34484,7 @@
 "target" "tomb1"
 "_tb_group" "882"
 }
-// entity 1211
+// entity 1215
 {
 "classname" "trigger_relay"
 "origin" "1592 -2056 1032"
@@ -34428,7 +34492,7 @@
 "target" "big_lit"
 "_tb_group" "882"
 }
-// entity 1212
+// entity 1216
 {
 "classname" "trigger_relay"
 "origin" "1592 -1992 1032"
@@ -34436,7 +34500,7 @@
 "target" "multiplayer_lits"
 "_tb_group" "882"
 }
-// entity 1213
+// entity 1217
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -34446,7 +34510,7 @@
 "_tb_transformation" "6.123233995736766e-17 -1 0 -624 1 6.123233995736766e-17 0 -2352 0 0 1 64 0 0 0 1"
 "_tb_layer" "881"
 }
-// entity 1214
+// entity 1218
 {
 "classname" "func_door"
 "angle" "270"
@@ -34464,7 +34528,7 @@
 ( 1336 -2064 -128 ) ( 1336 -2065 -128 ) ( 1336 -2064 -127 ) may_door1_1 [ -6.123233995736766e-17 -1 0 80 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1215
+// entity 1219
 {
 "classname" "func_door"
 "angle" "90"
@@ -34482,7 +34546,7 @@
 ( 1336 -2256 -128 ) ( 1336 -2256 -127 ) ( 1336 -2255 -128 ) may_door1_1 [ -6.123233995736766e-17 -1 0 80 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1216
+// entity 1220
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -34491,7 +34555,7 @@
 "_tb_linked_group_id" "{e40d11a4-3193-42fd-bf3b-822bd8ee4fe3}"
 "_tb_layer" "881"
 }
-// entity 1217
+// entity 1221
 {
 "classname" "func_door"
 "angle" "180"
@@ -34509,7 +34573,7 @@
 ( 192 -1968 -192 ) ( 192 -1968 -191 ) ( 192 -1967 -192 ) may_platst [ 0 -1 0 0 ] [ 0 0 -1 0 ] 180 1 1
 }
 }
-// entity 1218
+// entity 1222
 {
 "classname" "func_door"
 "angle" "0"
@@ -34527,7 +34591,7 @@
 ( 224 -1936 -64 ) ( 256 -1808 -192 ) ( 256 -1936 -192 ) may_door1_1 [ 0 1 0 0 ] [ 0.242536 0 -0.970143 -28.898056 ] 125.467896 1 1
 }
 }
-// entity 1219
+// entity 1223
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -34537,7 +34601,7 @@
 "_tb_transformation" "-1 -1.2246467991473532e-16 0 2032 1.2246467991473532e-16 -1 0 -4080 0 0 1 -224 0 0 0 1"
 "_tb_layer" "881"
 }
-// entity 1220
+// entity 1224
 {
 "classname" "func_door"
 "angle" "0"
@@ -34555,7 +34619,7 @@
 ( 1872 -2144 -288 ) ( 1904 -2144 -416 ) ( 1904 -2272 -416 ) may_door1_1 [ -1.2246467991473532e-16 -1 0 16 ] [ -0.242536 2.970209360780025e-17 -0.970143 -9.376923 ] 305.4679 1 1
 }
 }
-// entity 1221
+// entity 1225
 {
 "classname" "func_door"
 "angle" "180"
@@ -34573,7 +34637,7 @@
 ( 1840 -2112 -416 ) ( 1840 -2113 -416 ) ( 1840 -2112 -415 ) may_platst [ 1.2246467991473532e-16 1 0 -16 ] [ 0 0 -1 32 ] 0 1 1
 }
 }
-// entity 1222
+// entity 1226
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -34583,7 +34647,7 @@
 "_tb_transformation" "-1 -1.2246467991473532e-16 0 1632 1.2246467991473532e-16 -1 0 -3184 0 0 1 -128 0 0 0 1"
 "_tb_layer" "881"
 }
-// entity 1223
+// entity 1227
 {
 "classname" "func_door"
 "angle" "0"
@@ -34601,7 +34665,7 @@
 ( 1472 -1248 -192 ) ( 1504 -1248 -320 ) ( 1504 -1376 -320 ) may_door1_1 [ -1.2246467991473532e-16 -1 0 16 ] [ -0.242536 2.970209360780025e-17 -0.970143 -13.257591 ] 305.4679 1 1
 }
 }
-// entity 1224
+// entity 1228
 {
 "classname" "func_door"
 "angle" "180"
@@ -34619,7 +34683,7 @@
 ( 1440 -1216 -320 ) ( 1440 -1217 -320 ) ( 1440 -1216 -319 ) may_platst [ 1.2246467991473532e-16 1 0 -16 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1225
+// entity 1229
 {
 "classname" "func_group"
 "_tb_type" "_tb_group"
@@ -34629,7 +34693,7 @@
 "_tb_transformation" "-1 -1.2246467991473532e-16 0 1888 1.2246467991473532e-16 -1 0 -2928 0 0 1 -128 0 0 0 1"
 "_tb_layer" "881"
 }
-// entity 1226
+// entity 1230
 {
 "classname" "func_door"
 "angle" "0"
@@ -34647,7 +34711,7 @@
 ( 1728 -992 -192 ) ( 1760 -992 -320 ) ( 1760 -1120 -320 ) may_door1_1 [ -1.2246467991473532e-16 -1 0 16 ] [ -0.242536 2.970209360780025e-17 -0.970143 48.83161 ] 305.4679 1 1
 }
 }
-// entity 1227
+// entity 1231
 {
 "classname" "func_door"
 "angle" "180"
@@ -34665,28 +34729,28 @@
 ( 1696 -960 -320 ) ( 1696 -961 -320 ) ( 1696 -960 -319 ) may_platst [ 1.2246467991473532e-16 1 0 -16 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 1228
+// entity 1232
 {
 "classname" "weapon_supernailgun"
 "origin" "192 -64 200"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1229
+// entity 1233
 {
 "classname" "weapon_lightning"
 "origin" "-336 -400 -1088"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1230
+// entity 1234
 {
 "classname" "info_player_deathmatch"
 "origin" "-192 -64 248"
 "angle" "0"
 "_tb_layer" "881"
 }
-// entity 1231
+// entity 1235
 {
 "classname" "info_teleport_destination"
 "origin" "560 -824 -96"
@@ -34695,20 +34759,20 @@
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1232
+// entity 1236
 {
 "classname" "info_player_deathmatch"
 "origin" "-64 -1600 -136"
 "_tb_layer" "881"
 }
-// entity 1233
+// entity 1237
 {
 "classname" "weapon_rocketlauncher"
 "origin" "-128 -1584 -32"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1234
+// entity 1238
 {
 "classname" "info_teleport_destination"
 "origin" "-64 296 224"
@@ -34717,14 +34781,14 @@
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1235
+// entity 1239
 {
 "classname" "weapon_supershotgun"
 "origin" "1648 -672 -320"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1236
+// entity 1240
 {
 "classname" "light"
 "origin" "1368 -672 -248"
@@ -34733,7 +34797,7 @@
 "targetname" "multiplayer_lits"
 "_tb_layer" "881"
 }
-// entity 1237
+// entity 1241
 {
 "classname" "light"
 "origin" "1632 -424 -248"
@@ -34742,7 +34806,7 @@
 "targetname" "multiplayer_lits"
 "_tb_layer" "881"
 }
-// entity 1238
+// entity 1242
 {
 "classname" "light"
 "origin" "1320 -672 -248"
@@ -34751,7 +34815,7 @@
 "targetname" "multiplayer_lits"
 "_tb_layer" "881"
 }
-// entity 1239
+// entity 1243
 {
 "classname" "light"
 "origin" "648 -2488 -80"
@@ -34760,49 +34824,49 @@
 "targetname" "multiplayer_lits"
 "_tb_layer" "881"
 }
-// entity 1240
+// entity 1244
 {
 "classname" "weapon_supernailgun"
 "origin" "648 -2488 -88"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1241
+// entity 1245
 {
 "classname" "item_cells"
 "origin" "272 -1520 -160"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1242
+// entity 1246
 {
 "classname" "item_cells"
 "origin" "272 -1712 -160"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1243
+// entity 1247
 {
 "classname" "info_player_deathmatch"
 "origin" "1840 -432 -296"
 "angle" "225"
 "_tb_layer" "881"
 }
-// entity 1244
+// entity 1248
 {
 "classname" "info_player_deathmatch"
 "origin" "2064 -2016 -392"
 "angle" "180"
 "_tb_layer" "881"
 }
-// entity 1245
+// entity 1249
 {
 "classname" "item_armor2"
 "origin" "400 -3072 -32"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1246
+// entity 1250
 {
 "classname" "light"
 "origin" "400 -3072 -24"
@@ -34811,63 +34875,63 @@
 "targetname" "multiplayer_lits"
 "_tb_layer" "881"
 }
-// entity 1247
+// entity 1251
 {
 "classname" "info_player_deathmatch"
 "origin" "344 -2400 -72"
 "angle" "285"
 "_tb_layer" "881"
 }
-// entity 1248
+// entity 1252
 {
 "classname" "info_player_deathmatch"
 "origin" "320 -2048 56"
 "angle" "180"
 "_tb_layer" "881"
 }
-// entity 1249
+// entity 1253
 {
 "classname" "info_player_deathmatch"
 "origin" "320 -1600 -136"
 "angle" "180"
 "_tb_layer" "881"
 }
-// entity 1250
+// entity 1254
 {
 "classname" "info_player_deathmatch"
 "origin" "1856 -912 -296"
 "angle" "135"
 "_tb_layer" "881"
 }
-// entity 1251
+// entity 1255
 {
 "classname" "item_rockets"
 "origin" "1488 -544 -320"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1252
+// entity 1256
 {
 "classname" "item_rockets"
 "origin" "1496 -504 -320"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1253
+// entity 1257
 {
 "classname" "item_cells"
 "origin" "1696 -424 -320"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1254
+// entity 1258
 {
 "classname" "item_cells"
 "origin" "1736 -432 -320"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1255
+// entity 1259
 {
 "classname" "light"
 "origin" "1648 -672 -312"
@@ -34876,7 +34940,7 @@
 "targetname" "multiplayer_lits"
 "_tb_layer" "881"
 }
-// entity 1256
+// entity 1260
 {
 "classname" "trigger_relay"
 "origin" "392 -2440 8"
@@ -34885,14 +34949,14 @@
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1257
+// entity 1261
 {
 "classname" "info_player_deathmatch"
 "origin" "1032 -2792 -328"
 "angle" "30"
 "_tb_layer" "881"
 }
-// entity 1258
+// entity 1262
 {
 "classname" "weapon_supershotgun"
 "origin" "584 -2848 -416"
@@ -34900,7 +34964,7 @@
 "angle" "180"
 "_tb_layer" "881"
 }
-// entity 1259
+// entity 1263
 {
 "classname" "light"
 "origin" "584 -2848 -408"
@@ -34909,14 +34973,14 @@
 "targetname" "multiplayer_lits"
 "_tb_layer" "881"
 }
-// entity 1260
+// entity 1264
 {
 "classname" "weapon_grenadelauncher"
 "origin" "1792 -1888 -336"
 "spawnflags" "1792"
 "_tb_layer" "881"
 }
-// entity 1261
+// entity 1265
 {
 "classname" "light"
 "origin" "1792 -1888 -328"
