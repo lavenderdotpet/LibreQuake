@@ -26299,3 +26299,10 @@
 "origin" "1816 768 88"
 "spawnflags" "770"
 }
+// entity 694
+{
+"classname" "light"
+"origin" "1804 1684 228"
+"wait" "9"
+"light" "550"
+}
