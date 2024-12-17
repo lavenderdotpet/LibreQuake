@@ -11672,3 +11672,21 @@
 ( -1616 1712 -640 ) ( -1520 1616 -640 ) ( -1616 1712 320 ) med_tanwall8 [ -0.7071067811865476 0.7071067811865478 0 -237.36914 ] [ 0 0 -1.0000000000000002 0 ] 0 1 1
 }
 }
+// entity 156
+{
+"classname" "info_intermission"
+"origin" "936 696 -144"
+"mangle" "15 218 0"
+}
+// entity 157
+{
+"classname" "info_intermission"
+"origin" "-1016 1048 -16"
+"mangle" "10 315 0"
+}
+// entity 158
+{
+"classname" "info_intermission"
+"origin" "-216 -552 -312"
+"mangle" "2 30 0"
+}
