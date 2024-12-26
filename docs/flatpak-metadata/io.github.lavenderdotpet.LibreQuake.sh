@@ -28,7 +28,7 @@ if [[ ! -f "${HIDE_LAUNCHER}" ]]; then
 
   case "$CHOICE" in
     "Open user content directory")
-      ./io.github.lavenderdotpet.LibreQuake.open-userdir.sh
+      io.github.lavenderdotpet.LibreQuake.open-userdir.sh
       exit 2
       ;;
     "QuakeSpasm"*)
