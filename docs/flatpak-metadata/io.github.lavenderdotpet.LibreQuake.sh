@@ -16,8 +16,8 @@ if [[ ! -f "${HIDE_LAUNCHER}" ]]; then
 
   CHOICE=$(zenity --list --radiolist --hide-header --modal --width=600 --height=400 \
     --column="" --column="" \
-    TRUE "QuakeSpasm (default)" \
-    FALSE "Ironwail (High-performance)" \
+    TRUE "Ironwail (Default)" \
+    FALSE "QuakeSpasm (Basic modern engine)" \
     FALSE "VkQuake (Vulkan renderer)" \
     FALSE "QSS-M (OpenGL 1.x/2.x for older hardware)" \
     --title "LibreQuake Launcher" \
