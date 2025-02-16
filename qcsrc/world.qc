@@ -241,6 +241,10 @@ void() worldspawn =
 	precache_sound ("player/udeath.wav");		// player gib sound
 	precache_sound ("player/tornoff2.wav");		// gib sound
 
+// kick-interactive gib sounds
+	precache_sound ("zombie/z_miss.wav");
+	precache_sound ("zombie/z_hit.wav");
+
 // player pain sounds
 
 	precache_sound ("player/pain1.wav");
@@ -405,6 +409,10 @@ void() InitBodyQueue =
 // respawned elsewhere
 void(entity ent) CopyToBodyQueue =
 {
+	// kick-interactive gibs
+	bodyqueue_head.solid = ent.solid;
+	bodyqueue_head.touch = ent.touch;
+
 	bodyqueue_head.angles = ent.angles;
 	bodyqueue_head.model = ent.model;
 	bodyqueue_head.modelindex = ent.modelindex;

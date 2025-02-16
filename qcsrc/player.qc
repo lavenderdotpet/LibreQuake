@@ -557,7 +557,10 @@ void(string gibname, float dm) ThrowGib =
 	setsize (new, '0 0 0', '0 0 0');
 	new.velocity = VelocityForDamage (dm);
 	new.movetype = MOVETYPE_BOUNCE;
-	new.solid = SOLID_NOT;
+	// kick-interactive gibs
+	new.solid = SOLID_TRIGGER;
+	new.touch = kick_touch;	
+
 	new.avelocity_x = random()*600;
 	new.avelocity_y = random()*600;
 	new.avelocity_z = random()*600;
@@ -575,7 +578,10 @@ void(string gibname, float dm) ThrowHead =
 	self.nextthink = -1;
 	self.movetype = MOVETYPE_BOUNCE;
 	self.takedamage = DAMAGE_NO;
-	self.solid = SOLID_NOT;
+	// kick-interactive gibs
+	self.solid = SOLID_TRIGGER;
+	self.touch = kick_touch;
+
 	self.view_ofs = '0 0 8';
 	setsize (self, '-16 -16 0', '16 16 56');
 	self.velocity = VelocityForDamage (dm);
