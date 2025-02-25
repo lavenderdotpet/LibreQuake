@@ -8012,3 +8012,51 @@
 ( 2087 -1442 -472 ) ( 2103 -1414 -472 ) ( 2103 -1414 -480 ) med_wood2 [ 2.220446049250313e-16 0 -1 96 ] [ 0 -1 0 0 ] 0 1 1
 }
 }
+// entity 208
+{
+"classname" "info_player_coop"
+"origin" "-304 -2848 -536"
+"angle" "180"
+}
+// entity 209
+{
+"classname" "info_player_coop"
+"origin" "-352 -2848 -536"
+"angle" "180"
+}
+// entity 210
+{
+"classname" "info_player_coop"
+"origin" "-352 -2896 -536"
+"angle" "180"
+}
+// entity 211
+{
+"classname" "info_player_coop"
+"origin" "-352 -2944 -536"
+"angle" "180"
+}
+// entity 212
+{
+"classname" "info_player_coop"
+"origin" "-352 -2992 -536"
+"angle" "180"
+}
+// entity 213
+{
+"classname" "info_player_coop"
+"origin" "-352 -3040 -536"
+"angle" "180"
+}
+// entity 214
+{
+"classname" "info_player_coop"
+"origin" "-352 -3088 -536"
+"angle" "180"
+}
+// entity 215
+{
+"classname" "info_player_coop"
+"origin" "-304 -3088 -536"
+"angle" "180"
+}
