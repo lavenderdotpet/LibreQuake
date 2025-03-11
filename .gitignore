@@ -8,6 +8,7 @@ lq1/screenshots/
 working/
 releases/
 venv/
+__pycache__/
 
 #↓ignored files↓
 docs/lqlogos/logomockup-wip2.ora
