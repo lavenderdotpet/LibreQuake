@@ -375,14 +375,26 @@ void()	s_explode4	=	[3,		s_explode5] {};
 void()	s_explode5	=	[4,		s_explode6] {};
 void()	s_explode6	=	[5,		SUB_Remove] {};
 
+void() s_explode_hfr =
+{
+	self.frame++;
+	if(self.frame == 17) {
+		self.think = SUB_Remove;
+	}
+	self.nextthink = time + 0.0333;
+};
+
+
 void() BecomeExplosion =
 {
 	self.movetype = MOVETYPE_NONE;
 	self.velocity = '0 0 0';
 	self.touch = __NULL__;
-	setmodel (self, "progs/s_explod.spr");
+	setmodel (self, "progs/s_explod_lq.spr");
+	self.frame = 0;
 	self.solid = SOLID_NOT;
-	s_explode1 ();
+	self.think = s_explode_hfr;
+	self.nextthink = time + 0.0333;
 };
 #endif
 

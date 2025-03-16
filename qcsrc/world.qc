@@ -290,6 +290,7 @@ void() worldspawn =
 
 	precache_model ("progs/s_bubble.spr");	// drowning bubbles
 	precache_model ("progs/s_explod.spr");	// sprite explosion
+	precache_model ("progs/s_explod_lq.spr");	// sprite explosion (more frames)
 
 	precache_model ("progs/v_axe.mdl");
 	precache_model ("progs/v_shot.mdl");
