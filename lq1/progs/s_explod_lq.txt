@@ -37,8 +37,8 @@ pressure 0 0
 weight 0 0
 
 velocity 0 0 0 0 0
-color1 32 32 32 192
-color2 0 0 0 192
+color1 1200 300 200 384
+color2 150 35 20 384
 size 4 8
 
 area -10 15 -5 0 20
