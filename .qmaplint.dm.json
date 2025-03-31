@@ -1,0 +1,7 @@
+{
+  "PlayerStartsLinter": {
+    "minimum_starts": {
+      "coop": 0
+    }
+  }
+}
