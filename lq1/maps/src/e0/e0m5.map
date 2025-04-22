@@ -12980,96 +12980,101 @@
 }
 // entity 336
 {
+"classname" "light_torch_small_walltorch"
+"origin" "912 628 204"
+}
+// entity 337
+{
 "classname" "func_group"
 "_tb_type" "_tb_layer"
 "_tb_name" "dm-only"
 "_tb_id" "18"
 "_tb_layer_sort_index" "0"
 }
-// entity 337
+// entity 338
 {
 "classname" "weapon_rocketlauncher"
 "origin" "704 -800 256"
 "spawnflags" "1792"
 "_tb_layer" "18"
 }
-// entity 338
+// entity 339
 {
 "classname" "item_rockets"
 "origin" "784 -768 256"
 "spawnflags" "1793"
 "_tb_layer" "18"
 }
-// entity 339
+// entity 340
 {
 "classname" "item_rockets"
 "origin" "784 -848 256"
 "spawnflags" "1793"
 "_tb_layer" "18"
 }
-// entity 340
+// entity 341
 {
 "classname" "weapon_supershotgun"
 "origin" "672 -1472 32"
 "spawnflags" "1792"
 "_tb_layer" "18"
 }
-// entity 341
+// entity 342
 {
 "classname" "weapon_nailgun"
 "origin" "-320 0 864"
 "spawnflags" "1792"
 "_tb_layer" "18"
 }
-// entity 342
+// entity 343
 {
 "classname" "weapon_supershotgun"
 "origin" "-672 -352 128"
 "spawnflags" "1792"
 "_tb_layer" "18"
 }
-// entity 343
+// entity 344
 {
 "classname" "info_player_deathmatch"
 "origin" "-672 128 168"
 "angle" "270"
 "_tb_layer" "18"
 }
-// entity 344
+// entity 345
 {
 "classname" "info_player_deathmatch"
 "origin" "1408 384 56"
 "angle" "90"
 "_tb_layer" "18"
 }
-// entity 345
+// entity 346
 {
 "classname" "info_player_deathmatch"
 "origin" "-400 0 600"
 "_tb_layer" "18"
 }
-// entity 346
+// entity 347
 {
 "classname" "info_player_deathmatch"
 "origin" "416 -336 904"
 "angle" "90"
 "_tb_layer" "18"
 }
-// entity 347
+// entity 348
 {
 "classname" "info_player_deathmatch"
 "origin" "1104 160 328"
 "angle" "270"
 "_tb_layer" "18"
 }
-// entity 348
+// entity 349
 {
 "classname" "info_player_deathmatch"
 "origin" "-160 -832 296"
 "angle" "0"
 "_tb_layer" "18"
 }
-// entity 349
+// entity 350
 {
 "classname" "info_player_deathmatch"
 "origin" "832 -1472 56"
