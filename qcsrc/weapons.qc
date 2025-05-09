@@ -375,14 +375,35 @@ void()	s_explode4	=	[3,		s_explode5] {};
 void()	s_explode5	=	[4,		s_explode6] {};
 void()	s_explode6	=	[5,		SUB_Remove] {};
 
+void() s_explode_lq =
+{
+	const float numframes = 18;
+	//  ((1 / <duration in seconds>) * numframes)
+	const float progress = (1 / 0.6) * numframes;
+
+	// .cnt stores start time
+	local float newframe = floor((time - self.cnt) * progress);
+	
+	if(newframe >= numframes) {
+		SUB_Remove();
+		return;
+	}
+
+	self.frame = newframe;
+	self.nextthink = time + (1 / 60);
+};
+
+
 void() BecomeExplosion =
 {
 	self.movetype = MOVETYPE_NONE;
 	self.velocity = '0 0 0';
 	self.touch = __NULL__;
-	setmodel (self, "progs/s_explod.spr");
+	setmodel (self, "progs/s_explod_lq.spr");
 	self.solid = SOLID_NOT;
-	s_explode1 ();
+	self.cnt = time; // save explosion start time
+	self.think = s_explode_lq;
+	s_explode_lq();
 };
 #endif
 
