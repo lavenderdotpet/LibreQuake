@@ -15,8 +15,8 @@ env:
   REVIEWDOG_REPORTER: "github-check"
 
 jobs:
-  lint-campaign:
-    name: Lint campaign map files
+  lint-map-files:
+    name: Lint map files
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,28 +31,11 @@ jobs:
           else
             echo "REVIEWDOG_REPORTER=github-check" >> $GITHUB_ENV
           fi
-      - name: Check maps
+      - name: Check Campaign maps
         run: python bin/py/map_checks.py lq1/maps/src/e*/*.map | reviewdog -f=pep8 -diff="git diff FETCH_HEAD" --filter-mode=file --fail-level=any
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  lint-deathmatch:
-    name: Lint deathmatch map files
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
-      - uses: reviewdog/action-setup@v1
-      - name: Set reviewdog reporter
-        run: |
-          if [[ "${{ github.event.type }}" == "pull_request" ]]; then
-            echo "REVIEWDOG_REPORTER=github-pr-check" >> $GITHUB_ENV
-          else
-            echo "REVIEWDOG_REPORTER=github-check" >> $GITHUB_ENV
-          fi
-      - name: Check maps
+      - name: Check Deathmatch maps
         run: python bin/py/map_checks.py lq1/maps/src/dm/*.map | reviewdog -f=pep8 -diff="git diff FETCH_HEAD" --filter-mode=file --fail-level=any
         env:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
