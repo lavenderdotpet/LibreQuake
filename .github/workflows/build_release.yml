@@ -27,13 +27,13 @@ jobs:
   build_wads:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@1e31de5234b9f8995739874a8ce0492dc87873e2
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Build wads
       run: python build.py --compile-wads
     - name: Upload texture-wads-artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: texture-wads-artifact
         path: texture-wads/*.wad
@@ -41,13 +41,13 @@ jobs:
   build_progs:
     runs-on: ubuntu-24.04  # TODO: change this back to ubuntu-latest once that doesn't point to 22.04 anymore
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@1e31de5234b9f8995739874a8ce0492dc87873e2
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Build progs
       run: python build.py --compile-progs
     - name: Upload progs-artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: progs-artifact
         path: lq1/*progs.dat
@@ -59,11 +59,11 @@ jobs:
       matrix:
         map_dir: [brushmodels, dm, e0, e1, e2, e3, e4, misc]
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@1e31de5234b9f8995739874a8ce0492dc87873e2
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Download texture-wads-artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: texture-wads-artifact
         path: texture-wads
@@ -72,7 +72,7 @@ jobs:
         cd lq1/maps
         python compile_maps.py -d src/${{ matrix.map_dir }}
     - name: Upload maps-artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: maps-artifact-${{ matrix.map_dir }}
         if-no-files-found: error
@@ -84,20 +84,20 @@ jobs:
     needs: [build_wads, build_progs, build_maps]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@1e31de5234b9f8995739874a8ce0492dc87873e2
     # Download all the artifacts created so far
     - name: Download texture-wads-artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: texture-wads-artifact
         path: texture-wads
     - name: Download progs-artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: progs-artifact
         path: lq1/
     - name: Download maps-artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         pattern: maps-artifact-*
         path: lq1/maps/
@@ -119,32 +119,32 @@ jobs:
         cd ..
     # Upload the completed release artifacts
     - name: Upload full.zip
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: full.zip
         path: releases/full.zip
     - name: Upload mod.zip
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: mod.zip
         path: releases/mod.zip
     - name: Upload lite.zip
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: lite.zip
         path: releases/lite.zip
     - name: Upload mod_lite.zip
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: mod_lite.zip
         path: releases/mod_lite.zip
     - name: Upload server.zip
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: server.zip
         path: releases/server.zip
     - name: Upload dev.zip
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
       with:
         name: dev.zip
         path: releases/dev.zip
@@ -158,7 +158,7 @@ jobs:
         release_type: [full, mod, lite, mod_lite, server, dev]
     steps:
       - name: Download release artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
         with:
           name: ${{ matrix.release_type }}.zip
           path: releases/
