@@ -34,7 +34,7 @@ jobs:
     - name: Build wads
       run: python build.py --compile-wads
     - name: Upload texture-wads-artifact
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: texture-wads-artifact
         path: texture-wads/*.wad
@@ -48,7 +48,7 @@ jobs:
     - name: Build progs
       run: python build.py --compile-progs
     - name: Upload progs-artifact
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: progs-artifact
         path: lq1/*progs.dat
@@ -64,7 +64,7 @@ jobs:
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Download texture-wads-artifact
-      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
       with:
         name: texture-wads-artifact
         path: texture-wads
@@ -73,7 +73,7 @@ jobs:
         cd lq1/maps
         python compile_maps.py -d src/${{ matrix.map_dir }}
     - name: Upload maps-artifact
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: maps-artifact-${{ matrix.map_dir }}
         if-no-files-found: error
@@ -88,17 +88,17 @@ jobs:
     - uses: actions/checkout@1e31de5234b9f8995739874a8ce0492dc87873e2
     # Download all the artifacts created so far
     - name: Download texture-wads-artifact
-      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
       with:
         name: texture-wads-artifact
         path: texture-wads
     - name: Download progs-artifact
-      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
       with:
         name: progs-artifact
         path: lq1/
     - name: Download maps-artifacts
-      uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
       with:
         pattern: maps-artifact-*
         path: lq1/maps/
@@ -120,32 +120,32 @@ jobs:
         cd ..
     # Upload the completed release artifacts
     - name: Upload full.zip
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: full.zip
         path: releases/full.zip
     - name: Upload mod.zip
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: mod.zip
         path: releases/mod.zip
     - name: Upload lite.zip
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: lite.zip
         path: releases/lite.zip
     - name: Upload mod_lite.zip
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: mod_lite.zip
         path: releases/mod_lite.zip
     - name: Upload server.zip
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: server.zip
         path: releases/server.zip
     - name: Upload dev.zip
-      uses: actions/upload-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
       with:
         name: dev.zip
         path: releases/dev.zip
@@ -159,7 +159,7 @@ jobs:
         release_type: [full, mod, lite, mod_lite, server, dev]
     steps:
       - name: Download release artifacts
-        uses: actions/download-artifact@1e31de5234b9f8995739874a8ce0492dc87873e2
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: ${{ matrix.release_type }}.zip
           path: releases/
