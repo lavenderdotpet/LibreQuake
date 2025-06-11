@@ -15,7 +15,7 @@
 "//_sunlight_color_" "//0.83 0.91 1.00"
 "_sun_mangle_" "60 -45 0"
 "_sunlight_penumbra" "4"
-"credits_" "MissLavender"
+"credits_" "lavender.pet"
 // brush 0
 {
 ( -32 280 128 ) ( -32 152 80 ) ( -32 280 80 ) *soul_drain [ -1.8369701987210297e-16 -1 0 8 ] [ 0 0 -1 0 ] 180 1 1

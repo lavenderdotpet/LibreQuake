@@ -15,7 +15,7 @@
 "//_sunlight_color" "//0.83 0.91 1.00"
 "_sun_mangle" "60 -45 0"
 "_sunlight_penumbra" "4"
-"credits_" "MissLavender"
+"credits_" "lavender.pet"
 // brush 0
 {
 ( -368 2512 592 ) ( -368 2512 688 ) ( -400 2432 688 ) floor_grey_c [ -0.3713906763541038 -0.9284766908852594 0 -62.791992 ] [ 0 0 -1 0 ] 0 1 1
