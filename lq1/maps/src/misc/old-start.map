@@ -7,7 +7,7 @@
 "_sunlight" "100"
 "worldtype" "1"
 "_tb_mod" "lq1"
-"credits_" "MissLavender"
+"credits_" "lavender.pet"
 // brush 0
 {
 ( 8 632 0 ) ( 8 8 0 ) ( 8 8 -8 ) sky_galx 0 0 0 1 1

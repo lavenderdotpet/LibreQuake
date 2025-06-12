@@ -5,7 +5,7 @@
 "classname" "worldspawn"
 "mapversion" "220"
 "wad" "../../../../texture-wads/lq_health_ammo.wad;../../../../texture-wads/lq_dev.wad"
-"_credits" "Zungryware and MissLavender"
+"_credits" "Zungryware and lavender.pet"
 "light" "180"
 "_tb_mod" "lq1"
 // brush 0
