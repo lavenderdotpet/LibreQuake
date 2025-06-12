@@ -269,7 +269,7 @@
 #define LOC_DEATH_ARMY 					" was shot by a Chosen"
 #define LOC_DEATH_ENFORCER 				" was mowed down by a Cyberhunter"
 #define LOC_DEATH_DOG 					" was gored by a Gore Hound"
-#define LOC_DEATH_OGRE 					" was demolished by a Deep One"
+#define LOC_DEATH_OGRE 					" was demolished by a Barrel Fang"
 #define LOC_DEATH_DEMON1 				" was disemboweled by a Moon Rat"
 #define LOC_DEATH_WIZARD 				" was shot by a Messenger"
 #define LOC_DEATH_ZOMBIE				" was pelted by a Deathless Cultist"
