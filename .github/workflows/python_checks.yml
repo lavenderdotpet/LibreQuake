@@ -1,22 +1,33 @@
-name: flake8
+name: Python lint
 
 on:
   push:
     paths:
-      - '**.py'
+      - "**.py"
+  pull_request:
+    paths:
+      - "**.py"
+  workflow_dispatch: {}
+
+env:
+  REVIEWDOG_REPORTER: "github-check"
 
 jobs:
   lint:
+    name: Lint Python files
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8
-    - name: Analysing the code with flake8
-      run: flake8
+      - uses: actions/checkout@v4
+      - name: Set reviewdog reporter
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "REVIEWDOG_REPORTER=github-pr-review" >> $GITHUB_ENV
+          else
+            echo "REVIEWDOG_REPORTER=github-check" >> $GITHUB_ENV
+          fi
+      - name: flake8 Lint
+        uses: reviewdog/action-flake8@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: ${{ env.REVIEWDOG_REPORTER }}
+          fail_level: warning
