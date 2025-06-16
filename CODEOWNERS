@@ -1,0 +1,10 @@
+# This file enforces ownership over specific files so that the owner is always
+# requested for review of a PR whenever the respective files are edited
+
+# ZungryWare
+lq1/maps/**/lqdm*	@ZungrySoft
+lq1/maps/**/e1m2*	@ZungrySoft
+lq1/maps/**/e1m3*	@ZungrySoft
+lq1/maps/**/e1m4*	@ZungrySoft
+lq1/maps/**/e1m5*	@ZungrySoft
+lq1/maps/**/e4m1*	@ZungrySoft
