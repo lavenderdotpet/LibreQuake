@@ -751,3 +751,9 @@
 "light" "150"
 "style" "11"
 }
+// entity 18
+{
+"classname" "item_sigil"
+"origin" "0 208 56"
+"spawnflags" "2050"
+}
