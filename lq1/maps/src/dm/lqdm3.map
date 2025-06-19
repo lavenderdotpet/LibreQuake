@@ -3,7 +3,7 @@
 // entity 0
 {
 "mapversion" "220"
-"wad" "D:/dev/LibreQuake/texture-wads/lq_greek.wad;D:/dev/LibreQuake/texture-wads/lq_utility.wad;D:/dev/LibreQuake/texture-wads/lq_liquidsky.wad;D:/dev/LibreQuake/texture-wads/lq_wood.wad;D:/dev/LibreQuake/texture-wads/lq_terra.wad;D:/dev/LibreQuake/texture-wads/lq_medieval.wad"
+"wad" "../../../../texture-wads/lq_greek.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_wood.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_medieval.wad"
 "classname" "worldspawn"
 "message" "Hyperborea"
 "_credits" "ZungryWare"
