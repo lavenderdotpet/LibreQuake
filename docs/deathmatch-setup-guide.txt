@@ -63,8 +63,8 @@ Map List
 LibreQuake comes with 13 deathmatch maps. You can change the map using the "changelevel" console command.
 
 changelevel lqdm1	Solstice: A small winter castle with a simple layout. This is a good map to start on.
-changelevel lqdm2	Hyperborea: A white temple with jump pads. Great for large free-for-alls.
-changelevel lqdm3	Torture Pit: An acid-flooded dungeon with only lower-tier weapons.
+changelevel lqdm2	Torture Pit: An acid-flooded dungeon with only lower-tier weapons.
+changelevel lqdm3	Hyperborea: A white rock temple with jump pads and a giant ravine.
 changelevel lqdm4	Psychofuge: An ancient lava fortress. The dangerous lava-filled underbelly contains some of the best items.
 changelevel lqdm5	Transport Tubes: An industrial facility with locking air tunnels that carry you around the map.
 changelevel lqdm6	Ghost Quarter: A castle where new weapons and armor types unlock every 40 seconds.
