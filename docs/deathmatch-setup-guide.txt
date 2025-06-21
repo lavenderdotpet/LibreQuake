@@ -36,7 +36,7 @@ If a player finds your server but gets an error when they try to connect, check 
 	- Unknown command "nqconnect"
 		- Make sure "Show NQ" is off in the server browser filters and "Show QW" is on.
 	- You have been kicked due to the file maps/lqdm1.bsp being modfied
-		- Make sure everyone is using the same version of LibreQuake.
+		- Make sure everyone is using the latest version of LibreQuake.
 
 
 =======================
@@ -76,17 +76,17 @@ changelevel lqdm11	The Wicked Night: A medium-sized computer station built aroun
 changelevel lqdm12	Javelin: An ancient temple which contains a respawning key you can use to permanently unlock new rooms and powerups.
 changelevel lqdm13	Death Provides No Return: A void fortress with jump pads and toggling windows.
 
-Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger. If you want to switch to the third map in Episode 1, you would use the command "changelevel e1m3".
+Additionally, all of the singleplayer levels are compatible with deathmatch. These maps are great if you have a player count of five or above since the gameplay spaces are much larger. If you want to switch to the third map in Episode 1, you would use the command "changelevel lq_e1m3".
 
 
 ================
 Deathmatch Modes
 ================
-There are five different deathmatch modes which change the way the game plays. Deathmatch 3 is the recommended default mode. You can change the deathmatch mode using the "deathmatch" console command. 
+There are five different deathmatch modes which change the way the game plays. deathmatch 3 is the recommended default mode. You can change the deathmatch mode using the "deathmatch" console command. 
 
 deathmatch 1	Items and weapons respawn. Mostly used for 4v4 team deathmatch.
 deathmatch 2	Items never respawn; weapons respawn instantly. This mode is rarely used.
-deathmatch 3	Items respawn; weapons respawn instantly. Great for free-for-all and team deathmatch.
+deathmatch 3	Items respawn; weapons respawn instantly. Great for free-for-all, team deathmatch, and duel.
 deathmatch 4	Spawn with all weapons, full health and armor, and infinite ammo. Collect backpacks for bonus health.
 deathmatch 5	Spawn with all weapons, full health and armor, and some ammo.
 
@@ -101,7 +101,7 @@ teamplay 1	Players cannot damage themselves or teammates.
 teamplay 2	Players can damage themselves and teammates.
 teamplay 3	Players can damage themselves but not teammates.
 
-Each player will need to join a team. They can do this in the "Online -> Setup" menu.
+For teamplay to work, each player will need to join a team. This can be done in the "Online -> Setup" menu.
 
 
 ===============
