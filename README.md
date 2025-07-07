@@ -35,6 +35,7 @@ Once you have downloaded an engine, paste the downloaded id1 (or lq1) folder in 
 If you would like to set up a LAN deathmatch game, see docs/deathmatch-setup-guide.txt for more information.
 
 <h1><p align="center">What “Free” Means</h1>
+
 When we speak of free content or software, we refer to the movement in which your freedom to use, copy, modify, and study a work is not infringed. For example, you may freely use *LibreQuake* for any purpose you see fit, you may redistribute it to anyone without needing to ask for permission, you may modify it (provided you keep the license intact, see `COPYING`), and you may study it. You may read more about free software at the [GNU](http://www.gnu.org/) and [Free Software Foundation](http://www.fsf.org) websites.
 
 <h1><p align="center">Other Info</h1>
