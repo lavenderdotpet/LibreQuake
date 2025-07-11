@@ -344,7 +344,7 @@
 // entity 1
 {
 "classname" "trigger_changelevel"
-"map" "e0m1"
+"map" "lq_e0m1"
 "spawnflags" "1"
 // brush 0
 {
