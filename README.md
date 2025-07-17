@@ -50,6 +50,8 @@ You can also commit on a clone of the *LibreQuake* repository, although this is 
 
 *LibreQuake* uses the commit message style commonly seen in distributed version control systems, adopted by projects such as Linux and Git. For an explanation of this style, see [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/).
 
+For more detailed information on the specifics of contributing to this project, see [How to Contribute to the LibreQuake Project](https://github.com/lavenderdotpet/LibreQuake/blob/main/CONTRIBUTING.md)
+
 <p align="center">
   <img src="docs/branding/boxrotate.webp" alt="Libre Quake game box art rotating animation" width="20%" />
 </p>
