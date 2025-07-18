@@ -19,11 +19,11 @@ The engine uses a directory called `id1/`, within that directory there are two a
 
 
 <p align="center">
-  <img src="screenshots/textures_example.png" alt="Texture examples screenshot" />
+  <img src="screenshots/maps_example.png" alt="Texture examples screenshot" />
 </p>
 
 <p align="center">
-  <img src="screenshots/weapons_example.png" alt="Weapon examples screenshot" />
+  <img src="screenshots/weapons_example.webp" alt="Weapon examples screenshot" />
 </p>
 
 <h1><p align="center">How to Play</h1>
