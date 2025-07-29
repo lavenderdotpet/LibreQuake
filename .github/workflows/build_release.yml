@@ -8,6 +8,7 @@ on:
       - main
   pull_request:
     paths:
+      - '.github/workflows/build_release.yml'
       - 'lq1/**'
       - 'qsrc/**'
       - 'texture-wads/**'
@@ -107,47 +108,37 @@ jobs:
       run: bash -x .github/scripts/install_deps.sh
     - name: Build releases
       run: python build.py --build
-    - name: Zip artifacts
-      run: |
-        cd releases
-        zip -r full.zip full
-        zip -r mod.zip mod
-        zip -r lite.zip lite
-        zip -r mod_lite.zip mod_lite
-        zip -r server.zip server
-        zip -r dev.zip dev
-        cd ..
     # Upload the completed release artifacts
-    - name: Upload full.zip
+    - name: Upload full
       uses: actions/upload-artifact@v4
       with:
-        name: full.zip
-        path: releases/full.zip
-    - name: Upload mod.zip
+        name: full
+        path: releases/full
+    - name: Upload mod
       uses: actions/upload-artifact@v4
       with:
-        name: mod.zip
-        path: releases/mod.zip
-    - name: Upload lite.zip
+        name: mod
+        path: releases/mod
+    - name: Upload lite
       uses: actions/upload-artifact@v4
       with:
-        name: lite.zip
-        path: releases/lite.zip
-    - name: Upload mod_lite.zip
+        name: lite
+        path: releases/lite
+    - name: Upload mod_lite
       uses: actions/upload-artifact@v4
       with:
-        name: mod_lite.zip
-        path: releases/mod_lite.zip
-    - name: Upload server.zip
+        name: mod_lite
+        path: releases/mod_lite
+    - name: Upload server
       uses: actions/upload-artifact@v4
       with:
-        name: server.zip
-        path: releases/server.zip
-    - name: Upload dev.zip
+        name: server
+        path: releases/server
+    - name: Upload dev
       uses: actions/upload-artifact@v4
       with:
-        name: dev.zip
-        path: releases/dev.zip
+        name: dev
+        path: releases/dev
 
   upload_to_release_page:
     if: github.event_name == 'release'
@@ -160,9 +151,14 @@ jobs:
       - name: Download release artifacts
         uses: actions/download-artifact@v4
         with:
-          name: ${{ matrix.release_type }}.zip
-          path: releases/
-      - name: Upload asset  ${{ matrix.release_type }}.zip
+          name: ${{ matrix.release_type }}
+          path: releases/${{ matrix.release_type }}
+      - name: Create ZIP archives
+        run: |
+          mkdir -p releases/${{ matrix.release_type }}
+          cd releases
+          7z a -mx9 ${{ matrix.release_type }}.zip ${{ matrix.release_type }}
+      - name: Upload asset ${{ matrix.release_type }}.zip
         uses: actions/upload-release-asset@v1
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
