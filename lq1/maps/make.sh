@@ -119,7 +119,7 @@ function command_make {
 function command_single {
     if test -z "$1"
     then
-        echo "map name needed, e.g. 'e1/e1m1'"
+        echo "map name needed, e.g. 'e1/lq_e1m1'"
         return
     fi
     command_make "$1";
@@ -166,7 +166,7 @@ function command_help {
     LIGHT_PATH     use a local path for qbsp instead of checking \$PATH
 
     Example: make.sh -m LIGHT_FLAGS=\"-extra4 -bounce\" QBSP_PATH=\"~/qbsp\"
-    Example: make.sh -s e1/e1m1
+    Example: make.sh -s e1/lq_e1m1
     =========================================================================="
 }
 

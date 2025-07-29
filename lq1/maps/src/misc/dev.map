@@ -1075,7 +1075,7 @@
 // entity 2
 {
 "classname" "trigger_changelevel"
-"map" "e1m1"
+"map" "lq_e1m1"
 "spawnflags" "1"
 // brush 0
 {
@@ -1090,7 +1090,7 @@
 // entity 3
 {
 "classname" "trigger_changelevel"
-"map" "e2m1"
+"map" "lq_e2m1"
 "spawnflags" "1"
 // brush 0
 {
@@ -1105,7 +1105,7 @@
 // entity 4
 {
 "classname" "trigger_changelevel"
-"map" "e3m1"
+"map" "lq_e3m1"
 "spawnflags" "1"
 // brush 0
 {
@@ -1151,7 +1151,7 @@
 // entity 6
 {
 "classname" "trigger_changelevel"
-"map" "e4m1"
+"map" "lq_e4m1"
 "spawnflags" "1"
 // brush 0
 {
@@ -1425,7 +1425,7 @@
 // entity 13
 {
 "classname" "trigger_changelevel"
-"map" "e0m1"
+"map" "lq_e0m1"
 "spawnflags" "1"
 // brush 0
 {

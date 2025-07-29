@@ -170,7 +170,7 @@ def command_make(specific_map=None, specific_dir=None):
 # Command single
 def command_single(map_name):
     if not map_name:
-        print("Map name needed, e.g. 'e1m1'")
+        print("Map name needed, e.g. 'lq_e1m1'")
         return
     command_make(specific_map=map_name)
 
@@ -216,7 +216,7 @@ def command_help():
     LIGHT_PATH     use a local path for qbsp instead of checking $PATH
 
     Example: make.py -m LIGHT_FLAGS=\"-extra4 -bounce\" QBSP_PATH=\"~/qbsp\"
-    Example: make.py -s e1/e1m1
+    Example: make.py -s e1/lq_e1m1
     ==========================================================================
     """
     print(help_text)

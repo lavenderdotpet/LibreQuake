@@ -199,14 +199,14 @@ var struct
 
 #ifdef __LIBREQUAKE__
 
-	{"maps/e0m7.bsp", 2, LOC_EPILOGUE_0, __NULL__},
+	{"maps/lq_e0m7.bsp", 2, LOC_EPILOGUE_0, __NULL__},
 
 #endif // __LIBREQUAKE__
 
-	{"maps/e1m7.bsp", 2, LOC_EPILOGUE_1, LOC_EPILOGUE_1_FREEWARE},
-	{"maps/e2m6.bsp", 2, LOC_EPILOGUE_2, __NULL__},
-	{"maps/e3m6.bsp", 2, LOC_EPILOGUE_3, __NULL__},
-	{"maps/e4m7.bsp", 2, LOC_EPILOGUE_4, __NULL__}
+	{"maps/lq_e1m7.bsp", 2, LOC_EPILOGUE_1, LOC_EPILOGUE_1_FREEWARE},
+	{"maps/lq_e2m6.bsp", 2, LOC_EPILOGUE_2, __NULL__},
+	{"maps/lq_e3m6.bsp", 2, LOC_EPILOGUE_3, __NULL__},
+	{"maps/lq_e4m7.bsp", 2, LOC_EPILOGUE_4, __NULL__}
 };
 // --cypress
 
@@ -829,30 +829,30 @@ void() NextLevel =
 	{
 		if (!cvar("registered"))
 		{
-			mapname = "e1m1";
+			mapname = "lq_e1m1";
 		}
 
 		else if (!(serverflags & 1))
 		{
-			mapname = "e1m1";
+			mapname = "lq_e1m1";
 			serverflags = serverflags | 1;
 		}
 
 		else if (!(serverflags & 2))
 		{
-			mapname = "e2m1";
+			mapname = "lq_e2m1";
 			serverflags = serverflags | 2;
 		}
 
 		else if (!(serverflags & 4))
 		{
-			mapname = "e3m1";
+			mapname = "lq_e3m1";
 			serverflags = serverflags | 4;
 		}
 
 		else if (!(serverflags & 8))
 		{
-			mapname = "e4m1";
+			mapname = "lq_e4m1";
 			serverflags = serverflags - 7;
 		}
 
