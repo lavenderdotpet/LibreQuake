@@ -64,7 +64,7 @@ jobs:
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Download texture-wads-artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: texture-wads-artifact
         path: texture-wads
@@ -88,17 +88,17 @@ jobs:
     - uses: actions/checkout@v5
     # Download all the artifacts created so far
     - name: Download texture-wads-artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: texture-wads-artifact
         path: texture-wads
     - name: Download progs-artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: progs-artifact
         path: lq1/
     - name: Download maps-artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         pattern: maps-artifact-*
         path: lq1/maps/
@@ -149,7 +149,7 @@ jobs:
         release_type: [full, mod, lite, mod_lite, server, dev]
     steps:
       - name: Download release artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: ${{ matrix.release_type }}
           path: releases/${{ matrix.release_type }}
