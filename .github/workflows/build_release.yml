@@ -28,7 +28,7 @@ jobs:
   build_wads:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Build wads
@@ -42,7 +42,7 @@ jobs:
   build_progs:
     runs-on: ubuntu-24.04  # TODO: change this back to ubuntu-latest once that doesn't point to 22.04 anymore
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Build progs
@@ -60,7 +60,7 @@ jobs:
       matrix:
         map_dir: [brushmodels, dm, e0, e1, e2, e3, e4, misc]
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps.sh
     - name: Download texture-wads-artifact
@@ -85,7 +85,7 @@ jobs:
     needs: [build_wads, build_progs, build_maps]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     # Download all the artifacts created so far
     - name: Download texture-wads-artifact
       uses: actions/download-artifact@v4
