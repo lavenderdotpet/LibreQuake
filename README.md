@@ -32,7 +32,7 @@ Since *LibreQuake* is only the game data, you will still need to download an eng
 
 Once you have downloaded an engine, paste the downloaded id1 (or lq1) folder in the same directory you put the engine executable. This is the executable you will run to start LibreQuake.
 
-If you would like to set up a LAN deathmatch game, see docs/deathmatch-setup-guide.txt for more information.
+If you would like to set up a LAN deathmatch game, see [docs/deathmatch-setup-guide.txt](https://github.com/lavenderdotpet/LibreQuake/blob/main/docs/deathmatch-setup-guide.txt) for more information.
 
 <h1><p align="center">What “Free” Means</h1>
 
