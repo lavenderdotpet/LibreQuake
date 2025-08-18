@@ -9,6 +9,7 @@ on:
   pull_request:
     paths:
       - '.github/workflows/build_release.yml'
+      - '.github/scripts/**'
       - 'lq1/**'
       - 'qsrc/**'
       - 'texture-wads/**'
