@@ -2,7 +2,7 @@
 
 set -e
 
-QPAKMAN_URL="https://github.com/bunder/qpakman/archive/refs/tags/v0.67.tar.gz"
+QPAKMAN_URL="https://github.com/LibreQuake/qpakman/archive/refs/heads/main.tar.gz"
 FTEQCC_URL="https://www.fteqcc.org/dl/fteqcc_linux64.zip"
 ERICW_TOOL_URL="https://github.com/ericwa/ericw-tools/releases/download/2.0.0-alpha9/ericw-tools-2.0.0-alpha9-Linux.zip"
 
