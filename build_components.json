@@ -378,6 +378,7 @@
             "progs/quaddama.mdl",
             "progs/s_bubble.spr",
             "progs/s_explod.spr",
+            "progs/s_explod_lq.spr",
             "progs/s_light.mdl",
             "progs/s_light.spr",
             "progs/s_spike.mdl",
