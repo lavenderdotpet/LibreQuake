@@ -3,7 +3,7 @@
 // entity 0
 {
 "mapversion" "220"
-"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_palette.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_metal_nol.wad"
+"wad" "../../../../texture-wads/lq_dev.wad;../../../../texture-wads/lq_metal.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_palette.wad;../../../../texture-wads/lq_tech.wad"
 "classname" "worldspawn"
 "sounds" "10"
 "message" "Will of the Machine"
@@ -14717,9 +14717,7 @@
 "classname" "light"
 "origin" "-1088 -1344 1130"
 "light" "150"
-"style" "10"
 "_tb_group" "4661"
-"_tb_protected_properties" "style"
 }
 // entity 741
 {
@@ -49824,18 +49822,14 @@
 "classname" "light"
 "origin" "1856 -704 -16"
 "wait" "5"
-"style" "10"
 "_tb_group" "22646"
-"_tb_protected_properties" "style"
 }
 // entity 3056
 {
 "classname" "light"
 "origin" "1856 -704 -22"
 "light" "200"
-"style" "10"
 "_tb_group" "22646"
-"_tb_protected_properties" "style"
 }
 // entity 3057
 {
