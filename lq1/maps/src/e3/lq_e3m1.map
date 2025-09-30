@@ -16,6 +16,8 @@
 "_credit" "RandomBrushes"
 "sounds" "6"
 "fog" "0.03 0 0.2 0.4"
+"wateralpha" "1.0"
+"slimealpha" "1.0"
 // brush 0
 {
 ( 256 -64 -32 ) ( 256 -63 -32 ) ( 256 -64 -31 ) t_flor1a [ 0 1 0 0 ] [ 0 0 -1 0 ] 270 1 1
@@ -12253,7 +12255,7 @@
 "origin" "-1048 1032 216"
 "_surface" "*slime_soul"
 "light" "100"
-"_color" "0 255 0"
+"_color" "107 200 15"
 "wait" ".5"
 }
 // entity 226
