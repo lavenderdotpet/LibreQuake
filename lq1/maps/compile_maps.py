@@ -23,6 +23,10 @@ LQ_DEF_BSP_FLAGS = ""
 LQ_DEF_VIS_FLAGS = ""
 LQ_DEF_LIG_FLAGS = "-bounce -dirt"
 
+LQ_GLOBAL_BSP_FLAGS = "-bspx"
+LQ_GLOBAL_VIS_FLAGS = ""
+LQ_GLOBAL_LIG_FLAGS = ""
+
 
 # Check for compiler
 def check_for_compiler():
@@ -66,9 +70,9 @@ def get_compile_flags(map_path):
     config_path = get_config_path(map_path)
     config = get_config(config_path)
 
-    LQ_BSP_FLAGS = config.get("LQ_BSP_FLAGS", LQ_DEF_BSP_FLAGS)
-    LQ_VIS_FLAGS = config.get("LQ_VIS_FLAGS", LQ_DEF_VIS_FLAGS)
-    LQ_LIG_FLAGS = config.get("LQ_LIG_FLAGS", LQ_DEF_LIG_FLAGS)
+    LQ_BSP_FLAGS = config.get("LQ_BSP_FLAGS", LQ_DEF_BSP_FLAGS) + " " + LQ_GLOBAL_BSP_FLAGS
+    LQ_VIS_FLAGS = config.get("LQ_VIS_FLAGS", LQ_DEF_VIS_FLAGS) + " " + LQ_GLOBAL_VIS_FLAGS
+    LQ_LIG_FLAGS = config.get("LQ_LIG_FLAGS", LQ_DEF_LIG_FLAGS) + " " + LQ_GLOBAL_LIG_FLAGS
 
     return LQ_BSP_FLAGS, LQ_VIS_FLAGS, LQ_LIG_FLAGS
 
