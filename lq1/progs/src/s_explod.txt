@@ -68,10 +68,10 @@ area -5 -20 0 0 10
 spawn 2000
 
 mass 0.4 0.9
-color1 255 0 0 40
-color2 255 64 0 100
+color1 255 64 0 120
+color2 255 64 0 150
 area 0 0 0 2 18
 size 5 50
-spawn 2000
+spawn 1000
 
 wait 10
