@@ -15,7 +15,18 @@
             "docs/misc-docs/COPYING",
             "docs/misc-docs/LibreProgsDeluxe.md",
             "docs/misc-docs/pop.lmp.md",
-            "docs/deathmatch-setup-guide.txt"
+            "docs/deathmatch-setup-guide.txt",
+            "docs/branding/icon.ico",
+            "docs/branding/icon.svg",
+            "docs/branding/icon.pixel.ico",
+            "docs/branding/header.png",
+            "docs/branding/button.png",
+            "docs/branding/steam/capsule-tall.png",
+            "docs/branding/steam/capsule-wide.png",
+            "docs/branding/steam/hero.png",
+            "docs/branding/steam/icon.pixel.png",
+            "docs/branding/steam/icon.png",
+            "docs/branding/steam/logo.png"
         ]
     },
     "root": {
