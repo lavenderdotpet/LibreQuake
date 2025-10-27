@@ -35,7 +35,7 @@ jobs:
     - name: Build wads
       run: python build.py --compile-wads
     - name: Upload texture-wads-artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: texture-wads-artifact
         path: texture-wads/*.wad
@@ -49,7 +49,7 @@ jobs:
     - name: Build progs
       run: python build.py --compile-progs
     - name: Upload progs-artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: progs-artifact
         path: lq1/*progs.dat
@@ -74,7 +74,7 @@ jobs:
         cd lq1/maps
         python compile_maps.py -d src/${{ matrix.map_dir }}
     - name: Upload maps-artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: maps-artifact-${{ matrix.map_dir }}
         if-no-files-found: error
@@ -111,32 +111,32 @@ jobs:
       run: python build.py --build
     # Upload the completed release artifacts
     - name: Upload full
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: full
         path: releases/full
     - name: Upload mod
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: mod
         path: releases/mod
     - name: Upload lite
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: lite
         path: releases/lite
     - name: Upload mod_lite
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: mod_lite
         path: releases/mod_lite
     - name: Upload server
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: server
         path: releases/server
     - name: Upload dev
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: dev
         path: releases/dev
