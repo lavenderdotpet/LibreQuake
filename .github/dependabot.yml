@@ -4,7 +4,5 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
-    labels:
-      - "infra"
     commit-message:
       prefix: "ci"
