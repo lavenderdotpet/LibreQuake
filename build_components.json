@@ -845,6 +845,8 @@
             "gfx/conback.lmp",
             "gfx/menumods.lmp",
             "gfx/menudemos.lmp",
+            "gfx/p_mods.lmp",
+            "gfx/mainmenu2.lmp",
             "gfx/levels.lmp",
             "gfx/demos.lmp",
             "gfx/pop.lmp"
