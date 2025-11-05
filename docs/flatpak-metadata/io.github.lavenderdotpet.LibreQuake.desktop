@@ -7,7 +7,7 @@ Terminal=false
 Type=Application
 Categories=Game;ActionGame
 Keywords=quake;librequake
-Actions=open-user-dir;ironwail;quakespasm;vkquake;qssm
+Actions=open-user-dir;ironwail;quakespasm;qssm
 
 [Desktop Action open-user-dir]
 Name=Open user content directory
@@ -24,16 +24,16 @@ Name=QuakeSpasm
 Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
 Exec=io.github.lavenderdotpet.LibreQuake.sh quakespasm
 
-[Desktop Action vkquake]
-Name=VkQuake
-Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
-Exec=io.github.lavenderdotpet.LibreQuake.sh vkquake
-
 [Desktop Action qssm]
 Name=QSS-M
 Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
 Exec=io.github.lavenderdotpet.LibreQuake.sh qssm
 
+# [Desktop Action vkquake]
+# Name=VkQuake
+# Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
+# Exec=io.github.lavenderdotpet.LibreQuake.sh vkquake
+#
 # [Desktop Action fteqw]
 # Name=FTEQW
 # Icon=io.github.lavenderdotpet.LibreQuake.fteqw
