@@ -16,7 +16,7 @@ Exec=io.github.lavenderdotpet.LibreQuake.open-userdir.sh
 
 [Desktop Action ironwail]
 Name=Ironwail
-Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
+Icon=io.github.lavenderdotpet.LibreQuake.ironwail
 Exec=io.github.lavenderdotpet.LibreQuake.sh ironwail
 
 [Desktop Action quakespasm]
@@ -26,20 +26,10 @@ Exec=io.github.lavenderdotpet.LibreQuake.sh quakespasm
 
 [Desktop Action qssm]
 Name=QSS-M
-Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
+Icon=io.github.lavenderdotpet.LibreQuake.qss-m
 Exec=io.github.lavenderdotpet.LibreQuake.sh qssm
 
 # [Desktop Action vkquake]
 # Name=VkQuake
-# Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
+# Icon=io.github.lavenderdotpet.LibreQuake.vkquake
 # Exec=io.github.lavenderdotpet.LibreQuake.sh vkquake
-#
-# [Desktop Action fteqw]
-# Name=FTEQW
-# Icon=io.github.lavenderdotpet.LibreQuake.fteqw
-# Exec=io.github.lavenderdotpet.LibreQuake.sh fteqw
-#
-# [Desktop Action tyrquake]
-# Name=TyrQuake
-# Icon=io.github.lavenderdotpet.LibreQuake.tyrquake
-# Exec=io.github.lavenderdotpet.LibreQuake.sh tyrquake
