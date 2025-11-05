@@ -62,12 +62,13 @@ Additionally, as this repository contains multiple diverse components, we ask th
 * `BUILD`: Modification of our build scripts and/or tools.
 * `CI`: Modification of the GitHub Actions Pipeline(s).
 * `GFX`: Modification of **game** (not map) textures.
-* `GH`: Modifiation of any repository-related elements (screenshots, readme, etc.)
+* `GIT`: Modifiation of any repository-related elements (screenshots, readme, etc.)
 * `MAPS`: Modification of `.map` files.
 * `MODELS`: Modification of models, both `.blend` and exported `.mdl`
 * `QC`: Modification of QuakeC source code.
 * `AUDIO`: Modification of game sound effects or music.
 * `WADS`: Modification of **map** textures, to be packed into a `.wad` during the build process.
+* `META`: Modification of meta data (like .desktop files or the flatpak .xml files)
 
 Here is a good example for a commit subject line:
 
