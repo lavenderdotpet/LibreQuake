@@ -70,6 +70,32 @@
     <content_attribute id="social-chat">intense</content_attribute>
   </content_rating>
   <releases>
-    <release version="v0.08-beta" date="2024-11-09" />
+    <release version="v0.09-beta" date="2025-11-05">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.09-beta</url>
+    </release>
+    <release version="v0.08-beta" date="2024-11-09">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.08-beta</url>
+    </release>
+    <release version="v0.07-beta" date="2024-08-16">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.07-beta</url>
+    </release>
+    <release version="v0.06-beta" date="2024-02-03">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.06-beta</url>
+    </release>
+    <release version="v0.05-beta" date="2023-12-21">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.05-beta</url>
+    </release>
+    <release version="v0.04-beta" date="2023-12-13">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.04-beta</url>
+    </release>
+    <release version="v0.03-beta" date="2023-12-08">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.03-beta</url>
+    </release>
+    <release version="v0.02-beta" date="2022-01-08">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.02-beta</url>
+    </release>
+    <release version="v0.01-beta" date="2022-01-07">
+      <url type="details">https://github.com/lavenderdotpet/LibreQuake/releases/tag/v0.01-beta</url>
+    </release>
   </releases>
 </component>
