@@ -19,16 +19,24 @@
       game, but LibreQuake by itself is just the raw material for a game. It must be paired
       with a compatible engine to be played.</p>
     <p>There is a massive back catalogue, spanning over two decades, containing thousands of
-      Quake levels and other modifications (“mods”) made by fans of the game. LibreQuake
+      Quake levels and other modifications ("mods") made by fans of the game. LibreQuake
       aims to be compatible with these and allows most to be played without the need to use non-free
       software.</p>
     <p>To install mods for the flatpak version of LibreQuake you need to place them in the
-      <code>~/.var/app/io.github.lavenderdotpet.LibreQuake/.quakespasm/</code> directory.
-      This is were your config, screenshots and demos are located too.</p>
+      <code>~/.var/app/io.github.lavenderdotpet.LibreQuake/data/</code> directory.
+      This is were your config, screenshots and demos are located too. Maps for the basic version
+      of Quake are stored in the <code>id1</code> subdirectory of this path.</p>
     <p>Disclaimer: In its current form LibreQuake is a work in progress effort which may
       include placeholder assets, missing textures or unfinished parts.</p>
-    <p>This release is bundled with the quakespasm sourceport which is released under the
-      GPL-2.0 license. See the Github page for details about used licenses.</p>
+    <p>This release is bundled with multiple modernised ports of the original Quake engine source
+      code in order to accommodate a range of use cases. All of these are themselves released under
+      the GPL-2.0 license:</p>
+    <ul>
+      <li>Ironwail, a port focused on improving performance for highly complex maps and mods</li>
+      <li>QuakeSpasm, a basic modern port of the Quake engine and the basis of the others</li>
+      <li>QSS-M, to provide OpenGL 1.2/2.x support for older hardware</li>
+    </ul>
+    <p>Please see the LibreQuake Github page for details about used licenses.</p>
   </description>
   <branding>
     <color type="primary" scheme_preference="light">#c8b2ff</color>
