@@ -7,7 +7,7 @@ Terminal=false
 Type=Application
 Categories=Game;ActionGame
 Keywords=quake;librequake
-Actions=open-user-dir;ironwail;quakespasm;vkquake;qssm
+Actions=open-user-dir;ironwail;quakespasm;qssm
 
 [Desktop Action open-user-dir]
 Name=Open user content directory
@@ -16,7 +16,7 @@ Exec=io.github.lavenderdotpet.LibreQuake.open-userdir.sh
 
 [Desktop Action ironwail]
 Name=Ironwail
-Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
+Icon=io.github.lavenderdotpet.LibreQuake.ironwail
 Exec=io.github.lavenderdotpet.LibreQuake.sh ironwail
 
 [Desktop Action quakespasm]
@@ -24,22 +24,12 @@ Name=QuakeSpasm
 Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
 Exec=io.github.lavenderdotpet.LibreQuake.sh quakespasm
 
-[Desktop Action vkquake]
-Name=VkQuake
-Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
-Exec=io.github.lavenderdotpet.LibreQuake.sh vkquake
-
 [Desktop Action qssm]
 Name=QSS-M
-Icon=io.github.lavenderdotpet.LibreQuake.quakespasm
+Icon=io.github.lavenderdotpet.LibreQuake.qss-m
 Exec=io.github.lavenderdotpet.LibreQuake.sh qssm
 
-# [Desktop Action fteqw]
-# Name=FTEQW
-# Icon=io.github.lavenderdotpet.LibreQuake.fteqw
-# Exec=io.github.lavenderdotpet.LibreQuake.sh fteqw
-#
-# [Desktop Action tyrquake]
-# Name=TyrQuake
-# Icon=io.github.lavenderdotpet.LibreQuake.tyrquake
-# Exec=io.github.lavenderdotpet.LibreQuake.sh tyrquake
+# [Desktop Action vkquake]
+# Name=VkQuake
+# Icon=io.github.lavenderdotpet.LibreQuake.vkquake
+# Exec=io.github.lavenderdotpet.LibreQuake.sh vkquake
