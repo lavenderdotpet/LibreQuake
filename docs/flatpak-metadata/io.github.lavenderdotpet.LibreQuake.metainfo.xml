@@ -8,9 +8,6 @@
   <developer id="sh.queer.librequake">
     <name>LQ Team</name>
   </developer>
-  <provides>
-    <id>librequake.desktop</id>
-  </provides>
   <name>LibreQuake</name>
   <summary>Cosmic horror first-person shooter</summary>
   <launchable type="desktop-id">io.github.lavenderdotpet.LibreQuake.desktop</launchable>
@@ -63,6 +60,27 @@
       <image type="source">https://librequake.queer.sh/media/flatpak/storepage01.png</image>
     </screenshot>
   </screenshots>
+  <categories>
+    <category>Game</category>
+  </categories>
+  <keywords>
+    <keyword>shooter</keyword>
+    <keyword>retro</keyword>
+    <keyword>quake</keyword>
+  </keywords>
+  <provides>
+    <id>librequake.desktop</id>
+    <binary>quakespasm</binary>
+    <binary>ironwail</binary>
+    <binary>qss-m</binary>
+  </provides>
+  <supports>
+    <control>gamepad</control>
+  </supports>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+  </recommends>
   <!-- https://hughsie.github.io/oars/generate.html -->
   <content_rating type="oars-1.1">
     <content_attribute id="violence-fantasy">intense</content_attribute>
