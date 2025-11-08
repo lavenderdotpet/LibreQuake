@@ -11,20 +11,20 @@ function write_engine_config {
 
 if [[ ! -f "${HIDE_LAUNCHER}" ]]; then
 
-#     FALSE "FTEQW (Multiplayer)" \
-#     FALSE "TyrQuake (Software rendering)" \
+#     FALSE "fteqw (Multiplayer)" \
+#     FALSE "vkQuake (Vulkan renderer)" \
 
   CHOICE=$(zenity --list --radiolist --hide-header --modal --width=600 --height=400 \
     --column="" --column="" \
     TRUE "Ironwail (Default)" \
     FALSE "QuakeSpasm (Basic modern engine)" \
-    FALSE "VkQuake (Vulkan renderer)" \
     FALSE "QSS-M (OpenGL 1.x/2.x for older hardware)" \
     --title "LibreQuake Launcher" \
     --text "Select which engine to launch" \
     --extra-button "Open user content directory" \
     --ok-label "Launch" \
-    --cancel-label "Quit")
+    --cancel-label "Quit" \
+    --window-icon "/app/share/icons/hicolor/scalable/apps/io.github.lavenderdotpet.LibreQuake.svg")
 
   case "$CHOICE" in
     "Open user content directory")
@@ -37,17 +37,14 @@ if [[ ! -f "${HIDE_LAUNCHER}" ]]; then
     "Ironwail"*)
       write_engine_config "ironwail"
       ;;
-    "VkQuake"*)
+    "vkQuake"*)
       write_engine_config "vkquake"
       ;;
     "fteqw"*)
       write_engine_config "fteqw"
       ;;
-    "qss-m"*)
+    "QSS-M"*)
       write_engine_config "qssm"
-      ;;
-    "TyrQuake"*)
-      write_engine_config "tyrquake"
       ;;
     *)
       exit 1
@@ -69,4 +66,6 @@ elif [[ $exitcode -eq 0 ]]; then
   fi
   echo "Launching LibreQuake using ${ENGINE} ${GAME_ARGS}..."
   ${ENGINE} -basedir /app/share/games/librequake ${GAME_ARGS}
+  # Once engines start merging the -userdir update from QuakeSpasm, we can use it instead of engine patches
+  # ${ENGINE} -basedir /app/share/games/librequake -userdir ${XDG_DATA_HOME} ${GAME_ARGS}
 fi
