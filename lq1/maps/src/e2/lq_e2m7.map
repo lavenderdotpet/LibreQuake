@@ -12508,7 +12508,8 @@
 // entity 8
 {
 "classname" "light"
-"origin" "-912 520 224"
+"origin" "-912 520 192"
+"light" "220"
 }
 // entity 9
 {
@@ -16089,6 +16090,7 @@
 {
 "classname" "item_spikes"
 "origin" "-864 3184 320"
+"spawnflags" "1"
 }
 // entity 254
 {
@@ -16839,7 +16841,7 @@
 }
 // entity 288
 {
-"classname" "monster_shalrath"
+"classname" "monster_shambler"
 "origin" "-1424 3584 376"
 "targetname" "guardian2"
 "target" "exit_counter"
@@ -16974,7 +16976,7 @@
 }
 // entity 302
 {
-"classname" "monster_shalrath"
+"classname" "monster_shambler"
 "origin" "-1568 3584 376"
 "targetname" "guardian2"
 "target" "exit_counter"
@@ -17076,6 +17078,7 @@
 {
 "classname" "item_spikes"
 "origin" "-800 2224 320"
+"spawnflags" "1"
 }
 // entity 320
 {
