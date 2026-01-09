@@ -40,6 +40,7 @@
     <color type="primary" scheme_preference="dark">#241f31</color>
   </branding>
   <url type="homepage">https://librequake.queer.sh/</url>
+  <url type="vcs-browser">https://github.com/lavenderdotpet/LibreQuake</url>
   <url type="bugtracker">https://github.com/lavenderdotpet/LibreQuake/issues</url>
   <url type="contribute">https://github.com/lavenderdotpet/LibreQuake</url>
   <screenshots>
