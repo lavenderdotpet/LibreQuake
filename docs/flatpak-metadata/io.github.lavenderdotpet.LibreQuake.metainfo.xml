@@ -42,7 +42,7 @@
   <url type="homepage">https://librequake.queer.sh/</url>
   <url type="vcs-browser">https://github.com/lavenderdotpet/LibreQuake</url>
   <url type="bugtracker">https://github.com/lavenderdotpet/LibreQuake/issues</url>
-  <url type="contribute">https://github.com/lavenderdotpet/LibreQuake</url>
+  <url type="contribute">https://github.com/lavenderdotpet/LibreQuake/issues/223</url>
   <screenshots>
     <screenshot type="default">
       <caption>LibreQuake</caption>
