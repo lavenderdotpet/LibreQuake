@@ -4,7 +4,7 @@
         "base_dir": "id1",
         "components": [
             "docs",
-            "root",
+            "demos",
             "progs",
             "config",
             "sounds",
@@ -22,7 +22,7 @@
         "base_dir": "lq1",
         "components": [
             "docs",
-            "root",
+            "demos",
             "progs",
             "sounds",
             "music",
@@ -39,7 +39,7 @@
         "base_dir": "id1",
         "components": [
             "docs",
-            "root",
+            "demos",
             "progs",
             "config",
             "sounds",
@@ -56,7 +56,7 @@
         "base_dir": "lq1",
         "components": [
             "docs",
-            "root",
+            "demos",
             "progs",
             "sounds",
             "music",
@@ -85,6 +85,18 @@
             "docs",
             "texture_wads",
             "mapsrc"
+        ]
+    },
+    "tc-base": {
+        "is_full_release": true,
+        "base_dir": "id1",
+        "components": [
+            "docs",
+            "progs",
+            "sounds",
+            "models",
+            "brush_models",
+            "gfx"
         ]
     }
 }

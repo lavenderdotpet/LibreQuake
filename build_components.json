@@ -29,11 +29,10 @@
             "docs/branding/steam/logo.png"
         ]
     },
-    "root": {
+    "demos": {
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
-            "gfx.wad",
             "demo1.dem",
             "demo2.dem",
             "demo3.dem"
@@ -782,6 +781,7 @@
         "base_dir": "lq1",
         "source_if_missing": "",
         "files_pak0": [
+            "gfx.wad",
             "gfx/bigbox.lmp",
             "gfx/box_bl.lmp",
             "gfx/box_bm.lmp",
