@@ -45,19 +45,11 @@
   <screenshots>
     <screenshot type="default">
       <caption>LibreQuake</caption>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage01.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>LibreQuake</caption>
       <image type="source">https://librequake.queer.sh/media/flatpak/storepage02.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage04.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage06.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage05.png</image>
     </screenshot>
     <screenshot>
       <caption>LibreQuake</caption>
@@ -65,7 +57,15 @@
     </screenshot>
     <screenshot>
       <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage01.png</image>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage04.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>LibreQuake</caption>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage05.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>LibreQuake</caption>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage06.png</image>
     </screenshot>
   </screenshots>
   <categories>
