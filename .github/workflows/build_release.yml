@@ -140,6 +140,11 @@ jobs:
       with:
         name: dev
         path: releases/dev
+    - name: Upload tc-base
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+      with:
+        name: tc-base
+        path: releases/tc-base
 
   upload_to_release_page:
     if: github.event_name == 'release'
@@ -147,7 +152,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        release_type: [full, mod, lite, mod_lite, server, dev]
+        release_type: [full, mod, lite, mod_lite, server, dev, tc-base]
     steps:
       - name: Download release artifacts
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
