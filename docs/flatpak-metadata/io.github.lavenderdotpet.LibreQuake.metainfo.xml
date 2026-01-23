@@ -36,8 +36,8 @@
     <p>Please see the LibreQuake Github page for details about used licenses.</p>
   </description>
   <branding>
-    <color type="primary" scheme_preference="light">#c8b2ff</color>
-    <color type="primary" scheme_preference="dark">#241f31</color>
+    <color type="primary" scheme_preference="light">#7fbfff</color>
+    <color type="primary" scheme_preference="dark">#a35d46</color>
   </branding>
   <url type="homepage">https://librequake.queer.sh/</url>
   <url type="bugtracker">https://github.com/lavenderdotpet/LibreQuake/issues</url>
