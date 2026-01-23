@@ -44,28 +44,28 @@
   <url type="contribute">https://github.com/lavenderdotpet/LibreQuake</url>
   <screenshots>
     <screenshot type="default">
-      <caption>LibreQuake</caption>
+      <caption>A combat encounter in a castle courtyard</caption>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage01.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Knights and abyssal creatures in a village</caption>
       <image type="source">https://librequake.queer.sh/media/flatpak/storepage02.png</image>
     </screenshot>
     <screenshot>
-      <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage04.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage06.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage05.png</image>
-    </screenshot>
-    <screenshot>
-      <caption>LibreQuake</caption>
+      <caption>Fighting a Barrel Fang guarding an ancient temple</caption>
       <image type="source">https://librequake.queer.sh/media/flatpak/storepage03.png</image>
     </screenshot>
     <screenshot>
-      <caption>LibreQuake</caption>
-      <image type="source">https://librequake.queer.sh/media/flatpak/storepage01.png</image>
+      <caption>Human bases overrun with the undead</caption>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage04.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Strange realms and eldritch horrors</caption>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage05.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Monstrosities to bring the end of you</caption>
+      <image type="source">https://librequake.queer.sh/media/flatpak/storepage06.png</image>
     </screenshot>
   </screenshots>
   <categories>
