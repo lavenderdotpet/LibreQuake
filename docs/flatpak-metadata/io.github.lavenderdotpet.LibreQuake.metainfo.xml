@@ -40,8 +40,9 @@
     <color type="primary" scheme_preference="dark">#a35d46</color>
   </branding>
   <url type="homepage">https://librequake.queer.sh/</url>
+  <url type="vcs-browser">https://github.com/lavenderdotpet/LibreQuake</url>
   <url type="bugtracker">https://github.com/lavenderdotpet/LibreQuake/issues</url>
-  <url type="contribute">https://github.com/lavenderdotpet/LibreQuake</url>
+  <url type="contribute">https://github.com/lavenderdotpet/LibreQuake/issues/223</url>
   <screenshots>
     <screenshot type="default">
       <caption>A combat encounter in a castle courtyard</caption>
