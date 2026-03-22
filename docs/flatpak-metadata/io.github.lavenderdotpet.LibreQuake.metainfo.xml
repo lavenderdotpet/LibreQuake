@@ -12,18 +12,18 @@
   <summary>Cosmic horror first-person shooter</summary>
   <launchable type="desktop-id">io.github.lavenderdotpet.LibreQuake.desktop</launchable>
   <description>
-    <p>The LibreQuake project aims to create a complete, free content first-person shooter
-      game, but LibreQuake by itself is just the raw material for a game. It must be paired
+    <p>The LibreQuad project aims to create a complete, free content first-person shooter
+      game, but LibreQuad by itself is just the raw material for a game. It must be paired
       with a compatible engine to be played.</p>
     <p>There is a massive back catalogue, spanning over two decades, containing thousands of
-      Quake levels and other modifications ("mods") made by fans of the game. LibreQuake
+      Quake levels and other modifications ("mods") made by fans of the game. LibreQuad
       aims to be compatible with these and allows most to be played without the need to use non-free
       software.</p>
-    <p>To install mods for the flatpak version of LibreQuake you need to place them in the
+    <p>To install mods for the flatpak version of LibreQuad you need to place them in the
       <code>~/.var/app/io.github.lavenderdotpet.LibreQuake/data/</code> directory.
       This is were your config, screenshots and demos are located too. Maps for the basic version
       of Quake are stored in the <code>id1</code> subdirectory of this path.</p>
-    <p>Disclaimer: In its current form LibreQuake is a work in progress effort which may
+    <p>Disclaimer: In its current form LibreQuad is a work in progress effort which may
       include placeholder assets, missing textures or unfinished parts.</p>
     <p>This release is bundled with multiple modernised ports of the original Quake engine source
       code in order to accommodate a range of use cases. All of these are themselves released under
@@ -33,7 +33,7 @@
       <li>QuakeSpasm, a basic modern port of the Quake engine and the basis of the others</li>
       <li>QSS-M, to provide OpenGL 1.2/2.x support for older hardware</li>
     </ul>
-    <p>Please see the LibreQuake Github page for details about used licenses.</p>
+    <p>Please see the LibreQuad Github page for details about used licenses.</p>
   </description>
   <branding>
     <color type="primary" scheme_preference="light">#7fbfff</color>

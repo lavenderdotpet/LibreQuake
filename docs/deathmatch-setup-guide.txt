@@ -1,7 +1,7 @@
 ======================
 Setting up a LAN Match
 ======================
-All players must download and install LibreQuake with the FTEQW engine as per the installation section of the readme file. (This guide assumes all players are using FTEQW for their engine.) All players must be connected to the same network, preferably using a wired ethernet connection.
+All players must download and install LibreQuad with the FTEQW engine as per the installation section of the readme file. (This guide assumes all players are using FTEQW for their engine.) All players must be connected to the same network, preferably using a wired ethernet connection.
 
 While you set up the server, have the other players go into the "Online -> Setup" menu to set their player name and color.
 
@@ -18,7 +18,7 @@ Then press "Start Game".
 
 To connect to your server, the other players will need to go to "Online -> Join Game". This will open the server list. Your server should show up at the very top. They may need to click "Refresh" at the top of the screen in order to see it.
 
-Once everyone connects, you should be ready to play LibreQuake deathmatch! Have fun!
+Once everyone connects, you should be ready to play LibreQuad deathmatch! Have fun!
 
 If you are still having issues, see the "Troubleshooting" section below. If you would like to learn more advanced setup, see the "Useful Console Commands" section below.
 
@@ -36,7 +36,7 @@ If a player finds your server but gets an error when they try to connect, check 
 	- Unknown command "nqconnect"
 		- Make sure "Show NQ" is off in the server browser filters and "Show QW" is on.
 	- You have been kicked due to the file maps/lqdm1.bsp being modfied
-		- Make sure everyone is using the latest version of LibreQuake.
+		- Make sure everyone is using the latest version of LibreQuad.
 
 
 =======================
@@ -60,7 +60,7 @@ For more settings, see the "Server Infokeys" section below.
 ========
 Map List
 ========
-LibreQuake comes with 13 deathmatch maps. You can change the map using the "changelevel" console command.
+LibreQuad comes with 13 deathmatch maps. You can change the map using the "changelevel" console command.
 
 changelevel lqdm1	Solstice: A small winter castle with a simple layout. This is a good map to start on.
 changelevel lqdm2	Torture Pit: An acid-flooded dungeon with only lower-tier weapons.
