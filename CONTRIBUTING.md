@@ -1,8 +1,8 @@
-# How to Contribute to the LibreQuake Project
+# How to Contribute to the LibreQuad Project
 
 ## Background
 
-Previously we have had a very much archaic and unstandardized approach to how we accept contributions to the LibreQuake project. This has had quite a few problems as a result, some examples being:
+Previously we have had a very much archaic and unstandardized approach to how we accept contributions to the LibreQuad project. This has had quite a few problems as a result, some examples being:
 
 * A "dirty" git log, making tracking regressions or general progress difficult
 * Lack of quality control (Does this change actually work? Does the project still build? Are the contribution detais easy to read and understand?)
@@ -18,7 +18,7 @@ You must be careful when basing on existing graphics or sounds. Most Quake proje
 
 The general rules go as follows:
 
-You must have permission for everything you submit. If you make your own resources, do not base them on resources from Quake or any other restricted work. If you take work from other places, please make sure that the work is freely-licensed or that you obtain permission to include it in the LibreQuake project. They may not place additional restrictions compared to the normal LibreQuake license.
+You must have permission for everything you submit. If you make your own resources, do not base them on resources from Quake or any other restricted work. If you take work from other places, please make sure that the work is freely-licensed or that you obtain permission to include it in the LibreQuad project. They may not place additional restrictions compared to the normal LibreQuad license.
 
 Do not try to emulate Quake resources exactly. Where possible, put effort to make new versions look visibly different from Quake. This is a tough call because our compatibility with Quake mods limits how far we can deviate, but it is feasible.
 
@@ -26,7 +26,7 @@ Be especially careful of “free textures” (or “free sounds” or “free gr
 
 ## Levels
 
-Not all levels for LibreQuake must be vanilla-compatible Winquake/vanilla-compatible levels will have their own episode
+Not all levels for LibreQuad must be vanilla-compatible Winquake/vanilla-compatible levels will have their own episode
 
 It is sensible to also heed the following guidelines:
 
@@ -34,14 +34,14 @@ It is sensible to also heed the following guidelines:
 
 2. Try to make levels appropriately difficult for their position within the progression of the game. Also bear in mind that not all players may be as skilled a player as you.
 
-3. While unrestricted by limits, do not make excessively complicated scenes. It is desirable that LibreQuake levels should be playable on low-powered hardware, such as phones and old computers.
+3. While unrestricted by limits, do not make excessively complicated scenes. It is desirable that LibreQuad levels should be playable on low-powered hardware, such as phones and old computers.
 
 
 ## Branches
 
 Please do not generalize branches. Use branches for specific features or concepts.
 
-If you are a Collaborator (meaning, if you are added to the LibreQuake repository and have administrative control) it is required that your branch naming scheme is as follows:
+If you are a Collaborator (meaning, if you are added to the LibreQuad repository and have administrative control) it is required that your branch naming scheme is as follows:
 
 `{username}/{change-subject}`
 

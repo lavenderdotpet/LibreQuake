@@ -23,7 +23,7 @@ See "CONTRIBUTING.md" for details.
 ### Checklist
 ---
 
-- [ ] I have read the LibreQuake contribution guidelines
+- [ ] I have read the LibreQuad contribution guidelines
 - [ ] I have thoroughly tested my changes to the best of my ability
-- [ ] I confirm I have not contributed anything that would impact LibreQuake's licensing and usage
+- [ ] I confirm I have not contributed anything that would impact LibreQuad's licensing and usage
 - [ ] This Pull Request fixes a **critical** issue that should be reviewed and merged as soon as possible
