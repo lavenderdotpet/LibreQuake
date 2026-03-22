@@ -1,1 +1,0 @@
-qpakman -e name.wad -o e
