@@ -36,7 +36,8 @@
             "gfx.wad",
             "demo1.dem",
             "demo2.dem",
-            "demo3.dem"
+            "demo3.dem",
+            "levelshots.pk3"
         ],
         "files_pak1": [],
         "files_unpacked": []
