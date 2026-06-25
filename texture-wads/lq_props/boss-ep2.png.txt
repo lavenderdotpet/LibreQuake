@@ -1,0 +1,2 @@
+source image: https://commons.wikimedia.org/wiki/File:Rondanini_Medusa_Glyptothek_Munich_252_n2.jpg
+ attribution: Glyptothek, Public domain, via Wikimedia Commons
