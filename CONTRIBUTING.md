@@ -2,7 +2,7 @@
 
 ## Background
 
-Previously we have had a very much archaic and nonstandard approach to how we accept contributions to the LibreQuake project. This has had quite a few problems as a result, some examples being:
+Previously we have had a very much archaic and unstandardized approach to how we accept contributions to the LibreQuake project. This has had quite a few problems as a result, some examples being:
 
 * A "dirty" git log, making tracking regressions or general progress difficult
 * Lack of quality control (Does this change actually work? Does the project still build? Are the contribution details easy to read and understand?)
