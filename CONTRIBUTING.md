@@ -2,11 +2,11 @@
 
 ## Background
 
-Previously we have had a very much archaic and unstandardized approach to how we accept contributions to the LibreQuake project. This has had quite a few problems as a result, some examples being:
+Previously we have had a very much archaic and nonstandard approach to how we accept contributions to the LibreQuake project. This has had quite a few problems as a result, some examples being:
 
 * A "dirty" git log, making tracking regressions or general progress difficult
-* Lack of quality control (Does this change actually work? Does the project still build? Are the contribution detais easy to read and understand?)
-* Overly or underly verbose commit messages
+* Lack of quality control (Does this change actually work? Does the project still build? Are the contribution details easy to read and understand?)
+* Overly or inadequately verbose commit messages
 
 These problems became more exacerbated as more eyes and contributors have appeared. As a result, this contribution guide has been drafted to hopefully address all of these problems and make for a cleaner and easier to work on project.
 
@@ -62,7 +62,7 @@ Additionally, as this repository contains multiple diverse components, we ask th
 * `BUILD`: Modification of our build scripts and/or tools.
 * `CI`: Modification of the GitHub Actions Pipeline(s).
 * `GFX`: Modification of **game** (not map) textures.
-* `GIT`: Modifiation of any repository-related elements (screenshots, readme, etc.)
+* `GIT`: Modification of any repository-related elements (screenshots, readme, etc.)
 * `MAPS`: Modification of `.map` files.
 * `MODELS`: Modification of models, both `.blend` and exported `.mdl`
 * `QC`: Modification of QuakeC source code.
@@ -78,13 +78,13 @@ When more detail about a change is necessary, please take the opportunity to wri
 
 If your commit addresses an open issue, be sure to include the issue in the commit message body.
 
-If you are committing on behalf of someone, please use the [Co-Author feature](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) if they other author has a GitHub profile. If they do not, please credit them in the commit body at the very bottom of the message as to keep the flow of the commit organized. You may use any source platform of their choice to refer to them as long as it complies with GitHub's Terms of Service.
+If you are committing on behalf of someone, please use the [Co-Author feature](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) if the other author has a GitHub profile. If they do not, please credit them in the commit body at the very bottom of the message as to keep the flow of the commit organized. You may use any source platform of their choice to refer to them as long as it complies with GitHub's Terms of Service.
 
 ## Pull Requests
 
 Please keep Pull Requests on-topic. The Pull Request title should follow the same naming convention as your commit messages for clarity.
 
-It is required that you provide both a detailed desctription of your changes as well as visualization of your changes being functional in-game. The Pull Request template will guide you through this.
+It is required that you provide both a detailed description of your changes as well as visualization of your changes being functional in-game. The Pull Request template will guide you through this.
 
 Be mindful that Pull Requests are scrutinized and reviewed carefully to mitigate any potential problems a Collaborator may discover. It is important for us to verify and test your changes independently as well. We will leave reviews and mark appropriately when we request changes and are happy to turn the request into a discussion.
 
