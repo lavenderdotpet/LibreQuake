@@ -466,6 +466,10 @@
         "files_pak0": [
             "maps/dev.bsp",
             "maps/dev.lit",
+            "maps/start_e0.bsp",
+            "maps/start_e0.lit",
+            "maps/lq_start.bsp",
+            "maps/lq_start.lit",
             "maps/start.bsp",
             "maps/start.lit",
             "maps/lq_e1m1.bsp",
