@@ -67,7 +67,7 @@
 
 #define LOC_CLIENT_JOIN				" joined the server"
 #define LOC_CLIENT_EXIT_LEVEL		" exited the level"
-#define LOC_CLIENT_DISCON_A			" left the server the game with "
+#define LOC_CLIENT_DISCON_A			" left the server with "
 #define LOC_CLIENT_DISCON_B			" frags"
 
 #else
@@ -116,14 +116,14 @@
 
 #define LOC_ITEM_NAME_QUADDMG			"the Crusher Sigil"
 #define LOC_ITEM_NAME_OCTDMG			"the Demolisher Sigil"
-#define LOC_ITEM_NAME_PENTPROT			"Lucifier's Protection"
+#define LOC_ITEM_NAME_PENTPROT			"Lucifer's Protection"
 #define LOC_ITEM_NAME_SHADRING			"the Eye of Enigma"
 #define LOC_ITEM_NAME_BIOSUIT			"the Diving Suit"
 #define LOC_ITEM_NAME_BACKPACK			"Backpack"
 
 #define LOC_ITEM_FADE_QUADDMG			"Your Crusher Sigil is fading..."
 #define LOC_ITEM_FADE_OCTDMG			"Your Demolisher Sigil is fading..."
-#define LOC_ITEM_FADE_PENTPROT			"Lucifier's Protection is fading..."
+#define LOC_ITEM_FADE_PENTPROT			"Lucifer's Protection is fading..."
 #define LOC_ITEM_FADE_SHADRING			"The Eye of Enigma is fading..."
 #define LOC_ITEM_FADE_BIOSUIT			"Air in Diving Suit is running out..."
 
@@ -135,12 +135,12 @@
 
 #else
 
-#define LOC_ITEM_NAME_QUADDMG			"Quad Damage"
-#define LOC_ITEM_NAME_OCTDMG			"OctaPower"
-#define LOC_ITEM_NAME_PENTPROT			"Pentagram of Protection"
-#define LOC_ITEM_NAME_SHADRING			"Ring of Shadows"
-#define LOC_ITEM_NAME_BIOSUIT			"Biosuit"
-#define LOC_ITEM_NAME_BACKPACK			"Backpack"
+#define LOC_ITEM_NAME_QUADDMG			"the Quad Damage"
+#define LOC_ITEM_NAME_OCTDMG			"the OctaPower"
+#define LOC_ITEM_NAME_PENTPROT			"the Pentagram of Protection"
+#define LOC_ITEM_NAME_SHADRING			"the Ring of Shadows"
+#define LOC_ITEM_NAME_BIOSUIT			"the Biosuit"
+#define LOC_ITEM_NAME_BACKPACK			"the Backpack"
 
 #define LOC_ITEM_FADE_QUADDMG			"Quad Damage is wearing off"
 #define LOC_ITEM_FADE_OCTDMG			"OctaPower is wearing off"
@@ -175,7 +175,7 @@
 
 #else
 
-#define LOC_WEAPON_NAME_AXE				"Axe"	// Unused..
+#define LOC_WEAPON_NAME_AXE				"Axe"	    // Unused..
 #define LOC_WEAPON_NAME_SHOTGUN			"Shotgun"   // Unused..
 #define LOC_WEAPON_NAME_SUPER_SHOTGUN   "Double-barrelled Shotgun"
 #define LOC_WEAPON_NAME_NAILGUN			"nailgun"
@@ -280,7 +280,7 @@
 #define LOC_DEATH_SHALRATH 				" was blasted by a Servant of Nyarlathotep"
 #define LOC_DEATH_TARBABY 				" was swarmed by a Bog Face"
 #define LOC_DEATH_BOSS 					" was obliterated by Cthulhi"
-#define LOC_DEATH_OLDONE 				" became one with Shoggoth"
+#define LOC_DEATH_OLDONE 				" joins the legions of Shoggoth" // Unused..
 
 #else
 
@@ -297,8 +297,8 @@
 #define LOC_DEATH_SHAMBLER 				" was smashed by a Shambler"
 #define LOC_DEATH_SHALRATH 				" was exploded by a Vore"
 #define LOC_DEATH_TARBABY 				" was slimed by a Spawn"
-#define LOC_DEATH_BOSS 					" was blasted by Cthulhi"
-#define LOC_DEATH_OLDONE 				" became one with Shub-Niggurath"
+#define LOC_DEATH_BOSS 					" was shamefully killed by Chthon"
+#define LOC_DEATH_OLDONE 				" became one with Shub-Niggurath" // Unused..
 
 #endif // __LIBREQUAKE__
 
@@ -333,7 +333,7 @@
 #define LOC_DEATH_DISCHARGE_WATER		" took a toaster bath"
 #define LOC_DEATH_DISCHARGE_SLIME		" took a toaster bath"
 #define LOC_DEATH_DISCHARGE_LAVA		" took a toaster bath"
-#define LOC_DEATH_DISCHARGE_SELF		"'s Lightning Gun Malfunctioned"
+#define LOC_DEATH_DISCHARGE_SELF		"'s Lightning Gun malfunctioned"
 #define LOC_DEATH_SELF_GRENADE			" didn't launch the grenade far enough"
 #define LOC_DEATH_SELF_ROCKET			" played with explosives"
 #define LOC_DEATH_SELF_OTHER			" misfired"
