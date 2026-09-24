@@ -135,12 +135,12 @@
 
 #else
 
-#define LOC_ITEM_NAME_QUADDMG			"Quad Damage"
-#define LOC_ITEM_NAME_OCTDMG			"OctaPower"
-#define LOC_ITEM_NAME_PENTPROT			"Pentagram of Protection"
-#define LOC_ITEM_NAME_SHADRING			"Ring of Shadows"
-#define LOC_ITEM_NAME_BIOSUIT			"Biosuit"
-#define LOC_ITEM_NAME_BACKPACK			"Backpack"
+#define LOC_ITEM_NAME_QUADDMG			"the Quad Damage"
+#define LOC_ITEM_NAME_OCTDMG			"the OctaPower"
+#define LOC_ITEM_NAME_PENTPROT			"the Pentagram of Protection"
+#define LOC_ITEM_NAME_SHADRING			"the Ring of Shadows"
+#define LOC_ITEM_NAME_BIOSUIT			"the Biosuit"
+#define LOC_ITEM_NAME_BACKPACK			"the Backpack"
 
 #define LOC_ITEM_FADE_QUADDMG			"Quad Damage is wearing off"
 #define LOC_ITEM_FADE_OCTDMG			"OctaPower is wearing off"
