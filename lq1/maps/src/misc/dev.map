@@ -3267,7 +3267,7 @@
 // entity 206
 {
 "classname" "light"
-"origin" "-216 184 -88"
+"origin" "-120 184 -88"
 "delay" "2"
 "light" "1"
 "_surface" "light"
@@ -3303,7 +3303,7 @@
 // entity 210
 {
 "classname" "light"
-"origin" "-184 184 -88"
+"origin" "-88 184 -88"
 "_color" "1 1 1"
 "_surface" "*teleport"
 "light" "150"
