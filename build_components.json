@@ -36,11 +36,13 @@
             "gfx.wad",
             "demo1.dem",
             "demo2.dem",
-            "demo3.dem",
-            "levelshots.pk3"
+            "demo3.dem"
+
         ],
         "files_pak1": [],
-        "files_unpacked": []
+        "files_unpacked": [
+            "levelshots.pk3"
+        ]
     },
     "progs": {
         "base_dir": "lq1",
