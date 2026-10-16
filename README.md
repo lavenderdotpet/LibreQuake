@@ -8,6 +8,7 @@
 <h1></h1>
 <p align="center"><img src="docs/branding/icon.svg" alt="libre quake icon" width="10%" /></p>
 <h1><p align="center">LibreQuake</p></h1>
+
 The *LibreQuake* project aims to create a complete, free content first-person shooter game, but *LibreQuake* by itself is just the raw material for a game. It must be paired with a compatible engine to be played.
 
 
