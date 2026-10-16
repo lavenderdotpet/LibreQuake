@@ -40,7 +40,9 @@
             "levelshots.pk3"
         ],
         "files_pak1": [],
-        "files_unpacked": []
+        "files_unpacked": [
+            "descript.ion"
+        ]
     },
     "progs": {
         "base_dir": "lq1",
