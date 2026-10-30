@@ -1,5 +1,8 @@
 ![under construction header image](/screenshots/under_construction.png)  
-  
+
+## [BSD3 License](copying)
+LibreQuakes License
+
 ## [AUDIO: Index](audio.md)  
 Index of all our audio assets.  
 ## [CONTRIBUTORS: Index](contributors.md)  
