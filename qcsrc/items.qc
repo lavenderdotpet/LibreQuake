@@ -1218,6 +1218,7 @@ void() key_touch =
 		return;
 
 	sprint (other, PRINT_LOW, LOC_ITEM_PICKUP_NORMAL);
+	sprint (other, PRINT_LOW, "the ");
 	sprint (other, PRINT_LOW, self.netname);
 	sprint (other, PRINT_LOW, "\n");
 
