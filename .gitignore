@@ -47,6 +47,9 @@ lq-pl.xcf
 *.id1
 *.ignore
 *.hide
+*.id1.*
+*.ignore.*
+*.hide.*
 
 #↓custom folders ignores↓
 *-id1-
