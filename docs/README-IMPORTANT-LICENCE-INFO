@@ -12,8 +12,9 @@ bsd3 is permissive and is what all the models textures and sounds are under
 
 gpl2 is more restrictive and just applies to the quakec, progs.dat and pop.lmp
 
-docs/COPYING [BSD3 Licence]
+docs/librequake-docs/COPYING [BSD3 Licence]
 docs/freedoom-docs/COPYING.adoc [BSD3 Licence]
+docs/blasphemer-docs/COPYING.md [BSD3 Licence]
 docs/misc-docs/LibreProgsDeluxe.md [GPL2 Licence]
 docs/misc-docs/pop.lmp.md [GPL2 Licence]
 docs/misc-docs/COPYING [GPL2 Licence]
