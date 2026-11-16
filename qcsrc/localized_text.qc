@@ -280,7 +280,7 @@
 #define LOC_DEATH_SHALRATH 				" was blasted by a Servant of Nyarlathotep"
 #define LOC_DEATH_TARBABY 				" was swarmed by a Bog Face"
 #define LOC_DEATH_BOSS 					" was obliterated by Cthulhi"
-#define LOC_DEATH_OLDONE 				" joins the legions of Shoggoth" // Unused..
+#define LOC_DEATH_OLDONE 				" joins the legions of the Watcher" // Unused..
 
 #else
 
@@ -297,8 +297,8 @@
 #define LOC_DEATH_SHAMBLER 				" was smashed by a Shambler"
 #define LOC_DEATH_SHALRATH 				" was exploded by a Vore"
 #define LOC_DEATH_TARBABY 				" was slimed by a Spawn"
-#define LOC_DEATH_BOSS 					" was shamefully killed by Chthon"
-#define LOC_DEATH_OLDONE 				" became one with Shub-Niggurath" // Unused..
+#define LOC_DEATH_BOSS 					" was shamefully killed by Chtulhi"
+#define LOC_DEATH_OLDONE 				" became one with the Watcher" // Unused..
 
 #endif // __LIBREQUAKE__
 
