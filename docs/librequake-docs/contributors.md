@@ -143,7 +143,7 @@ C: Music
 N: Kiavash Zia  
 S: kia100  
 G: @kia100  
-C: GFX, maps  
+C: GFX, maps, textures
   
 S: knekko  
 G: coscholz1984  
