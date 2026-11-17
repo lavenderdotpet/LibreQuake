@@ -5,7 +5,7 @@
 "classname" "worldspawn"
 "mapversion" "220"
 "_tb_def" "builtin:Quake.fgd"
-"wad" "../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_flesh.wad"
+"wad" "../../../../texture-wads/lq_legacy.wad;../../../../texture-wads/lq_tech.wad;../../../../texture-wads/lq_terra.wad;../../../../texture-wads/lq_liquidsky.wad;../../../../texture-wads/lq_medieval.wad;../../../../texture-wads/lq_utility.wad;../../../../texture-wads/lq_flesh.wad"
 "worldtype" "2"
 "light" "0"
 "sounds" "6"
