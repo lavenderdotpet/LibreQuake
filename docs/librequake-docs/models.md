@@ -9,7 +9,7 @@ player.mdl  - [@adaya](https://github.com/adaya), [@AlienWheelChair](https://git
   
 ## Monsters  
 boss.mdl - [@Mr-M818](https://github.com/Mr-M818), [@Nolcoz](https://github.com/Nolcoz), [@pnahratow](https://github.com/pnahratow)  
-demon.mdl - [@Mr-M818](https://github.com/Mr-M818), [@lavenderdotpet](https://github.com/lavenderdotpet), Clay  
+demon.mdl - [@Mr-M818](https://github.com/Mr-M818), [@lavenderdotpet](https://github.com/lavenderdotpet), Clay, [@Nolcoz](https://github.com/Nolcoz)  
 dog.mdl - [@Mr-M818](https://github.com/Mr-M818), [@pnahratow](https://github.com/pnahratow), [@Nolcoz](https://github.com/Nolcoz)  
 enforcer.mdl - [@azure-midsummer](https://github.com/azure-midsummer), Dr.Gajger, [@Nolcoz](https://github.com/Nolcoz)  
 fish.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet)  
@@ -35,13 +35,13 @@ h_guard.mdl - [@Nolcoz](https://github.com/Nolcoz)
 h_hellkn.mdl - [@pnahratow](https://github.com/pnahratow), [@Nolcoz](https://github.com/Nolcoz), [ValhaHazred](https://www.deviantart.com/valhahazred)  
 h_knight.mdl - [@Nolcoz](https://github.com/Nolcoz), [ValhaHazred](https://www.deviantart.com/valhahazred)  
 h_mega.mdl - [@azure-midsummer](https://github.com/azure-midsummer), Dr.Gajger, [@pnahratow](https://github.com/pnahratow)  
-h_ogre.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet) (temp) https://github.com/lavenderdotpet/LibreQuake/issues/192  
+h_ogre.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet), [@Nolcoz](https://github.com/Nolcoz) 
 h_player.mdl - [@adaya](https://github.com/adaya), [@pnahratow](https://github.com/pnahratow)  
 h_shal.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet)  
 h_shams.mdl - [@pnahratow](https://github.com/pnahratow)  
 h_wizard.mdl - [@Nolcoz](https://github.com/Nolcoz), [ValhaHazred](https://www.deviantart.com/valhahazred), [@pnahratow](https://github.com/pnahratow)  
 h_zombie.mdl - Stabby, [@Nolcoz](https://github.com/Nolcoz), serecky  
-zom_gib.mdl - [@pnahratow](https://github.com/pnahratow) (temp)  
+zom_gib.mdl - [@pnahratow](https://github.com/pnahratow), [@Nolcoz](https://github.com/Nolcoz)
   
 ## Items  
 armor.mdl - [@adaya](https://github.com/adaya)  
@@ -53,7 +53,7 @@ end3.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet), [@Zungrysoft](h
 end4.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet), [@Zungrysoft](https://github.com/Zungrysoft)  
 invisibl.mdl - [@Zungrysoft](https://github.com/Zungrysoft), Clay, [@Nolcoz](https://github.com/Nolcoz)  
 invulner.mdl - [@adaya](https://github.com/adaya)  
-quaddama.mdl - [@adaya](https://github.com/adaya)  
+quaddama.mdl - [@adaya](https://github.com/adaya), [@Nolcoz](https://github.com/Nolcoz)  
 suit.mdl - [@BryanHaley](https://github.com/BryanHaley)
   
 ## Weapons  
@@ -82,7 +82,7 @@ lavaball.mdl - [@Zungrysoft](https://github.com/Zungrysoft)
 missile.mdl - [@adaya](https://github.com/adaya), [@Zungrysoft](https://github.com/Zungrysoft)  
 s_spike.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet)  
 spike.mdl - [@lavenderdotpet](https://github.com/lavenderdotpet)  
-v_spike.mdl - chillo (should be replaced)  
+v_spike.mdl - [@Nolcoz](https://github.com/Nolcoz)   
 w_spike.mdl - [@Nolcoz](https://github.com/Nolcoz)  
 ## Keys  
 b_g_key.mdl - [@Zungrysoft](https://github.com/Zungrysoft), [@lavenderdotpet](https://github.com/lavenderdotpet)  
