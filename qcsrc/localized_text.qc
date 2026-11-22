@@ -135,18 +135,18 @@
 
 #else
 
-#define LOC_ITEM_NAME_QUADDMG			"Quad Damage"
-#define LOC_ITEM_NAME_OCTDMG			"OctaPower"
-#define LOC_ITEM_NAME_PENTPROT			"Pentagram of Protection"
-#define LOC_ITEM_NAME_SHADRING			"Ring of Shadows"
-#define LOC_ITEM_NAME_BIOSUIT			"Biosuit"
-#define LOC_ITEM_NAME_BACKPACK			"Backpack"
+#define LOC_ITEM_NAME_QUADDMG			"test Quad Damage"
+#define LOC_ITEM_NAME_OCTDMG			"test OctaPower"
+#define LOC_ITEM_NAME_PENTPROT			"test Pentagram of Protection"
+#define LOC_ITEM_NAME_SHADRING			"test Ring of Shadows"
+#define LOC_ITEM_NAME_BIOSUIT			"test Biosuit"
+#define LOC_ITEM_NAME_BACKPACK			"test Backpack"
 
-#define LOC_ITEM_FADE_QUADDMG			"Quad Damage is wearing off"
-#define LOC_ITEM_FADE_OCTDMG			"OctaPower is wearing off"
-#define LOC_ITEM_FADE_PENTPROT			"Protection is almost burned out"
-#define LOC_ITEM_FADE_SHADRING			"Ring of Shadows magic is fading"
-#define LOC_ITEM_FADE_BIOSUIT			"Air supply in Biosuit expiring"
+#define LOC_ITEM_FADE_QUADDMG			"test Quad Damage is wearing off"
+#define LOC_ITEM_FADE_OCTDMG			"test OctaPower is wearing off"
+#define LOC_ITEM_FADE_PENTPROT			"test Protection is almost burned out"
+#define LOC_ITEM_FADE_SHADRING			"test Ring of Shadows magic is fading"
+#define LOC_ITEM_FADE_BIOSUIT			"test Air supply in Biosuit expiring"
 
 #define LOC_BONUS_POWERS				" attains bonus powers!!!"
 
@@ -164,32 +164,32 @@
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_WEAPON_NAME_AXE				"Axe"		// Unused..
-#define LOC_WEAPON_NAME_SHOTGUN			"Shotgun"   // Unused..
-#define LOC_WEAPON_NAME_SUPER_SHOTGUN   "Double-Barreled Shotgun"
-#define LOC_WEAPON_NAME_NAILGUN			"Nailgun"
-#define LOC_WEAPON_NAME_SUPER_NAILGUN   "Super Nailgun"
-#define LOC_WEAPON_NAME_GRENADE_LAUNCH  "Grenade Launcher"
-#define LOC_WEAPON_NAME_ROCKET_LAUNCH   "Rocket Launcher"
-#define LOC_WEAPON_NAME_THUNDERBOLT		"Lightning Gun"
+#define LOC_WEAPON_NAME_AXE				"test Axe"		// Unused..
+#define LOC_WEAPON_NAME_SHOTGUN			"test Shotgun"   // Unused..
+#define LOC_WEAPON_NAME_SUPER_SHOTGUN   "test Double-Barreled Shotgun"
+#define LOC_WEAPON_NAME_NAILGUN			"test Nailgun"
+#define LOC_WEAPON_NAME_SUPER_NAILGUN   "test Super Nailgun"
+#define LOC_WEAPON_NAME_GRENADE_LAUNCH  "test Grenade Launcher"
+#define LOC_WEAPON_NAME_ROCKET_LAUNCH   "test Rocket Launcher"
+#define LOC_WEAPON_NAME_THUNDERBOLT		"test Lightning Gun"
 
 #else
 
-#define LOC_WEAPON_NAME_AXE				"Axe"	// Unused..
-#define LOC_WEAPON_NAME_SHOTGUN			"Shotgun"   // Unused..
-#define LOC_WEAPON_NAME_SUPER_SHOTGUN   "Double-barrelled Shotgun"
-#define LOC_WEAPON_NAME_NAILGUN			"nailgun"
-#define LOC_WEAPON_NAME_SUPER_NAILGUN   "Super Nailgun"
-#define LOC_WEAPON_NAME_GRENADE_LAUNCH  "Grenade Launcher"
-#define LOC_WEAPON_NAME_ROCKET_LAUNCH   "Rocket Launcher"
-#define LOC_WEAPON_NAME_THUNDERBOLT		"Thunderbolt"
+#define LOC_WEAPON_NAME_AXE				"test Axe"	// Unused..
+#define LOC_WEAPON_NAME_SHOTGUN			"test Shotgun"   // Unused..
+#define LOC_WEAPON_NAME_SUPER_SHOTGUN   "test Double-barrelled Shotgun"
+#define LOC_WEAPON_NAME_NAILGUN			"test nailgun"
+#define LOC_WEAPON_NAME_SUPER_NAILGUN   "test Super Nailgun"
+#define LOC_WEAPON_NAME_GRENADE_LAUNCH  "test Grenade Launcher"
+#define LOC_WEAPON_NAME_ROCKET_LAUNCH   "test Rocket Launcher"
+#define LOC_WEAPON_NAME_THUNDERBOLT		"test Thunderbolt"
 
 #endif // __LIBREQUAKE__
 
-#define LOC_WEAPON_AMMO_SHELLS			"shells"
-#define LOC_WEAPON_AMMO_NAILS			"nails"
-#define LOC_WEAPON_AMMO_ROCKETS			"rockets"
-#define LOC_WEAPON_AMMO_CELLS			"cells"
+#define LOC_WEAPON_AMMO_SHELLS			"test shells"
+#define LOC_WEAPON_AMMO_NAILS			"test nails"
+#define LOC_WEAPON_AMMO_ROCKETS			"test rockets"
+#define LOC_WEAPON_AMMO_CELLS			"test cells"
 
 /*==============================================================================
 
@@ -199,23 +199,23 @@
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_KEY_NAME_SILVER				"Silver Key"
-#define LOC_KEY_NAME_SILVER_RUNE		"Silver Key"
-#define LOC_KEY_NAME_SILVER_CARD		"Silver Keycard"
-#define LOC_KEY_NAME_GOLD				"Gold Key"
-#define LOC_KEY_NAME_GOLD_RUNE			"Gold Key"
-#define LOC_KEY_NAME_GOLD_CARD			"Gold Keycard"
-#define LOC_KEY_NEED					"You need "
+#define LOC_KEY_NAME_SILVER				"test Silver Key"
+#define LOC_KEY_NAME_SILVER_RUNE		"test Silver Key"
+#define LOC_KEY_NAME_SILVER_CARD		"test Silver Keycard"
+#define LOC_KEY_NAME_GOLD				"test Gold Key"
+#define LOC_KEY_NAME_GOLD_RUNE			"test Gold Key"
+#define LOC_KEY_NAME_GOLD_CARD			"test Gold Keycard"
+#define LOC_KEY_NEED					"test You need "
 
 #else
 
-#define LOC_KEY_NAME_SILVER				"silver key"
-#define LOC_KEY_NAME_SILVER_RUNE		"silver runekey"
-#define LOC_KEY_NAME_SILVER_CARD		"silver keycard"
-#define LOC_KEY_NAME_GOLD				"gold key"
-#define LOC_KEY_NAME_GOLD_RUNE			"gold runekey"
-#define LOC_KEY_NAME_GOLD_CARD			"gold keycard"
-#define LOC_KEY_NEED					"You need "
+#define LOC_KEY_NAME_SILVER				"test silver key"
+#define LOC_KEY_NAME_SILVER_RUNE		"test silver runekey"
+#define LOC_KEY_NAME_SILVER_CARD		"test silver keycard"
+#define LOC_KEY_NAME_GOLD				"test gold key"
+#define LOC_KEY_NAME_GOLD_RUNE			"test gold runekey"
+#define LOC_KEY_NAME_GOLD_CARD			"test gold keycard"
+#define LOC_KEY_NEED					"test You need "
 
 #endif // __LIBREQUAKE__
 
@@ -225,18 +225,18 @@
 
 ==============================================================================*/
 
-#define LOC_COUNTER_COUNT_1A			"Only "
-#define LOC_COUNTER_COUNT_1B			" more to go..."
-#define LOC_COUNTER_COUNT_2				"There are more to go..."
-#define LOC_COUNTER_COMPLETE			"Sequence completed!"
+#define LOC_COUNTER_COUNT_1A			"test Only "
+#define LOC_COUNTER_COUNT_1B			"test more to go..."
+#define LOC_COUNTER_COUNT_2				"test There are more to go..."
+#define LOC_COUNTER_COMPLETE			"test Sequence completed!"
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_SECRET						"You found a secret!"
+#define LOC_SECRET						"test You found a secret!"
 
 #else
 
-#define LOC_SECRET						"You found a secret area!"
+#define LOC_SECRET						"test You found a secret area!"
 
 #endif // __LIBREQUAKE__
 
@@ -246,15 +246,15 @@
 
 ==============================================================================*/
 
-#define LOC_RUNE_GET					"You got the rune!"
+#define LOC_RUNE_GET					"test You got the rune!"
 
 #ifdef __LIBREQUAKE__
 
-#define LOC_RUNE_LQ_YOU					"You"
-#define LOC_RUNE_LQ_BLOOD				" got the Rune of Blood!"
-#define LOC_RUNE_LQ_BONE				" got the Rune of Bone!"
-#define LOC_RUNE_LQ_MIND				" got the Rune of Mind!"
-#define LOC_RUNE_LQ_SOUL				" got the Rune of Soul!"
+#define LOC_RUNE_LQ_YOU					"test You"
+#define LOC_RUNE_LQ_BLOOD				"test got the Rune of Blood!"
+#define LOC_RUNE_LQ_BONE				"test got the Rune of Bone!"
+#define LOC_RUNE_LQ_MIND				"test got the Rune of Mind!"
+#define LOC_RUNE_LQ_SOUL				"test got the Rune of Soul!"
 
 #endif // __LIBREQUAKE__
 
