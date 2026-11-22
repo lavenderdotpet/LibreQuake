@@ -47,13 +47,13 @@
 
 #else
 
-#define LOC_EPILOGUE_1	"As the corpse of the monstrous entity\nChthon sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task. A Rune of magic\npower lies at the end of each haunted\nland of Quake. Go forth, seek the\ntotality of the four Runes!"
-#define LOC_EPILOGUE_1_FREEWARE	"As the corpse of the monstrous entity\nChthon sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task in the other three\nhaunted lands of Quake. Or are you? If\nyou don't register Quake, you'll never\nknow what awaits you in the Realm of\nBlack Magic, the Netherworld, and the\nElder World!"
-#define LOC_EPILOGUE_2	"The Rune of Black Magic throbs evilly in\nyour hand and whispers dark thoughts\ninto your brain. You learn the inmost\nlore of the Hell-Mother; Shub-Niggurath!\nYou now know that she is behind all the\nterrible plotting which has led to so\nmuch death and horror. But she is not\ninviolate! Armed with this Rune, you\nrealize that once all four Runes are\ncombined, the gate to Shub-Niggurath's\nPit will open, and you can face the\nWitch-Goddess herself in her frightful\notherworld cathedral."
+#define LOC_EPILOGUE_1	"As the corpse of the monstrous entity\nChtulhi sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task. A Rune of magic\npower lies at the end of each haunted\nland of Quake. Go forth, seek the\ntotality of the four Runes!"
+#define LOC_EPILOGUE_1_FREEWARE	"As the corpse of the monstrous entity\nChtulhi sinks back into the lava whence\nit rose, you grip the Rune of Earth\nMagic tightly. Now that you have\nconquered the Dimension of the Doomed,\nrealm of Earth Magic, you are ready to\ncomplete your task in the other three\nhaunted lands of Quake. Or are you? If\nyou don't register Quake, you'll never\nknow what awaits you in the Realm of\nBlack Magic, the Netherworld, and the\nElder World!"
+#define LOC_EPILOGUE_2	"The Rune of Black Magic throbs evilly in\nyour hand and whispers dark thoughts\ninto your brain. You learn the inmost\nlore of the Hell-Mother; the Watcher!\nYou now know that she is behind all the\nterrible plotting which has led to so\nmuch death and horror. But she is not\ninviolate! Armed with this Rune, you\nrealize that once all four Runes are\ncombined, the gate to the Watcher's\nPit will open, and you can face the\nWitch-Goddess herself in her frightful\notherworld cathedral."
 #define LOC_EPILOGUE_3	"The charred viscera of diabolic horrors\nbubble viscously as you seize the Rune\nof Hell Magic. Its heat scorches your\nhand, and its terrible secrets blight\nyour mind. Gathering the shreds of your\ncourage, you shake the devil's shackles\nfrom your soul, and become ever more\nhard and determined to destroy the\nhideous creatures whose mere existence\nthreatens the souls and psyches of all\nthe population of Earth."
-#define LOC_EPILOGUE_4	"Despite the awful might of the Elder\nWorld, you have achieved the Rune of\nElder Magic, capstone of all types of\narcane wisdom. Beyond good and evil,\nbeyond life and death, the Rune\npulsates, heavy with import. Patient and\npotent, the Elder Being Shub-Niggurath\nweaves her dire plans to clear off all\nlife from the Earth, and bring her own\nfoul offspring to our world! For all the\ndwellers in these nightmare dimensions\nare her descendants! Once all Runes of\nmagic power are united, the energy\nbehind them will blast open the Gateway\nto Shub-Niggurath, and you can travel\nthere to foil the Hell-Mother's plots\nin person."
-#define LOC_EPILOGUE_RUNES	"Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. Shub-Niggurath\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront her as an avatar of avenging\nEarth-life. If you defeat her, you will\nbe remembered forever as the savior of\nthe planet. If she conquers, it will be\nas if you had never been born."
-#define LOC_EPILOGUE_FINALE	"Congratulations and well done! You have\nbeaten the hideous Shub-Niggurath, and\nher hundreds of ugly changelings and\nmonsters. You have proven that your\nskill and your cunning are greater than\nall the powers of Quake. You are the\nmaster now. Id Software salutes you."
+#define LOC_EPILOGUE_4	"Despite the awful might of the Elder\nWorld, you have achieved the Rune of\nElder Magic, capstone of all types of\narcane wisdom. Beyond good and evil,\nbeyond life and death, the Rune\npulsates, heavy with import. Patient and\npotent, the Elder Being, the Watcher\nweaves her dire plans to clear off all\nlife from the Earth, and bring her own\nfoul offspring to our world! For all the\ndwellers in these nightmare dimensions\nare her descendants! Once all Runes of\nmagic power are united, the energy\nbehind them will blast open the Gateway\nto the Watcher, and you can travel\nthere to foil the Hell-Mother's plots\nin person."
+#define LOC_EPILOGUE_RUNES	"Now, you have all four Runes. You sense\ntremendous invisible forces moving to\nunseal ancient barriers. The Watcher\nhad hoped to use the Runes Herself to\nclear off the Earth, but now instead,\nyou will use them to enter her home and\nconfront her as an avatar of avenging\nEarth-life. If you defeat her, you will\nbe remembered forever as the savior of\nthe planet. If she conquers, it will be\nas if you had never been born."
+#define LOC_EPILOGUE_FINALE	"Congratulations and well done! You have\nbeaten the hideous Watcher, and\nher hundreds of ugly changelings and\nmonsters. You have proven that your\nskill and your cunning are greater than\nall the powers of Quake. You are the\nmaster now. Id Software salutes you."
 
 #endif // __LIBREQUAKE__
 
@@ -67,7 +67,7 @@
 
 #define LOC_CLIENT_JOIN				" joined the server"
 #define LOC_CLIENT_EXIT_LEVEL		" exited the level"
-#define LOC_CLIENT_DISCON_A			" left the server the game with "
+#define LOC_CLIENT_DISCON_A			" left the server with "
 #define LOC_CLIENT_DISCON_B			" frags"
 
 #else
@@ -116,14 +116,14 @@
 
 #define LOC_ITEM_NAME_QUADDMG			"the Crusher Sigil"
 #define LOC_ITEM_NAME_OCTDMG			"the Demolisher Sigil"
-#define LOC_ITEM_NAME_PENTPROT			"Lucifier's Protection"
+#define LOC_ITEM_NAME_PENTPROT			"Lucifer's Protection"
 #define LOC_ITEM_NAME_SHADRING			"the Eye of Enigma"
 #define LOC_ITEM_NAME_BIOSUIT			"the Diving Suit"
 #define LOC_ITEM_NAME_BACKPACK			"Backpack"
 
 #define LOC_ITEM_FADE_QUADDMG			"Your Crusher Sigil is fading..."
 #define LOC_ITEM_FADE_OCTDMG			"Your Demolisher Sigil is fading..."
-#define LOC_ITEM_FADE_PENTPROT			"Lucifier's Protection is fading..."
+#define LOC_ITEM_FADE_PENTPROT			"Lucifer's Protection is fading..."
 #define LOC_ITEM_FADE_SHADRING			"The Eye of Enigma is fading..."
 #define LOC_ITEM_FADE_BIOSUIT			"Air in Diving Suit is running out..."
 
@@ -135,12 +135,12 @@
 
 #else
 
-#define LOC_ITEM_NAME_QUADDMG			"Quad Damage"
-#define LOC_ITEM_NAME_OCTDMG			"OctaPower"
-#define LOC_ITEM_NAME_PENTPROT			"Pentagram of Protection"
-#define LOC_ITEM_NAME_SHADRING			"Ring of Shadows"
-#define LOC_ITEM_NAME_BIOSUIT			"Biosuit"
-#define LOC_ITEM_NAME_BACKPACK			"Backpack"
+#define LOC_ITEM_NAME_QUADDMG			"the Quad Damage"
+#define LOC_ITEM_NAME_OCTDMG			"the OctaPower"
+#define LOC_ITEM_NAME_PENTPROT			"the Pentagram of Protection"
+#define LOC_ITEM_NAME_SHADRING			"the Ring of Shadows"
+#define LOC_ITEM_NAME_BIOSUIT			"the Biosuit"
+#define LOC_ITEM_NAME_BACKPACK			"the Backpack"
 
 #define LOC_ITEM_FADE_QUADDMG			"Quad Damage is wearing off"
 #define LOC_ITEM_FADE_OCTDMG			"OctaPower is wearing off"
@@ -175,7 +175,7 @@
 
 #else
 
-#define LOC_WEAPON_NAME_AXE				"Axe"	// Unused..
+#define LOC_WEAPON_NAME_AXE				"Axe"	    // Unused..
 #define LOC_WEAPON_NAME_SHOTGUN			"Shotgun"   // Unused..
 #define LOC_WEAPON_NAME_SUPER_SHOTGUN   "Double-barrelled Shotgun"
 #define LOC_WEAPON_NAME_NAILGUN			"nailgun"
@@ -280,7 +280,7 @@
 #define LOC_DEATH_SHALRATH 				" was blasted by a Servant of Nyarlathotep"
 #define LOC_DEATH_TARBABY 				" was swarmed by a Bog Face"
 #define LOC_DEATH_BOSS 					" was obliterated by Cthulhi"
-#define LOC_DEATH_OLDONE 				" became one with Shoggoth"
+#define LOC_DEATH_OLDONE 				" joins the legions of the Watcher" // Unused..
 
 #else
 
@@ -297,8 +297,8 @@
 #define LOC_DEATH_SHAMBLER 				" was smashed by a Shambler"
 #define LOC_DEATH_SHALRATH 				" was exploded by a Vore"
 #define LOC_DEATH_TARBABY 				" was slimed by a Spawn"
-#define LOC_DEATH_BOSS 					" was blasted by Cthulhi"
-#define LOC_DEATH_OLDONE 				" became one with Shub-Niggurath"
+#define LOC_DEATH_BOSS 					" was shamefully killed by Chtulhi"
+#define LOC_DEATH_OLDONE 				" became one with the Watcher" // Unused..
 
 #endif // __LIBREQUAKE__
 
@@ -333,7 +333,7 @@
 #define LOC_DEATH_DISCHARGE_WATER		" took a toaster bath"
 #define LOC_DEATH_DISCHARGE_SLIME		" took a toaster bath"
 #define LOC_DEATH_DISCHARGE_LAVA		" took a toaster bath"
-#define LOC_DEATH_DISCHARGE_SELF		"'s Lightning Gun Malfunctioned"
+#define LOC_DEATH_DISCHARGE_SELF		"'s Lightning Gun malfunctioned"
 #define LOC_DEATH_SELF_GRENADE			" didn't launch the grenade far enough"
 #define LOC_DEATH_SELF_ROCKET			" played with explosives"
 #define LOC_DEATH_SELF_OTHER			" misfired"
