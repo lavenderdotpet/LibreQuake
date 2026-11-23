@@ -6,14 +6,7 @@ xxd -r -p pak0.pak pak0.pak
 
 mv pak0.pak ../../
 
-cd ../../
-
-rm ironwail.cfg
-
-#echo alias make-levelshots "exec levelshots/make-levelshots.cfg" > autoexec.cfg
-#echo make-levelshots >> autoexec.cfg
-
-cd ../
+cd ../../../
 
 rm id1
 
