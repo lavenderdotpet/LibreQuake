@@ -42,6 +42,7 @@
         "files_pak1": [],
         "files_unpacked": [
             "levelshots.pk3"
+            "descript.ion"
         ]
     },
     "progs": {
@@ -236,7 +237,7 @@
             "sound/player/pain5.wav",
             "sound/player/pain6.wav",
             "sound/player/plyrjmp8.wav",
-            "sound/player/slmbrn2.wav",
+            "sound/player/slimbrn2.wav",
             "sound/player/teledth1.wav",
             "sound/player/tornoff2.wav",
             "sound/player/udeath.wav",
@@ -295,6 +296,10 @@
             "sound/blob/hit1.wav",
             "sound/blob/land1.wav",
             "sound/blob/sight1.wav",
+            "sound/boss2/death.wav",
+            "sound/boss2/idle.wav",
+            "sound/boss2/pop2.wav",
+            "sound/boss2/sight.wav",
             "sound/enforcer/death1.wav",
             "sound/enforcer/enfire.wav",
             "sound/enforcer/enfstop.wav",
@@ -464,6 +469,10 @@
         "files_pak0": [
             "maps/dev.bsp",
             "maps/dev.lit",
+            "maps/start_e0.bsp",
+            "maps/start_e0.lit",
+            "maps/lq_start.bsp",
+            "maps/lq_start.lit",
             "maps/start.bsp",
             "maps/start.lit",
             "maps/lq_e1m1.bsp",
