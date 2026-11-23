@@ -83,7 +83,7 @@ jobs:
           lq1/maps/*.lit
 
   build_levelshots:
-    needs: [build_wads, build_maps]
+    needs: build_maps
     runs-on: ubuntu-24.04  # TODO: change this back to ubuntu-latest once that doesn't point to 22.04 anymore
     steps:
     - uses: actions/checkout@v6
