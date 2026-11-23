@@ -54,20 +54,6 @@ jobs:
         name: progs-artifact
         path: lq1/*progs.dat
 
-  build_levelshots:
-    runs-on: ubuntu-24.04  # TODO: change this back to ubuntu-latest once that doesn't point to 22.04 anymore
-    steps:
-    - uses: actions/checkout@v6
-    - name: Install dependencies
-      run: bash -x .github/scripts/install_deps.sh
-    - name: Build progs
-      run: python build.py --compile_lshots
-    - name: Upload progs-artifact
-      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
-      with:
-        name: progs-artifact
-        path: lq1/*progs.dat
-
   build_maps:
     needs: build_wads
     runs-on: ubuntu-latest
@@ -95,6 +81,21 @@ jobs:
         path: |
           lq1/maps/*.bsp
           lq1/maps/*.lit
+
+  build_levelshots:
+    runs-on: ubuntu-24.04  # TODO: change this back to ubuntu-latest once that doesn't point to 22.04 anymore
+    steps:
+    - uses: actions/checkout@v6
+    - name: Install dependencies
+      run: bash -x .github/scripts/install_deps.sh
+    - name: Build progs
+      run: python build.py --compile_ls
+    - name: Upload progs-artifact
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+      with:
+        name: progs-artifact
+        path: lq1/*progs.dat
+
 
   assemble_releases:
     needs: [build_wads, build_progs, build_maps]

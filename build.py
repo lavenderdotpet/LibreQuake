@@ -163,12 +163,14 @@ def compile_wad():
     runpy.run_path('./compile_wads.py', run_name="__build__")
     os.chdir('../')
 
+
 def compile_bsp():
     os.chdir('./lq1/maps')
     runpy.run_path('./compile_maps.py', run_name="__build__")
     os.chdir('../../')
 
-def compile_lshots():
+
+def compile_ls():
     os.chdir('./lq1/levelshots')
     runpy.run_path('./script/run-bash.py', run_name="__build__")
     os.chdir('../../')
@@ -200,7 +202,7 @@ def compile():
     compile_progs()
     compile_wad()
     compile_bsp()
-    compile_lshots()
+    compile_ls()
 
 def build():
     # Delete existing releases
@@ -219,22 +221,22 @@ def main():
     parser.add_argument('-c', '--compile', action='store_true', help="compile assets without building releases")
     parser.add_argument('-w', '--compile-wads', action='store_true', help="just compile the texture wads")
     parser.add_argument('-m', '--compile-maps', action='store_true', help="just compile the maps")
-    parser.add_argument('-l', '--compile_lshots', action='store_true', help="just compile the levelshots")
+    parser.add_argument('-l', '--compile_ls', action='store_true', help="just compile the levelshots")
     parser.add_argument('-p', '--compile-progs', action='store_true', help="just compile the progs.dat")
     parser.add_argument('-b', '--build', action='store_true', help="build releases without recompiling")
     args = parser.parse_args()
 
     # Conflicting flags error
-    if args.build and (args.compile or args.compile_wads or args.compile_maps or args.compile_lshots or args.compile_progs):
+    if args.build and (args.compile or args.compile_wads or args.compile_maps or args.compile_ls or args.compile_progs):
         print("Incompatible flags. Use -h for help.")
     # Compile specific flags
-    elif args.compile_wads or args.compile_maps or args.compile_lshots or args.compile_progs:
+    elif args.compile_wads or args.compile_maps or args.compile_ls or args.compile_progs:
         if args.compile_wads:
             compile_wad()
         if args.compile_maps:
             compile_bsp()
-        if args.compile_lshots:
-            compile_lshots()
+        if args.compile_ls:
+            compile_ls()
         if args.compile_progs:
             compile_progs()
     # Compile all flag
