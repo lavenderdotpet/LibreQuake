@@ -5,10 +5,9 @@ set -e
 QPAKMAN_URL="https://github.com/LibreQuake/qpakman/archive/refs/heads/main.tar.gz"
 FTEQCC_URL="https://www.fteqcc.org/dl/fteqcc_linux64.zip"
 ERICW_TOOL_URL="https://github.com/ericwa/ericw-tools/releases/download/2.0.0-alpha9/ericw-tools-2.0.0-alpha9-Linux.zip"
-IRONWAIL_URL="https://github.com/andrei-drexler/ironwail/releases/download/v0.8.2/ironwail-0.8.2-linux-x64.tar.gz"
 
 sudo apt-get update
-sudo apt-get install -y wget zip unzip build-essential cmake libz-dev libpng-dev python3 imagemagick libmpg123-dev
+sudo apt-get install -y wget zip unzip build-essential cmake libz-dev libpng-dev python3
 
 repo_root=$(pwd)
 
@@ -29,11 +28,6 @@ ln -s fteqcc64 fteqcc
 # Install ericw-tools
 wget -O ericw-tools.zip "$ERICW_TOOL_URL"
 unzip ericw-tools.zip
-
-# Install IRONWAIL
-wget -O ironwail.tar.gz "$IRONWAIL_URL"
-tar --strip-components 1 -xf ironwail.tar.gz
-rm ironwail.pak
 
 # Done
 cd "$repo_root"
