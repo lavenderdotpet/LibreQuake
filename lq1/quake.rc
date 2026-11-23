@@ -1,5 +1,6 @@
 // default config
 exec default.cfg
+exec lq_default.cfg
 
 // modifed config 
 exec config.cfg
