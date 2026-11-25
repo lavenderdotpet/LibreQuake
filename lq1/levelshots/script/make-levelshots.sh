@@ -10,5 +10,5 @@ cd ../../../
 
 ln -s -T lq1 id1
 
-ironwail -nosound -nocdaudio +exec levelshots/make-levelshots.cfg
+ironwail -condebug -nosound -nocdaudio +cl_startdemos 0 +exec levelshots/make-levelshots.cfg
 
