@@ -97,7 +97,7 @@ jobs:
         merge-multiple: true
 
     - name: Build levelshots
-      run: SDL_AUDIODRIVER=dummy LIBGL_ALWAYS_SOFTWARE=1 GALLIUM_DRIVER=llvmpipe xvfb-run python build.py --compile_ls
+      run: SDL_AUDIODRIVER=dummy LIBGL_ALWAYS_SOFTWARE=1 GALLIUM_DRIVER=llvmpipe xvfb-run --server-args="-screen 0, 1600x1200x32" python build.py --compile_ls
 
     - name: Upload levelshots-artifact
       uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
