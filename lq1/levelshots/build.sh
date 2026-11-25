@@ -7,5 +7,7 @@ do
 	mv "$LINE" ../
 done
 
-cd .. && ./script/clean-up.sh
+cd ../
+
+./script/clean-up.sh
 

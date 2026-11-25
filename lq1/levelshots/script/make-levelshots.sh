@@ -8,9 +8,7 @@ mv pak0.pak ../../
 
 cd ../../../
 
-rm id1
-
-ln -s lq1 id1
+ln -d -s -T lq1 id1
 
 ironwail -nosound -nocdaudio +exec levelshots/make-levelshots.cfg
 
