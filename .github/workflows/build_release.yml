@@ -112,7 +112,7 @@ jobs:
 
 
   assemble_releases:
-    needs: [build_wads, build_progs, build_maps]
+    needs: [build_wads, build_progs, build_maps, build_levelshots]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
