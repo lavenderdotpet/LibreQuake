@@ -12,5 +12,5 @@ rm id1
 
 ln -s lq1 id1
 
-ironwail +exec levelshots/make-levelshots.cfg
+ironwail -nosound -nocdaudio +exec levelshots/make-levelshots.cfg
 

@@ -84,13 +84,14 @@ jobs:
 
   build_levelshots:
     needs: build_maps
-    runs-on: ubuntu-24.04  # TODO: change this back to ubuntu-latest once that doesn't point to 22.04 anymore
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
     - name: Install dependencies
       run: bash -x .github/scripts/install_deps_levelshots.sh
     - name: Build levelshots
-      run: python build.py --compile_ls
+      run: SDL_AUDIODRIVER=dummy LIBGL_ALWAYS_SOFTWARE=1 GALLIUM_DRIVER=llvmpipe xvfb-run --server-args="-screen 0, 1600x1200x16x30" python build.py --compile_ls
+
     - name: Upload levelshots-artifact
       uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
       with:
