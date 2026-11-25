@@ -82,8 +82,37 @@ jobs:
           lq1/maps/*.bsp
           lq1/maps/*.lit
 
+  build_levelshots:
+    needs: [build_progs, build_maps]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - name: Install dependencies
+      run: bash -x .github/scripts/install_deps_levelshots.sh
+    - name: Download progs-artifact
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+      with:
+        name: progs-artifact
+        path: lq1/
+    - name: Download maps-artifacts
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+      with:
+        pattern: maps-artifact-*
+        path: lq1/maps/
+        merge-multiple: true
+
+    - name: Build levelshots
+      run: SDL_AUDIODRIVER=dummy LIBGL_ALWAYS_SOFTWARE=1 GALLIUM_DRIVER=llvmpipe xvfb-run python build.py --compile_ls
+
+    - name: Upload levelshots-artifact
+      uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+      with:
+        name: levelshots-artifact
+        path: lq1/levelshots/*.jpg
+
+
   assemble_releases:
-    needs: [build_wads, build_progs, build_maps]
+    needs: [build_wads, build_progs, build_maps, build_levelshots]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
